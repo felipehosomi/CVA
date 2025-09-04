@@ -1,0 +1,434 @@
+﻿
+@{
+    //Layout = "~/Views/Apetit/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles{
+    <link href="~/Content/View/menu.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome/css/all.min.css" rel="stylesheet" />
+}
+
+
+
+<div class="x_panel">
+
+    @if (CVA.Portal.Producao.Web.Helper.CvaSession.ViewList.Any(x => x.Controller.Equals("Usuario")))
+    {
+        <div class="col-md-2">
+            <div class="card card-cascade wider mt-2 mb-3">
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                    <img class="card-img-top" src="~/Content/Images/menu/project8.jpg">
+
+                    <a class="linkMenu" href="@Url.Action("Usuario", "Apetit" )">
+                        <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                    </a>
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>Usuários</strong></h4>
+                    <!-- Subtitle -->
+                    <h5 class="blue-text pb-2"><strong>Colaboradores</strong></h5>
+                    <!-- Text -->
+                    <p class="card-text">Vinculo de usuários do portal à um colaborador SAP B1. </p>
+                </div>
+
+            </div>
+        </div>
+    }
+
+    @if (CVA.Portal.Producao.Web.Helper.CvaSession.ViewList.Any(x => x.Controller.Equals("SaidaMateriais")))
+    {
+        <div class="col-md-2">
+            <div class="card card-cascade wider mt-2 mb-3">
+
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                    <img class="card-img-top" src="~/Content/Images/menu/240_F_235582346_EwQRJaNBkWQYaEnANF502erQvPM9hFml.jpg">
+                    <a class="linkMenu" href="@Url.Action("SaidaMateriais", "Apetit" )">
+                        <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                    </a>
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>Saída de Materiais</strong></h4>
+                    <!-- Subtitle -->
+                    <h5 class="blue-text pb-2"><strong>Saídas de insumos</strong></h5>
+                    <!-- Text -->
+                    <p class="card-text">Registro de insumos utilizados.</p>
+                </div>
+
+            </div>
+        </div>
+    }
+
+    @if (CVA.Portal.Producao.Web.Helper.CvaSession.ViewList.Any(x => x.Controller.Equals("ReposicaoInsumos")))
+    {
+        <div class="col-md-2">
+            <div class="card card-cascade wider mt-2 mb-3">
+
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                    <img class="card-img-top" src="~/Content/Images/menu/240_F_293172694_krfbKCKZdGYqk7PqvKdWU79xX9atUA35.jpg">
+                    <a class="linkMenu" href="@Url.Action("ReposicaoInsumos", "Apetit" )">
+                        <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                    </a>
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>Reposição de Insumos</strong></h4>
+                    <!-- Subtitle -->
+                    <h5 class="blue-text pb-2"><strong>Solicitação</strong></h5>
+                    <!-- Text -->
+                    <p class="card-text">Solicitação de reposição, compra de insumos e materiais. </p>
+                </div>
+
+            </div>
+        </div>
+    }
+
+    @if (CVA.Portal.Producao.Web.Helper.CvaSession.ViewList.Any(x => x.Controller.Equals("ApontamentoPainel")))
+    {
+        <div class="col-md-2">
+            <div class="card card-cascade wider mt-2 mb-3">
+
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                    <img class="card-img-top" src="~/Content/Images/menu/240_F_235906534_ZqnbcLYnQgxUFfVDxZJyBadSNf8uHsOh.jpg">
+                    <a class="linkMenu" href="@Url.Action("ApontamentoPainel", "Apetit" )">
+                        <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                    </a>
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>Apontamentos</strong></h4>
+                    <!-- Subtitle -->
+                    <h5 class="blue-text pb-2"><strong>Acompanhamento</strong></h5>
+                    <!-- Text -->
+                    <p class="card-text">Status das ordens de produção e efetivação dos apontamentos. </p>
+                </div>
+
+            </div>
+        </div>
+    }
+
+    @if (CVA.Portal.Producao.Web.Helper.CvaSession.ViewList.Any(x => x.Controller.Equals("Apontamento")))
+    {
+        <div class="col-md-2">
+
+            <div class="card card-cascade wider mt-2 mb-3">
+
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                    <img class="card-img-top" src="~/Content/Images/menu/240_F_301558560_LVbCCojBsuncQOoc2oqIGVgsqdleymUA.jpg">
+                    <a class="linkMenu" href="@Url.Action("Apontamento", "Apetit" )">
+                        <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                    </a>
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>Apontamento</strong></h4>
+                    <!-- Subtitle -->
+                    <h5 class="blue-text pb-2"><strong>Refeições</strong></h5>
+                    <!-- Text -->
+                    <p class="card-text">Apontamentos refletidos em ordens de produção. </p>
+                </div>
+
+            </div>
+        </div>
+    }
+
+    <div class="col-md-2">
+        <div class="card card-cascade wider mt-2 mb-3">
+
+            <div class='box'>
+                <div class='wave -one'></div>
+                <div class='wave -two'></div>
+                <div class='wave -three'></div>
+                <div class="weathercon"><i class='fas fa-sun' style='color: #d36326;'></i></div>
+                <div class="info">
+                    <h2 class="location">LONDRINA/PR</h2>
+                    <p class="date">@DateTime.Now.ToString("dd/MM/yyyy | HH:mm") </p>
+                    <h1 class="temp">Aguardando..</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @if (CVA.Portal.Producao.Web.Helper.CvaSession.ViewList.Any(x => x.Controller.Equals("ServicoExtra")))
+    {
+        <div class="col-md-2">
+            <div class="card card-cascade wider mt-2 mb-3">
+
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                    <img class="card-img-top" src="~/Content/Images/menu/240_F_204574100_uTuA7cSq7Yv7e1E3amSw60ZTStQ1SWQC.jpg">
+                    <a class="linkMenu" href="@Url.Action("ServicoExtra", "Apetit" )">
+                        <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                    </a>
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>Apontamento</strong></h4>
+                    <!-- Subtitle -->
+                    <h5 class="blue-text pb-2"><strong>Serviço Extra</strong></h5>
+                    <!-- Text -->
+                    <p class="card-text">
+                        Autorização de prestação de serviço extra por parte do cliente.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    }
+
+    @if (CVA.Portal.Producao.Web.Helper.CvaSession.ViewList.Any(x => x.Controller.Equals("ReportPosicaoEstoque")))
+    {
+        <div class="col-md-2">
+            <div class="card card-cascade wider mt-2 mb-3">
+
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                    <img class="card-img-top" src="~/Content/Images/menu/240_F_265178432_H7J5gZrEtiXzD98xpLG6nQrf3UFTtE20.jpg">
+
+
+
+                    <a class="linkMenu" href="@Url.Action("SaidaMateriaisRepport", "Apetit" )">
+                        <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                    </a>
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>Consulta Estoque</strong></h4>
+                    <!-- Subtitle -->
+                    <h5 class="blue-text pb-2"><strong>Relatório</strong></h5>
+                    <!-- Text -->
+                    <p class="card-text">Consulta referente a ofertas de compras. </p>
+                </div>
+
+            </div>
+        </div>
+    }
+
+    @if (CVA.Portal.Producao.Web.Helper.CvaSession.ViewList.Any(x => x.Controller.Equals("OfertaCompra")))
+    {
+        <div class="col-md-2">
+            <div class="card card-cascade wider mt-2 mb-3">
+
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                    <img class="card-img-top" src="~/Content/Images/menu/240_F_82724833_goazggjxdq80hxKK3Vxk0TaEO4CDcYQ9.jpg">
+                    <a class="linkMenu" href="@Url.Action("OfertaCompra", "Apetit")">
+                        <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                    </a>
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>Cotação de Compra</strong></h4>
+                    <!-- Subtitle -->
+                    <h5 class="blue-text pb-2"><strong>Relatório</strong></h5>
+                    <!-- Text -->
+                    <p class="card-text">Consulta referente a ofertas de compras. </p>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    }
+
+
+    <div class="col-md-2">
+        <div class="card card-cascade wider mt-2 mb-3">
+
+            <!-- Card image -->
+            <div class="view view-cascade overlay">
+                <img class="card-img-top" src="~/Content/Images/menu/240_F_254357463_reWlJLkn6DBb0SQhaPcVwPaC29gNyExg.jpg">
+
+                <a class="linkMenu" href="@(CVA.Portal.Producao.Web.Helper.CvaSession.Usuario.CodPerfil != "0000000003" ? Url.Action("Logout", "Login") : Url.Action("Logout", "LoginFornecedor"))">
+                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                </a>
+            </div>
+
+            <!-- Card content -->
+            <div class="card-body card-body-cascade text-center">
+
+                <!-- Title -->
+                <h4 class="card-title"><strong>Sair</strong></h4>
+                <!-- Text -->
+                <p class="card-text">Logout do portal. </p>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+@section Scripts{
+    <script>
+
+        $(document).ready(function () {
+
+            var months = [
+                "Janeiro",
+                "Fevereiro",
+                "Março",
+                "Abril",
+                "Maio",
+                "Junho",
+                "Julho",
+                "Agosto",
+                "Setembro",
+                "Outubro",
+                "Novembro",
+                "Dezembro"
+            ];
+
+            var weekday = new Array(7);
+            weekday[0] = "Domingo";
+            weekday[1] = "Segunda-feira";
+            weekday[2] = "Terça-feira";
+            weekday[3] = "Quarta-feira";
+            weekday[4] = "Quinta-feira";
+            weekday[5] = "Sexta-feira";
+            weekday[6] = "Sábado";
+
+            //var lat = 0;
+            //var long = 0;
+            //navigator.geolocation.getCurrentPosition(success, error);
+
+            setInterval(function () { success();}, 60000);
+            displayInit();
+            success();
+
+            function success() {
+                //var lat = pos.coords.latitude;
+                //var long = pos.coords.longitude;
+
+                var lat = -23.321106;
+                var long = -51.235802;
+
+                weather(lat, long);
+            }
+
+            function error() {
+                console.log("There was an error");
+            }
+
+            function weather(lat, long) {
+                var URL = `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${long}`;
+                $.getJSON(URL, function (data) {
+                    display(data);
+                });
+            }
+
+            function display(data) {
+                var city = data.name.toUpperCase();
+                var temp =
+                    Math.round(data.main.temp_max) +
+                    "&deg; C | " +
+                    Math.round(Math.round(data.main.temp_max) * 1.8 + 32) +
+                    "&deg; F";
+                var desc = data.weather[0].description;
+                var date = new Date();
+
+                
+
+                var font_color;
+                var bg_color;
+                if (Math.round(data.main.temp_max) > 25) {
+                    font_color = "#d36326";
+                    bg_color = "#f3f5d2";
+                } else {
+                    font_color = "#44c3de";
+                    bg_color = "#eff3f9";
+                }
+
+                if (data.weather[0].main == "Sunny" || data.weather[0].main == "sunny") {
+                    $(".weathercon").html(
+                        "<i class='fas fa-sun' style='color: #d36326;'></i>"
+                    );
+                } else {
+                    $(".weathercon").html(
+                        "<i class='fas fa-cloud' style='color: #44c3de;'></i>"
+                    );
+                }
+
+                var date = weekday[date.getDay()].toUpperCase() +
+                    " | " +
+                    months[date.getMonth()].toUpperCase() + //.substring(0, 3)
+                    " " +
+                    pad(date.getDate(),2) +
+                    " | " +
+                    pad(date.getHours(),2) +
+                    ":" +
+                    pad(date.getMinutes(),2);
+
+                //$(".location").html(city);
+                $(".temp").html(temp);
+                $(".date").html(date);
+                $(".box").css("background", bg_color);
+                $(".location").css("color", font_color);
+                $(".temp").css("color", font_color);
+            }
+
+            function displayInit() {
+                
+                var date = new Date();                
+                var date = weekday[date.getDay()].toUpperCase() +
+                    " | " +
+                    months[date.getMonth()].toUpperCase() + //.substring(0, 3)
+                    " " +
+                    pad(date.getDate(),2) +
+                    " | " +
+                    pad(date.getHours(),2) +
+                    ":" +
+                    pad(date.getMinutes(), 2);
+
+                $(".date").html(date);
+            }
+
+            $( ".linkMenu" ).click(function() {
+                loadingOn();
+            });
+
+        });
+
+        function pad(str, max) {
+            str = str.toString();
+            return str.length < max ? pad("0" + str, max) : str;
+        }
+
+        
+
+    </script>
+}

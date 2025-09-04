@@ -1,0 +1,53 @@
+﻿@model MODEL.Classes.UserModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Configurações</a></li>
+    <li><a href="@Url.Action("Pesquisar","Usuario")">Usuários</a></li>
+    <li class="active">Usuário</li>
+</ul>
+<div class="page-content-wrap">
+    <form name="form">
+        <div class="panel panel-default">
+            <div class="panel-body" ng-controller="UserController" ng-init="OnLoad(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+                <div class="tab-pane active" id="tab-first">
+                    @Html.Partial("UsuarioDadosGerais")
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary pull-right" ng-disabled="IsProcessing" ng-click="Save()">Salvar Usuário <span class="fa fa-floppy-o fa-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p>Usuário cadastrado com sucesso!</p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Script/jquery")
+
+<script src="~/Scripts/plugins/iCheck/icheck.js"></script>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AddOnRegData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SlientInstallation="No" SlientUpgrade="No" Partnernmsp="CVA" SchemaVersion="3.0" Type="" MultipleVersion="false" OnDemand="" OnPremise="" ExtName="PackIndicator_teste3" ExtVersion="93.64.069" Contdata="" Partner="CVA Consultoria" DBType="HANA" ClientType="A">
+  <Validity>
+    <SBOCompatibility>
+      <Version From="" To="" />
+    </SBOCompatibility>
+  </Validity>
+  <Configuration>
+    <Repository>
+      <Properties />
+    </Repository>
+    <Deployment>
+      <Properties />
+    </Deployment>
+    <Assignment>
+      <Properties />
+    </Assignment>
+  </Configuration>
+  <Addons>
+    <Addon Name="" Group="" ForceFlag="" Visible="" AutoAssign="" SelfUpgrd="">
+      <x86 AddonExe="C:\Users\cvaconsultoria_adm06\Source\Workspaces\APETIT2\PackIndicator\PackIndicator\bin\Debug\PackIndicator.exe" AddonSig="">
+        <Installation>
+          <Files>
+            <File FileName="PackIndicator.exe">
+              <Actions />
+            </File>
+          </Files>
+        </Installation>
+        <Uninstallation>
+          <Files>
+            <File FileName="PackIndicator.exe">
+              <Actions />
+            </File>
+          </Files>
+        </Uninstallation>
+      </x86>
+      <x64 AddonExe="C:\Users\cvaconsultoria_adm06\Source\Workspaces\APETIT2\PackIndicator\PackIndicator\bin\Debug\PackIndicator.exe" AddonSig="">
+        <Installation>
+          <Files>
+            <File FileName="CsvHelper.dll">
+              <Actions />
+            </File>
+            <File FileName="CsvHelper.xml">
+              <Actions />
+            </File>
+            <File FileName="Flurl.dll">
+              <Actions />
+            </File>
+            <File FileName="Flurl.Http.dll">
+              <Actions />
+            </File>
+            <File FileName="Flurl.Http.pdb">
+              <Actions />
+            </File>
+            <File FileName="Flurl.pdb">
+              <Actions />
+            </File>
+            <File FileName="Flurl.xml">
+              <Actions />
+            </File>
+            <File FileName="Menu.xml">
+              <Actions />
+            </File>
+            <File FileName="Newtonsoft.Json.dll">
+              <Actions />
+            </File>
+            <File FileName="Newtonsoft.Json.xml">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.b1s">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.exe">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.exe.config">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.pdb">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.vshost.exe">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.vshost.exe.config">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.vshost.exe.manifest">
+              <Actions />
+            </File>
+            <File FileName="SAPBusinessOneSDK.dll">
+              <Actions />
+            </File>
+            <File FileName="System.ValueTuple.dll">
+              <Actions />
+            </File>
+            <File FileName="System.ValueTuple.xml">
+              <Actions />
+            </File>
+          </Files>
+        </Installation>
+        <Uninstallation>
+          <Files>
+            <File FileName="CsvHelper.dll">
+              <Actions />
+            </File>
+            <File FileName="CsvHelper.xml">
+              <Actions />
+            </File>
+            <File FileName="Flurl.dll">
+              <Actions />
+            </File>
+            <File FileName="Flurl.Http.dll">
+              <Actions />
+            </File>
+            <File FileName="Flurl.Http.pdb">
+              <Actions />
+            </File>
+            <File FileName="Flurl.pdb">
+              <Actions />
+            </File>
+            <File FileName="Flurl.xml">
+              <Actions />
+            </File>
+            <File FileName="Menu.xml">
+              <Actions />
+            </File>
+            <File FileName="Newtonsoft.Json.dll">
+              <Actions />
+            </File>
+            <File FileName="Newtonsoft.Json.xml">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.b1s">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.exe">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.exe.config">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.pdb">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.vshost.exe">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.vshost.exe.config">
+              <Actions />
+            </File>
+            <File FileName="PackIndicator.vshost.exe.manifest">
+              <Actions />
+            </File>
+            <File FileName="SAPBusinessOneSDK.dll">
+              <Actions />
+            </File>
+            <File FileName="System.ValueTuple.dll">
+              <Actions />
+            </File>
+            <File FileName="System.ValueTuple.xml">
+              <Actions />
+            </File>
+          </Files>
+        </Uninstallation>
+      </x64>
+    </Addon>
+  </Addons>
+  <XApps>
+    <XApp Name="" Path="" FileName="" />
+  </XApps>
+  <UDQs>
+    <UDQ udqname="">
+      <Hana FileName="" />
+    </UDQ>
+  </UDQs>
+</AddOnRegData>

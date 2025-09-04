@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.Romaneio", "CVA.View.Romaneio\CVA.View.Romaneio.csproj", "{2A692498-8D13-4676-8AC3-F05720A43619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.Romaneio.AddOn", "CVA.View.Romaneio.AddOn\CVA.View.Romaneio.AddOn.csproj", "{03F39802-BCB4-443B-9AF4-033CA4DEE05C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A692498-8D13-4676-8AC3-F05720A43619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A692498-8D13-4676-8AC3-F05720A43619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A692498-8D13-4676-8AC3-F05720A43619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A692498-8D13-4676-8AC3-F05720A43619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03F39802-BCB4-443B-9AF4-033CA4DEE05C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F39802-BCB4-443B-9AF4-033CA4DEE05C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F39802-BCB4-443B-9AF4-033CA4DEE05C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F39802-BCB4-443B-9AF4-033CA4DEE05C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CVA.View.Romaneio\\CVA.View.Romaneio.csproj
+		SccProjectName1 = CVA.View.Romaneio
+		SccLocalPath1 = CVA.View.Romaneio
+		SccProjectUniqueName2 = CVA.View.Romaneio.AddOn\\CVA.View.Romaneio.AddOn.csproj
+		SccProjectName2 = CVA.View.Romaneio.AddOn
+		SccLocalPath2 = CVA.View.Romaneio.AddOn
+		SccProjectUniqueName3 = ..\\..\\Helpers\\CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName3 = ../../Helpers/CVA.AddOn.Common
+		SccLocalPath3 = ..\\..\\Helpers\\CVA.AddOn.Common
+	EndGlobalSection
+EndGlobal

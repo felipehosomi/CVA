@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.EmailAutorizacao", "CVA.View.EmailAutorizacao\CVA.View.EmailAutorizacao.csproj", "{769CEF0E-B21E-4BEF-BFD1-5FD54D78AECB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{6BDF452D-7D93-4294-A1FF-AA1E5E47FCE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{769CEF0E-B21E-4BEF-BFD1-5FD54D78AECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{769CEF0E-B21E-4BEF-BFD1-5FD54D78AECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{769CEF0E-B21E-4BEF-BFD1-5FD54D78AECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{769CEF0E-B21E-4BEF-BFD1-5FD54D78AECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BDF452D-7D93-4294-A1FF-AA1E5E47FCE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BDF452D-7D93-4294-A1FF-AA1E5E47FCE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BDF452D-7D93-4294-A1FF-AA1E5E47FCE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BDF452D-7D93-4294-A1FF-AA1E5E47FCE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CVA.View.EmailAutorizacao\\CVA.View.EmailAutorizacao.csproj
+		SccProjectName1 = CVA.View.EmailAutorizacao
+		SccLocalPath1 = CVA.View.EmailAutorizacao
+		SccProjectUniqueName2 = Core\\Core.csproj
+		SccProjectName2 = Core
+		SccLocalPath2 = Core
+	EndGlobalSection
+EndGlobal

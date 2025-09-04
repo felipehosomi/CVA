@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Configurações</a></li>
+    <li><a href="/Filial/Pesquisar">Filial</a></li>
+    <li class="active">Cadastrar</li>
+</ul>
+<div class="page-content-wrap" ng-controller="BranchController" ng-init="InitValue(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <div class="panel panel-default tabs">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active" id="tab-first-li"><a href="#tab-first" role="tab" data-toggle="tab">Filial</a></li>
+            <li id="tab-first-li"><a href="#tab-second" role="tab" data-toggle="tab">Contato</a></li>
+            <li id="tab-tree-li"><a href="#tab-tree" role="tab" data-toggle="tab">Endereço</a></li>
+            <li id="tb-four-li"><a href="#tab-four" role="tab" data-toggle="tab">Política de Despesa</a></li>
+            <li id="tab-five-li"><a href="#tab-five" role="tab" data-toggle="tab">Financeiro</a></li>
+        </ul>
+        <div class="panel-body tab-content">
+            <div class="tab-pane active" id="tab-first">
+                @Html.Partial("FilialGeralPartial")
+            </div>
+            <div id="tab-second" class="tab-pane">
+                @Html.Partial("FilialContatoPartial")
+            </div>
+            <div id="tab-tree" class="tab-pane">
+                @Html.Partial("FilialEnderecoPartial")
+            </div>
+            <div id="tab-four" class="tab-pane">
+                @Html.Partial("FilialPoliticaDespesa")
+            </div>
+            <div id="tab-five" class="tab-pane">
+                @Html.Partial("FilialFinanceiroPartial")
+            </div>
+            <div>
+                <button type="button" class="btn btn-default pull-left" ng-click="ClearForm()">Limpar Formulário <span class="fa fa-trash-o fa-right"></span></button>
+                <button type="button" class="btn btn-primary pull-right" ng-disabled="IsProcessing" ng-click="SaveBranch()">Salvar Filial <span class="fa fa-floppy-o fa-right"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p>Filial cadastrada com sucesso!</p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/Script/jquery")

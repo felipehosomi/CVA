@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RecursosDataSet" targetNamespace="http://tempuri.org/RecursosDataSet.xsd" xmlns:mstns="http://tempuri.org/RecursosDataSet.xsd" xmlns="http://tempuri.org/RecursosDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RecursosDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RecursosDataSet" msprop:Generator_UserDSName="RecursosDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtRecursos" msprop:Generator_TableClassName="dtRecursosDataTable" msprop:Generator_TableVarName="tabledtRecursos" msprop:Generator_TablePropName="dtRecursos" msprop:Generator_RowDeletingName="dtRecursosRowDeleting" msprop:Generator_RowChangingName="dtRecursosRowChanging" msprop:Generator_RowEvHandlerName="dtRecursosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtRecursosRowDeleted" msprop:Generator_UserTableName="dtRecursos" msprop:Generator_RowChangedName="dtRecursosRowChanged" msprop:Generator_RowEvArgName="dtRecursosRowChangeEvent" msprop:Generator_RowClassName="dtRecursosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOME" msprop:Generator_ColumnVarNameInTable="columnNOME" msprop:Generator_ColumnPropNameInRow="NOME" msprop:Generator_ColumnPropNameInTable="NOMEColumn" msprop:Generator_UserColumnName="NOME" type="xs:string" minOccurs="0" />
+              <xs:element name="INSERIDO" msprop:Generator_ColumnVarNameInTable="columnINSERIDO" msprop:Generator_ColumnPropNameInRow="INSERIDO" msprop:Generator_ColumnPropNameInTable="INSERIDOColumn" msprop:Generator_UserColumnName="INSERIDO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

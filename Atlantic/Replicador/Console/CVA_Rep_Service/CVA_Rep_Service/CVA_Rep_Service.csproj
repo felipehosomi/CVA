@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DFF2BE4-B2EF-49DD-9C75-DFA5DDE32B30}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVA_Rep_Service</RootNamespace>
+    <AssemblyName>CVA_Rep_Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CVA_Rep_Service.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CVA_Rep_BLL">
+      <HintPath>..\..\CVA_Rep_Gerenciador\CVA_Rep_BLL\bin\Debug\CVA_Rep_BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="CVA_Rep_DAL">
+      <HintPath>..\..\CVA_Rep_Gerenciador\CVA_Rep_DAL\bin\Debug\CVA_Rep_DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="CVA_Rep_Exception">
+      <HintPath>..\..\CVA_Rep_Exception\CVA_Rep_Exception\CVA_Rep_Exception\bin\Debug\CVA_Rep_Exception.dll</HintPath>
+    </Reference>
+    <Reference Include="CVA_Rep_Logging">
+      <HintPath>..\..\CVA_Rep_Logging\CVA_Rep_Logging\CVA_Rep_Logging\bin\Debug\CVA_Rep_Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\CVA_Rep_Gerenciador\CVA_Rep_BLL\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\CVA_Rep_Gerenciador\CVA_Rep_DAL\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CVA_Rep_Logging\CVA_Rep_Logging\CVA_Rep_Logging\bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Topshelf.4.0.1\lib\net452\Topshelf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OrigemBLL.cs" />
+    <Compile Include="PluginProvider.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Replicador.cs" />
+    <Compile Include="ReplicadorSvc.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Content Include="app-settings.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CVA_Obj_Shared\CVA_Obj_Shared\CVA_Obj_Shared\CVA_Obj_Shared.csproj">
+      <Project>{bfaed404-27dd-4684-81ad-558b4faa735c}</Project>
+      <Name>CVA_Obj_Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_CentroCusto\CVA_Obj_CentroCusto\CVA_Obj_CentroCusto.csproj">
+      <Project>{ca24f90d-160e-45ee-9906-8aafad96a033}</Project>
+      <Name>CVA_Obj_CentroCusto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_CondicaoPagamento\CVA_Obj_CondicaoPagamento.csproj">
+      <Project>{b15297bc-4a50-4357-bef9-86c91fccae4f}</Project>
+      <Name>CVA_Obj_CondicaoPagamento</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_ContasBancarias\CVA_Obj_ContasBancarias.csproj">
+      <Project>{37e4b468-7479-4c0a-bbc8-d0146ab5a98a}</Project>
+      <Name>CVA_Obj_ContasBancarias</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_FormaPagamento\CVA_Obj_FormaPagamento\CVA_Obj_FormaPagamento.csproj">
+      <Project>{8c59a325-fc66-47cc-85f2-330f8fc36237}</Project>
+      <Name>CVA_Obj_FormaPagamento</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_GrupoItem\CVA_Obj_GrupoItem\CVA_Obj_GrupoItem.csproj">
+      <Project>{82137514-ea3f-4576-9c0c-3506e332933a}</Project>
+      <Name>CVA_Obj_GrupoItem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_GrupoParceiroNegocio\CVA_Obj_GrupoParceiroNegocio\CVA_Obj_GrupoParceiroNegocio.csproj">
+      <Project>{07ba844a-29b7-4165-9146-1d9d46cc80fe}</Project>
+      <Name>CVA_Obj_GrupoParceiroNegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_Imposto\CVA_Obj_Imposto\CVA_Obj_Imposto.csproj">
+      <Project>{d9d13ca6-6c15-47ae-99fa-39d76536fce2}</Project>
+      <Name>CVA_Obj_Imposto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_Indicador\CVA_Obj_Indicador\CVA_Obj_Indicador.csproj">
+      <Project>{c6805431-a00d-4cb8-a4f6-427683b2f667}</Project>
+      <Name>CVA_Obj_Indicador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_Item\CVA_Obj_Item\CVA_Obj_Item.csproj">
+      <Project>{af25da04-317c-4f0c-92dd-bb3879611090}</Project>
+      <Name>CVA_Obj_Item</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_ParceiroNegocio\CVA_Obj_ParceiroNegocio\CVA_Obj_ParceiroNegocio.csproj">
+      <Project>{d20adeae-8ccd-4be3-a804-d4226b3f37ba}</Project>
+      <Name>CVA_Obj_ParceiroNegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_PlanoContas\CVA_Obj_PlanoContas\CVA_Obj_PlanoContas.csproj">
+      <Project>{fbd6b3ff-b43d-4bc6-95c6-87cfbd6d70c4}</Project>
+      <Name>CVA_Obj_PlanoContas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_Usuario\CVA_Obj_Usuario\CVA_Obj_Usuario.csproj">
+      <Project>{dadd8d08-5249-4055-a8a4-2ba58cb552e2}</Project>
+      <Name>CVA_Obj_Usuario</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_Utilizacao\CVA_Obj_Utilizacao\CVA_Obj_Utilizacao.csproj">
+      <Project>{14f1e419-aaad-42b2-b4ae-cb78a84eeb93}</Project>
+      <Name>CVA_Obj_Utilizacao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\CVA_Obj_VendedoresCompradores\CVA_Obj_VendedoresCompradores.csproj">
+      <Project>{7e8c1d09-c479-42bf-97df-0fc3a2c5cdb9}</Project>
+      <Name>CVA_Obj_VendedoresCompradores</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>md "$(TargetDir)Plugins"
+xcopy "$(TargetDir)CVA_Obj_CentroCusto.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_FormaPagamento.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_CondicaoPagamento.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_GrupoItem.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_GrupoParceiroNegocio.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_Imposto.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_Indicador.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_Item.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_ParceiroNegocio.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_PlanoContas.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_Usuario.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_Utilizacao.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_ContasBancarias.dll" "$(TargetDir)Plugins\" /Y /I
+xcopy "$(TargetDir)CVA_Obj_VendedoresCompradores.dll" "$(TargetDir)Plugins\" /Y /I
+
+del /Q /F "$(TargetDir)CVA_Obj_CentroCusto.dll"
+del /Q /F "$(TargetDir)CVA_Obj_FormaPagamento.dll"
+del /Q /F "$(TargetDir)CVA_Obj_CondicaoPagamento.dll"
+del /Q /F "$(TargetDir)CVA_Obj_GrupoItem.dll"
+del /Q /F "$(TargetDir)CVA_Obj_GrupoParceiroNegocio.dll"
+del /Q /F "$(TargetDir)CVA_Obj_Imposto.dll"
+del /Q /F "$(TargetDir)CVA_Obj_Indicador.dll"
+del /Q /F "$(TargetDir)CVA_Obj_Item.dll"
+del /Q /F "$(TargetDir)CVA_Obj_ParceiroNegocio.dll"
+del /Q /F "$(TargetDir)CVA_Obj_PlanoContas.dll"
+del /Q /F "$(TargetDir)CVA_Obj_Usuario.dll"
+del /Q /F "$(TargetDir)CVA_Obj_Utilizacao.dll"
+del /Q /F "$(TargetDir)CVA_Obj_ContasBancarias.dll"
+del /Q /F "$(TargetDir)CVA_Obj_VendedoresCompradores.dll"
+
+del /Q /F "$(TargetDir)CVA_Obj_CentroCusto.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_FormaPagamento.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_CondicaoPagamento.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_GrupoItem.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_GrupoParceiroNegocio.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_Imposto.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_Indicador.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_Item.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_ParceiroNegocio.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_PlanoContas.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_Usuario.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_Utilizacao.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_ContasBancarias.pdb"
+del /Q /F "$(TargetDir)CVA_Obj_VendedoresCompradores.pdb"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

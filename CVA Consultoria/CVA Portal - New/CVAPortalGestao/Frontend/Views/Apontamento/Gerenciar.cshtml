@@ -1,0 +1,155 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/Loading")
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Diário</a></li>
+    <li><a href="#">Apontamentos</a></li>
+    <li class="active">Gerenciar</li>
+</ul>
+<div class="page-content-wrap" ng-controller="NoteAdministratorController" ng-init="OnLoad()">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Extrair <strong> Apontamentos</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="page-content-wrap">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Filtros </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="col-md-4">
+                                                    <label class="control-label">Colaborador</label>
+                                                    <div class="input-group">
+                                                        <p id="load-00" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                                        <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                                        <select name="status" class="form-control" ng-model="Colaborador" ng-options="selected.Id as selected.Nome for selected in CollaboratorList">
+                                                            <option value="">Selecione</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <label class="control-label">Cliente</label>
+                                                    <div class="input-group">
+                                                        <p id="load-01" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                                        <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                                        <select class="form-control" ng-model="Cliente" ng-options="selected.Id as selected.Name for selected in ClientList">
+                                                            <option value="">Selecione</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label class="control-label">Projeto</label>
+                                                    <div class="input-group">
+                                                        <p id="load-02" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                                        <span class="input-group-addon"><span class="fa fa-globe"></span></span>
+                                                        <select name="status" class="form-control" ng-model="Projeto" ng-options="selected.Id as selected.Codigo + ' - ' + selected.Tag + ' ' + selected.Nome for selected in ProjectList">
+                                                            <option value="">Selecione</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2" style="padding-top:15px;">
+                                                    <label class="control-label">De </label>
+                                                    <input type="date" id="initialDate" class="form-control" ng-model="De" />
+                                                </div>
+                                                <div class="col-md-2" style="padding-top:15px;">
+                                                    <label class="control-label">Até</label>
+                                                    <input type="date" id="finishDate" class="form-control" ng-model="Ate" />
+                                                </div>
+                                                <div class="col-md-2" style="padding-top:15px;">
+                                                    <label class="control-label">N° Chamado</label>
+                                                    <input type="number" class="form-control" ng-model="Chamado" />
+                                                </div>
+                                                <div class="col-md-4" style="padding-top:20px;">
+                                                    <label class="control-label"> </label>
+                                                    <div class="input-group">
+                                                        <button ng-click="Search()" type="button" class="btn btn-info pull-right"><span class="fa fa-search"></span> Pesquisar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-content-wrap">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3><b>Total de horas: {{TotalHours}}</b></h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row" id="exportable">
+                                            <table class="table" id="table-export">
+                                                <thead>
+                                                    <tr>
+                                                        <td><b>Data</b></td>
+                                                        <td><b>Colaborador</b></td>
+                                                        <td><b>Projeto</b></td>
+                                                        <td><b>Descrição</b></td>
+                                                        <td><b>Ticket</b></td>
+                                                        <td><b>Especialidade</b></td>
+                                                        <td><b>Solicitante</b></td>
+                                                        <td><b>Início</b></td>
+                                                        <td><b>Intervalo</b></td>
+                                                        <td><b>Saída</b></td>
+                                                        <td><b>Total</b></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="line in NotesList">
+                                                        <td>{{line.Date | date: "dd/MM/yy"}}</td>
+                                                        <td>{{line.User.Name}}</td>
+                                                        <td>{{line.Project.Codigo}} - {{line.Project.Tag}} {{line.Project.Nome}}</td>
+                                                        <td>{{line.Description}}</td>
+                                                        <td>{{line.Ticket.Code}}</td>
+                                                        <td>{{line.Specialty.Name}}</td>
+                                                        <td>{{line.Requester}}</td>
+                                                        <td>{{line.InitHour | date:'HH:mm'}}</td>
+                                                        <td>{{line.IntervalHour | date:'HH:mm'}}</td>
+                                                        <td>{{line.FinishHour | date:'HH:mm'}}</td>
+                                                        <td>{{line.TotalLine}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-content-wrap">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Exportar </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <button class="btn btn-info" ng-click="ExportarExcel()"><i class="fa fa-table"></i>Excel</button>
+                                                <button class="btn btn-info" ng-click="ExportarPDF()"><i class="fa fa-paste"></i>Pdf</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

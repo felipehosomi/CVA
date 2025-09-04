@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Portal de Produção</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Content/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="~/Content/custom.min.css" rel="stylesheet">
+
+    <link href="~/Content/custom.css" rel="stylesheet">
+
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var timeLeft = 119;
+            var elem = $('#timer');
+            var timerId = setInterval(countdown, 1000);
+
+            function countdown() {
+                elem.html('Desconectando-se em ' + timeLeft);
+                if (timeLeft == 0) {
+                    clearTimeout(timerId);
+                    window.location.href = '@Url.Action("Logout", "LoginCartao")';
+                } else {
+                    timeLeft--;
+                }
+            }
+        });
+    </script>
+</head>
+<body class="login">
+    <div class="login_wrapper" style="margin-top: 25px; max-width: 500px">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <img style="margin-bottom: 50px" src="~/Content/Images/logo.png" />
+                <div class="form-group">
+                    @*<a class="btn btn-primary pagebutton" href="@Url.Action("ApontamentoOPIniciar", "Producao")" role="button"><span class="fa fa-clock-o"></span> Iniciar apontamento de ordem de produção</a>*@
+                    @*<a class="btn btn-warning pagebutton" href="@Url.Action("ApontamentoOPFinalizar", "Producao")" role="button"><span class="fa fa-check-circle-o"></span> Finalizar apontamento de ordem de produção</a>*@
+                    <a class="btn btn-primary pagebutton" href="@Url.Action("ApontamentoOPSelecao", "Producao")" role="button"><span class="fa fa-clock-o"></span> Apontar ordens de produção</a>
+                    <a class="btn btn-info pagebutton" href="@Url.Action("ApontamentoOPTransIniciar", "Producao")" role="button"><span class="fa fa-exchange"></span> Solicitação de transferência</a>
+                    <a class="btn btn-dark pagebutton" href="@Url.Action("ApontamentoOPPesquisaTrans", "Producao")" role="button"><span class="fa fa-search"></span> Pesquisar transferência</a>
+                </div>
+                @if (ViewBag.Error != null)
+                {
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <div id="ErrorMsg" class="alert alert-error" style="white-space: pre-line">@ViewBag.Error</div>
+                    </div>
+                }
+                @if (ViewBag.SuccessMessage != null)
+                {
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <div id="SuccessMsg" class="alert alert-success">@ViewBag.SuccessMessage</div>
+                    </div>
+                }
+                <div id="timer">Desconectando-se em 120</div>
+                <div><a href="@Url.Action("Logout", "LoginCartao")">Sair</a></div>
+                <img style="margin-top: 100px" src="~/Content/Images/cva_logo.png" />
+            </section>
+        </div>
+    </div>
+</body>
+</html>

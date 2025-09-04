@@ -1,0 +1,85 @@
+﻿@model MODEL.Classes.UserModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Editar<strong> Conta</strong></h3>
+            </div>
+            <div class="panel-body">
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        <strong>Atenção!</strong>  @ViewBag.Error
+                    </div>
+                }
+                <div class="row">
+                    @using (Html.BeginForm("AlterarCadastroUsuario", "Usuario", FormMethod.Post))
+                    {
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Nome*</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        @Html.HiddenFor(m => m.Id)
+                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @readonly="readonly" })
+                                    </div>
+                                    <span class="help-block">Informe seu nome</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">E-mail*</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-send"></span></span>
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @readonly="readonly" })
+                                    </div>
+                                    <span class="help-block">Informe seu e-mail</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Senha Atual</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-lock"></span></span>
+                                        @Html.PasswordFor(m => m.OldPassword, new { @class = "form-control" })
+                                    </div>
+                                    <span class="help-block">Informe sua senha atual</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Nova senha</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-lock"></span></span>
+                                        @Html.PasswordFor(m => m.NewPassword, new { @class = "form-control" })
+                                    </div>
+                                    <span class="help-block">Informe sua nova senha desejada</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Repetir Senha</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-lock"></span></span>
+                                        @Html.PasswordFor(m => m.RepeatPassword, new { @class = "form-control" })
+                                    </div>
+                                    <span class="help-block">Repita a nova senha desejada</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary pull-right">Salvar Alterações <span class="fa fa-floppy-o fa-right"></span></button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

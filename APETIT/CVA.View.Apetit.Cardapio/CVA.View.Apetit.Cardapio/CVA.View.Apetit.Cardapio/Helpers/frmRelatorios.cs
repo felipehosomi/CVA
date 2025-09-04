@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace CVA.View.Apetit.Cardapio.Helpers
+{
+    public partial class frmRelatorios : Form
+    {
+        public frmRelatorios()
+        {
+            InitializeComponent();
+        }
+    }
+}

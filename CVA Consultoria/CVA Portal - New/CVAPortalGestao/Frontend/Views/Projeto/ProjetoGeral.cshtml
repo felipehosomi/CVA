@@ -1,0 +1,133 @@
+﻿@Styles.Render("~/Content/Loading")
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Informações</strong> gerais do projeto</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div hidden="hidden">
+                            <label>Id</label>
+                            <input type="text" ng-model="Projeto.Id" />
+                        </div>
+                        <div class="col-md-4" hidden="hidden">
+                            <label>Código</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-disabled="true" ng-model="Projeto.Codigo" />
+                            </div>
+                        </div>
+                        <div class="col-md-4" hidden="hidden">
+                            <label>TAG</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-disabled="true" ng-model="Projeto.Tag" />
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="padding-bottom:10px">
+                            <label>Código</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-star-o"></span></span>
+                                <input type="text" class="form-control" ng-disabled="true" ng-model="Codigo" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="padding-bottom:10px">
+                            <label>Nome</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control"  disabled="disabled" ng-model="Projeto.Nome" ng-change="GenerateName()" tabindex="1" />
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="padding-bottom:10px">
+                            <label>Data Inicial</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control" ng-model="Projeto.DataInicial" tabindex="2" />
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="padding-bottom:10px">
+                            <label>Data Prevista</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control" ng-model="Projeto.DataPrevista" tabindex="3" />
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="padding-bottom:10px">
+                            <label>Status</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                <select class="form-control" ng-model="Projeto.Status.Id" tabindex="4">
+                                    <option value="">Selecione</option>
+                                    <option value="1">Ativo</option>
+                                    <option value="2">Inativo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="padding-bottom:10px">
+                            <label>Cliente</label>
+                            <div class="input-group">
+                                <p id="load-01" class="loader"><img src="~/Content/Loading.gif" /></p>
+                                <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                <select name="status" class="form-control"  disabled="disabled" ng-model="Projeto.Cliente.Id" ng-change="GenerateTag()" ng-options="selected.Id as selected.Name for selected in Clientes" tabindex="5">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="padding-bottom:10px">
+                            <label>Tipo de Projeto</label>
+                            <div class="input-group">
+                                <p id="load-02" class="loader"><img src="~/Content/Loading.gif" /></p>
+                                <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                <select name="status" class="form-control"  ng-model="Projeto.TipoProjeto.Id" ng-options="selected.Id as selected.Nome for selected in TiposProjeto" tabindex="6">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="padding-bottom:10px">
+                            <label>Política de Despesa</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-money"></span></span>
+                                <select class="form-control" ng-model="Projeto.ResponsavelDespesa" tabindex="7">
+                                    <option value="">Selecione</option>
+                                    <option value="Local">Local</option>
+                                    <option value="Cliente">Cliente</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="padding-bottom:10px">
+                            <label>Controlado por horas</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                <select class="form-control" ng-model="Projeto.ControleHoras" tabindex="4">
+                                    <option value="">Selecione</option>
+                                    <option value="S">Sim</option>
+                                    <option value="N">Não</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="padding-bottom:10px">
+                            <label>Gerente</label>
+                            <div class="input-group">
+                                <p id="load-06" class="loader"><img src="~/Content/Loading.gif" /></p>
+                                <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                <select name="status" class="form-control" ng-model="Projeto.Gerente.Id" ng-options="selected.Id as selected.Nome for selected in Gerentes">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Descrição</label>
+                        <textarea class="form-control" rows="4" ng-model="Projeto.Descricao" tabindex="8"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jquery-1.12.3.min.js"></script>
+<script src="~/Scripts/plugins/maskedinput/jquery.maskedinput.js"></script>

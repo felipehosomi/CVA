@@ -1,0 +1,71 @@
+﻿@model CVA.Portal.Producao.Model.Qualidade.FichaInspecaoModel
+<div class="form-group" id="divQAFilho">
+    <label class="col-md-1">Nr. Doc.</label>
+    @Html.TextBoxFor(m => m.DocNum, htmlAttributes: new { @readonly = "readonly", @class = "col-md-1" })
+    @Html.HiddenFor(m => m.DocEntry)
+    @Html.HiddenFor(m => m.Sequencia)
+    @Html.HiddenFor(m => m.SequenciaParcial, htmlAttributes: new { id = "hdnSeqParcial" })
+    @Html.HiddenFor(m => m.QtdeSeq, htmlAttributes: new { id = "hdnQtdeSeq" })
+    @Html.HiddenFor(m => m.Code)
+    @Html.HiddenFor(m => m.Quantidade)
+    @Html.HiddenFor(m => m.QtdeAnalisada)
+    @Html.HiddenFor(m => m.CodEtapa)
+    @Html.HiddenFor(m => m.CodItem)
+    @Html.HiddenFor(m => m.DescItem)
+    @Html.HiddenFor(m => m.CodModelo)
+    @Html.HiddenFor(m => m.CodPN)
+    @Html.HiddenFor(m => m.NomePN)
+    @Html.HiddenFor(m => m.CodUsuario)
+    @Html.HiddenFor(m => m.DataDoc)
+    @Html.HiddenFor(m => m.LineNum)
+    <label class="col-md-1">Data Doc.</label>
+    @Html.TextBoxFor(m => m.DataDocStr, htmlAttributes: new { @readonly = "readonly", @class = "col-md-1" })
+    @if (Model != null && Model.TipoDoc == "RE")
+    {
+        <label class="col-md-1">Nr. NF</label>
+    }
+    else
+    {
+        <label class="col-md-1">Nr. Pedido</label>
+    }
+    @Html.TextBoxFor(m => m.NrNF, htmlAttributes: new { @readonly = "readonly", @class = "col-md-1" })
+    <label class="col-md-1">Tipo Doc.</label>
+    @Html.TextBoxFor(m => m.TipoDoc, htmlAttributes: new { @readonly = "readonly", @class = "col-md-1" })
+    <label class="col-md-1">Ficha</label>
+    @Html.TextBoxFor(m => m.DescModelo, htmlAttributes: new { @readonly = "readonly", @class = "col-md-3" })
+    <br />
+</div>
+<div class="form-group">
+    <label class="col-md-1">Fornecedor</label>
+    @Html.TextBoxFor(m => m.PN, htmlAttributes: new { @readonly = "readonly", @class = "col-md-3" })
+    <label class="col-md-1">Item</label>
+    @Html.TextBoxFor(m => m.Item, htmlAttributes: new { @readonly = "readonly", @class = "col-md-3" })
+    <label class="col-md-1">Etapa</label>
+    @Html.TextBoxFor(m => m.DescEtapa, htmlAttributes: new { @readonly = "readonly", @class = "col-md-3" })
+    <br />
+</div>
+<div>
+    <label class="col-md-1">Data Insp.</label>
+    @Html.TextBoxFor(m => m.DataInspStr, htmlAttributes: new { type = "date", @class = "col-md-3" })
+    <label class="col-md-1">Quantidade</label>
+    @if (Model.TipoDoc == "OP" && CVA.Portal.Producao.Web.Helper.CvaSession.Parametros.PermiteParcial)
+    {
+        @Html.TextBoxFor(m => m.SeqDesc, htmlAttributes: new { @readonly = "readonly", @class = "col-md-1" })
+    }
+    else
+    {
+        @Html.TextBoxFor(m => m.QtdeAnalisada, htmlAttributes: new { @readonly = "readonly", @class = "col-md-1" })
+    }
+    <label class="col-md-1">Situacao</label>
+    @Html.DropDownList("Status", null, htmlAttributes: new { @class = "col-md-1" })
+    <label class="col-md-1">Status</label>
+    @Html.DropDownList("StatusLote", null, "", htmlAttributes: new { required = "required", @class = "col-md-1" })
+    <label class="col-md-1">Lote/Série</label>
+    @Html.TextBoxFor(m => m.LoteSerie, htmlAttributes: new { @class = "col-md-1" })
+    @*<label class="col-md-1">Colaborador</label>
+        @Html.TextBoxFor(m => m.CodUsuario, htmlAttributes: new { @readonly = "readonly", @class = "col-md-1" })*@
+</div>
+<div class="x_title">
+    <div class="clearfix"></div>
+</div>
+@Html.Partial("TabelaFicha")

@@ -1,0 +1,89 @@
+﻿@Styles.Render("~/Content/Loading")
+<div class="alert alert-info" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <strong>Atenção!</strong> Para enviar mensagem para todos os colaboradores <b>não</b> selecione o usuário e perfil
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Informar<strong> Usuários/Grupos</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Usuário</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <p id="loading00" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                    <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                    <select class="form-control" ng-model="message.User" ng-disabled="message.ProfileId != null" ng-options="selected.Id as selected.Name for selected in UserList">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o usuário</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Perfil</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <p id="loading01" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                    <span class="input-group-addon"><span class="fa fa-key"></span></span>
+                                    <select class="form-control" ng-model="message.ProfileId" ng-disabled="message.User != null" ng-options="selected.Id as selected.Name for selected in ProfileList">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o perfil/grupo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-info" ng-click="AddLines()">Adicionar</button>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead style="background-color:lightgray">
+                                    <tr>
+                                        <td class="col-md-3"><b>Usuário</b></td>
+                                        <td class="col-md-3"><b>Tipo</b></td>
+                                        <td class="col-md-3"><b>#</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="up in UserSelectedList">
+                                        <td>{{up.Name}}</td>
+                                        <td>{{up.Tipo}}</td>
+                                        <td><button type="button" class="btn btn-danger" ng-click="RemoveLine($index, 1)">X</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-striped">
+                                <thead style="background-color:lightgray">
+                                    <tr>
+                                        <td class="col-md-3"><b>Perfil</b></td>
+                                        <td class="col-md-3"><b>Tipo</b></td>
+                                        <td class="col-md-3"><b>#</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="up in ProfileSelectedList">
+                                        <td>{{up.Name}}</td>
+                                        <td>{{up.Tipo}}</td>
+                                        <td><button type="button" class="btn btn-danger" ng-click="RemoveLine($index, 2)">X</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

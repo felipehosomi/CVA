@@ -1,0 +1,115 @@
+﻿@model CVA.Portal.Producao.Model.Producao.ProducaoModel
+<div id="divEPFilho">
+    @if (Model != null && Model.Estrutura != null && Model.Estrutura.Count > 0)
+    {
+        <label class="col-md-1 control-label">OP</label>
+        <div class="col-md-2">
+            <div class="input-group">
+                @Html.TextBoxFor(m => m.NrOP, htmlAttributes: new { @readonly = "readonly", @class = "form-control" })
+                @Html.Hidden("hdnQtdeLinhas", Model.Estrutura.Count.ToString(), new { id = "hdnQtdeLinhas" })
+                @Html.HiddenFor(m => m.ItemCode, htmlAttributes: new { id = "hdnItem" })
+                @Html.HiddenFor(m => m.CodEtapa)
+                @Html.HiddenFor(m => m.Etapa, htmlAttributes: new { id = "hdnEtapa" })
+                @Html.HiddenFor(m => m.DocEntry, htmlAttributes: new { id = "hdnOP" })
+                @Html.HiddenFor(m => m.DocEntryPedido)
+                @Html.HiddenFor(m => m.NrPedido)
+                @Html.HiddenFor(m => m.ItemName)
+                @Html.HiddenFor(m => m.Quantidade, htmlAttributes: new { id = "hdnQtdeOP" })
+            </div>
+        </div>
+        <label class="col-md-1 control-label">Etapa</label>
+        <div class="col-md-5">
+            <div class="input-group">
+                @Html.TextBoxFor(m => m.Etapa, htmlAttributes: new { @readonly = "readonly", @class = "form-control", style = "width: 300px" })
+            </div>
+        </div>
+        <label class="col-md-2 control-label">Concluir Etapa</label>
+            <div class="col-md-1">
+                <div class="input-group no-margin">
+                    @Html.CheckBoxFor(m => m.Concluir, new { id = "cbxConcluir" })
+                </div>
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.Item, htmlAttributes: new { @readonly = "readonly", @class = "form-control" })
+            </div>
+            <label class="col-md-1 control-label">Qtde</label>
+            <div class="col-md-2">
+                <div class="input-group">
+                    @if (CVA.Portal.Producao.Web.Helper.CvaSession.Parametros.PermiteParcial)
+                    {
+                        @Html.TextBoxFor(m => m.Quantidade, htmlAttributes: new { id = "tbxQtdeProd", type = "number", max = Model.Estrutura[0].QtdeOP, @class = "form-control", onblur = "calcularQtdeSaida()" })
+                    }
+                    else
+                    {
+                        @Html.TextBoxFor(m => m.Quantidade, htmlAttributes: new { @readonly = "readonly", id = "tbxQtdeProd", type = "number", max = Model.Estrutura[0].QtdeOP, @class = "form-control", onblur = "calcularQtdeSaida()" })
+                    }
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div style="max-height: 450px; overflow-y: auto">
+                <table id="tblEstruturaProducao" class="table table-striped table-bordered" style="margin-top: 10px">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Descrição</th>
+                            <th>Qtde. Planejada</th>
+                            <th>Qtde. Emitida</th>
+                            <th>Qtde. Realizada</th>
+                            <th>Lote/Série</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Estrutura.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.HiddenFor(m => m.Estrutura[i].DocEntry)
+                                    @Html.HiddenFor(m => m.Estrutura[i].LineNum)
+                                    @Html.HiddenFor(m => m.Estrutura[i].CodEtapa)
+                                    @Html.HiddenFor(m => m.Estrutura[i].CodMP)
+                                    @*@Html.HiddenFor(m => m.Estrutura[i].DescMP)*@
+                                    @Html.HiddenFor(m => m.Estrutura[i].Quantidade)
+                                    @Html.HiddenFor(m => m.Estrutura[i].QtdeBase, new { id = "hdnQtdeBase" + i })
+                                    @Html.HiddenFor(m => m.Estrutura[i].QtdeEmitida)
+                                    @Html.HiddenFor(m => m.Estrutura[i].ControlePorLote)
+                                    @Html.HiddenFor(m => m.Estrutura[i].ControlePorSerie)
+                                    @Html.HiddenFor(m => m.Estrutura[i].DocDateStr)
+                                    @Model.Estrutura[i].CodMP
+                                </td>
+                                <td>
+                                    @Model.Estrutura[i].DescMP
+                                </td>
+                                <td>
+                                    @Model.Estrutura[i].Quantidade
+                                </td>
+                                <td>
+                                    @Model.Estrutura[i].QtdeEmitida
+                                </td>
+                                <td>
+                                    @if (Model.Estrutura[i].MetodoBaixa != "B")
+                                    {
+                                        @Html.TextBoxFor(m => m.Estrutura[i].QtdeRealizada, htmlAttributes: new { id = "tbxQtde" + Model.Estrutura[i].LineNum, @class = "form-control", type = "number", step = Model.Estrutura[i].DecimalPlacesUI, min = "0" })
+                                    }
+                                    else
+                                    {
+                                        @Html.TextBoxFor(m => m.Estrutura[i].QtdeRealizada, htmlAttributes: new { id = "tbxQtde" + Model.Estrutura[i].LineNum, @class = "form-control", @readonly = "readonly" })
+                                    }
+                                </td>
+                                <td style="text-align: center">
+                                    @if (Model.Estrutura[i].ControlePorLote == "Y")
+                                    {
+                                        <button type="button" onclick="loteSerieModal(@Model.Estrutura[i].DocEntry, @Model.Estrutura[i].LineNum, '@Model.Estrutura[i].CodMP', '@Model.Estrutura[i].DescMP', '@Model.Estrutura[i].ControlePorLote', '@Model.Estrutura[i].ControlePorSerie', '@Model.Estrutura[i].Deposito')" data-toggle="modal" data-target="#modal-lote" class="btn btn-small btn-warning">Lotes</button>
+                                    }
+                                    else if (Model.Estrutura[i].ControlePorSerie == "Y")
+                                    {
+                                        <button type="button" onclick="loteSerieModal(@Model.Estrutura[i].DocEntry, @Model.Estrutura[i].LineNum, '@Model.Estrutura[i].CodMP', '@Model.Estrutura[i].DescMP', '@Model.Estrutura[i].ControlePorLote', '@Model.Estrutura[i].ControlePorSerie', '@Model.Estrutura[i].Deposito')" data-toggle="modal" data-target="#modal-lote" class="btn btn-small btn-warning">Nrs. Série</button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+    }
+</div>
+

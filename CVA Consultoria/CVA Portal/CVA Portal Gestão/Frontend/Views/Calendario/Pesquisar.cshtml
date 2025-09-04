@@ -1,0 +1,68 @@
+﻿@model MODEL.Classes.CalendarModel[]
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Calendário</a></li>
+    <li class="active">Pesquisar</li>
+</ul>
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-right"></span> Calendário</h2>
+</div>
+<div class="page-content-wrap" ng-controller="CalendarController">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <h3 class="panel-title">Registros </h3>
+                    <ul class="panel-controls">
+                        <li>
+                            <button onclick="NewCalendar()" type="button" class="btn btn-success pull-right">Criar Calendário <span class="fa fa-floppy-o fa-right"></span></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table" id="DataTables_Table_1">
+                            <thead>
+                                <tr>
+                                    <td>Nome</td>
+                                    <td>Início</td>
+                                    <td>Fim</td>
+                                    <td>#</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < Model.Count(); i++)
+                                {
+                                    <tr>
+                                        <td>@Model[i].Name</td>
+                                        <td>@Model[i].InitialDate</td>
+                                        <td>@Model[i].FinishDate</td>
+                                        <td><button type="button" onclick="Edit(@Model[i].Id)" class="btn btn-default editar-button"><span class="fa fa-pencil"></span></button></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+<script>
+    $('#DataTables_Table_1').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Portuguese-Brasil.json"
+        }
+    });
+    function NewCalendar() {
+        window.location.href = '/Calendario/CriarCalendario';
+    }
+    function Edit(id) {
+        window.location.href = '/Calendario/Editar?calendarID=' + id;
+    }
+</script>

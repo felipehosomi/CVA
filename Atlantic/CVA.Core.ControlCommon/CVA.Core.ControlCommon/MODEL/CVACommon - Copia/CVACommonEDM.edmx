@@ -1,0 +1,803 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CVA_ATL_REPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CVA_BAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="UPD" Type="datetime" />
+          <Property Name="STU" Type="int" />
+          <Property Name="SRVR" Type="varchar" MaxLength="200" />
+          <Property Name="PAS" Type="varchar" MaxLength="200" />
+          <Property Name="COMP" Type="varchar" MaxLength="200" />
+          <Property Name="USE_TRU" Type="int" />
+          <Property Name="UNAME" Type="varchar" MaxLength="200" />
+          <Property Name="DB_UNAME" Type="varchar" MaxLength="200" />
+          <Property Name="DB_PAS" Type="varchar" MaxLength="200" />
+          <Property Name="DB_TYP" Type="int" />
+          <Property Name="DB_SRVR" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="CVA_FUNC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="UPD" Type="datetime" />
+          <Property Name="STU" Type="int" />
+          <Property Name="FUNC" Type="varchar" MaxLength="200" />
+          <Property Name="DSCR" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="CVA_OBJ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="UPD" Type="datetime" />
+          <Property Name="OBJ" Type="varchar" MaxLength="200" />
+          <Property Name="DSCR" Type="varchar" MaxLength="2000" />
+          <Property Name="STU" Type="int" />
+        </EntityType>
+        <EntityType Name="CVA_REG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="UPD" Type="datetime" />
+          <Property Name="STU" Type="int" />
+          <Property Name="BAS" Type="int" />
+          <Property Name="CODE" Type="varchar" MaxLength="200" />
+          <Property Name="OBJ" Type="int" />
+          <Property Name="FUNC" Type="int" />
+          <Property Name="BAS_ERR" Type="int" />
+        </EntityType>
+        <EntityType Name="CVA_REG_LOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="UPD" Type="datetime" />
+          <Property Name="STU" Type="int" />
+          <Property Name="REG" Type="int" />
+          <Property Name="MSG" Type="varchar" MaxLength="2000" Nullable="false" />
+          <Property Name="BAS" Type="int" />
+        </EntityType>
+        <EntityType Name="CVA_STU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="UPD" Type="datetime" />
+          <Property Name="STU" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="CVA_TIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="UPD" Type="datetime" />
+          <Property Name="STU" Type="int" />
+          <Property Name="TIM" Type="int" />
+          <Property Name="NUM_OBJ" Type="int" />
+        </EntityType>
+        <EntityType Name="CVA_TIP_REG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="UPD" Type="datetime" />
+          <Property Name="STU" Type="int" />
+          <Property Name="TIP_REG" Type="varchar" MaxLength="200" />
+          <Property Name="DSCR" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <Association Name="FK__CVA_BAS__STU__1DE57479">
+          <End Role="CVA_STU" Type="Self.CVA_STU" Multiplicity="0..1" />
+          <End Role="CVA_BAS" Type="Self.CVA_BAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_BAS">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_FUNC__STU__1ED998B2">
+          <End Role="CVA_STU" Type="Self.CVA_STU" Multiplicity="0..1" />
+          <End Role="CVA_FUNC" Type="Self.CVA_FUNC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_FUNC">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_OBJ__STU__1FCDBCEB">
+          <End Role="CVA_STU" Type="Self.CVA_STU" Multiplicity="0..1" />
+          <End Role="CVA_OBJ" Type="Self.CVA_OBJ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_OBJ">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG__BAS__20C1E124">
+          <End Role="CVA_BAS" Type="Self.CVA_BAS" Multiplicity="0..1" />
+          <End Role="CVA_REG" Type="Self.CVA_REG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_BAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG">
+              <PropertyRef Name="BAS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG__BAS_ERR__24927208">
+          <End Role="CVA_BAS" Type="Self.CVA_BAS" Multiplicity="0..1" />
+          <End Role="CVA_REG" Type="Self.CVA_REG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_BAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG">
+              <PropertyRef Name="BAS_ERR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG__FUNC__21B6055D">
+          <End Role="CVA_FUNC" Type="Self.CVA_FUNC" Multiplicity="0..1" />
+          <End Role="CVA_REG" Type="Self.CVA_REG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_FUNC">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG">
+              <PropertyRef Name="FUNC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG__OBJ__22AA2996">
+          <End Role="CVA_OBJ" Type="Self.CVA_OBJ" Multiplicity="0..1" />
+          <End Role="CVA_REG" Type="Self.CVA_REG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_OBJ">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG">
+              <PropertyRef Name="OBJ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG__STU__239E4DCF">
+          <End Role="CVA_STU" Type="Self.CVA_STU" Multiplicity="0..1" />
+          <End Role="CVA_REG" Type="Self.CVA_REG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG_LOG__BAS__25869641">
+          <End Role="CVA_BAS" Type="Self.CVA_BAS" Multiplicity="0..1" />
+          <End Role="CVA_REG_LOG" Type="Self.CVA_REG_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_BAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG_LOG">
+              <PropertyRef Name="BAS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG_LOG__REG__267ABA7A">
+          <End Role="CVA_REG" Type="Self.CVA_REG" Multiplicity="0..1" />
+          <End Role="CVA_REG_LOG" Type="Self.CVA_REG_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_REG">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG_LOG">
+              <PropertyRef Name="REG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG_LOG__STU__276EDEB3">
+          <End Role="CVA_STU" Type="Self.CVA_STU" Multiplicity="0..1" />
+          <End Role="CVA_REG_LOG" Type="Self.CVA_REG_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG_LOG">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_TIM__STU__286302EC">
+          <End Role="CVA_STU" Type="Self.CVA_STU" Multiplicity="0..1" />
+          <End Role="CVA_TIM" Type="Self.CVA_TIM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_TIM">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_TIP_REG__STU__29572725">
+          <End Role="CVA_STU" Type="Self.CVA_STU" Multiplicity="0..1" />
+          <End Role="CVA_TIP_REG" Type="Self.CVA_TIP_REG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_TIP_REG">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CVA_ATL_REPModelStoreContainer">
+          <EntitySet Name="CVA_BAS" EntityType="Self.CVA_BAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CVA_FUNC" EntityType="Self.CVA_FUNC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CVA_OBJ" EntityType="Self.CVA_OBJ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CVA_REG" EntityType="Self.CVA_REG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CVA_REG_LOG" EntityType="Self.CVA_REG_LOG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CVA_STU" EntityType="Self.CVA_STU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CVA_TIM" EntityType="Self.CVA_TIM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CVA_TIP_REG" EntityType="Self.CVA_TIP_REG" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CVA_BAS__STU__1DE57479" Association="Self.FK__CVA_BAS__STU__1DE57479">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_BAS" EntitySet="CVA_BAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_FUNC__STU__1ED998B2" Association="Self.FK__CVA_FUNC__STU__1ED998B2">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_FUNC" EntitySet="CVA_FUNC" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_OBJ__STU__1FCDBCEB" Association="Self.FK__CVA_OBJ__STU__1FCDBCEB">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_OBJ" EntitySet="CVA_OBJ" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG__BAS__20C1E124" Association="Self.FK__CVA_REG__BAS__20C1E124">
+            <End Role="CVA_BAS" EntitySet="CVA_BAS" />
+            <End Role="CVA_REG" EntitySet="CVA_REG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG__BAS_ERR__24927208" Association="Self.FK__CVA_REG__BAS_ERR__24927208">
+            <End Role="CVA_BAS" EntitySet="CVA_BAS" />
+            <End Role="CVA_REG" EntitySet="CVA_REG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG__FUNC__21B6055D" Association="Self.FK__CVA_REG__FUNC__21B6055D">
+            <End Role="CVA_FUNC" EntitySet="CVA_FUNC" />
+            <End Role="CVA_REG" EntitySet="CVA_REG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG__OBJ__22AA2996" Association="Self.FK__CVA_REG__OBJ__22AA2996">
+            <End Role="CVA_OBJ" EntitySet="CVA_OBJ" />
+            <End Role="CVA_REG" EntitySet="CVA_REG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG__STU__239E4DCF" Association="Self.FK__CVA_REG__STU__239E4DCF">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_REG" EntitySet="CVA_REG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG_LOG__BAS__25869641" Association="Self.FK__CVA_REG_LOG__BAS__25869641">
+            <End Role="CVA_BAS" EntitySet="CVA_BAS" />
+            <End Role="CVA_REG_LOG" EntitySet="CVA_REG_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG_LOG__REG__267ABA7A" Association="Self.FK__CVA_REG_LOG__REG__267ABA7A">
+            <End Role="CVA_REG" EntitySet="CVA_REG" />
+            <End Role="CVA_REG_LOG" EntitySet="CVA_REG_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG_LOG__STU__276EDEB3" Association="Self.FK__CVA_REG_LOG__STU__276EDEB3">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_REG_LOG" EntitySet="CVA_REG_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_TIM__STU__286302EC" Association="Self.FK__CVA_TIM__STU__286302EC">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_TIM" EntitySet="CVA_TIM" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_TIP_REG__STU__29572725" Association="Self.FK__CVA_TIP_REG__STU__29572725">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_TIP_REG" EntitySet="CVA_TIP_REG" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CVA_ATL_REPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Base">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPD" Type="DateTime" Precision="3" />
+          <Property Name="STU" Type="Int32" />
+          <Property Name="SRVR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PAS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="COMP" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="USE_TRU" Type="Int32" />
+          <Property Name="UNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DB_UNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DB_PAS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DB_TYP" Type="Int32" />
+          <Property Name="DB_SRVR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CVA_STU" Relationship="Self.FK__CVA_BAS__STU__1DE57479" FromRole="CVA_BAS" ToRole="CVA_STU" />
+          <NavigationProperty Name="CVA_REG" Relationship="Self.FK__CVA_REG__BAS__20C1E124" FromRole="CVA_BAS" ToRole="CVA_REG" />
+          <NavigationProperty Name="CVA_REG1" Relationship="Self.FK__CVA_REG__BAS_ERR__24927208" FromRole="CVA_BAS" ToRole="CVA_REG" />
+          <NavigationProperty Name="CVA_REG_LOG" Relationship="Self.FK__CVA_REG_LOG__BAS__25869641" FromRole="CVA_BAS" ToRole="CVA_REG_LOG" />
+        </EntityType>
+        <EntityType Name="Funcao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPD" Type="DateTime" Precision="3" />
+          <Property Name="STU" Type="Int32" />
+          <Property Name="FUNC" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DSCR" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CVA_STU" Relationship="Self.FK__CVA_FUNC__STU__1ED998B2" FromRole="CVA_FUNC" ToRole="CVA_STU" />
+          <NavigationProperty Name="CVA_REG" Relationship="Self.FK__CVA_REG__FUNC__21B6055D" FromRole="CVA_FUNC" ToRole="CVA_REG" />
+        </EntityType>
+        <EntityType Name="Objeto">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPD" Type="DateTime" Precision="3" />
+          <Property Name="OBJ" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DSCR" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="STU" Type="Int32" />
+          <NavigationProperty Name="CVA_STU" Relationship="Self.FK__CVA_OBJ__STU__1FCDBCEB" FromRole="CVA_OBJ" ToRole="CVA_STU" />
+          <NavigationProperty Name="CVA_REG" Relationship="Self.FK__CVA_REG__OBJ__22AA2996" FromRole="CVA_OBJ" ToRole="CVA_REG" />
+        </EntityType>
+        <EntityType Name="Registro">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPD" Type="DateTime" Precision="3" />
+          <Property Name="STU" Type="Int32" />
+          <Property Name="BAS" Type="Int32" />
+          <Property Name="CODE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OBJ" Type="Int32" />
+          <Property Name="FUNC" Type="Int32" />
+          <Property Name="BAS_ERR" Type="Int32" />
+          <NavigationProperty Name="CVA_BAS" Relationship="Self.FK__CVA_REG__BAS__20C1E124" FromRole="CVA_REG" ToRole="CVA_BAS" />
+          <NavigationProperty Name="CVA_BAS1" Relationship="Self.FK__CVA_REG__BAS_ERR__24927208" FromRole="CVA_REG" ToRole="CVA_BAS" />
+          <NavigationProperty Name="CVA_FUNC" Relationship="Self.FK__CVA_REG__FUNC__21B6055D" FromRole="CVA_REG" ToRole="CVA_FUNC" />
+          <NavigationProperty Name="CVA_OBJ" Relationship="Self.FK__CVA_REG__OBJ__22AA2996" FromRole="CVA_REG" ToRole="CVA_OBJ" />
+          <NavigationProperty Name="CVA_STU" Relationship="Self.FK__CVA_REG__STU__239E4DCF" FromRole="CVA_REG" ToRole="CVA_STU" />
+          <NavigationProperty Name="CVA_REG_LOG" Relationship="Self.FK__CVA_REG_LOG__REG__267ABA7A" FromRole="CVA_REG" ToRole="CVA_REG_LOG" />
+        </EntityType>
+        <EntityType Name="RegistroLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPD" Type="DateTime" Precision="3" />
+          <Property Name="STU" Type="Int32" />
+          <Property Name="REG" Type="Int32" />
+          <Property Name="MSG" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BAS" Type="Int32" />
+          <NavigationProperty Name="CVA_BAS" Relationship="Self.FK__CVA_REG_LOG__BAS__25869641" FromRole="CVA_REG_LOG" ToRole="CVA_BAS" />
+          <NavigationProperty Name="CVA_REG" Relationship="Self.FK__CVA_REG_LOG__REG__267ABA7A" FromRole="CVA_REG_LOG" ToRole="CVA_REG" />
+          <NavigationProperty Name="CVA_STU" Relationship="Self.FK__CVA_REG_LOG__STU__276EDEB3" FromRole="CVA_REG_LOG" ToRole="CVA_STU" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPD" Type="DateTime" Precision="3" />
+          <Property Name="STU" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CVA_BAS" Relationship="Self.FK__CVA_BAS__STU__1DE57479" FromRole="CVA_STU" ToRole="CVA_BAS" />
+          <NavigationProperty Name="CVA_FUNC" Relationship="Self.FK__CVA_FUNC__STU__1ED998B2" FromRole="CVA_STU" ToRole="CVA_FUNC" />
+          <NavigationProperty Name="CVA_OBJ" Relationship="Self.FK__CVA_OBJ__STU__1FCDBCEB" FromRole="CVA_STU" ToRole="CVA_OBJ" />
+          <NavigationProperty Name="CVA_REG" Relationship="Self.FK__CVA_REG__STU__239E4DCF" FromRole="CVA_STU" ToRole="CVA_REG" />
+          <NavigationProperty Name="CVA_REG_LOG" Relationship="Self.FK__CVA_REG_LOG__STU__276EDEB3" FromRole="CVA_STU" ToRole="CVA_REG_LOG" />
+          <NavigationProperty Name="CVA_TIM" Relationship="Self.FK__CVA_TIM__STU__286302EC" FromRole="CVA_STU" ToRole="CVA_TIM" />
+          <NavigationProperty Name="CVA_TIP_REG" Relationship="Self.FK__CVA_TIP_REG__STU__29572725" FromRole="CVA_STU" ToRole="CVA_TIP_REG" />
+        </EntityType>
+        <EntityType Name="Timer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPD" Type="DateTime" Precision="3" />
+          <Property Name="STU" Type="Int32" />
+          <Property Name="TIM" Type="Int32" />
+          <Property Name="NUM_OBJ" Type="Int32" />
+          <NavigationProperty Name="CVA_STU" Relationship="Self.FK__CVA_TIM__STU__286302EC" FromRole="CVA_TIM" ToRole="CVA_STU" />
+        </EntityType>
+        <EntityType Name="TipoRegistro">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPD" Type="DateTime" Precision="3" />
+          <Property Name="STU" Type="Int32" />
+          <Property Name="TIP_REG" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DSCR" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CVA_STU" Relationship="Self.FK__CVA_TIP_REG__STU__29572725" FromRole="CVA_TIP_REG" ToRole="CVA_STU" />
+        </EntityType>
+        <Association Name="FK__CVA_BAS__STU__1DE57479">
+          <End Role="CVA_STU" Type="CVA_ATL_REPModel.Status" Multiplicity="0..1" />
+          <End Role="CVA_BAS" Type="CVA_ATL_REPModel.Base" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_BAS">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG__BAS__20C1E124">
+          <End Role="CVA_BAS" Type="CVA_ATL_REPModel.Base" Multiplicity="0..1" />
+          <End Role="CVA_REG" Type="CVA_ATL_REPModel.Registro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_BAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG">
+              <PropertyRef Name="BAS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG__BAS_ERR__24927208">
+          <End Role="CVA_BAS" Type="CVA_ATL_REPModel.Base" Multiplicity="0..1" />
+          <End Role="CVA_REG" Type="CVA_ATL_REPModel.Registro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_BAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG">
+              <PropertyRef Name="BAS_ERR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG_LOG__BAS__25869641">
+          <End Role="CVA_BAS" Type="CVA_ATL_REPModel.Base" Multiplicity="0..1" />
+          <End Role="CVA_REG_LOG" Type="CVA_ATL_REPModel.RegistroLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_BAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG_LOG">
+              <PropertyRef Name="BAS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_FUNC__STU__1ED998B2">
+          <End Role="CVA_STU" Type="CVA_ATL_REPModel.Status" Multiplicity="0..1" />
+          <End Role="CVA_FUNC" Type="CVA_ATL_REPModel.Funcao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_FUNC">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG__FUNC__21B6055D">
+          <End Role="CVA_FUNC" Type="CVA_ATL_REPModel.Funcao" Multiplicity="0..1" />
+          <End Role="CVA_REG" Type="CVA_ATL_REPModel.Registro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_FUNC">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG">
+              <PropertyRef Name="FUNC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_OBJ__STU__1FCDBCEB">
+          <End Role="CVA_STU" Type="CVA_ATL_REPModel.Status" Multiplicity="0..1" />
+          <End Role="CVA_OBJ" Type="CVA_ATL_REPModel.Objeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_OBJ">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG__OBJ__22AA2996">
+          <End Role="CVA_OBJ" Type="CVA_ATL_REPModel.Objeto" Multiplicity="0..1" />
+          <End Role="CVA_REG" Type="CVA_ATL_REPModel.Registro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_OBJ">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG">
+              <PropertyRef Name="OBJ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG__STU__239E4DCF">
+          <End Role="CVA_STU" Type="CVA_ATL_REPModel.Status" Multiplicity="0..1" />
+          <End Role="CVA_REG" Type="CVA_ATL_REPModel.Registro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG_LOG__REG__267ABA7A">
+          <End Role="CVA_REG" Type="CVA_ATL_REPModel.Registro" Multiplicity="0..1" />
+          <End Role="CVA_REG_LOG" Type="CVA_ATL_REPModel.RegistroLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_REG">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG_LOG">
+              <PropertyRef Name="REG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_REG_LOG__STU__276EDEB3">
+          <End Role="CVA_STU" Type="CVA_ATL_REPModel.Status" Multiplicity="0..1" />
+          <End Role="CVA_REG_LOG" Type="CVA_ATL_REPModel.RegistroLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_REG_LOG">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_TIM__STU__286302EC">
+          <End Role="CVA_STU" Type="CVA_ATL_REPModel.Status" Multiplicity="0..1" />
+          <End Role="CVA_TIM" Type="CVA_ATL_REPModel.Timer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_TIM">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CVA_TIP_REG__STU__29572725">
+          <End Role="CVA_STU" Type="CVA_ATL_REPModel.Status" Multiplicity="0..1" />
+          <End Role="CVA_TIP_REG" Type="CVA_ATL_REPModel.TipoRegistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_STU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_TIP_REG">
+              <PropertyRef Name="STU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CVACommonEDM" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CVA_BAS" EntityType="CVA_ATL_REPModel.Base" />
+          <EntitySet Name="CVA_FUNC" EntityType="CVA_ATL_REPModel.Funcao" />
+          <EntitySet Name="CVA_OBJ" EntityType="CVA_ATL_REPModel.Objeto" />
+          <EntitySet Name="CVA_REG" EntityType="CVA_ATL_REPModel.Registro" />
+          <EntitySet Name="CVA_REG_LOG" EntityType="CVA_ATL_REPModel.RegistroLog" />
+          <EntitySet Name="CVA_STU" EntityType="CVA_ATL_REPModel.Status" />
+          <EntitySet Name="CVA_TIM" EntityType="CVA_ATL_REPModel.Timer" />
+          <EntitySet Name="CVA_TIP_REG" EntityType="CVA_ATL_REPModel.TipoRegistro" />
+          <AssociationSet Name="FK__CVA_BAS__STU__1DE57479" Association="Self.FK__CVA_BAS__STU__1DE57479">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_BAS" EntitySet="CVA_BAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG__BAS__20C1E124" Association="Self.FK__CVA_REG__BAS__20C1E124">
+            <End Role="CVA_BAS" EntitySet="CVA_BAS" />
+            <End Role="CVA_REG" EntitySet="CVA_REG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG__BAS_ERR__24927208" Association="Self.FK__CVA_REG__BAS_ERR__24927208">
+            <End Role="CVA_BAS" EntitySet="CVA_BAS" />
+            <End Role="CVA_REG" EntitySet="CVA_REG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG_LOG__BAS__25869641" Association="Self.FK__CVA_REG_LOG__BAS__25869641">
+            <End Role="CVA_BAS" EntitySet="CVA_BAS" />
+            <End Role="CVA_REG_LOG" EntitySet="CVA_REG_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_FUNC__STU__1ED998B2" Association="Self.FK__CVA_FUNC__STU__1ED998B2">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_FUNC" EntitySet="CVA_FUNC" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG__FUNC__21B6055D" Association="Self.FK__CVA_REG__FUNC__21B6055D">
+            <End Role="CVA_FUNC" EntitySet="CVA_FUNC" />
+            <End Role="CVA_REG" EntitySet="CVA_REG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_OBJ__STU__1FCDBCEB" Association="Self.FK__CVA_OBJ__STU__1FCDBCEB">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_OBJ" EntitySet="CVA_OBJ" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG__OBJ__22AA2996" Association="Self.FK__CVA_REG__OBJ__22AA2996">
+            <End Role="CVA_OBJ" EntitySet="CVA_OBJ" />
+            <End Role="CVA_REG" EntitySet="CVA_REG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG__STU__239E4DCF" Association="Self.FK__CVA_REG__STU__239E4DCF">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_REG" EntitySet="CVA_REG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG_LOG__REG__267ABA7A" Association="Self.FK__CVA_REG_LOG__REG__267ABA7A">
+            <End Role="CVA_REG" EntitySet="CVA_REG" />
+            <End Role="CVA_REG_LOG" EntitySet="CVA_REG_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_REG_LOG__STU__276EDEB3" Association="Self.FK__CVA_REG_LOG__STU__276EDEB3">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_REG_LOG" EntitySet="CVA_REG_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_TIM__STU__286302EC" Association="Self.FK__CVA_TIM__STU__286302EC">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_TIM" EntitySet="CVA_TIM" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CVA_TIP_REG__STU__29572725" Association="Self.FK__CVA_TIP_REG__STU__29572725">
+            <End Role="CVA_STU" EntitySet="CVA_STU" />
+            <End Role="CVA_TIP_REG" EntitySet="CVA_TIP_REG" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CVA_ATL_REPModelStoreContainer" CdmEntityContainer="CVACommonEDM">
+          <EntitySetMapping Name="CVA_BAS">
+            <EntityTypeMapping TypeName="CVA_ATL_REPModel.Base">
+              <MappingFragment StoreEntitySet="CVA_BAS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="UPD" ColumnName="UPD" />
+                <ScalarProperty Name="STU" ColumnName="STU" />
+                <ScalarProperty Name="SRVR" ColumnName="SRVR" />
+                <ScalarProperty Name="PAS" ColumnName="PAS" />
+                <ScalarProperty Name="COMP" ColumnName="COMP" />
+                <ScalarProperty Name="USE_TRU" ColumnName="USE_TRU" />
+                <ScalarProperty Name="UNAME" ColumnName="UNAME" />
+                <ScalarProperty Name="DB_UNAME" ColumnName="DB_UNAME" />
+                <ScalarProperty Name="DB_PAS" ColumnName="DB_PAS" />
+                <ScalarProperty Name="DB_TYP" ColumnName="DB_TYP" />
+                <ScalarProperty Name="DB_SRVR" ColumnName="DB_SRVR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVA_FUNC">
+            <EntityTypeMapping TypeName="CVA_ATL_REPModel.Funcao">
+              <MappingFragment StoreEntitySet="CVA_FUNC">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="UPD" ColumnName="UPD" />
+                <ScalarProperty Name="STU" ColumnName="STU" />
+                <ScalarProperty Name="FUNC" ColumnName="FUNC" />
+                <ScalarProperty Name="DSCR" ColumnName="DSCR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVA_OBJ">
+            <EntityTypeMapping TypeName="CVA_ATL_REPModel.Objeto">
+              <MappingFragment StoreEntitySet="CVA_OBJ">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="UPD" ColumnName="UPD" />
+                <ScalarProperty Name="OBJ" ColumnName="OBJ" />
+                <ScalarProperty Name="DSCR" ColumnName="DSCR" />
+                <ScalarProperty Name="STU" ColumnName="STU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVA_REG">
+            <EntityTypeMapping TypeName="CVA_ATL_REPModel.Registro">
+              <MappingFragment StoreEntitySet="CVA_REG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="UPD" ColumnName="UPD" />
+                <ScalarProperty Name="STU" ColumnName="STU" />
+                <ScalarProperty Name="BAS" ColumnName="BAS" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="OBJ" ColumnName="OBJ" />
+                <ScalarProperty Name="FUNC" ColumnName="FUNC" />
+                <ScalarProperty Name="BAS_ERR" ColumnName="BAS_ERR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVA_REG_LOG">
+            <EntityTypeMapping TypeName="CVA_ATL_REPModel.RegistroLog">
+              <MappingFragment StoreEntitySet="CVA_REG_LOG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="UPD" ColumnName="UPD" />
+                <ScalarProperty Name="STU" ColumnName="STU" />
+                <ScalarProperty Name="REG" ColumnName="REG" />
+                <ScalarProperty Name="MSG" ColumnName="MSG" />
+                <ScalarProperty Name="BAS" ColumnName="BAS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVA_STU">
+            <EntityTypeMapping TypeName="CVA_ATL_REPModel.Status">
+              <MappingFragment StoreEntitySet="CVA_STU">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="UPD" ColumnName="UPD" />
+                <ScalarProperty Name="STU" ColumnName="STU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVA_TIM">
+            <EntityTypeMapping TypeName="CVA_ATL_REPModel.Timer">
+              <MappingFragment StoreEntitySet="CVA_TIM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="UPD" ColumnName="UPD" />
+                <ScalarProperty Name="STU" ColumnName="STU" />
+                <ScalarProperty Name="TIM" ColumnName="TIM" />
+                <ScalarProperty Name="NUM_OBJ" ColumnName="NUM_OBJ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVA_TIP_REG">
+            <EntityTypeMapping TypeName="CVA_ATL_REPModel.TipoRegistro">
+              <MappingFragment StoreEntitySet="CVA_TIP_REG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="UPD" ColumnName="UPD" />
+                <ScalarProperty Name="STU" ColumnName="STU" />
+                <ScalarProperty Name="TIP_REG" ColumnName="TIP_REG" />
+                <ScalarProperty Name="DSCR" ColumnName="DSCR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

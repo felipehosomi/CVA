@@ -1,0 +1,52 @@
+﻿@model CVA.Portal.Producao.Model.Producao.ProducaoModel
+<div id="divLogFilho">
+    @if (Model != null && Model.Historico != null)
+    {
+        <label class="col-md-2 control-label">Item</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Item, htmlAttributes: new { @readonly = "readonly", @class = "form-control" })
+        </div>
+        <div class="clearfix"></div>
+        <label class="col-md-2 control-label">Nr. Pedido</label>
+        <div class="col-md-4">
+            @Html.TextBoxFor(m => m.NrPedido, htmlAttributes: new { @readonly = "readonly", @class = "form-control" })
+        </div>
+        <label class="col-md-2 control-label">Qtde</label>
+        <div class="col-md-4">
+            @Html.TextBoxFor(m => m.Quantidade, htmlAttributes: new { @readonly = "readonly", @class = "form-control" })
+        </div>
+        <div class="clearfix"></div>
+        <div style="display: block"></div>
+        <label class="col-md-2 control-label">Obs. Pedido</label>
+        <div class="col-md-4">
+            @Html.TextAreaFor(m => m.ObsPedido, htmlAttributes: new { @readonly = "readonly", @class = "form-control" })
+        </div>
+        <label class="col-md-2 control-label">Obs. OP</label>
+        <div class="col-md-4">
+            @Html.TextAreaFor(m => m.ObsOP, htmlAttributes: new { @readonly = "readonly", @class = "form-control" })
+        </div>
+        <div class="clearfix"></div>
+        <table class="table table-striped table-bordered" style="margin-top: 10px">
+            <thead>
+                <tr>
+                    <th>Etapa</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Historico.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.Historico[i].Etapa
+                        </td>
+                        <td>
+                            @Model.Historico[i].Data
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+

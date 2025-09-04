@@ -1,0 +1,90 @@
+﻿@Styles.Render("~/Content/Loading")
+<div class="panel-body">
+    <div class="page-content-wrap">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Pesquisar </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <label class="control-label">Colaborador</label>
+                                        <div class="input-group">
+                                            <p id="load-01" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                            <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                            <select name="status" class="form-control" ng-model="B.Colaborador" ng-options="selected.Id as selected.Nome for selected in CollaboratorList">
+                                                <option value="">Todos</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">Horas autorizadas</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><span class="fa fa-clock-o"></span></span>
+                                            <input type="text" class="form-control timePicker" id="Horas" ng-model="B.Horas" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">Data</label>
+                                        <div class="input-group">
+                                            <input type="date" class="form-control" ng-model="B.Data" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2" style="padding-top: 5px;">
+                                        <label class="control-label"> </label>
+                                        <div class="input-group">
+                                            <button ng-click="FiltrarHorasAutorizadas()" type="button" class="btn btn-info pull-right">Pesquisar</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2" style="padding-top: 5px;">
+                                        <label class="control-label"> </label>
+                                        <div class="input-group">
+                                            <button type="submit" class="btn btn-success pull-right" ng-click="AddHorasAutorizadas()">Autorizar Horas</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row" id="exportable">
+                            <table class="table" id="table-export">
+                                <thead>
+                                    <tr>
+                                        <td><b>Colaborador</b></td>
+                                        <td><b>Horas Autorizadas</b></td>
+                                        <td><b>Data</b></td>
+                                        <td><b>Autorizado por</b></td>
+                                        <td><b>#</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="line in HorasAutorizadas">
+                                        <td hidden>{{line.Id}}</td>
+                                        <td>{{line.ColaboradorNome}}</td>
+                                        <td>{{line.Horas | date:'HH:mm'}}</td>
+                                        <td>{{line.Data | date: "dd/MM/yy"}}</td>
+                                        <td>{{line.User.Name}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger" ng-click="RemoveHorasAutorizadas(line.Id)">X</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

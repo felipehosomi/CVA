@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0B74FE2-EB06-4F97-BA10-3F11111E5B6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAO</RootNamespace>
+    <AssemblyName>DAO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AddressDAO.cs" />
+    <Compile Include="Classes\CalendarDAO.cs" />
+    <Compile Include="Classes\ClientDAO.cs" />
+    <Compile Include="Classes\ChangeRequestDAO.cs" />
+    <Compile Include="Classes\AuthorizationDAO.cs" />
+    <Compile Include="Classes\NotePeriodDAO.cs" />
+    <Compile Include="Classes\StatusReportDAO.cs" />
+    <Compile Include="Classes\CollaboratorDAO.cs" />
+    <Compile Include="Classes\SpecialtyDAO.cs" />
+    <Compile Include="Classes\ExpenseTypeDAO.cs" />
+    <Compile Include="Classes\ContactDAO.cs" />
+    <Compile Include="Classes\ExpenseDAO.cs" />
+    <Compile Include="Classes\GenreDAO.cs" />
+    <Compile Include="Classes\MaritalStatusDAO.cs" />
+    <Compile Include="Classes\NoteDAO.cs" />
+    <Compile Include="Classes\SubPeriodDAO.cs" />
+    <Compile Include="Classes\PoliticExpenseDAO.cs" />
+    <Compile Include="Classes\ProjectParametersDAO.cs" />
+    <Compile Include="Classes\StepItemDAO.cs" />
+    <Compile Include="Classes\PricingItemDAO.cs" />
+    <Compile Include="Classes\MemberDAO.cs" />
+    <Compile Include="Classes\PricingDAO.cs" />
+    <Compile Include="Classes\ProjectTypeDAO.cs" />
+    <Compile Include="Classes\ProfileDAO.cs" />
+    <Compile Include="Classes\ProjectStepDAO.cs" />
+    <Compile Include="Classes\OpportunityDAO.cs" />
+    <Compile Include="Classes\PercentProjectDAO.cs" />
+    <Compile Include="Classes\ProjectDAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\StoredProcedure.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoredProcedure.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\StatusDAO.cs" />
+    <Compile Include="Classes\UfDAO.cs" />
+    <Compile Include="Classes\UnitMeterDAO.cs" />
+    <Compile Include="Classes\LoginDAO.cs" />
+    <Compile Include="Classes\UserDAO.cs" />
+    <Compile Include="Classes\UserViewDAO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StoredProcedure.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StoredProcedure.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AUXILIAR\AUXILIAR.csproj">
+      <Project>{88588ECE-C61A-4CCD-8F60-629916400B45}</Project>
+      <Name>AUXILIAR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MODEL\MODEL.csproj">
+      <Project>{b73f84d1-4795-4cac-ae20-3d39fdfaaf49}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_ADR_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_ADR_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON4_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON4_LCK.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON_EXT.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON_EXT_REL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON_GET_BY_DAY.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON_GET_BY_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON_GET_BY_PRJ.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON_GET_BY_PRJ_ESP.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON_GET_BY_PRJ_FAS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON_GET_BY_RSC.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON_GET_USR.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON_INACT.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_APON_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CAL1_DEL_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CAL1_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CAL1_GET_PER.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CAL1_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CAL_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CAL_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CAL_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CAL_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CHANGEREQUEST_ADD_HRS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CHANGEREQUEST_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CHANGEREQUEST_GET_FOR_PRJ.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CHANGEREQUEST_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CHANGEREQUEST_RECURSOS_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CHANGEREQUEST_RECURSOS_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CHANGEREQUEST_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI1_DEL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI1_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI2_DEL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI2_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI2_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI5_DEL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI5_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI5_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI_CON_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI_GET_CNPJ.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI_GET_FIL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CLI_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL1_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL1_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL1_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL4_GET_BY_COL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COLABORADORES_ENDERECO_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COLABORADORES_ESPECIALIDADES_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COLABORADORES_ESPECIALIDADES_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_ADR_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_ADR_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_ADR_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_FUNC_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_GET_ATV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_GET_FIL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_GET_MAX_HRS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_MAX_HRS_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_NOT_USR.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_PRJ_MAN.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_TYP_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_TYP_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_UPD_MAX_HRS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_COL_VER_DOC.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CON_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_CON_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_DESP_EXT.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_DESP_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_DESP_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_DESP_INACT.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_DESP_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_DESP_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_ESPECIALIDADE_GET_APON.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_EST_CIV_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_EXPENSEPERIOD_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_EXPENSEPERIOD_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_EXPENSEPERIOD_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_FASES_PRJ_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_FAS_PRJ_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_FAS_PRJ_GET_ALL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_FAS_PRJ_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_FAS_PRJ_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_FAS_PRJ_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_FUNC_COL_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_FUNC_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_FUNC_GET_ATV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_FUNC_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_FUNC_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_FUNC_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_GEN_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_LOADCOMBO_CLIENT.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_LOADCOMBO_COLLABORATOR.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_LOADCOMBO_PROJECT.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_LOGIN.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_LOGOFF.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_OPORTUNIDADES_PRICING_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_OPORTUNIDADES_PRICING_GET_BY_OPPORTUNITTY.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_OPORTUNIDADES_PRICING_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_OPORTUNIDADES_PRICING_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_OPRT_COPY_PRJ.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_OPRT_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_OPRT_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_OPRT_SEARCH.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_OPRT_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PARAMETRIZACAO_PROJETOS_GET_ALL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PARAMETRIZACAO_PROJETOS_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PARAMETRIZACAO_PROJETOS_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PER1_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PER1_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PERC_PRJ_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PER_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PER_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PER_GET_USR.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PER_INACT.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PER_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PER_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_POL_DESP_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_POL_DESP_PRJ_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRD1_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRD1_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRD1_LIST_UPD_STU.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRD1_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRD1_UPD_STU.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRICING_ITENS_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRICING_ITENS_GET_OPRT.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRICING_ITENS_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRICING_ITENS_INS_OPRT.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRICING_ITENS_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRICING_ITENS_RMV_OPRT.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRJ_GET_FIL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRJ_USE_AMS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PRJ_VER_NOM.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_ADD_COLABORADOR.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_ALTERACOES_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_ALTERACOES_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_ALTERACOES_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_FASES_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_FASES_GET_SPECIFIC.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_FASES_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_FASES_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_FASES_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_GENERATE_NUM.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_GETLIMITEHORAS_FAS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_GET_BY_USER.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_GET_SOLD_HOURS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_MEMBROS_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_MEMBROS_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_MEMBROS_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_PRICING_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_PRICING_GET_BY_PROJECT.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_PRICING_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_PRICING_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_RECURSOSFASE_GET_FOR_PRJ.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_RECURSOSFASE_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_RECURSOSFASE_RMV_FOR_PRJ.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_RECURSOS_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_RECURSOS_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_RECURSOS_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_REGRAS_GET_BY_PRJ.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_REGRAS_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_REGRAS_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_REMOVE_COLABORADOR.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_STATUSREPORT_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_STATUSREPORT_GET_ALL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_STATUSREPORT_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_STATUSREPORT_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_STU_RPT_INFO_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_PROJETOS_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_STATUSREPORT_FASES_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_STATUSREPORT_GET_PARCIAL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_STATUSREPORT_GET_PARCIAL_CON.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_STATUSREPORT_GET_PARCIAL_ORC.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_STU_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TCK_GET_PRJ.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TIPOSESPECIALIDADE_GET_ALL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TIPOSPROJETO_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TIPOSPROJETO_GET_ALL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TIPOSPROJETO_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TIPOSPROJETO_RMV.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TIPOSPROJETO_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TIP_DESP_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TIP_DESP_GET_ALL.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TIP_DESP_GET_DESP.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TIP_DESP_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TIP_DESP_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_TIP_DESP_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_UF_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_UN_MED_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_USR_ALT_PAS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_USR_COL_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_USR_COL_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_USR_EXIST.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_USR_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_USR_GET_ID.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_USR_INS.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_USR_UPD.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_USR_UPD_USR.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_VIEW_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Stored Procedures\dbo.SP_CVA_VIEW_PER_GET.StoredProcedure.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_ADR.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_APON.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_CAL.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_CAL1.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_CHANGEREQUEST.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_CHANGEREQUEST_RECURSOS.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_CLI.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_CLI1.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_CLI2.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_CLI5.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_COL.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_COL1.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_COL4.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_COL5.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_COL_ADR.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_COL_TYP.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_CON.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_DESP.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_EST_CIV.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_FASES.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_FAS_PRJ.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_FUNC.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_GEN.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_LOG.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_OPORTUNIDADES_PRICING.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_OPR.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PARAMETRIZACAO_PROJETOS.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PER.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PER1.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PERC_PRJ.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PERIODOS.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_POL_DESP.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PRD.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PRD1.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PRD2.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PRICING_ITENS.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PRICING_ITENS_OPRT.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PRJ.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PROJETOS_ALTERACOES.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PROJETOS_FASES.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PROJETOS_MEMBROS.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PROJETOS_PRICING.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_PROJETOS_RECURSOS.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_STU.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_STU_TAB.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_TAB.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_TCK_IMP.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_TIPOSESPECIALIDADE.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_TIPOSPROJETO.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_TIP_DESP.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_UF.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_UN_MED.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_USR.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_USR1.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_USR2.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.CVA_VIEW.Table.sql" />
+    <Content Include="SQL Scripts\Tables\dbo.__MigrationHistory.Table.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

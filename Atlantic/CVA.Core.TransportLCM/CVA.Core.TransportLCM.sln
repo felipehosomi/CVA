@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Core.TransportLCM", "CVA.Core.TransportLCM\CVA.Core.TransportLCM.csproj", "{78A5A611-A582-4E68-80A4-7DD8660E16FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{DA24570C-3F8F-433B-B182-A0F6A8996B05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78A5A611-A582-4E68-80A4-7DD8660E16FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A5A611-A582-4E68-80A4-7DD8660E16FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A5A611-A582-4E68-80A4-7DD8660E16FF}.Debug|x86.ActiveCfg = Debug|x86
+		{78A5A611-A582-4E68-80A4-7DD8660E16FF}.Debug|x86.Build.0 = Debug|x86
+		{78A5A611-A582-4E68-80A4-7DD8660E16FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A5A611-A582-4E68-80A4-7DD8660E16FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78A5A611-A582-4E68-80A4-7DD8660E16FF}.Release|x86.ActiveCfg = Release|x86
+		{78A5A611-A582-4E68-80A4-7DD8660E16FF}.Release|x86.Build.0 = Release|x86
+		{DA24570C-3F8F-433B-B182-A0F6A8996B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA24570C-3F8F-433B-B182-A0F6A8996B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA24570C-3F8F-433B-B182-A0F6A8996B05}.Debug|x86.ActiveCfg = Debug|x86
+		{DA24570C-3F8F-433B-B182-A0F6A8996B05}.Debug|x86.Build.0 = Debug|x86
+		{DA24570C-3F8F-433B-B182-A0F6A8996B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA24570C-3F8F-433B-B182-A0F6A8996B05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA24570C-3F8F-433B-B182-A0F6A8996B05}.Release|x86.ActiveCfg = Release|x86
+		{DA24570C-3F8F-433B-B182-A0F6A8996B05}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CVA.Core.TransportLCM\\CVA.Core.TransportLCM.csproj
+		SccProjectName1 = CVA.Core.TransportLCM
+		SccLocalPath1 = CVA.Core.TransportLCM
+		SccProjectUniqueName2 = Core\\Core.csproj
+		SccProjectName2 = Core
+		SccLocalPath2 = Core
+	EndGlobalSection
+EndGlobal

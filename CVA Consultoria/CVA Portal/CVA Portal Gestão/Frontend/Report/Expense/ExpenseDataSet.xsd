@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ExpenseDataSet" targetNamespace="http://tempuri.org/ExpenseDataSet.xsd" xmlns:mstns="http://tempuri.org/ExpenseDataSet.xsd" xmlns="http://tempuri.org/ExpenseDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ExpenseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ExpenseDataSet" msprop:Generator_UserDSName="ExpenseDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtExpense" msprop:Generator_TableClassName="dtExpenseDataTable" msprop:Generator_TableVarName="tabledtExpense" msprop:Generator_TablePropName="dtExpense" msprop:Generator_RowDeletingName="dtExpenseRowDeleting" msprop:Generator_RowChangingName="dtExpenseRowChanging" msprop:Generator_RowEvHandlerName="dtExpenseRowChangeEventHandler" msprop:Generator_RowDeletedName="dtExpenseRowDeleted" msprop:Generator_UserTableName="dtExpense" msprop:Generator_RowChangedName="dtExpenseRowChanged" msprop:Generator_RowEvArgName="dtExpenseRowChangeEvent" msprop:Generator_RowClassName="dtExpenseRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Colaborador" msprop:Generator_ColumnVarNameInTable="columnColaborador" msprop:Generator_ColumnPropNameInRow="Colaborador" msprop:Generator_ColumnPropNameInTable="ColaboradorColumn" msprop:Generator_UserColumnName="Colaborador" type="xs:string" minOccurs="0" />
+              <xs:element name="Projeto" msprop:Generator_ColumnVarNameInTable="columnProjeto" msprop:Generator_ColumnPropNameInRow="Projeto" msprop:Generator_ColumnPropNameInTable="ProjetoColumn" msprop:Generator_UserColumnName="Projeto" type="xs:string" minOccurs="0" />
+              <xs:element name="Oportunidade" msprop:Generator_ColumnVarNameInTable="columnOportunidade" msprop:Generator_ColumnPropNameInRow="Oportunidade" msprop:Generator_ColumnPropNameInTable="OportunidadeColumn" msprop:Generator_UserColumnName="Oportunidade" type="xs:string" minOccurs="0" />
+              <xs:element name="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_UserColumnName="Data" type="xs:string" minOccurs="0" />
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
+              <xs:element name="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" msprop:Generator_UserColumnName="Descricao" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

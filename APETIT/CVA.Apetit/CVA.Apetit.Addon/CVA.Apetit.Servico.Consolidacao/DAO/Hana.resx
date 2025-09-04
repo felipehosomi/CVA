@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Menu_GetReleased" xml:space="preserve">
+    <value>WITH OMNP AS
+(
+	SELECT TOP 100 DISTINCT 
+		OMNP."DocEntry", OMNP."DocNum", OMNP."U_AbsID", MNP1."U_CVA_PERCENT", OMNP.U_CVA_ID_SERVICO,
+		OBPL."BPLId", OBPL."DflWhs", 
+		CAST(CAST(YEAR(OMNP."U_CVA_DATA_REF") AS VARCHAR(4)) || LPAD(CAST(MONTH(OMNP."U_CVA_DATA_REF") AS VARCHAR(2)), 2, '00') || MNP1."U_Day" AS DATE) as "Date", 
+		MNP1."U_Day", MNP1.U_CVA_TIPO_PRATO_DES, MNP1."LineId", MNP1.U_CVA_ERROR, MNP1.U_CVA_INSUMO,
+		OITM."ItemCode", OITM."ItemName", OITM."InvntryUom",
+		OPLN."Code" as "IdServico", OPLN."Name" as "Servico"
+	FROM "@CVA_PLANEJAMENTO" OMNP
+		INNER JOIN "@CVA_LN_PLANEJAMENTO" as MNP1 on MNP1."DocEntry" = OMNP."DocEntry"
+		INNER JOIN "OITM" OITM on OITM."ItemCode" = MNP1."U_CVA_INSUMO"
+		INNER JOIN "@CVA_MNP2" as MNP2 on MNP2."DocEntry" = MNP1."DocEntry" and MNP2."U_Day" = MNP1."U_Day" AND MNP2."U_Quantity" &gt; 0
+		INNER JOIN "@CVA_TURNO" as "TURNO" on TURNO."Name" = MNP2."U_Shift" 
+		LEFT JOIN "OOAT" OOAT on OOAT."Number" = OMNP."U_CVA_ID_CONTRATO"
+		LEFT JOIN "OBPL" OBPL on OBPL."BPLId" = OOAT."U_CVA_FILIAL"
+		LEFT JOIN "@CVA_SERVICO_PLAN" as OPLN on OPLN."Code" = OMNP."U_CVA_ID_SERVICO"
+	WHERE MNP1."U_LineStatus" = 'R'
+    AND MNP1."U_CVA_PERCENT" &gt; 0
+    --AND OMNP."DocEntry" = 3957
+    --AND MNP1."LineId" = 241
+    AND EXISTS
+    (
+		SELECT MNP2."DocEntry" 
+		FROM "@CVA_MNP2" MNP2
+		WHERE MNP2."DocEntry" = OMNP."DocEntry" and MNP2."U_Day" = MNP1."U_Day" AND MNP2."U_Quantity" &gt; 0
+    )
+    AND NOT EXISTS 
+	(
+	   SELECT T4."ItemCode" FROM OWOR T4
+	   		INNER JOIN "@CVA_MNP2" MNP2
+				ON MNP2."DocEntry" = T4."U_CVA_PlanCode"  and MNP2."U_Day" = DAYOFMONTH(T4."StartDate") AND MNP2."U_Quantity" &gt; 0
+	   WHERE OMNP."DocEntry" = T4."U_CVA_PlanCode" 
+	   AND T4."U_CVA_LineId" = MNP1."LineId"
+	   AND T4."ItemCode" = MNP1."U_CVA_INSUMO" 
+	   AND OMNP."U_CVA_ID_SERVICO" = T4."U_CVA_SERVICO" 
+	   AND TURNO."Code" = T4."U_CVA_Turno" 
+	   AND MNP2."U_Quantity" &gt; 0
+	)
+    ORDER BY
+	CASE WHEN IFNULL(MNP1.U_CVA_ERROR, '') = '' THEN 0 ELSE 1 END,
+	OMNP."DocEntry", 
+	MNP1."LineId"
+) 
+SELECT OMNP.*,
+	TURNO."Code" as "U_Shift",
+	case OMNP."InvntryUom" when 'UN' then 
+        round((MNP2."U_Quantity" * (OMNP."U_CVA_PERCENT" / 100)) , 0, round_half_up)
+	else 
+        ((MNP2."U_Quantity" * (OMNP."U_CVA_PERCENT" / 100)))
+   	end as "Quantity",
+   	(
+ 		 SELECT COUNT(T1."LineId") FROM "@CVA_PLANEJAMENTO" as T0
+         	inner join "@CVA_LN_PLANEJAMENTO" as T1 on T1."DocEntry" = T0."DocEntry"
+            inner join "@CVA_MNP2" as T2 on T2."DocEntry" = T1."DocEntry" and T2."U_Day" = T1."U_Day" AND T2."U_Quantity" &gt; 0
+         WHERE T0."DocEntry" = OMNP."DocEntry"
+         AND T1."LineId" = OMNP."LineId"
+        GROUP BY T0."DocEntry", T1."LineId"
+ 	) "GroupCount"
+FROM OMNP
+	INNER JOIN "@CVA_MNP2" as MNP2 on MNP2."DocEntry" = OMNP."DocEntry" and MNP2."U_Day" = OMNP."U_Day"
+	INNER JOIN "@CVA_TURNO" as "TURNO" on TURNO."Name" = MNP2."U_Shift"
+WHERE MNP2."U_Quantity" &gt; 0
+AND NOT EXISTS 
+(
+   SELECT T4."ItemCode" FROM OWOR T4 
+   WHERE OMNP."DocEntry" = T4."U_CVA_PlanCode" 
+   AND T4."U_CVA_LineId" = OMNP."LineId"
+   AND T4."U_CVA_Turno"  = TURNO."Code"
+   AND T4."ItemCode" = OMNP."U_CVA_INSUMO" 
+   AND OMNP."U_CVA_ID_SERVICO" = T4."U_CVA_SERVICO" 
+   AND DAYOFMONTH (T4."StartDate") = OMNP."U_Day"
+)</value>
+  </data>
+  <data name="Menu_GetReleased_Old" xml:space="preserve">
+    <value>select TOP 100 OMNP."DocEntry", OMNP."DocNum", OMNP."U_AbsID", OBPL."BPLId", OBPL."DflWhs", 
+                                                                       CAST(CAST(YEAR(OMNP."U_CVA_DATA_REF") AS VARCHAR(4)) || CAST(MONTH(OMNP."U_CVA_DATA_REF") AS VARCHAR(4)) || MNP1."U_Day" AS DATE) as "Date",
+                                                                       OPLN."Code" as "IdServico", OPLN."Name" as "Servico", TURNO."Code" as "U_Shift",
+                                                                       OITM."ItemCode", OITM."ItemName",
+                                                                       case OITM."InvntryUom" when 'UN' then 
+                                                                            round((MNP2."U_Quantity" * (MNP1."U_CVA_PERCENT" / 100)) , 0, round_half_up)
+                                                                       else 
+                                                                            ((MNP2."U_Quantity" * (MNP1."U_CVA_PERCENT" / 100)))
+                                                                       end as "Quantity",  MNP1."U_Day", MNP1.U_CVA_TIPO_PRATO_DES, MNP1."LineId",
+                                                                        (
+                                                                       		SELECT COUNT(T1."LineId") FROM "@CVA_PLANEJAMENTO" as T0
+                                                                                 inner join "@CVA_LN_PLANEJAMENTO" as T1 on T1."DocEntry" = T0."DocEntry"
+                                                                                 inner join "@CVA_MNP2" as T2 on T2."DocEntry" = T1."DocEntry"
+                                                                                       and T2."U_Day" = T1."U_Day" AND T2."U_Quantity" &gt; 0
+                                                                             WHERE T0."DocEntry" = OMNP."DocEntry"
+                                                                             AND T1."LineId" = MNP1."LineId"
+                                                                             GROUP BY T0."DocEntry", T1."LineId"
+                                                                 		) "GroupCount"
+                                                                  from "@CVA_PLANEJAMENTO" as OMNP
+                                                                 inner join "@CVA_LN_PLANEJAMENTO" as MNP1 on MNP1."DocEntry" = OMNP."DocEntry"
+                                                                 inner join "@CVA_MNP2" as MNP2 on MNP2."DocEntry" = MNP1."DocEntry"
+                                                                   and MNP2."U_Day" = MNP1."U_Day"
+                                                                 inner join "@CVA_TURNO" as "TURNO" on TURNO."Name" = MNP2."U_Shift"
+                                                                 inner join "OITM" OITM on OITM."ItemCode" = MNP1."U_CVA_INSUMO"
+                                                                  left join "OOAT" OOAT on OOAT."Number" = OMNP."U_CVA_ID_CONTRATO"
+                                                                  left join "OBPL" OBPL on OBPL."BPLId" = OOAT."U_CVA_FILIAL"  
+                                                                  left join "@CVA_SERVICO_PLAN" as OPLN on OPLN."Code" = OMNP."U_CVA_ID_SERVICO"
+                                                                 where MNP1."U_LineStatus" = 'R'
+                                                                   and MNP2."U_Quantity" &gt; 0
+                                                                   and MNP1."U_CVA_PERCENT" &gt; 0
+                                                                    AND NOT EXISTS 
+																    (
+																	    SELECT T4."ItemCode" FROM OWOR T4 
+                                                                        WHERE OMNP."DocEntry" = T4."U_CVA_PlanCode" 
+                                                                        AND T4."U_CVA_LineId" = MNP1."LineId"
+                                                                        AND TURNO."Code" = T4."U_CVA_Turno" 
+                                                                        AND T4."ItemCode" = MNP1."U_CVA_INSUMO" 
+                                                                        AND OMNP."U_CVA_ID_SERVICO" = T4."U_CVA_SERVICO" 
+                                                                        AND DAYOFMONTH ( T4."StartDate") = MNP2."U_Day"
+                                                                    )
+                                                                 order by 
+                                                                CASE WHEN IFNULL(U_CVA_ERROR, '') = '' THEN 0 ELSE 1 END,
+                                                                OMNP."DocEntry", MNP1."LineId"</value>
+  </data>
+</root>

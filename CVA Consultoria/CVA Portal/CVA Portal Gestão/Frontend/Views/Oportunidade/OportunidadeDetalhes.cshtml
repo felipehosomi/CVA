@@ -1,0 +1,52 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Informar<strong> Detalhes</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="col-md-12 control-label">Descrição</label>
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-send"></span></span>
+                                    <textarea class="form-control" ng-model="Oportunidade.Observations.Observation"></textarea>
+                                </div>
+                                <span class="help-block">Informe a descrição das atividades</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-info" ng-click="AddDetailsLine()">Adicionar</button>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td class="col-md-3">Data</td>
+                                        <td class="col-md-3">Colaborador</td>
+                                        <td class="col-md-3">Detalhe</td>
+                                        <td class="col-md-3">#</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="contatos">
+                                    <tr ng-repeat="hol in ObservationSelectedList">
+                                        <td>{{hol.Data | date: "dd/MM/yyyy - HH:mm"}}</td>
+                                        <td>{{hol.Colaborador}}</td>
+                                        <td>{{hol.Observation}}</td>
+                                        <td><button type="button" class="btn btn-danger" ng-disabled="status == 2" ng-click="RemoveDetailsLine($index)">X</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

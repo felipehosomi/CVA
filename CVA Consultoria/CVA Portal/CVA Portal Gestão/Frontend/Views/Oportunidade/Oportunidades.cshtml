@@ -1,0 +1,98 @@
+﻿@model MODEL.Classes.OpportunityModel[]
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/Loading")
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li class="active">Oportunidades</li>
+</ul>
+<div class="page-title">
+    <h1>Oportunidades</h1>
+</div>
+<div class="page-content-wrap" ng-controller="OportunittyMainController">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label">Código</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" ng-model="Filtro.Codigo" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="control-label">Cliente</label>
+                                    <div class="input-group">
+                                        <p id="load-00" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                        <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                        <select class="form-control" ng-model="Filtro.Cliente" ng-options="selected.Id as selected.Name for selected in ClientList">
+                                            <option value="">Selecione</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2" style="padding-top: 22px;">
+                                    <div class="input-group">
+                                        <button ng-click="Search()" type="button" class="btn btn-info pull-right"><span class="fa fa-search"></span> Pesquisar</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" style="padding-top: 22px;">
+                                    <div class="input-group">
+                                        <button onclick="NewOportunitty()" type="button" class="btn btn-success pull-right"><span class="fa fa-plus"></span> Nova Oportunidade</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table" id="table-export">
+                        <thead>
+                            <tr>
+                                <td><b>Código</b></td>
+                                <td><b>Nome</b></td>
+                                <td><b>Cliente</b></td>
+                                <td align="center"><b>Temperatura</b></td>
+                                <td><b>Status</b></td>
+                                <td><b>#</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="oportunitty in TableList">
+                                <td hidden>{{oportunitty.Id}}</td>
+                                <td>{{oportunitty.Codigo}}</td>
+                                <td>{{oportunitty.Nome}}</td>
+                                <td>{{oportunitty.Cliente.Name}}</td>
+                                <td align="center">{{oportunitty.Temperatura.Percent}} %</td>
+                                <td>{{oportunitty.Status.Descricao}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-default"  data-toggle="tooltip" title="Editar" ng-click="EditOportunitty(oportunitty.Id)"><span class="fa fa-edit"></span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <section class="js-export-button-container">
+                        <h3>Exportar:</h3>
+                        <button class="btn btn-info" ng-click="ExportarExcel()"><i class="fa fa-table"></i>Excel</button>
+                        <button class="btn btn-info" ng-click="ExportarPDF()"><i class="fa fa-paste"></i>Pdf</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+
+<script>
+    function NewOportunitty() {
+        window.location.href = '/Oportunidade/Cadastrar';
+    }
+    function Edit(id) {
+        window.location.href = '/Oportunidade/Editar?id=' + id;
+    }
+</script>

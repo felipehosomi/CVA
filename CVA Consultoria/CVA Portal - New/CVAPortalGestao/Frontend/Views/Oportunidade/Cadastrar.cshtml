@@ -1,0 +1,61 @@
+﻿@model MODEL.Classes.OpportunityModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Cadastro</a></li>
+    <li><a href="/Oportunidade/Oportunidades">Oportunidades</a></li>
+    <li class="active">Oportunidade</li>
+</ul>
+<div class="page-content-wrap" ng-controller="OportunittyController" ng-init="OnLoad(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <div class="panel panel-default tabs">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active" id="tab-one-li"><a href="#tab-one" role="tab" data-toggle="tab">Oportunidade</a></li>
+            <li id="tab-six-li"><a href="#tab-six" role="tab" data-toggle="tab">Pricing</a></li>
+        </ul>
+        <div class="row" style="background-color: #60c19b; font-size: 12pt; text-align: center" ng-show="Oportunidade.Convertida > 0">
+            Esta oportunidade já foi convertida em projeto. As informações apresentadas não podem ser modificadas.
+        </div>
+        <div class="panel-body tab-content">
+            <div class="tab-pane active" id="tab-one">
+                @Html.Partial("OportunidadeGeral")
+            </div>
+            <div id="tab-six" class="tab-pane">
+                @Html.Partial("OportunidadePricing")
+            </div>
+            <div>
+                <button type="button" id ="saveButton" class="btn btn-primary pull-right" ng-disabled="IsProcessing || Oportunidade.Convertida > 0" ng-click="SaveOportunitty()">Salvar Oportunidade <span class="fa fa-floppy-o fa-right"></span></button>
+                <button type="button" class="btn btn-default pull-right" ng-disabled="IsProcessing || Oportunidade.Id == null || Oportunidade.Id == 0 || Oportunidade.Convertida > 0" ng-click="ConvertToProject()">Converter para Projeto <span class="fa fa-floppy-o fa-right"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p id="message-success"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/Script/jquery")

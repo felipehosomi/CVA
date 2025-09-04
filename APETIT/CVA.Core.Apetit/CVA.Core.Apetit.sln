@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Core.Apetit.Addon", "CVA.Core.Apetit.Addon\CVA.Core.Apetit.Addon.csproj", "{7B9136CA-1F53-46F2-9303-0B92BE3C9461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Core.Apetit", "CVA.Core.Apetit\CVA.Core.Apetit.csproj", "{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B9136CA-1F53-46F2-9303-0B92BE3C9461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9136CA-1F53-46F2-9303-0B92BE3C9461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9136CA-1F53-46F2-9303-0B92BE3C9461}.Debug|x64.ActiveCfg = Debug|x64
+		{7B9136CA-1F53-46F2-9303-0B92BE3C9461}.Debug|x64.Build.0 = Debug|x64
+		{7B9136CA-1F53-46F2-9303-0B92BE3C9461}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7B9136CA-1F53-46F2-9303-0B92BE3C9461}.Debug|x86.Build.0 = Debug|Any CPU
+		{7B9136CA-1F53-46F2-9303-0B92BE3C9461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9136CA-1F53-46F2-9303-0B92BE3C9461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B9136CA-1F53-46F2-9303-0B92BE3C9461}.Release|x64.ActiveCfg = Release|x64
+		{7B9136CA-1F53-46F2-9303-0B92BE3C9461}.Release|x64.Build.0 = Release|x64
+		{7B9136CA-1F53-46F2-9303-0B92BE3C9461}.Release|x86.ActiveCfg = Release|Any CPU
+		{7B9136CA-1F53-46F2-9303-0B92BE3C9461}.Release|x86.Build.0 = Release|Any CPU
+		{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}.Debug|x64.ActiveCfg = Debug|x64
+		{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}.Debug|x64.Build.0 = Debug|x64
+		{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}.Debug|x86.Build.0 = Debug|Any CPU
+		{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}.Release|x64.ActiveCfg = Release|x64
+		{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}.Release|x64.Build.0 = Release|x64
+		{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}.Release|x86.ActiveCfg = Release|Any CPU
+		{FC1B6ED1-1307-4D1E-B595-929C2EDC312E}.Release|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x64.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.ActiveCfg = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.Build.0 = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x64.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x64.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.ActiveCfg = Release|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6D767B2-5BD4-4DD6-821C-42A2DF49B78E}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\Helpers\\CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName0 = ../../../../Helpers/CVA.AddOn.Common
+		SccLocalPath0 = ..\\..\\Helpers\\CVA.AddOn.Common
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = CVA.Core.Apetit.Addon\\CVA.Core.Apetit.Addon.csproj
+		SccProjectName2 = CVA.Core.Apetit.Addon
+		SccLocalPath2 = CVA.Core.Apetit.Addon
+		SccProjectUniqueName3 = CVA.Core.Apetit\\CVA.Core.Apetit.csproj
+		SccProjectName3 = CVA.Core.Apetit
+		SccLocalPath3 = CVA.Core.Apetit
+	EndGlobalSection
+EndGlobal

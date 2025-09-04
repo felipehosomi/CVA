@@ -1,0 +1,97 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Cadastrar<strong> Cliente</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" hidden="hidden" ng-model="client.Id" />
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Razão Social*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-tag"></span></span>
+                                    <input type="text" class="form-control" ng-model="client.Name" tabindex="1"/>
+                                </div>
+                                <span class="help-block">Informe a Razão Social do cliente</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nome Fantasia*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-tag"></span></span>
+                                    <input type="text" class="form-control" ng-model="client.FantasyName" tabindex="2"/>
+                                </div>
+                                <span class="help-block">Insira o nome fantasia do cliente</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nome no Portal Tomticket*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-tag"></span></span>
+                                    <input class="form-control" rows="4" ng-model="client.DescriptionAMS" tabindex="3"/>
+                                </div>
+                                <span class="help-block">Informe o nome do cliente no Portal Tomticket</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">CNPJ*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-tag"></span></span>
+                                    <input type="text" class="form-control" ng-model="client.CNPJ" id="cnpj-mask" tabindex="4"/>
+                                </div>
+                                <span class="help-block">Informe o CNPJ do cliente</span>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Status*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                    <select class="form-control" ng-model="client.Status.Id" ng-options="selected.Id as selected.Descricao for selected in StatusList" tabindex="5">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o status do cadastro</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Tag*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-tag"></span></span>
+                                    <input type="text" class="form-control" ng-model="client.Tag"  tabindex="6"/>
+                                </div>
+                                <span class="help-block">Insira a Tag do cliente</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Descrição*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-edit"></span></span>
+                                    <textarea class="form-control" rows="4" ng-model="client.Description" tabindex="7"></textarea>
+                                </div>
+                                <span class="help-block">Insira uma descrição para o cadastro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jquery-1.12.3.min.js"></script>
+<script src="~/Scripts/plugins/maskedinput/jquery.maskedinput.js"></script>
+<script>
+    $('#cnpj-mask').mask('99.999.999/9999-99');
+</script>

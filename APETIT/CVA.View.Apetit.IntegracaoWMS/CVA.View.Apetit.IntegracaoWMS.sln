@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.Apetit.IntegracaoWMS", "CVA.View.Apetit.IntegracaoWMS\CVA.View.Apetit.IntegracaoWMS.csproj", "{93ACEB0C-A9AA-40FE-997E-50A9DB8F9C14}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CVA.View.Apetit.IntegracaoWMS.Setup", "CVA.View.Apetit.IntegracaoWMS.Setup\CVA.View.Apetit.IntegracaoWMS.Setup.vbproj", "{FFEF6A22-58D1-40BB-9370-3534939DF101}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.Apetit.IntegracaoWMS.Console", "CVA.View.Apetit.IntegracaoWMS.Console\CVA.View.Apetit.IntegracaoWMS.Console.csproj", "{5E2F5B04-DC32-4474-A3D8-7E7E2B613816}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.Apetit.IntegracaoWMS.BLL", "CVA.View.Apetit.IntegracaoWMS.BLL\CVA.View.Apetit.IntegracaoWMS.BLL.csproj", "{F7B62914-7604-469A-B7A6-2D8FF9A194C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93ACEB0C-A9AA-40FE-997E-50A9DB8F9C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93ACEB0C-A9AA-40FE-997E-50A9DB8F9C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93ACEB0C-A9AA-40FE-997E-50A9DB8F9C14}.Debug|x86.ActiveCfg = Debug|x86
+		{93ACEB0C-A9AA-40FE-997E-50A9DB8F9C14}.Debug|x86.Build.0 = Debug|x86
+		{93ACEB0C-A9AA-40FE-997E-50A9DB8F9C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93ACEB0C-A9AA-40FE-997E-50A9DB8F9C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93ACEB0C-A9AA-40FE-997E-50A9DB8F9C14}.Release|x86.ActiveCfg = Release|x86
+		{93ACEB0C-A9AA-40FE-997E-50A9DB8F9C14}.Release|x86.Build.0 = Release|x86
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Debug|x86.ActiveCfg = Debug|x86
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Debug|x86.Build.0 = Debug|x86
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Release|x86.ActiveCfg = Release|x86
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Release|x86.Build.0 = Release|x86
+		{5E2F5B04-DC32-4474-A3D8-7E7E2B613816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E2F5B04-DC32-4474-A3D8-7E7E2B613816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E2F5B04-DC32-4474-A3D8-7E7E2B613816}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E2F5B04-DC32-4474-A3D8-7E7E2B613816}.Debug|x86.Build.0 = Debug|Any CPU
+		{5E2F5B04-DC32-4474-A3D8-7E7E2B613816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E2F5B04-DC32-4474-A3D8-7E7E2B613816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E2F5B04-DC32-4474-A3D8-7E7E2B613816}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E2F5B04-DC32-4474-A3D8-7E7E2B613816}.Release|x86.Build.0 = Release|Any CPU
+		{F7B62914-7604-469A-B7A6-2D8FF9A194C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7B62914-7604-469A-B7A6-2D8FF9A194C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7B62914-7604-469A-B7A6-2D8FF9A194C9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F7B62914-7604-469A-B7A6-2D8FF9A194C9}.Debug|x86.Build.0 = Debug|Any CPU
+		{F7B62914-7604-469A-B7A6-2D8FF9A194C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7B62914-7604-469A-B7A6-2D8FF9A194C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7B62914-7604-469A-B7A6-2D8FF9A194C9}.Release|x86.ActiveCfg = Release|Any CPU
+		{F7B62914-7604-469A-B7A6-2D8FF9A194C9}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD63D5C5-430A-4C98-8D86-A8666E11A3CD}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CVA.View.Apetit.IntegracaoWMS.BLL\\CVA.View.Apetit.IntegracaoWMS.BLL.csproj
+		SccProjectName1 = CVA.View.Apetit.IntegracaoWMS.BLL
+		SccLocalPath1 = CVA.View.Apetit.IntegracaoWMS.BLL
+		SccProjectUniqueName2 = CVA.View.Apetit.IntegracaoWMS.Console\\CVA.View.Apetit.IntegracaoWMS.Console.csproj
+		SccProjectName2 = CVA.View.Apetit.IntegracaoWMS.Console
+		SccLocalPath2 = CVA.View.Apetit.IntegracaoWMS.Console
+		SccProjectUniqueName3 = CVA.View.Apetit.IntegracaoWMS.Setup\\CVA.View.Apetit.IntegracaoWMS.Setup.vbproj
+		SccProjectName3 = CVA.View.Apetit.IntegracaoWMS.Setup
+		SccLocalPath3 = CVA.View.Apetit.IntegracaoWMS.Setup
+		SccProjectUniqueName4 = CVA.View.Apetit.IntegracaoWMS\\CVA.View.Apetit.IntegracaoWMS.csproj
+		SccProjectName4 = CVA.View.Apetit.IntegracaoWMS
+		SccLocalPath4 = CVA.View.Apetit.IntegracaoWMS
+	EndGlobalSection
+EndGlobal

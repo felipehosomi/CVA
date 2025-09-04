@@ -1,0 +1,20 @@
+﻿using CVA.Core.TransportLCM.MODEL;
+using CVA.Core.TransportLCM.SERVICE.UserTables;
+
+namespace CVA.Core.TransportLCM.BLL
+{
+    public class ConfigBLL
+    {
+        private ConfigDAO _configDAO { get; }
+
+        public ConfigBLL(ConfigDAO configDAO)
+        {
+            _configDAO = configDAO;
+        }
+
+        public ConfigModel GetConfig(int tipo)
+        {
+            return _configDAO.GetConfig(tipo);
+        }
+    }
+}

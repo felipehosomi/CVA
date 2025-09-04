@@ -1,0 +1,47 @@
+﻿@model CVA.Portal.Producao.Model.ApontamentoModel
+
+    <div id="modal-terceiros-edit" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <input type="hidden" value="" id="modal-terceiros-edit-Id" />
+
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title">Pesquisa por Terceiros</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        
+                        @Html.LabelFor(model => model.BPs.First().BPCardCode, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                @Html.DropDownList("BPCardCode", new SelectList(new[] { new SelectListItem { Value = "", Text = "" } }, "Value", "Text"), htmlAttributes: new { required = "required", id = "Edit-BPCardCode", type = "string", @class = "chosen-select", data_placeholder = "Selecione um Cliente" })
+                            </div>
+                        </div>
+
+                        @Html.LabelFor(model => model.BPs.First().BPCardName, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                <input class="form-control text-box single-line" disabled="disabled" id="Edit-BPCardName" name="BPCardName" style="padding-top: 2px; height: 30px;" type="text" value="">
+                            </div>
+                        </div>
+
+                        @Html.LabelFor(model => model.BPs.First().BPQtyRefeicao, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                <input class="form-control text-box single-line" data-val="true" data-val-number="O campo Quantidade deve ser um número." data-val-required="O campo Quantidade é obrigatório." id="Edit-BPQtyRefeicao" name="Edit-BPQtyRefeicao" type="number" min="0" value="0" step="0.01" style="height: 34px;">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnEdit" type="button" class="btn btn-primary" onclick="EditTerceiros()">Editar</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>

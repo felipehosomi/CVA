@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Importador_Tomticket", "Importador_Tomticket\Importador_Tomticket.csproj", "{4985205E-A12C-4B10-BC36-E02C8623EF4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{23EF9DC3-E66E-4607-8D70-19EC74EAF613}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{C1D89CC6-CC06-45BD-8971-2C50BC7CFC5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MODEL", "MODEL\MODEL.csproj", "{81453922-1AB4-4501-A408-C153254E3F2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AUXILIAR", "AUXILIAR\AUXILIAR.csproj", "{74DEE5C5-35B0-47F3-985F-43AAACD9B1A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4985205E-A12C-4B10-BC36-E02C8623EF4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4985205E-A12C-4B10-BC36-E02C8623EF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4985205E-A12C-4B10-BC36-E02C8623EF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4985205E-A12C-4B10-BC36-E02C8623EF4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23EF9DC3-E66E-4607-8D70-19EC74EAF613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23EF9DC3-E66E-4607-8D70-19EC74EAF613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23EF9DC3-E66E-4607-8D70-19EC74EAF613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23EF9DC3-E66E-4607-8D70-19EC74EAF613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D89CC6-CC06-45BD-8971-2C50BC7CFC5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D89CC6-CC06-45BD-8971-2C50BC7CFC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D89CC6-CC06-45BD-8971-2C50BC7CFC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D89CC6-CC06-45BD-8971-2C50BC7CFC5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81453922-1AB4-4501-A408-C153254E3F2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81453922-1AB4-4501-A408-C153254E3F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81453922-1AB4-4501-A408-C153254E3F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81453922-1AB4-4501-A408-C153254E3F2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74DEE5C5-35B0-47F3-985F-43AAACD9B1A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74DEE5C5-35B0-47F3-985F-43AAACD9B1A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74DEE5C5-35B0-47F3-985F-43AAACD9B1A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74DEE5C5-35B0-47F3-985F-43AAACD9B1A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE727C1E-3E4F-4CBD-918B-E42811ABA7A7}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Importador_Tomticket\\Importador_Tomticket.csproj
+		SccProjectName1 = Importador_Tomticket
+		SccLocalPath1 = Importador_Tomticket
+		SccProjectUniqueName2 = BLL\\BLL.csproj
+		SccProjectName2 = BLL
+		SccLocalPath2 = BLL
+		SccProjectUniqueName3 = DAO\\DAO.csproj
+		SccProjectName3 = DAO
+		SccLocalPath3 = DAO
+		SccProjectUniqueName4 = MODEL\\MODEL.csproj
+		SccProjectName4 = MODEL
+		SccLocalPath4 = MODEL
+		SccProjectUniqueName5 = AUXILIAR\\AUXILIAR.csproj
+		SccProjectName5 = AUXILIAR
+		SccLocalPath5 = AUXILIAR
+	EndGlobalSection
+EndGlobal

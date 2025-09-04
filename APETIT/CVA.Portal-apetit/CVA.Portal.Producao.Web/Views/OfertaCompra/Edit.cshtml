@@ -1,0 +1,212 @@
+﻿
+@model CVA.Portal.Producao.Model.Compras.OfertaCompraModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .priceStyle {
+        text-align: left !important;
+        width: 100px;
+    }
+</style>
+
+<div class="x_panel">
+    <div class="x_content">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_title">
+                    <h2>Cotação de Compra</h2>
+                    <div class="clearfix"></div>
+                </div>
+                @using (Html.BeginForm("Patch", "OfertaCompra", Model.Itens, FormMethod.Post, new { id = "formOfertaCompra" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="x_content">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(m => Model.DocEntry)
+                        @Html.HiddenFor(m => Model.DocNum)
+                        @Html.HiddenFor(m => Model.CompradorNome)
+                        @Html.HiddenFor(m => Model.CompradorEmail)
+                        @Html.HiddenFor(m => Model.FornecedorNome)
+                        @Html.HiddenFor(m => Model.FornecedorEmail)
+                        <br />
+                        <table>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <label>Filial:</label> 
+                                        @Html.Label(Model.Filial)
+                                    </div>
+                                    <div  style="margin-top: 12px;">
+                                        <label>Nº da Cotação de Compra: </label>
+                                        @Html.TextBoxFor(m => m.DocNum, htmlAttributes: new { value = Model.DocNum, disabled = true })
+                                    </div>
+                                    <div style="margin-top: 12px;">
+                                        <label>Data da Solicitação: </label>
+                                        @Html.TextBoxFor(m => m.DocDate, htmlAttributes: new { value = Model.DocDate, type = "date", disabled = true })
+                                        <label style="margin-left: 10px">Data de Validade: </label>
+                                        @Html.TextBoxFor(m => m.DocDueDate, htmlAttributes: new { value = Model.DocDueDate, type = "date", disabled = true })
+                                        <label style="margin-left: 10px">Data Necessária: </label>
+                                        @Html.TextBoxFor(m => m.ReqDate, htmlAttributes: new { value = Model.ReqDate, type = "date", disabled = true })
+                                    </div>
+                                    <div style="margin-top: 12px;">
+                                        <label>Condição de Pagamento: </label>
+                                        @Html.DropDownList("CondicaoPagamento", null, htmlAttributes: new { disabled = true, style = "width: 200px;" })
+                                    </div>
+                                    <div style="margin-top: 12px;">
+                                        <label>Expirado: @(DateTime.Now > Convert.ToDateTime(Model.DocDueDate) ? "Sim" : "Não")</label>
+                                    </div>
+                                </td>
+                                <td style="padding-left: 120px; vertical-align: top;">
+                                    <h4>Endereço de entrega:</h4>
+                                    @Html.Label(Model.CardName) <br />
+                                    @Html.Label(Model.TipoLogradouro) @Html.Label(Model.Logradouro)<strong>, Nº</strong> @Html.Label(Model.Numero) @Html.Label(Model.Complemento) <br />
+                                    @Html.Label(Model.Cidade) <strong>-</strong> @Html.Label(Model.Estado)
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="margin-top: 28px;">
+                            <div class="x_title" style="width: 150px;">
+                                <h2>Produtos</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div>
+                                <table id="tableItens">
+                                    <thead>
+                                        <tr style="height: 40px;">
+                                            <th style="width: 10px;"></th>
+                                            <th style="width: 310px;padding-left: 5px;">Produto</th>
+                                            <th>Qtde Necessária</th>
+                                            <th style="padding-left: 26px;">Qtde Fornecida</th>
+                                            <th style="width: 176px; padding-left: 21px;">Embalagem de Fornecimento</th>
+                                            <th style="padding-left: 21px">Dias para Entrega</th>
+                                            <th style="padding-left: 21px;">Valor Unitário</th>
+                                            <th style="padding-left: 21px;">Valor Total</th>
+                                            <th style="padding-left: 21px;">Obs. Item</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (Model != null && Model.Itens != null)
+                                        {
+                                            for (int i = 0; i < Model.Itens.Count; i++)
+                                            {
+                                                <tr id="@Model.Itens[i].LineNum">
+                                                    @Html.HiddenFor(m => Model.Itens[i].LineNum)
+                                                    @Html.HiddenFor(m => Model.Itens[i].newRegister)
+                                                    @Html.HiddenFor(m => Model.Itens[i].ItemCode)
+                                                    @Html.HiddenFor(m => Model.Itens[i].PQTReqQty)
+                                                    <td style="width: 10px;">
+                                                        @if (ViewBag.Comprador)
+                                                        {
+                                                            <input type="button" value="+" onclick="duplicateLine(@Model.Itens[i].LineNum)" title="Duplicar Item" disabled />
+                                                        }
+                                                        else
+                                                        {
+                                                            <input type="button" value="+" onclick="duplicateLine(@Model.Itens[i].LineNum)" title="Duplicar Item" />
+                                                        }
+                                                    </td>
+                                                    <td style="height: 40px;padding-left: 5px;">
+                                                        @Html.TextBoxFor(m => m.Itens[i].ItemCode, htmlAttributes: new { value = Model.Itens[i].ItemCode, style = "width: 100px;", disabled = true })
+                                                        @Html.TextBoxFor(m => m.Itens[i].Dscription, htmlAttributes: new { value = Model.Itens[i].Dscription, disabled = true })
+                                                    </td>
+                                                    <td>
+                                                        @Html.TextBoxFor(m => m.Itens[i].PQTReqQty, htmlAttributes: new { value = Model.Itens[i].PQTReqQty, style = "width: 60px;", disabled = true })
+                                                        @Html.Label(Model.Itens[i].UnidadeMedida, htmlAttributes: new { disabled = true })
+                                                    </td>
+                                                    <td style="padding-left: 26px;">
+                                                        @Html.TextBoxFor(m => m.Itens[i].Quantity, htmlAttributes: ViewBag.Comprador ? (object)new { value = Model.Itens[i].Quantity, style = "width: 80px;", disabled = true, type = "number", step = "any" } : (object)new { required = "required", value = Model.Itens[i].Quantity, style = "width: 80px;", onfocusout = "calculaTotais(" + i + ");", type = "number", step = "any" })
+                                                    </td>
+                                                    <td style="height: 40px; padding-left: 21px;">
+                                                        @Html.DropDownListFor(m => Model.Itens[i].UomEntry, Model.Itens[i].CodigosUM, htmlAttributes: ViewBag.Comprador ? (object)new { style = "width: 188px;", disabled = true } : (object)new { required = "required", style = "width: 188px;" })
+                                                    </td>
+                                                    
+                                                    @*<td style="padding-left: 21px">
+                                                        @Html.TextBoxFor(m => m.Itens[i].ShipDate, htmlAttributes: ViewBag.Comprador ? (object)new { value = Model.Itens[i].ShipDate, type = "date", disabled = true } : (object)new { required = "required", value = Model.Itens[i].ShipDate, type = "date" })
+                                                    </td>*@
+                                                    
+                                                    <td style="padding-left: 21px">
+                                                        @Html.TextBoxFor(m => m.Itens[i].LeadTime, htmlAttributes: ViewBag.Comprador ? (object)new { value = Model.Itens[i].LeadTime, style = "width: 111px;", type = "number", disabled = true } : (object)new { required = "required", type = "number", style = "width: 111px;", value = Model.Itens[i].LeadTime })
+                                                    </td>
+                                                    <td style="padding-left: 21px;">
+                                                        @Html.TextBoxFor(m => m.Itens[i].Price, htmlAttributes: ViewBag.Comprador ? (object)new { value = Model.Itens[i].Price, @class = "priceMask priceStyle", disabled = true } : (object)new { required = "required", value = Model.Itens[i].Price, @class = "priceMask priceStyle", onfocusout = "calculaTotais(" + i + ");" })
+                                                    </td>
+                                                    <td style="padding-left: 21px;">
+                                                        @Html.TextBoxFor(m => m.Itens[i].ValorTotal, htmlAttributes: new { value = Model.Itens[i].Price, disabled = true, @class = "priceMask priceStyle" })
+                                                    </td>
+                                                    <td style="padding-left: 21px;">
+                                                        @Html.TextBoxFor(m => m.Itens[i].FreeTxt, htmlAttributes: ViewBag.Comprador ? (object)new { value = Model.Itens[i].FreeTxt, disabled = true } : (object)new { value = Model.Itens[i].FreeTxt })
+                                                    </td>
+                                                    <td>
+                                                        @if (Model.Itens[i].StatusItem == "Aprovado")
+                                                        {
+                                                            <img style="width:21px;margin-left: 17px;margin-bottom: 1px;" src="~/Content/Images/itemAprovado.png" />
+                                                        }
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div style="margin-top: 25px;">
+                            <div style="display: flex;padding-top: 7px;">
+                                <label>Observações:*</label>
+                                @Html.TextAreaFor(m => m.Comments, new { value = Model.Comments, style = "margin-left: 24px;width: 450px;", disabled = true })
+
+                                @if (ViewBag.Comprador)
+                                {
+                                    <label style="margin-left: 24px;">Observação de Revisão:</label>
+                                    @Html.TextAreaFor(m => m.ObsRevisao, new { value = Model.ObsRevisao, style = "margin-left: 24px;width: 450px;" })
+                                }
+                                else
+                                {
+                                    <label style="margin-left: 24px;">Observação de Revisão:</label>
+                                    @Html.TextAreaFor(m => m.ObsRevisao, new { value = Model.ObsRevisao, style = "margin-left: 24px;width: 450px;", disabled = true })
+                                }
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px;">
+                            @if (ViewBag.Comprador)
+                            {
+                                if (Model.Status == "0" || Model.Status == "2" || Model.Status == "4" || Model.Status == "5" || Model.Status == "6" || Model.Status == "9")
+                                {
+                                    <button class="btn btn-primary pull-right" disabled>Reprovar Oferta </button>
+                                    <button class="btn btn-primary pull-right" disabled>Revisar Oferta </button>
+                                }
+                                else
+                                {
+                                    <button class="btn btn-primary pull-right" onclick="sendEmail(3);">Reprovar Oferta </button>
+                                    <button class="btn btn-primary pull-right" onclick="sendEmail(4);">Revisar Oferta </button>
+                                }
+                            }
+                            else
+                            {
+                                if (Model.Status == "0" || Model.Status == "2")
+                                {
+                                    <button type="submit" class="btn btn-primary pull-right">Enviar Oferta <span class="fa fa-floppy-o fa-right"></span></button>
+                                    <button class="btn btn-primary pull-right" onclick="sendEmail(5);">Recusar Oferta </button>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn btn-primary pull-right" disabled>Enviar Oferta <span class="fa fa-floppy-o fa-right"></span></button>
+                                    <button class="btn btn-primary pull-right" onclick="sendEmail(5);" disabled>Recusar Oferta </button>
+                                }
+                            }
+
+                            <a href='@Url.Action("Index")' data-toggle="tooltip" title="Voltar" class="btn btn-default pull-right">
+                                <span class="fa fa-reply fa-right"></span> Voltar
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/Scripts/Views/OfertaCompra/Edit.js"></script>
+}

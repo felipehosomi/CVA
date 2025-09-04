@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OportunidadeDataSet" targetNamespace="http://tempuri.org/OportunidadeDataSet.xsd" xmlns:mstns="http://tempuri.org/OportunidadeDataSet.xsd" xmlns="http://tempuri.org/OportunidadeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OportunidadeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OportunidadeDataSet" msprop:Generator_UserDSName="OportunidadeDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtOportunidade" msprop:Generator_TableClassName="dtOportunidadeDataTable" msprop:Generator_TableVarName="tabledtOportunidade" msprop:Generator_RowChangedName="dtOportunidadeRowChanged" msprop:Generator_TablePropName="dtOportunidade" msprop:Generator_RowDeletingName="dtOportunidadeRowDeleting" msprop:Generator_RowChangingName="dtOportunidadeRowChanging" msprop:Generator_RowEvHandlerName="dtOportunidadeRowChangeEventHandler" msprop:Generator_RowDeletedName="dtOportunidadeRowDeleted" msprop:Generator_RowClassName="dtOportunidadeRow" msprop:Generator_UserTableName="dtOportunidade" msprop:Generator_RowEvArgName="dtOportunidadeRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="FantasyName" msprop:Generator_ColumnVarNameInTable="columnFantasyName" msprop:Generator_ColumnPropNameInRow="FantasyName" msprop:Generator_ColumnPropNameInTable="FantasyNameColumn" msprop:Generator_UserColumnName="FantasyName" type="xs:string" minOccurs="0" />
+              <xs:element name="Responsavel" msprop:Generator_ColumnVarNameInTable="columnResponsavel" msprop:Generator_ColumnPropNameInRow="Responsavel" msprop:Generator_ColumnPropNameInTable="ResponsavelColumn" msprop:Generator_UserColumnName="Responsavel" type="xs:string" minOccurs="0" />
+              <xs:element name="BusinessValue" msprop:Generator_ColumnVarNameInTable="columnBusinessValue" msprop:Generator_ColumnPropNameInRow="BusinessValue" msprop:Generator_ColumnPropNameInTable="BusinessValueColumn" msprop:Generator_UserColumnName="BusinessValue" type="xs:string" minOccurs="0" />
+              <xs:element name="Insert" msprop:Generator_ColumnVarNameInTable="columnInsert" msprop:Generator_ColumnPropNameInRow="Insert" msprop:Generator_ColumnPropNameInTable="InsertColumn" msprop:Generator_UserColumnName="Insert" type="xs:string" minOccurs="0" />
+              <xs:element name="ExpectedDate" msprop:Generator_ColumnVarNameInTable="columnExpectedDate" msprop:Generator_ColumnPropNameInRow="ExpectedDate" msprop:Generator_ColumnPropNameInTable="ExpectedDateColumn" msprop:Generator_UserColumnName="ExpectedDate" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

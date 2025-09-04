@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Diário</a></li>
+    <li><a href="#">Apontamentos</a></li>
+    <li class="active"><a href="#">Apontar</a></li>
+</ul>
+<div class="page-content-wrap" ng-controller="NoteController" ng-init="OnLoad()">
+    
+    <div class="panel panel-default tabs">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active" id="tab-first-li"><a href="#tab-first" role="tab" data-toggle="tab">Apontar</a></li>
+            <li id="tab-three-li"><a href="#tab-tree" role="tab" data-toggle="tab">Consultar</a></li>
+        </ul>
+        <div class="panel-body tab-content">
+            <div class="tab-pane active" id="tab-first">
+                @Html.Partial("ApontamentoGeral")
+            </div>
+            <div id="tab-tree" class="tab-pane">
+                @Html.Partial("ApontamentoConsulta")
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p>Apontamento realizado com sucesso!</p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/Script/jquery")

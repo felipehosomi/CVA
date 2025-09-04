@@ -1,0 +1,80 @@
+﻿@model CVA.Portal.Producao.Model.Producao.ProducaoModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Portal de Produção</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Content/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="~/Content/custom.min.css" rel="stylesheet">
+
+    <link href="~/Content/custom.css" rel="stylesheet">
+
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+
+</head>
+<body class="login">
+    <div class="login_wrapper" style="margin-top: 25px">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <img style="margin-bottom: 50px" src="~/Content/Images/logo.png" />
+                @using (Html.BeginForm("ApontamentoOPAddApontamentoHR", "Producao", Model, FormMethod.Post, new { id = "formApontamento" }))
+                {
+                    <div class="form-group">
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                            <label class="control-label">Nº da ordem:</label>
+                            <span>@Model.NrOP</span>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                            <label class="control-label">Data da ordem:</label>
+                            <span>@Model.DataOP.ToString("dd/MM/yyyy")</span>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                            <label class="control-label">Item:</label>
+                            <span>@Model.Item</span>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                            <label class="control-label">Etapa:</label>
+                            <span>@Model.Etapa</span>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                            <label class="control-label">Recurso:</label>
+                            <span>@Model.RecursoCode - @Model.RecursoName</span>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                            <label class="control-label">Saldo:</label>
+                            <span>@Model.Quantidade</span>
+                        </div>
+                        <span class="help-block"></span>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <button type="submit" value="iniciar" name="submit" class="btn btn-success btn-block" id="btnSubmit">Iniciar</button>
+                    </div>
+                }
+                <img style="margin-top: 100px" src="~/Content/Images/cva_logo.png" />
+            </section>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#formApontamento").submit(function () {
+                $("#btnSubmit").attr("disabled", true);
+                return true;
+            });
+        });
+    </script>
+</body>
+</html>

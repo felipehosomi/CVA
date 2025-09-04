@@ -1,0 +1,2865 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CVAGestaoService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:12393/CVAGestaoService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:12393/CVAGestaoService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:12393/CVAGestaoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MODEL.Classes" />
+      <xsd:import schemaLocation="http://localhost:12393/CVAGestaoService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MODEL.Interface" />
+      <xsd:import schemaLocation="http://localhost:12393/CVAGestaoService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILogin_LogIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogIn" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_LogIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogInResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_LogOff_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogOff" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_LogOff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogOffResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_FirstAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:FirstAccess" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_FirstAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FirstAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalendar_SaveCalendarHeader_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCalendarHeader" />
+  </wsdl:message>
+  <wsdl:message name="ICalendar_SaveCalendarHeader_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCalendarHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalendar_GetCalendar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalendar" />
+  </wsdl:message>
+  <wsdl:message name="ICalendar_GetCalendar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalendarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalendar_GetCalendar_ById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalendar_ById" />
+  </wsdl:message>
+  <wsdl:message name="ICalendar_GetCalendar_ById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalendar_ByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalendar_CalendarStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalendarStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICalendar_CalendarStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalendarStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStatus_GetStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatus" />
+  </wsdl:message>
+  <wsdl:message name="IStatus_GetStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_SaveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUser" />
+  </wsdl:message>
+  <wsdl:message name="IUser_SaveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetUserStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserStatus" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetUserStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_UpdateUser_ByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser_ByUser" />
+  </wsdl:message>
+  <wsdl:message name="IUser_UpdateUser_ByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser_ByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_ProjectStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectStatus" />
+  </wsdl:message>
+  <wsdl:message name="IProject_ProjectStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Remove_Step_InputMessage">
+    <wsdl:part name="parameters" element="tns:Remove_Step" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Remove_Step_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Remove_StepResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Project_Search" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Project_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Get_ByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ByUser" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Get_ByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_GetSteps_InputMessage">
+    <wsdl:part name="parameters" element="tns:Project_GetSteps" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_GetSteps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Project_GetStepsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_LoadCombo_Project_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCombo_Project" />
+  </wsdl:message>
+  <wsdl:message name="IProject_LoadCombo_Project_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCombo_ProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Project_Save" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Project_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_Add_ColToProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:Project_Add_ColToProject" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_Add_ColToProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Project_Add_ColToProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_Remove_ColToProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:Project_Remove_ColToProject" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_Remove_ColToProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Project_Remove_ColToProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_Generate_Number_InputMessage">
+    <wsdl:part name="parameters" element="tns:Project_Generate_Number" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_Generate_Number_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Project_Generate_NumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_Get_StatusReportParcial_InputMessage">
+    <wsdl:part name="parameters" element="tns:Project_Get_StatusReportParcial" />
+  </wsdl:message>
+  <wsdl:message name="IProject_Project_Get_StatusReportParcial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Project_Get_StatusReportParcialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_SaveSpecialty_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSpecialty" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_SaveSpecialty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSpecialtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_SpecialtyStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpecialtyStatus" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_SpecialtyStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpecialtyStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_GetSpecialtys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialtys" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_GetSpecialtys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialtysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_GetSpecialtyByColaborator_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialtyByColaborator" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_GetSpecialtyByColaborator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialtyByColaboratorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_GetSpecialty_ByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialty_ByID" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_GetSpecialty_ByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialty_ByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_Specialty_Get_All_InputMessage">
+    <wsdl:part name="parameters" element="tns:Specialty_Get_All" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_Specialty_Get_All_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Specialty_Get_AllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_Specialty_Get_TiposEspecialidade_InputMessage">
+    <wsdl:part name="parameters" element="tns:Specialty_Get_TiposEspecialidade" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_Specialty_Get_TiposEspecialidade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Specialty_Get_TiposEspecialidadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_Get_Specialty_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Specialty" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialty_Get_Specialty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_SpecialtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_Get" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_Insert" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_Update" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Remove_Specialty_InputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_Remove_Specialty" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Remove_Specialty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_Remove_SpecialtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_ImportarDadosColaborador_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportarDadosColaborador" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_ImportarDadosColaborador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportarDadosColaboradorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_CollaboratorStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollaboratorStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_CollaboratorStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollaboratorStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetCollaborator_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaborator" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetCollaborator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_LoadCombo_Collaborator_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCombo_Collaborator" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_LoadCombo_Collaborator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCombo_CollaboratorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Get_NotUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_Get_NotUser" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Get_NotUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_Get_NotUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Get_Specialties_InputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_Get_Specialties" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Get_Specialties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_Get_SpecialtiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetPMs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPMs" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetPMs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPMsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Get_Active_InputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_Get_Active" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Collaborator_Get_Active_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Collaborator_Get_ActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetCollaboratorTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorTypes" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetCollaboratorTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_CollaboratorFromSpecialty_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollaboratorFromSpecialty" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_CollaboratorFromSpecialty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollaboratorFromSpecialtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Get_CollaboratorBySpecialty_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_CollaboratorBySpecialty" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_Get_CollaboratorBySpecialty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_CollaboratorBySpecialtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetCollaboratorById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorById" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetCollaboratorById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetCollaboratorNotUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorNotUser" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetCollaboratorNotUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorNotUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetSpecialtiesForCollaborator_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialtiesForCollaborator" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetSpecialtiesForCollaborator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialtiesForCollaboratorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetCollaboratorByFilters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorByFilters" />
+  </wsdl:message>
+  <wsdl:message name="ICollaborator_GetCollaboratorByFilters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorByFiltersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenre_GetGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenre" />
+  </wsdl:message>
+  <wsdl:message name="IGenre_GetGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaritalStatus_GetMaritalStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaritalStatus" />
+  </wsdl:message>
+  <wsdl:message name="IMaritalStatus_GetMaritalStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaritalStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUf_GetUf_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUf" />
+  </wsdl:message>
+  <wsdl:message name="IUf_GetUf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUfResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_SaveClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveClient" />
+  </wsdl:message>
+  <wsdl:message name="IClient_SaveClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetClientStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientStatus" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetClientStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_LoadCombo_Client_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCombo_Client" />
+  </wsdl:message>
+  <wsdl:message name="IClient_LoadCombo_Client_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCombo_ClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_Client_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Client_Search" />
+  </wsdl:message>
+  <wsdl:message name="IClient_Client_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Client_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetClientContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientContacts" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetClientContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetClientBy_ID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientBy_ID" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetClientBy_ID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientBy_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_Expense_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Expense_Save" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_Expense_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Expense_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetExpense_ByUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpense_ByUserID" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_GetExpense_ByUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpense_ByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_Expense_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Expense_Get" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_Expense_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Expense_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_Expense_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Expense_Search" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_Expense_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Expense_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_Expense_Remove_InputMessage">
+    <wsdl:part name="parameters" element="tns:Expense_Remove" />
+  </wsdl:message>
+  <wsdl:message name="IExpense_Expense_Remove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Expense_RemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectStep_SaveProjectStep_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProjectStep" />
+  </wsdl:message>
+  <wsdl:message name="IProjectStep_SaveProjectStep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProjectStepResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectStep_GetProjectStep_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectStep" />
+  </wsdl:message>
+  <wsdl:message name="IProjectStep_GetProjectStep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectStepResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectStep_GetProjectStepStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectStepStatus" />
+  </wsdl:message>
+  <wsdl:message name="IProjectStep_GetProjectStepStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectStepStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectStep_Get_ProjectSteps_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ProjectSteps" />
+  </wsdl:message>
+  <wsdl:message name="IProjectStep_Get_ProjectSteps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ProjectStepsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectStep_GetAllProjectStep_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProjectStep" />
+  </wsdl:message>
+  <wsdl:message name="IProjectStep_GetAllProjectStep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProjectStepResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectStep_GetProjectStep_ByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectStep_ByID" />
+  </wsdl:message>
+  <wsdl:message name="IProjectStep_GetProjectStep_ByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectStep_ByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_SaveOportunitty_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOportunitty" />
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_SaveOportunitty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOportunittyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_ConvertOportunittyToProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertOportunittyToProject" />
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_ConvertOportunittyToProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertOportunittyToProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_GetOportunittyById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOportunittyById" />
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_GetOportunittyById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOportunittyByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_Generate_NewCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:Generate_NewCode" />
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_Generate_NewCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Generate_NewCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="INote_Note_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Note_Save" />
+  </wsdl:message>
+  <wsdl:message name="INote_Note_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Note_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="INote_Note_Remove_InputMessage">
+    <wsdl:part name="parameters" element="tns:Note_Remove" />
+  </wsdl:message>
+  <wsdl:message name="INote_Note_Remove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Note_RemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="INote_Get_UserNotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_UserNotes" />
+  </wsdl:message>
+  <wsdl:message name="INote_Get_UserNotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_UserNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="INote_Note_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Note_Search" />
+  </wsdl:message>
+  <wsdl:message name="INote_Note_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Note_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotePeriod_GetAllPeriods_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPeriods" />
+  </wsdl:message>
+  <wsdl:message name="INotePeriod_GetAllPeriods_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPeriodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotePeriod_GetPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeriod" />
+  </wsdl:message>
+  <wsdl:message name="INotePeriod_GetPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotePeriod_AddPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPeriod" />
+  </wsdl:message>
+  <wsdl:message name="INotePeriod_AddPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotePeriod_DeletePeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePeriod" />
+  </wsdl:message>
+  <wsdl:message name="INotePeriod_DeletePeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseType_SaveExpenseType_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveExpenseType" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseType_SaveExpenseType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveExpenseTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseType_ExpenseTypeStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExpenseTypeStatus" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseType_ExpenseTypeStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExpenseTypeStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseType_GetExpenseTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpenseTypes" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseType_GetExpenseTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpenseTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseType_GetAllExpenseTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllExpenseTypes" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseType_GetAllExpenseTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllExpenseTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseType_GetExpenseType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpenseType" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseType_GetExpenseType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpenseTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPoliticExpense_GetPoliticExpenseByProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPoliticExpenseByProject" />
+  </wsdl:message>
+  <wsdl:message name="IPoliticExpense_GetPoliticExpenseByProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPoliticExpenseByProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUnitMeter_GetUnitMeter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnitMeter" />
+  </wsdl:message>
+  <wsdl:message name="IUnitMeter_GetUnitMeter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnitMeterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfile_SaveProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProfile" />
+  </wsdl:message>
+  <wsdl:message name="IProfile_SaveProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfile_ProfileGetStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProfileGetStatus" />
+  </wsdl:message>
+  <wsdl:message name="IProfile_ProfileGetStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProfileGetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfile_GetProfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfiles" />
+  </wsdl:message>
+  <wsdl:message name="IProfile_GetProfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfile_GetProfile_ByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfile_ByID" />
+  </wsdl:message>
+  <wsdl:message name="IProfile_GetProfile_ByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfile_ByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserView_GetUserView_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserView" />
+  </wsdl:message>
+  <wsdl:message name="IUserView_GetUserView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPeriod_OpenPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IPeriod_OpenPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPeriod_SetStatusSubPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetStatusSubPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IPeriod_SetStatusSubPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetStatusSubPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPeriod_SetStatusSubPeriodList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetStatusSubPeriodList" />
+  </wsdl:message>
+  <wsdl:message name="IPeriod_SetStatusSubPeriodList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetStatusSubPeriodListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAMSTicket_GetTicketsByProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketsByProject" />
+  </wsdl:message>
+  <wsdl:message name="IAMSTicket_GetTicketsByProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketsByProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAMSTicket_GetTicketsByProjectAndDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketsByProjectAndDate" />
+  </wsdl:message>
+  <wsdl:message name="IAMSTicket_GetTicketsByProjectAndDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketsByProjectAndDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAMSTicket_GetTicketsByProjectAndDateAndTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketsByProjectAndDateAndTicket" />
+  </wsdl:message>
+  <wsdl:message name="IAMSTicket_GetTicketsByProjectAndDateAndTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketsByProjectAndDateAndTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmailSender_SendEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="IEmailSender_SendEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectType_ProjectType_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectType_Get" />
+  </wsdl:message>
+  <wsdl:message name="IProjectType_ProjectType_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectType_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectType_ProjectType_Get_All_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectType_Get_All" />
+  </wsdl:message>
+  <wsdl:message name="IProjectType_ProjectType_Get_All_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectType_Get_AllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectType_ProjectType_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectType_Insert" />
+  </wsdl:message>
+  <wsdl:message name="IProjectType_ProjectType_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectType_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectType_ProjectType_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectType_Update" />
+  </wsdl:message>
+  <wsdl:message name="IProjectType_ProjectType_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectType_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectType_ProjectType_Remove_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectType_Remove" />
+  </wsdl:message>
+  <wsdl:message name="IProjectType_ProjectType_Remove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectType_RemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Get" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Get_Info_InputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Get_Info" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Get_Info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Get_InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Get_By_Project_InputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Get_By_Project" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Get_By_Project_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Get_By_ProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Get_By_Opportunitty_InputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Get_By_Opportunitty" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Get_By_Opportunitty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Get_By_OpportunittyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Insert" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Update" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Opportunitty_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Opportunitty_Insert" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Opportunitty_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Opportunitty_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Opportunitty_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Opportunitty_Update" />
+  </wsdl:message>
+  <wsdl:message name="IPricing_Pricing_Opportunitty_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Pricing_Opportunitty_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPercentProject_GetPercentProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPercentProject" />
+  </wsdl:message>
+  <wsdl:message name="IPercentProject_GetPercentProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPercentProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectParameters_ProjectParameters_Get_All_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectParameters_Get_All" />
+  </wsdl:message>
+  <wsdl:message name="IProjectParameters_ProjectParameters_Get_All_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectParameters_Get_AllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectParameters_ProjectParameters_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectParameters_Save" />
+  </wsdl:message>
+  <wsdl:message name="IProjectParameters_ProjectParameters_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProjectParameters_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStatusReport_StatusReport_Get_ParcialHours_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatusReport_Get_ParcialHours" />
+  </wsdl:message>
+  <wsdl:message name="IStatusReport_StatusReport_Get_ParcialHours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatusReport_Get_ParcialHoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStatusReport_StatusReport_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatusReport_Save" />
+  </wsdl:message>
+  <wsdl:message name="IStatusReport_StatusReport_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatusReport_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChangeRequest_ChangeRequest_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeRequest_Get" />
+  </wsdl:message>
+  <wsdl:message name="IChangeRequest_ChangeRequest_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeRequest_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChangeRequest_ChangeRequest_Get_for_Project_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeRequest_Get_for_Project" />
+  </wsdl:message>
+  <wsdl:message name="IChangeRequest_ChangeRequest_Get_for_Project_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeRequest_Get_for_ProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChangeRequest_ChangeRequest_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeRequest_Save" />
+  </wsdl:message>
+  <wsdl:message name="IChangeRequest_ChangeRequest_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeRequest_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_Get_DiasAutorizados_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DiasAutorizados" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_Get_DiasAutorizados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DiasAutorizadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_AddDiaAutorizado_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDiaAutorizado" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_AddDiaAutorizado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDiaAutorizadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_RemoveDiaAutorizado_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDiaAutorizado" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_RemoveDiaAutorizado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDiaAutorizadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_Get_DespesasAutorizados_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DespesasAutorizados" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_Get_DespesasAutorizados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DespesasAutorizadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_AddDespesaAutorizado_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDespesaAutorizado" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_AddDespesaAutorizado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDespesaAutorizadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_RemoveDespesaAutorizado_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDespesaAutorizado" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_RemoveDespesaAutorizado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDespesaAutorizadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_Get_HorasAutorizadas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_HorasAutorizadas" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_Get_HorasAutorizadas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_HorasAutorizadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_AddHorasAutorizadas_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddHorasAutorizadas" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_AddHorasAutorizadas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddHorasAutorizadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_RemoveHorasAutorizadas_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveHorasAutorizadas" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_RemoveHorasAutorizadas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveHorasAutorizadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_Get_LimiteHoras_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_LimiteHoras" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_Get_LimiteHoras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_LimiteHorasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_AddLimiteHoras_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLimiteHoras" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_AddLimiteHoras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLimiteHorasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_RemoveLimiteHoras_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLimiteHoras" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_RemoveLimiteHoras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLimiteHorasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILogin">
+    <wsdl:operation name="LogIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/LogIn" message="tns:ILogin_LogIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/LogInResponse" message="tns:ILogin_LogIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogOff">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/LogOff" message="tns:ILogin_LogOff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/LogOffResponse" message="tns:ILogin_LogOff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FirstAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/FirstAccess" message="tns:ILogin_FirstAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/FirstAccessResponse" message="tns:ILogin_FirstAccess_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICalendar">
+    <wsdl:operation name="SaveCalendarHeader">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalendar/SaveCalendarHeader" message="tns:ICalendar_SaveCalendarHeader_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalendar/SaveCalendarHeaderResponse" message="tns:ICalendar_SaveCalendarHeader_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalendar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalendar/GetCalendar" message="tns:ICalendar_GetCalendar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalendar/GetCalendarResponse" message="tns:ICalendar_GetCalendar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalendar_ById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalendar/GetCalendar_ById" message="tns:ICalendar_GetCalendar_ById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalendar/GetCalendar_ByIdResponse" message="tns:ICalendar_GetCalendar_ById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalendarStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalendar/CalendarStatus" message="tns:ICalendar_CalendarStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalendar/CalendarStatusResponse" message="tns:ICalendar_CalendarStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IStatus">
+    <wsdl:operation name="GetStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStatus/GetStatus" message="tns:IStatus_GetStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStatus/GetStatusResponse" message="tns:IStatus_GetStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IUser">
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetUser" message="tns:IUser_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetUserResponse" message="tns:IUser_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/SaveUser" message="tns:IUser_SaveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/SaveUserResponse" message="tns:IUser_SaveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetUserStatus" message="tns:IUser_GetUserStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetUserStatusResponse" message="tns:IUser_GetUserStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetUsers" message="tns:IUser_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetUsersResponse" message="tns:IUser_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser_ByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/UpdateUser_ByUser" message="tns:IUser_UpdateUser_ByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/UpdateUser_ByUserResponse" message="tns:IUser_UpdateUser_ByUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProject">
+    <wsdl:operation name="ProjectStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/ProjectStatus" message="tns:IProject_ProjectStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/ProjectStatusResponse" message="tns:IProject_ProjectStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Remove_Step">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/Remove_Step" message="tns:IProject_Remove_Step_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/Remove_StepResponse" message="tns:IProject_Remove_Step_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Project_Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/Project_Search" message="tns:IProject_Project_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/Project_SearchResponse" message="tns:IProject_Project_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/Get" message="tns:IProject_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/GetResponse" message="tns:IProject_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/Get_ByUser" message="tns:IProject_Get_ByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/Get_ByUserResponse" message="tns:IProject_Get_ByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Project_GetSteps">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/Project_GetSteps" message="tns:IProject_Project_GetSteps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/Project_GetStepsResponse" message="tns:IProject_Project_GetSteps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCombo_Project">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/LoadCombo_Project" message="tns:IProject_LoadCombo_Project_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/LoadCombo_ProjectResponse" message="tns:IProject_LoadCombo_Project_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Project_Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/Project_Save" message="tns:IProject_Project_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/Project_SaveResponse" message="tns:IProject_Project_Save_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Project_Add_ColToProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/Project_Add_ColToProject" message="tns:IProject_Project_Add_ColToProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/Project_Add_ColToProjectResponse" message="tns:IProject_Project_Add_ColToProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Project_Remove_ColToProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/Project_Remove_ColToProject" message="tns:IProject_Project_Remove_ColToProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/Project_Remove_ColToProjectResponse" message="tns:IProject_Project_Remove_ColToProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Project_Generate_Number">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/Project_Generate_Number" message="tns:IProject_Project_Generate_Number_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/Project_Generate_NumberResponse" message="tns:IProject_Project_Generate_Number_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Project_Get_StatusReportParcial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/Project_Get_StatusReportParcial" message="tns:IProject_Project_Get_StatusReportParcial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/Project_Get_StatusReportParcialResponse" message="tns:IProject_Project_Get_StatusReportParcial_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISpecialty">
+    <wsdl:operation name="SaveSpecialty">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialty/SaveSpecialty" message="tns:ISpecialty_SaveSpecialty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialty/SaveSpecialtyResponse" message="tns:ISpecialty_SaveSpecialty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpecialtyStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialty/SpecialtyStatus" message="tns:ISpecialty_SpecialtyStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialty/SpecialtyStatusResponse" message="tns:ISpecialty_SpecialtyStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialtys">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialty/GetSpecialtys" message="tns:ISpecialty_GetSpecialtys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialty/GetSpecialtysResponse" message="tns:ISpecialty_GetSpecialtys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialtyByColaborator">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialty/GetSpecialtyByColaborator" message="tns:ISpecialty_GetSpecialtyByColaborator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialty/GetSpecialtyByColaboratorResponse" message="tns:ISpecialty_GetSpecialtyByColaborator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialty_ByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialty/GetSpecialty_ByID" message="tns:ISpecialty_GetSpecialty_ByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialty/GetSpecialty_ByIDResponse" message="tns:ISpecialty_GetSpecialty_ByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Specialty_Get_All">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialty/Specialty_Get_All" message="tns:ISpecialty_Specialty_Get_All_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialty/Specialty_Get_AllResponse" message="tns:ISpecialty_Specialty_Get_All_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Specialty_Get_TiposEspecialidade">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialty/Specialty_Get_TiposEspecialidade" message="tns:ISpecialty_Specialty_Get_TiposEspecialidade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialty/Specialty_Get_TiposEspecialidadeResponse" message="tns:ISpecialty_Specialty_Get_TiposEspecialidade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Specialty">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialty/Get_Specialty" message="tns:ISpecialty_Get_Specialty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialty/Get_SpecialtyResponse" message="tns:ISpecialty_Get_Specialty_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICollaborator">
+    <wsdl:operation name="Collaborator_Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_Get" message="tns:ICollaborator_Collaborator_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_GetResponse" message="tns:ICollaborator_Collaborator_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Collaborator_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_Insert" message="tns:ICollaborator_Collaborator_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_InsertResponse" message="tns:ICollaborator_Collaborator_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Collaborator_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_Update" message="tns:ICollaborator_Collaborator_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_UpdateResponse" message="tns:ICollaborator_Collaborator_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Collaborator_Remove_Specialty">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_Remove_Specialty" message="tns:ICollaborator_Collaborator_Remove_Specialty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_Remove_SpecialtyResponse" message="tns:ICollaborator_Collaborator_Remove_Specialty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportarDadosColaborador">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/ImportarDadosColaborador" message="tns:ICollaborator_ImportarDadosColaborador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/ImportarDadosColaboradorResponse" message="tns:ICollaborator_ImportarDadosColaborador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollaboratorStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/CollaboratorStatus" message="tns:ICollaborator_CollaboratorStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/CollaboratorStatusResponse" message="tns:ICollaborator_CollaboratorStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaborator">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/GetCollaborator" message="tns:ICollaborator_GetCollaborator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/GetCollaboratorResponse" message="tns:ICollaborator_GetCollaborator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCombo_Collaborator">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/LoadCombo_Collaborator" message="tns:ICollaborator_LoadCombo_Collaborator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/LoadCombo_CollaboratorResponse" message="tns:ICollaborator_LoadCombo_Collaborator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Collaborator_Get_NotUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_Get_NotUser" message="tns:ICollaborator_Collaborator_Get_NotUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_Get_NotUserResponse" message="tns:ICollaborator_Collaborator_Get_NotUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Collaborator_Get_Specialties">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_Get_Specialties" message="tns:ICollaborator_Collaborator_Get_Specialties_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_Get_SpecialtiesResponse" message="tns:ICollaborator_Collaborator_Get_Specialties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPMs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/GetPMs" message="tns:ICollaborator_GetPMs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/GetPMsResponse" message="tns:ICollaborator_GetPMs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Collaborator_Get_Active">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_Get_Active" message="tns:ICollaborator_Collaborator_Get_Active_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/Collaborator_Get_ActiveResponse" message="tns:ICollaborator_Collaborator_Get_Active_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaboratorTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/GetCollaboratorTypes" message="tns:ICollaborator_GetCollaboratorTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/GetCollaboratorTypesResponse" message="tns:ICollaborator_GetCollaboratorTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollaboratorFromSpecialty">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/CollaboratorFromSpecialty" message="tns:ICollaborator_CollaboratorFromSpecialty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/CollaboratorFromSpecialtyResponse" message="tns:ICollaborator_CollaboratorFromSpecialty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_CollaboratorBySpecialty">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/Get_CollaboratorBySpecialty" message="tns:ICollaborator_Get_CollaboratorBySpecialty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/Get_CollaboratorBySpecialtyResponse" message="tns:ICollaborator_Get_CollaboratorBySpecialty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaboratorById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/GetCollaboratorById" message="tns:ICollaborator_GetCollaboratorById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/GetCollaboratorByIdResponse" message="tns:ICollaborator_GetCollaboratorById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaboratorNotUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/GetCollaboratorNotUser" message="tns:ICollaborator_GetCollaboratorNotUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/GetCollaboratorNotUserResponse" message="tns:ICollaborator_GetCollaboratorNotUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialtiesForCollaborator">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/GetSpecialtiesForCollaborator" message="tns:ICollaborator_GetSpecialtiesForCollaborator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/GetSpecialtiesForCollaboratorResponse" message="tns:ICollaborator_GetSpecialtiesForCollaborator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaboratorByFilters">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICollaborator/GetCollaboratorByFilters" message="tns:ICollaborator_GetCollaboratorByFilters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICollaborator/GetCollaboratorByFiltersResponse" message="tns:ICollaborator_GetCollaboratorByFilters_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IGenre">
+    <wsdl:operation name="GetGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenre/GetGenre" message="tns:IGenre_GetGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenre/GetGenreResponse" message="tns:IGenre_GetGenre_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMaritalStatus">
+    <wsdl:operation name="GetMaritalStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaritalStatus/GetMaritalStatus" message="tns:IMaritalStatus_GetMaritalStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaritalStatus/GetMaritalStatusResponse" message="tns:IMaritalStatus_GetMaritalStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IUf">
+    <wsdl:operation name="GetUf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUf/GetUf" message="tns:IUf_GetUf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUf/GetUfResponse" message="tns:IUf_GetUf_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IClient">
+    <wsdl:operation name="SaveClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/SaveClient" message="tns:IClient_SaveClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/SaveClientResponse" message="tns:IClient_SaveClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetClientStatus" message="tns:IClient_GetClientStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetClientStatusResponse" message="tns:IClient_GetClientStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCombo_Client">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/LoadCombo_Client" message="tns:IClient_LoadCombo_Client_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/LoadCombo_ClientResponse" message="tns:IClient_LoadCombo_Client_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Client_Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/Client_Search" message="tns:IClient_Client_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/Client_SearchResponse" message="tns:IClient_Client_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientContacts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetClientContacts" message="tns:IClient_GetClientContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetClientContactsResponse" message="tns:IClient_GetClientContacts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientBy_ID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetClientBy_ID" message="tns:IClient_GetClientBy_ID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetClientBy_IDResponse" message="tns:IClient_GetClientBy_ID_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IExpense">
+    <wsdl:operation name="Expense_Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/Expense_Save" message="tns:IExpense_Expense_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/Expense_SaveResponse" message="tns:IExpense_Expense_Save_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpense_ByUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/GetExpense_ByUserID" message="tns:IExpense_GetExpense_ByUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/GetExpense_ByUserIDResponse" message="tns:IExpense_GetExpense_ByUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Expense_Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/Expense_Get" message="tns:IExpense_Expense_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/Expense_GetResponse" message="tns:IExpense_Expense_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Expense_Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/Expense_Search" message="tns:IExpense_Expense_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/Expense_SearchResponse" message="tns:IExpense_Expense_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Expense_Remove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpense/Expense_Remove" message="tns:IExpense_Expense_Remove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpense/Expense_RemoveResponse" message="tns:IExpense_Expense_Remove_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProjectStep">
+    <wsdl:operation name="SaveProjectStep">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectStep/SaveProjectStep" message="tns:IProjectStep_SaveProjectStep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectStep/SaveProjectStepResponse" message="tns:IProjectStep_SaveProjectStep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectStep">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectStep/GetProjectStep" message="tns:IProjectStep_GetProjectStep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectStep/GetProjectStepResponse" message="tns:IProjectStep_GetProjectStep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectStepStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectStep/GetProjectStepStatus" message="tns:IProjectStep_GetProjectStepStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectStep/GetProjectStepStatusResponse" message="tns:IProjectStep_GetProjectStepStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ProjectSteps">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectStep/Get_ProjectSteps" message="tns:IProjectStep_Get_ProjectSteps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectStep/Get_ProjectStepsResponse" message="tns:IProjectStep_Get_ProjectSteps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProjectStep">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectStep/GetAllProjectStep" message="tns:IProjectStep_GetAllProjectStep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectStep/GetAllProjectStepResponse" message="tns:IProjectStep_GetAllProjectStep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectStep_ByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectStep/GetProjectStep_ByID" message="tns:IProjectStep_GetProjectStep_ByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectStep/GetProjectStep_ByIDResponse" message="tns:IProjectStep_GetProjectStep_ByID_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IOpportunity">
+    <wsdl:operation name="SaveOportunitty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpportunity/SaveOportunitty" message="tns:IOpportunity_SaveOportunitty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpportunity/SaveOportunittyResponse" message="tns:IOpportunity_SaveOportunitty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertOportunittyToProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpportunity/ConvertOportunittyToProject" message="tns:IOpportunity_ConvertOportunittyToProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpportunity/ConvertOportunittyToProjectResponse" message="tns:IOpportunity_ConvertOportunittyToProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOportunittyById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpportunity/GetOportunittyById" message="tns:IOpportunity_GetOportunittyById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpportunity/GetOportunittyByIdResponse" message="tns:IOpportunity_GetOportunittyById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpportunity/Search" message="tns:IOpportunity_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpportunity/SearchResponse" message="tns:IOpportunity_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Generate_NewCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpportunity/Generate_NewCode" message="tns:IOpportunity_Generate_NewCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpportunity/Generate_NewCodeResponse" message="tns:IOpportunity_Generate_NewCode_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="INote">
+    <wsdl:operation name="Note_Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/INote/Note_Save" message="tns:INote_Note_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INote/Note_SaveResponse" message="tns:INote_Note_Save_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Note_Remove">
+      <wsdl:input wsaw:Action="http://tempuri.org/INote/Note_Remove" message="tns:INote_Note_Remove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INote/Note_RemoveResponse" message="tns:INote_Note_Remove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserNotes">
+      <wsdl:input wsaw:Action="http://tempuri.org/INote/Get_UserNotes" message="tns:INote_Get_UserNotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INote/Get_UserNotesResponse" message="tns:INote_Get_UserNotes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Note_Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/INote/Note_Search" message="tns:INote_Note_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INote/Note_SearchResponse" message="tns:INote_Note_Search_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="INotePeriod">
+    <wsdl:operation name="GetAllPeriods">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotePeriod/GetAllPeriods" message="tns:INotePeriod_GetAllPeriods_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotePeriod/GetAllPeriodsResponse" message="tns:INotePeriod_GetAllPeriods_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotePeriod/GetPeriod" message="tns:INotePeriod_GetPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotePeriod/GetPeriodResponse" message="tns:INotePeriod_GetPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotePeriod/AddPeriod" message="tns:INotePeriod_AddPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotePeriod/AddPeriodResponse" message="tns:INotePeriod_AddPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotePeriod/DeletePeriod" message="tns:INotePeriod_DeletePeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotePeriod/DeletePeriodResponse" message="tns:INotePeriod_DeletePeriod_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IExpenseType">
+    <wsdl:operation name="SaveExpenseType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseType/SaveExpenseType" message="tns:IExpenseType_SaveExpenseType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseType/SaveExpenseTypeResponse" message="tns:IExpenseType_SaveExpenseType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExpenseTypeStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseType/ExpenseTypeStatus" message="tns:IExpenseType_ExpenseTypeStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseType/ExpenseTypeStatusResponse" message="tns:IExpenseType_ExpenseTypeStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpenseTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseType/GetExpenseTypes" message="tns:IExpenseType_GetExpenseTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseType/GetExpenseTypesResponse" message="tns:IExpenseType_GetExpenseTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllExpenseTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseType/GetAllExpenseTypes" message="tns:IExpenseType_GetAllExpenseTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseType/GetAllExpenseTypesResponse" message="tns:IExpenseType_GetAllExpenseTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpenseType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseType/GetExpenseType" message="tns:IExpenseType_GetExpenseType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseType/GetExpenseTypeResponse" message="tns:IExpenseType_GetExpenseType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPoliticExpense">
+    <wsdl:operation name="GetPoliticExpenseByProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPoliticExpense/GetPoliticExpenseByProject" message="tns:IPoliticExpense_GetPoliticExpenseByProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPoliticExpense/GetPoliticExpenseByProjectResponse" message="tns:IPoliticExpense_GetPoliticExpenseByProject_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IUnitMeter">
+    <wsdl:operation name="GetUnitMeter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUnitMeter/GetUnitMeter" message="tns:IUnitMeter_GetUnitMeter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUnitMeter/GetUnitMeterResponse" message="tns:IUnitMeter_GetUnitMeter_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProfile">
+    <wsdl:operation name="SaveProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfile/SaveProfile" message="tns:IProfile_SaveProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfile/SaveProfileResponse" message="tns:IProfile_SaveProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProfileGetStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfile/ProfileGetStatus" message="tns:IProfile_ProfileGetStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfile/ProfileGetStatusResponse" message="tns:IProfile_ProfileGetStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfile/GetProfiles" message="tns:IProfile_GetProfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfile/GetProfilesResponse" message="tns:IProfile_GetProfiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile_ByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfile/GetProfile_ByID" message="tns:IProfile_GetProfile_ByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfile/GetProfile_ByIDResponse" message="tns:IProfile_GetProfile_ByID_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IUserView">
+    <wsdl:operation name="GetUserView">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserView/GetUserView" message="tns:IUserView_GetUserView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserView/GetUserViewResponse" message="tns:IUserView_GetUserView_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPeriod">
+    <wsdl:operation name="OpenPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPeriod/OpenPeriod" message="tns:IPeriod_OpenPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPeriod/OpenPeriodResponse" message="tns:IPeriod_OpenPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetStatusSubPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPeriod/SetStatusSubPeriod" message="tns:IPeriod_SetStatusSubPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPeriod/SetStatusSubPeriodResponse" message="tns:IPeriod_SetStatusSubPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetStatusSubPeriodList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPeriod/SetStatusSubPeriodList" message="tns:IPeriod_SetStatusSubPeriodList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPeriod/SetStatusSubPeriodListResponse" message="tns:IPeriod_SetStatusSubPeriodList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAMSTicket">
+    <wsdl:operation name="GetTicketsByProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAMSTicket/GetTicketsByProject" message="tns:IAMSTicket_GetTicketsByProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAMSTicket/GetTicketsByProjectResponse" message="tns:IAMSTicket_GetTicketsByProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketsByProjectAndDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAMSTicket/GetTicketsByProjectAndDate" message="tns:IAMSTicket_GetTicketsByProjectAndDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAMSTicket/GetTicketsByProjectAndDateResponse" message="tns:IAMSTicket_GetTicketsByProjectAndDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketsByProjectAndDateAndTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAMSTicket/GetTicketsByProjectAndDateAndTicket" message="tns:IAMSTicket_GetTicketsByProjectAndDateAndTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAMSTicket/GetTicketsByProjectAndDateAndTicketResponse" message="tns:IAMSTicket_GetTicketsByProjectAndDateAndTicket_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IEmailSender">
+    <wsdl:operation name="SendEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmailSender/SendEmail" message="tns:IEmailSender_SendEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmailSender/SendEmailResponse" message="tns:IEmailSender_SendEmail_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProjectType">
+    <wsdl:operation name="ProjectType_Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectType/ProjectType_Get" message="tns:IProjectType_ProjectType_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectType/ProjectType_GetResponse" message="tns:IProjectType_ProjectType_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProjectType_Get_All">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectType/ProjectType_Get_All" message="tns:IProjectType_ProjectType_Get_All_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectType/ProjectType_Get_AllResponse" message="tns:IProjectType_ProjectType_Get_All_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProjectType_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectType/ProjectType_Insert" message="tns:IProjectType_ProjectType_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectType/ProjectType_InsertResponse" message="tns:IProjectType_ProjectType_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProjectType_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectType/ProjectType_Update" message="tns:IProjectType_ProjectType_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectType/ProjectType_UpdateResponse" message="tns:IProjectType_ProjectType_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProjectType_Remove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectType/ProjectType_Remove" message="tns:IProjectType_ProjectType_Remove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectType/ProjectType_RemoveResponse" message="tns:IProjectType_ProjectType_Remove_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPricing">
+    <wsdl:operation name="Pricing_Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPricing/Pricing_Get" message="tns:IPricing_Pricing_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPricing/Pricing_GetResponse" message="tns:IPricing_Pricing_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Get_Info">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPricing/Pricing_Get_Info" message="tns:IPricing_Pricing_Get_Info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPricing/Pricing_Get_InfoResponse" message="tns:IPricing_Pricing_Get_Info_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Get_By_Project">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPricing/Pricing_Get_By_Project" message="tns:IPricing_Pricing_Get_By_Project_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPricing/Pricing_Get_By_ProjectResponse" message="tns:IPricing_Pricing_Get_By_Project_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Get_By_Opportunitty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPricing/Pricing_Get_By_Opportunitty" message="tns:IPricing_Pricing_Get_By_Opportunitty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPricing/Pricing_Get_By_OpportunittyResponse" message="tns:IPricing_Pricing_Get_By_Opportunitty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPricing/Pricing_Insert" message="tns:IPricing_Pricing_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPricing/Pricing_InsertResponse" message="tns:IPricing_Pricing_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPricing/Pricing_Update" message="tns:IPricing_Pricing_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPricing/Pricing_UpdateResponse" message="tns:IPricing_Pricing_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Opportunitty_Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPricing/Pricing_Opportunitty_Insert" message="tns:IPricing_Pricing_Opportunitty_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPricing/Pricing_Opportunitty_InsertResponse" message="tns:IPricing_Pricing_Opportunitty_Insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Opportunitty_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPricing/Pricing_Opportunitty_Update" message="tns:IPricing_Pricing_Opportunitty_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPricing/Pricing_Opportunitty_UpdateResponse" message="tns:IPricing_Pricing_Opportunitty_Update_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPercentProject">
+    <wsdl:operation name="GetPercentProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPercentProject/GetPercentProject" message="tns:IPercentProject_GetPercentProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPercentProject/GetPercentProjectResponse" message="tns:IPercentProject_GetPercentProject_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProjectParameters">
+    <wsdl:operation name="ProjectParameters_Get_All">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectParameters/ProjectParameters_Get_All" message="tns:IProjectParameters_ProjectParameters_Get_All_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectParameters/ProjectParameters_Get_AllResponse" message="tns:IProjectParameters_ProjectParameters_Get_All_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProjectParameters_Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjectParameters/ProjectParameters_Save" message="tns:IProjectParameters_ProjectParameters_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjectParameters/ProjectParameters_SaveResponse" message="tns:IProjectParameters_ProjectParameters_Save_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IStatusReport">
+    <wsdl:operation name="StatusReport_Get_ParcialHours">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStatusReport/StatusReport_Get_ParcialHours" message="tns:IStatusReport_StatusReport_Get_ParcialHours_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStatusReport/StatusReport_Get_ParcialHoursResponse" message="tns:IStatusReport_StatusReport_Get_ParcialHours_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusReport_Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStatusReport/StatusReport_Save" message="tns:IStatusReport_StatusReport_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStatusReport/StatusReport_SaveResponse" message="tns:IStatusReport_StatusReport_Save_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IChangeRequest">
+    <wsdl:operation name="ChangeRequest_Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChangeRequest/ChangeRequest_Get" message="tns:IChangeRequest_ChangeRequest_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChangeRequest/ChangeRequest_GetResponse" message="tns:IChangeRequest_ChangeRequest_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRequest_Get_for_Project">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChangeRequest/ChangeRequest_Get_for_Project" message="tns:IChangeRequest_ChangeRequest_Get_for_Project_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChangeRequest/ChangeRequest_Get_for_ProjectResponse" message="tns:IChangeRequest_ChangeRequest_Get_for_Project_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRequest_Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChangeRequest/ChangeRequest_Save" message="tns:IChangeRequest_ChangeRequest_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChangeRequest/ChangeRequest_SaveResponse" message="tns:IChangeRequest_ChangeRequest_Save_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAuthorization">
+    <wsdl:operation name="Get_DiasAutorizados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/Get_DiasAutorizados" message="tns:IAuthorization_Get_DiasAutorizados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/Get_DiasAutorizadosResponse" message="tns:IAuthorization_Get_DiasAutorizados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDiaAutorizado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/AddDiaAutorizado" message="tns:IAuthorization_AddDiaAutorizado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/AddDiaAutorizadoResponse" message="tns:IAuthorization_AddDiaAutorizado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDiaAutorizado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/RemoveDiaAutorizado" message="tns:IAuthorization_RemoveDiaAutorizado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/RemoveDiaAutorizadoResponse" message="tns:IAuthorization_RemoveDiaAutorizado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_DespesasAutorizados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/Get_DespesasAutorizados" message="tns:IAuthorization_Get_DespesasAutorizados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/Get_DespesasAutorizadosResponse" message="tns:IAuthorization_Get_DespesasAutorizados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDespesaAutorizado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/AddDespesaAutorizado" message="tns:IAuthorization_AddDespesaAutorizado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/AddDespesaAutorizadoResponse" message="tns:IAuthorization_AddDespesaAutorizado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDespesaAutorizado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/RemoveDespesaAutorizado" message="tns:IAuthorization_RemoveDespesaAutorizado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/RemoveDespesaAutorizadoResponse" message="tns:IAuthorization_RemoveDespesaAutorizado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_HorasAutorizadas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/Get_HorasAutorizadas" message="tns:IAuthorization_Get_HorasAutorizadas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/Get_HorasAutorizadasResponse" message="tns:IAuthorization_Get_HorasAutorizadas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHorasAutorizadas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/AddHorasAutorizadas" message="tns:IAuthorization_AddHorasAutorizadas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/AddHorasAutorizadasResponse" message="tns:IAuthorization_AddHorasAutorizadas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveHorasAutorizadas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/RemoveHorasAutorizadas" message="tns:IAuthorization_RemoveHorasAutorizadas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/RemoveHorasAutorizadasResponse" message="tns:IAuthorization_RemoveHorasAutorizadas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_LimiteHoras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/Get_LimiteHoras" message="tns:IAuthorization_Get_LimiteHoras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/Get_LimiteHorasResponse" message="tns:IAuthorization_Get_LimiteHoras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLimiteHoras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/AddLimiteHoras" message="tns:IAuthorization_AddLimiteHoras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/AddLimiteHorasResponse" message="tns:IAuthorization_AddLimiteHoras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLimiteHoras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/RemoveLimiteHoras" message="tns:IAuthorization_RemoveLimiteHoras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/RemoveLimiteHorasResponse" message="tns:IAuthorization_RemoveLimiteHoras_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILogin" type="tns:ILogin">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LogIn">
+      <soap:operation soapAction="http://tempuri.org/ILogin/LogIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogOff">
+      <soap:operation soapAction="http://tempuri.org/ILogin/LogOff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FirstAccess">
+      <soap:operation soapAction="http://tempuri.org/ILogin/FirstAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICalendar" type="tns:ICalendar">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveCalendarHeader">
+      <soap:operation soapAction="http://tempuri.org/ICalendar/SaveCalendarHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalendar">
+      <soap:operation soapAction="http://tempuri.org/ICalendar/GetCalendar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalendar_ById">
+      <soap:operation soapAction="http://tempuri.org/ICalendar/GetCalendar_ById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalendarStatus">
+      <soap:operation soapAction="http://tempuri.org/ICalendar/CalendarStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IStatus" type="tns:IStatus">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStatus">
+      <soap:operation soapAction="http://tempuri.org/IStatus/GetStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IUser" type="tns:IUser">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IUser/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <soap:operation soapAction="http://tempuri.org/IUser/SaveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserStatus">
+      <soap:operation soapAction="http://tempuri.org/IUser/GetUserStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IUser/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser_ByUser">
+      <soap:operation soapAction="http://tempuri.org/IUser/UpdateUser_ByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IProject" type="tns:IProject">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProjectStatus">
+      <soap:operation soapAction="http://tempuri.org/IProject/ProjectStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Remove_Step">
+      <soap:operation soapAction="http://tempuri.org/IProject/Remove_Step" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Project_Search">
+      <soap:operation soapAction="http://tempuri.org/IProject/Project_Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap:operation soapAction="http://tempuri.org/IProject/Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ByUser">
+      <soap:operation soapAction="http://tempuri.org/IProject/Get_ByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Project_GetSteps">
+      <soap:operation soapAction="http://tempuri.org/IProject/Project_GetSteps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCombo_Project">
+      <soap:operation soapAction="http://tempuri.org/IProject/LoadCombo_Project" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Project_Save">
+      <soap:operation soapAction="http://tempuri.org/IProject/Project_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Project_Add_ColToProject">
+      <soap:operation soapAction="http://tempuri.org/IProject/Project_Add_ColToProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Project_Remove_ColToProject">
+      <soap:operation soapAction="http://tempuri.org/IProject/Project_Remove_ColToProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Project_Generate_Number">
+      <soap:operation soapAction="http://tempuri.org/IProject/Project_Generate_Number" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Project_Get_StatusReportParcial">
+      <soap:operation soapAction="http://tempuri.org/IProject/Project_Get_StatusReportParcial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ISpecialty" type="tns:ISpecialty">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveSpecialty">
+      <soap:operation soapAction="http://tempuri.org/ISpecialty/SaveSpecialty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpecialtyStatus">
+      <soap:operation soapAction="http://tempuri.org/ISpecialty/SpecialtyStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialtys">
+      <soap:operation soapAction="http://tempuri.org/ISpecialty/GetSpecialtys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialtyByColaborator">
+      <soap:operation soapAction="http://tempuri.org/ISpecialty/GetSpecialtyByColaborator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialty_ByID">
+      <soap:operation soapAction="http://tempuri.org/ISpecialty/GetSpecialty_ByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Specialty_Get_All">
+      <soap:operation soapAction="http://tempuri.org/ISpecialty/Specialty_Get_All" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Specialty_Get_TiposEspecialidade">
+      <soap:operation soapAction="http://tempuri.org/ISpecialty/Specialty_Get_TiposEspecialidade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Specialty">
+      <soap:operation soapAction="http://tempuri.org/ISpecialty/Get_Specialty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICollaborator" type="tns:ICollaborator">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Collaborator_Get">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/Collaborator_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Collaborator_Insert">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/Collaborator_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Collaborator_Update">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/Collaborator_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Collaborator_Remove_Specialty">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/Collaborator_Remove_Specialty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportarDadosColaborador">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/ImportarDadosColaborador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollaboratorStatus">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/CollaboratorStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaborator">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/GetCollaborator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCombo_Collaborator">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/LoadCombo_Collaborator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Collaborator_Get_NotUser">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/Collaborator_Get_NotUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Collaborator_Get_Specialties">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/Collaborator_Get_Specialties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPMs">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/GetPMs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Collaborator_Get_Active">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/Collaborator_Get_Active" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaboratorTypes">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/GetCollaboratorTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollaboratorFromSpecialty">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/CollaboratorFromSpecialty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_CollaboratorBySpecialty">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/Get_CollaboratorBySpecialty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaboratorById">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/GetCollaboratorById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaboratorNotUser">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/GetCollaboratorNotUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialtiesForCollaborator">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/GetSpecialtiesForCollaborator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaboratorByFilters">
+      <soap:operation soapAction="http://tempuri.org/ICollaborator/GetCollaboratorByFilters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IGenre" type="tns:IGenre">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetGenre">
+      <soap:operation soapAction="http://tempuri.org/IGenre/GetGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IMaritalStatus" type="tns:IMaritalStatus">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMaritalStatus">
+      <soap:operation soapAction="http://tempuri.org/IMaritalStatus/GetMaritalStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IUf" type="tns:IUf">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUf">
+      <soap:operation soapAction="http://tempuri.org/IUf/GetUf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IClient" type="tns:IClient">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveClient">
+      <soap:operation soapAction="http://tempuri.org/IClient/SaveClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientStatus">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetClientStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCombo_Client">
+      <soap:operation soapAction="http://tempuri.org/IClient/LoadCombo_Client" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Client_Search">
+      <soap:operation soapAction="http://tempuri.org/IClient/Client_Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientContacts">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetClientContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientBy_ID">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetClientBy_ID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IExpense" type="tns:IExpense">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Expense_Save">
+      <soap:operation soapAction="http://tempuri.org/IExpense/Expense_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpense_ByUserID">
+      <soap:operation soapAction="http://tempuri.org/IExpense/GetExpense_ByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Expense_Get">
+      <soap:operation soapAction="http://tempuri.org/IExpense/Expense_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Expense_Search">
+      <soap:operation soapAction="http://tempuri.org/IExpense/Expense_Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Expense_Remove">
+      <soap:operation soapAction="http://tempuri.org/IExpense/Expense_Remove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IProjectStep" type="tns:IProjectStep">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveProjectStep">
+      <soap:operation soapAction="http://tempuri.org/IProjectStep/SaveProjectStep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectStep">
+      <soap:operation soapAction="http://tempuri.org/IProjectStep/GetProjectStep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectStepStatus">
+      <soap:operation soapAction="http://tempuri.org/IProjectStep/GetProjectStepStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ProjectSteps">
+      <soap:operation soapAction="http://tempuri.org/IProjectStep/Get_ProjectSteps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProjectStep">
+      <soap:operation soapAction="http://tempuri.org/IProjectStep/GetAllProjectStep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectStep_ByID">
+      <soap:operation soapAction="http://tempuri.org/IProjectStep/GetProjectStep_ByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IOpportunity" type="tns:IOpportunity">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveOportunitty">
+      <soap:operation soapAction="http://tempuri.org/IOpportunity/SaveOportunitty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertOportunittyToProject">
+      <soap:operation soapAction="http://tempuri.org/IOpportunity/ConvertOportunittyToProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOportunittyById">
+      <soap:operation soapAction="http://tempuri.org/IOpportunity/GetOportunittyById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://tempuri.org/IOpportunity/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Generate_NewCode">
+      <soap:operation soapAction="http://tempuri.org/IOpportunity/Generate_NewCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_INote" type="tns:INote">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Note_Save">
+      <soap:operation soapAction="http://tempuri.org/INote/Note_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Note_Remove">
+      <soap:operation soapAction="http://tempuri.org/INote/Note_Remove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserNotes">
+      <soap:operation soapAction="http://tempuri.org/INote/Get_UserNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Note_Search">
+      <soap:operation soapAction="http://tempuri.org/INote/Note_Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_INotePeriod" type="tns:INotePeriod">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllPeriods">
+      <soap:operation soapAction="http://tempuri.org/INotePeriod/GetAllPeriods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeriod">
+      <soap:operation soapAction="http://tempuri.org/INotePeriod/GetPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPeriod">
+      <soap:operation soapAction="http://tempuri.org/INotePeriod/AddPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePeriod">
+      <soap:operation soapAction="http://tempuri.org/INotePeriod/DeletePeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IExpenseType" type="tns:IExpenseType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveExpenseType">
+      <soap:operation soapAction="http://tempuri.org/IExpenseType/SaveExpenseType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpenseTypeStatus">
+      <soap:operation soapAction="http://tempuri.org/IExpenseType/ExpenseTypeStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpenseTypes">
+      <soap:operation soapAction="http://tempuri.org/IExpenseType/GetExpenseTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllExpenseTypes">
+      <soap:operation soapAction="http://tempuri.org/IExpenseType/GetAllExpenseTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpenseType">
+      <soap:operation soapAction="http://tempuri.org/IExpenseType/GetExpenseType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPoliticExpense" type="tns:IPoliticExpense">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPoliticExpenseByProject">
+      <soap:operation soapAction="http://tempuri.org/IPoliticExpense/GetPoliticExpenseByProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IUnitMeter" type="tns:IUnitMeter">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUnitMeter">
+      <soap:operation soapAction="http://tempuri.org/IUnitMeter/GetUnitMeter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IProfile" type="tns:IProfile">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveProfile">
+      <soap:operation soapAction="http://tempuri.org/IProfile/SaveProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProfileGetStatus">
+      <soap:operation soapAction="http://tempuri.org/IProfile/ProfileGetStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfiles">
+      <soap:operation soapAction="http://tempuri.org/IProfile/GetProfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile_ByID">
+      <soap:operation soapAction="http://tempuri.org/IProfile/GetProfile_ByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IUserView" type="tns:IUserView">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserView">
+      <soap:operation soapAction="http://tempuri.org/IUserView/GetUserView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPeriod" type="tns:IPeriod">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OpenPeriod">
+      <soap:operation soapAction="http://tempuri.org/IPeriod/OpenPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetStatusSubPeriod">
+      <soap:operation soapAction="http://tempuri.org/IPeriod/SetStatusSubPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetStatusSubPeriodList">
+      <soap:operation soapAction="http://tempuri.org/IPeriod/SetStatusSubPeriodList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IAMSTicket" type="tns:IAMSTicket">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTicketsByProject">
+      <soap:operation soapAction="http://tempuri.org/IAMSTicket/GetTicketsByProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketsByProjectAndDate">
+      <soap:operation soapAction="http://tempuri.org/IAMSTicket/GetTicketsByProjectAndDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketsByProjectAndDateAndTicket">
+      <soap:operation soapAction="http://tempuri.org/IAMSTicket/GetTicketsByProjectAndDateAndTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IEmailSender" type="tns:IEmailSender">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendEmail">
+      <soap:operation soapAction="http://tempuri.org/IEmailSender/SendEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IProjectType" type="tns:IProjectType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProjectType_Get">
+      <soap:operation soapAction="http://tempuri.org/IProjectType/ProjectType_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjectType_Get_All">
+      <soap:operation soapAction="http://tempuri.org/IProjectType/ProjectType_Get_All" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjectType_Insert">
+      <soap:operation soapAction="http://tempuri.org/IProjectType/ProjectType_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjectType_Update">
+      <soap:operation soapAction="http://tempuri.org/IProjectType/ProjectType_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjectType_Remove">
+      <soap:operation soapAction="http://tempuri.org/IProjectType/ProjectType_Remove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPricing" type="tns:IPricing">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Pricing_Get">
+      <soap:operation soapAction="http://tempuri.org/IPricing/Pricing_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Get_Info">
+      <soap:operation soapAction="http://tempuri.org/IPricing/Pricing_Get_Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Get_By_Project">
+      <soap:operation soapAction="http://tempuri.org/IPricing/Pricing_Get_By_Project" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Get_By_Opportunitty">
+      <soap:operation soapAction="http://tempuri.org/IPricing/Pricing_Get_By_Opportunitty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Insert">
+      <soap:operation soapAction="http://tempuri.org/IPricing/Pricing_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Update">
+      <soap:operation soapAction="http://tempuri.org/IPricing/Pricing_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Opportunitty_Insert">
+      <soap:operation soapAction="http://tempuri.org/IPricing/Pricing_Opportunitty_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pricing_Opportunitty_Update">
+      <soap:operation soapAction="http://tempuri.org/IPricing/Pricing_Opportunitty_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPercentProject" type="tns:IPercentProject">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPercentProject">
+      <soap:operation soapAction="http://tempuri.org/IPercentProject/GetPercentProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IProjectParameters" type="tns:IProjectParameters">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProjectParameters_Get_All">
+      <soap:operation soapAction="http://tempuri.org/IProjectParameters/ProjectParameters_Get_All" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjectParameters_Save">
+      <soap:operation soapAction="http://tempuri.org/IProjectParameters/ProjectParameters_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IStatusReport" type="tns:IStatusReport">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StatusReport_Get_ParcialHours">
+      <soap:operation soapAction="http://tempuri.org/IStatusReport/StatusReport_Get_ParcialHours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusReport_Save">
+      <soap:operation soapAction="http://tempuri.org/IStatusReport/StatusReport_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IChangeRequest" type="tns:IChangeRequest">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ChangeRequest_Get">
+      <soap:operation soapAction="http://tempuri.org/IChangeRequest/ChangeRequest_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRequest_Get_for_Project">
+      <soap:operation soapAction="http://tempuri.org/IChangeRequest/ChangeRequest_Get_for_Project" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRequest_Save">
+      <soap:operation soapAction="http://tempuri.org/IChangeRequest/ChangeRequest_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IAuthorization" type="tns:IAuthorization">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_DiasAutorizados">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/Get_DiasAutorizados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDiaAutorizado">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/AddDiaAutorizado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDiaAutorizado">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/RemoveDiaAutorizado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_DespesasAutorizados">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/Get_DespesasAutorizados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDespesaAutorizado">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/AddDespesaAutorizado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDespesaAutorizado">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/RemoveDespesaAutorizado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_HorasAutorizadas">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/Get_HorasAutorizadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHorasAutorizadas">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/AddHorasAutorizadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveHorasAutorizadas">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/RemoveHorasAutorizadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LimiteHoras">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/Get_LimiteHoras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLimiteHoras">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/AddLimiteHoras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLimiteHoras">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/RemoveLimiteHoras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CVAGestaoService">
+    <wsdl:port name="BasicHttpBinding_ILogin" binding="tns:BasicHttpBinding_ILogin">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ICalendar" binding="tns:BasicHttpBinding_ICalendar">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IStatus" binding="tns:BasicHttpBinding_IStatus">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IUser" binding="tns:BasicHttpBinding_IUser">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IProject" binding="tns:BasicHttpBinding_IProject">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ISpecialty" binding="tns:BasicHttpBinding_ISpecialty">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ICollaborator" binding="tns:BasicHttpBinding_ICollaborator">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IGenre" binding="tns:BasicHttpBinding_IGenre">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IMaritalStatus" binding="tns:BasicHttpBinding_IMaritalStatus">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IUf" binding="tns:BasicHttpBinding_IUf">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IClient" binding="tns:BasicHttpBinding_IClient">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IExpense" binding="tns:BasicHttpBinding_IExpense">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IProjectStep" binding="tns:BasicHttpBinding_IProjectStep">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IOpportunity" binding="tns:BasicHttpBinding_IOpportunity">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_INote" binding="tns:BasicHttpBinding_INote">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_INotePeriod" binding="tns:BasicHttpBinding_INotePeriod">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IExpenseType" binding="tns:BasicHttpBinding_IExpenseType">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPoliticExpense" binding="tns:BasicHttpBinding_IPoliticExpense">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IUnitMeter" binding="tns:BasicHttpBinding_IUnitMeter">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IProfile" binding="tns:BasicHttpBinding_IProfile">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IUserView" binding="tns:BasicHttpBinding_IUserView">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPeriod" binding="tns:BasicHttpBinding_IPeriod">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IAMSTicket" binding="tns:BasicHttpBinding_IAMSTicket">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IEmailSender" binding="tns:BasicHttpBinding_IEmailSender">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IProjectType" binding="tns:BasicHttpBinding_IProjectType">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPricing" binding="tns:BasicHttpBinding_IPricing">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPercentProject" binding="tns:BasicHttpBinding_IPercentProject">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IProjectParameters" binding="tns:BasicHttpBinding_IProjectParameters">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IStatusReport" binding="tns:BasicHttpBinding_IStatusReport">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IChangeRequest" binding="tns:BasicHttpBinding_IChangeRequest">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IAuthorization" binding="tns:BasicHttpBinding_IAuthorization">
+      <soap:address location="http://localhost:12393/CVAGestaoService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

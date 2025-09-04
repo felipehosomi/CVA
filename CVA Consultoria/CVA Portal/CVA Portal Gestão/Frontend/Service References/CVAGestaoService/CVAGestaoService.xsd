@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MODEL.Classes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MODEL.Classes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:12393/CVAGestaoService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MODEL.Interface" />
+  <xs:complexType name="UserModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q1:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlterPassword" type="xs:int" />
+          <xs:element minOccurs="0" name="Collaborator" nillable="true" type="tns:CollaboratorModel" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstAccess" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OldPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Profile" nillable="true" type="tns:ProfileModel" />
+          <xs:element minOccurs="0" name="RepeatPassword" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserModel" nillable="true" type="tns:UserModel" />
+  <xs:complexType name="StatusModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusModel" nillable="true" type="tns:StatusModel" />
+  <xs:complexType name="CollaboratorModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q2:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CNPJ" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CPF" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Celular" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataNascimento" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmissaoRG" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Endereco" nillable="true" type="tns:AddressModel" />
+          <xs:element minOccurs="0" name="Especialidades" nillable="true" type="tns:ArrayOfSpecialtyModel" />
+          <xs:element minOccurs="0" name="EstadoCivil" type="xs:int" />
+          <xs:element minOccurs="0" name="Genero" type="xs:int" />
+          <xs:element minOccurs="0" name="GerenciaProjetos" type="xs:int" />
+          <xs:element minOccurs="0" name="LimiteHoras" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Nacionalidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Naturalidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgaoEmissor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Passaporte" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RG" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tipo" nillable="true" type="tns:CollaboratorTypeModel" />
+          <xs:element minOccurs="0" name="ValidadePassaporte" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CollaboratorModel" nillable="true" type="tns:CollaboratorModel" />
+  <xs:complexType name="AddressModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q3:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Block" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StreetNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Uf" nillable="true" type="tns:UfModel" />
+          <xs:element minOccurs="0" name="Uf_Id" type="xs:int" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddressModel" nillable="true" type="tns:AddressModel" />
+  <xs:complexType name="UfModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q4:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Uf" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UfModel" nillable="true" type="tns:UfModel" />
+  <xs:complexType name="ArrayOfSpecialtyModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecialtyModel" nillable="true" type="tns:SpecialtyModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpecialtyModel" nillable="true" type="tns:ArrayOfSpecialtyModel" />
+  <xs:complexType name="SpecialtyModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q5:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoEspecialidade" nillable="true" type="tns:SpecialtyTypeModel" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SpecialtyModel" nillable="true" type="tns:SpecialtyModel" />
+  <xs:complexType name="SpecialtyTypeModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q6:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SpecialtyTypeModel" nillable="true" type="tns:SpecialtyTypeModel" />
+  <xs:complexType name="CollaboratorTypeModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q7:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CnpjRequired" type="xs:int" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fixed" type="xs:int" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CollaboratorTypeModel" nillable="true" type="tns:CollaboratorTypeModel" />
+  <xs:complexType name="ProfileModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q8:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FinancialAccess" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Initials" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserView" nillable="true" type="tns:ArrayOfUserViewModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProfileModel" nillable="true" type="tns:ProfileModel" />
+  <xs:complexType name="ArrayOfUserViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserViewModel" nillable="true" type="tns:UserViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserViewModel" nillable="true" type="tns:ArrayOfUserViewModel" />
+  <xs:complexType name="UserViewModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q9:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserViewModel" nillable="true" type="tns:UserViewModel" />
+  <xs:complexType name="MessageModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:ErrorMessage" />
+      <xs:element minOccurs="0" name="Success" nillable="true" type="tns:SuccessMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageModel" nillable="true" type="tns:MessageModel" />
+  <xs:complexType name="ErrorMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrorMessage" nillable="true" type="tns:ErrorMessage" />
+  <xs:complexType name="SuccessMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SuccessMessage" nillable="true" type="tns:SuccessMessage" />
+  <xs:complexType name="CalendarModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q10:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FinishDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Holidays" nillable="true" type="tns:ArrayOfCalendar1Model" />
+          <xs:element minOccurs="0" name="InitialDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CalendarModel" nillable="true" type="tns:CalendarModel" />
+  <xs:complexType name="ArrayOfCalendar1Model">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Calendar1Model" nillable="true" type="tns:Calendar1Model" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalendar1Model" nillable="true" type="tns:ArrayOfCalendar1Model" />
+  <xs:complexType name="Calendar1Model">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q11:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CalendarId" type="xs:int" />
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Calendar1Model" nillable="true" type="tns:Calendar1Model" />
+  <xs:complexType name="ArrayOfCalendarModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalendarModel" nillable="true" type="tns:CalendarModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalendarModel" nillable="true" type="tns:ArrayOfCalendarModel" />
+  <xs:complexType name="ArrayOfStatusModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatusModel" nillable="true" type="tns:StatusModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatusModel" nillable="true" type="tns:ArrayOfStatusModel" />
+  <xs:complexType name="ArrayOfUserModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserModel" nillable="true" type="tns:UserModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserModel" nillable="true" type="tns:ArrayOfUserModel" />
+  <xs:complexType name="ArrayOfProjectModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectModel" nillable="true" type="tns:ProjectModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProjectModel" nillable="true" type="tns:ArrayOfProjectModel" />
+  <xs:complexType name="ProjectModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q12:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cliente" nillable="true" type="tns:ClientModel" />
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustoOrcado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustoReal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataInicial" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataPrevista" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fases" nillable="true" type="tns:ArrayOfStepModel" />
+          <xs:element minOccurs="0" name="Gerente" nillable="true" type="tns:CollaboratorModel" />
+          <xs:element minOccurs="0" name="HorasConsumidas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HorasOrcadas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IngressoLiquido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IngressoTotal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Itens" nillable="true" type="tns:ArrayOfStepItemModel" />
+          <xs:element minOccurs="0" name="Membros" nillable="true" type="tns:ArrayOfMemberModel" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pricing" nillable="true" type="tns:PricingModel" />
+          <xs:element minOccurs="0" name="Recursos" nillable="true" type="tns:ArrayOfCollaboratorModel" />
+          <xs:element minOccurs="0" name="ResponsavelDespesa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RiscoGerenciavel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SpecialtyRules" nillable="true" type="tns:ArrayOfSpecialtyRuleModel" />
+          <xs:element minOccurs="0" name="StatusReport" nillable="true" type="tns:ArrayOfStatusReportModel" />
+          <xs:element minOccurs="0" name="Tag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoProjeto" nillable="true" type="tns:ProjectTypeModel" />
+          <xs:element minOccurs="0" name="ValorProjeto" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjectModel" nillable="true" type="tns:ProjectModel" />
+  <xs:complexType name="ClientModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q13:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfAddressModel" />
+          <xs:element minOccurs="0" name="CNPJ" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Contact" nillable="true" type="tns:ArrayOfContactModel" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescriptionAMS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FantasyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocalPoliticExpense" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PoliticExpense" nillable="true" type="tns:ArrayOfPoliticExpenseModel" />
+          <xs:element minOccurs="0" name="Tag" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClientModel" nillable="true" type="tns:ClientModel" />
+  <xs:complexType name="ArrayOfAddressModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressModel" nillable="true" type="tns:AddressModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddressModel" nillable="true" type="tns:ArrayOfAddressModel" />
+  <xs:complexType name="ArrayOfContactModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactModel" nillable="true" type="tns:ContactModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContactModel" nillable="true" type="tns:ArrayOfContactModel" />
+  <xs:complexType name="ContactModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q14:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CellPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContactModel" nillable="true" type="tns:ContactModel" />
+  <xs:complexType name="ArrayOfPoliticExpenseModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PoliticExpenseModel" nillable="true" type="tns:PoliticExpenseModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPoliticExpenseModel" nillable="true" type="tns:ArrayOfPoliticExpenseModel" />
+  <xs:complexType name="PoliticExpenseModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q15:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Expense" nillable="true" type="tns:ExpenseTypeModel" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PoliticExpenseModel" nillable="true" type="tns:PoliticExpenseModel" />
+  <xs:complexType name="ExpenseTypeModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q16:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnitMeter" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExpenseTypeModel" nillable="true" type="tns:ExpenseTypeModel" />
+  <xs:complexType name="ArrayOfStepModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StepModel" nillable="true" type="tns:StepModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStepModel" nillable="true" type="tns:ArrayOfStepModel" />
+  <xs:complexType name="StepModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q17:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Concluido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustoOrcado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustoReal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataInicio" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataPrevista" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HorasConsumidas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HorasOrcadas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+          <xs:element minOccurs="0" name="StepId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StepModel" nillable="true" type="tns:StepModel" />
+  <xs:complexType name="ArrayOfStepItemModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StepItemModel" nillable="true" type="tns:StepItemModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStepItemModel" nillable="true" type="tns:ArrayOfStepItemModel" />
+  <xs:complexType name="StepItemModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q18:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Colaborador" nillable="true" type="tns:CollaboratorModel" />
+          <xs:element minOccurs="0" name="CustoOrcado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Especialidade" nillable="true" type="tns:SpecialtyModel" />
+          <xs:element minOccurs="0" name="Fase" nillable="true" type="tns:StepModel" />
+          <xs:element minOccurs="0" name="HorasOrcadas" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StepItemModel" nillable="true" type="tns:StepItemModel" />
+  <xs:complexType name="ArrayOfMemberModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MemberModel" nillable="true" type="tns:MemberModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMemberModel" nillable="true" type="tns:ArrayOfMemberModel" />
+  <xs:complexType name="MemberModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q19:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefone" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberModel" nillable="true" type="tns:MemberModel" />
+  <xs:complexType name="PricingModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q20:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItensPricing" nillable="true" type="tns:ArrayOfPricingItemModel" />
+          <xs:element minOccurs="0" name="PorcentagemBackoffice" type="xs:double" />
+          <xs:element minOccurs="0" name="PorcentagemComissao" type="xs:double" />
+          <xs:element minOccurs="0" name="PorcentagemImposto" type="xs:double" />
+          <xs:element minOccurs="0" name="PorcentagemMargem" type="xs:double" />
+          <xs:element minOccurs="0" name="PorcentagemRisco" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PricingModel" nillable="true" type="tns:PricingModel" />
+  <xs:complexType name="ArrayOfPricingItemModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PricingItemModel" nillable="true" type="tns:PricingItemModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPricingItemModel" nillable="true" type="tns:ArrayOfPricingItemModel" />
+  <xs:complexType name="PricingItemModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q21:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AereoTotal" type="xs:double" />
+          <xs:element minOccurs="0" name="AereoTrechos" type="xs:double" />
+          <xs:element minOccurs="0" name="AereoValor" type="xs:double" />
+          <xs:element minOccurs="0" name="AlimentacaoDias" type="xs:double" />
+          <xs:element minOccurs="0" name="AlimentacaoTotal" type="xs:double" />
+          <xs:element minOccurs="0" name="AlimentacaoValor" type="xs:double" />
+          <xs:element minOccurs="0" name="Colaborador" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeslocamentoHoras" type="xs:double" />
+          <xs:element minOccurs="0" name="DeslocamentoTotal" type="xs:double" />
+          <xs:element minOccurs="0" name="DeslocamentoValor" type="xs:double" />
+          <xs:element minOccurs="0" name="Especialidade" nillable="true" type="tns:SpecialtyModel" />
+          <xs:element minOccurs="0" name="EspecialidadeCusto" type="xs:double" />
+          <xs:element minOccurs="0" name="EspecialidadeHoras" type="xs:double" />
+          <xs:element minOccurs="0" name="EspecialidadeValor" type="xs:double" />
+          <xs:element minOccurs="0" name="HotelDiarias" type="xs:double" />
+          <xs:element minOccurs="0" name="HotelTotal" type="xs:double" />
+          <xs:element minOccurs="0" name="HotelValor" type="xs:double" />
+          <xs:element minOccurs="0" name="KmDistancia" type="xs:double" />
+          <xs:element minOccurs="0" name="KmTotal" type="xs:double" />
+          <xs:element minOccurs="0" name="KmTrechos" type="xs:double" />
+          <xs:element minOccurs="0" name="KmValor" type="xs:double" />
+          <xs:element minOccurs="0" name="RecursoDespesas" type="xs:double" />
+          <xs:element minOccurs="0" name="RecursoSubTotal" type="xs:double" />
+          <xs:element minOccurs="0" name="RecursoValorComDespesas" type="xs:double" />
+          <xs:element minOccurs="0" name="RecursoValorComImpostos" type="xs:double" />
+          <xs:element minOccurs="0" name="RecursoValorHorasComDespesa" type="xs:double" />
+          <xs:element minOccurs="0" name="RecursoValorHorasSemDespesa" type="xs:double" />
+          <xs:element minOccurs="0" name="ValorBackoffice" type="xs:double" />
+          <xs:element minOccurs="0" name="ValorComissao" type="xs:double" />
+          <xs:element minOccurs="0" name="ValorImposto" type="xs:double" />
+          <xs:element minOccurs="0" name="ValorMargem" type="xs:double" />
+          <xs:element minOccurs="0" name="ValorRisco" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PricingItemModel" nillable="true" type="tns:PricingItemModel" />
+  <xs:complexType name="ArrayOfCollaboratorModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CollaboratorModel" nillable="true" type="tns:CollaboratorModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCollaboratorModel" nillable="true" type="tns:ArrayOfCollaboratorModel" />
+  <xs:complexType name="ArrayOfSpecialtyRuleModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecialtyRuleModel" nillable="true" type="tns:SpecialtyRuleModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpecialtyRuleModel" nillable="true" type="tns:ArrayOfSpecialtyRuleModel" />
+  <xs:complexType name="SpecialtyRuleModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q22:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CollaboratorId" type="xs:int" />
+          <xs:element minOccurs="0" name="CollaboratorName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SpecialtyId" type="xs:int" />
+          <xs:element minOccurs="0" name="SpecialtyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SpecialtyRuleModel" nillable="true" type="tns:SpecialtyRuleModel" />
+  <xs:complexType name="ArrayOfStatusReportModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatusReportModel" nillable="true" type="tns:StatusReportModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatusReportModel" nillable="true" type="tns:ArrayOfStatusReportModel" />
+  <xs:complexType name="StatusReportModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q23:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Concluido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Conquistas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fases" nillable="true" type="tns:ArrayOfStepModel" />
+          <xs:element minOccurs="0" name="GerenteProjeto" nillable="true" type="tns:CollaboratorModel" />
+          <xs:element minOccurs="0" name="HorasConsumidas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HorasOrcadas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlanoDeAcao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PontosAtencao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Projeto" nillable="true" type="tns:ProjectModel" />
+          <xs:element minOccurs="0" name="ProximosPassos" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StatusReportModel" nillable="true" type="tns:StatusReportModel" />
+  <xs:complexType name="ProjectTypeModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q24:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AMS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Equipe" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjectTypeModel" nillable="true" type="tns:ProjectTypeModel" />
+  <xs:complexType name="ArrayOfSpecialtyTypeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecialtyTypeModel" nillable="true" type="tns:SpecialtyTypeModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpecialtyTypeModel" nillable="true" type="tns:ArrayOfSpecialtyTypeModel" />
+  <xs:complexType name="ArrayOfCollaboratorTypeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CollaboratorTypeModel" nillable="true" type="tns:CollaboratorTypeModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCollaboratorTypeModel" nillable="true" type="tns:ArrayOfCollaboratorTypeModel" />
+  <xs:complexType name="ArrayOfGenreModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenreModel" nillable="true" type="tns:GenreModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenreModel" nillable="true" type="tns:ArrayOfGenreModel" />
+  <xs:complexType name="GenreModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q25:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenreModel" nillable="true" type="tns:GenreModel" />
+  <xs:complexType name="ArrayOfMaritalStatusModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaritalStatusModel" nillable="true" type="tns:MaritalStatusModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaritalStatusModel" nillable="true" type="tns:ArrayOfMaritalStatusModel" />
+  <xs:complexType name="MaritalStatusModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q26:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaritalStatusModel" nillable="true" type="tns:MaritalStatusModel" />
+  <xs:complexType name="ArrayOfUfModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UfModel" nillable="true" type="tns:UfModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUfModel" nillable="true" type="tns:ArrayOfUfModel" />
+  <xs:complexType name="ArrayOfClientModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClientModel" nillable="true" type="tns:ClientModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClientModel" nillable="true" type="tns:ArrayOfClientModel" />
+  <xs:complexType name="ExpenseModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q27:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Anexo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumNota" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Projeto" nillable="true" type="tns:ProjectModel" />
+          <xs:element minOccurs="0" name="Quilometragem" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDespesa" nillable="true" type="tns:ExpenseTypeModel" />
+          <xs:element minOccurs="0" name="ValorDespesa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValorNota" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValorReembolso" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExpenseModel" nillable="true" type="tns:ExpenseModel" />
+  <xs:complexType name="ArrayOfExpenseModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpenseModel" nillable="true" type="tns:ExpenseModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpenseModel" nillable="true" type="tns:ArrayOfExpenseModel" />
+  <xs:complexType name="ProjectStepModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q28:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsProjectStep" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjectStepModel" nillable="true" type="tns:ProjectStepModel" />
+  <xs:complexType name="ArrayOfProjectStepModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectStepModel" nillable="true" type="tns:ProjectStepModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProjectStepModel" nillable="true" type="tns:ArrayOfProjectStepModel" />
+  <xs:complexType name="OpportunityModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q29:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cliente" nillable="true" type="tns:ClientModel" />
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContatoComercial" nillable="true" type="tns:ContactModel" />
+          <xs:element minOccurs="0" name="Convertida" type="xs:int" />
+          <xs:element minOccurs="0" name="CustoOrcado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataPrevista" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Detalhes" nillable="true" type="tns:ArrayOfOportunittyObservationModel" />
+          <xs:element minOccurs="0" name="Fases" nillable="true" type="tns:ArrayOfOportunittyStepsModel" />
+          <xs:element minOccurs="0" name="HorasOrcadas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IngressoLiquido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IngressoTotal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pricing" nillable="true" type="tns:PricingModel" />
+          <xs:element minOccurs="0" name="Responsavel" nillable="true" type="tns:CollaboratorModel" />
+          <xs:element minOccurs="0" name="ResponsavelDespesa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RiscoGerenciavel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tecnico" nillable="true" type="tns:CollaboratorModel" />
+          <xs:element minOccurs="0" name="Temperatura" nillable="true" type="tns:PercentProjectModel" />
+          <xs:element minOccurs="0" name="TipoProjeto" nillable="true" type="tns:ProjectTypeModel" />
+          <xs:element minOccurs="0" name="ValorOportunidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Vendedor" nillable="true" type="tns:CollaboratorModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OpportunityModel" nillable="true" type="tns:OpportunityModel" />
+  <xs:complexType name="ArrayOfOportunittyObservationModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OportunittyObservationModel" nillable="true" type="tns:OportunittyObservationModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOportunittyObservationModel" nillable="true" type="tns:ArrayOfOportunittyObservationModel" />
+  <xs:complexType name="OportunittyObservationModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q30:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Colaborador" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Observation" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OportunittyObservationModel" nillable="true" type="tns:OportunittyObservationModel" />
+  <xs:complexType name="ArrayOfOportunittyStepsModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OportunittyStepsModel" nillable="true" type="tns:OportunittyStepsModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOportunittyStepsModel" nillable="true" type="tns:ArrayOfOportunittyStepsModel" />
+  <xs:complexType name="OportunittyStepsModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q31:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustoOrcado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustoReal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataInicial" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataPrevista" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateConclusion" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateInit" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HorasConsumidas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HorasOrcadas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjectStep" nillable="true" type="tns:ProjectStepModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OportunittyStepsModel" nillable="true" type="tns:OportunittyStepsModel" />
+  <xs:complexType name="PercentProjectModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q32:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Percent" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PercentProjectModel" nillable="true" type="tns:PercentProjectModel" />
+  <xs:complexType name="ArrayOfOpportunityModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OpportunityModel" nillable="true" type="tns:OpportunityModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOpportunityModel" nillable="true" type="tns:ArrayOfOpportunityModel" />
+  <xs:complexType name="NoteModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q33:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FinishHour" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IndicatedHours" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InitHour" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IntervalHour" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PeriodId" type="xs:int" />
+          <xs:element minOccurs="0" name="Project" nillable="true" type="tns:ProjectModel" />
+          <xs:element minOccurs="0" name="ProvidedHours" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Requester" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Specialty" nillable="true" type="tns:SpecialtyModel" />
+          <xs:element minOccurs="0" name="StatusPDA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Step" nillable="true" type="tns:StepModel" />
+          <xs:element minOccurs="0" name="Team" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ticket" nillable="true" type="tns:TicketModel" />
+          <xs:element minOccurs="0" name="TotalHours" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalLine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserNotes" nillable="true" type="tns:ArrayOfNoteModel" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NoteModel" nillable="true" type="tns:NoteModel" />
+  <xs:complexType name="TicketModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q34:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TicketModel" nillable="true" type="tns:TicketModel" />
+  <xs:complexType name="ArrayOfNoteModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NoteModel" nillable="true" type="tns:NoteModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNoteModel" nillable="true" type="tns:ArrayOfNoteModel" />
+  <xs:complexType name="NoteFilterModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientId" type="xs:int" />
+      <xs:element minOccurs="0" name="FinishDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InitialDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NoteFilterModel" nillable="true" type="tns:NoteFilterModel" />
+  <xs:complexType name="ArrayOfAuthorizedHoursModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthorizedHoursModel" nillable="true" type="tns:AuthorizedHoursModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthorizedHoursModel" nillable="true" type="tns:ArrayOfAuthorizedHoursModel" />
+  <xs:complexType name="AuthorizedHoursModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q35:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Colaborador" type="xs:int" />
+          <xs:element minOccurs="0" name="ColaboradorNome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Horas" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthorizedHoursModel" nillable="true" type="tns:AuthorizedHoursModel" />
+  <xs:complexType name="ArrayOfPercentProjectModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PercentProjectModel" nillable="true" type="tns:PercentProjectModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPercentProjectModel" nillable="true" type="tns:ArrayOfPercentProjectModel" />
+  <xs:complexType name="ArrayOfExpenseTypeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpenseTypeModel" nillable="true" type="tns:ExpenseTypeModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpenseTypeModel" nillable="true" type="tns:ArrayOfExpenseTypeModel" />
+  <xs:complexType name="ArrayOfUnitMeterModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UnitMeterModel" nillable="true" type="tns:UnitMeterModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUnitMeterModel" nillable="true" type="tns:ArrayOfUnitMeterModel" />
+  <xs:complexType name="UnitMeterModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q36="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q36:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UnitMeter" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UnitMeterModel" nillable="true" type="tns:UnitMeterModel" />
+  <xs:complexType name="ArrayOfProfileModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProfileModel" nillable="true" type="tns:ProfileModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProfileModel" nillable="true" type="tns:ArrayOfProfileModel" />
+  <xs:complexType name="SubPeriodModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q37:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Client" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClientId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Collaborator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CollaboratorId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DateFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateTo" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Project" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjectId" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubPeriodModel" nillable="true" type="tns:SubPeriodModel" />
+  <xs:complexType name="ArrayOfSubPeriodModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubPeriodModel" nillable="true" type="tns:SubPeriodModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubPeriodModel" nillable="true" type="tns:ArrayOfSubPeriodModel" />
+  <xs:complexType name="ArrayOfAMSTicketModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AMSTicketModel" nillable="true" type="tns:AMSTicketModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAMSTicketModel" nillable="true" type="tns:ArrayOfAMSTicketModel" />
+  <xs:complexType name="AMSTicketModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q38="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q38:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientAMS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumTck" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Request" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StatusAMS" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AMSTicketModel" nillable="true" type="tns:AMSTicketModel" />
+  <xs:complexType name="ArrayOfProjectTypeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectTypeModel" nillable="true" type="tns:ProjectTypeModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProjectTypeModel" nillable="true" type="tns:ArrayOfProjectTypeModel" />
+  <xs:complexType name="ArrayOfProjectParametersModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectParametersModel" nillable="true" type="tns:ProjectParametersModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProjectParametersModel" nillable="true" type="tns:ArrayOfProjectParametersModel" />
+  <xs:complexType name="ProjectParametersModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q39:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="De" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Equipe" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjectParametersModel" nillable="true" type="tns:ProjectParametersModel" />
+  <xs:complexType name="ChangeRequestModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q40="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q40:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Autor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GPE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GPI" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImpactosNegativos" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImpactosPositivos" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Motivos" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Processo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Projeto" nillable="true" type="tns:ProjectModel" />
+          <xs:element minOccurs="0" name="Recomendacoes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecursosSolicitados" nillable="true" type="tns:ArrayOfChangeRequestRecursoModel" />
+          <xs:element minOccurs="0" name="Situacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Versao" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeRequestModel" nillable="true" type="tns:ChangeRequestModel" />
+  <xs:complexType name="ArrayOfChangeRequestRecursoModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeRequestRecursoModel" nillable="true" type="tns:ChangeRequestRecursoModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChangeRequestRecursoModel" nillable="true" type="tns:ArrayOfChangeRequestRecursoModel" />
+  <xs:complexType name="ChangeRequestRecursoModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeRequest" nillable="true" type="tns:ChangeRequestModel" />
+      <xs:element minOccurs="0" name="RecursoEspecialidade" type="xs:int" />
+      <xs:element minOccurs="0" name="RecursoEspecialidadeNome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecursoFase" type="xs:int" />
+      <xs:element minOccurs="0" name="RecursoFaseNome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecursoHorasSolicitadas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecursoNecessidade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecursoSolicitante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangeRequestRecursoModel" nillable="true" type="tns:ChangeRequestRecursoModel" />
+  <xs:complexType name="ArrayOfChangeRequestModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeRequestModel" nillable="true" type="tns:ChangeRequestModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChangeRequestModel" nillable="true" type="tns:ArrayOfChangeRequestModel" />
+  <xs:complexType name="ArrayOfAuthorizedDayModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthorizedDayModel" nillable="true" type="tns:AuthorizedDayModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthorizedDayModel" nillable="true" type="tns:ArrayOfAuthorizedDayModel" />
+  <xs:complexType name="AuthorizedDayModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q41="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q41:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Colaborador" type="xs:int" />
+          <xs:element minOccurs="0" name="ColaboradorNome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="De" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthorizedDayModel" nillable="true" type="tns:AuthorizedDayModel" />
+  <xs:complexType name="ArrayOfHoursLimitModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HoursLimitModel" nillable="true" type="tns:HoursLimitModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHoursLimitModel" nillable="true" type="tns:ArrayOfHoursLimitModel" />
+  <xs:complexType name="HoursLimitModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://schemas.datacontract.org/2004/07/MODEL.Interface" base="q42:IModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Colaborador" type="xs:int" />
+          <xs:element minOccurs="0" name="ColaboradorNome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Horas" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HoursLimitModel" nillable="true" type="tns:HoursLimitModel" />
+</xs:schema>

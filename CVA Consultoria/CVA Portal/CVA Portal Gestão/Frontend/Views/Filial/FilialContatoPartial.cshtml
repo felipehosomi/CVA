@@ -1,0 +1,91 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Cadastrar<strong> Contatos</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nome</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>   
+                                    <input type="text" class="form-control" ng-model="branch.Contact.Name" tabindex="8" />
+                                </div>
+                                <span class="help-block">Informe o nome do responsável</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Email</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-send"></span></span>
+                                    <input type="text" class="form-control" ng-model="branch.Contact.Email" tabindex="9" />
+                                </div>
+                                <span class="help-block">Informe o e-mail do responsável</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Telefone</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-phone"></span></span>
+                                    <input type="text" class="form-control" ng-model="branch.Contact.Phone" tabindex="10" id="phone-mask"/>
+                                </div>
+                                <span class="help-block">Informe o telefone da filial</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Celular</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-mobile-phone"></span></span>
+                                    <input type="text" class="form-control" ng-model="branch.Contact.CellPhone" tabindex="11" id="cellphone-mask"/>
+                                </div>
+                                <span class="help-block">Informe o número de celular do responsável</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-info" ng-click="AddLines()" ng-disabled="branch.Contact.Name == null || branch.Contact.Name == ''" tabindex="12">Adicionar</button>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td class="col-md-3">Nome</td>
+                                        <td class="col-md-3">Email</td>
+                                        <td class="col-md-3">#</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="contatos">
+                                    <tr ng-repeat="hol in ContactList">
+                                        <td>{{hol.Name}}</td>
+                                        <td>{{hol.Email}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default" ng-click="EditContact($index)"><span class="fa fa-edit"></span></button>
+                                            <button type="button" class="btn btn-danger" ng-click="RemoveLine($index)"><span class="glyphicon glyphicon-remove"></span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jquery-1.12.3.min.js"></script>
+<script src="~/Scripts/plugins/maskedinput/jquery.maskedinput.js"></script>
+<script>
+    $('#cellphone-mask').mask('(99)9999-99990');
+    $('#phone-mask').mask('(99)9999-99990');
+</script>

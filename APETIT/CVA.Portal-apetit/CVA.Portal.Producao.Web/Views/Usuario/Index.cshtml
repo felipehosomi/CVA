@@ -1,0 +1,52 @@
+﻿@model List<CVA.Portal.Producao.Model.Configuracoes.UsuarioModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <div class="row">
+        <div class="x_panel">
+            <a href="@Url.Action("Create", "Usuario")">
+                <button type="button" class="btn btn-primary pull-right">Novo <span class="fa fa-floppy-o fa-right"></span></button>
+            </a>
+
+            @if (CVA.Portal.Producao.Web.Helper.CvaSession.ViewList.Any(x => x.Controller.Equals("Perfil")))
+            {
+                <a href="@Url.Action("Index", "Perfil")">
+                    <button type="button" class="btn btn-dark pull-right" style="margin-right: 15px;">Perfil <span class="fa fa-user fa-right"></span></button>
+                </a>
+            }
+
+
+            <div class="x_title">
+                <h2>Usuário</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <table id="dataTable" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (var i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td>@Model[i].Usuario</td>
+                                <td style="text-align: center">
+                                    <a href='@Url.Action("Edit", new { id = Model[i].Usuario.Replace(".", "__")})' class="btn btn-default btn-small no-margin" data-toggle="tooltip" title="Editar">
+                                        <span class="fa fa-pencil"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <button type="button" class="btn btn-default pull-left" onclick="location.href='@Url.Action("Menu", "Apetit")'"><span class="fa fa-reply fa-right"></span> Voltar</button>
+            </div>
+        </div>
+    </div>
+</div>

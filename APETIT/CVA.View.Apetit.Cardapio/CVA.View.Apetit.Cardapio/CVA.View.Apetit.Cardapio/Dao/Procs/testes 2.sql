@@ -1,0 +1,41 @@
+--set schema SBO_APETIT_PRODUCAO;
+
+DO BEGIN
+	declare PlanId varchar(250) = '14';
+	declare Contrato varchar(250);
+	declare Qtd INT = 0;
+	
+	SELECT top 1 "U_CVA_ID_CONTRATO" INTO Contrato FROM "@CVA_PLANEJAMENTO" WHERE "Code" = PlanId;
+	
+	SELECT distinct
+		 TBG."Code"
+		,TBG."U_CVA_DES_TP_PROT" AS "Contratado"
+		,TBG."U_CVA_INCIDENCIA"
+		,(
+			SELECT 
+				COUNT("Code") 
+			FROM "@CVA_LN_PLANEJAMENTO" AS PL 
+				INNER JOIN "OITM" AS OITM ON
+					PL."U_CVA_INSUMO" = OITM."ItemCode"
+					AND OITM."U_CVA_Familia" = TPP."U_CVA_FAMILIA"
+			AND OITM."U_CVA_Subfamilia" = TPP."U_CVA_SUB_FAMILIA"
+			WHERE PL."U_CVA_TIPO_PRATO" = TPRATO."Code"
+		) AS "Planejado"
+		
+	FROM  "@CVA_TABGRAMATURA" AS TBG
+		INNER JOIN "@CVA_TIPOPROTEINA" AS TPP ON
+				TBG."U_CVA_TIPO_PROTEINA" = TPP."Code"
+		INNER JOIN "@CVA_TIPOPRATO" AS TPRATO ON
+				TPRATO."U_CVA_FAMILIA" = TPP."U_CVA_FAMILIA"
+			AND	TPRATO."U_CVA_SUB_FAMILIA" = TPP."U_CVA_SUB_FAMILIA"
+
+	WHERE 	TBG."U_CVA_ID_CONTRATO" = Contrato
+		AND TPRATO."U_CVA_PROTEINA" = 'Y'		
+	GROUP BY
+		TBG."Code"
+		,TBG."U_CVA_DES_TP_PROT" 
+		,TBG."U_CVA_INCIDENCIA"
+		,TPRATO."Code"
+	;
+
+END;

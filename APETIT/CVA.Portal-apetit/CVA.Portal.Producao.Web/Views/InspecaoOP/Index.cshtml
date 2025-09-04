@@ -1,0 +1,58 @@
+﻿@model List<CVA.Portal.Producao.Model.Qualidade.DocumentoModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="x_panel">
+    <div class="form-group">
+        <div class="col-md-2" style="width:180px">
+            <div class="input-group">
+                <label class="control-label" for="tbxDataDe">Data</label>
+                <input type="date" id="tbxDataDe" value="@(ViewBag.DataDe)" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-2" style="width:180px">
+            <div class="input-group">
+                <label class="control-label" for="tbxDataAte">Até</label>
+                <input type="date" id="tbxDataAte" value="@(ViewBag.DataAte)" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-2" style="width:180px">
+            <div class="input-group">
+                <label class="control-label" for="ddlStatus">Status</label>
+                @Html.DropDownList("Status", (SelectList)ViewBag.StatusSelectList, htmlAttributes: new { id = "ddlStatus", name = "status", required = "required", @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-2" style="width:180px">
+            <div class="input-group">
+                <label class="control-label" for="tbxOP">OP</label>
+                <input type="number" id="tbxOP" value="@(ViewBag.OP)" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-2" style="width:180px">
+            <div class="input-group">
+                <label class="control-label" for="tbxPedido">Pedido</label>
+                <input type="number" id="tbxPedido" value="@(ViewBag.Pedido)" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-2" style="width:180px">
+            <div class="input-group">
+                <label class="control-label" for="tbxCodigoItem">Código do item</label>
+                <input type="text" id="tbxCodigoItem" value="@(ViewBag.CodigoItem)" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-2" style="width:200px;margin-top: 29px;">
+            <div class="input-group">
+                <button id="btnFiltro" type="button" class="btn btn-success" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Pesquisando">Buscar <span class="fa fa-search fa-right"></span></button>
+                <button type="button" data-toggle="modal" data-target="#modal-novo" class="btn btn-primary">Novo <span class="fa fa-plus fa-right"></span></button>
+            </div>
+        </div>
+        <div id="divOP">
+            @Html.Partial("TabelaOPs")
+        </div>
+        @Html.Partial("ModalNovo")
+    </div>
+</div>
+@section Scripts{
+    <script src="~/Scripts/Views/InspecaoOP/index.js"></script>
+}

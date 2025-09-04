@@ -1,0 +1,77 @@
+﻿@model List<CVA.Portal.Producao.Model.Qualidade.DocumentoModel>
+<div id="divRecChild">
+    <table id="tblRec" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Nr. Doc
+                </th>
+                <th>
+                    Data
+                </th>
+                <th>
+                    Nr. NF
+                </th>
+                <th>
+                    Cliente
+                </th>
+                <th>
+                    Item
+                </th>
+                <th>
+                    Quantidade
+                </th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.DocNum
+                    </td>
+                    <td>
+                        @item.DocDate.ToString("dd/MM/yyyy")
+                    </td>
+                    <td>
+                        @item.Serial
+                    </td>
+                    <td>
+                        @(item.CardCode + " - " + item.CardName)
+                    </td>
+                    <td>
+                        @(item.ItemCode + " - " + item.ItemName)
+                    </td>
+                    <td>
+                        @item.Quantity
+                    </td>
+                    <td style="text-align: center">
+                        @if (String.IsNullOrEmpty(item.CodFicha))
+                        {
+                            <a href='@Url.Action("CreateRecebimento", "FichaInspecao", new { CardCode = item.CardCode, CardName = item.CardName, DocDate = item.DocDate, DocEntry = item.DocEntry, DocNum = item.DocNum, ItemCode = item.ItemCode, ItemName = item.ItemName, LineNum = item.LineNum, Quantity = item.Quantity, Serial = item.Serial })' class="btn btn-default btn-small no-margin" data-toggle="tooltip" title="Criar Resultado">
+                                <span class="fa fa-eye"></span>
+                            </a>
+                        }
+                        else
+                        {
+                            if (item.StatusFicha == "A")
+                            {
+                                <a href='@Url.Action("Edit", "FichaInspecao", new { code = item.CodFicha })' class="btn btn-default btn-small no-margin" data-toggle="tooltip" title="Editar Resultado">
+                                    <span class="fa fa-edit"></span>
+                                </a>
+                                }
+                                else
+                                {
+                                <a href='@Url.Action("Detail", "FichaInspecao", new { code = item.CodFicha })' class="btn btn-default btn-small no-margin" data-toggle="tooltip" title="Visualizar Resultado">
+                                    <span class="glyphicon glyphicon-share-alt"></span>
+                                </a>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

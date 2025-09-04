@@ -1,0 +1,232 @@
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'IF' AND name = 'FN_CVA_SEF_E520')
+	DROP FUNCTION FN_CVA_SEF_E520
+GO
+CREATE FUNCTION FN_CVA_SEF_E520
+(
+	@Filial			INT,
+	@DataInicial	DATETIME,
+	@DataFinal		DATETIME
+) RETURNS TABLE
+AS
+RETURN
+(
+	WITH IPI AS
+	(
+		SELECT 
+			PDN1.CFOPCode			CFOP,
+			SUM(PDN1.LineTotal)		VL_CONT,
+			SUM(IPI.BaseSum)		VL_BC_IPI,
+			SUM(IPI.TaxSum)			VL_IPI,
+			SUM(IPI.Isentas)		VL_ISNT_IPI,
+			SUM(IPI.Outras)			VL_OUT_IPI
+		FROM OPDN WITH(NOLOCK)
+			INNER JOIN PDN1 WITH(NOLOCK)
+				ON PDN1.DocEntry = OPDN.DocEntry
+			LEFT JOIN (
+					SELECT PDN4.DocEntry, PDN4.LineNum, SUM(PDN4.TaxSum) TaxSum, SUM(PDN4.BaseSum) BaseSum, SUM(U_ExcAmtS) Isentas, SUM(U_OthAmtS) Outras
+					FROM PDN4 WITH(NOLOCK) 
+						INNER JOIN OSTT WITH(NOLOCK) ON OSTT.AbsId = PDN4.StaType
+						INNER JOIN ONFT WITH(NOLOCK) ON ONFT.AbsId = OSTT.NfTaxId AND ONFT.Code = 'IPI'
+					GROUP BY PDN4.DocEntry, PDN4.LineNum
+				) IPI
+				ON IPI.DocEntry = PDN1.DocEntry
+				AND IPI.LineNum = PDN1.LineNum
+		WHERE OPDN.DocDate BETWEEN @DataInicial AND @DataFinal
+		AND OPDN.BPLId = @Filial
+		AND ISNULL(PDN1.TargetType, 0) <> 18
+		AND OPDN.CANCELED = 'N' AND Model IN (1, 3, 5, 39)
+		GROUP BY PDN1.CFOPCode
+
+		UNION ALL
+
+		SELECT 
+			PCH1.CFOPCode			CFOP,
+			SUM(PCH1.LineTotal)		VL_CONT,
+			SUM(IPI.BaseSum)		VL_BC_IPI,
+			SUM(IPI.TaxSum)			VL_IPI,
+			SUM(IPI.Isentas)		VL_ISNT_IPI,
+			SUM(IPI.Outras)			VL_OUT_IPI
+		FROM OPCH WITH(NOLOCK)
+			INNER JOIN PCH1 WITH(NOLOCK)
+				ON PCH1.DocEntry = OPCH.DocEntry
+			LEFT JOIN (
+					SELECT PCH4.DocEntry, PCH4.LineNum, SUM(PCH4.TaxSum) TaxSum, SUM(PCH4.BaseSum) BaseSum, SUM(U_ExcAmtS) Isentas, SUM(U_OthAmtS) Outras
+					FROM PCH4 WITH(NOLOCK) 
+						INNER JOIN OSTT WITH(NOLOCK) ON OSTT.AbsId = PCH4.StaType
+						INNER JOIN ONFT WITH(NOLOCK) ON ONFT.AbsId = OSTT.NfTaxId AND ONFT.Code = 'IPI'
+					GROUP BY PCH4.DocEntry, PCH4.LineNum
+				) IPI
+				ON IPI.DocEntry = PCH1.DocEntry
+				AND IPI.LineNum = PCH1.LineNum
+		WHERE OPCH.DocDate BETWEEN @DataInicial AND @DataFinal
+		AND OPCH.BPLId = @Filial
+		AND OPCH.CANCELED = 'N' AND Model IN (1, 3, 5, 39)
+		GROUP BY PCH1.CFOPCode
+
+		UNION ALL
+
+		SELECT 
+			RDN1.CFOPCode			CFOP,
+			SUM(RDN1.LineTotal)		VL_CONT,
+			SUM(IPI.BaseSum)		VL_BC_IPI,
+			SUM(IPI.TaxSum)			VL_IPI,
+			SUM(IPI.Isentas)		VL_ISNT_IPI,
+			SUM(IPI.Outras)			VL_OUT_IPI
+		FROM ORDN WITH(NOLOCK)
+			INNER JOIN RDN1 WITH(NOLOCK)
+				ON RDN1.DocEntry = ORDN.DocEntry
+			LEFT JOIN (
+					SELECT RDN4.DocEntry, RDN4.LineNum, SUM(RDN4.TaxSum) TaxSum, SUM(RDN4.BaseSum) BaseSum, SUM(U_ExcAmtS) Isentas, SUM(U_OthAmtS) Outras
+					FROM RDN4 WITH(NOLOCK) 
+						INNER JOIN OSTT WITH(NOLOCK) ON OSTT.AbsId = RDN4.StaType
+						INNER JOIN ONFT WITH(NOLOCK) ON ONFT.AbsId = OSTT.NfTaxId AND ONFT.Code = 'IPI'
+					GROUP BY RDN4.DocEntry, RDN4.LineNum
+				) IPI
+				ON IPI.DocEntry = RDN1.DocEntry
+				AND IPI.LineNum = RDN1.LineNum
+		WHERE ORDN.DocDate BETWEEN @DataInicial AND @DataFinal
+		AND ORDN.BPLId = @Filial
+		AND ORDN.CANCELED = 'N' AND Model IN (1, 3, 5, 39)
+		GROUP BY RDN1.CFOPCode
+
+		UNION ALL
+
+		SELECT 
+			RIN1.CFOPCode			CFOP,
+			SUM(RIN1.LineTotal)		VL_CONT,
+			SUM(IPI.BaseSum)		VL_BC_IPI,
+			SUM(IPI.TaxSum)			VL_IPI,
+			SUM(IPI.Isentas)		VL_ISNT_IPI,
+			SUM(IPI.Outras)			VL_OUT_IPI
+		FROM ORIN WITH(NOLOCK)
+			INNER JOIN RIN1 WITH(NOLOCK)
+				ON RIN1.DocEntry = ORIN.DocEntry
+			LEFT JOIN (
+					SELECT RIN4.DocEntry, RIN4.LineNum, SUM(RIN4.TaxSum) TaxSum, SUM(RIN4.BaseSum) BaseSum, SUM(U_ExcAmtS) Isentas, SUM(U_OthAmtS) Outras
+					FROM RIN4 WITH(NOLOCK) 
+						INNER JOIN OSTT WITH(NOLOCK) ON OSTT.AbsId = RIN4.StaType
+						INNER JOIN ONFT WITH(NOLOCK) ON ONFT.AbsId = OSTT.NfTaxId AND ONFT.Code = 'IPI'
+					GROUP BY RIN4.DocEntry, RIN4.LineNum
+				) IPI
+				ON IPI.DocEntry = RIN1.DocEntry
+				AND IPI.LineNum = RIN1.LineNum
+		WHERE ORIN.DocDate BETWEEN @DataInicial AND @DataFinal
+		AND ORIN.BPLId = @Filial
+		AND ORIN.CANCELED = 'N' AND Model IN (1, 3, 5, 39)
+		GROUP BY RIN1.CFOPCode
+
+		UNION ALL
+
+		SELECT 
+			DLN1.CFOPCode			CFOP,
+			SUM(DLN1.LineTotal)		VL_CONT,
+			SUM(IPI.BaseSum)		VL_BC_IPI,
+			SUM(IPI.TaxSum)			VL_IPI,
+			SUM(IPI.Isentas)		VL_ISNT_IPI,
+			SUM(IPI.Outras)			VL_OUT_IPI
+		FROM ODLN WITH(NOLOCK)
+			INNER JOIN DLN1 WITH(NOLOCK)
+				ON DLN1.DocEntry = ODLN.DocEntry
+			LEFT JOIN (
+					SELECT DLN4.DocEntry, DLN4.LineNum, SUM(DLN4.TaxSum) TaxSum, SUM(DLN4.BaseSum) BaseSum, SUM(U_ExcAmtS) Isentas, SUM(U_OthAmtS) Outras
+					FROM DLN4 WITH(NOLOCK) 
+						INNER JOIN OSTT WITH(NOLOCK) ON OSTT.AbsId = DLN4.StaType
+						INNER JOIN ONFT WITH(NOLOCK) ON ONFT.AbsId = OSTT.NfTaxId AND ONFT.Code = 'IPI'
+					GROUP BY DLN4.DocEntry, DLN4.LineNum
+				) IPI
+				ON IPI.DocEntry = DLN1.DocEntry
+				AND IPI.LineNum = DLN1.LineNum
+		WHERE ODLN.DocDate BETWEEN @DataInicial AND @DataFinal
+		AND ODLN.BPLId = @Filial
+		AND ISNULL(DLN1.TargetType, 0) <> 13
+		AND ODLN.CANCELED = 'N' AND Model IN (1, 3, 5, 39)
+		GROUP BY DLN1.CFOPCode
+
+		UNION ALL
+
+		SELECT 
+			INV1.CFOPCode			CFOP,
+			SUM(INV1.LineTotal)		VL_CONT,
+			SUM(IPI.BaseSum)		VL_BC_IPI,
+			SUM(IPI.TaxSum)			VL_IPI,
+			SUM(IPI.Isentas)		VL_ISNT_IPI,
+			SUM(IPI.Outras)			VL_OUT_IPI
+		FROM OINV WITH(NOLOCK)
+			INNER JOIN INV1 WITH(NOLOCK)
+				ON INV1.DocEntry = OINV.DocEntry
+			LEFT JOIN (
+					SELECT INV4.DocEntry, INV4.LineNum, SUM(INV4.TaxSum) TaxSum, SUM(INV4.BaseSum) BaseSum, SUM(U_ExcAmtS) Isentas, SUM(U_OthAmtS) Outras
+					FROM INV4 WITH(NOLOCK) 
+						INNER JOIN OSTT WITH(NOLOCK) ON OSTT.AbsId = INV4.StaType
+						INNER JOIN ONFT WITH(NOLOCK) ON ONFT.AbsId = OSTT.NfTaxId AND ONFT.Code = 'IPI'
+					GROUP BY INV4.DocEntry, INV4.LineNum
+				) IPI
+				ON IPI.DocEntry = INV1.DocEntry
+				AND IPI.LineNum = INV1.LineNum
+		WHERE OINV.DocDate BETWEEN @DataInicial AND @DataFinal
+		AND OINV.BPLId = @Filial
+		AND OINV.CANCELED = 'N' AND Model IN (1, 3, 5, 39)
+		GROUP BY INV1.CFOPCode
+
+		UNION ALL
+
+		SELECT 
+			RPD1.CFOPCode			CFOP,
+			SUM(RPD1.LineTotal)		VL_CONT,
+			SUM(IPI.BaseSum)		VL_BC_IPI,
+			SUM(IPI.TaxSum)			VL_IPI,
+			SUM(IPI.Isentas)		VL_ISNT_IPI,
+			SUM(IPI.Outras)			VL_OUT_IPI
+		FROM ORPD WITH(NOLOCK)
+			INNER JOIN RPD1 WITH(NOLOCK)
+				ON RPD1.DocEntry = ORPD.DocEntry
+			LEFT JOIN (
+					SELECT RPD4.DocEntry, RPD4.LineNum, SUM(RPD4.TaxSum) TaxSum, SUM(RPD4.BaseSum) BaseSum, SUM(U_ExcAmtS) Isentas, SUM(U_OthAmtS) Outras
+					FROM RPD4 WITH(NOLOCK) 
+						INNER JOIN OSTT WITH(NOLOCK) ON OSTT.AbsId = RPD4.StaType
+						INNER JOIN ONFT WITH(NOLOCK) ON ONFT.AbsId = OSTT.NfTaxId AND ONFT.Code = 'IPI'
+					GROUP BY RPD4.DocEntry, RPD4.LineNum
+				) IPI
+				ON IPI.DocEntry = RPD1.DocEntry
+				AND IPI.LineNum = RPD1.LineNum
+		WHERE ORPD.DocDate BETWEEN @DataInicial AND @DataFinal
+		AND ORPD.BPLId = @Filial
+		AND ORPD.CANCELED = 'N' AND Model IN (1, 3, 5, 39)
+		GROUP BY RPD1.CFOPCode
+
+		UNION ALL
+
+		SELECT 
+			RPC1.CFOPCode			CFOP,
+			SUM(RPC1.LineTotal)		VL_CONT,
+			SUM(IPI.BaseSum)		VL_BC_IPI,
+			SUM(IPI.TaxSum)			VL_IPI,
+			SUM(IPI.Isentas)		VL_ISNT_IPI,
+			SUM(IPI.Outras)			VL_OUT_IPI
+		FROM ORPC WITH(NOLOCK)
+			INNER JOIN RPC1 WITH(NOLOCK)
+				ON RPC1.DocEntry = ORPC.DocEntry
+			LEFT JOIN (
+					SELECT RPC4.DocEntry, RPC4.LineNum, SUM(RPC4.TaxSum) TaxSum, SUM(RPC4.BaseSum) BaseSum, SUM(U_ExcAmtS) Isentas, SUM(U_OthAmtS) Outras
+					FROM RPC4 WITH(NOLOCK) 
+						INNER JOIN OSTT WITH(NOLOCK) ON OSTT.AbsId = RPC4.StaType
+						INNER JOIN ONFT WITH(NOLOCK) ON ONFT.AbsId = OSTT.NfTaxId AND ONFT.Code = 'IPI'
+					GROUP BY RPC4.DocEntry, RPC4.LineNum
+				) IPI
+				ON IPI.DocEntry = RPC1.DocEntry
+				AND IPI.LineNum = RPC1.LineNum
+		WHERE ORPC.DocDate BETWEEN @DataInicial AND @DataFinal
+		AND ORPC.BPLId = @Filial
+		AND ORPC.CANCELED = 'N' AND Model IN (1, 3, 5, 39)
+		GROUP BY RPC1.CFOPCode
+	)
+	SELECT
+		CFOP,
+		SUM(IPI.VL_CONT)		VL_CONT,
+		SUM(IPI.VL_BC_IPI)		VL_BC_IPI,
+		SUM(IPI.VL_IPI)			VL_IPI,
+		SUM(IPI.VL_ISNT_IPI)	VL_ISNT_IPI,
+		SUM(IPI.VL_OUT_IPI)		VL_OUT_IPI
+	FROM IPI
+	GROUP BY CFOP
+)

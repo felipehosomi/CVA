@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<alessi>
+	<connection>
+	Data Source=SERVERSAP;Database = SBOAlessi_TST_1608;User Id=sa; Password=alessi@2017;
+	</connection>
+	<serverName>SERVERSAP</serverName>
+	<databaseName>SBOAlessi_TST_1608</databaseName>
+	<userName>sa</userName>
+	<password>alessi@2017</password>	
+</alessi>
+
+
+
+

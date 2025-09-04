@@ -1,0 +1,39 @@
+﻿@model CVA.Portal.Producao.Model.Qualidade.FichaInspecaoModel
+
+@{
+    ViewBag.Title = "Criar Resultado";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="x_panel" id="divInspFilho">
+        <div class="x_content">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_title">
+                        @if (Model.TipoDoc == "OP" && CVA.Portal.Producao.Web.Helper.CvaSession.Parametros.PermiteParcial)
+                        {
+                            <h2>Ficha Inspeção - @Model.SeqDesc</h2>
+                        }
+                        else
+                        {
+                            <h2>Ficha Inspeção</h2>
+                            }
+
+                        <div class="clearfix"></div>
+                    </div>
+                    @Html.Partial("CreatePartial")
+                    <div>
+                        <button id="submitButton" type="submit" class="btn btn-primary pull-right">Salvar <span class="fa fa-floppy-o fa-right"></span></button>
+                        <a href='@Url.Action("Index", Model.TipoDoc == "RE" ? "InspecaoMP" : "InspecaoOP")' data-toggle="tooltip" title="Voltar" class="btn btn-primary pull-right">
+                            <span class="fa fa-arrow-left"></span> Voltar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section scripts {
+    <script src="~/Scripts/Views/InspecaoMP/index.js"></script>
+}

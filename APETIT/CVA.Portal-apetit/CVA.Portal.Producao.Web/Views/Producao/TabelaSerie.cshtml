@@ -1,0 +1,24 @@
+﻿@model CVA.Portal.Producao.Model.Producao.EstruturaProducaoModel
+<table id="tblLoteSerie" class="table table-striped table-bordered table-fixed" style="margin-top: 10px; overflow-y: hidden">
+    <thead>
+        <tr>
+            <th>Série</th>
+            <th>Selecionado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.LoteSerie.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Html.HiddenFor(m => m.LoteSerie[i].Serie)
+                    @Html.HiddenFor(m => m.LoteSerie[i].SystemSerie)
+                    @Model.LoteSerie[i].Serie
+                </td>
+                <td style="text-align: center">
+                    @Html.CheckBoxFor(m => m.LoteSerie[i].Selecionado, htmlAttributes: new { @class = "cbxSerie",  onclick = "serieCalcular()", style = "margin: 0px !important;" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

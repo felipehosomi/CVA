@@ -1,0 +1,71 @@
+﻿@model CVA.Portal.Producao.Model.Configuracoes.UsuarioModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<link rel="icon" type="image/ico" href="http://www.cvaconsultoria.com.br/images/favicon/favicon.ico" />*@
+
+
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Content/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="~/Content/custom.min.css" rel="stylesheet">
+
+    <title>Login</title>
+</head>
+<body class="login">
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+            <section class="login_content">
+                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                {
+                    <h1>Login</h1>
+                    <div class="form-group">
+                       
+                        <label for="user" class="control-label">Usuário</label>
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                            @Html.TextBoxFor(m => m.Usuario, new { @class = "form-control has-feedback-left", required = "required", placeholder = "Insira seu usuário", title = "Insira seu usuário" })
+                            <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                        </div>
+                        <span class="help-block"></span>
+
+                        <label for="password" class="control-label">Senha</label>
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                            @Html.PasswordFor(m => m.Senha, new { @class = "form-control  has-feedback-left", placeholder = "Insira sua senha", required = "required", title = "Insira sua senha" })
+                            <span class="fa fa-key form-control-feedback left" aria-hidden="true"></span>
+                        </div>
+                        <span class="help-block"></span>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <button type="submit" value="login" name="submit" class="btn btn-success btn-block">Entrar</button>
+                        @if (ViewBag.LoginError != null)
+                        {
+                        <div id="loginErrorMsg" class="alert alert-error">@ViewBag.LoginError</div>
+
+                        }
+                        else
+                        {
+                        <div class="form-group">
+                            <div id="loginErrorMsg" class="alert alert-error hide"></div>
+                        </div>
+                        }
+                    </div>
+                }
+                    
+</section>
+            <br />
+        </div>
+    </div>
+</body>
+</html>

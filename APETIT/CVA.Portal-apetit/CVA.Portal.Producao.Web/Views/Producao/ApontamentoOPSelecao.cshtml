@@ -1,0 +1,275 @@
+﻿@model List<CVA.Portal.Producao.Model.Producao.ProducaoModel>
+
+@{
+    Layout = null;
+}
+
+@using CVA.Portal.Producao.Model.Producao;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Portal de Produção</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Content/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="~/Content/custom.min.css" rel="stylesheet">
+
+    <link href="~/Content/custom.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="~/Content/pnotify.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/pnotify.buttons.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/pnotify.nonblock.css">
+
+    <style>
+        #tbOrders {
+            font-size: smaller;
+            margin: 0;
+        }
+
+            #tbOrders thead tr th input {
+                margin: 0;
+                height: auto;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+        table.TF.sticky th {
+            top: 0 !important;
+        }
+
+        table.TF.sticky .fltrow th {
+            top: 45px !important;
+            padding: 2px;
+            height: auto;
+        }
+    </style>
+
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/Plugins/pnotify.js"></script>
+    <script src="~/Scripts/Plugins/pnotify.buttons.js"></script>
+    <script src="~/Scripts/Plugins/pnotify.nonblock.js"></script>
+    <script src="~/Scripts/Plugins/TableFilter/tablefilter.js"></script>
+</head>
+
+<body class="login">
+    <div class="login_wrapper" style="max-width: 99.5%;margin-top: 15px;">
+        <div class="animate form login_form">
+            <section class="login_content" style="padding: 0">
+                <div class="col-md-2">
+                    <img src="~/Content/Images/logo.png" style="width: 170px" />
+                </div>
+                @using (Html.BeginForm("ApontamentoOPSelecaoConfirmar", "Producao", FormMethod.Post, new { id = "formOPs", style = "margin: 0" }))
+                {
+                    <div class="form-group" style="width: 400px; margin: auto">
+                        <span style="display: block; margin-bottom: 25px">Selecione na lista abaixo os códigos de barras que deseja apontar</span>
+                        <label for="user" class="control-label">Código de Barras</label>
+                        <div class="input-group" style="padding-left: 10px;">
+                            @Html.TextBox("txtBarCode", null, new { @class = "form-control has-feedback-left", placeholder = "Informe o código de barras", title = "Informe o código de barras", autofocus = "", autocomplete = "off", style = "margin: 0" })
+                            <span class="fa fa-barcode form-control-feedback left" aria-hidden="true"></span>
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" id="btnBarCode">
+                                    <span class="glyphicon glyphicon-check" aria-hidden="true">
+                                    </span> Selecionar
+                                </button>
+                            </span>
+                        </div>
+                        <span class="help-block"></span>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        @if (ViewBag.Error != null)
+                        {
+                            <div id="ErrorMsg" class="alert alert-error" style="width: 350px; margin: auto">@ViewBag.Error</div>
+                        }
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            <label>Ordens disponíveis:</label>
+                            <div class="form-group" style="overflow:auto;max-height:710px;border:darkgray;border-style: solid;border-width:thin;">
+                                <table class="table table-responsive table-bordered" id="tbOrders">
+                                    <thead>
+                                        <tr style="height: 47px">
+                                            <th>Sel.</th>
+                                            <th>Código de barras</th>
+                                            <th>Nr. OP</th>
+                                            <th>Cód. item</th>
+                                            <th>Descrição</th>
+                                            <th>Etapa</th>
+                                            <th>Recurso</th>
+                                            <th>Qtd. plan.</th>
+                                            <th>Qtd. apon.</th>
+                                            <th>Saldo etapa</th>
+                                            <th>Data entrega</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (int i = 0; i < Model.Count; i++)
+                                        {
+                                            string barcode = Model[i].NrOP.ToString().PadLeft(6, '0') + Model[i].CodEtapa.ToString().PadLeft(3, '0') + Model[i].RecursoLineNum.ToString().PadLeft(4, '0');
+                                            <tr>
+                                                <td>@Html.CheckBoxFor(m => m[i].Checked, new { @class = "form-check-input" })</td>
+                                                <td>@barcode</td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].DocEntry)
+                                                    @Html.HiddenFor(m => m[i].NrOP)
+                                                    @Model[i].NrOP
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].ItemCode)
+                                                    @Model[i].ItemCode
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].ItemName)
+                                                    @Model[i].ItemName
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].CodEtapa)
+                                                    @Html.HiddenFor(m => m[i].Etapa)
+                                                    @Model[i].Etapa
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].RecursoLineNum)
+                                                    @Html.HiddenFor(m => m[i].RecursoName)
+                                                    @Model[i].RecursoName
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].QuantidadeBase)
+                                                    @Html.HiddenFor(m => m[i].QuantidadePlanejada)
+                                                    @Math.Round(Model[i].QuantidadePlanejada, 4)
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].QuantidadeApontada)
+                                                    @Math.Round(Model[i].QuantidadeApontada, 4)
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].SaldoEtapa)
+                                                    @Math.Round(Model[i].SaldoEtapa, 4)
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].VencimentoOP)
+                                                    @Model[i].VencimentoOP.ToString("dd/MM/yyyy")
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        <button type="submit" value="OK" name="submit" class="btn btn-success" style="width: 250px">OK</button>
+                    </div>
+                }
+                <img style="margin-top: 20px" src="~/Content/Images/cva_logo.png" />
+            </section>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            var filtersConfig = {
+                base_path: '../Scripts/Plugins/tablefilter/',
+                sticky_headers: true,
+                filters_cell_tag: "th",
+                auto_filter: {
+                    delay: 0
+                },
+                filters_row_index: 1,
+                col_0: 'none',
+                col_types: [
+                    'string',
+                    'string',
+                    'number',
+                    'string',
+                    'string',
+                    'string',
+                    'string',
+                    'number',
+                    'number',
+                    'number',
+                    { type: 'date', locale: 'pt', format: '{dd}/{MM}/{yyyy}' },
+                ],
+            };
+            var tf = new TableFilter('tbOrders', filtersConfig);
+            tf.init();
+
+            var previouslySelected = $("#tbOrders tr td").find('input[type="checkbox"]:checked');
+
+            if (previouslySelected.length > 0) {
+                previouslySelected.closest('tr').toggleClass("bg-success", true);
+            }
+
+            $('td:first-child input').change(function () {
+                $(this).closest('tr').toggleClass("bg-success", this.checked);
+            });
+
+            $("#txtBarCode").keyup(function (event) {
+                if (event.keyCode === 13) {
+                    $("#btnBarCode").click();
+                }
+            });
+
+            $('#btnBarCode').click(function () {
+                var barcode = $('#txtBarCode').val().trim();
+                var checkbox = $("#tbOrders tr td").filter(function () {
+                    return $(this).text() == barcode;
+                }).parent('tr').find('input[type="checkbox"]').first();
+
+                if (checkbox.length > 0 && barcode != '') {
+                    if (!checkbox.is(':checked')) {
+                        checkbox.click();
+                        new PNotify({
+                            delay: 5000,
+                            text: 'O código de barras "' + barcode + '" foi selecionado.',
+                            type: 'success',
+                            styling: 'bootstrap3'
+                        });
+                        $('#txtBarCode').val('');
+                    }
+                    else {
+                        new PNotify({
+                            delay: 5000,
+                            text: 'O código de barras "' + barcode + '" já está selecionado.',
+                            type: 'info',
+                            styling: 'bootstrap3'
+                        });
+                    }
+                }
+                else {
+                    new PNotify({
+                        delay: 5000,
+                        text: 'O código de barras "' + barcode + '" não foi encontrado na lista.',
+                        type: 'error',
+                        styling: 'bootstrap3'
+                    });
+                }
+            });
+
+            $(document).on('click', 'form button[type=submit]', function (e) {
+                var atLeastOneIsChecked = $('input[type="checkbox"]:checked').length > 0;
+                if (!atLeastOneIsChecked) {
+                    e.preventDefault(); //prevent the default action
+                    new PNotify({
+                        delay: 5000,
+                        text: 'É necessário selecionar pelo menos um código de barras.',
+                        type: 'error',
+                        styling: 'bootstrap3'
+                    });
+                }
+            });
+
+            $('#formOPs').on('keyup keypress', function (e) {
+                var keyCode = e.keyCode || e.which;
+                if (keyCode === 13) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

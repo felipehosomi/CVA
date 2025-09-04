@@ -1,0 +1,94 @@
+﻿@Styles.Render("~/Content/Loading")
+<div class="panel-body">
+    <div class="page-content-wrap">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Configurar limite de horas - Padrão: 8 horas diárias</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <label class="control-label">Colaborador</label>
+                                        <div class="input-group">
+                                            <p id="load-02" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                            <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                            <select name="status" class="form-control" ng-model="C.Colaborador" ng-options="selected.Id as selected.Nome for selected in CollaboratorList">
+                                                <option value="">Selecione</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="control-label">Limite de horas diárias</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><span class="fa fa-clock-o"></span></span>
+                                            <input type="text" class="form-control timePicker" ng-model="C.Horas" id="Limite" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2" style="padding-top: 5px;">
+                                        <label class="control-label"> </label>
+                                        <div class="input-group">
+                                            <button ng-click="FiltrarLimiteHoras()" type="button" class="btn btn-info pull-right">Pesquisar</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2" style="padding-top:5px;">
+                                        <label class="control-label"> </label>
+                                        <div class="input-group">
+                                            <button type="submit" class="btn btn-success pull-right" ng-click="AddLimiteHoras()">Atualizar Limite</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row" id="exportable">
+                            <table class="table" id="table-export">
+                                <thead>
+                                    <tr>
+                                        <td><b>Colaborador</b></td>
+                                        <td><b>Limite de horas diárias</b></td>
+                                        <td><b>Autorizado por</b></td>
+                                        <td><b>#</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="line in LimiteHoras">
+                                        <td hidden>{{line.Id}}</td>
+                                        <td>{{line.ColaboradorNome}}</td>
+                                        <td>{{line.Horas | date:'HH:mm'}}</td>
+                                        <td>{{line.User.Name}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger" ng-click="RemoveLimiteHoras(line.Id)">X</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jQuery-2.1.4.js"></script>
+<script src="~/Scripts/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+<script>
+    $('.timePicker').timepicker({
+        minuteStep: 1,
+        template: 'modal',
+        appendWidgetTo: 'body',
+        showSeconds: false,
+        showMeridian: false,
+        defaultTime: false
+    });
+</script>

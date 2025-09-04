@@ -1,0 +1,1 @@
+﻿var cvaGestao = angular.module('cvaGestao',[]);

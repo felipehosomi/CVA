@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AddOnRegData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SlientInstallation="No" SlientUpgrade="No" Partnernmsp="CVA" SchemaVersion="3.0" Type="" MultipleVersion="false" OnDemand="" OnPremise="" ExtName="FiltroRegional" ExtVersion="93.64.002" Contdata="" Partner="CVA Consultoria" DBType="HANA" ClientType="A">
+  <Validity>
+    <SBOCompatibility>
+      <Version From="" To="" />
+    </SBOCompatibility>
+  </Validity>
+  <Configuration>
+    <Repository>
+      <Properties />
+    </Repository>
+    <Deployment>
+      <Properties />
+    </Deployment>
+    <Assignment>
+      <Properties />
+    </Assignment>
+  </Configuration>
+  <Addons>
+    <Addon Name="FiltroRegional" Group="" ForceFlag="" Visible="" AutoAssign="" SelfUpgrd="">
+      <x86 AddonExe="" AddonSig="">
+        <Installation>
+          <Files />
+        </Installation>
+        <Uninstallation>
+          <Files />
+        </Uninstallation>
+      </x86>
+      <x64 AddonExe="CVA.AddOn.FiltroRegional.exe" AddonSig="A4C1D8715057E3BDD290E4825C6F0E44" ExeDir="X64Client">
+        <Installation>
+          <Files>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.b1s">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.exe">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.exe.config">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.pdb">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.vshost.exe">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.vshost.exe.config">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.vshost.exe.manifest">
+              <Actions />
+            </File>
+            <File FileName="X64Client\SAPBusinessOneSDK.dll">
+              <Actions />
+            </File>
+          </Files>
+        </Installation>
+        <Uninstallation>
+          <Files>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.b1s">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.exe">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.exe.config">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.pdb">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.vshost.exe">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.vshost.exe.config">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.AddOn.FiltroRegional.vshost.exe.manifest">
+              <Actions />
+            </File>
+            <File FileName="X64Client\SAPBusinessOneSDK.dll">
+              <Actions />
+            </File>
+          </Files>
+        </Uninstallation>
+      </x64>
+    </Addon>
+  </Addons>
+  <XApps>
+    <XApp Name="" Path="" FileName="" />
+  </XApps>
+  <UDQs>
+    <UDQ udqname="">
+      <Hana FileName="" />
+    </UDQ>
+  </UDQs>
+</AddOnRegData>

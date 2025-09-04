@@ -1,0 +1,80 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading ui-draggable-handle">
+                <h3 class="panel-title"> Consultar<strong> Apontamento Mensal</strong></h3>
+                <ul class="panel-controls">
+                    <li>
+                        <label class="control-label col-md-1" style="margin-top: 7px">Mês</label>
+                        <div class="col-md-5">
+                            <input type="number" class="form-control" ng-model="Month" />
+                        </div>
+                        <label class="control-label col-md-1" style="margin-top: 7px">Ano</label>
+                        <div class="col-md-5">
+                            <input type="number" class="form-control" ng-model="Year" />
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-default pull-right" ng-click="AtualizarGrid()">Pesquisar <span class="fa fa-search"></span></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Total de apontamentos</label>
+                <input type="text" class="form-control" id="total-horas" ng-model="note.IndicatedHours" disabled="disabled" style="background-color:transparent; color:black;" />
+            </div>
+            <div class="form-group col-md-4">
+                <label>Horas planejadas</label>
+                <input type="text" class="form-control" ng-model="note.ProvidedHours" disabled="disabled" style="background-color:transparent; color:black;" />
+            </div>
+            <div class="form-group col-md-4">
+                <label>Status PDA</label>
+                <input type="text" class="form-control" ng-model="note.StatusPDA" disabled="disabled" style="background-color:transparent; color:black;" />
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td><b>Data</b></td>
+                                <td><b>Projeto</b></td>
+                                <td align="center"><b>Hora Início</b></td>
+                                <td align="center"><b>Intervalo</b></td>
+                                <td align="center"><b>Hora Fim</b></td>
+                                <td><b>Solicitante</b></td>
+                                <td align="center"><b>Nº Chamado</b></td>
+                                <td align="center"><b>Total de Horas</b></td>
+                                <td align="center"><b>#</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="note in NotesList">
+                                <td hidden>{{note.Id}}</td>
+                                <td>{{note.Date | date: "dd/MM/yy"}}</td>
+                                <td>{{note.Project.Codigo}} - {{note.Project.Tag}} {{note.Project.Nome}}</td>
+                                <td align="center">{{note.InitHour | date:'HH:mm'}}</td>
+                                <td align="center">{{note.IntervalHour | date:'HH:mm'}}</td>
+                                <td align="center">{{note.FinishHour | date:'HH:mm'}}</td>
+                                <td>{{note.Requester}}</td>
+                                <td align="center">{{note.Ticket.Code}}</td>
+                                <td align="center"><b>{{note.TotalLine}}</b></td>
+                                <td>
+                                    <button type="button" class="btn btn-default" ng-click="EditNote(note)" data-toggle="tooltip" title="Editar" ng-disabled="note.StatusId == 5"><span class="fa fa-edit"></span></button>
+                                    <button type="button" class="btn btn-danger" ng-click="RemoveNote(note)" data-toggle="tooltip" title="Remover" ng-disabled="note.StatusId == 5"><span class="glyphicon glyphicon-remove"></span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/datatables/jquery.dataTables.js"></script>
+<script>
+    $('#DataTables_Table_1').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Portuguese-Brasil.json"
+        }
+    });
+</script>

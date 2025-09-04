@@ -1,0 +1,83 @@
+﻿@model List<CVA.Portal.Producao.Model.Producao.ProducaoModel>
+<div id="tblOPs" class="table-wrapper-scroll-y" style="display: inline-block; width: 100%; max-height: 350px">
+    <table class="table table-striped table-bordered table-control">
+        <thead>
+            <tr>
+                <th>
+                    Pedido
+                </th>
+                <th>
+                    OP
+                </th>
+                <th>
+                    Item
+                </th>
+                <th>
+                    Modelo
+                </th>
+                <th>
+                    Medidas
+                </th>
+                <th>
+                    Quantidade
+                </th>
+                <th>
+                    Qtde. Realizada
+                </th>
+                <th>
+                    Etapa
+                </th>
+                <th>
+                    Estrutura
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="text-align: center">
+                        @if (!String.IsNullOrEmpty(item.ObsOP) || !String.IsNullOrEmpty(item.ObsPedido) || item.MedidasMaxflex == "SOB MEDIDA")
+                        {
+                            <button type="button" onclick="historico(@item.DocEntry)"
+                                    data-toggle="modal" data-target="#modal-historico" class="btn btn-danger">
+                                @item.NrPedido
+                            </button>
+                        }
+                        else
+                        {
+                            <button type="button" onclick="historico(@item.DocEntry)"
+                                    data-toggle="modal" data-target="#modal-historico" class="btn btn-primary">
+                                @item.NrPedido
+                            </button>
+                        }
+                    </td>
+                    <td>
+                        @item.NrOP
+                    </td>
+                    <td>
+                        @item.ItemName
+                    </td>
+                    <td>
+                        @item.Modelo
+                    </td>
+                    <td>
+                        @item.Medidas
+                    </td>
+                    <td>
+                        @item.Quantidade.ToString("f2")
+                    </td>
+                    <td>
+                        @item.QtdeRealizada.ToString("f2")
+                    </td>
+                    <td>
+                        @item.Etapa
+                    </td>
+                    <td style="text-align: center">
+                        <button type="button" onclick="apontamentoModal(@item.NrOP, @item.CodEtapa)" data-toggle="modal" data-target="#modal-estrutura" class="btn btn-warning"><span class="fa fa-exclamation fa-right"></span></button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

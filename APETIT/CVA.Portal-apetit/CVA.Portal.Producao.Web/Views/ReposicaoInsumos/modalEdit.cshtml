@@ -1,0 +1,43 @@
+﻿@model CVA.Portal.Producao.Model.ReposicaoInsumoModel
+
+<div id="modal-edit" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <input type="hidden" value="" id="modal-edit-Id" />
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">Editar Reposição</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Itens.First().InsumoCode, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                    <div class="col-md-10">
+                        <div class="input-group">
+                            @Html.DropDownList("InsumoCode", Model.InsumoList, htmlAttributes: new { required = "required", id = "Edit-InsumoCode", type = "string", @class = "chosen-select", data_placeholder = "Selecione um insumo" })
+                        </div>
+                    </div>
+                    @Html.LabelFor(model => model.Itens.First().Qty, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                    <div class="col-md-10">
+                        <div class="input-group">
+                            <input class="form-control text-box single-line" data-val="true" data-val-number="O campo Quantidade deve ser um número." data-val-required="O campo Quantidade é obrigatório." id="Edit-Qty" name="Edit-Qty" type="number" min="0" value="1" style="height: 34px;">
+                        </div>
+                    </div>
+                    @Html.LabelFor(model => model.Itens.First().DtNecessidade, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                    <div class="col-md-10">
+                        <div class="input-group" style="width: 100%">
+                            <input class="form-control text-box single-line" data-val="true" data-val-date="O campo Data da necessidade deve ser uma data." data-val-required="O campo Data da Necessidade é obrigatório." id="Edit-DtNecessidade" name="Edit-DtNecessidade" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" style="height: 34px; width: 100%">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnEdit" type="button" class="btn btn-primary" onclick="EditClick()">Criar</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

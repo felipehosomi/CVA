@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<emailSender>
+
+  <EmailCVA>
+    <email>noreplay@cvaconsultoria.com.br</email>
+    <password>kpOsuW2y3QuXRr04mlHDpVnDhASYlGGOX9ddvDMg8bw=</password>
+  </EmailCVA>
+
+  <modeloEmail>
+    <subject>Alerta de erro - Replicador</subject>
+    <body>
+      <p>Sua senha de acesso às bases SAP B1 foi alterada.A nova senha é: </p>
+    </body>
+  </modeloEmail>
+
+  <conexao>
+    <host>smtp.gmail.com</host>
+    <port>587</port>
+  </conexao>
+
+
+</emailSender>
+
+
+

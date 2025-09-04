@@ -1,0 +1,57 @@
+﻿@model CVA.Portal.Producao.Model.Producao.ProducaoModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Portal de Produção</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Content/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="~/Content/custom.min.css" rel="stylesheet">
+
+    <link href="~/Content/custom.css" rel="stylesheet">
+
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+
+</head>
+<body class="login">
+    <div class="login_wrapper" style="margin-top: 25px">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <img style="margin-bottom: 50px" src="~/Content/Images/logo.png" />
+                @using (Html.BeginForm("ApontamentoOPPesquisaTransResultado", "Producao", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        <label for="user" class="control-label">Código de Barras</label>
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                            @Html.TextBoxFor(m => m.BarCode, new { @class = "form-control has-feedback-left", required = "required", placeholder = "Informe o código de barras", title = "Informe o código de barras", autofocus = "", autocomplete = "off" })
+                            <span class="fa fa-barcode form-control-feedback left" aria-hidden="true"></span>
+                        </div>
+                        <span class="help-block"></span>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <button type="submit" value="OK" name="submit" class="btn btn-success btn-block">OK</button>
+                        @if (ViewBag.Error != null)
+                        {
+                            <div id="ErrorMsg" class="alert alert-error">@ViewBag.Error</div>
+                        }
+                    </div>
+                }
+                <img style="margin-top: 100px" src="~/Content/Images/cva_logo.png" />
+            </section>
+        </div>
+    </div>
+</body>
+</html>

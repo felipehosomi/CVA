@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D4C03562-F970-4935-A995-90AD8F073B4B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MenuConsolidator</RootNamespace>
+    <AssemblyName>MenuConsolidator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MenuConsolidator.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="SAPBusinessOneSDK" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\BranchTransferController.cs" />
+    <Compile Include="Extensions\ComboBoxExtensions.cs" />
+    <Compile Include="Extensions\DataSourceExtensions.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\BranchTransfer.b1f.cs">
+      <DependentUpon>BranchTransfer.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeliveryCalendar.b1f.cs">
+      <DependentUpon>DeliveryCalendar.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MRPParameters.b1f.cs">
+      <DependentUpon>MRPParameters.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MRPRecomendation.b1f.cs">
+      <DependentUpon>MRPRecomendation.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NonDeliveryDates.b1f.cs">
+      <DependentUpon>NonDeliveryDates.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StorageCategory.b1f.cs">
+      <DependentUpon>StorageCategory.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemMessageBox.b1f.cs">
+      <DependentUpon>SystemMessageBox.b1f</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Setup\Menu Consolidator.ard" />
+    <None Include="Views\BranchTransfer.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="Views\DeliveryCalendar.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="Views\MRPParameters.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="Views\MRPRecomendation.b1f">
+      <FormCategory>SystemForm</FormCategory>
+    </None>
+    <None Include="Views\MRPRecomendation.b1f__orig_srf">
+      <DependentUpon>MRPRecomendation.b1f</DependentUpon>
+    </None>
+    <None Include="Views\NonDeliveryDates.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="Views\StorageCategory.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="Views\SystemMessageBox.b1f">
+      <FormCategory>SystemForm</FormCategory>
+    </None>
+    <None Include="Views\SystemMessageBox.b1f__orig_srf">
+      <DependentUpon>SystemMessageBox.b1f</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Menu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

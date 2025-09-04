@@ -1,0 +1,118 @@
+﻿@model MODEL.Classes.ProjectStepModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Cadastro</a></li>
+    <li><a href="/Projeto/Pesquisar">Projeto</a></li>
+    <li><a href="/FaseProjeto/Pesquisar">Fases do Projeto</a></li>
+    <li class="active">Cadastrar</li>
+</ul>
+<div class="page-content-wrap" ng-controller="ProjectStepController" ng-init="InitValue(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Cadastro de <strong> Fase do Projeto</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Código</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-barcode"></span></span>
+                                        <input type="text" ng-model="projectStep.Id" hidden="hidden"/>
+                                        <input type="text" class="form-control" ng-model="projectStep.Code" />
+                                    </div>
+                                    <span class="help-block">Informe o código da fase</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Nome</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" class="form-control" ng-model="projectStep.Name">
+                                    </div>
+                                    <span class="help-block">Informe o nome fase</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Utilização</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <select class="form-control" ng-model="projectStep.IsProjectStep" ng-options="selected.Id as selected.Name for selected in IsProjectOrOportunitty" ng-disabled="projectStep.Id != null">
+                                            <option value="">Selecione</option>
+                                        </select>
+                                    </div>
+                                    <span class="help-block">Selecione a utilização da fase</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Status</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                        <select class="form-control" ng-model="projectStep.Status.Id" ng-options="selected.Id as selected.Descricao for selected in StatusList">
+                                            <option value="">Selecione</option>
+                                        </select>
+                                    </div>
+                                    <span class="help-block">Selecione o status do registro</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Observação</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <textarea class="form-control" rows="4" ng-model="projectStep.Description"></textarea>
+                                    </div>
+                                    <span class="help-block">Informe uma descrição para a fase</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default pull-left" ng-click="ClearForm()">Limpar Formulário <span class="fa fa-trash-o fa-right"></span></button>
+                    <button type="button" class="btn btn-primary pull-right" ng-disabled="IsProcessing" ng-click="SaveProjectStep()">Salvar Fase de Projeto <span class="fa fa-floppy-o fa-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p>Fase de projeto cadastrada com sucesso!</p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Script/jquery")

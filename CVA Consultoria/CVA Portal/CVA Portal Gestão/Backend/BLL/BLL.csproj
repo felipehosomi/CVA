@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E60E7D45-905A-4DCA-96E8-153F1532C29A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AddressBLL.cs" />
+    <Compile Include="Classes\AuthorizationBLL.cs" />
+    <Compile Include="Classes\ChangeRequestBLL.cs" />
+    <Compile Include="Classes\StatusReportBLL.cs" />
+    <Compile Include="Classes\CalendarBLL.cs" />
+    <Compile Include="Classes\ClientBLL.cs" />
+    <Compile Include="Classes\CollaboratorBLL.cs" />
+    <Compile Include="Classes\SpecialtyBLL.cs" />
+    <Compile Include="Classes\ExpenseTypeBLL.cs" />
+    <Compile Include="Classes\EmailSenderBLL.cs" />
+    <Compile Include="Classes\ContactBLL.cs" />
+    <Compile Include="Classes\Encrypt.cs" />
+    <Compile Include="Classes\ExpenseBLL.cs" />
+    <Compile Include="Classes\GenreBLL.cs" />
+    <Compile Include="Classes\MaritalStatusBLL.cs" />
+    <Compile Include="Classes\MessageBLL.cs" />
+    <Compile Include="Classes\NoteBLL.cs" />
+    <Compile Include="Classes\SubPeriodBLL.cs" />
+    <Compile Include="Classes\PoliticExpenseBLL.cs" />
+    <Compile Include="Classes\ProjectParametersBLL.cs" />
+    <Compile Include="Classes\StepItemBLL.cs" />
+    <Compile Include="Classes\ProjectStepBLL.cs" />
+    <Compile Include="Classes\PricingItemBLL.cs" />
+    <Compile Include="Classes\PricingBLL.cs" />
+    <Compile Include="Classes\MemberBLL.cs" />
+    <Compile Include="Classes\OpportunityBLL.cs" />
+    <Compile Include="Classes\PercentProjectBLL.cs" />
+    <Compile Include="Classes\ProjectBLL.cs" />
+    <Compile Include="Classes\ProjectTypeBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\StatusBLL.cs" />
+    <Compile Include="Classes\UfBLL.cs" />
+    <Compile Include="Classes\AMSTicketBLL.cs" />
+    <Compile Include="Classes\UnitMeterBLL.cs" />
+    <Compile Include="Classes\LoginBLL.cs" />
+    <Compile Include="Classes\ProfileBLL.cs" />
+    <Compile Include="Classes\UserBLL.cs" />
+    <Compile Include="Classes\UserViewBLL.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AUXILIAR\AUXILIAR.csproj">
+      <Project>{88588ECE-C61A-4CCD-8F60-629916400B45}</Project>
+      <Name>AUXILIAR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{F0B74FE2-EB06-4F97-BA10-3F11111E5B6D}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MODEL\MODEL.csproj">
+      <Project>{B73F84D1-4795-4CAC-AE20-3D39FDFAAF49}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

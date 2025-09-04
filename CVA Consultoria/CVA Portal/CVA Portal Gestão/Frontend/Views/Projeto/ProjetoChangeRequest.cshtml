@@ -1,0 +1,374 @@
+﻿<div class="panel panel-default tabs">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#tab-A" role="tab" data-toggle="tab">Inserção</a></li>
+        <li><a href="#tab-B" role="tab" data-toggle="tab">Aprovação</a></li>
+    </ul>
+    <div class="panel-body tab-content">
+        <div class="tab-pane active" id="tab-A">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-wrench"></span></span>
+                                <select name="status" class="form-control" ng-model="ChangeRequest.Id" ng-change="ShowChangeRequest()" ng-options="selected.Id as selected.Codigo + ' - ' + selected.Versao for selected in ChangeRequests">
+                                    <option value="">Selecione...</option>
+                                </select>
+                            </div>
+                            <span class="help-block">Selecione para editar</span>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="button" class="btn btn-success pull-right" ng-click="NewChangeRequest()">Criar nova</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="CR" hidden="hidden">
+                <div class="panel-heading ui-draggable-handle" style="background-color:#e8efb6">
+                    <h3 class="panel-title">Informações gerais</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-2" hidden>
+                                <label>Id</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="ChangeRequest.Id" tabindex="1" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Código</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="ChangeRequest.Codigo" tabindex="1" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Versão</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="ChangeRequest.Versao" tabindex="2" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Autor</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="ChangeRequest.Autor" tabindex="3" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Status</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                    <select class="form-control"  disabled="disabled" ng-model="ChangeRequest.Situacao" tabindex="4">
+                                        <option value="Aguardando">Aguardando</option>
+                                        <option value="Aprovada">Aprovada</option>
+                                        <option value="Rejeitada">Rejeitada</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-2">
+                                <label>Gerente de Projeto (CVA)</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="ChangeRequest.GPI" tabindex="5" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Gerente de Projeto (Cliente)</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="ChangeRequest.GPE" tabindex="6" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Departamento</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="ChangeRequest.Departamento" tabindex="7" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Processo</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="ChangeRequest.Processo" tabindex="8" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-4">
+                                <label>Descrição</label>
+                                <textarea class="form-control" rows="4" ng-model="ChangeRequest.Descricao" tabindex="9"></textarea>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Motivos</label>
+                                <textarea class="form-control" rows="4" ng-model="ChangeRequest.Motivos" tabindex="10"></textarea>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Recomendações</label>
+                                <textarea class="form-control" rows="4" ng-model="ChangeRequest.Recomendacoes" tabindex="11"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <label>Impactos Positivos</label>
+                                <textarea class="form-control" rows="3" ng-model="ChangeRequest.ImpactosPositivos" tabindex="12"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Impactos caso não aprovada</label>
+                                <textarea class="form-control" rows="3" ng-model="ChangeRequest.ImpactosNegativos" tabindex="13"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-heading ui-draggable-handle" style="background-color:#e8efb6">
+                    <h3 class="panel-title">Recursos solicitados</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <label>Fase</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <select name="status" class="form-control" ng-model="ChangeRequest.RecursoFase" ng-options="selected.StepId as selected.Nome for selected in FasesProjeto" tabindex="14">
+                                        <option value="">Selecione...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Especialidade</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <select name="status" class="form-control" ng-model="ChangeRequest.RecursoEspecialidade" ng-options="selected.Id as selected.Name for selected in Especialidades2" tabindex="15">
+                                        <option value="">Selecione...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <label>Horas sol.</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="ChangeRequest.RecursoHorasSolicitadas" tabindex="16" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Solicitante</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="ChangeRequest.RecursoSolicitante" tabindex="17" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Necessidade</label>
+                                <div class="input-group" style="padding-bottom:10px">
+                                    <select name="status" class="form-control" ng-model="ChangeRequest.RecursoNecessidade" tabindex="18">
+                                        <option value="">Selecione...</option>
+                                        <option value="Alta">Alta</option>
+                                        <option value="Media">Média</option>
+                                        <option value="Baixa">Baixa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-1" style="padding-top:22px;">
+                                <button type="button" class="btn btn-success push-down-30" ng-click="AddChangeRequestResource()"><span class="fa fa-plus"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12 col-xs-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th><b>Fase</b></th>
+                                            <th><b>Especialidade</b></th>
+                                            <th><b>Horas sol.</b></th>
+                                            <th><b>Solicitante</b></th>
+                                            <th><b>Necessidade</b></th>
+                                            <th><b>#</b></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody ng-repeat="line in ChangeRequestRecursosSolicitados">
+                                        <tr>
+                                            <td hidden="hidden">{{line.RecursoFase}}</td>
+                                            <td hidden="hidden">{{line.RecursoEspecialidade}}</td>
+                                            <td>{{line.RecursoFaseNome}}</td>
+                                            <td>{{line.RecursoEspecialidadeNome}}</td>
+                                            <td>{{line.RecursoHorasSolicitadas}}</td>
+                                            <td>{{line.RecursoSolicitante}}</td>
+                                            <td>{{line.RecursoNecessidade}}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default" ng-click="EditChangeRequestResource($index)">Editar</button>
+                                                <button type="button" class="btn btn-danger" ng-click="RemoveChangeRequestResource($index)">X</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-heading ui-draggable-handle">
+                    <button type="button" class="btn btn-info pull-right" ng-click="SaveChangeRequest(1)">Gravar Change Request</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-B">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-wrench"></span></span>
+                                <select name="status" class="form-control" ng-change="ShowChangeRequest2()" ng-model="ChangeRequest2.Id" ng-options="selected.Id as selected.Codigo + ' - ' + selected.Versao for selected in ChangeRequests" tabindex="1">
+                                    <option value="">Selecione...</option>
+                                </select>
+                            </div>
+                            <span class="help-block">Selecione para editar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="CR2" hidden="hidden">
+                <div class="panel-heading ui-draggable-handle" style="background-color:#e8efb6">
+                    <h3 class="panel-title">Informações gerais</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-2">
+                                <label>Código</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control"  disabled="disabled" ng-model="ChangeRequest2.Codigo" tabindex="4" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Versão</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control"  disabled="disabled" ng-model="ChangeRequest2.Versao" tabindex="4" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Autor</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control"  disabled="disabled" ng-model="ChangeRequest2.Autor" tabindex="4" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Status</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                    <select class="form-control" ng-model="ChangeRequest2.Situacao" tabindex="4">
+                                        <option value="">Selecione...</option>
+                                        <option value="Aguardando">Aguardando</option>
+                                        <option value="Aprovada">Aprovada</option>
+                                        <option value="Rejeitada">Rejeitada</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3" style="padding-top: 22px">
+                                <button type="button" class="btn btn-success" ng-click="SaveChangeRequest(2)">Atualizar Status</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-2">
+                                <label>Gerente de Projeto (CVA)</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control"  disabled="disabled" ng-model="ChangeRequest2.GPI" tabindex="4" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Gerente de Projeto (Cliente)</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control"  disabled="disabled" ng-model="ChangeRequest2.GPE" tabindex="4" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Departamento</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control"  disabled="disabled" ng-model="ChangeRequest2.Departamento" tabindex="4" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Processo</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control"  disabled="disabled" ng-model="ChangeRequest2.Processo" tabindex="4" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-4">
+                                <label>Descrição</label>
+                                <textarea class="form-control"  disabled="disabled" rows="4" ng-model="ChangeRequest2.Descricao" tabindex="8"></textarea>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Motivos</label>
+                                <textarea class="form-control"  disabled="disabled" rows="4" ng-model="ChangeRequest2.Motivos" tabindex="8"></textarea>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Recomendações</label>
+                                <textarea class="form-control"  disabled="disabled" rows="4" ng-model="ChangeRequest2.Recomendacoes" tabindex="8"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <label>Impactos Positivos</label>
+                                <textarea class="form-control"  disabled="disabled" rows="3" ng-model="ChangeRequest2.ImpactosPositivos" tabindex="8"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Impactos caso não aprovada</label>
+                                <textarea class="form-control"  disabled="disabled" rows="3" ng-model="ChangeRequest2.ImpactosNegativos" tabindex="8"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-heading ui-draggable-handle" style="background-color:#e8efb6">
+                    <h3 class="panel-title">Recursos solicitados</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12 col-xs-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th><b>Fase</b></th>
+                                            <th><b>Especialidade</b></th>
+                                            <th><b>Horas sol.</b></th>
+                                            <th><b>Solicitante</b></th>
+                                            <th><b>Necessidade</b></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody ng-repeat="line in ChangeRequestRecursosSolicitados2">
+                                        <tr>
+                                            <td>{{line.RecursoFaseNome}}</td>
+                                            <td>{{line.RecursoEspecialidadeNome}}</td>
+                                            <td>{{line.RecursoHorasSolicitadas}}</td>
+                                            <td>{{line.RecursoSolicitante}}</td>
+                                            <td>{{line.RecursoNecessidade}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

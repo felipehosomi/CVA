@@ -1,0 +1,132 @@
+﻿
+@model CVA.Portal.Producao.Model.PainelApontamentoModel
+@{
+    ViewBag.Title = "PAINEL DE ACOMPANHAMENTO DE APONTAMENTOS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Apetit/_Layout.cshtml";
+}
+
+
+@if (ViewBag.Error != null)
+{
+    <div id="AlertError" class="col-md-12 col-sm-12 col-xs-12 form-group" onclick="$(this).fadeOut(250)">
+        <div id="ErrorMsg" class="alert alert-error" style="white-space: pre-line; margin-bottom: 0px;">@ViewBag.Error</div>
+    </div>
+}
+@if (ViewBag.Success != null)
+{
+    <div id="AlertSuccess" class="col-md-12 col-sm-12 col-xs-12 form-group" onclick="$(this).fadeOut(250)">
+        <div id="SuccessMsg" class="alert alert-success" style="margin-bottom: 0px;">@ViewBag.Success</div>
+    </div>
+}
+
+@using (Html.BeginForm("Create", "ApontamentoPainel", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <div class="row">
+            <div class="x_panel">
+
+                <button type="button" class="btn btn-primary pull-right" onclick="Search()">Pesquisar <span class="fa fa-search fa-right"></span></button>
+                <button type="button" class="btn btn-dark pull-right" onclick="refresh()">Atualizar <span class="fa fa-refresh fa-right"></span></button>
+
+
+                <div class="x_title">
+                    <h2>@ViewBag.Title</h2>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="x_content">
+                    <input type="hidden" value="@Model.Itens.Count" id="countList" />
+
+                    @if (Model.BPLIdList == null)
+                    {
+                        Model.BPLIdList = new SelectList(new[] { new SelectListItem { Value = "", Text = "" } }, "Value", "Text");
+                    }
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.BPLIdCode, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    @Html.DropDownList("BPLIdCode", Model.BPLIdList, htmlAttributes: new { required = "required", id = "BPLIdCode", type = "number", @class = "chosen-select", data_placeholder = "Selecione uma filial" })
+                                </div>
+                            </div>
+
+                            @Html.LabelFor(model => model.ClienteCode, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.ClienteName, new { htmlAttributes = new { id = "txtClienteName", @style = "padding-top: 2px; height: 30px;", @class = "form-control", disabled = "disabled" } })
+                                </div>
+                            </div>
+
+                            @Html.LabelFor(model => model.contratoDe, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input class="form-control text-box single-line" data-val="true" data-val-date="O campo Data De deve ser uma data." id="contratoDe" name="contratoDe" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" style="height: 34px; width: 100%">
+                                </div>
+                            </div>
+
+                            @Html.LabelFor(model => model.contratoAte, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input class="form-control text-box single-line" data-val="true" data-val-date="O campo Data De deve ser uma data." id="contratoAte" name="contratoAte" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" style="height: 34px; width: 100%">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                        @Html.HiddenFor(model => model.ClienteCode)
+                        @Html.HiddenFor(model => model.ClienteName)
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <table id="dtInsumo" class="table table-striped table-bordered" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Itens.First().DT)</th>
+                                <th>@Html.DisplayNameFor(model => model.Itens.First().DAYOFWEEKDESC)</th>
+                                <th>@Html.DisplayNameFor(model => model.Itens.First().SERVICOCODE)</th>
+                                <th>@Html.DisplayNameFor(model => model.Itens.First().TURNOCODE)</th>
+                                <th>@Html.DisplayNameFor(model => model.Itens.First().QTYPL)</th>
+                                <th>@Html.DisplayNameFor(model => model.Itens.First().QTYAP)</th>
+                                <th>@Html.DisplayNameFor(model => model.Itens.First().DIFF)</th>
+                                <th style="width: 100px;">@Html.DisplayNameFor(model => model.Itens.First().Status)</th>
+                                <th style="width: 85px;">Apontamento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (var i = 0; i < Model.Itens.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Model.Itens[i].DT</td>
+                                    <td>@Model.Itens[i].DAYOFWEEKDESC</td>
+                                    <td>@Model.Itens[i].SERVICONAME</td>
+                                    <td>@Model.Itens[i].TURNONAME</td>
+                                    <td>@Model.Itens[i].QTYPL</td>
+                                    <td>@Model.Itens[i].QTYAP</td>
+                                    <td>@Model.Itens[i].DIFF</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                
+                <button type="button" class="btn btn-default pull-left" onclick="location.href='@Url.Action("Menu", "Apetit")'"><span class="fa fa-reply fa-right"></span> Voltar</button>
+
+            </div>
+
+        </div>
+    </div>
+}
+
+
+
+
+@section Scripts{
+    <script src="~/Scripts/Views/ApontamentoPainel/index.js"></script>
+}

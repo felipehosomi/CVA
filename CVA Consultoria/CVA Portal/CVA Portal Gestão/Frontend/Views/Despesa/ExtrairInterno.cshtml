@@ -1,0 +1,139 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/Loading")
+<script src="https://rawgithub.com/eligrey/FileSaver.js/master/FileSaver.js" type="text/javascript"></script>
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="/Despesa/Consultar">Despesas</a></li>
+    <li class="active">Consultar Despesas</li>
+</ul>
+<div class="page-content-wrap" ng-controller="ExpenseExtractedController" ng-init="OnLoad()">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Consultar <strong> Despesas</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="page-content-wrap">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Filtros </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="col-md-4">
+                                                    <label class="control-label">Cliente</label>
+                                                    <div class="input-group">
+                                                        <p id="load-00" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                                        <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                                        <select class="form-control" ng-change="Search()" ng-model="expense.ClientId" ng-options="selected.Id as selected.Name for selected in ClientList">
+                                                            <option value="">Selecione</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label class="control-label">Projeto</label>
+                                                    <div class="input-group">
+                                                        <p id="load-01" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                                        <span class="input-group-addon"><span class="fa fa-globe"></span></span>
+                                                        <select class="form-control" ng-change="Search()" ng-model="expense.Project.Id" ng-options="selected.Id as  selected.Codigo + ' - ' + selected.Tag + ' ' + selected.Nome for selected in ProjectList">
+                                                            <option value="">Selecione</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label class="control-label">De </label>
+                                                    <input type="date" id="initialDate"class="form-control" ng-blur="Search()" ng-model="expense.InitialDate" />
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label class="control-label">Até</label>
+                                                    <input type="date" id="finishDate"class="form-control" ng-blur="Search()" ng-model="expense.FinishDate" />
+                                                </div>
+                                                <div class="col-md-4" style="padding-top:5px;">
+                                                    <label class="control-label"> </label>
+                                                    <div class="input-group">
+                                                        <button ng-click="Search()" type="button" class="btn btn-info pull-right"><span class="fa fa-search"></span> Pesquisar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-content-wrap">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Resultados </h3>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <div class="row" id="exportable">
+                                            <table class="table" id="table-export">
+                                                <thead>
+                                                    <tr>
+                                                        <td><b>Data</b></td>
+                                                        <td><b>Projeto</b></td>
+                                                        <td><b>Descrição</b></td>
+                                                        <td><b>Número NF</b></td>
+                                                        <td><b>Tipo</b></td>
+                                                        <td><b>Valor NF</b></td>
+                                                        <td><b>Valor Reembolso</b></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in TableList">
+                                                        <td>{{item.Data | date: "dd/MM/yy"}}</td>
+                                                        <td>{{item.Projeto.Nome}}</td>
+                                                        <td>{{item.Descricao}}</td>
+                                                        <td>{{item.NumNota}}</td>
+                                                        <td>{{item.TipoDespesa.Name}}</td>
+                                                        <td>R$ {{item.ValorNota}}</td>
+                                                        <td>R$ {{item.ValorReembolso}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h3>Total reembolso: </h3></td>
+                                                        <td colspan="7"><h3><b>R$ {{TotalExpense}}</b></h3></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page-content-wrap">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Exportar </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <button class="btn btn-info" ng-click="ExportarExcel()"><i class="fa fa-table"></i>Excel</button>
+                                                <button class="btn btn-info" ng-click="ExportarPDF()"><i class="fa fa-paste"></i>PDF</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

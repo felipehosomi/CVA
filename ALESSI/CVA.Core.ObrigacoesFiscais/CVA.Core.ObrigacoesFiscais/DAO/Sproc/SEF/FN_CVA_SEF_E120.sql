@@ -1,0 +1,82 @@
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'IF' AND name = 'FN_CVA_SEF_E120')
+	DROP FUNCTION FN_CVA_SEF_E120
+GO
+
+--- select * from FN_CVA_SEF_E120 (9,'2018-01-01','2018-01-31')
+CREATE FUNCTION FN_CVA_SEF_E120
+(
+	@Filial			INT,
+	@DataInicial	DATETIME,
+	@DataFinal		DATETIME
+) RETURNS TABLE
+AS
+RETURN
+(
+
+	SELECT DISTINCT
+		OPCH.DocEntry,
+		OPCH.ObjType,
+	    0									IND_OPER,
+		1									IND_EMIT,
+		REPLACE(REPLACE(OPCH.CardCode,'F','FOR'),'C','CLI')		COD_PART,
+		''									IND,						
+		ONFM.NfmCode						COD_MOD,
+		'00'								COD_SIT,
+		OPCH.SeriesStr						SER,
+		OPCH.SubStr							SUB,
+		OPCH.Serial							NUM_DOC,
+		OPCH.U_chaveacesso					CHV_NFE,
+		''									DT_EMIS,
+		OPCH.DocDate						DT_DOC,
+		CODNAT.COD							COD_NAT,
+		CODNAT.CODNAT  						COP,
+		opch.DocNum							NUM_LCTO,
+		CASE WHEN OPCH.Installmnt = 1
+			THEN 0
+			ELSE 1
+		END									IND_PGTO,
+		PCH1.LineTotal						VL_CONT,
+		(SELECT TOP 1 CFOPCODE FROM PCH1 WHERE DOCENTRY = OPCH.DOCENTRY) CFOP,
+		ISNULL(ICMS.BaseSum,0.00)			VL_BC_ICMS,
+		ISNULL(ICMS.TaxSum,0.00)			VL_ICMS,
+		ISNULL(ICMS.TaxRate,0.00)			ALIQ_ICMS,
+		ISNULL(ICMS_ST.TaxSum,0.00)			VL_ICMS_ST,	
+		ISNULL(ICMS_ST.TaxSum,0.00)			VL_AT,
+		ISNULL(ICMS.Isentas,0.00)			VL_ISNT_ICMS,
+		ISNULL(ICMS.Outras,0.00)			VL_OUT_ICMS,
+		''									COD_INF_OBS,
+		PCH12.StateS						UF
+
+	FROM OPCH WITH(NOLOCK)
+		INNER JOIN PCH1 WITH(NOLOCK)
+			ON PCH1.DocEntry = OPCH.DocEntry
+		INNER JOIN ONFM WITH(NOLOCK)
+			ON ONFM.AbsEntry = OPCH.Model
+		INNER JOIN OUSG WITH(NOLOCK)
+			ON OUSG.Id = PCH1.Usage
+
+		LEFT JOIN (
+				SELECT PCH4.DocEntry, PCH4.TaxRate, SUM(PCH4.TaxSum) TaxSum, SUM(PCH4.BaseSum) BaseSum, SUM(U_ExcAmtS) Isentas, SUM(U_OthAmtS) Outras
+				FROM PCH4 WITH(NOLOCK) 
+					INNER JOIN OSTT WITH(NOLOCK) ON OSTT.AbsId = PCH4.StaType
+					INNER JOIN ONFT WITH(NOLOCK) ON ONFT.AbsId = OSTT.NfTaxId AND ONFT.Code = 'ICMS'
+				GROUP BY PCH4.DocEntry, PCH4.TaxRate
+			) ICMS
+			ON ICMS.DocEntry = PCH1.DocEntry
+		LEFT JOIN (
+			SELECT PCH4.DocEntry, SUM(PCH4.TaxSum) TaxSum, SUM(PCH4.BaseSum) BaseSum, SUM(U_ExcAmtS) Isentas, SUM(U_OthAmtS) Outras
+			FROM PCH4 WITH(NOLOCK) 
+				INNER JOIN OSTT WITH(NOLOCK) ON OSTT.AbsId = PCH4.StaType
+				INNER JOIN ONFT WITH(NOLOCK) ON ONFT.AbsId = OSTT.NfTaxId AND ONFT.Code = 'ICMS-ST'
+			GROUP BY PCH4.DocEntry
+		) ICMS_ST
+			ON ICMS_ST.DocEntry = PCH1.DocEntry
+		LEFT JOIN CODNAT  ON (SELECT TOP 1 CFOPCODE FROM PCH1 WHERE DOCENTRY = OPCH.DOCENTRY) = CODNAT.CFOP
+		LEFT JOIN PCH12 ON PCH12.Docentry = OPCH.DocEntry
+
+	WHERE OPCH.DocDate BETWEEN @DataInicial AND @DataFinal
+	AND OPCH.BPLId = @Filial
+	AND OPCH.CANCELED = 'N' AND Model IN (44)
+
+	
+)

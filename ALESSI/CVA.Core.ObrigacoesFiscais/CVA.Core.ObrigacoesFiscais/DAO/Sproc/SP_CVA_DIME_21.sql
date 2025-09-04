@@ -1,0 +1,38 @@
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'SP_CVA_DIME_21')
+	DROP PROCEDURE SP_CVA_DIME_21
+GO
+CREATE PROCEDURE SP_CVA_DIME_21
+(
+	@BPLId INT
+)
+AS
+BEGIN
+	SELECT 
+		21	[Tipo],
+		OBPL.TaxIdNum2,
+		OBPL.BPLName,
+		MONTH(DIME.U_DtAte),
+		YEAR(DIME.U_DtAte),
+		DIME.U_Declaracao,
+		DIME.U_Apuracao,
+		DIME.U_Trans_Cred,
+		DIME.U_Movimento,
+		DIME.U_ST,
+		DIME.U_Escrita,
+		DIME.U_Empregados
+	FROM OBPL WITH(NOLOCK)
+		INNER JOIN [@CVA_DIME] DIME WITH(NOLOCK)
+			ON DIME.U_Filial = OBPL.BPLId
+	WHERE OBPL.BPLId = @BPLId	
+
+END
+
+
+IF EXISTS(SELECT * FROM [@CVA_TED_STR] WHERE U_PayMethCod = [%0] AND U_BankCode = [%1])
+BEGIN
+	SELECT '810'
+END
+ELSE
+BEGIN
+	SELECT '018'
+END

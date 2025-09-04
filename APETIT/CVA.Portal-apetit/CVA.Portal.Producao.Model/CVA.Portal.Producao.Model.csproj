@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{03D08D45-7A45-4608-8413-1C07270B014D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVA.Portal.Producao.Model</RootNamespace>
+    <AssemblyName>CVA.Portal.Producao.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.5.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Apetit\ControleDiarioModel.cs" />
+    <Compile Include="Apetit\ApontamentoModel.cs" />
+    <Compile Include="Apetit\ApontamentoEncerramentoModel.cs" />
+    <Compile Include="Apetit\PainelApontamentoModel.cs" />
+    <Compile Include="Apetit\MessagesModel.cs" />
+    <Compile Include="Apetit\FilialModel.cs" />
+    <Compile Include="Apetit\ProductionOrderModel.cs" />
+    <Compile Include="Apetit\ReposicaoInsumoModel.cs" />
+    <Compile Include="Apetit\ServicoExtraModel.cs" />
+    <Compile Include="Apetit\SaidaInsumoModel.cs" />
+    <Compile Include="API\ReturnModel.cs" />
+    <Compile Include="ComboBoxModel.cs" />
+    <Compile Include="Compras\OfertaCompraModel.cs" />
+    <Compile Include="Configuracoes\BPLModel.cs" />
+    <Compile Include="Configuracoes\ColaboradorModel.cs" />
+    <Compile Include="Configuracoes\LoginModel.cs" />
+    <Compile Include="Configuracoes\ParametrosModel.cs" />
+    <Compile Include="Configuracoes\PesquisaModel.cs" />
+    <Compile Include="Configuracoes\UsuarioEtapaModel.cs" />
+    <Compile Include="ErrorModel.cs" />
+    <Compile Include="Estoque\TransferenciaEstoqueModel.cs" />
+    <Compile Include="Estoque\TransferenciaLogModel.cs" />
+    <Compile Include="Producao\ApontamentoHRModel.cs" />
+    <Compile Include="Producao\ApontamentoProducaoModel.cs" />
+    <Compile Include="Producao\ItemOPModel.cs" />
+    <Compile Include="Apetit\BatchesModel.cs" />
+    <Compile Include="Producao\RecursoProducaoModel.cs" />
+    <Compile Include="Producao\HistoricoProducaoModel.cs" />
+    <Compile Include="Qualidade\DocumentoModel.cs" />
+    <Compile Include="Configuracoes\SBOErrorModel.cs" />
+    <Compile Include="Configuracoes\SessionModel.cs" />
+    <Compile Include="Producao\DocumentoMarketingModel.cs" />
+    <Compile Include="Estoque\GrupoItemModel.cs" />
+    <Compile Include="Estoque\ItemModel.cs" />
+    <Compile Include="JsonModel.cs" />
+    <Compile Include="Configuracoes\PerfilModel.cs" />
+    <Compile Include="Configuracoes\PerfilViewModel.cs" />
+    <Compile Include="Configuracoes\UsuarioModel.cs" />
+    <Compile Include="Producao\EstruturaProducaoModel.cs" />
+    <Compile Include="Producao\EtapaItinerarioModel.cs" />
+    <Compile Include="Producao\LoteSerieModel.cs" />
+    <Compile Include="Producao\OrdemProducaoModel.cs" />
+    <Compile Include="Qualidade\FichaInspecaoAmostraModel.cs" />
+    <Compile Include="Qualidade\FichaInspecaoItemModel.cs" />
+    <Compile Include="Qualidade\FichaProdutoModel.cs" />
+    <Compile Include="Qualidade\ModeloFichaItemModel.cs" />
+    <Compile Include="Qualidade\ModeloFichaModel.cs" />
+    <Compile Include="Producao\ProducaoModel.cs" />
+    <Compile Include="Producao\RecursoModel.cs" />
+    <Compile Include="Qualidade\TipoEspecificacaoModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Configuracoes\ViewModel.cs" />
+    <Compile Include="Qualidade\FichaInspecaoModel.cs" />
+    <Compile Include="SAP\AttachmentModel.cs" />
+    <Compile Include="SAP\CVA_APTO_TERCEIROSModel.cs" />
+    <Compile Include="SAP\InventoryGenExitsModel.cs" />
+    <Compile Include="SAP\ProductionOrdersModel.cs" />
+    <Compile Include="SAP\PurchaseRequestModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\System.Web.Mvc.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj">
+      <Project>{b956d6a2-af35-4116-840c-f4e5cefd40f6}</Project>
+      <Name>CVA.AddOn.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

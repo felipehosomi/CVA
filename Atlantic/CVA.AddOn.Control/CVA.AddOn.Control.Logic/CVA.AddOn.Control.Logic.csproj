@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D351507-A944-47BB-BCB0-12929A26BF80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVA.AddOn.Control.Logic</RootNamespace>
+    <AssemblyName>CVA.AddOn.Control.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AccountBLL.cs" />
+    <Compile Include="BLL\BusinessPartnerBLL.cs" />
+    <Compile Include="BLL\ConfigBLL.cs" />
+    <Compile Include="BLL\CVACommon\BaseBLL.cs" />
+    <Compile Include="BLL\CVACommon\ObjetoBLL.cs" />
+    <Compile Include="BLL\CVACommon\RegistroBLL.cs" />
+    <Compile Include="BLL\CVACommon\TimerBLL.cs" />
+    <Compile Include="BLL\GenericBLL.cs" />
+    <Compile Include="DAO\CVACommon\ObjetoDAO.cs" />
+    <Compile Include="DAO\OACT\AccountDAO.cs" />
+    <Compile Include="DAO\OCRD\BusinessPartnerDAO.cs" />
+    <Compile Include="DAO\UserTables\ConfigDAO.cs" />
+    <Compile Include="MODEL\AccountModel.cs" />
+    <Compile Include="MODEL\CVACommon\Objeto.cs" />
+    <Compile Include="VIEW\BaseFormView.cs" />
+    <Compile Include="VIEW\f134.cs" />
+    <Compile Include="VIEW\f150.cs" />
+    <Compile Include="VIEW\f174.cs" />
+    <Compile Include="VIEW\f177.cs" />
+    <Compile Include="VIEW\f20700.cs" />
+    <Compile Include="VIEW\f247.cs" />
+    <Compile Include="VIEW\f505.cs" />
+    <Compile Include="VIEW\f60701.cs" />
+    <Compile Include="VIEW\f63.cs" />
+    <Compile Include="DAO\CVACommon\BaseDAO.cs" />
+    <Compile Include="DAO\CVACommon\RegistroDAO.cs" />
+    <Compile Include="DAO\CVACommon\Resources\Query.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Query.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\CVACommon\TimerDAO.cs" />
+    <Compile Include="DAO\Generic\GenericDAO.cs" />
+    <Compile Include="DAO\Resources\Query.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Query.resx</DependentUpon>
+    </Compile>
+    <Compile Include="HELPER\StaticKeys.cs" />
+    <Compile Include="MODEL\ConfigModel.cs" />
+    <Compile Include="MODEL\CVACommon\Base.cs" />
+    <Compile Include="MODEL\CVACommon\Registro.cs" />
+    <Compile Include="MODEL\CVACommon\TipoBaseEnum.cs" />
+    <Compile Include="MODEL\CVAObjectEnum.cs" />
+    <Compile Include="MODEL\FuncaoEnum.cs" />
+    <Compile Include="MODEL\StatusEnum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VIEW\f65052.cs" />
+    <Compile Include="VIEW\f666.cs" />
+    <Compile Include="VIEW\f750.cs" />
+    <Compile Include="VIEW\f760.cs" />
+    <Compile Include="VIEW\f80082.cs" />
+    <Compile Include="VIEW\f804.cs" />
+    <Compile Include="VIEW\f805.cs" />
+    <Compile Include="VIEW\f810.cs" />
+    <Compile Include="VIEW\f82105.cs" />
+    <EmbeddedResource Include="DAO\CVACommon\Resources\Query.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Query.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Resources\Query.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Query.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SAPbouiCOM">
+      <Guid>{6048236A-956D-498D-A6F1-9C81C13AB6E8}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CVA.AddOn.Common\CVA.AddOn.Common.csproj">
+      <Project>{b956d6a2-af35-4116-840c-f4e5cefd40f6}</Project>
+      <Name>CVA.AddOn.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

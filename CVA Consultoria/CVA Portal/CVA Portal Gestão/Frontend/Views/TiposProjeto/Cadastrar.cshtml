@@ -1,0 +1,95 @@
+﻿@model MODEL.Classes.ProjectTypeModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="/TiposProjeto/Pesquisar">Tipos de Projeto</a></li>
+    <li class="active">Cadastrar</li>
+</ul>
+<div class="page-content-wrap" ng-controller="ProjectTypeController" ng-init="OnLoad(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Cadastro de <strong> Tipos de Projeto</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-4">
+                                <label>Nome</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <input type="text" class="form-control" tabindex="1" ng-model="TipoProjeto.Nome" />
+                                </div>
+                                <span class="help-block">Insira o nome</span>
+                            </div>
+                            <div class="col-md-2">
+                                <label>AMS</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <select class="form-control" ng-model="TipoProjeto.AMS" tabindex="2">
+                                        <option value="">Selecione</option>
+                                        <option value="1">Sim</option>
+                                        <option value="0">Não</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Informe se este tipo de projeto é AMS</span>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Equipe</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <select class="form-control" ng-model="TipoProjeto.Equipe" tabindex="3">
+                                        <option value="">Selecione</option>
+                                        <option value="A1">A1</option>
+                                        <option value="B1">B1</option>
+                                        <option value="Interno">Interno</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Informe a equipe responsável</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Descrição</label>
+                            <textarea class="form-control" rows="2" ng-model="TipoProjeto.Descricao" tabindex="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-primary pull-right" ng-click="Salvar()">Salvar<span class="fa fa-floppy-o fa-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p id="message-success"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close" id="btn-ok">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

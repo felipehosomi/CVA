@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B18B3BBC-77AD-4254-8590-79CDEA35F2D8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVA_RepConfig</RootNamespace>
+    <AssemblyName>CVA_RepConfig</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CVA_Rep_Exception">
+      <HintPath>..\..\CVA_Rep_Exception\CVA_Rep_Exception\CVA_Rep_Exception\bin\Debug\CVA_Rep_Exception.dll</HintPath>
+    </Reference>
+    <Reference Include="CVA_Rep_Logging">
+      <HintPath>..\..\CVA_Rep_Logging\CVA_Rep_Logging\CVA_Rep_Logging\bin\Debug\CVA_Rep_Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CVA_Rep_Logging\CVA_Rep_Logging\CVA_Rep_Logging\bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\AcessoCVA\AcessoCVA_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AcessoCVA\AcessoCVA_Form.Designer.cs">
+      <DependentUpon>AcessoCVA_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Base\Base_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\Base_Form.Designer.cs">
+      <DependentUpon>Base_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Base\CadastrarBase_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\CadastrarBase_UserControl.Designer.cs">
+      <DependentUpon>CadastrarBase_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Base\ConsultarBase_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\ConsultarBase_UserControl.Designer.cs">
+      <DependentUpon>ConsultarBase_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Base\EditarBase_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\EditarBase_UserControl.Designer.cs">
+      <DependentUpon>EditarBase_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Base\RemoverBase_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\RemoverBase_UserControl.Designer.cs">
+      <DependentUpon>RemoverBase_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_BasesForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_BasesForm.Designer.cs">
+      <DependentUpon>Conciliador_BasesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_CadastrarBases_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_CadastrarBases_UserControl.Designer.cs">
+      <DependentUpon>Conciliador_CadastrarBases_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_DeParaCadastrar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_DeParaCadastrar.Designer.cs">
+      <DependentUpon>Conciliador_DeParaCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_DeParaConsultar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_DeParaConsultar.Designer.cs">
+      <DependentUpon>Conciliador_DeParaConsultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_DeParaEditar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_DeParaEditar.Designer.cs">
+      <DependentUpon>Conciliador_DeParaEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_DeParaForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_DeParaForm.Designer.cs">
+      <DependentUpon>Conciliador_DeParaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_ConsultarBases_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_ConsultarBases_UserControl.Designer.cs">
+      <DependentUpon>Conciliador_ConsultarBases_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_DeParaRemover.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_DeParaRemover.Designer.cs">
+      <DependentUpon>Conciliador_DeParaRemover.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_EditarBases_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_EditarBases_UserControl.Designer.cs">
+      <DependentUpon>Conciliador_EditarBases_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_RemoverBases_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Conciliador\Conciliador_RemoverBases_UserControl.Designer.cs">
+      <DependentUpon>Conciliador_RemoverBases_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Emails\Emails_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Emails\Emails_Form.Designer.cs">
+      <DependentUpon>Emails_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Init.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Init.Designer.cs">
+      <DependentUpon>Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Log\Log_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Log\Log_Form.Designer.cs">
+      <DependentUpon>Log_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Objeto\CadastrarObjeto_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Objeto\CadastrarObjeto_UserControl.Designer.cs">
+      <DependentUpon>CadastrarObjeto_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Objeto\ConsultarObjeto_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Objeto\ConsultarObjeto_UserControl.Designer.cs">
+      <DependentUpon>ConsultarObjeto_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Objeto\EditarObjeto_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Objeto\EditarObjeto_UserControl.Designer.cs">
+      <DependentUpon>EditarObjeto_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Objeto\Objeto_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Objeto\Objeto_Form.Designer.cs">
+      <DependentUpon>Objeto_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Objeto\RemoverObjeto_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Objeto\RemoverObjeto_UserControl.Designer.cs">
+      <DependentUpon>RemoverObjeto_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Timer\Customizado_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Timer\Customizado_UserControl.Designer.cs">
+      <DependentUpon>Customizado_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Timer\Diario_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Timer\Diario_UserControl.Designer.cs">
+      <DependentUpon>Diario_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Timer\Intervalo_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Timer\Intervalo_UserControl.Designer.cs">
+      <DependentUpon>Intervalo_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Timer\Timer_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Timer\Timer_Form.Designer.cs">
+      <DependentUpon>Timer_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Usuários\Usuarios_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuários\Usuarios_Form.Designer.cs">
+      <DependentUpon>Usuarios_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\HelperForm.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AcessoCVA\AcessoCVA_Form.resx">
+      <DependentUpon>AcessoCVA_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Base\Base_Form.resx">
+      <DependentUpon>Base_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Base\CadastrarBase_UserControl.resx">
+      <DependentUpon>CadastrarBase_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Base\ConsultarBase_UserControl.resx">
+      <DependentUpon>ConsultarBase_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Base\EditarBase_UserControl.resx">
+      <DependentUpon>EditarBase_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Base\RemoverBase_UserControl.resx">
+      <DependentUpon>RemoverBase_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Conciliador\Conciliador_BasesForm.resx">
+      <DependentUpon>Conciliador_BasesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Conciliador\Conciliador_CadastrarBases_UserControl.resx">
+      <DependentUpon>Conciliador_CadastrarBases_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Conciliador\Conciliador_ConsultarBases_UserControl.resx">
+      <DependentUpon>Conciliador_ConsultarBases_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Conciliador\Conciliador_DeParaCadastrar.resx">
+      <DependentUpon>Conciliador_DeParaCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Conciliador\Conciliador_DeParaConsultar.resx">
+      <DependentUpon>Conciliador_DeParaConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Conciliador\Conciliador_DeParaEditar.resx">
+      <DependentUpon>Conciliador_DeParaEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Conciliador\Conciliador_DeParaForm.resx">
+      <DependentUpon>Conciliador_DeParaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Conciliador\Conciliador_DeParaRemover.resx">
+      <DependentUpon>Conciliador_DeParaRemover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Conciliador\Conciliador_EditarBases_UserControl.resx">
+      <DependentUpon>Conciliador_EditarBases_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Conciliador\Conciliador_RemoverBases_UserControl.resx">
+      <DependentUpon>Conciliador_RemoverBases_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Emails\Emails_Form.resx">
+      <DependentUpon>Emails_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Init.resx">
+      <DependentUpon>Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Log\Log_Form.resx">
+      <DependentUpon>Log_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Objeto\CadastrarObjeto_UserControl.resx">
+      <DependentUpon>CadastrarObjeto_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Objeto\ConsultarObjeto_UserControl.resx">
+      <DependentUpon>ConsultarObjeto_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Objeto\EditarObjeto_UserControl.resx">
+      <DependentUpon>EditarObjeto_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Objeto\Objeto_Form.resx">
+      <DependentUpon>Objeto_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Objeto\RemoverObjeto_UserControl.resx">
+      <DependentUpon>RemoverObjeto_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Timer\Customizado_UserControl.resx">
+      <DependentUpon>Customizado_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Timer\Diario_UserControl.resx">
+      <DependentUpon>Diario_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Timer\Intervalo_UserControl.resx">
+      <DependentUpon>Intervalo_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Timer\Timer_Form.resx">
+      <DependentUpon>Timer_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuários\Usuarios_Form.resx">
+      <DependentUpon>Usuarios_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CVA_Rep_BLL\CVA_Rep_BLL.csproj">
+      <Project>{8245A790-6C49-47BC-8559-699201BEBF60}</Project>
+      <Name>CVA_Rep_BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CVA_Rep_DAL\CVA_Rep_DAL.csproj">
+      <Project>{1B689064-7B38-4796-802C-0A4CA15488A9}</Project>
+      <Name>CVA_Rep_DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\settings.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Query\CVA_STU_SETUP.sql" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

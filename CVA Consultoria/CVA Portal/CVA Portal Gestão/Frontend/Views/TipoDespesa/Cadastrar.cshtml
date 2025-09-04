@@ -1,0 +1,104 @@
+﻿@model MODEL.Classes.ExpenseTypeModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Configurações</a></li>
+    <li><a href="#">Empresa</a></li>
+    <li><a href="/TipoDespesa/Pesquisar">Tipos de Despesa</a></li>
+    <li class="active">Cadastrar</li>
+</ul>
+<div class="page-content-wrap" ng-controller="ExpenseTypeController" ng-init="LoadInit(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"> Cadastrar<strong> Tipo de Despesa</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Nome</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" class="form-control" tabindex="1" ng-model="expenseType.Name" />
+                                    </div>
+                                    <span class="help-block">Insira o nome do tipo de despesa</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Descrição</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <textarea class="form-control" rows="4" tabindex="3" ng-model="expenseType.Description"></textarea>
+                                    </div>
+                                    <span class="help-block">Insira uma descrição</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Status</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                        <select name="status" class="form-control" ng-model="expenseType.StatusId" ng-options="selected.Id as selected.Descricao for selected in StatusList" required>
+                                            <option value="">Selecione</option>
+                                        </select>
+                                    </div>
+                                    <span class="help-block">Selecione o status do registro</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Unidade</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                        <select name="status" class="form-control" ng-model="expenseType.UnitMeter" ng-options="selected.Id as selected.UnitMeter for selected in UnitMeterList" required>
+                                            <option value="">Selecione</option>
+                                        </select>
+                                    </div>
+                                    <span class="help-block">Selecione a unidade de cálculo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-primary pull-right" ng-click="Save()" ng-disabled="expenseType == null || IsProcessing">Salvar Tipo de Despesa <span class="fa fa-floppy-o fa-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p>Tipo de Despesa salvo com sucesso!</p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close" id="btn-ok">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

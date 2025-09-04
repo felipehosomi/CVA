@@ -1,0 +1,87 @@
+/*-------------------------------Solicitação de Compra  ----------------------------------------*/
+
+-- Marco Kurpel 09/04/2018
+
+-- Object Type -> 1470000113 Solicitação de Compra 
+
+
+
+IF @object_type = '1470000113' AND @transaction_type IN ('A', 'U')
+BEGIN
+ Declare @DocTypeOPRQ char(1)
+ Declare @ContaContabilPQR1 varchar(100)
+ Declare @CentroCustoPQR1 varchar(100)
+ Declare @Whscode int
+
+  select @ContaContabilPQR1 = isnull(PRQ1.AcctCode,'')
+        ,@CentroCustoPQR1   = ISNULL(PRQ1.OcrCode ,'')
+	    ,@DocTypeOPRQ =  OPRQ.DocType
+	    ,@Whscode = PRQ1.WhsCode
+   from PRQ1 
+    inner join OPRQ
+	   on OPRQ.DocEntry = PRQ1.DocEntry
+	
+
+
+IF @DocTypeOPRQ = 'S'
+	BEGIN
+		SET @error = N'1'
+		SET @error_message = N'ERRO: Não pode ser inserido um Documento do Tipo SERVIÇO apenas ITEM.'
+	END
+	
+	IF @ContaContabilPQR1 = ''
+	BEGIN
+		SET @error = N'2'
+		SET @error_message = N'ERRO: Campo <Conta Contabil> é obrigatório.'
+	END
+	
+	IF @Whscode <> '02'
+	BEGIN
+		IF @CentroCustoPQR1 = ''
+		BEGIN
+			SET @error = N'3'
+			SET @error_message = N'ERRO: Campo <Centro de Custo> é obrigatório.'
+		END
+	END
+ end
+
+----------------------------------------- Pedido de Compra------------------------------------------------------------
+
+-- Marco Kurpel 09/04/2018
+
+-- Object Type -> 22 Pedido de Compra
+
+
+--IF @object_type = '22' AND @transaction_type IN ('A', 'U')
+--BEGIN
+-- Declare @DocTypeOPOR char(1)
+-- Declare @ContaContabilPOR1 varchar(100)
+-- Declare @CentroCustoPOR1 varchar(100)
+
+-- select @ContaContabilPOR1 = isnull(POR1.AcctCode,'')
+--       ,@CentroCustoPOR1 = ISNULL(POR1.OcrCode ,'')
+--	   ,@DocTypeOPOR = OPOR.DocType
+--   from POR1 
+--    inner join OPOR
+--	   on OPOR.DocEntry = POR1.DocEntry
+
+--IF @DocTypeOPOR = 'S'
+--	BEGIN
+--		SET @error = N'1'
+--		SET @error_message = N'ERRO: Não pode ser inserido um Documento do Tipo SERVIÇO apenas ITEM.'
+--	END
+	
+--	IF @ContaContabilPOR1 = ''
+--	BEGIN
+--		SET @error = N'2'
+--		SET @error_message = N'ERRO: Campo <Conta Contabil> é obrigatório.'
+--	END
+	
+--	IF @CentroCustoPOR1 = ''
+--	BEGIN
+--		SET @error = N'3'
+--		SET @error_message = N'ERRO: Campo <Centro de Custo> é obrigatório.'
+--	END
+-- end
+
+ /*-------------------------------------------------------------------------------------------------------*/

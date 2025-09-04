@@ -1,0 +1,430 @@
+﻿@Styles.Render("~/Content/Loading")
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"> Cadastrar<strong> Pricing</strong></h3>
+                </div>
+                <div class="panel-heading" style="background-color: #dceae1">
+                    <h3 class="panel-title"><strong>Recursos</strong></h3>
+                </div>
+                <div class="row">
+                    <div id="capitalHumano" class="tab-pane active">
+                        <div class="col-md-12" style="padding: 20px">
+                            <div class="col-md-4">
+                                <label>Especialidade</label>
+                                <div class="input-group">
+                                    <p id="load-06" class="loader"><img src="~/Content/Loading.gif" /></p>
+                                    <span class="input-group-addon"><span class="fa fa-star-o"></span></span>
+                                    <select class="form-control" ng-model="Especialidade.Id" ng-change="FillSpecialtyValue(Especialidade.Id)" ng-options="selected.Id as selected.Name for selected in Especialidades" tabindex="1">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Horas</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"></span>
+                                    <input type="text" class="form-control" ng-model="EspecialidadeHoras" tabindex="2" />
+                                </div>
+                            </div>
+                            @if (ViewBag.FinancialAccess == "S")
+                            {
+                                <div class="col-md-2">
+                                    <label>Valor/Hora</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-money"></span></span>
+                                        <input type="text" class="form-control" ng-model="EspecialidadeValor" tabindex="3" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td><b>Recurso</b></td>
+                                    <td><b>Horas</b></td>
+                                    @if (ViewBag.FinancialAccess == "S")
+                                    {
+                                        <td><b>Valor/Hora</b></td>
+                                        <td><b>Total</b></td>
+                                    }
+                                    <td><b>#</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="line in ItensPricing">
+                                    <td hidden="hidden">{{line.Especialidade.Id}}</td>
+                                    <td>{{line.Especialidade.Name}}</td>
+                                    <td>{{line.EspecialidadeHoras}}</td>
+                                    @if (ViewBag.FinancialAccess == "S")
+                                    {
+                                        <td>R$ {{line.EspecialidadeValor}}</td>
+                                        <td>R$ {{line.EspecialidadeCusto}}</td>
+                                    }
+                                    <td>
+                                        <button type="button" class="btn btn-default" ng-click="EditPricingItens($index)">Editar</button>
+                                        <button type="button" class="btn btn-danger" ng-click="RemovePricingItens($index)">X</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-heading" style="background-color: #dceae1">
+                    <h3 class="panel-title"><strong>Despesas</strong></h3>
+                </div>
+                <div class="panel panel-default tabs">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active" id="tab-A-li"><a href="#tab-A" role="tab" data-toggle="tab">Hotel</a></li>
+                        <li id="tab-B-li"><a href="#tab-B" role="tab" data-toggle="tab">Quilometragem</a></li>
+                        <li id="tab-C-li"><a href="#tab-C" role="tab" data-toggle="tab">Alimentação</a></li>
+                        <li id="tab-D-li"><a href="#tab-D" role="tab" data-toggle="tab">Deslocamento</a></li>
+                        <li id="tab-E-li"><a href="#tab-E" role="tab" data-toggle="tab">Aéreo</a></li>
+                    </ul>
+                    <div class="panel-body tab-content">
+                        <div class="tab-pane active" id="tab-A">
+                            <div class="tab-pane">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <label>Diárias</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="HotelDiarias" ng-change="CalculateExpenses()" tabindex="9" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1" style="padding-top: 21px;">
+                                            <h2 align="center">x</h2>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <label>Valor</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="HotelValor" ng-change="CalculateExpenses()" tabindex="10" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3" style="padding-top: 21px;">
+                                            <h2>= R$ {{TotalHotel}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-B" class="tab-pane">
+                            <div class="tab-pane">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <label>N° trechos</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="KmTrechos" ng-change="CalculateExpenses()" tabindex="11" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1" style="padding-top: 21px;">
+                                            <h2 align="center">x</h2>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <label>Distância</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="KmDistancia" ng-change="CalculateExpenses()" tabindex="12" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1" style="padding-top: 21px;">
+                                            <h2 align="center">x</h2>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <label>Valor/Km</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="KmValor" ng-change="CalculateExpenses()" tabindex="13" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3" style="padding-top: 21px;">
+                                            <h2>= R$ {{TotalQuilometragem}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-C" class="tab-pane">
+                            <div class="tab-pane">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <label>Dias</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="AlimentacaoDias" ng-change="CalculateExpenses()" tabindex="14" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1" style="padding-top: 21px;">
+                                            <h2 align="center">x</h2>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <label>Valor/Dia</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="AlimentacaoValor" ng-change="CalculateExpenses()" tabindex="15" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3" style="padding-top: 21px;">
+                                            <h2>= R$ {{TotalAlimentacao}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-D" class="tab-pane">
+                            <div class="tab-pane">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <label>Horas</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="DeslocamentoHoras" ng-change="CalculateExpenses()" tabindex="16" />
+                                            </div>
+                                        </div>
+                                        @if (ViewBag.FinancialAccess == "S")
+                                        {
+                                            <div class="col-md-1" style="padding-top: 21px;">
+                                                <h2 align="center">x</h2>
+                                            </div>
+
+                                            <div class="col-md-1">
+                                                <label>Valor/Hora</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" ng-model="DeslocamentoValor" ng-change="CalculateExpenses()" tabindex="17" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3" style="padding-top: 21px;">
+                                                <h2>= R$ {{TotalDeslocamento}}</h2>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-E" class="tab-pane">
+                            <div class="tab-pane">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <label>Trechos</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="AereoTrechos" ng-change="CalculateExpenses()" tabindex="18" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1" style="padding-top: 21px;">
+                                            <h2 align="center">x</h2>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <label>Valor</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="AereoValor" ng-change="CalculateExpenses()" tabindex="19" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3" style="padding-top: 21px;">
+                                            <h2>= R$ {{TotalAereo}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @if (ViewBag.FinancialAccess == "S")
+                {
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <td><b>Recurso</b></td>
+                                <td><b>Hotel</b></td>
+                                <td><b>KM</b></td>
+                                <td><b>Alimentação</b></td>
+                                <td><b>Deslocamento</b></td>
+                                <td><b>Aéreo</b></td>
+                                <td><b>Total</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="line in ItensPricing">
+                                <td hidden="hidden">{{line.Especialidade.Id}}</td>
+                                <td>{{line.Especialidade.Name}}</td>
+                                <td>R$ {{line.HotelTotal}}</td>
+                                <td>R$ {{line.KmTotal}}</td>
+                                <td>R$ {{line.AlimentacaoTotal}}</td>
+                                <td>R$ {{line.DeslocamentoTotal}}</td>
+                                <td>R$ {{line.AereoTotal}}</td>
+                                <td>R$ {{line.RecursoDespesas}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+            </div>
+            <div class="panel-heading" style="background-color: #dceae1">
+                <div class="col-md-12">
+                    <div class="col-md-2">
+                        <h3 class="panel-title" style="padding-top: 10px;"><strong>Porcentagens (%)</strong></h3>
+                    </div>
+                    @if (ViewBag.FinancialAccess == "S")
+                    {
+                        <div class="col-md-2">
+                            <label>Backoffice</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-model="Pricing.PorcentagemBackoffice" ng-change="Calculate_Percentages()" tabindex="4" />
+                            </div>
+                        </div>
+                    }
+                    <div class="col-md-2">
+                        <label>Risco</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="Pricing.PorcentagemRisco" ng-change="Calculate_Percentages()" tabindex="5" />
+                        </div>
+                    </div>
+                    @if (ViewBag.FinancialAccess == "S")
+                    {
+                        <div class="col-md-2">
+                            <label>Margem</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-model="Pricing.PorcentagemMargem" ng-change="Calculate_Percentages()" tabindex="6" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label>Comissão</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-model="Pricing.PorcentagemComissao" ng-change="Calculate_Percentages()" tabindex="7" />
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Impostos</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-model="Pricing.PorcentagemImposto" ng-change="Calculate_Percentages()" tabindex="8" />
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div id="porcentagens" class="tab-pane">
+                    @if (ViewBag.FinancialAccess == "S")
+                    {
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td><b>Recurso</b></td>
+                                    <td><b>Backoffice</b></td>
+                                    <td><b>Risco</b></td>
+                                    <td><b>Margem</b></td>
+                                    <td><b>Comissão</b></td>
+                                    <td><b>Impostos</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="line in ItensPricing">
+                                    <td hidden="hidden">{{line.Especialidade.Id}}</td>
+                                    <td>{{line.Especialidade.Name}}</td>
+                                    <td>R$ {{line.ValorBackoffice}}</td>
+                                    <td>R$ {{line.ValorRisco}}</td>
+                                    <td>R$ {{line.ValorMargem}}</td>
+                                    <td>R$ {{line.ValorComissao}}</td>
+                                    <td>R$ {{line.ValorImposto}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group pull-right" style="padding: 15px;">
+                    <button type="button" class="btn btn-success" ng-click="AddPricingItens()">Adicionar/Gravar recurso</button>
+                </div>
+            </div>
+
+            <div class="panel-heading" style="background-color: #dceae1">
+                <h3 class="panel-title"><strong>Totais</strong></h3>
+            </div>
+            <div class="row">
+                <div id="totais" class="tab-pane">
+                    <table class="table table" style="background-color:#cbd8d0;">
+                        <thead>
+                            <tr>
+                                <td><b>Recurso</b></td>
+                                @if (ViewBag.FinancialAccess == "S")
+                                {
+                                    <td><b>Custo</b></td>
+                                    <td><b>Subtotal</b></td>
+                                    <td><b>Subtotal + Despesas</b></td>
+                                }
+                                <td><b>Valor com Impostos</b></td>
+                                <td><b>Vlr/Hr (s/desp)</b></td>
+                                <td><b>Vlr/Hr (c/desp)</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="line in ItensPricing" style="background-color:#cbd8d0;">
+                                <td hidden="hidden">{{line.Especialidade.Id}}</td>
+                                <td>{{line.Especialidade.Name}}</td>
+                                @if (ViewBag.FinancialAccess == "S")
+                                {
+                                    <td>R$ {{line.EspecialidadeCusto}}</td>
+                                    <td>R$ {{line.RecursoSubTotal}}</td>
+                                    <td>R$ {{line.RecursoValorComDespesas}}</td>
+                                }
+                                <td>R$ {{line.RecursoValorComImpostos}}</td>
+                                <td>R$ {{line.RecursoValorHorasSemDespesa}}</td>
+                                <td>R$ {{line.RecursoValorHorasComDespesa}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="col-md-12" style="background-color:#cbd8d0; padding:5px; font:bold; font-size:14px;">
+                @if (ViewBag.FinancialAccess == "S")
+                {
+                    <div class="col-md-2">
+                        <label>Custo Orçado</label>
+                        <div class="input-group">
+                            <h5>R$ {{Oportunidade.CustoOrcado}}</h5>
+                        </div>
+                    </div>
+                }
+                <div class="col-md-2">
+                    <label>Horas Orçadas</label>
+                    <div class="input-group">
+                        <h5>{{Oportunidade.HorasOrcadas}}</h5>
+                    </div>
+                </div>
+                @if (ViewBag.FinancialAccess == "S")
+                {
+                    <div class="col-md-2">
+                        <label>Ingresso Líquido</label>
+                        <div class="input-group">
+                            <h5>R$ {{Oportunidade.IngressoLiquido}} ({{IngressoLiquidoPorcentagem}}%)</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label>Risco Gerenciável</label>
+                        <div class="input-group">
+                            <h5>R$ {{Oportunidade.RiscoGerenciavel}} ({{RiscoGerenciavelPorcentagem}}%)</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label>Ingresso Total</label>
+                        <div class="input-group">
+                            <h5>R$ {{Oportunidade.IngressoTotal}} ({{IngressoTotalPorcentagem}}%)</h5>
+                        </div>
+                    </div>
+                }
+                <div class="col-md-2" style="background-color:#1caf9a; font:bold; color:white;">
+                    <label>Valor da Oportunidade</label>
+                    <div class="input-group">
+                        <h5>R$ {{Oportunidade.ValorOportunidade}}</h5>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jquery-1.12.3.min.js"></script>
+<script src="~/Scripts/plugins/maskedinput/jquery.maskedinput.js"></script>

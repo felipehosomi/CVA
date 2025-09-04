@@ -1,0 +1,98 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Cadastrar<strong> Filial</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Código*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-barcode"></span></span>
+                                    <input type="text" hidden="hidden" ng-model="branch.Id" />
+                                    <input type="text" class="form-control" tabindex="1" ng-model="branch.Code" />
+                                </div>
+                                <span class="help-block">Informe o código da filial</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Razão Social*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-tag"></span></span>
+                                    <input type="text" class="form-control" tabindex="2" ng-model="branch.Name" />
+                                </div>
+                                <span class="help-block">Informe a Razão Social da Filial</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nome Fantasia*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-tag"></span></span>
+                                    <input type="text" class="form-control" ng-model="branch.FantasyName" tabindex="3" />
+                                </div>
+                                <span class="help-block">Insira o nome fantasia da Filial</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Matriz*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-tag"></span></span>
+                                    <select class="form-control" ng-model="branch.Master" ng-options="selected.Value as selected.Option for selected in TypeBranch" tabindex="4">
+                                        <option value="" selected>Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Informe se o registro for da matriz</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Status*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                    <select class="form-control" ng-change="StatusSelected()" ng-model="branch.StatusId" ng-options="selected.Id as selected.Status for selected in StatusList" tabindex="5">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o status da filial</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">CNPJ*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-paperclip"></span></span>
+                                    <input type="text" class="form-control" ng-model="branch.CNPJ" tabindex="6" id="cnpj-mask"/>
+                                </div>
+                                <span class="help-block">Informe o CNPJ da filial</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Observação</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <textarea class="form-control" rows="4" ng-model="branch.Description" tabindex="7"></textarea>
+                                </div>
+                                <span class="help-block">Insira uma observação para a Filial</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jquery-1.12.3.min.js"></script>
+<script src="~/Scripts/plugins/maskedinput/jquery.maskedinput.js"></script>
+<script>
+    $('#cnpj-mask').mask('99.999.999/9999-99');
+</script>

@@ -1,0 +1,151 @@
+﻿@using System.Globalization
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li class="active">Apontamento</li>
+</ul>
+<div class="page-title">
+    <h2> Apontamento</h2>
+</div>
+<div class="page-content-wrap" ng-controller="NoteController">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default" id="panel-filtro">
+                <div class="panel-heading ui-draggable-handle">
+                    <h3 class="panel-title">Filtros</h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse" id="btn-filtro"><span id="span-filtro" class="fa fa-angle-down"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group col-md-4">
+                        <label>Mês</label>
+                        <select class="form-control" id="filter-month">
+                            <option selected="selected">Selecione</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Projeto</label>
+                        <select class="form-control" id="filter-project">
+                            <option selected="selected">Selecione</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Descrição</label>
+                        <input type="text" class="form-control" id="filter-description" />
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <h3 class="panel-title">Resumo do mês de @System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(DateTime.Now.Month) de @DateTime.Now.Year</h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group col-md-4">
+                        <label>Total de apontamentos</label>
+                        <input type="text" class="form-control" id="total-hours" disabled="disabled" style="background-color:transparent; color:black;" />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Horas planejadas</label>
+                        <input type="text" class="form-control" id="planejed-hours" disabled="disabled" style="background-color:transparent; color:black;" />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Status PDA</label>
+                        <input type="text" class="form-control" id="status-pda" disabled="disabled" style="background-color:transparent; color:black;" />
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <h3 class="panel-title">Registros</h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table" id="DataTables_Table_0">
+                            <thead>
+                                <tr role="row">
+                                    <th></th>
+                                    <th></th>
+                                    <th><b>Data</b></th>
+                                    <th><b>Sem</b></th>
+                                    <th><b>Projeto</b></th>
+                                    <th><b>H. Início</b></th>
+                                    <th><b>Inter.</b></th>
+                                    <th><b>H. Fim</b></th>
+                                    <th><b>Solicitante</b></th>
+                                    <th><b>Total</b></th>
+                                    <th><b>#</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 1; i <= DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month); i++)
+                                {
+                                    <tr class="tr-principal">
+                                        <td class="clickable"><i class="fa fa-fw fa-arrow-down click-table"></i></td>
+                                        @{var data = new DateTime(DateTime.Now.Year, DateTime.Now.Month, i);}
+                                        @if (data.Date.DayOfWeek == DayOfWeek.Sunday || data.Date.DayOfWeek == DayOfWeek.Saturday)
+                                        {
+                                            <td style="background-color:hsla(55, 90%, 51%, 0.48);"><i class="fa fa-circle-o text-yellow"></i></td>
+                                        }
+                                        else
+                                        {
+                                            <td><i class="fa fa-circle-o text-yellow"></i></td>
+                                        }
+                                        <td>@data.ToShortDateString()</td>
+                                        <td>@data.ToString("ddd", new CultureInfo("pt-BR"))</td>
+                                        <td>
+                                            <select class="form-control note-projects">
+                                                <option></option>
+                                                <option>Desenvolvimento Portal Gestão</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control note-initHour" placeholder="00:00" />
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control note-IntervalHour" placeholder="00:00" />
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control note-FinishHour" placeholder="00:00" />
+                                        </td>
+                                        <td><input type="text" class="form-control note-Requester" placeholder="Analista" /></td>
+                                        <td><input type="text" class="form-control note-TotalHoursDay" value="00:00" disabled="disabled" /></td>
+                                        <td>
+                                            <a href="#" class="exclude-row"><i class="glyphicon glyphicon-remove"></i></a>
+                                            <a href="#" class="add-row"><i class="glyphicon glyphicon-plus"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="line-description">
+                                        <td>
+                                            <label>Nº Chamado</label>
+                                            <input type="text" class="form-control note-Ticket-Id" />
+                                        </td>
+                                        <td colspan="8">
+                                            <label>Descrição</label>
+                                            <input type="text" class="form-control note-Description" />
+                                        </td>
+                                        <td colspan="2">
+                                            <label>Especialidade</label>
+                                            <select class="form-control note-Specialty">
+                                                <option></option>
+                                                <option>Desenvolvimento .NET</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

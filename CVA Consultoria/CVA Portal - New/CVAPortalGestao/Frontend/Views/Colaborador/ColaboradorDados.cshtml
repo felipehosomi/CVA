@@ -1,0 +1,109 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Cadastrar<strong> Colaborador</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nome*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <input type="text" name="name" class="form-control" ng-model="collaborator.Nome" ng-minlength="5" tabindex="1"/>
+                                </div>
+                                <span class="help-block">Informe o nome completo</span>
+                            </div>
+                        </div>                        
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nascimento*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-calendar-o"></span></span>
+                                    <input type="date" name="date" class="form-control" id="collaborator-birthdate" ng-model="collaborator.DataNascimento" tabindex="2"/>
+                                </div>
+                                <span class="help-block">Informe a data de nascimento</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Sexo*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-male"></span></span>
+                                    <select name="genre" class="form-control" ng-model="collaborator.Genero" ng-options="selected.Id as selected.Name for selected in GenreList" tabindex="3">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o sexo</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Estado Civil*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-heart"></span></span>
+                                    <select name="estadocivil" class="form-control" ng-model="collaborator.EstadoCivil" ng-options="selected.Id as selected.Name for selected in MaritalList" tabindex="4">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o estado civil</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Status*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                    <select name="status" class="form-control" ng-model="collaborator.StatusId" ng-options="selected.Id as selected.Descricao for selected in StatusList" tabindex="5">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o status do registro</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Telefone Residencial</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-phone"></span></span>
+                                    <input type="text" class="form-control collaborator" id="phone-mask" ng-model="collaborator.Telefone" tabindex="6"/>
+                                </div>
+                                <span class="help-block">Informe o número do telefone residencial</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Telefone Celular*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-mobile-phone"></span></span>
+                                    <input type="text" class="form-control" id="cellphone-mask" name="celular" ng-model="collaborator.Celular" tabindex="7">
+                                </div>
+                                <span class="help-block">Informe o telefone com DDD</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" id="collaborator">Email*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-send"></span></span>
+                                    <input type="email" class="form-control" name="email" ng-model="collaborator.Email"  tabindex="8"/>
+                                </div>
+                                <span class="help-block">Informe um e-mail válido</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jquery-1.12.3.min.js"></script>
+<script src="~/Scripts/plugins/maskedinput/jquery.maskedinput.js"></script>
+<script>
+    $('#phone-mask').mask('(99) 9999-9999');
+    $('#cellphone-mask').mask('(99) 99999-9999');
+</script>

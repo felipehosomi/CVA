@@ -1,0 +1,58 @@
+﻿<BOM xmlns="">
+  <BO>
+    <AdmInfo>
+      <Object>153</Object>
+      <Version>2</Version>
+    </AdmInfo>
+    <UserTablesMD>
+      <row>
+        <TableName>CVA_CALC_COMISSAO</TableName>
+        <TableDescription>[CVA] Cálculo de comissão</TableDescription>
+        <TableType>bott_MasterData</TableType>
+        <Archivable>tNO</Archivable>
+      </row>
+    </UserTablesMD>
+  </BO>
+  <BO>
+    <AdmInfo>
+      <Object>153</Object>
+      <Version>2</Version>
+    </AdmInfo>
+    <UserTablesMD>
+      <row>
+        <TableName>CVA_CRIT_COMISSAO</TableName>
+        <TableDescription>[CVA] Critérios de comissão</TableDescription>
+        <TableType>bott_MasterData</TableType>
+        <Archivable>tNO</Archivable>
+      </row>
+    </UserTablesMD>
+  </BO>
+  <BO>
+    <AdmInfo>
+      <Object>153</Object>
+      <Version>2</Version>
+    </AdmInfo>
+    <UserTablesMD>
+      <row>
+        <TableName>CVA_REGR_COMISSAO</TableName>
+        <TableDescription>[CVA] Regras de comissão</TableDescription>
+        <TableType>bott_MasterData</TableType>
+        <Archivable>tNO</Archivable>
+      </row>
+    </UserTablesMD>
+  </BO>
+  <BO>
+    <AdmInfo>
+      <Object>153</Object>
+      <Version>2</Version>
+    </AdmInfo>
+    <UserTablesMD>
+      <row>
+        <TableName>CVA_TIPO_COMISSAO</TableName>
+        <TableDescription>[CVA] Tipos de comissão</TableDescription>
+        <TableType>bott_MasterData</TableType>
+        <Archivable>tNO</Archivable>
+      </row>
+    </UserTablesMD>
+  </BO>
+</BOM>

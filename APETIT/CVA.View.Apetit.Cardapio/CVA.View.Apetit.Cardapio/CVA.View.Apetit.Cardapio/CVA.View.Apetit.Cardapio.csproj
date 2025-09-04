@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{93ACEB0C-A9AA-40FE-997E-50A9DB8F9C14}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVA.View.Apetit.Cardapio</RootNamespace>
+    <AssemblyName>CVA.View.Apetit.Cardapio</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>%24/APETIT/CVA.View.Apetit.Cardapio/CVA.View.Apetit.Cardapio/CVA.View.Apetit.Cardapio</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>https://cvaconsultoria.visualstudio.com</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CVA.View.Apetit.Cardapio.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="SAPBusinessOneSDK" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\AppController.cs" />
+    <Compile Include="Data\UDF.cs" />
+    <Compile Include="Data\UDO.cs" />
+    <Compile Include="Data\UDT.cs" />
+    <Compile Include="Helpers\B1Connection.cs" />
+    <Compile Include="Helpers\CrystalReport.cs" />
+    <Compile Include="Helpers\DIHelper.cs" />
+    <Compile Include="Helpers\Filters.cs" />
+    <Compile Include="Helpers\FormatedSearch.cs" />
+    <Compile Include="Helpers\frmRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers\frmRelatorios.Designer.cs">
+      <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Menus.cs" />
+    <Compile Include="Helpers\UserFields.cs" />
+    <Compile Include="Helpers\UserObjects.cs" />
+    <Compile Include="Helpers\UserQueries.cs" />
+    <Compile Include="Helpers\UserTables.cs" />
+    <Compile Include="Model\PlanejamentoData.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="View\DadosPratoQtdTurnoForm.cs" />
+    <Compile Include="View\ContratadoXPlanejado.cs" />
+    <Compile Include="View\ServicoForm.cs" />
+    <Compile Include="View\BaseForm.cs" />
+    <Compile Include="View\ComposicaoQtdForm.cs" />
+    <Compile Include="View\Contrato Guarda-Chuva.b1f.cs">
+      <DependentUpon>Contrato Guarda-Chuva.b1f</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="View\CopiaCardapioForm.cs" />
+    <Compile Include="View\DiasSemConsumoForm.cs" />
+    <Compile Include="View\GrupoDeServicoForm.cs" />
+    <Compile Include="View\IncidenciaDeProteinaForm.cs" />
+    <Compile Include="View\ItensDenegadosForm.cs" />
+    <Compile Include="View\ModeloDeCardapioForm.cs" />
+    <Compile Include="View\DadosPratoForm.cs" />
+    <Compile Include="View\PlanejamentoCardapioForm_BAK.cs" />
+    <Compile Include="View\PlanejamentoCardapioForm.cs" />
+    <Compile Include="View\PrecoXVolumeForm.cs" />
+    <Compile Include="View\AgrupamentoDeServicoForm.cs" />
+    <Compile Include="View\PlanejamentoEmLote.cs" />
+    <Compile Include="View\TipoProteinaForm.cs" />
+    <Compile Include="View\TiposDePratoForm.cs" />
+    <Compile Include="View\SubstituicaoEmLote.cs" />
+    <Compile Include="View\TurnoForm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\CARDCPLN.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\CARDPLOTE.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\CARDSUBS.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="App.config" />
+    <Content Include="Files\Cardapio.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Cardapio - Copy.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="README SETUP.MD" />
+    <EmbeddedResource Include="View\Contrato Guarda-Chuva.b1f">
+      <FormCategory>SystemForm</FormCategory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="View\Contrato Guarda-Chuva.b1f__orig_srf">
+      <DependentUpon>Contrato Guarda-Chuva.b1f</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dao\Procs\Select Alterar Copia.sql" />
+    <Content Include="Dao\Procs\Select Custo Deposito.sql" />
+    <Content Include="Dao\Procs\select solto.sql" />
+    <Content Include="Dao\Procs\SPC_CVA_PLAN_CARD_REPORT.sql" />
+    <Content Include="Files\1495154259_bank-building.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Apetit.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\CARDCALE.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\CARDCOMQ.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Files\CARDCOPY.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\CARDGRPS.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Files\CARDITDN.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\CARDITTR.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\CARDMDLC.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\CARDPLAN.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Files\CARDPLIT.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Files\CARDPRXV.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*" "$(SolutionDir)CVA.View.Apetit.Cardapio.Setup\AddOnFiles\" /y /s</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

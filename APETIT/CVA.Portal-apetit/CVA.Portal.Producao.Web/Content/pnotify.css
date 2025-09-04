@@ -1,0 +1,111 @@
+.ui-pnotify {
+    height: auto;
+    position: absolute;
+    right: 36px;
+    top: 36px;
+    z-index: 2
+}
+
+body > .ui-pnotify {
+    position: fixed;
+    z-index: 100040
+}
+
+.ui-pnotify-modal-overlay {
+    background-color: rgba(0, 0, 0, .4);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+body > .ui-pnotify-modal-overlay {
+    position: fixed;
+    z-index: 100039
+}
+
+.ui-pnotify.ui-pnotify-in { display: block !important }
+
+.ui-pnotify.ui-pnotify-move { transition: left .5s ease, top .5s ease, right .5s ease, bottom .5s ease }
+
+.ui-pnotify.ui-pnotify-fade-slow {
+    opacity: 0;
+    transition: opacity .6s linear;
+}
+
+.ui-pnotify.ui-pnotify-fade-slow.ui-pnotify.ui-pnotify-move { transition: opacity .6s linear, left .5s ease, top .5s ease, right .5s ease, bottom .5s ease }
+
+.ui-pnotify.ui-pnotify-fade-normal {
+    opacity: 0;
+    transition: opacity .4s linear;
+}
+
+.ui-pnotify.ui-pnotify-fade-normal.ui-pnotify.ui-pnotify-move { transition: opacity .4s linear, left .5s ease, top .5s ease, right .5s ease, bottom .5s ease }
+
+.ui-pnotify.ui-pnotify-fade-fast {
+    opacity: 0;
+    transition: opacity .2s linear;
+}
+
+.ui-pnotify.ui-pnotify-fade-fast.ui-pnotify.ui-pnotify-move { transition: opacity .2s linear, left .5s ease, top .5s ease, right .5s ease, bottom .5s ease }
+
+.ui-pnotify.ui-pnotify-fade-in { opacity: 1 }
+
+.ui-pnotify .ui-pnotify-shadow {
+    -moz-box-shadow: 0 6px 28px 0 rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 6px 28px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 6px 28px 0 rgba(0, 0, 0, .1)
+}
+
+.ui-pnotify-container {
+    background-position: 0 0;
+    height: 100%;
+    margin: 0;
+    padding: .8em;
+}
+
+.ui-pnotify-container:after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.ui-pnotify-container.ui-pnotify-sharp {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0
+}
+
+.ui-pnotify-title {
+    display: block;
+    margin-bottom: .4em;
+    margin-top: 0
+}
+
+.ui-pnotify-text { display: block }
+
+.ui-pnotify-icon, .ui-pnotify-icon span {
+    display: block;
+    float: left;
+    margin-right: .2em
+}
+
+.ui-pnotify.stack-bottomleft, .ui-pnotify.stack-topleft {
+    left: 25px;
+    right: auto
+}
+
+.ui-pnotify.stack-bottomleft, .ui-pnotify.stack-bottomright {
+    bottom: 25px;
+    top: auto
+}
+
+.ui-pnotify.stack-modal {
+    left: 50%;
+    margin-left: -150px;
+    right: auto;
+}

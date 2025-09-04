@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Branch_Check" xml:space="preserve">
+    <value>SELECT COUNT(*) FROM OBPL</value>
+  </data>
+  <data name="Invoice_Get" xml:space="preserve">
+    <value>SELECT DISTINCT
+	'Y' "#",
+ 	OINV."DocEntry" "Id Doc",
+ 	OINV."DocNum" 	"Nr Doc",
+	OINV."Serial" 	"Nr NF",
+	OINV."DocDate" 	"Data",
+	OINV."Max1099" "Valor",
+ 	OINV."Comments"	"Observações"
+FROM OINV 
+	INNER JOIN INV1 ON INV1."DocEntry" = OINV."DocEntry"
+	INNER JOIN INV12 ON INV12."DocEntry" = OINV."DocEntry" 
+	INNER JOIN 
+	(
+		SELECT INV1."DocEntry" FROM INV1
+			INNER JOIN OUSG ON OUSG.ID = INV1."Usage" AND OUSG."ThirdParty" = 'Y' AND INV1."VisOrder" = 0
+	)OUSG ON OUSG."DocEntry" = OINV."DocEntry"
+	LEFT JOIN 
+	(
+		SELECT CONS."U_DocEntry", CONS."U_LineNum", SUM(CONS."U_Quantity") "U_Quantity"
+		FROM  "@CVA_CONSIGNMENT" CONS
+		GROUP BY  CONS."U_DocEntry", CONS."U_LineNum"
+	) CONS
+	ON CONS."U_DocEntry" = INV1."DocEntry"
+	AND CONS."U_LineNum" = INV1."LineNum"
+WHERE IFNULL(CONS."U_Quantity", 0) &lt; INV1."Quantity"
+AND ("CardCode" = '{0}'  OR '{0}' = '')  AND ("Serial" = {1} OR {1} = 0)
+AND OINV."DocDate" BETWEEN '{2}' AND '{3}' AND "CANCELED" = 'N'</value>
+  </data>
+  <data name="Invoice_GetByCreditNote" xml:space="preserve">
+    <value>SELECT TOP 1 1 FROM OINV WHERE "U_DocEntryDev" = {0} AND "CANCELED" = 'N'</value>
+  </data>
+  <data name="Invoice_GetPendingItems" xml:space="preserve">
+    <value>SELECT * FROM
+(
+	SELECT
+		'Y' "#",
+		OINV."DocEntry",
+		OINV."CardCode",
+		OINV."DocNum",
+		INV1."LineNum",
+		INV1."TaxCode",
+		INV1."WhsCode",
+		INV1."Usage",
+		INV1."Price",
+		OINV."Serial" 		"Nr NF",
+		INV1."ItemCode" 	"Item",
+	 	INV1."Dscription"	"Descrição",
+	 	OCRD."CardCode"		"Forn. Principal",
+	 	OCRD."CardName"		"Nome",
+	 	OSCN."Substitute"	"Nr. Catálogo PN",
+	 	OUSG."Usage"		"Utilização",
+	 	0.00				"Quantidade",
+	 	IBT1."BatchNum"		"Lote",
+	 	IBT1."Quantity" - IFNULL(CONS."U_Quantity", 0.00) "Disponível",
+	 	INV1."Price" * (IBT1."Quantity" - IFNULL(CONS."U_Quantity", 0.00)) "Valor",
+	 	row_number () over (partition by INV1."DocEntry" ORDER BY INV1."DocEntry" asc , OSCN."Substitute" desc) as RN 
+	FROM OINV
+		INNER JOIN INV1
+			ON INV1."DocEntry" = OINV."DocEntry"	
+		INNER JOIN OUSG
+			ON OUSG."ID" = INV1."Usage"
+		INNER JOIN OITM
+			ON OITM."ItemCode" = INV1."ItemCode"
+		LEFT JOIN OCRD
+			ON OCRD."CardCode" = OITM."CardCode"
+		LEFT JOIN OSCN
+			ON OSCN."ItemCode" = OITM."ItemCode" AND OSCN."CardCode" = OCRD."CardCode"
+		LEFT JOIN IBT1
+			ON IBT1."BaseEntry" = INV1."DocEntry"
+			AND IBT1."BaseLinNum"  = INV1."LineNum"
+			AND IBT1."BaseType" = INV1."ObjType"
+		LEFT JOIN 
+		(
+			SELECT CONS."U_DocEntry", CONS."U_LineNum", CONS."U_BatchNum", SUM(CONS."U_Quantity") "U_Quantity"
+			FROM  "@CVA_CONSIGNMENT" CONS
+			GROUP BY  CONS."U_DocEntry", CONS."U_LineNum", CONS."U_BatchNum"
+		) CONS
+		ON CONS."U_DocEntry" = INV1."DocEntry"
+			AND CONS."U_LineNum" = INV1."LineNum"
+			AND CONS."U_BatchNum" = IBT1."BatchNum"
+	WHERE IBT1."Quantity" &gt; IFNULL(CONS."U_Quantity", 0)
+	AND OINV."DocEntry" IN ({0})
+)
+WHERE "RN" = 1</value>
+  </data>
+</root>

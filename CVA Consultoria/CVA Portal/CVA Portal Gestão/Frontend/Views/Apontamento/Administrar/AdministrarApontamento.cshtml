@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li class="active">Autorizações</li>
+</ul>
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-right"></span> Autorizações de Apontamentos</h2>
+</div>
+<div class="page-content-wrap" ng-controller="AuthorizationController" ng-init="OnLoad()">
+    <div class="panel panel-default tabs">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active" id="tab-one-li"><a href="#tab-one" role="tab" data-toggle="tab">Autorização - Dias</a></li>
+            <li id="tab-two-li"><a href="#tab-two" role="tab" data-toggle="tab">Autorização - Horas</a></li>
+            <li id="tab-three-li"><a href="#tab-three" role="tab" data-toggle="tab">Configuração de Horas</a></li>
+        </ul>
+        <div class="panel-body tab-content">
+            <div class="tab-pane active" id="tab-one">
+                @Html.Partial("~/Views/Apontamento/Administrar/AutorizarDias.cshtml")
+            </div>
+            <div class="tab-pane" id="tab-two">
+                @Html.Partial("~/Views/Apontamento/Administrar/AutorizarHoras.cshtml")
+            </div>
+            <div class="tab-pane" id="tab-three">
+                @Html.Partial("~/Views/Apontamento/Administrar/ConfigurarHoras.cshtml")
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p>Alterações realizadas com sucesso!</p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/Script/jquery")

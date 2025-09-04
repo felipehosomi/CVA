@@ -1,0 +1,71 @@
+﻿@model List<CVA.Portal.Producao.Model.Compras.OfertaCompraListModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <div class="row">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Cotação de Compra</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div>
+                <label for="grupos">Fornecedor:</label>
+                @Html.DropDownList("Fornecedores", null, "", htmlAttributes: ViewBag.Comprador ? (object)new { style = "width: 400px;", onchange = "filter(false);" } : (object)new { style = "width: 400px;", onchange = "filter(false);", disabled = true })
+                <label for="data" style="padding-left:10px;">Data de Solicitação:</label>
+                <input id="data" onchange="filter(true);" type="date" /> até
+                <input id="data1" onchange="filter(true);" type="date" />
+                <label for="Status" style="padding-left:10px;">Status:</label>
+                <select id="Status" onchange="filter(false);">
+                    <option value="0">Aguardando preenchimento</option>
+                    <option value="4">Aprovada</option>
+                    <option value="7">Aprovada Parcialmente</option>
+                    <option value="9">Cancelada</option>
+                    <option value="1">Enviada para Avaliação</option>
+                    <option value="6">Recusada</option>
+                    <option value="5">Reprovada</option>
+                    <option value="2">Solicitado revisão pelo Comprador</option>
+                </select>
+                <label for="Filial">Filial:</label>
+                @Html.DropDownList("Filial", null, "", htmlAttributes: new { style = "width: 400px;", onchange = "filter(false);" })
+            </div>
+            <div class="x_content">
+                <table id="dataTable" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Filial</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                            <th>Nº da cotação de Compra</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (var i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td>@Model[i].Filial</td>
+                                <td>@Model[i].DocDate</td>
+                                <td>@Model[i].Status</td>
+                                <td>@Model[i].DocNum</td>
+                                <td style="text-align: center">
+                                    <a href='@Url.Action("Edit", new { id = Model[i].DocNum})' class="btn btn-default btn-small no-margin" data-toggle="tooltip" title="Editar">
+                                        <span class="fa fa-pencil"></span>
+                                    </a>
+                                </td>
+                                <td style="display:none;">@Model[i].CardCode</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <button type="button" class="btn btn-default pull-left" onclick="location.href='@Url.Action("Menu", "Apetit")'"><span class="fa fa-reply fa-right"></span> Voltar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/Views/OfertaCompra/Index.js"></script>
+}

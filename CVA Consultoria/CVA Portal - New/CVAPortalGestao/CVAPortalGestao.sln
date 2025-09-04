@@ -1,0 +1,126 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{31D9E819-BF80-419B-9F55-7A6FCAA6C40A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{C9DD1C65-E2D6-4BBE-94DF-DD33F55333D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AUXILIAR", "Backend\AUXILIAR\AUXILIAR.csproj", "{88588ECE-C61A-4CCD-8F60-629916400B45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "Backend\BLL\BLL.csproj", "{E60E7D45-905A-4DCA-96E8-153F1532C29A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web Service", "Backend\CVAGestaoService\Web Service.csproj", "{ED9FDCA2-B6F0-4A0E-94FC-8C04D6B832D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "Backend\DAO\DAO.csproj", "{F0B74FE2-EB06-4F97-BA10-3F11111E5B6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MODEL", "Backend\MODEL\MODEL.csproj", "{B73F84D1-4795-4CAC-AE20-3D39FDFAAF49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Layout", "Frontend\Layout.csproj", "{0FFE6C33-CDDA-4555-8F62-C7F95506009C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ED9FDCA2-B6F0-4A0E-94FC-8C04D6B832D3} = {ED9FDCA2-B6F0-4A0E-94FC-8C04D6B832D3}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88588ECE-C61A-4CCD-8F60-629916400B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88588ECE-C61A-4CCD-8F60-629916400B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88588ECE-C61A-4CCD-8F60-629916400B45}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{88588ECE-C61A-4CCD-8F60-629916400B45}.Debug|x86.Build.0 = Debug|Any CPU
+		{88588ECE-C61A-4CCD-8F60-629916400B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88588ECE-C61A-4CCD-8F60-629916400B45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88588ECE-C61A-4CCD-8F60-629916400B45}.Release|x86.ActiveCfg = Release|Any CPU
+		{88588ECE-C61A-4CCD-8F60-629916400B45}.Release|x86.Build.0 = Release|Any CPU
+		{E60E7D45-905A-4DCA-96E8-153F1532C29A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E60E7D45-905A-4DCA-96E8-153F1532C29A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E60E7D45-905A-4DCA-96E8-153F1532C29A}.Debug|x86.ActiveCfg = Debug|x86
+		{E60E7D45-905A-4DCA-96E8-153F1532C29A}.Debug|x86.Build.0 = Debug|x86
+		{E60E7D45-905A-4DCA-96E8-153F1532C29A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E60E7D45-905A-4DCA-96E8-153F1532C29A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E60E7D45-905A-4DCA-96E8-153F1532C29A}.Release|x86.ActiveCfg = Release|x86
+		{E60E7D45-905A-4DCA-96E8-153F1532C29A}.Release|x86.Build.0 = Release|x86
+		{ED9FDCA2-B6F0-4A0E-94FC-8C04D6B832D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED9FDCA2-B6F0-4A0E-94FC-8C04D6B832D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED9FDCA2-B6F0-4A0E-94FC-8C04D6B832D3}.Debug|x86.ActiveCfg = Debug|x86
+		{ED9FDCA2-B6F0-4A0E-94FC-8C04D6B832D3}.Debug|x86.Build.0 = Debug|x86
+		{ED9FDCA2-B6F0-4A0E-94FC-8C04D6B832D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED9FDCA2-B6F0-4A0E-94FC-8C04D6B832D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED9FDCA2-B6F0-4A0E-94FC-8C04D6B832D3}.Release|x86.ActiveCfg = Release|x86
+		{ED9FDCA2-B6F0-4A0E-94FC-8C04D6B832D3}.Release|x86.Build.0 = Release|x86
+		{F0B74FE2-EB06-4F97-BA10-3F11111E5B6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0B74FE2-EB06-4F97-BA10-3F11111E5B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0B74FE2-EB06-4F97-BA10-3F11111E5B6D}.Debug|x86.ActiveCfg = Debug|x86
+		{F0B74FE2-EB06-4F97-BA10-3F11111E5B6D}.Debug|x86.Build.0 = Debug|x86
+		{F0B74FE2-EB06-4F97-BA10-3F11111E5B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0B74FE2-EB06-4F97-BA10-3F11111E5B6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0B74FE2-EB06-4F97-BA10-3F11111E5B6D}.Release|x86.ActiveCfg = Release|x86
+		{F0B74FE2-EB06-4F97-BA10-3F11111E5B6D}.Release|x86.Build.0 = Release|x86
+		{B73F84D1-4795-4CAC-AE20-3D39FDFAAF49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B73F84D1-4795-4CAC-AE20-3D39FDFAAF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B73F84D1-4795-4CAC-AE20-3D39FDFAAF49}.Debug|x86.ActiveCfg = Debug|x86
+		{B73F84D1-4795-4CAC-AE20-3D39FDFAAF49}.Debug|x86.Build.0 = Debug|x86
+		{B73F84D1-4795-4CAC-AE20-3D39FDFAAF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B73F84D1-4795-4CAC-AE20-3D39FDFAAF49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B73F84D1-4795-4CAC-AE20-3D39FDFAAF49}.Release|x86.ActiveCfg = Release|x86
+		{B73F84D1-4795-4CAC-AE20-3D39FDFAAF49}.Release|x86.Build.0 = Release|x86
+		{0FFE6C33-CDDA-4555-8F62-C7F95506009C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FFE6C33-CDDA-4555-8F62-C7F95506009C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FFE6C33-CDDA-4555-8F62-C7F95506009C}.Debug|x86.ActiveCfg = Debug|x86
+		{0FFE6C33-CDDA-4555-8F62-C7F95506009C}.Debug|x86.Build.0 = Debug|x86
+		{0FFE6C33-CDDA-4555-8F62-C7F95506009C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FFE6C33-CDDA-4555-8F62-C7F95506009C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FFE6C33-CDDA-4555-8F62-C7F95506009C}.Release|x86.ActiveCfg = Release|x86
+		{0FFE6C33-CDDA-4555-8F62-C7F95506009C}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88588ECE-C61A-4CCD-8F60-629916400B45} = {C9DD1C65-E2D6-4BBE-94DF-DD33F55333D0}
+		{E60E7D45-905A-4DCA-96E8-153F1532C29A} = {C9DD1C65-E2D6-4BBE-94DF-DD33F55333D0}
+		{ED9FDCA2-B6F0-4A0E-94FC-8C04D6B832D3} = {C9DD1C65-E2D6-4BBE-94DF-DD33F55333D0}
+		{F0B74FE2-EB06-4F97-BA10-3F11111E5B6D} = {C9DD1C65-E2D6-4BBE-94DF-DD33F55333D0}
+		{B73F84D1-4795-4CAC-AE20-3D39FDFAAF49} = {C9DD1C65-E2D6-4BBE-94DF-DD33F55333D0}
+		{0FFE6C33-CDDA-4555-8F62-C7F95506009C} = {31D9E819-BF80-419B-9F55-7A6FCAA6C40A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4F15959-19A2-444C-9F07-AF8359D6921D}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Backend\\AUXILIAR\\AUXILIAR.csproj
+		SccProjectTopLevelParentUniqueName1 = CVAPortalGestao.sln
+		SccProjectName1 = Backend/AUXILIAR
+		SccLocalPath1 = Backend\\AUXILIAR
+		SccProjectUniqueName2 = Backend\\BLL\\BLL.csproj
+		SccProjectTopLevelParentUniqueName2 = CVAPortalGestao.sln
+		SccProjectName2 = Backend/BLL
+		SccLocalPath2 = Backend\\BLL
+		SccProjectUniqueName3 = Backend\\CVAGestaoService\\Web\u0020Service.csproj
+		SccProjectTopLevelParentUniqueName3 = CVAPortalGestao.sln
+		SccProjectName3 = Backend/CVAGestaoService
+		SccLocalPath3 = Backend\\CVAGestaoService
+		SccProjectUniqueName4 = Backend\\DAO\\DAO.csproj
+		SccProjectTopLevelParentUniqueName4 = CVAPortalGestao.sln
+		SccProjectName4 = Backend/DAO
+		SccLocalPath4 = Backend\\DAO
+		SccProjectUniqueName5 = Backend\\MODEL\\MODEL.csproj
+		SccProjectTopLevelParentUniqueName5 = CVAPortalGestao.sln
+		SccProjectName5 = Backend/MODEL
+		SccLocalPath5 = Backend\\MODEL
+		SccProjectUniqueName6 = Frontend\\Layout.csproj
+		SccProjectTopLevelParentUniqueName6 = CVAPortalGestao.sln
+		SccProjectName6 = Frontend
+		SccLocalPath6 = Frontend
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+<h1>Erro geral</h1>
+<h2><b>Controller:</b> @Model.ControllerName</h2>
+<h2><b>Action:</b> @Model.ActionName</h2>
+<h2><b>Exception:</b> @Model.Exception.Message</h2>
+@if (@Model.Exception.InnerException != null)
+{
+    <h2><b>Inner Exception:</b> @Model.Exception.InnerException.Message</h2>
+}
+

@@ -1,0 +1,25 @@
+﻿using SAPbobsCOM;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+
+namespace SZS.Common.Controllers
+{
+    public class ReportController
+    {
+        public static string GetLayoutReport(string reportName)
+        {
+            string format = "SELECT TypeCode FROM RDOC WHERE DocName = '{0}'";
+            format = string.Format(format, reportName);
+            Recordset businessObject = (Recordset)SBOApp.Company.GetBusinessObject(BoObjectTypes.BoRecordset);
+            businessObject.DoQuery(format);
+            string str2 = businessObject.Fields.Item("TypeCode").Value.ToString();
+            Marshal.ReleaseComObject(businessObject);
+            businessObject = null;
+            return str2;
+        }
+
+    }
+}

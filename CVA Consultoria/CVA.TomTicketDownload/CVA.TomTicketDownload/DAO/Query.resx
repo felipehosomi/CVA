@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AtualizaCancelamento" xml:space="preserve">
+    <value>update vendas set ven_CancEnvi_api  = 1 where ven_codigo = '{0}'</value>
+  </data>
+  <data name="AtualizaTroca" xml:space="preserve">
+    <value>update troca set tro_enviado_api = 1 where tro_codigo = '{0}'</value>
+  </data>
+  <data name="AtualizaVenda" xml:space="preserve">
+    <value>update vendas set ven_enviado_api = 1 where ven_codigo = '{0}'</value>
+  </data>
+  <data name="Check_ItemExists" xml:space="preserve">
+    <value>select count(*) as 'item' chamados where IdChamado='{0}'</value>
+  </data>
+  <data name="DataSincronizacao" xml:space="preserve">
+    <value>update SincronizaProduto set SincronizadoEm = '{0}' where Itemcode = '{1}'</value>
+  </data>
+  <data name="GetCupom" xml:space="preserve">
+    <value>select  distinct T0.ven_codigo Nro_Pedido
+       ,(select emp_codigo from Empresa) Filial
+	   ,(select emp_cnpj from Empresa) CNPJ_Filial
+	   ,ifnull(T2.lote,0) N_NotaFiscal
+	   ,T0.ven_NroCaixa N_PDV
+	   ,T0.ven_CPF  CPF_CNPJ
+       ,T0.ven_RegAssociado
+	   ,t0.ven_valorTotal ValorBruto
+	   ,T0.ven_valorFinal ValorLiquido
+	   ,T0.ven_desconto Desconto  
+	   ,T0.ven_dataVenda Data_Lancamento
+	   ,T3.nome Id_Vendedor
+	   ,T3.groupName Vendedor
+       ,(select emp_serieNfce from Empresa) Serie_PDV
+       ,T0.ven_nCfe N_CFe
+       ,T2.ChaveNf
+  from Vendas T0
+  left join Cliente T1 on T0.ven_cliente = t1.cli_codigo 
+ inner join Nfe_Lote T2 on T0.ven_codigo = T2.NumeroPedido
+ inner join Vendedor T3 on T0.ven_vendedor = t3.nome
+ inner join VendasFormasDePagamento T4 on T0.ven_codigo = t4.VendaID
+ inner join vendaitens T5 on T0.ven_codigo = T5.ven_codigo
+ where ifnull(T0.ven_enviado_api,0) = 0   
+ order by 1;</value>
+  </data>
+  <data name="GetCupomCancelamento" xml:space="preserve">
+    <value>select  distinct T0.ven_codigo Nro_Pedido
+       ,(select emp_codigo from Empresa) Filial
+	   ,(select emp_cnpj from Empresa) CNPJ_Filial
+	   ,ifnull(T2.lote,0) N_NotaFiscal
+	   ,T0.ven_NroCaixa N_PDV
+	   ,T0.ven_CPF  CPF_CNPJ
+       ,T0.ven_RegAssociado
+	   ,t0.ven_valorTotal ValorBruto
+	   ,T0.ven_valorFinal ValorLiquido
+	   ,T0.ven_desconto Desconto  
+	   ,T0.ven_dataVenda Data_Lancamento
+	   ,T3.nome Id_Vendedor
+	   ,T3.groupName Vendedor       
+       ,(select emp_serieNfce from Empresa) Serie_PDV
+	   ,case when T0.ven_nCfe = '' then '' else T0.ven_nCfe +1 end  N_CFe
+       ,T2.ChaveNf
+  from Vendas T0
+  left join Cliente T1 on T0.ven_cliente = t1.cli_codigo 
+ inner join Nfe_Lote T2 on T0.ven_codigo = T2.NumeroPedido
+ inner join Vendedor T3 on T0.ven_vendedor = t3.nome
+ inner join VendasFormasDePagamento T4 on T0.ven_codigo = t4.VendaID
+ inner join vendaitens T5 on T0.ven_codigo = T5.ven_codigo
+ inner join vendacancelada T6 on T0.ven_codigo = T6.NumeroCupom
+ where ifnull(T0.ven_CancEnvi_api,0) = 0
+  and ( T6.StatusCod = '07000' or  T6.StatusCod = '135' )
+ order by 1;</value>
+  </data>
+  <data name="GetCupomItens" xml:space="preserve">
+    <value>select  T0.ven_codigo Nro_Pedido
+       , T0.vi_quantidade Quantidade
+	   , T0.vi_valorUnitario ValorUnit
+	   , T0.vi_subtotal ValorBruto
+	   , T0.vi_desconto DescontoLinha
+	   , T0.ItemCode Itemcode
+	   , T0.pro_CodigoBarra CodBarras
+
+    from vendaItens T0
+	/*inner join ProdutoCodBarra T1 on T0.ItemCode = T1.Itemcode and T0.vi_quantidade = t1.Quantidae*/
+	where T0.ven_codigo =  '{0}'
+      and T0.troca = 0;</value>
+  </data>
+  <data name="GetCupomItensCancelamento" xml:space="preserve">
+    <value>select  T0.ven_codigo Nro_Pedido
+       , T0.vi_quantidade Quantidade
+	   , T0.vi_valorUnitario ValorUnit
+	   , T0.vi_subtotal ValorBruto
+	   , T0.vi_desconto DescontoLinha
+	   , T0.ItemCode Itemcode
+	   , T0.pro_CodigoBarra CodBarras
+    from vendaItens T0	
+	where T0.ven_codigo =  '{0}'
+      and T0.troca = 0;</value>
+  </data>
+  <data name="GetCupomItensTroca" xml:space="preserve">
+    <value>select   T0.tro_codigo Nro_Pedido
+       , T0.ti_quantidade Quantidade
+	   , T0.ti_valorUnitario ValorUnit
+	   , T0.ti_subtotal ValorBruto
+	   , T0.ti_desconto DescontoLinha
+	   , T0.ItemCode Itemcode
+	   , T0.pro_codigoBarra CodBarras
+    from trocaitens T0
+	where T0.tro_codigo  =  '{0}'  
+      and T0.troca = 1;</value>
+  </data>
+  <data name="GetCupomPagamento" xml:space="preserve">
+    <value>select T0.FormaDePagamentoID
+	  ,T0.bandeira
+	  ,T0.NroCartao
+	  ,T0.parcelas
+	  ,ifnull(T0.autorizacao,T0.documento) documento
+	  ,T0.ValorTotal
+	  ,T0.VendaID
+      ,T1.fp_codigo
+      ,T1.fp_descricao
+ from VendasFormasDePagamento T0
+inner join formapagamento T1 on T0.FormaDePagamentoID = T1.fp_codigo
+where T0.VendaID = '{0}'
+ </value>
+  </data>
+  <data name="GetCupomPagamentoCancelamento" xml:space="preserve">
+    <value>select T0.FormaDePagamentoID
+	  ,T0.bandeira
+	  ,T0.NroCartao
+	  ,T0.parcelas
+	  ,ifnull(T0.autorizacao,T0.documento) documento
+	  ,T0.ValorTotal
+	  ,T0.VendaID
+      ,T1.fp_codigo
+      ,T1.fp_descricao
+ from VendasFormasDePagamento T0
+inner join formapagamento T1 on T0.FormaDePagamentoID = T1.fp_codigo
+where T0.VendaID = '{0}'
+  and T0.Status = 'Cancelado';</value>
+  </data>
+  <data name="GetCupomPagamentoTroca" xml:space="preserve">
+    <value>select T0.FormaDePagamentoID
+	  ,T0.bandeira
+	  ,T0.NroCartao
+	  ,T0.parcelas
+	  ,ifnull(T0.autorizacao,T0.documento) documento
+	  ,T0.ValorTotal
+	  ,T0.TrocaID
+      ,T1.fp_codigo
+      ,T1.fp_descricao
+ from trocasformasdepagamento T0
+inner join formapagamento T1 on T0.FormaDePagamentoID = T1.fp_codigo
+where T0.TrocaID = '{0}'
+  and T0.Status is null;</value>
+  </data>
+  <data name="GetCupomTroca" xml:space="preserve">
+    <value>select  distinct T0.tro_codigo Nro_Pedido
+       ,(select emp_codigo from Empresa) Filial
+	   ,(select emp_cnpj from Empresa) CNPJ_Filial
+	   ,T6.Cupom_Origem N_NotaFiscal
+	   ,T0.tro_NroCaixa N_PDV
+	   ,T0.tro_CPF  CPF_CNPJ
+       ,T0.tro_RegAssociado
+	   ,t0.tro_valorTotal ValorBruto
+	   ,T0.tro_valorFinal ValorLiquido
+	   ,T0.tro_desconto Desconto  
+	   ,T0.tro_dataVenda Data_Lancamento
+	   ,T3.nome Id_Vendedor
+	   ,T3.groupName Vendedor
+       ,(select emp_serieNfce from Empresa) Serie_PDV
+       ,T0.tro_nCfe N_CFe
+       ,'' ChaveNf
+  from troca T0
+  left join Cliente T1 on T0.tro_cliente = t1.cli_codigo  
+ inner join Vendedor T3 on T0.tro_vendedor = t3.nome
+ inner join trocasformasdepagamento T4 on T0.tro_codigo = t4.TrocaID
+ inner join trocaitens T5 on T0.tro_codigo = T5.tro_codigo
+ inner join controle_cupomtroca T6 on T0.tro_codigo = T6.Cupom_Troca
+
+ where ifnull(T0.tro_enviado_api,0) = 0</value>
+  </data>
+  <data name="InsereCartao" xml:space="preserve">
+    <value>insert into tipocartao values ({0},'{1}','{2}','{3}');</value>
+  </data>
+  <data name="InsereClientes" xml:space="preserve">
+    <value>INSERT INTO cliente
+VALUES
+({0},
+ '{1}',
+ {2},
+ '{3}',
+ '{4}',
+ '{5}',
+ '{6}',
+ '{7}',
+ '{8}',
+ '{9}',
+ {10},
+ '{11}',
+ '{12}',
+ '{13}',
+ '{14}',
+ '{15}',
+ '{16}',
+ '{17}',
+ '{18}',
+ {19},
+{20},
+ '{21}',
+ '{22}',
+ '{23}',
+ {24},
+ '{25}',
+ '{26}',
+ '{27}',
+ '{28}',
+ '{29}',
+ {30},
+ '{31}',
+ '{32}',
+ '{33}',
+ '{34}');</value>
+  </data>
+  <data name="InsereVendedor" xml:space="preserve">
+    <value>INSERT INTO vendedor VALUES ({0},{1},'{2}','{3}','{4}','{5}')</value>
+  </data>
+  <data name="InsertItem" xml:space="preserve">
+    <value>insert into Produtos values( '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}','{21}','{22}','{23}')</value>
+  </data>
+  <data name="IsertCodBarras" xml:space="preserve">
+    <value>Insert into produtocodbarra values ({0},'{1}','{2}',{3})</value>
+  </data>
+  <data name="UpdateCliente" xml:space="preserve">
+    <value>UPDATE cliente
+SET
+cli_nome = '{0}',
+cli_idade = '{1}',
+cli_data_nascimento = '{2}',
+cli_rg = '{3}',
+cli_cpf = '{4}',
+cli_logradouro = '{5}',
+cli_numero = '{6}',
+cli_complemento = '{7}',
+cli_bairro = '{8}',
+cid_codigo = '{9}',
+cli_razao_social = '{10}',
+cli_cnpj = '{11}',
+cli_ie = '{12}',
+cli_data_fundacao = '{13}',
+cli_tipo_pessoa = '{14}',
+cli_telefone = '{15}',
+cli_celular = '{16}',
+cli_calJuros = '{17}',
+cli_limiteCredito = '{18}',
+cli_limiteMensal = '{19}',
+cli_cep = '{20}',
+cli_cota = '{21}',
+cli_Grupo = '{22}',
+emp_codigo = '{23}',
+cli_email1 = '{24}',
+cli_email2 = '{25}',
+observacao = '{26}',
+cli_TipoLogradouro = '{27}',
+cli_uf = '{28}',
+Campolivre1 = '{29}',
+Campolivre2 = '{30}',
+Campolivre3 = '{31}',
+Campolivre4 = '{32}'
+WHERE CardCode = '{33}'</value>
+  </data>
+  <data name="UpdateItem" xml:space="preserve">
+    <value>update Produtos set ItemCode = '{0}',pro_nome = '{1}',pro_ncm = '{2}',pro_codigoBarra = '{3}',pro_precoCusto = '{4}', pro_precoVenda = '{5}' where Itemcode = '{6}'</value>
+  </data>
+</root>

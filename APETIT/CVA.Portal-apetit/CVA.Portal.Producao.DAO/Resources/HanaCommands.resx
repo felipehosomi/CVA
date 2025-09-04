@@ -1,0 +1,1304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Apontamento_Planejamento_GetQtde" xml:space="preserve">
+    <value>SELECT 
+	CASE WHEN {3} = 1
+		THEN "U_QtdeCQ" - "U_QtdeApontada"
+		ELSE "U_QtdeApontada"
+	END
+FROM "{0}"."@CVA_APONTAMENTO"
+WHERE "U_NrOP" = {1}
+AND "U_CodEtapa" =  '{2}'</value>
+  </data>
+  <data name="Apontamento_UpsertQtdeApontada" xml:space="preserve">
+    <value>CALL "{0}"."SP_CVA_APONTAMENTO_QTDEAPONTADA" ({1}, '{2}', {3})</value>
+  </data>
+  <data name="Apontamento_UpsertQtdeCQ" xml:space="preserve">
+    <value>CALL "{0}"."SP_CVA_APONTAMENTO_QTDECQ" ({1}, '{2}', {3})</value>
+  </data>
+  <data name="Colaborador_Get" xml:space="preserve">
+    <value>SELECT "OUSR"."USER_CODE" "Codigo", "OHEM"."firstName" || ' ' || "OHEM"."lastName" "Nome"
+FROM "{0}"."OHEM"
+	INNER JOIN "{0}"."OUSR"
+		ON "OUSR"."USERID" = "OHEM"."userId"
+WHERE "OUSR"."USER_CODE" NOT IN
+(
+	SELECT "@CVA_USUARIO"."U_Usuario" FROM "{0}"."@CVA_USUARIO"
+)</value>
+    <comment>Busca colaboradores NÃO cadastrados no portal</comment>
+  </data>
+  <data name="EstruturaProducao_Get" xml:space="preserve">
+    <value>CALL "{0}"."SP_CVA_ETAPA_PRODUCAO" ({1}, {2})</value>
+  </data>
+  <data name="Etapa_GetEmAberto" xml:space="preserve">
+    <value>SELECT 1 FROM "{0}"."WOR4"
+WHERE "DocEntry" = {1}
+AND "U_CVA_Status" = 'O'</value>
+  </data>
+  <data name="Etapa_GetHistorico" xml:space="preserve">
+    <value>SELECT 
+	"Name" "Etapa",
+	"U_CVA_DataHora" "Data"
+FROM "{0}"."WOR4"
+WHERE "DocEntry" = {1}
+AND "U_CVA_Status" = 'C'</value>
+  </data>
+  <data name="Etapa_UpdateStatus" xml:space="preserve">
+    <value>UPDATE "{0}"."WOR4"
+SET 
+	"U_CVA_Status" = '{3}',
+	"U_CVA_DataHora" = '{4}'
+WHERE "DocEntry" = {1}
+AND  "StageId" = {2}</value>
+    <comment>Atualiza status da etapa</comment>
+  </data>
+  <data name="Etapa_ValidacaoQuantidadeApontada" xml:space="preserve">
+    <value>SELECT TO_DOUBLE(T0."IssuedQty") / TO_DOUBLE(CASE WHEN T0."BaseQty" = 0 THEN NULL ELSE T0."BaseQty" END) AS "Quantidade",
+	T0."StageId"	AS "CodEtapa",
+	T1."Name"		AS "Etapa",
+	T0."BaseQty"	AS "QuantidadeBase"
+FROM "{0}"."WOR1" T0
+INNER JOIN "{0}"."WOR4" T1 ON T1."DocEntry" = T0."DocEntry" AND T1."StageId" = T0."StageId"
+INNER JOIN "{0}"."OWOR" T2 ON T2."DocEntry" = T0."DocEntry"
+WHERE T0."DocEntry" = {1}
+AND T0."ItemType" = 290
+AND T0."VisOrder" = (SELECT MAX(T00."VisOrder") 
+						FROM "{0}"."WOR1" T00 
+						WHERE T00."DocEntry" = T0."DocEntry" 
+						AND T00."StageId" = T0."StageId")
+AND T0."VisOrder" != (SELECT MAX(T00."VisOrder") 
+						FROM "{0}"."WOR1" T00 
+						WHERE T00."DocEntry" = T0."DocEntry" 
+						AND T00."ItemType" = 290)
+AND (TO_DOUBLE(T0."IssuedQty") / TO_DOUBLE(CASE WHEN T0."BaseQty" = 0 THEN NULL ELSE T0."BaseQty" END)) &lt; TO_DOUBLE(T2."CmpltQty") + {2}
+ORDER BY T0."VisOrder"</value>
+  </data>
+  <data name="FichaInspecao_GetQtdeApontada" xml:space="preserve">
+    <value>SELECT SUM("U_QtdeAnalisada") 
+FROM "{0}"."@CVA_FICHA_INSPECAO"
+WHERE "U_DocEntry" = {1}
+AND "U_CodEtapa" = '{2}'
+AND "U_TipoDoc" = 'OP'
+AND "U_SeqFinalizada" = {3}</value>
+  </data>
+  <data name="FichaInspecao_UpdateSeqFinalizada" xml:space="preserve">
+    <value>UPDATE"{0}"."@CVA_FICHA_INSPECAO"
+SET "U_SeqFinalizada" = 1
+WHERE "U_CodEtapa" = '{2}'
+AND "U_TipoDoc" = 'OP'
+AND "U_SeqFinalizada" = 0</value>
+  </data>
+  <data name="FichaProduto_Get" xml:space="preserve">
+    <value>SELECT 
+	"@CVA_FICHA_PRODUTO"."Code",	
+	"@CVA_FICHA_PRODUTO"."U_Tipo" 			"Tipo",
+	"@CVA_FICHA_PRODUTO"."U_CodGrupo"		"CodGrupo",
+	"@CVA_FICHA_PRODUTO"."U_CodItem"		"CodItem",
+	"@CVA_FICHA_PRODUTO"."U_CodEtapa"		"CodEtapa",
+	"@CVA_FICHA_PRODUTO"."U_CodModelo"		"CodModelo",
+	"@CVA_FICHA_PRODUTO"."U_Ativo"			"AtivoInt",
+	"@CVA_FICHA_PRODUTO"."U_Obrigatorio"	"ObrigatorioInt",
+	"@CVA_MODELO_FICHA"."U_Descricao" 		"FichaDesc",
+	"ORST"."Desc" 							"EtapaDesc",
+	"OITM"."ItemName" 						"ItemDesc",
+	"OITB"."ItmsGrpNam" 					"GrupoDesc"
+FROM "{0}"."@CVA_FICHA_PRODUTO"
+	INNER JOIN "{0}"."@CVA_MODELO_FICHA"
+		ON "@CVA_MODELO_FICHA"."Code" = "@CVA_FICHA_PRODUTO"."U_CodModelo"
+	INNER JOIN "{0}"."ORST"
+		ON "ORST"."Code" = "@CVA_FICHA_PRODUTO"."U_CodEtapa"
+	LEFT JOIN "{0}"."OITM"
+		ON "OITM"."ItemCode" = "@CVA_FICHA_PRODUTO"."U_CodItem"
+		AND "@CVA_FICHA_PRODUTO"."U_Tipo" = 'I'
+	LEFT JOIN "{0}"."OITB"
+		ON "OITB"."ItmsGrpCod" = "@CVA_FICHA_PRODUTO"."U_CodGrupo"
+		AND "@CVA_FICHA_PRODUTO"."U_Tipo" = 'G'</value>
+  </data>
+  <data name="FichaProduto_GetByItemEtapa" xml:space="preserve">
+    <value>SELECT
+	"FICHA"."Code",
+	"FICHA"."U_Tipo",
+	"FICHA"."U_CodItem",
+	"FICHA"."U_CodGrupo",
+NULL "StageId",
+	"FICHA"."U_CodEtapa",
+	"FICHA"."U_CodModelo",
+	"FICHA"."U_Obrigatorio",
+	"FICHA"."U_Ativo"
+FROM "{0}"."OITM"
+	INNER JOIN "{0}"."@CVA_FICHA_PRODUTO" "FICHA"
+		ON ("FICHA"."U_CodItem" = "OITM"."ItemCode" OR "FICHA"."U_CodGrupo" = "OITM"."ItmsGrpCod")
+WHERE "OITM"."ItemCode" = '{1}'
+AND LOWER("FICHA"."U_CodEtapa") = '{2}'
+ORDER BY CASE WHEN "FICHA"."U_CodItem" IS NOT NULL THEN 0 ELSE 1 END</value>
+  </data>
+  <data name="FichaProduto_GetByOP" xml:space="preserve">
+    <value>SELECT
+	"FICHA"."Code",
+	"FICHA"."U_Tipo",
+	"FICHA"."U_CodItem",
+	"FICHA"."U_CodGrupo",
+	(SELECT MIN("WOR4"."StageId") FROM "{0}"."WOR4" WHERE "WOR4"."DocEntry"="OWOR"."DocEntry" AND "WOR4"."Name"="FICHA"."U_CodEtapa") "StageId",
+	"FICHA"."U_CodEtapa",
+	"FICHA"."U_CodModelo",
+	"FICHA"."U_Obrigatorio",
+	"FICHA"."U_Ativo"
+FROM "{0}"."OWOR"
+	INNER JOIN "{0}"."OITM"
+		ON "OITM"."ItemCode" = "OWOR"."ItemCode"
+	INNER JOIN "{0}"."@CVA_FICHA_PRODUTO" "FICHA"
+		ON ("FICHA"."U_CodItem" = "OITM"."ItemCode" OR "FICHA"."U_CodGrupo" = "OITM"."ItmsGrpCod")
+WHERE "OWOR"."DocNum" = {1}
+AND "FICHA"."U_Ativo" = 1
+ORDER BY CASE WHEN "FICHA"."U_CodItem" IS NOT NULL THEN 0 ELSE 1 END</value>
+  </data>
+  <data name="InspecaoMP_GetByNF" xml:space="preserve">
+    <value>SELECT DISTINCT
+	"INSP"."Code" "CodFicha",
+	"INSP"."U_Status" "StatusFicha",
+	"OPCH"."DocEntry",
+	"OPCH"."DocNum",
+	"OPCH"."DocDate",
+	"OPCH"."CardCode",
+	"OPCH"."CardName",
+	"OPCH"."Serial",
+	"PCH1"."LineNum",
+	"PCH1"."ItemCode",
+	"PCH1"."Dscription" "ItemName",
+	"PCH1"."Quantity"
+FROM "{0}"."OPCH"
+	INNER JOIN "{0}"."PCH1"
+		ON "OPCH"."DocEntry" = "PCH1"."DocEntry"
+	INNER JOIN "{0}"."OITM"
+		ON "OITM"."ItemCode" = "PCH1"."ItemCode"
+	INNER JOIN "{0}"."@CVA_FICHA_PRODUTO" "FICHA"
+		ON ("FICHA"."U_CodItem" = "OITM"."ItemCode" OR "FICHA"."U_CodGrupo" = "OITM"."ItmsGrpCod")
+		AND LOWER("FICHA"."U_CodEtapa") = 'recebimento de matéria-prima'
+		AND "FICHA"."U_Ativo" = 1
+	LEFT JOIN "{0}"."@CVA_FICHA_INSPECAO" "INSP"
+		ON "INSP"."U_DocEntry" = "PCH1"."DocEntry"
+		AND "INSP"."U_LineNum" = "PCH1"."LineNum"
+		AND "INSP"."U_TipoDoc" = 'RE'
+WHERE "OPCH"."CANCELED" = 'N'
+AND {1}</value>
+  </data>
+  <data name="InspecaoMP_GetByRecebimentoMercadorias" xml:space="preserve">
+    <value>SELECT DISTINCT
+	"INSP"."Code" "CodFicha",
+	"INSP"."U_Status" "StatusFicha",
+	"OPDN"."DocEntry",
+	"OPDN"."DocNum",
+	"OPDN"."DocDate",
+	"OPDN"."CardCode",
+	"OPDN"."CardName",
+	"OPDN"."Serial",
+	"PDN1"."LineNum",
+	"PDN1"."ItemCode",
+	"PDN1"."Dscription" "ItemName",
+	"PDN1"."Quantity"
+FROM "{0}"."OPDN"
+	INNER JOIN "{0}"."PDN1"
+		ON "OPDN"."DocEntry" = "PDN1"."DocEntry"
+	INNER JOIN "{0}"."OITM"
+		ON "OITM"."ItemCode" = "PDN1"."ItemCode"
+	INNER JOIN "{0}"."@CVA_FICHA_PRODUTO" "FICHA"
+		ON ("FICHA"."U_CodItem" = "OITM"."ItemCode" OR "FICHA"."U_CodGrupo" = "OITM"."ItmsGrpCod")
+		AND LOWER("FICHA"."U_CodEtapa") = 'recebimento de matéria-prima'
+		AND "FICHA"."U_Ativo" = 1
+	LEFT JOIN "{0}"."@CVA_FICHA_INSPECAO" "INSP"
+		ON "INSP"."U_DocEntry" = "PDN1"."DocEntry"
+		AND "INSP"."U_LineNum" = "PDN1"."LineNum"
+		AND "INSP"."U_TipoDoc" = 'RE'
+WHERE "OPDN"."CANCELED" = 'N'
+AND {1}</value>
+  </data>
+  <data name="Item_GetTipoControle" xml:space="preserve">
+    <value>SELECT
+	CASE WHEN "MngMethod" = 'A'
+		THEN CASE WHEN "ManBtchNum" = 'Y'
+			THEN 'L'
+			ELSE CASE WHEN "ManSerNum" = 'Y'
+				THEN 'S'
+				ELSE 'N'
+			END
+		END
+	ELSE 'N'
+	END
+FROM "{0}"."OITM" 
+WHERE "ItemCode" = '{1}'</value>
+  </data>
+  <data name="Batches_FIFO" xml:space="preserve">
+    <value>SELECT
+	 "OBTQ"."ItemCode" ,
+	 "OBTN"."DistNumber" ,
+	 "OBTN"."MnfSerial" ,
+	 "OBTN"."LotNumber" ,
+	 "OBTN"."Notes",
+	 (IFNULL("OBTQ"."Quantity", 0) - IFNULL("OBTQ"."CommitQty", 0)) "Quantity" ,
+	 "OBTQ"."WhsCode" 
+FROM "{0}"."OBTQ" 
+INNER JOIN "{0}"."OBTN" ON "OBTQ"."SysNumber" = "OBTN"."SysNumber" 
+AND "OBTQ"."ItemCode" = "OBTN"."ItemCode" 
+WHERE (IFNULL("OBTQ"."Quantity",0) - IFNULL("OBTQ"."CommitQty",0)) &gt; 0 
+AND "OBTQ"."ItemCode" = '{1}'
+AND "OBTQ"."WhsCode" = '{2}'
+ORDER BY 
+--"OBTN"."ExpDate" DESC,
+ "OBTN"."MnfDate" DESC, "OBTN"."InDate" DESC</value>
+  </data>
+  <data name="Lote_GetDisponiveis" xml:space="preserve">
+    <value>SELECT a."DistNumber" "Lote", SUM(c."Quantity") "QtdeDisponivel"
+  FROM "{0}".OBTN a INNER JOIN "{0}".OITM b ON a."ItemCode" = b."ItemCode"
+              INNER JOIN "{0}".OBTQ c ON a."ItemCode" = c."ItemCode" AND a."SysNumber" = c."SysNumber" AND c."Quantity" &gt; 0
+ WHERE a."ItemCode"='{1}'
+   AND c."WhsCode"='{2}'
+GROUP BY a."ItemCode", a."DistNumber"
+HAVING SUM(c."Quantity") &gt; 0</value>
+  </data>
+  <data name="ModeloFicha_GetByEspecificacao" xml:space="preserve">
+    <value>SELECT "U_CodModelo" FROM "{0}"."@CVA_MODELO_FICHA1" WHERE "U_CodEspec" = '{1}'</value>
+  </data>
+  <data name="OP_Get" xml:space="preserve">
+    <value>SELECT
+		"OWOR"."DocEntry",
+		"OWOR"."StartDate"	"DataOP",
+		"OWOR"."DocNum"		"NrOP",
+		"OWOR"."OriginAbs"	"DocEntryPedido",
+		"OWOR"."OriginNum"	"NrPedido",
+		"OWOR"."PlannedQty"	- "OWOR"."CmpltQty" "Quantidade",
+		"OWOR"."ItemCode",
+		CASE WHEN "RDR1"."Dscription" IS NOT NULL 
+			THEN "RDR1"."Dscription"
+			ELSE "OITM"."ItemName"
+		END "ItemName",
+		"OITM"."U_modelo"	"Modelo",
+		"OITM"."SLength1"	"Comprimento",
+		"OITM"."SWidth1"	"Largura",
+		"OITM"."SHeight1"	"Altura",
+		"WOR4"."StageId"	"CodEtapa",
+		"WOR4"."Name"		"Etapa"
+	FROM "{0}"."OWOR" 
+		INNER JOIN "{0}"."WOR4"
+			ON "WOR4"."DocEntry" = "OWOR"."DocEntry"
+		INNER JOIN "{0}"."OITM"
+			ON "OITM"."ItemCode" = "OWOR"."ItemCode"
+		LEFT JOIN "{0}"."RDR1"
+			ON "RDR1"."DocEntry" = "OWOR"."OriginAbs"
+			AND "RDR1"."ItemCode" = "OWOR"."ItemCode"
+	WHERE "OWOR"."DocNum" = {1}
+	AND "WOR4"."StageId" = '{2}'</value>
+  </data>
+  <data name="OP_GetEstrutura" xml:space="preserve">
+    <value>SELECT * FROM
+(
+	SELECT 'Etapa de Itinerários' "Tipo", "Name" "Item", "Name" "Descricao", 0.00 "Quantidade", '' "Deposito", "SeqNum" "Sequencia" 
+	FROM "{0}"."WOR4"
+	WHERE  "DocEntry" = {1}
+	
+	UNION
+
+	SELECT 'Recurso', "WOR1"."ItemCode", "ORSC"."ResName", "WOR1"."PlannedQty", "WOR1"."wareHouse", "WOR4"."SeqNum"
+	FROM "{0}"."WOR1" 
+		INNER JOIN "{0}"."ORSC"
+			ON "ORSC"."VisResCode" = "WOR1"."ItemCode"
+			AND "WOR1"."ItemType" = 290
+		INNER JOIN "{0}"."WOR4"
+			ON "WOR4"."DocEntry" = "WOR1"."DocEntry"
+			AND "WOR4"."StageId" = "WOR1"."StageId"
+	WHERE  "WOR1"."DocEntry" = {1}
+			
+	UNION
+
+	SELECT 'Item', "WOR1"."ItemCode", "OITM"."ItemName", "WOR1"."PlannedQty", "WOR1"."wareHouse", "WOR4"."SeqNum"
+	FROM "{0}"."WOR1" 
+		INNER JOIN "{0}"."OITM"
+			ON "OITM"."ItemCode" = "WOR1"."ItemCode"
+			AND "WOR1"."ItemType" = 4
+		INNER JOIN "{0}"."WOR4"
+			ON "WOR4"."DocEntry" = "WOR1"."DocEntry"
+			AND "WOR4"."StageId" = "WOR1"."StageId"
+	WHERE  "WOR1"."DocEntry" = {1}
+) AS Estrutura
+ORDER BY "Sequencia"</value>
+  </data>
+  <data name="OP_GetFilialPadrao" xml:space="preserve">
+    <value>SELECT "BPLid" FROM "{0}"."OWHS"
+	INNER JOIN "{0}"."OWOR"
+		ON "OWOR"."Warehouse" = "OWHS"."WhsCode"
+WHERE "OWOR"."DocEntry" = {1}</value>
+  </data>
+  <data name="OP_GetInspecao" xml:space="preserve">
+    <value>CALL "{0}"."SP_CVA_INSPECAO_GETOP" ('{1}', '{2}', '{3}', {4}, {5}, {6})</value>
+  </data>
+  <data name="OP_GetItensEstoque" xml:space="preserve">
+    <value>SELECT
+	T0."DocEntry",
+	T0."ItemCode",
+	T1."ItemName",
+	T0."LineNum",
+	T0."BaseQty",
+	T0."PlannedQty",
+	T0."IssuedQty",
+	T0."wareHouse",
+	T1."DfltWH" AS "DefaultWareHouse",
+	T0."OcrCode"
+FROM "{0}"."WOR1" T0
+INNER JOIN "{0}"."OITM" T1 ON T1."ItemCode" = T0."ItemCode"
+WHERE T0."DocEntry" = {1}
+AND T0."ItemType" = 4
+AND (T0."StageId" = {2} OR {2} = -1)
+AND T1."InvntItem" = 'Y'</value>
+  </data>
+  <data name="OP_GetItensEstoqueRecursos" xml:space="preserve">
+    <value>SELECT
+	T0."DocEntry",
+	T0."ItemCode",
+	T1."ItemName",
+	T0."LineNum",
+	T0."BaseQty",
+	T0."PlannedQty",
+	T0."IssuedQty",
+	T0."wareHouse",
+	T1."DfltWH" AS "DefaultWareHouse",
+	T0."OcrCode",
+	T0."StageId"
+FROM "{0}"."WOR1" T0
+LEFT JOIN "{0}"."OITM" T1 ON T1."ItemCode" = T0."ItemCode"
+WHERE T0."DocEntry" = {1}
+AND T0."StageId" = {2}
+AND (T1."InvntItem" = 'Y' OR T1."InvntItem" IS NULL)
+ORDER BY T0."VisOrder"</value>
+  </data>
+  <data name="OP_GetListRecursosByUsuario" xml:space="preserve">
+    <value>SELECT
+		T0."DocEntry",
+		T0."StartDate"	"DataOP",
+		T0."DueDate"	"VencimentoOP",
+		T0."DocNum"		"NrOP",
+		T0."OriginAbs"	"DocEntryPedido",
+		T0."OriginNum"	"NrPedido",
+		T0."PlannedQty"	"QuantidadePlanejada",
+		T0."PlannedQty"	- T0."CmpltQty" "Quantidade",
+		T0."ItemCode",
+		CASE WHEN T7."Dscription" IS NOT NULL 
+			THEN T7."Dscription"
+			ELSE T3."ItemName"
+		END "ItemName",
+		T3."U_modelo"	"Modelo",
+		T3."SLength1"	"Comprimento",
+		T3."SWidth1"	"Largura",
+		T3."SHeight1"	"Altura",
+		T1."StageId"	"CodEtapa",
+		T1."Name"		"Etapa",
+		T2."ItemCode"	"RecursoCode",
+		T4."ResName"	"RecursoName",
+		T2."LineNum"	"RecursoLineNum",
+		T2."IssuedQty" / T2."BaseQty" "QuantidadeApontada",
+		(T0."PlannedQty" - (T2."IssuedQty" / T2."BaseQty")) "SaldoEtapa",
+		T2."BaseQty"	"QuantidadeBase"
+	FROM "{0}"."OWOR" T0
+		INNER JOIN "{0}"."WOR4" T1
+			ON T1."DocEntry" = T0."DocEntry"
+		INNER JOIN "{0}"."WOR1" T2
+			ON T2."DocEntry" = T0."DocEntry"
+			AND T2."ItemType" = 290
+			AND T2."StageId" = T1."StageId"
+			AND T2."VisOrder" = (SELECT MAX(T02."VisOrder") 
+									FROM "{0}"."WOR1" T02 
+									WHERE T02."DocEntry" = T2."DocEntry" 
+									AND T02."StageId" = T2."StageId")
+		INNER JOIN "{0}"."OITM" T3
+			ON T3."ItemCode" = T0."ItemCode"
+		INNER JOIN "{0}"."ORSC" T4
+			ON T4."VisResCode" = T2."ItemCode"
+		INNER JOIN "{0}"."ORST" T5
+			ON T5."AbsEntry" = T1."StgEntry"
+		INNER JOIN "{0}"."@CVA_USUARIO_ETAPA" T6
+			ON T6."U_CodEtapa" = T5."Code"
+		LEFT JOIN "{0}"."RDR1" T7
+			ON T7."DocEntry" = T0."OriginAbs"
+			AND T7."ItemCode" = T0."ItemCode"
+WHERE T0."Status" = 'R'
+AND T6."U_CodUsuario" = '{1}'
+ORDER BY T0."DueDate", T0."DocEntry", T2."VisOrder"</value>
+  </data>
+  <data name="OP_GetOPSemAcabado" xml:space="preserve">
+    <value>SELECT 
+	T0."DocEntry",
+	T0."DocNum"		"NrOP",
+	T1."StageId"	"CodEtapa"
+FROM "{0}"."OWOR" T0
+INNER JOIN "{0}"."WOR4" T1 ON T1."DocEntry" = T0."DocEntry"
+AND T1."SeqNum" = (SELECT MAX("SeqNum") FROM "{0}"."WOR4" T01 WHERE T01."DocEntry" = T1."DocEntry")
+WHERE T0."Status" = 'R'
+AND T1."U_CVA_Status" = 'C'
+AND NOT EXISTS (SELECT 1 FROM "{0}"."WOR4" T01 WHERE T01."DocEntry" = T0."DocEntry" AND T01."U_CVA_Status" &lt;&gt; 'C')
+AND NOT EXISTS (SELECT 1 FROM "{0}"."IGN1" T02 WHERE T02."BaseType" = 202 AND T02."BaseEntry" = T0."DocEntry")
+ORDER BY T0."DocEntry"</value>
+  </data>
+  <data name="OP_GetPendente" xml:space="preserve">
+    <value>CALL "{0}".SP_CVA_OP_GETPENDENTE ('{1}', '{2}', '{3}', {4}, {5}, '{6}', {7})</value>
+  </data>
+  <data name="OP_GetRecurso" xml:space="preserve">
+    <value>SELECT 
+	"OWOR"."DocEntry",
+	"OWOR"."DocNum",
+	"OWOR"."PlannedQty" "QtdeOriginal",
+	"OWOR"."PlannedQty" "QtdeOP",
+	"OWOR"."StartDate" 	"DocDate",
+	TO_VARCHAR("OWOR"."StartDate", 'YYYY-MM-DD') "DocDateStr",
+	"ORDR"."DocEntry" 	"DocEntryPedido",
+	"ORDR"."DocNum" 	"NrPedido",
+	"WOR1"."LineNum",
+	"WOR1"."wareHouse"	"Deposito",
+	"ORSC"."VisResCode",
+	"ORSC"."ResName",
+	"WOR4"."StageId" 	"CodEtapa",
+	"WOR4"."Name"	 	"DescEtapa",
+	"WOR1"."PlannedQty"	"Quantidade",
+	"WOR1"."BaseQty"	"QtdeBase",
+	"WOR1"."IssuedQty"	"QtdeEmitida",
+	"WOR1"."OcrCode"	"CentroCusto",
+	CASE WHEN "WOR1"."PlannedQty" - "WOR1"."IssuedQty" &gt; 0
+		THEN "WOR1"."PlannedQty" - "WOR1"."IssuedQty"
+		ELSE 0.00
+	END	"QtdeRealizada"
+FROM "{0}"."OWOR"
+	INNER JOIN "{0}"."WOR4" 
+		ON "WOR4"."DocEntry" = "OWOR"."DocEntry"
+	INNER JOIN "{0}"."WOR1"
+		ON "WOR1"."DocEntry" = "WOR4"."DocEntry"
+		AND "WOR1"."StageId" = "WOR4"."StageId"
+	INNER JOIN "{0}"."ORSC"
+		ON "ORSC"."VisResCode" = "WOR1"."ItemCode"
+	LEFT JOIN "{0}"."ORDR"
+		ON "ORDR"."DocNum" = "OWOR"."OriginNum"
+WHERE "OWOR"."DocNum" = {1}
+AND "WOR1"."StageId" = {2};</value>
+  </data>
+  <data name="OP_GetTodasEtapasFechadasOPAberta" xml:space="preserve">
+    <value>SELECT 
+	T0."DocEntry",
+	T0."DocNum"		"NrOP",
+	T1."StageId"	"CodEtapa"
+FROM "{0}"."OWOR" T0
+INNER JOIN "{0}"."WOR4" T1 ON T1."DocEntry" = T0."DocEntry"
+AND T1."SeqNum" = (SELECT MAX("SeqNum") FROM "{0}"."WOR4" T01 WHERE T01."DocEntry" = T1."DocEntry")
+WHERE T0."Status" = 'R'
+AND T1."U_CVA_Status" = 'C'
+AND NOT EXISTS (SELECT 1 FROM "{0}"."WOR4" T01 WHERE T01."DocEntry" = T0."DocEntry" AND T01."U_CVA_Status" &lt;&gt; 'C')
+ORDER BY T0."DocEntry"</value>
+  </data>
+  <data name="OP_GetUltimoRecurso" xml:space="preserve">
+    <value>SELECT MAX("LineNum") FROM "{0}"."WOR1" WHERE "ItemType" = 290 AND "DocEntry" = {1} AND ("StageId" = {2} OR {2} = -1)</value>
+  </data>
+  <data name="PedidoTransferencia_GetByOP" xml:space="preserve">
+    <value>SELECT TOP 1 T0.*
+FROM "{0}"."@CVA_PED_TRANSF_OP" T0
+INNER JOIN "{0}"."OWTQ" T1 ON T1."DocEntry" = T0."U_TQDocEntry"
+WHERE T0."U_OPDocNum" = {1}
+AND T0."U_StageId" = {2}
+AND (T1."DocStatus" = 'O' OR (T1."DocStatus" = 'C' AND EXISTS (SELECT 1 FROM "{0}"."WTR1" T02 
+                                                                WHERE T02."BaseEntry" = T0."U_TQDocEntry" AND T02."LineStatus" = 'O')))
+ORDER BY T0."Code" DESC</value>
+  </data>
+  <data name="PedidoTransferencia_GetByOPAndStageId" xml:space="preserve">
+    <value>SELECT
+	T0."DocNum",
+	T0."DocDate",
+	CASE T0."DocStatus"
+		WHEN 'O' THEN 'Aberta'
+		WHEN 'C' THEN 'Fechada'
+	END AS "Status",
+	T0."U_CVA_ObsPortal"
+FROM "{0}"."OWTQ" T0
+WHERE T0."DocEntry" = (SELECT TOP 1 "U_TQDocEntry" FROM "{0}"."@CVA_PED_TRANSF_OP" WHERE "U_OPDocNum" = {1} AND "U_StageId" = {2} ORDER BY "Code" DESC)</value>
+  </data>
+  <data name="PedidoTransferencia_GetDetailsByOPAndStageId" xml:space="preserve">
+    <value>SELECT
+	T1."ItemCode",
+	T1."Dscription",
+	T1."Quantity",
+	T1."Quantity" - T1."OpenCreQty"
+		AS "QuantityMet",
+	T1."OpenCreQty"
+FROM "{0}"."OWTQ" T0
+INNER JOIN "{0}"."WTQ1" T1 ON T1."DocEntry" = T0."DocEntry"
+WHERE T0."DocEntry" = (SELECT TOP 1 "U_TQDocEntry" FROM "{0}"."@CVA_PED_TRANSF_OP" WHERE "U_OPDocNum" = {1} AND "U_StageId" = {2} ORDER BY "Code" DESC)</value>
+  </data>
+  <data name="PercentualProducao_Get" xml:space="preserve">
+    <value>CALL "{0}"."SP_CVA_PERCENTUAL_PRODUCAO" ('{1}', '{2}', {3}, {4})</value>
+  </data>
+  <data name="PerfilView_Delete" xml:space="preserve">
+    <value>DELETE FROM "{0}"."@CVA_PERFIL_VIEW" WHERE "U_CodPerfil" = '{1}'</value>
+  </data>
+  <data name="PerfilView_GetByPerfil" xml:space="preserve">
+    <value>SELECT
+	"@CVA_PERFIL_VIEW"."Code",
+	"@CVA_PERFIL_VIEW"."U_CodPerfil" 	"CodPerfil",
+	"@CVA_VIEW"."Code"					"CodView",
+	"@CVA_VIEW"."U_CodPai"				"CodPai",
+	"@CVA_VIEW"."U_Descricao"			"DescView",
+	"@CVA_VIEW"."U_Posicao"				"Posicao",
+	CASE WHEN "@CVA_PERFIL_VIEW"."Code" IS NOT NULL
+		THEN 1
+		ELSE 0
+	END "SelectedInt"
+FROM "{0}"."@CVA_VIEW"
+	LEFT JOIN "{0}"."@CVA_PERFIL_VIEW" 
+		ON "@CVA_PERFIL_VIEW"."U_CodView" = "@CVA_VIEW"."Code"
+		AND "@CVA_PERFIL_VIEW"."U_CodPerfil" = '{1}'</value>
+  </data>
+  <data name="SaidaMateriais_ContratosAtivos" xml:space="preserve">
+    <value>select 
+	TO_NVARCHAR(t0."AbsID") as CODE,IFNULL(t0."Descript",t0."BpName") as NAME
+from "{0}"."OOAT" t0 
+inner join "{0}"."CRD8" t1 on t1."CardCode" = t0."BpCode" and t1."DisabledBP" = 'N' and t1."BPLId" in ({1})
+where  CURRENT_TIMESTAMP between t0."StartDate" and t0."EndDate" and t0."Status" != 'E' 
+group by t0."AbsID", t0."Descript",t0."BpName"</value>
+  </data>
+  <data name="SaidaMateriais_GetFilialPadrao" xml:space="preserve">
+    <value>select TO_NVARCHAR(t0."BPLId") as CODE, t2."BPLName" as NAME from "{0}"."USR6" t0 
+inner join "{0}"."OUSR" t1 on t0."UserCode" = t1."USER_CODE" 
+and "AcsDsbldBP" = 'N' and "USER_CODE" = '{1}'
+left join "{0}"."OBPL" t2 on t0."BPLId" = t2."BPLId"</value>
+  </data>
+  <data name="SaidaMateriais_ItemOnHand" xml:space="preserve">
+    <value>select TOP 1 "OnHand", "AvgPrice"  from "{0}"."OITW" where "ItemCode" in ('{1}') and "WhsCode" in ('{2}')</value>
+  </data>
+  <data name="SaidaMateriais_ItensInsumo" xml:space="preserve">
+    <value>
+      SELECT T0."ItemCode" AS CODE, T0."ItemName" AS NAME FROM "{0}"."OITM" T0
+      INNER JOIN "{0}"."OITW" T1 on T0."ItemCode" = T1."ItemCode"
+        AND T1."WhsCode" IN (SELECT "DflWhs" FROM "{0}"."OBPL" WHERE "BPLId" IN ({1})) 
+        AND T1."OnHand" > 0
+      INNER JOIN "{0}"."OITB" T2 ON T2."ItmsGrpCod" = T0."ItmsGrpCod" AND COALESCE(T2."U_LISTAR_PORTAL", 'N') = 'Y' 
+      GROUP BY T0."ItemCode", T0."ItemName"
+      ORDER BY T0."ItemName"
+    </value>
+  </data>
+  <data name="Apontamento_Itens" xml:space="preserve">
+    <value>select t0."ItemCode" as CODE, t0."ItemName" as NAME from "{0}"."OITM" t0
+      inner join "{0}"."OITW" t1 on t0."ItemCode" = t1."ItemCode"
+      and t1."WhsCode" in (select "DflWhs" from "{0}"."OBPL" where "BPLId" in ({1})) 
+      and t1."OnHand" &gt; 0
+      inner join "{0}"."OITB" t2 on t2."ItmsGrpCod" = t0."ItmsGrpCod" and COALESCE(t2."U_LISTAR_PORTAL",'N') = 'Y'
+      --where "U_CVA_Planejar" = 'Y'
+      --and "SellItem" = 'Y'
+      --and "InvntItem" = 'Y'
+      group by t0."ItemCode",t0."ItemName"
+      order by t0."ItemName"
+    </value>
+  </data>
+  <data name="SaidaMateriais_OBPL" xml:space="preserve">
+    <value>select TOP 1 "DflWhs","U_CVA_Dim1Custo", "U_CVA_Dim2Custo" from "{0}"."OBPL" where "BPLId" = '{1}'</value>
+  </data>
+  <data name="Serie_GetDisponiveis" xml:space="preserve">
+    <value>SELECT a."DistNumber" "Serie", a."SysNumber" "SystemSerie"
+  FROM "{0}".OSRN a INNER JOIN "{0}".OITM b ON a."ItemCode" = b."ItemCode"
+              INNER JOIN "{0}".OSRQ c ON a."ItemCode" = c."ItemCode" AND a."SysNumber" = c."SysNumber" AND c."Quantity" &gt; 0
+ WHERE a."ItemCode"='{1}'
+   AND c."WhsCode"='{2}'
+GROUP BY a."SysNumber", a."DistNumber"
+HAVING SUM(c."Quantity") &gt; 0</value>
+  </data>
+  <data name="Serie_GetSerialInfo" xml:space="preserve">
+    <value>SELECT TOP 1 "OSRN"."DistNumber" "Serie", "OSRN"."SysNumber" "SystemSerie"
+FROM "{0}"."ITL1"
+	INNER JOIN	"{0}"."OITL" ON "OITL"."LogEntry" = "ITL1"."LogEntry"
+	INNER JOIN	"{0}"."OSRN" ON "ITL1"."ItemCode" = "OSRN"."ItemCode" and "ITL1"."SysNumber" = "OSRN"."SysNumber"
+WHERE "ITL1"."ItemCode" = '{1}'
+AND "OSRN"."DistNumber" = '{2}'
+GROUP BY "OSRN"."DistNumber", "OSRN"."SysNumber"
+HAVING SUM("ITL1"."Quantity") &gt; 0</value>
+  </data>
+  <data name="UsuarioEtapa_Delete" xml:space="preserve">
+    <value>DELETE FROM "{0}"."@CVA_USUARIO_ETAPA" WHERE "U_CodUsuario" = '{1}'</value>
+  </data>
+  <data name="UsuarioEtapa_GetByUsuario" xml:space="preserve">
+    <value>SELECT
+	"@CVA_USUARIO_ETAPA"."Code",
+	"@CVA_USUARIO_ETAPA"."U_CodUsuario"	"CodUsuario",
+	"ORST"."Code"						"CodEtapa",
+	CASE WHEN "@CVA_USUARIO_ETAPA"."Code" IS NOT NULL
+		THEN 1
+		ELSE 0
+	END "SelectedInt"
+FROM "{0}"."ORST"
+	LEFT JOIN "{0}"."@CVA_USUARIO_ETAPA" 
+		ON "@CVA_USUARIO_ETAPA"."U_CodEtapa" = "ORST"."Code"
+		AND "@CVA_USUARIO_ETAPA"."U_CodUsuario" = '{1}'</value>
+  </data>
+  <data name="Usuario_GetFiliaisByUserCode" xml:space="preserve">
+    <value>SELECT 
+	T1."BPLId",
+	T1."BPLName"
+FROM "{0}"."USR6" T0
+INNER JOIN "{0}"."OBPL" T1 ON T1."BPLId" = T0."BPLId"
+WHERE T0."UserCode" = '{1}'</value>
+  </data>
+  <data name="View_GetPorUsuario" xml:space="preserve">
+    <value>SELECT "@CVA_VIEW"."Code", "@CVA_VIEW"."U_View", "@CVA_VIEW"."U_Descricao", "@CVA_VIEW"."U_Posicao", "@CVA_VIEW"."U_Controller", "@CVA_VIEW"."U_Action","@CVA_VIEW"."U_Icone", "@CVA_VIEW"."U_CodPai"
+FROM "{0}"."@CVA_USUARIO"
+	INNER JOIN "{0}"."@CVA_PERFIL"
+		ON "@CVA_PERFIL"."Code" = "@CVA_USUARIO"."U_CodPerfil"
+	INNER JOIN "{0}"."@CVA_PERFIL_VIEW"
+		ON "@CVA_PERFIL_VIEW"."U_CodPerfil" = "@CVA_PERFIL"."Code"
+	INNER JOIN "{0}"."@CVA_VIEW"
+		ON "@CVA_VIEW"."Code" = "@CVA_PERFIL_VIEW"."U_CodView"
+WHERE "@CVA_USUARIO"."U_Usuario" = '{1}'
+AND "@CVA_PERFIL"."U_Ativo" = 1</value>
+  </data>
+  <data name="View_Fornecedor" xml:space="preserve">
+    <value>
+      SELECT "@CVA_VIEW"."Code", "@CVA_VIEW"."U_View", "@CVA_VIEW"."U_Descricao", "@CVA_VIEW"."U_Posicao", "@CVA_VIEW"."U_Controller", 'Menu' "U_Action", "@CVA_VIEW"."U_Icone", "@CVA_VIEW"."U_CodPai" 
+      FROM "{0}"."@CVA_VIEW" WHERE "Code" IN ('0000000001', '0000000009') ORDER BY "@CVA_VIEW"."Code"
+    </value>
+  </data>
+  <data name="Batches_Control" xml:space="preserve">
+    <value>SELECT TOP 1 "OITM"."ManBtchNum" FROM "{0}"."OITM" WHERE "OITM"."ItemCode" = '{1}'</value>
+  </data>
+  <data name="Colaborador_PCP_GERENTE" xml:space="preserve">
+    <value>select 'PCP' as "DEP", "USER_CODE" as "CODE", IFNULL(t1."E_Mail", t0."email") as "EMAIL"
+FROM "{0}"."OHEM" t0
+INNER JOIN "{0}"."OUSR" t1
+ON t1."USERID" = t0."userId"
+where t0."empID" in (	select TOP 1 "manager"
+					FROM "{0}"."OHEM"
+					INNER JOIN "{0}"."OUSR"
+					ON "OUSR"."USERID" = "OHEM"."userId"
+					where "USER_CODE" = '{1}' 
+					and "Active" = 'Y')
+and t0."Active" = 'Y'
+
+union all
+
+select 'GERENTE', "USER_CODE", IFNULL(t1."E_Mail", t0."email")
+FROM "{0}"."OHEM" t0
+INNER JOIN "{0}"."OUSR" t1
+ON t1."USERID" = t0."userId"
+where t0."empID" in (select TOP 1 "manager"
+					FROM "{0}"."OHEM"
+					INNER JOIN "{0}"."OUSR"
+					ON "OUSR"."USERID" = "OHEM"."userId"
+					where "USER_CODE" in( 	select "USER_CODE"
+											FROM "{0}"."OHEM" t0
+											INNER JOIN "{0}"."OUSR" t1
+											ON t1."USERID" = t0."userId"
+											where t0."empID" in (select TOP 1 "manager"
+																FROM "{0}"."OHEM"
+																INNER JOIN "{0}"."OUSR"
+																ON "OUSR"."USERID" = "OHEM"."userId"
+																where "USER_CODE" = '{1}' 
+																and "Active" = 'Y')
+											and t0."Active" = 'Y') 
+					and "Active" = 'Y')
+and t0."Active" = 'Y'</value>
+  </data>
+  <data name="Usuario_GetUserID" xml:space="preserve">
+    <value>select "USERID" from "{0}"."OUSR" where "USER_CODE" = '{1}'</value>
+  </data>
+  <data name="Apontamento_Planejamento_GetCliente" xml:space="preserve">
+    <value>select c0."CardCode",c0."CardName" from "{0}"."OBPL" b0 inner join "{0}"."OCRD" c0 on b0."U_CVA_Codigo2PN" = c0."CardCode" where b0."BPLId" = '{1}'</value>
+  </data>
+  <data name="Apontamento_Planejamento_GetServico" xml:space="preserve">
+    <value>select "U_ServiceId" "U_CVA_ID_SERVICO", "U_ServiceName" "U_CVA_D_SERVICO"
+from "{0}"."@CVA_GRPSERVICOS"
+inner join "{0}"."@CVA_LIN_GRPSERVICOS" on "@CVA_GRPSERVICOS"."Code" = "@CVA_LIN_GRPSERVICOS"."Code"
+where "U_CVA_TURNO" in ('{1}')
+and "U_ServiceId" in (select "U_CVA_SERVICO" from "{0}"."OWOR" where "DocEntry" in ({2}) group by "U_CVA_SERVICO")
+AND "U_ServiceName" is not null
+group by "U_ServiceId", "U_ServiceName"
+    </value>
+  </data>
+  <data name="Apontamento_Planejamento_GetInfoContrato" xml:space="preserve">
+    <value>select b0."AliasName" as "U_CVA_ID_CLIENTE", b0."AliasName" as "U_CVA_DES_CLIENTE", '1' as "U_CVA_GRPSERVICO",'1' as "U_CVA_DES_GRPSERVICO"
+from "{0}"."OWOR" w0
+inner join "{0}"."OBPL" b0 on w0."Warehouse" = "DflWhs"
+where b0."BPLId" = '{1}'
+and w0."DocEntry" in ('{2}')</value>
+  </data>
+  <data name="SaidaMateriais_ContratosAtivosNumber" xml:space="preserve">
+    <value>select 
+	TO_NVARCHAR(t0."Number") as CODE,IFNULL(t0."Descript",t0."BpName") as NAME
+from "{0}"."OOAT" t0 
+inner join "{0}"."CRD8" t1 on t1."CardCode" = t0."BpCode" and t1."DisabledBP" = 'N' and t1."BPLId" in ({1})
+where  CURRENT_TIMESTAMP between t0."StartDate" and t0."EndDate" and t0."Status" != 'E' 
+group by t0."Number", t0."Descript",t0."BpName"</value>
+  </data>
+  <data name="Apontamento_Planejamento_GetInfoItensContrato" xml:space="preserve">
+    <value>SELECT
+	'Estrutura' as "Tipo",
+	T2."ItemCode" as "ProdItem",
+	T2."ProdName",
+	T0."DocEntry",
+                   T2."DocNum",
+                   T2."PlannedQty" as "QtyPlanejadoOrdemProducao",
+	T0."ItemCode",
+	T1."ItemName",
+	T0."LineNum",
+	T0."PlannedQty" as "QtyPlanejado",
+	T1."InvntryUom" as "Und",
+	--CASE WHEN IFNULL(T3."OnHand",0) = 0 THEN 0 ELSE T3."OnHand" - T3."IsCommited" END as "QtySaldo"
+                   T3."OnHand" as "QtySaldo"
+FROM "{0}"."WOR1" T0
+INNER JOIN "{0}"."OITM" T1 ON T1."ItemCode" = T0."ItemCode"
+INNER JOIN "{0}"."OWOR" T2 ON T2."DocEntry" = T0."DocEntry"
+INNER JOIN "{0}"."OITW" T3 ON T0."ItemCode" = T3."ItemCode" AND T3."WhsCode" = T2."Warehouse"
+WHERE T0."DocEntry" IN ({1})
+and T0."DocEntry" not in (select "BaseEntry" from "{0}"."IGE1" where "BaseEntry" = T0."DocEntry" group by "BaseEntry")
+and T2."Status" = 'R'
+and IFNULL(T2."U_CVA_APO_ZERO",'N') = 'N'
+and IFNULL(T2."U_CVA_SERVICO",'') = '{2}'
+--AND T0."ItemType" = 4
+--AND T1."InvntItem" = 'Y'
+order by T0."DocEntry",T0."VisOrder"</value>
+  </data>
+  <data name="Apontamento_Planejamento_GetInfoItensContratoFechado" xml:space="preserve">
+    <value>SELECT
+	'Estrutura' as "Tipo",
+	T2."ItemCode" as "ProdItem",
+	T2."ProdName",
+	T0."DocEntry",
+                   T2."DocNum",
+                   T2."PlannedQty" as "QtyPlanejadoOrdemProducao",
+	T0."ItemCode",
+	T1."ItemName",
+	T0."LineNum",
+	T0."PlannedQty" as "QtyPlanejado",
+	T1."InvntryUom" as "Und",
+  T0."IssuedQty" as "QtyEfetiva",
+	--CASE WHEN IFNULL(T3."OnHand",0) = 0 THEN 0 ELSE T3."OnHand" - T3."IsCommited" END as "QtySaldo"
+  T3."OnHand" as "QtySaldo",
+  IFNULL(T4."Name", '') "Motivo", 
+  IFNULL(T0."U_CVA_SubJust", '') "Justificativa"
+FROM "{0}"."WOR1" T0
+INNER JOIN "{0}"."OITM" T1 ON T1."ItemCode" = T0."ItemCode"
+INNER JOIN "{0}"."OWOR" T2 ON T2."DocEntry" = T0."DocEntry"
+INNER JOIN "{0}"."OITW" T3 ON T0."ItemCode" = T3."ItemCode" AND T3."WhsCode" = T2."Warehouse"
+LEFT JOIN "{0}"."@CVA_MOTIVO_APO" T4 ON T4."Code" = T0."U_CVA_SubMotivo"
+WHERE T0."DocEntry" IN ({1})
+--and T0."DocEntry" not in (select "BaseEntry" from "{0}"."IGE1" where "BaseEntry" = T0."DocEntry" group by "BaseEntry")
+and (T2."Status" = 'L' or T2."Status"='F')
+--and IFNULL(T2."U_CVA_APO_ZERO",'N') = 'N'
+and IFNULL(T2."U_CVA_SERVICO",'') = '{2}'
+--AND T0."ItemType" = 4
+--AND T1."InvntItem" = 'Y'
+order by T0."DocEntry",T0."VisOrder"</value>
+  </data>
+    
+  <data name="Apontamento_Planejamento_GetQtybkp" xml:space="preserve">
+    <value>select 
+	CASE 
+			WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 0) THEN "U_CVA_SEGUNDA"
+			WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 1) THEN "U_CVA_TERCA"
+			WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 2) THEN "U_CVA_QUARTA"
+			WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 3) THEN "U_CVA_QUINTA"
+			WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 4) THEN "U_CVA_SEXTA"
+			WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 5) THEN "U_CVA_SABADO"
+			WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 6) THEN "U_CVA_DOMINGO"
+	END as "Qty"
+from "{0}"."@CVA_LIN_GRPSERVICOS" t1
+inner join "{0}"."@CVA_GRPSERVICOS" t2 on t2."Code" = t1."Code" and t2."U_CVA_ID_CONTRATO" in (select "Number" from "{0}"."OOAT" where "U_CVA_FILIAL" in ('{4}'))
+where t2."U_ServiceId" in ('{1}')
+and "U_CVA_TURNO" in ('{2}')</value>
+  </data>
+  
+  <data name="Apontamento_Planejamento_GetQtybkp2" xml:space="preserve">
+    <value>
+      SELECT E."U_Quantity" "Qty" FROM "{0}"."OWOR" A
+      INNER JOIN "{0}"."@CVA_PLANEJAMENTO" B ON A."U_CVA_PlanCode" = B."DocEntry"
+      INNER JOIN "{0}"."@CVA_LN_PLANEJAMENTO" D ON D."DocEntry" = B."DocEntry"
+      INNER JOIN "{0}"."@CVA_TURNO" C ON A."U_CVA_Turno" = C."Code"
+      INNER JOIN "{0}"."@CVA_MNP2" E ON E."DocEntry" = D."DocEntry" AND E."LineId" = D."LineId" AND C."Name" = E."U_Shift"
+      WHERE A."U_CVA_SERVICO" in ('{1}')
+      AND C."Name" in ('{2}')
+      AND D."U_Day" = EXTRACT (DAY FROM TO_DATE ('{3}', 'YYYY-MM-DD'))
+	  </value>
+  </data>
+
+  <data name="Apontamento_Planejamento_GetQty" xml:space="preserve">
+    <value>
+      SELECT TOP 1
+          CASE 
+	          WHEN OWOR."StartDate" > '2021-03-31' THEN
+		          (SELECT TOP 1 E."U_Quantity" "Qty" FROM "{0}"."OWOR" A
+		            INNER JOIN "{0}"."@CVA_PLANEJAMENTO" B ON A."U_CVA_PlanCode" = B."DocEntry"
+		            INNER JOIN "{0}"."@CVA_LN_PLANEJAMENTO" D ON D."DocEntry" = B."DocEntry"
+		            INNER JOIN "{0}"."@CVA_TURNO" C ON A."U_CVA_Turno" = C."Code"
+		            INNER JOIN "{0}"."@CVA_MNP2" E ON E."DocEntry" = D."DocEntry" AND C."Name" = E."U_Shift" AND D."U_Day" = E."U_Day"
+		            WHERE A."DocEntry" in ({5})
+		            AND C."Name" in ('{2}')
+                AND A."U_CVA_SERVICO" in ('{1}')
+		            AND D."U_Day" = EXTRACT (DAY FROM TO_DATE ('{3}', 'YYYY-MM-DD')))
+	          ELSE
+		          (SELECT TOP 1
+			          CASE 
+				          WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 0) THEN "U_CVA_SEGUNDA"
+				          WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 1) THEN "U_CVA_TERCA"
+				          WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 2) THEN "U_CVA_QUARTA"
+				          WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 3) THEN "U_CVA_QUINTA"
+				          WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 4) THEN "U_CVA_SEXTA"
+				          WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 5) THEN "U_CVA_SABADO"
+				          WHEN (WEEKDAY (TO_DATE ('{3}', 'YYYY-MM-DD')) = 6) THEN "U_CVA_DOMINGO"
+		          END AS "Qty"
+		          FROM "{0}"."@CVA_LIN_GRPSERVICOS" t1
+		          INNER JOIN "{0}"."@CVA_GRPSERVICOS" t2 ON t2."Code" = t1."Code" AND t2."U_CVA_ID_CONTRATO" IN (SELECT "Number" FROM "{0}"."OOAT" WHERE "U_CVA_FILIAL" IN ('{4}'))
+		          WHERE t2."U_ServiceId" in ('{1}')
+		          AND "U_CVA_TURNO" in ('{2}'))
+          END "Qty"
+      FROM "{0}".OWOR WHERE OWOR."DocEntry" IN({5})
+    </value>
+  </data>
+
+  <data name="Apontamento_Planejamento_Key" xml:space="preserve">
+    <value>SELECT COALESCE(MAX(TO_NUMBER("Code")) + 1, 1) as "Key" FROM "{0}"."@CVA_APONTAMENTO_PL"</value>
+  </data>
+  <data name="Apontamento_Planejamento_Insert" xml:space="preserve">
+    <value>insert into "{0}"."@CVA_APONTAMENTO_PL" values('{1}','{1}','{2}',{3},'{4}','{5}','{6}',{7},{8},'{9}',CURRENT_TIMESTAMP,'O',null, null)</value>
+  </data>
+  <data name="Apontamento_Planejamento_Linhas_Insert" xml:space="preserve">
+    <value>insert into "{0}"."@CVA_APONTAMENTO_PL1" values('{1}','{1}',{2},{3},'{4}','{5}','{6}',{7},{8})</value>
+  </data>
+  <data name="Apontamento_Planejamento_Linhas_Key" xml:space="preserve">
+    <value>SELECT COALESCE(MAX(TO_NUMBER("Code")) + 1, 1) as "Key" FROM "{0}"."@CVA_APONTAMENTO_PL1"</value>
+  </data>
+  <data name="Apontamento_Planejamento_CheckDay" xml:space="preserve">
+    <value>select 
+	(select top 1 t0.*
+	from (select TOP 1 TO_DATE("DocDate") as lastDay
+		from "{0}"."OIGE"
+		where "DataSource" = 'O'
+		union 
+		select TOP 1 TO_DATE("StartDate")
+		from "{0}"."OWOR"
+		where IFNULL("U_CVA_APO_ZERO",'N') = 'Y'
+		and "Status" in ('R','L')
+		) t0
+	order by lastDay desc) lastDay
+	,(select SUM(yesterday)
+		from (
+			select count(*) as yesterday
+			from "{0}"."OIGE"
+			where "DataSource" = 'O'
+			and "DocDate" = ADD_DAYS(TO_DATE('{1}'),-1)
+			union
+			select count(*)
+			from "{0}"."OWOR"
+			where IFNULL("U_CVA_APO_ZERO",'N') = 'Y'
+			and "StartDate" = ADD_DAYS(TO_DATE('{1}'),-1)
+			and "Status" in ('R','L')
+		)
+	) yesterday 
+from dummy</value>
+  </data>
+  <data name="Apontamento_Planejamento_GetPainel" xml:space="preserve">
+    <value>call "{0}"."SP_CVA_PROC_PAINEL_APONTAMENTO"({1},TO_DATE('{2}'),TO_DATE('{3}'))</value>
+  </data>
+  <data name="Apontamento_Planejamento_Contrato" xml:space="preserve">
+    <value>select 
+	TO_NVARCHAR(t0."Number") as CODE,IFNULL(t0."Descript",t0."BpName") as NAME
+from "{0}"."OOAT" t0 
+inner join "{0}"."CRD8" t1 on t1."CardCode" = t0."BpCode" and t1."DisabledBP" = 'N' and t1."BPLId" in ({1})
+where  CURRENT_TIMESTAMP between t0."StartDate" and t0."EndDate" and t0."Status" != 'E' 
+--and t0."Number" in (select "U_CVA_ID_CONTRATO" from "{0}"."@CVA_PLANEJAMENTO" group by "U_CVA_ID_CONTRATO")
+group by t0."Number", t0."Descript",t0."BpName"</value>
+  </data>
+  <data name="OfertaCompra_Index" xml:space="preserve">
+    <value>  
+       SELECT "DocNum", TO_VARCHAR(TO_DATE("DocDate"), 'YYYY-MM-DD') "DocDate", "CardCode", CASE WHEN "Status" = '0' THEN 'Aguardando preenchimento'
+          WHEN "Status" = '1' THEN 'Enviada para Avaliação'
+          WHEN "Status" = '2' THEN 'Solicitado revisão pelo Comprador'
+          WHEN "Status" = '3' THEN 'Aguardando Revisão'
+          WHEN "Status" = '4' THEN 'Aprovada'
+          WHEN "Status" = '5' THEN 'Reprovada'
+          WHEN "Status" = '6' THEN 'Recusada'
+          WHEN "Status" = '7' THEN 'Aprovada Parcialmente'
+          ELSE 'Cancelada' END "Status", "Filial" FROM (SELECT "DocNum", TO_VARCHAR(TO_DATE("DocDate"), 'YYYY-MM-DD') "DocDate", A."CardCode", 
+          CASE WHEN CURRENT_DATE &gt;"DocDueDate" THEN '9' ELSE "U_CVA_Status" END "Status", C."BPLName" "Filial" 
+       FROM "{0}"."OPQT" A
+          INNER JOIN "{0}"."OBPL" C ON C."BPLId" = A."BPLId"
+          INNER JOIN "{0}"."OCRD" D ON C."U_CVA_Codigo2PN" = D."CardCode"
+       WHERE "OnlineQuo" = 'Y' {1}) "Table"
+    </value>
+  </data>
+  <data name="OfertaCompra_Detail" xml:space="preserve">
+    <value>
+      SELECT A."DocEntry", "DocNum", TO_VARCHAR(TO_DATE("DocDate"), 'YYYY-MM-DD') "DocDate", TO_VARCHAR(TO_DATE("DocDueDate"), 'YYYY-MM-DD') "DocDueDate", TO_VARCHAR(TO_DATE("ReqDate"), 'YYYY-MM-DD') "ReqDate",
+        COALESCE("Comments", '') "Comments", A."CardCode", C."USER_CODE" "CompradorNome", 
+        D."Name" "FornecedorNome", D."E_MailL" "FornecedorEmail", CASE WHEN CURRENT_DATE &gt; A."DocDueDate" THEN '9' ELSE A."U_CVA_Status" END "Status",
+        "U_CVA_ObsRevisao" "ObsRevisao", E."GroupNum", F."BPLName" "Filial", H."AddrType" "TipoLogradouro", H."Street" "Logradouro", H."StreetNo" "Numero", 
+        IFNULL(H."Building", '') "Complemento", H."City" "Cidade", H."State" "Estado", G."CardName"
+      FROM "{0}"."OPQT" A
+        INNER JOIN "{0}"."OHEM" B ON A."OwnerCode" = B."empID"
+        INNER JOIN "{0}"."OUSR" C ON C."USERID" = B."userId"
+        INNER JOIN "{0}"."OCPR" D ON D."CntctCode" = A."CntctCode"
+        INNER JOIN "{0}"."OCRD" E ON E."CardCode" = A."CardCode"
+        INNER JOIN "{0}"."OBPL" F ON F."BPLId" = A."BPLId"
+  	    INNER JOIN "{0}"."OCRD" G ON F."U_CVA_Codigo2PN" = G."CardCode"
+        INNER JOIN "{0}"."CRD1" H ON G."CardCode" = H."CardCode" AND H."Address" = 'Entrega'
+      WHERE A."DocNum" = {1} AND A."OnlineQuo" = 'Y'
+    </value>
+  </data>
+  <data name="OfertaCompra_DetailItens" xml:space="preserve">
+    <value>
+      SELECT B."DocEntry", B."LineNum", B."ItemCode", b."Dscription", b."PQTReqQty", 
+          b."Quantity", TO_VARCHAR(TO_DATE(b."ShipDate"), 'YYYY-MM-DD') "ShipDate", TO_VARCHAR(b."Price") "Price", 
+         TO_VARCHAR(b."Quantity" * b."Price") "ValorTotal", C."InvntryUom" "UnidadeMedida", 
+         CONCAT(B."UomEntry", CONCAT('|', B."UomCode")) "UomEntry", 
+         CASE WHEN D."BaseEntry" IS NULL THEN '' ELSE 'Aprovado' END "StatusItem", B."FreeTxt", IFNULL(B."U_CVA_LeadTime", 0) "LeadTime" FROM "{0}"."OPQT" A
+      INNER JOIN "{0}"."PQT1" B ON A."DocEntry" = B."DocEntry"
+      INNER JOIN "{0}"."OITM" C ON B."ItemCode" = C."ItemCode"
+      LEFT JOIN "{0}"."POR1" D ON D."BaseEntry" = B."DocEntry" AND D."ItemCode" = B."ItemCode"
+      WHERE A."DocNum" = {1} AND A."OnlineQuo" = 'Y' ORDER BY B."LineNum"
+    </value>
+  </data>
+  <data name="OfertaCompra_CondicaoPagamento" xml:space="preserve">
+    <value>
+       SELECT TO_VARCHAR("GroupNum") "Code", "PymntGroup" "Name" FROM "{0}"."OCTG"
+    </value>
+  </data>
+  <data name="OfertaCompra_Fornecedor" xml:space="preserve">
+    <value>
+      SELECT "CardCode" "Code", "CardName" "Name" FROM "{0}"."OCRD" WHERE "GroupCode" = 101 AND "CardName" IS NOT NULL ORDER BY "Name"
+    </value>
+  </data>
+  <data name="OfertaCompra_CodigosUM" xml:space="preserve">
+    <value>
+      SELECT CONCAT(STRING_AGG(E."UomEntry", ';'), CONCAT('|', STRING_AGG(E."UomName", ';'))) "UMs" FROM "{0}"."OITM" C 
+        INNER JOIN "{0}"."OUGP" D ON C."UgpEntry" = D."UgpEntry"
+        INNER JOIN "{0}"."UGP1" F ON F."UgpEntry" = D."UgpEntry"
+        INNER JOIN "{0}"."OUOM" E ON E."UomEntry" = F."UomEntry"
+      WHERE C."ItemCode" = '{1}'
+    </value>
+  </data>
+  <data name="OfertaCompra_AtualizaStatus" xml:space="preserve">
+    <value>
+      UPDATE "{0}"."OPQT" SET "U_CVA_Status" = '{1}' WHERE "DocNum" = {2}
+    </value>
+  </data>
+  <data name="OfertaCompra_AtualizaObsRevisao" xml:space="preserve">
+    <value>
+      UPDATE "{0}"."OPQT" SET "U_CVA_ObsRevisao" = '{1}' WHERE "DocNum" = {2}
+    </value>
+  </data>
+  <data name="OfertaCompra_AtualizaFornecimento" xml:space="preserve">
+    <value>
+       UPDATE "{0}"."PQT1" SET "unitMsr" = '{1}', "NumPerMsr" = '{2}', "UomEntry" = '{3}', "UomCode" = '{4}', "InvQty" = '{5}', "OpenInvQty" = '{6}', "CodeBars" = '{7}', "U_CVA_LeadTime" = {10} WHERE "DocEntry" = {8} AND "LineNum" = {9}
+    </value>
+  </data>
+  <data name="OfertaCompra_RetornaFornecimento" xml:space="preserve">
+    <value>
+      SELECT CONCAT(F."AltQty", CONCAT('|', F."BaseQty")) "Result" FROM "{0}"."OUGP" D
+        INNER JOIN "{0}"."UGP1" F ON F."UgpEntry" = D."UgpEntry"
+        INNER JOIN "{0}"."OUOM" E ON E."UomEntry" = F."UomEntry"
+      WHERE E."UomEntry" = {1}
+    </value>
+  </data>
+  <data name="OfertaCompra_RetornaFiliais" xml:space="preserve">
+    <value>
+      SELECT TO_VARCHAR("BPLId") "Code", "BPLName" "Name" FROM "{0}"."OBPL" ORDER BY "BPLName"
+    </value>
+  </data>
+  <data name="Usuario_Fornecedor" xml:space="preserve">
+    <value>
+      SELECT TOP 1 "CardCode" "Code", "CardCode" "Usuario", "Password" "Senha", 1 "AtivoInt", '0000000003' "CodPerfil" FROM "{0}"."OCRD" WHERE "E_Mail" = '{1}' AND "Password" = '{2}'
+    </value>
+  </data>
+  <data name="Apontamento_Planejamento_ItensList" xml:space="preserve">
+    <value>select "ItemCode", "ItemName" from "{0}"."OITM" t0 
+inner join "{0}"."OITB" t1 on t1."ItmsGrpCod" = t0."ItmsGrpCod" and COALESCE(t1."U_LISTAR_PORTAL",'N') = 'Y'
+and t0."U_CVA_Planejar" = 'Y'</value>
+  </data>
+  <data name="Apontamento_Planejamento_GetMotivo" xml:space="preserve">
+    <value>select TO_NVARCHAR("Code") as "CODE", "Name" as "NAME" from "{0}"."@CVA_MOTIVO_APO" where "Code" = '{1}'</value>
+  </data>
+  <data name="Apontamento_Planejamento_Motivo" xml:space="preserve">
+    <value>select TO_NVARCHAR("Code") as "CODE", "Name" as "NAME" from "{0}"."@CVA_MOTIVO_APO"</value>
+  </data>
+  <data name="OrdemProducao_OpenOrders" xml:space="preserve">
+    <value>select CONCAT(CONCAT(STRING_AGG(w0."DocEntry", ','),'|'),t1."Name") as CODE, t1."Name" as NAME
+from "{0}"."OWOR" w0
+inner join "{0}"."@CVA_TURNO" t1 on w0."U_CVA_Turno" = t1."Code"
+where w0."Warehouse" in(select "DflWhs" from "{0}"."OBPL" where "BPLId" in ('{1}'))
+and (w0."Status" = 'R' or w0."Status" = 'L')
+and w0."StartDate" = {2} 
+and w0."PlannedQty" &gt; 0
+--and w0."PlannedQty" &gt; ("CmpltQty" + "RjctQty")
+--and w0."DocEntry" not in (select "BaseEntry" from "{0}"."IGE1" where "BaseEntry" = w0."DocEntry" group by "BaseEntry")
+--and IFNULL(w0."U_CVA_APO_ZERO",'N') = 'N'
+and IFNULL(w0."U_CVA_SERVICO",'') != ''
+group by t1."Name"
+order by t1."Name"</value>
+  </data>
+  <data name="ReposicaoInsumo_GetMotivo" xml:space="preserve">
+    <value>select TO_NVARCHAR("Code") as "CODE", "Name" as "NAME" from "{0}"."@CVA_MOTIVO_REPO" where "Code" = '{1}'</value>
+    <value>select TO_NVARCHAR("Code") as "CODE", "Name" as "NAME" from "{0}"."@CVA_MOTIVO_REPO" where "Code" = '{1}'</value>
+  </data>
+  <data name="ReposicaoInsumo_Motivo" xml:space="preserve">
+    <value>select TO_NVARCHAR("Code") as "CODE", "Name" as "NAME" from "{0}"."@CVA_MOTIVO_REPO"</value>
+  </data>
+  <data name="SaidaMateriais_ReportPosicaoEstoque" xml:space="preserve">
+    <value>select t0."ItemCode" as "InsumoCode", t0."ItemName" as "InsumoName", t1."OnHand" as "Qty", t1."AvgPrice" as "Custo"
+from "{0}"."OITM" t0
+inner join "{0}"."OITW" t1 on t0."ItemCode" = t1."ItemCode"
+inner join "{0}"."OITB" t2 on t2."ItmsGrpCod" = t0."ItmsGrpCod" and COALESCE(t2."U_LISTAR_PORTAL",'N') = 'Y' and "U_CVA_Planejar" = 'Y'
+and t1."WhsCode" in(select TOP 1 "DflWhs" from "{0}"."OBPL" where "BPLId" = '{1}')
+and t1."OnHand" &gt; 0
+order by t0."ItemCode"</value>
+  </data>
+  <data name="Apontamento_Planejamento_ItemInfo" xml:space="preserve">
+    <value>SELECT
+	T1."ItemCode",
+	T1."ItemName",
+	T1."InvntryUom" as "Und",
+	T3."OnHand" as "QtySaldo"
+FROM "{0}"."OITM" T1
+INNER JOIN "{0}"."OITW" T3 ON T3."ItemCode" = T1."ItemCode"
+where T1."ItemCode" = '{1}'
+and  T3."WhsCode" in (select "DflWhs" from "{0}"."OBPL" where "BPLId" in ('{2}'))</value>
+  </data>
+  <data name="Apontamento_Planejamento_CheckDuplicate" xml:space="preserve">
+    <value>select COUNT("BaseEntry") from "{0}"."IGE1" where "BaseEntry" = '{1}' group by "BaseEntry"</value>
+  </data>
+  <data name="OrdemProducao_AllOrders" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SaidaMateriais_ItemOnHandBPLId" xml:space="preserve">
+    <value>select TOP 1 "OnHand", "AvgPrice"  from "{0}"."OITW" where "ItemCode" in ('{1}') and "WhsCode" in (select TOP 1 "DflWhs" from "{0}"."OBPL" where "BPLId" = '{2}')</value>
+  </data>
+  <data name="ServicoExtra_AttachmentsPath" xml:space="preserve">
+    <value>select "AttachPath" from "{0}"."OADP"</value>
+  </data>
+  <data name="SaidaMateriais_ItensInsumoSellInv" xml:space="preserve">
+    <value>
+      select t0."ItemCode" as CODE, t0."ItemName" as NAME from "{0}"."OITM" t0
+      inner join "{0}"."OITW" t1 on t0."ItemCode" = t1."ItemCode"
+      and t1."WhsCode" in (select "DflWhs" from "{0}"."OBPL" where "BPLId" in ({1})) 
+      --and t1."OnHand" &gt;= 0
+      inner join "{0}"."OITB" t2 on t2."ItmsGrpCod" = t0."ItmsGrpCod" and COALESCE(t2."U_LISTAR_PORTAL",'N') = 'Y'
+      --where "U_CVA_Planejar" = 'Y'
+      --and "SellItem" = 'Y'
+      --and "InvntItem" = 'Y'
+      group by t0."ItemCode",t0."ItemName"
+      order by t0."ItemName"
+    </value>
+  </data>
+  <data name="ServicoExtra_GetBlanketId" xml:space="preserve">
+    <value>select o0."AbsID" from "{0}"."OOAT" o0 inner join "{0}"."OAT1" o1
+on o0."AbsID" = o1."AgrNo"
+and "Status" = 'A'
+and CURRENT_TIMESTAMP between o0."StartDate" and o0."EndDate"
+and "BpCode" = '{1}'
+and "Cancelled" = 'N'
+and "ItemCode" in (select "ItemCode" from "{0}"."OITM" where UPPER("ItemName") = 'SERVICO EXTRA' and "SellItem" = 'Y')
+and "LineStatus" = 'O'
+group by o0."AbsID"</value>
+  </data>
+  <data name="ServicoExtra_GetItemCodeServicoExtra" xml:space="preserve">
+    <value>select "ItemCode" from "{0}"."OITM" where UPPER("ItemName") = 'SERVICO EXTRA' and "SellItem" = 'Y'</value>
+  </data>
+  <data name="Terceiros_Get" xml:space="preserve">
+    <value>select ap0."Code", ap0."Name",ap0."U_FILIAL",ap0."U_DATA",ap0."U_TURNO", ap0."U_SERVICO", ap0."U_QTYREF", ap0."U_QTYPLAN" ,ap0."U_USERPORTAL"  
+from "{0}"."@CVA_APTO_TERCEIROS" ap0
+where ap0."U_FILIAL" = '{1}'
+and ap0."U_DATA" = '{2}'
+and ap0."U_TURNO" = '{3}'
+and ap0."U_SERVICO" = '{4}'</value>
+  </data>
+  <data name="Terceiros_GetAll_SAP" xml:space="preserve">
+    <value>select c0."CardCode",c0."CardFName" as "CardName",c0."U_CVA_CNPJ" 
+from "{0}"."OCRD" c0
+inner join "{0}"."CRD8" c8 on c8."CardCode" = c0."CardCode" 
+and c8."DisabledBP" = 'N' 
+and c8."BPLId" in ('{1}')
+and IFNULL(c0."U_CVA_TERCEIROS",'N') = 'Y'
+and c0."CardType"='C'
+
+    </value>
+  </data>
+  <data name="Terceiros_Line_Get" xml:space="preserve">
+    <value>select "LineId","U_CARDCODE",c0."CardName" as "U_CARDNAME","U_QTYAPT" 
+from "{0}"."@CVA_APTO_TERCEIROS1" ap1
+inner join "{0}"."OCRD" c0 
+on ap1."U_CARDCODE" = c0."CardCode"
+where "Code" = '{1}'</value>
+  </data>
+  <data name="Terceiros_ClienteCode" xml:space="preserve">
+    <value>select c0."CardCode",c0."CardFName" as "CardName",c0."U_CVA_CNPJ" from "{0}"."OCRD" c0 where c0."CardCode" in ('{1}') and c0."CardType"='C'</value>
+  </data>
+  <data name="Terceiros_GetNextValue" xml:space="preserve">
+    <value>SELECT COALESCE(MAX(TO_NUMBER("Code")) + 1, 1)  FROM "{0}"."@CVA_APTO_TERCEIROS"</value>
+  </data>
+  <data name="Apontamento_ItemOnHandBPLId" xml:space="preserve">
+    <value>select TOP 1 t0."OnHand", t0."AvgPrice", i0."ItemName", i0."InvntryUom" as "Und"  from "{0}"."OITW" t0
+inner join "{0}"."OITM" i0 on t0."ItemCode" = i0."ItemCode"
+where t0."ItemCode" in ('{1}') and t0."WhsCode" in (select TOP 1 "DflWhs" from "{0}"."OBPL" where "BPLId" = '{2}')</value>
+  </data>
+  <data name="Terceiros_GetNextValue2" xml:space="preserve">
+    <value>SELECT (SELECT COALESCE(MAX(TO_NUMBER("Code")) + 1, 1)  FROM "{0}"."@CVA_APTO_TERCEIROS") as "Key", "{0}"."U_CVA_APTO_TERCEIROS_S".NEXTVAL AS "DocEntry" FROM DUMMY</value>
+  </data>
+  <data name="Apontamento_Planejamento_StatusUser" xml:space="preserve">
+    <value>select "U_CVA_BLOQUEIO_APTO","U_CVA_VALDTMP_APTO" from "{0}".OHEM where "userId" in (select "USERID" from "{0}".OUSR where "USER_CODE" = '{1}')</value>
+  </data>
+  <data name="ServicoExtra_GetByClient" xml:space="preserve">
+    <value>
+      SELECT COUNT(B."AgrNo") FROM "{0}"."OOAT" A 
+      INNER JOIN "{0}"."OAT1" B ON A."AbsID" = B."AgrNo"
+      WHERE A."BpCode" = '{1}' AND B."ItemCode" = '10.02.25.030.00'
+    </value>
+  </data>
+  <data name="GetTiposSaida" xml:space="preserve">
+    <value>
+      SELECT "Code" "Value", "Name" "Text" FROM "{0}"."@CVA_TIPO_SAIDA"
+    </value>
+  </data>
+  <data name="ServicoExtra_ItensInsumo" xml:space="preserve">
+    <value>
+      SELECT B."ItemCode" "CODE", B."ItemName" "NAME" FROM "{0}".OOAT A
+	    INNER JOIN "{0}".OAT1 B ON B."AgrNo" = A."AbsID"
+	    WHERE A."U_CVA_FILIAL" = '{1}'
+    </value>
+  </data>
+  <data name="Reposicao_ItensInsumo" xml:space="preserve">
+    <value>
+      SELECT T0."ItemCode" AS CODE, T0."ItemName" AS NAME FROM "{0}"."OITM" T0
+        INNER JOIN "{0}"."OITW" T1 on T0."ItemCode" = T1."ItemCode"
+  	      AND T1."WhsCode" IN (SELECT "DflWhs" FROM "{0}"."OBPL" WHERE "BPLId" IN ({1})) 
+        INNER JOIN "{0}"."OITB" T2 ON T2."ItmsGrpCod" = T0."ItmsGrpCod" AND COALESCE(T2."U_LISTAR_PORTAL", 'N') = 'Y'
+      WHERE T0."PrchseItem" = 'Y' AND T0."frozenFor" = 'N' AND T0."BuyUnitMsr" != ''
+      GROUP BY T0."ItemCode", T0."ItemName"
+      ORDER BY T0."ItemName"
+    </value>
+  </data>
+	<data name="Apontamento_GetIDApontamento" xml:space="preserve">
+		<value>
+			SELECT COALESCE(STRING_AGG("U_CVA_APO"), '') FROM (
+			SELECT TOP 1 "U_CVA_APO" FROM "{0}".OWOR 
+			INNER JOIN "{0}".OBPL ON OWOR."Warehouse" = OBPL."DflWhs"
+			INNER JOIN "{0}"."@CVA_TURNO" ON "@CVA_TURNO"."Code" = OWOR."U_CVA_Turno"
+			WHERE OWOR."StartDate" = '{1}' 
+				AND "@CVA_TURNO"."Name" = '{2}' 
+				AND OWOR."U_CVA_SERVICO" = {3} 
+				AND OBPL."BPLId" = {4}
+				AND "U_CVA_APO" != '')
+		</value>
+	</data>
+</root>

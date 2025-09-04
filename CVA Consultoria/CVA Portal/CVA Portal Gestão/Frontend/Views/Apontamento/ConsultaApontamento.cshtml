@@ -1,0 +1,147 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/Loading")
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Diário</a></li>
+    <li><a href="#">Apontamentos</a></li>
+    <li class="active">Consultar</li>
+</ul>
+<div class="page-content-wrap" ng-controller="NoteExtractedController" ng-init="LoadUserView()">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Consultar <strong> Apontamentos</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="page-content-wrap">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Filtros </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="col-md-4">
+                                                    <label class="control-label">Cliente</label>
+                                                    <div class="input-group">
+                                                        <p id="loading00" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                                        <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                                        <select class="form-control" ng-model="note.ClientId" ng-options="selected.Id as selected.Name for selected in ClientList">
+                                                            <option value="">Selecione</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label class="control-label">Projeto</label>
+                                                    <div class="input-group">
+                                                        <p id="loading01" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                                        <span class="input-group-addon"><span class="fa fa-globe"></span></span>
+                                                        <select name="status" class="form-control" ng-model="note.ProjectId" ng-options="selected.Id as selected.Codigo + ' - ' + selected.Tag + ' ' + selected.Nome for selected in ProjectList">
+                                                            <option value="">Selecione</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label class="control-label">De</label>
+                                                    <input type="date" id="initialDate" class="form-control" ng-model="note.InitialDate" />
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label class="control-label">Até</label>
+                                                    <input type="date" id ="finishDate" class="form-control" ng-model="note.FinishDate" />
+                                                </div>
+                                                <div class="col-md-4" style="padding-top:5px;">
+                                                    <label class="control-label"> </label>
+                                                    <div class="input-group">
+                                                        <button ng-click="Search()" type="button" class="btn btn-info pull-right"><span class="fa fa-search"></span> Pesquisar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page-content-wrap">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Resultados </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control" ng-model="totalHours" disabled="disabled" />
+                                        </div>
+                                        <div class="row" id="exportable">
+                                            <table class="table" id="table-export">
+                                                <thead>
+                                                    <tr>
+                                                        <td><b>Data</b></td>
+                                                        <td><b>Projeto</b></td>
+                                                        <td><b>Descrição</b></td>
+                                                        <td><b>Ticket</b></td>
+                                                        <td><b>Especialidade</b></td>
+                                                        <td><b>Solicitante</b></td>
+                                                        <td ng-hide="hideCollumn"><b>Início</b></td>
+                                                        <td ng-hide="hideCollumn"><b>Intervalo</b></td>
+                                                        <td ng-hide="hideCollumn"><b>Saída</b></td>
+                                                        <td><b>Total</b></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="note in TableList">
+                                                        <td>{{note.Date | date: "dd/MM/yy"}}</td>
+                                                        <td>{{note.ProjectCode}} - {{note.ProjectTag}} {{note.ProjectName}}</td>
+                                                        <td>{{note.Description}}</td>
+                                                        <td>{{note.TicketId}}</td>
+                                                        <td>{{note.Specialty}}</td>
+                                                        <td>{{note.Requester}}</td>
+                                                        <td ng-hide="hideCollumn">{{note.InitHour | date:'HH:mm'}}</td>
+                                                        <td ng-hide="hideCollumn">{{note.IntervalHour | date:'HH:mm'}}</td>
+                                                        <td ng-hide="hideCollumn">{{note.FinishHour | date:'HH:mm'}}</td>
+                                                        <td><b>{{note.TotalLine}}</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h3><b>Total de horas: </b></h3></td>
+                                                        <td colspan="7"><h3><b>{{TotalHours}}</b></h3></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page-content-wrap">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Exportar </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <button class="btn btn-info" ng-click="ExportarExcel()"><i class="fa fa-table"></i>Excel</button>
+                                                <button class="btn btn-info" ng-click="ExportarPDF()"><i class="fa fa-paste"></i>Pdf</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

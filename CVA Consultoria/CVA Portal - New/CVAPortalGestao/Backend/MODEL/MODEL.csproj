@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B73F84D1-4795-4CAC-AE20-3D39FDFAAF49}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MODEL</RootNamespace>
+    <AssemblyName>MODEL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ActivityModel.cs" />
+    <Compile Include="Classes\ActivityTypeModel.cs" />
+    <Compile Include="Classes\AddressModel.cs" />
+    <Compile Include="Classes\Calendar1Model.cs" />
+    <Compile Include="Classes\CalendarModel.cs" />
+    <Compile Include="Classes\ChangeRequestModel.cs" />
+    <Compile Include="Classes\AuthorizedDayModel.cs" />
+    <Compile Include="Classes\ClientModel.cs" />
+    <Compile Include="Classes\CollaboratorModel.cs" />
+    <Compile Include="Classes\HoursLimitModel.cs" />
+    <Compile Include="Classes\AlterationModel.cs" />
+    <Compile Include="Classes\MessageModel.cs" />
+    <Compile Include="Classes\NoteFilterModel.cs" />
+    <Compile Include="Classes\NotePeriod.cs" />
+    <Compile Include="Classes\ProjectFilterModel.cs" />
+    <Compile Include="Classes\ResourceModel.cs" />
+    <Compile Include="Classes\SoldHoursModel.cs" />
+    <Compile Include="Classes\SpecialtyTypeModel.cs" />
+    <Compile Include="Classes\StatusReportModel.cs" />
+    <Compile Include="Classes\CollaboratorTypeModel.cs" />
+    <Compile Include="Classes\SpecialtyModel.cs" />
+    <Compile Include="Classes\ExpenseTypeModel.cs" />
+    <Compile Include="Interface\IModel.cs" />
+    <Compile Include="Classes\AuthorizedHoursModel.cs" />
+    <Compile Include="Classes\PeriodModel.cs" />
+    <Compile Include="Classes\ContactModel.cs" />
+    <Compile Include="Classes\AccountMailModel.cs" />
+    <Compile Include="Enumerators\ObjectType.cs" />
+    <Compile Include="Classes\ExpenseModel.cs" />
+    <Compile Include="Classes\FilesModel.cs" />
+    <Compile Include="Classes\GenreModel.cs" />
+    <Compile Include="Classes\MaritalStatusModel.cs" />
+    <Compile Include="Classes\ConfigNoteModel.cs" />
+    <Compile Include="Classes\NoteModel.cs" />
+    <Compile Include="Classes\SubPeriodModel.cs" />
+    <Compile Include="Classes\PoliticExpenseModel.cs" />
+    <Compile Include="Classes\ProjectParametersModel.cs" />
+    <Compile Include="Classes\ResourceSpecialtyModel.cs" />
+    <Compile Include="Classes\OportunittyContactModel.cs" />
+    <Compile Include="Classes\OportunittyFinancialModel.cs" />
+    <Compile Include="Classes\MemberModel.cs" />
+    <Compile Include="Classes\OpportunityModel.cs" />
+    <Compile Include="Classes\ProjectStepModel.cs" />
+    <Compile Include="Classes\OportunittyObservationModel.cs" />
+    <Compile Include="Classes\OportunittyStepsModel.cs" />
+    <Compile Include="Classes\PercentProjectModel.cs" />
+    <Compile Include="Classes\PricingItemModel.cs" />
+    <Compile Include="Classes\PricingModel.cs" />
+    <Compile Include="Classes\ProjectTypeModel.cs" />
+    <Compile Include="Classes\ProjectModel.cs" />
+    <Compile Include="Classes\SpecialtyRuleModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Status\StatusEnum.cs" />
+    <Compile Include="Classes\StatusModel.cs" />
+    <Compile Include="Classes\StepItemModel.cs" />
+    <Compile Include="Classes\StepModel.cs" />
+    <Compile Include="Classes\UfModel.cs" />
+    <Compile Include="Classes\AMSTicketModel.cs" />
+    <Compile Include="Classes\TicketModel.cs" />
+    <Compile Include="Classes\UnitMeterModel.cs" />
+    <Compile Include="Classes\UserViewModel.cs" />
+    <Compile Include="Classes\ProfileModel.cs" />
+    <Compile Include="Classes\UserModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

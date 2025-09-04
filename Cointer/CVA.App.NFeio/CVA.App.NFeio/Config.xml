@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+  <ApiUrl>https://api.nfe.io/v1/companies/{0}/serviceinvoices</ApiUrl>
+  <ExcelSheet id="Savassi">
+    <CompanyId>5e7917758a31981804174029</CompanyId>
+    <ApiKey>4HWptpqVc9rG8MUHl8f1Hm4LOfwE4dCW15BEFOe9IGA9Q1EH7NENQpz3uH1KyasrwtO</ApiKey>
+    <CityServiceCode>080200188</CityServiceCode>
+    <FederalServiceCode>8.02</FederalServiceCode>
+    <CnaeCode>4761001</CnaeCode>
+  </ExcelSheet>
+  <ExcelSheet id="Santos">
+    <CompanyId>5e7927460e7a1b26b003b816</CompanyId>
+    <ApiKey>4HWptpqVc9rG8MUHl8f1Hm4LOfwE4dCW15BEFOe9IGA9Q1EH7NENQpz3uH1KyasrwtO</ApiKey>
+    <CityServiceCode>8028593700</CityServiceCode>
+    <FederalServiceCode>8.02</FederalServiceCode>
+    <CnaeCode>8593700</CnaeCode>
+  </ExcelSheet>
+  <ExcelSheet id="Rio">
+    <CompanyId>123</CompanyId>
+    <ApiKey>123</ApiKey>
+    <CityServiceCode>123</CityServiceCode>
+    <FederalServiceCode>123</FederalServiceCode>
+    <CnaeCode>123</CnaeCode>
+  </ExcelSheet>
+</Config>

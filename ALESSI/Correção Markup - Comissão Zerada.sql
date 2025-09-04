@@ -1,0 +1,31 @@
+DECLARE @NrDoc NVARCHAR(60)
+DECLARE @CardCode NVARCHAR(60)
+DECLARE @ItemCode NVARCHAR(60)
+DECLARE @SlpCode NVARCHAR(60)
+DECLARE @comissao numeric(19, 6)
+
+DECLARE cur CURSOR FOR
+SELECT NRDOCUMENTO, COD, ITEM, IDVENDEDOR FROM CVA_MARKUP
+where PERCOMISSAO = 0
+AND VENDEDOR NOT IN ('GERAL', 'AVARIA TRANSPORTADORA')
+AND VENDEDOR NOT LIKE '%FABRICA%'
+
+OPEN cur
+FETCH NEXT FROM cur INTO 	@NrDoc,@CardCode,@ItemCode,@SlpCode
+WHILE @@FETCH_STATUS = 0  
+BEGIN 
+	EXEC SBOAlessi.[dbo].[spc_CVA_WebAPIGetComissao] @cardCode,@ItemCode,@SlpCode, @comissao output 
+	SELECT @NrDoc,@CardCode,@ItemCode,@SlpCode, @comissao
+
+	UPDATE CVA_MARKUP
+	SET PERCOMISSAO = @Comissao
+	WHERE NRDOCUMENTO = @NrDoc
+	AND COD = @CardCode
+	AND ITEM = @ItemCode
+	AND IDVENDEDOR = @SlpCode
+
+	FETCH NEXT FROM cur INTO 	@NrDoc,@CardCode,@ItemCode,@SlpCode
+END
+
+CLOSE cur  
+  DEALLOCATE cur   

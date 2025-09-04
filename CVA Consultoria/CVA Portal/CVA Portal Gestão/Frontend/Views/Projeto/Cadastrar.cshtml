@@ -1,0 +1,79 @@
+﻿@model MODEL.Classes.ProjectModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Cadastro</a></li>
+    <li><a href="/Projeto/Pesquisar">Projetos</a></li>
+    <li class="active">Projeto</li>
+</ul>
+<div class="page-content-wrap" ng-controller="ProjectController" ng-init="OnLoad(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <div class="panel panel-default tabs">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active" id="tab-zero-li"><a href="#tab-zero" role="tab" data-toggle="tab">Projeto</a></li>
+            <li id="tab-one-li"><a href="#tab-one" role="tab" data-toggle="tab">Membros</a></li>
+            <li id="tab-two-li"><a href="#tab-two" role="tab" data-toggle="tab">Recursos</a></li>
+            <li id="tab-four-li"><a href="#tab-four" role="tab" data-toggle="tab">Fases</a></li>
+            @if (ViewBag.FinancialAccess == "S")
+            {
+                <li id="tab-five-li"><a href="#tab-five" role="tab" data-toggle="tab">Financeiro</a></li>
+            }
+            <li id="tab-six-li"><a href="#tab-six" role="tab" data-toggle="tab">Change Requests</a></li>
+            <li id="tab-seven-li"><a href="#tab-seven" role="tab" data-toggle="tab">Status Report</a></li>
+        </ul>
+        <div class="panel-body tab-content">
+            <div class="tab-pane active" id="tab-zero">
+                @Html.Partial("ProjetoGeral")
+            </div>
+            <div id="tab-one" class="tab-pane">
+                @Html.Partial("ProjetoMembros")
+            </div>
+            <div id="tab-two" class="tab-pane">
+                @Html.Partial("ProjetoRecursos")
+            </div>
+            <div id="tab-four" class="tab-pane">
+                @Html.Partial("ProjetoFases")
+            </div>
+            <div id="tab-five" class="tab-pane">
+                @Html.Partial("ProjetoFinanceiro")
+            </div>
+            <div id="tab-six" class="tab-pane">
+                @Html.Partial("ProjetoChangeRequest")
+            </div>
+            <div id="tab-seven" class="tab-pane">
+                @Html.Partial("ProjetoStatusReport")
+            </div>
+            <div>
+                <button type="button" id="saveButton" class="btn btn-primary pull-right" ng-click="Save()">Salvar Projeto <span class="fa fa-floppy-o fa-right"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p id="message-success"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Script/jquery")

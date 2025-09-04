@@ -1,0 +1,44 @@
+﻿@model List<CVA.Portal.Producao.Model.Configuracoes.ViewModel>
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+        <ul class="nav side-menu">
+            @if (Model != null)
+            {
+                foreach (var pai in Model.Where(v => String.IsNullOrEmpty(v.CodPai)).OrderBy(v => v.Posicao))
+                {
+                    <li>
+                        @if (String.IsNullOrEmpty(pai.Controller))
+                        {
+                            <a>
+                                <i class="@pai.Icone"></i> @Html.DisplayFor(v => pai.View) <span class="fa fa-chevron-down"></span>
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action(pai.Action, pai.Controller)">
+                                <i class="@pai.Icone"></i> @Html.DisplayFor(v => pai.View)
+                            </a>
+                        }
+                        <ul class="nav child_menu">
+                            @foreach (var item in Model.Where(v => v.CodPai == pai.Code).OrderBy(v => v.Posicao))
+                            {
+                                <li>
+                                    <a href="@Url.Action(item.Action, item.Controller) ">@Html.DisplayFor(v => item.View)</a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+                List<string> codeList = Model.Select(p => p.Code).ToList();
+                foreach (var pai in Model.Where(v => !String.IsNullOrEmpty(v.CodPai) && !codeList.Contains(v.CodPai)).OrderBy(v => v.Posicao))
+                {
+                    <li>
+                        <a href="@Url.Action(pai.Action, pai.Controller)">
+                            @Html.DisplayFor(v => pai.View)
+                        </a>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</div>

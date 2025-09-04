@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CVA_IMP_TUST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="USER" Type="nvarchar" MaxLength="200" />
+          <Property Name="STATUS" Type="int" Nullable="false" />
+          <Property Name="XML" Type="nvarchar(max)" />
+          <Property Name="CNPJ" Type="nvarchar(max)" />
+          <Property Name="DATE" Type="datetime" Nullable="false" />
+          <Property Name="CNPJ_SUPPLIER" Type="nvarchar(max)" />
+          <Property Name="NR_DOC" Type="int" Nullable="false" />
+          <Property Name="VALUE" Type="float" Nullable="false" />
+          <Property Name="DOC_TYPE" Type="nvarchar(max)" />
+          <Property Name="DOC_DATE" Type="datetime" Nullable="false" />
+          <Property Name="DOC_DUE" Type="datetime" Nullable="false" />
+          <Property Name="BOE_NUM" Type="nvarchar(max)" />
+          <Property Name="BANK" Type="nvarchar(max)" />
+          <Property Name="FILE" Type="nvarchar(max)" />
+          <Property Name="LINE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CVA_LOG_TUST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="USER" Type="nvarchar" MaxLength="200" />
+          <Property Name="LINE" Type="int" Nullable="false" />
+          <Property Name="TRANSID" Type="int" Nullable="false" />
+          <Property Name="DSCR" Type="nvarchar(max)" />
+          <Property Name="FILE" Type="nvarchar" MaxLength="500" />
+          <Property Name="IMP_TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="LOG_TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="SUPPLIER" Type="nvarchar" MaxLength="250" />
+          <Property Name="VALUE" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PAY_METHOD" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="CVA_PAR_TUST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="UPD" Type="datetime" />
+          <Property Name="BASE_ID" Type="int" Nullable="false" />
+          <Property Name="BASE_NAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CNPJ" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="BPLID" Type="int" Nullable="false" />
+          <Property Name="PROJECT" Type="nvarchar" MaxLength="40" />
+          <Property Name="ACC" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ACC_TRANS" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="PAY_METH" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="PAY_METH_TRANS" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ACC_TRANS_COMP" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ACC_CONTROL" Type="nvarchar" MaxLength="30" />
+          <Property Name="PAY_METH_TED" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ITEMCODE" Type="nvarchar" MaxLength="100" />
+          <Property Name="USAGE" Type="int" Nullable="false" />
+          <Property Name="NF_MODEL" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="INCOTERMS" Type="nvarchar" MaxLength="3" />
+          <Property Name="NAT_BC" Type="nvarchar" MaxLength="10" />
+          <Property Name="REG_PC" Type="nvarchar" MaxLength="10" />
+          <Property Name="IND_OPER" Type="nvarchar" MaxLength="10" />
+          <Property Name="ORIG_CRED" Type="nvarchar" MaxLength="10" />
+          <Property Name="DESC_DOC" Type="nvarchar(max)" />
+          <Property Name="ALIQIPI" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="APLIC" Type="nvarchar(max)" />
+          <Property Name="COST_CENTER" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CVA_IMP_TUST" EntityType="Self.CVA_IMP_TUST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CVA_LOG_TUST" EntityType="Self.CVA_LOG_TUST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CVA_PAR_TUST" EntityType="Self.CVA_PAR_TUST" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TustLogModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="USER" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LINE" Type="Int32" Nullable="false" />
+          <Property Name="TRANSID" Type="Int32" Nullable="false" />
+          <Property Name="DSCR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FILE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IMP_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LOG_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SUPPLIER" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="VALUE" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PAY_METHOD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TustParamModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPD" Type="DateTime" Precision="3" />
+          <Property Name="BASE_ID" Type="Int32" Nullable="false" />
+          <Property Name="BASE_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CNPJ" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BPLID" Type="Int32" Nullable="false" />
+          <Property Name="PROJECT" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ACC" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ACC_TRANS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PAY_METH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PAY_METH_TRANS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ACC_TRANS_COMP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ACC_CONTROL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PAY_METH_TED" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ITEMCODE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USAGE" Type="Int32" Nullable="false" />
+          <Property Name="NF_MODEL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INCOTERMS" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="NAT_BC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="REG_PC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IND_OPER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ORIG_CRED" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DESC_DOC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ALIQIPI" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="APLIC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="COST_CENTER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PortalEDM" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CVA_LOG_TUST" EntityType="Model.TustLogModel" />
+          <EntitySet Name="CVA_PAR_TUST" EntityType="Model.TustParamModel" />
+          <EntitySet Name="CVA_IMP_TUST" EntityType="Model.TustModel" />
+        </EntityContainer>
+        <EntityType Name="TustModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="USER" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="Int32" Nullable="false" />
+          <Property Name="XML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CNPJ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CNPJ_SUPPLIER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NR_DOC" Type="Int32" Nullable="false" />
+          <Property Name="VALUE" Type="Double" Nullable="false" />
+          <Property Name="DOC_TYPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DOC_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DOC_DUE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BOE_NUM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BANK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FILE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LINE" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="PortalEDM">
+          <EntitySetMapping Name="CVA_LOG_TUST">
+            <EntityTypeMapping TypeName="Model.TustLogModel">
+              <MappingFragment StoreEntitySet="CVA_LOG_TUST">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="USER" ColumnName="USER" />
+                <ScalarProperty Name="LINE" ColumnName="LINE" />
+                <ScalarProperty Name="TRANSID" ColumnName="TRANSID" />
+                <ScalarProperty Name="DSCR" ColumnName="DSCR" />
+                <ScalarProperty Name="FILE" ColumnName="FILE" />
+                <ScalarProperty Name="IMP_TYPE" ColumnName="IMP_TYPE" />
+                <ScalarProperty Name="LOG_TYPE" ColumnName="LOG_TYPE" />
+                <ScalarProperty Name="SUPPLIER" ColumnName="SUPPLIER" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="PAY_METHOD" ColumnName="PAY_METHOD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVA_PAR_TUST">
+            <EntityTypeMapping TypeName="Model.TustParamModel">
+              <MappingFragment StoreEntitySet="CVA_PAR_TUST">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="UPD" ColumnName="UPD" />
+                <ScalarProperty Name="BASE_ID" ColumnName="BASE_ID" />
+                <ScalarProperty Name="BASE_NAME" ColumnName="BASE_NAME" />
+                <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+                <ScalarProperty Name="BPLID" ColumnName="BPLID" />
+                <ScalarProperty Name="PROJECT" ColumnName="PROJECT" />
+                <ScalarProperty Name="ACC" ColumnName="ACC" />
+                <ScalarProperty Name="ACC_TRANS" ColumnName="ACC_TRANS" />
+                <ScalarProperty Name="PAY_METH" ColumnName="PAY_METH" />
+                <ScalarProperty Name="PAY_METH_TRANS" ColumnName="PAY_METH_TRANS" />
+                <ScalarProperty Name="ACC_TRANS_COMP" ColumnName="ACC_TRANS_COMP" />
+                <ScalarProperty Name="ACC_CONTROL" ColumnName="ACC_CONTROL" />
+                <ScalarProperty Name="PAY_METH_TED" ColumnName="PAY_METH_TED" />
+                <ScalarProperty Name="ITEMCODE" ColumnName="ITEMCODE" />
+                <ScalarProperty Name="USAGE" ColumnName="USAGE" />
+                <ScalarProperty Name="NF_MODEL" ColumnName="NF_MODEL" />
+                <ScalarProperty Name="INCOTERMS" ColumnName="INCOTERMS" />
+                <ScalarProperty Name="NAT_BC" ColumnName="NAT_BC" />
+                <ScalarProperty Name="REG_PC" ColumnName="REG_PC" />
+                <ScalarProperty Name="IND_OPER" ColumnName="IND_OPER" />
+                <ScalarProperty Name="ORIG_CRED" ColumnName="ORIG_CRED" />
+                <ScalarProperty Name="DESC_DOC" ColumnName="DESC_DOC" />
+                <ScalarProperty Name="ALIQIPI" ColumnName="ALIQIPI" />
+                <ScalarProperty Name="APLIC" ColumnName="APLIC" />
+                <ScalarProperty Name="COST_CENTER" ColumnName="COST_CENTER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVA_IMP_TUST">
+            <EntityTypeMapping TypeName="Model.TustModel">
+              <MappingFragment StoreEntitySet="CVA_IMP_TUST">
+                <ScalarProperty Name="LINE" ColumnName="LINE" />
+                <ScalarProperty Name="FILE" ColumnName="FILE" />
+                <ScalarProperty Name="BANK" ColumnName="BANK" />
+                <ScalarProperty Name="BOE_NUM" ColumnName="BOE_NUM" />
+                <ScalarProperty Name="DOC_DUE" ColumnName="DOC_DUE" />
+                <ScalarProperty Name="DOC_DATE" ColumnName="DOC_DATE" />
+                <ScalarProperty Name="DOC_TYPE" ColumnName="DOC_TYPE" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="NR_DOC" ColumnName="NR_DOC" />
+                <ScalarProperty Name="CNPJ_SUPPLIER" ColumnName="CNPJ_SUPPLIER" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+                <ScalarProperty Name="XML" ColumnName="XML" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="USER" ColumnName="USER" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

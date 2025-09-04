@@ -1,0 +1,97 @@
+﻿
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Informar<strong> Fase</strong></h3>
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: {{VisualPercent}}%; float:right">
+                    {{VisualPercent}}%
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Fase</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <select class="form-control" ng-disabled="status == 2" ng-model="oportunitty.Steps.ProjectStep.Id" ng-options="selected.Id as selected.Name for selected in projectStepsList">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione a fase que deseja adicionar</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Descrição</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-send"></span></span>
+                                    <input type="text" class="form-control" ng-disabled="status == 2" ng-model="oportunitty.Steps.Description"/>
+                                </div>
+                                <span class="help-block">Informe a descrição das atividades realizadas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Data Início</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                    <input type="date" class="form-control" ng-disabled="status == 2" ng-model="oportunitty.Steps.DateInit" />
+                                </div>
+                                <span class="help-block">Informe a data de início da fase</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Data Conclusão</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                    <input type="date" class="form-control" ng-disabled="status == 2" ng-model="oportunitty.Steps.DateConclusion" />
+                                </div>
+                                <span class="help-block">Informe a data de conclusão da fase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-info" ng-click="AddStepLine()" ng-disabled="oportunitty.Steps.ProjectStep.Id == null">Adicionar</button>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td class="col-md-3">Fase</td>
+                                        <td class="col-md-3">Data de Início</td>
+                                        <td class="col-md-3">Data de Conclusão</td>
+                                        <td class="col-md-3">Descrição</td>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody class="contatos">
+                                    <tr ng-repeat="item in StepsSelectedList">
+                                        <td>{{item.ProjectStep.Name}}</td>
+                                        <td>{{item.DateInit | date: "dd/MM/yyyy"}}</td>
+                                        <td>{{item.DateConclusion | date: "dd/MM/yyyy"}}</td>
+                                        <td>{{item.Description}}</td>
+                                        <td>
+                                            <button class="btn btn-default" ng-disabled="item.Id == null || status == 2" ng-click="EditStepLine($index)"><i class="fa fa-edit"></i></button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger" ng-disabled="status == 2" ng-click="RemoveStepList($index)"><i class="fa fa-times"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

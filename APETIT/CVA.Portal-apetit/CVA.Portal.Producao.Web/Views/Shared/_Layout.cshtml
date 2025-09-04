@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @if (CVA.Portal.Producao.Web.Helper.CvaSession.Usuario.CodPerfil != "0000000003")
+    {
+        <title>Portal de Produção</title>
+    }
+    else
+    {
+        <title>Portal de Cotação</title>
+    }
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    @*Cache*@
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+
+    @*<link rel="icon" type="image/ico" href="http://www.cvaconsultoria.com.br/images/favicon/favicon.ico" />*@
+
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/custom.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/nprogress.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/green.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-progressbar-3.3.4.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/rowGroup.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/fixedColumns.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/fullcalendar.min.css">
+    @*<link rel="stylesheet" type="text/css" href="~/Content/fullcalendar.print.css">*@
+    <link rel="stylesheet" type="text/css" href="~/Content/pnotify.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/pnotify.buttons.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/pnotify.nonblock.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/MonthPicker.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/chosen-sprite.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/custom_apetit.css">
+
+    @RenderSection("Styles", false)
+</head>
+
+@*<body id="menu" class='@(System.Web.HttpContext.Current.Session["LEFT-MENU-CSS"] == null ? "nav-md" : System.Web.HttpContext.Current.Session["LEFT-MENU-CSS"])'>*@
+<body id="menu" class="nav-md" style="height: 100vh;min-height: 100vh;">
+    <div class="container body">
+        <div class="main_container">
+            @Html.Partial("_Loading")
+
+            @*<div class="col-md-3 left_col">
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <a class="site_title">
+                                <span>
+                                    <img style="margin-left: 8px" src="~/Content/Images/logo.png" />
+                                </span>
+                            </a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br />
+                        <!-- sidebar menu -->
+                        @Html.Action("Menu", "Home")
+                        <!-- /menu footer buttons -->
+                    </div>
+                </div>*@
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle" style="display: flex;">
+                            <img src="~/Content/Images/logo_apetit_menu.png" style="width:90%" />
+                            <div>
+                                <label style="width: 442px; padding-top: 14px; padding-left: 30px;">Base Conectada: @System.Configuration.ConfigurationManager.AppSettings["Database"]</label>
+                            </div>
+                        </div>
+                        
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    @User.Identity.Name
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right" style="width: 20%;">
+                                    @*<li><a href="@Url.Action("ResetPassword", "Login")">Alterar senha</a></li>*@
+                                    <li>
+                                        @if (CVA.Portal.Producao.Web.Helper.CvaSession.Usuario.CodPerfil != "0000000003")
+                                        {
+                                            <a href="@Url.Action("ChangePassword", "Login")"><i class="fa fa-key pull-right"></i> Alterar Senha</a>
+                                            <a href="@Url.Action("Logout", "Login")"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                        }
+                                        else
+                                        {
+                                            @*<a href="@Url.Action("ChangePassword", "Login")"><i class="fa fa-key pull-right"></i> Alterar Senha</a>*@
+                                            <a href="@Url.Action("Logout", "LoginFornecedor")"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                        }
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                @RenderBody()
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            @*<footer>
+                    <div class="clearfix"></div>
+                </footer>*@
+            <!-- /footer content -->
+        </div>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-2.2.4.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@*<script src="~/Scripts/jquery.validate.js"></script>*@
+
+<script src="~/Scripts/Plugins/fastclick.js"></script>
+<script src="~/Scripts/Plugins/nprogress.js"></script>
+<script src="~/Scripts/Plugins/bootstrap-progressbar.min.js"></script>
+<script src="~/Scripts/Plugins/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/Plugins/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/Plugins/custom.min.js"></script>
+<script src="~/Scripts/Plugins/moment.min.js"></script>
+<script src="~/Scripts/Plugins/daterangepicker.js"></script>
+<script src="~/Scripts/Plugins/jquery.inputmask.bundle.min.js"></script>
+<script src="~/Scripts/Plugins/dataTables.fixedColumns.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.scrollResize.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.rowGroup.min.js"></script>
+
+<script src="~/Scripts/Plugins/fullcalendar.min.js"></script>
+
+<script src="~/Scripts/Plugins/pnotify.js"></script>
+<script src="~/Scripts/Plugins/pnotify.buttons.js"></script>
+<script src="~/Scripts/Plugins/pnotify.nonblock.js"></script>
+<script src="~/Scripts/Plugins/MonthPicker.js"></script>
+@*<script src="~/Scripts/jquery.signalR-2.2.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>*@
+
+<script src="~/Scripts/Views/Cadastro/removerRegistro.js"></script>
+<script src="~/Scripts/Views/Shared/menu.js"></script>
+<script src="~/Scripts/Views/Shared/keyevents.js"></script>
+<script src="~/Scripts/Views/Shared/focus.js"></script>
+<script src="~/Scripts/Views/Shared/datatable.js"></script>
+
+<!--Chosen-->
+<script src="~/Scripts/chosen.jquery.js"></script>
+
+
+@RenderSection("Scripts", false)

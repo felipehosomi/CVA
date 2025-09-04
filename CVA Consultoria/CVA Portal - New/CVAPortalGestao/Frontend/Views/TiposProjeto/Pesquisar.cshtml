@@ -1,0 +1,82 @@
+﻿@model MODEL.Classes.ProjectTypeModel[]
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li class="active">Tipos de Projeto</li>
+</ul>
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-right"></span> Tipos de Projeto</h2>
+</div>
+<div class="page-content-wrap" ng-controller="ProjectTypeMainController"  ng-init="OnLoad()">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <h3 class="panel-title">Registros </h3>
+                    <ul class="panel-controls">
+                        <li>
+                            <button type="button" class="btn btn-success pull-right" ng-click="Novo()">Novo Tipo de Projeto<span class="fa fa-floppy-o fa-right"></span></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table" id="table-export">
+                            <thead>
+                                <tr>
+                                    <td><b>Nome</b></td>
+                                    <td><b>Equipe</b></td>
+                                    <td><b>Descrição</b></td>
+                                    <td align="right"><b>#</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in TiposProjeto">
+                                    <td hidden>{{item.Id}}</td>
+                                    <td>{{item.Nome}}</td>
+                                    <td>{{item.Equipe}}</td>
+                                    <td>{{item.Descricao}}</td>
+                                    <td align="right">
+                                        <button type="button" class="btn btn-default" ng-click="Editar(item.Id)"><span class="fa fa-edit"></span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p id="message-success"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Script/jquery")
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>

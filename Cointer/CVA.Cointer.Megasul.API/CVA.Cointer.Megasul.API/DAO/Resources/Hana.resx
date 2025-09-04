@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Adiantamento_Get" xml:space="preserve">
+    <value>SELECT "DocEntry" FROM ODPI WHERE "DocNum" = {0}</value>
+  </data>
+  <data name="Cidade_Get" xml:space="preserve">
+    <value>SELECT "AbsId" FROM OCNT
+WHERE "IbgeCode" = '{0}'</value>
+  </data>
+  <data name="Cliente_Existe" xml:space="preserve">
+    <value>SELECT * FROM CRD7 WHERE REPLACE(REPLACE(REPLACE("TaxId0", '-', ''), '/', ''), '.', '') = '{0}' OR REPLACE(REPLACE("TaxId4", '-', ''), '.', '') = '{0}'</value>
+  </data>
+  <data name="Cliente_Get" xml:space="preserve">
+    <value>SELECT * FROM
+(
+	SELECT
+		(SELECT COUNT(DISTINCT OCRD."CardCode") FROM CRD7 OCRD WHERE 1 = 1 {0}) "TotalRecords", 
+		OCRD."CardCode" "codigo_sap",
+		CASE WHEN CRD7."TaxId0" &lt;&gt; ''
+			THEN CRD7."TaxId0"
+			ELSE CRD7."TaxId4"
+		END 				"cnpj_cpf",
+		SUBSTRING(OCRD."CardFName", 0, 200)	"nome",
+		SUBSTRING(OCRD."CardName", 0, 200)	"razao_social",
+		CASE WHEN IFNULL(CRD7."TaxId0", '') &lt;&gt; ''
+			THEN 'J'
+			ELSE 'F'
+		END 				"tipo_pessoa",
+		CRD7."TaxId1" 		"ie_rg",
+		CRD7."TaxId2" 		"im",
+		OCRD."Phone1"		"telefone",
+		OCRD."Cellular"		"celular",
+		OCRD."E_Mail"		"email",
+		SUBSTRING(CRD1."Street", 0, 200)	"endereco",
+		CRD1."StreetNo"		"numero",
+		SUBSTRING(CRD1."Building", 0, 200)	"complemento",
+		SUBSTRING(CRD1."Block", 0, 200)		"bairro",
+		SUBSTRING(CRD1."City", 0, 200)		"cidade",
+		CRD1."State"		"uf",
+		OCNT."IbgeCode"		"codigo_municipio",
+		OCRY."CntCodNum"	"codigo_pais",
+		CRD1."ZipCode"		"cep",
+		row_number () over (partition by OCRD."CardCode" ORDER BY OCRD."CardCode" asc, OCRD."CardCode", CRD1."Street" DESC) as RN
+	FROM OCRD 
+		LEFT JOIN CRD7 ON CRD7."CardCode" = OCRD."CardCode" AND (CRD7."TaxId0" &lt;&gt; '' OR CRD7."TaxId4" &lt;&gt; '')
+		LEFT JOIN CRD1 ON CRD1."CardCode" = OCRD."CardCode" AND CRD1."Address" = CRD7."Address" AND IFNULL(NULLIF(CRD1."Street", ''), '') &lt;&gt; ''
+		LEFT JOIN OCNT ON OCNT."AbsId" = IFNULL(CAST(CAST(NULLIF(CRD1."County", '') AS VARCHAR(100)) AS INT), 0)
+		LEFT JOIN OCRY ON OCRY."Code" = CRD1."Country"
+		--LEFT JOIN OCPR ON OCPR."CardCode" = OCRD."CardCode"
+	WHERE OCRD."CardType" ='C' {0}
+	ORDER BY OCRD."CardCode", CRD1."Street" DESC
+) 
+WHERE RN = 1</value>
+  </data>
+  <data name="Cliente_GetMaxCode" xml:space="preserve">
+    <value>SELECT MAX("CardCode") FROM OCRD WHERE "CardCode" LIKE 'C%'</value>
+  </data>
+  <data name="Cliente_GetSeries" xml:space="preserve">
+    <value>SELECT "Series" FROM NNM1 WHERE "ObjectCode" = '2' AND "DocSubType" = 'C' AND "Locked" = 'N' ORDER BY "IsManual"</value>
+  </data>
+  <data name="ContasReceber_Exists" xml:space="preserve">
+    <value>SELECT ORCT."DocEntry" FROM ORCT
+INNER JOIN RCT2 ON RCT2."DocNum" = ORCT."DocEntry" AND RCT2."InvType" = 13
+WHERE ORCT."Canceled" = 'N' AND RCT2."DocEntry" = {0}</value>
+  </data>
+  <data name="ContasReceber_GetLcmToFix" xml:space="preserve">
+    <value>SELECT JDT1."TransId", JDT1."Line_ID", OCRH."VoucherNum" "AdditionalReference"
+FROM ORCT
+	INNER JOIN OCRH ON OCRH."RctAbs" = ORCT."DocEntry"
+	INNER JOIN JDT1 ON JDT1."TransId" = ORCT."TransId" 
+	AND SUBSTR_AFTER(REPLACE(JDT1."Ref3Line", '\', '/'), '/') = SUBSTR_AFTER(REPLACE(OCRH."VoucherNum", '\', '/') , '/')
+WHERE ORCT."DocEntry" = {0}
+AND SUBSTR_BEFORE(REPLACE(JDT1."Ref3Line", '\', '/'), '/') &lt;&gt; SUBSTR_BEFORE(REPLACE(OCRH."VoucherNum", '\', '/') , '/')
+ORDER BY JDT1."Line_ID"</value>
+  </data>
+  <data name="CreditCardType_GetId" xml:space="preserve">
+    <value>SELECT "CrTypeCode" FROM OCRP WHERE "CrTypeName" = '{0}'</value>
+  </data>
+  <data name="CreditCard_GetId" xml:space="preserve">
+    <value>SELECT "CreditCard" FROM OCRC WHERE "CardName" = '{0}'</value>
+  </data>
+  <data name="Estoque_Get" xml:space="preserve">
+    <value>CALL SP_CVA_MEGASUL_ESTOQUE({0}, {1}, '{2}', '{3}')</value>
+  </data>
+  <data name="Filial_Get" xml:space="preserve">
+    <value>SELECT "BPLId" FROM OBPL WHERE REPLACE(REPLACE(REPLACE("TaxIdNum", '.', ''), '-', ''), '/', '') = REPLACE(REPLACE(REPLACE('{0}', '.', ''), '-', ''), '/', '')</value>
+  </data>
+  <data name="FormaPagamento_Get" xml:space="preserve">
+    <value>SELECT
+	(SELECT COUNT(*) + 2 FROM OPYM) "TotalRecords",
+	"PayMethCod" "codigo_sap", 
+	"Descript" "descricao" 
+FROM OPYM
+
+UNION 
+	SELECT 0, 'DIN', 'Dinheiro' FROM DUMMY
+UNION
+	SELECT 0, 'CR', 'Cartão de Crédito' FROM DUMMY</value>
+  </data>
+  <data name="FormaPagamento_GetByCode" xml:space="preserve">
+    <value>SELECT "BankTransf" FROM OPYM WHERE "PayMethCod" = '{0}'</value>
+  </data>
+  <data name="ItemEstrutura_Get" xml:space="preserve">
+    <value>SELECT
+	(SELECT COUNT(*) FROM OITT WHERE 1 = 1 {0}) "TotalRecords",
+	OITT."Code" 		"codigo_sap",
+	ITT1."Code"			"codigo_sap_item",
+	ITT1."Quantity"		"quantidade",
+	ITM1."Price"		"preco"
+FROM OITT
+	INNER JOIN ITT1 ON ITT1."Father" = OITT."Code"
+	INNER JOIN OITM ON OITM."ItemCode" = ITT1."Code"
+	LEFT JOIN ITM1 ON ITM1."ItemCode" = OITM."ItemCode" AND ITM1."PriceList" = {1}
+WHERE 1 = 1 {0}
+ORDER BY OITT."Code"</value>
+  </data>
+  <data name="ItemEstrutura_WhereItemCode" xml:space="preserve">
+    <value>AND OITT."Code" IN
+(
+	SELECT OITT."Code" 
+	FROM OITT
+	INNER JOIN ITT1 ON ITT1."Father" = OITT."Code"
+	WHERE OITT."Code" = '{0}' OR ITT1."Code" = '{0}'
+)</value>
+  </data>
+  <data name="Item_Get" xml:space="preserve">
+    <value>SELECT  
+	(SELECT COUNT(*) FROM OITM WHERE 1 = 1 {0}) "TotalRecords",
+	OITM."ItemCode" 						"codigo_sap", 
+	SUBSTRING("ItemName", 0, 20) 	"abreviatura",
+	SUBSTRING("ItemName", 0, 200) 	"descricao",
+	OUOM."UomCode"					"um",
+	--"LstEvlPric"					"preco",
+	ITM1."Price"					"preco",
+	'N'								"pesavel",
+	ONCM."NcmCode"					"ncm",
+	OBCD."BcdCode"					"codigo_barras",
+	CASE WHEN "ManBtchNum" = 'Y'
+		THEN 'D'
+		ELSE 
+			CASE WHEN "ManSerNum" = 'Y'
+			THEN 'S'
+			ELSE 'N'
+		END
+	END "tipo_lote",
+	"ProductSrc"					"codigo_origem",
+	"U_CVA_Composicao"				"composicao",
+	CASE "U_CVA_TpoICMS"
+		WHEN 1 THEN 'T'
+		WHEN 2 THEN 'S'
+		WHEN 3 THEN 'I'
+	END	"TipoIcms",
+	CASE WHEN "U_CVA_TpoICMS" = '1'
+		THEN 17.00
+		ELSE 0.00
+	END 							"AliquotaIcms"
+FROM OITM
+	LEFT JOIN ONCM ON ONCM."AbsEntry" = OITM."NCMCode"
+	LEFT JOIN ITM1 ON ITM1."ItemCode" = OITM."ItemCode" AND ITM1."PriceList" = {1}
+	LEFT JOIN OUOM ON OUOM."UomEntry" = OITM."SUoMEntry"
+	LEFT JOIN OBCD ON OBCD."ItemCode" = OITM."ItemCode" AND OBCD."UomEntry" = OUOM."UomEntry"
+WHERE OITM."QryGroup2" = 'Y' {0}</value>
+  </data>
+  <data name="Item_GetCodigosBarra" xml:space="preserve">
+    <value>SELECT DISTINCT
+	ITM12."ItemCode", 
+	OBCD."BcdCode" "codigo", 
+	OUOM."UomCode" "unidade_medida",
+	'N'				"codigo_fiscal"
+FROM OITM
+	INNER JOIN ITM12 ON ITM12."ItemCode" = OITM."ItemCode"
+	INNER JOIN OUOM ON OUOM."UomEntry" = ITM12."UomEntry"
+	INNER JOIN OBCD ON OBCD."BcdEntry" = ITM12."BcdEntDft" AND OBCD."ItemCode" = ITM12."ItemCode"
+WHERE 1 = 1 {0}</value>
+  </data>
+  <data name="Lote_GetFilial" xml:space="preserve">
+    <value>SELECT OWHS."BPLid" FROM OIBT 
+	INNER JOIN OWHS ON OWHS."WhsCode" = OIBT."WhsCode"
+WHERE "ItemCode" = '{0}' AND "BatchNum" = '{1}' AND OWHS."BPLid" = {2}</value>
+  </data>
+  <data name="NotaFiscal_Exists" xml:space="preserve">
+    <value>SELECT "DocEntry" FROM OINV WHERE "Serial" = {0} AND "SeriesStr" = '{1}'  AND "BPLId" = {2} AND "SeqCode" = -1 AND "CANCELED" = 'N'</value>
+  </data>
+  <data name="NotaFiscal_GetByCupom" xml:space="preserve">
+    <value>SELECT "DocEntry" FROM OINV WHERE "U_CVA_CF_EF" = {0} AND "U_CVA_CF_SI" = {1} AND "U_CVA_CF_TR" = {2} AND "BPLId" = {3}</value>
+  </data>
+  <data name="NotaFiscal_GetByCupomNFe" xml:space="preserve">
+    <value>SELECT "DocEntry" FROM OINV WHERE "U_CVA_CF_EF" = {0} AND "U_CVA_CF_SI" = {1} AND "U_CVA_CF_TR" = {2} AND "Serial" = {3} AND "SeriesStr" = '{4}' AND "BPLId" = {5} AND "SeqCode" = -1</value>
+  </data>
+  <data name="Pais_Get" xml:space="preserve">
+    <value>SELECT "Code" FROM OCRY WHERE "CntCodNum" = '{0}'</value>
+  </data>
+  <data name="Serie_GetSystemNumber" xml:space="preserve">
+    <value>SELECT "SysNumber" FROM OSRN WHERE "ItemCode" = '{0}' AND "DistNumber" = '{1}'</value>
+  </data>
+  <data name="UnidadeMedida_Get" xml:space="preserve">
+    <value>SELECT  
+	(SELECT COUNT(*) FROM OUOM) "TotalRecords",
+	"UomCode" 	"sigla", 
+	"UomName" 	"descricao",
+	1.00		"fracao_minima"
+FROM OUOM</value>
+  </data>
+  <data name="Vendedor_GetByName" xml:space="preserve">
+    <value>SELECT "SlpCode" FROM OSLP WHERE UPPER("SlpName") = '{0}'</value>
+  </data>
+  <data name="Voucher_Get" xml:space="preserve">
+    <value>SELECT * FROM
+(
+	SELECT
+		(
+			SELECT COUNT(DISTINCT("DocEntry")) 
+			FROM ODPI 
+			INNER JOIN CRD7 ON CRD7."CardCode" = ODPI."CardCode" AND (CRD7."TaxId0" &lt;&gt; '' OR CRD7."TaxId4" &lt;&gt; '')
+			INNER JOIN CRD1 ON CRD1."CardCode" = ODPI."CardCode" AND CRD1."Address" = CRD7."Address" AND IFNULL(NULLIF(CRD1."Street", ''), '') &lt;&gt; ''
+			LEFT JOIN
+			(
+				SELECT SUM("DrawnSum") "DrawnSum", "BaseAbs" FROM INV9
+				WHERE INV9."ObjType" = 203
+				GROUP BY "BaseAbs"
+			) INV ON INV."BaseAbs" = ODPI."DocEntry"
+			WHERE ODPI."CANCELED" = 'N' AND ODPI."BPLId" = 1  AND ODPI."DocTotal" - IFNULL(INV."DrawnSum", 0) &gt; 0 {0}
+		) "TotalRecords",
+		ODPI."CardCode" 	"codigo_sap", 
+		ODPI."DocNum" 		"identificador",
+		ODPI."DocTotal"		"valor",
+		CAST(ODPI."DocTotal"	- IFNULL(INV."DrawnSum", 0.00) AS NUMERIC(19, 2))	"saldo",
+		ODPI."CreateDate",
+		ODPI."CreateTS",
+		row_number () over (partition by CRD7."CardCode" ORDER BY CRD7."CardCode" asc, CRD7."CardCode", CRD1."Street" DESC) as RN
+	FROM ODPI
+		INNER JOIN CRD7 ON CRD7."CardCode" = ODPI."CardCode" AND (CRD7."TaxId0" &lt;&gt; '' OR CRD7."TaxId4" &lt;&gt; '')
+		INNER JOIN CRD1 ON CRD1."CardCode" = ODPI."CardCode" AND CRD1."Address" = CRD7."Address" AND IFNULL(NULLIF(CRD1."Street", ''), '') &lt;&gt; ''
+		LEFT JOIN
+		(
+			SELECT SUM("DrawnSum") "DrawnSum", "BaseAbs" FROM INV9
+			WHERE INV9."ObjType" = 203
+			GROUP BY "BaseAbs"
+		) INV ON INV."BaseAbs" = ODPI."DocEntry"
+	WHERE ODPI."CANCELED" = 'N' AND ODPI."BPLId" = 1 AND CAST(ODPI."DocTotal"	- IFNULL(INV."DrawnSum", 0.00) AS NUMERIC(19, 2)) &gt; 0 {0}
+) 
+WHERE RN = 1</value>
+  </data>
+</root>

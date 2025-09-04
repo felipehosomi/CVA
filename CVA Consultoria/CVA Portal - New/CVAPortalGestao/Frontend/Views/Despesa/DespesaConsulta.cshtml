@@ -1,0 +1,63 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading ui-draggable-handle">
+                <h3 class="panel-title"> Consultar<strong> Despesas Mensais</strong></h3>
+                <ul class="panel-controls">
+                    <li>
+                        <label class="control-label col-md-1" style="margin-top: 7px">Mês</label>
+                        <div class="col-md-5">
+                            <input type="number" class="form-control" ng-model="Month" />
+                        </div>
+                        <label class="control-label col-md-1" style="margin-top: 7px">Ano</label>
+                        <div class="col-md-5">
+                            <input type="number" class="form-control" ng-model="Year" />
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-default pull-right" ng-click="AtualizarGrid()">Pesquisar <span class="fa fa-search"></span></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td><b>Data</b></td>
+                                <td><b>Projeto</b></td>
+                                <td align="center"><b>Tipo de despesa</b></td>
+                                <td align="center"><b>Valor da NF</b></td>
+                                <td align="center"><b>Valor a receber</b></td>
+                                <td><b>N° NF</b></td>
+                                <td><b>#</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="expense in ExpensesList">
+                                <td>{{expense.Data | date: "dd/MM/yy"}}</td>
+                                <td>{{expense.Projeto.Codigo}} - {{expense.Projeto.Tag}} {{expense.Projeto.Nome}}</td>
+                                <td align="center">{{expense.TipoDespesa.Name}}</td>
+                                <td align="center">{{expense.ValorNota}}</td>
+                                <td align="center">{{expense.ValorReembolso}}</td>
+                                <td>{{expense.NumNota}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-default" ng-click="Editar(expense)" ng-disabled="expense.StatusId == 5"><span class="fa fa-edit"></span></button>
+                                    <button type="button" class="btn btn-danger" ng-click="Remover(expense.Id, $index)" ng-disabled="expense.StatusId == 5"><span class="glyphicon glyphicon-remove"></span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/datatables/jquery.dataTables.js"></script>
+<script>
+    $('#DataTables_Table_1').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Portuguese-Brasil.json"
+        }
+    });
+</script>

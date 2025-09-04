@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Core.Cianet", "CVA.Core.Cianet\CVA.Core.Cianet.csproj", "{6DE8AC14-2697-4E05-BE9A-C2F38B27FC42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Core.Cianet.AddOn", "CVA.Core.Cianet.AddOn\CVA.Core.Cianet.AddOn.csproj", "{179955CA-7714-4BD9-8D63-C8AD9163B230}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CVA.Core.Cianet.Setup", "CVA.Core.Cianet.Setup\CVA.Core.Cianet.Setup.vbproj", "{B6DA8C96-ADA9-403A-A940-0F27B5503553}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DE8AC14-2697-4E05-BE9A-C2F38B27FC42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DE8AC14-2697-4E05-BE9A-C2F38B27FC42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DE8AC14-2697-4E05-BE9A-C2F38B27FC42}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6DE8AC14-2697-4E05-BE9A-C2F38B27FC42}.Debug|x86.Build.0 = Debug|Any CPU
+		{6DE8AC14-2697-4E05-BE9A-C2F38B27FC42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DE8AC14-2697-4E05-BE9A-C2F38B27FC42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DE8AC14-2697-4E05-BE9A-C2F38B27FC42}.Release|x86.ActiveCfg = Release|Any CPU
+		{6DE8AC14-2697-4E05-BE9A-C2F38B27FC42}.Release|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.ActiveCfg = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.Build.0 = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.ActiveCfg = Release|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.Build.0 = Release|x86
+		{179955CA-7714-4BD9-8D63-C8AD9163B230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{179955CA-7714-4BD9-8D63-C8AD9163B230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{179955CA-7714-4BD9-8D63-C8AD9163B230}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{179955CA-7714-4BD9-8D63-C8AD9163B230}.Debug|x86.Build.0 = Debug|Any CPU
+		{179955CA-7714-4BD9-8D63-C8AD9163B230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{179955CA-7714-4BD9-8D63-C8AD9163B230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{179955CA-7714-4BD9-8D63-C8AD9163B230}.Release|x86.ActiveCfg = Release|Any CPU
+		{179955CA-7714-4BD9-8D63-C8AD9163B230}.Release|x86.Build.0 = Release|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|x86.ActiveCfg = Debug|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|x86.Build.0 = Debug|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|x86.ActiveCfg = Release|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DB88B57-23F4-41C4-819F-21B937B83F7B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\..\\Workspaces\\Helpers\\CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName0 = ../../Helpers/CVA.AddOn.Common
+		SccLocalPath0 = ..\\..\\..\\Workspaces\\Helpers\\CVA.AddOn.Common
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = CVA.Core.Cianet.AddOn\\CVA.Core.Cianet.AddOn.csproj
+		SccProjectName2 = CVA.Core.Cianet.AddOn
+		SccLocalPath2 = CVA.Core.Cianet.AddOn
+		SccProjectUniqueName3 = CVA.Core.Cianet.Setup\\CVA.Core.Cianet.Setup.vbproj
+		SccProjectName3 = CVA.Core.Cianet.Setup
+		SccLocalPath3 = CVA.Core.Cianet.Setup
+		SccProjectUniqueName4 = CVA.Core.Cianet\\CVA.Core.Cianet.csproj
+		SccProjectName4 = CVA.Core.Cianet
+		SccLocalPath4 = CVA.Core.Cianet
+	EndGlobalSection
+EndGlobal

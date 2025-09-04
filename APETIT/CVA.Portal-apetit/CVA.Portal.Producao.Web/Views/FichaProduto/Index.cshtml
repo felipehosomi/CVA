@@ -1,0 +1,47 @@
+﻿@model List<CVA.Portal.Producao.Model.Qualidade.FichaProdutoModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <div class="row">
+        <div class="x_panel">
+            <a href="@Url.Action("Create")">
+                <button type="button" class="btn btn-success pull-right">Novo <span class="fa fa-floppy-o fa-right"></span></button>
+            </a>
+            <div class="x_title">
+                <h2>Ficha X Produto</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <table id="dataTable" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Etapa</th>
+                            <th>Tipo</th>
+                            <th>Grupo / Produto</th>
+                            <th>Ficha</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (var i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td>@Model[i].EtapaDesc</td>
+                                <td>@Model[i].TipoDesc</td>
+                                <td>@Model[i].GrupoOuItemDesc</td>
+                                <td>@Model[i].FichaDesc</td>
+                                <td style="text-align: center">
+                                    <a href='@Url.Action("Edit", new { id = Model[i].Code})' class="btn btn-default btn-small no-margin" data-toggle="tooltip" title="Editar">
+                                        <span class="fa fa-pencil"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

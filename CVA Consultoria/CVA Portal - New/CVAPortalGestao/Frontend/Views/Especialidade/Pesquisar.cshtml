@@ -1,0 +1,75 @@
+﻿@model MODEL.Classes.SpecialtyModel[]
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Cadastros</a></li>
+    <li><a href="/Colaborador/Pesquisar">Colaborador</a></li>
+    <li><a href="#">Especialidades</a></li>
+    <li class="active">Pesquisar</li>
+</ul>
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-right"></span> Especialidades</h2>
+</div>
+<div class="page-content-wrap">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <h3 class="panel-title">Registros </h3>
+                    <ul class="panel-controls">
+                        <li>
+                                <button onclick="NewSpecialty()" type="button" class="btn btn-success pull-right">Nova Especialidade <span class="fa fa-floppy-o fa-right"></span></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body" ng-controller="SpecialtyController">
+                    <div class="table-responsive">
+                        <table class="table" id="DataTables_Table_1">
+                            <thead>
+                                <tr>
+                                    <td hidden="hidden"></td>
+                                    <td>Nome</td>
+                                    <td>Descrição</td>
+                                    <td>Status</td>
+                                    <td>#</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < Model.Count(); i++)
+                                {
+                                    <tr>
+                                        <td hidden="hidden">@Html.HiddenFor(col => Model[i].Id, new { ng_model = "collaborator.Id", })</td>
+                                        <td>@Model[i].Name</td>
+                                        <td>@Model[i].Description</td>
+                                        <td>@Model[i].Status</td>
+                                        <td><button type="button" onclick="Edit(@Model[i].Id)" class="btn btn-default editar-button"><span class="fa fa-pencil"></span></button></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+<script>
+    $('#DataTables_Table_1').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Portuguese-Brasil.json"
+        }
+    });
+
+    function NewSpecialty() {
+        window.location.href = '/Especialidade/Cadastrar';
+    }
+
+    function Edit(id)
+    {
+        window.location.href = '/Especialidade/Editar?id=' + id;
+    }
+</script>

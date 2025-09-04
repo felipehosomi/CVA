@@ -1,0 +1,132 @@
+﻿@model MODEL.Classes.CollaboratorModel
+@{
+    Layout = null;
+}
+<html lang="en" ng-app="cvaGestao">
+<head>
+    <title>CVA Consultoria</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    @Styles.Render("~/Content/themedefault")
+</head>
+<body ng-controller="CollaboratorController">
+    <a href="http://www.cvaconsultoria.com.br">
+        <img src="~/img/logo.png" style="margin-top:20px;" />
+    </a>
+    <input type="text" ng-model="$scope.collaborator.Extern" hidden="hidden"/>
+   {{collaborator.Extern=1;""}}
+
+    <div class="page-content-wrap">
+        <form name="form">
+            <div class="panel panel-default tabs">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active" id="tab-first-li"><a href="#tab-first" role="tab" data-toggle="tab">Dados Gerais</a></li>
+                    <li id="tab-third-li"><a href="#tab-third" role="tab" data-toggle="tab">Documentos</a></li>
+                    <li id="tab-fourth-li"><a href="#tab-fourth" role="tab" data-toggle="tab">Endereço</a></li>
+                </ul>
+                <div class="panel-body tab-content">
+                    <div class="tab-pane active" id="tab-first">
+                        @Html.Partial("CadastrarColaboradorPartial")
+                    </div>
+                    <div class="tab-pane" id="tab-third">
+                        @Html.Partial("CadastrarDocumentosColaborador")
+                    </div>
+                    <div class="tab-pane" id="tab-fourth">
+                        @Html.Partial("CadastrarEnderecoColaborador")
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-default pull-left" ng-click="ClearForm()">Limpar Formulário <span class="fa fa-trash-o fa-right"></span></button>
+                        <button type="button" class="btn btn-primary pull-right" ng-click="AddCollaborator()">Salvar <span class="fa fa-floppy-o fa-right"></span></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="message-box message-box-success animated fadeIn" id="message-box-success">
+        <div class="mb-container">
+            <div class="mb-middle">
+                <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+                <div class="mb-content">
+                    <p>Colaborador cadastrado com sucesso!</p>
+                </div>
+                <div class="mb-footer">
+                    <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+        <div class="mb-container">
+            <div class="mb-middle">
+                <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+                <div class="mb-content">
+                    <p id="message-error"></p>
+                </div>
+                <div class="mb-footer">
+                    <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MESSAGE BOX-->
+    <!-- START PRELOADS -->
+    <audio id="audio-alert" src="/audio/alert.mp3" preload="auto"></audio>
+    <audio id="audio-fail" src="/audio/fail.mp3" preload="auto"></audio>
+    <!-- END PRELOADS -->
+    <!-- START SCRIPTS -->
+    <!-- START PLUGINS -->
+    @Scripts.Render("~/Script/jquery")
+    @Scripts.Render("~/Script/jqueryui")
+    @Scripts.Render("~/Script/bootstrap")
+    @Scripts.Render("~/Script/angular")
+    <script src="~/Scripts/angular-ui-mask.js"></script>
+    <!-- END PLUGINS -->
+    <!-- START THIS PAGE PLUGINS-->
+    @Scripts.Render("~/Script/icheck")
+    @Scripts.Render("~/Script/customscroll")
+    @Scripts.Render("~/Script/scrolltop")
+    @Scripts.Render("~/Script/mirror")
+    @Scripts.Render("~/Script/raphael")
+    @Scripts.Render("~/Script/d3")
+    @Scripts.Render("~/Script/rick")
+    @Scripts.Render("~/Script/vector")
+    @Scripts.Render("~/Script/vectorworld")
+    @Scripts.Render("~/Script/datepicker")
+    @Scripts.Render("~/Script/owl")
+    @Scripts.Render("~/Script/moment")
+    @Scripts.Render("~/Script/calendar")
+    @Scripts.Render("~/Script/dateRange")
+    @Scripts.Render("~/Script/dropzone")
+    <!-- END THIS PAGE PLUGINS-->
+    <!-- START TEMPLATE -->
+    @Scripts.Render("~/Script/settings")
+    @Scripts.Render("~/Script/plugins")
+    @Scripts.Render("~/Script/action")
+    @Scripts.Render("~/Script/dashboard")
+
+    <script src="~/Scripts/plugins/noty/jquery.noty.js"></script>
+    <script src="~/Scripts/plugins/noty/layouts/topCenter.js"></script>
+    <script src="~/Scripts/plugins/noty/layouts/topLeft.js"></script>
+    <script src="~/Scripts/plugins/noty/layouts/topRight.js"></script>
+    <script src="~/Scripts/plugins/noty/themes/default.js"></script>
+
+    <!--Business And Controllers-->
+    @Scripts.Render("~/Business/Start")
+    @Scripts.Render("~/Business/Collaborator")
+    @Scripts.Render("~/Business/Calendar")
+    @Scripts.Render("~/Business/Specialty")
+    @Scripts.Render("~/Business/Project")
+    @Scripts.Render("~/Business/Project1")
+    <!--End Business And Controllers-->
+    <!-- END TEMPLATE -->
+    <!-- END SCRIPTS -->
+    <script>
+        $('#btnLogOff').click(function () {
+            window.location.href = "/";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CVA_BASES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BASE" Type="nvarchar" MaxLength="254" />
+          <Property Name="TIPO" Type="int" />
+          <Property Name="DB_SERVER" Type="nvarchar" MaxLength="200" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="200" />
+          <Property Name="PASSWD" Type="nvarchar" MaxLength="200" />
+          <Property Name="DB_USERNAME" Type="nvarchar" MaxLength="200" />
+          <Property Name="DB_PASSWD" Type="nvarchar" MaxLength="200" />
+          <Property Name="LICENSE_SERVER" Type="nvarchar" MaxLength="200" />
+          <Property Name="DB_TYPE" Type="int" />
+          <Property Name="USE_TRUSTED" Type="int" />
+        </EntityType>
+        <EntityType Name="CVA_BASES_DE_PARA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BASE_DE" Type="int" />
+          <Property Name="FILIAL_DE" Type="int" />
+          <Property Name="CNPJ_FILIAL_DE" Type="nvarchar" MaxLength="30" />
+          <Property Name="FILIAL_PARA" Type="int" />
+          <Property Name="CNPJ_FILIAL_PARA" Type="nvarchar" MaxLength="30" />
+          <Property Name="NOME" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__CVA_BASES__BASE___1B0907CE">
+          <End Role="CVA_BASES" Type="Self.CVA_BASES" Multiplicity="0..1" />
+          <End Role="CVA_BASES_DE_PARA" Type="Self.CVA_BASES_DE_PARA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_BASES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_BASES_DE_PARA">
+              <PropertyRef Name="BASE_DE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CVA_BASES" EntityType="Self.CVA_BASES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CVA_BASES_DE_PARA" EntityType="Self.CVA_BASES_DE_PARA" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CVA_BASES__BASE___1B0907CE" Association="Self.FK__CVA_BASES__BASE___1B0907CE">
+            <End Role="CVA_BASES" EntitySet="CVA_BASES" />
+            <End Role="CVA_BASES_DE_PARA" EntitySet="CVA_BASES_DE_PARA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BaseModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BASE" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="TIPO" Type="Int32" />
+          <Property Name="DB_SERVER" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWD" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DB_USERNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DB_PASSWD" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LICENSE_SERVER" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DB_TYPE" Type="Int32" />
+          <Property Name="USE_TRUSTED" Type="Int32" />
+          <NavigationProperty Name="CVA_BASES_DE_PARA" Relationship="Self.FK__CVA_BASES__BASE___1B0907CE" FromRole="CVA_BASES" ToRole="CVA_BASES_DE_PARA" />
+        </EntityType>
+        <EntityType Name="BaseDeParaModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BASE_DE" Type="Int32" />
+          <Property Name="FILIAL_DE" Type="Int32" />
+          <Property Name="CNPJ_FILIAL_DE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FILIAL_PARA" Type="Int32" />
+          <Property Name="CNPJ_FILIAL_PARA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NOME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CVA_BASES" Relationship="Self.FK__CVA_BASES__BASE___1B0907CE" FromRole="CVA_BASES_DE_PARA" ToRole="CVA_BASES" />
+        </EntityType>
+        <Association Name="FK__CVA_BASES__BASE___1B0907CE">
+          <End Role="CVA_BASES" Type="Model.BaseModel" Multiplicity="0..1" />
+          <End Role="CVA_BASES_DE_PARA" Type="Model.BaseDeParaModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CVA_BASES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CVA_BASES_DE_PARA">
+              <PropertyRef Name="BASE_DE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ConciliadoraEDM" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CVA_BASES" EntityType="Model.BaseModel" />
+          <EntitySet Name="CVA_BASES_DE_PARA" EntityType="Model.BaseDeParaModel" />
+          <AssociationSet Name="FK__CVA_BASES__BASE___1B0907CE" Association="Self.FK__CVA_BASES__BASE___1B0907CE">
+            <End Role="CVA_BASES" EntitySet="CVA_BASES" />
+            <End Role="CVA_BASES_DE_PARA" EntitySet="CVA_BASES_DE_PARA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ConciliadoraEDM">
+          <EntitySetMapping Name="CVA_BASES">
+            <EntityTypeMapping TypeName="Model.BaseModel">
+              <MappingFragment StoreEntitySet="CVA_BASES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BASE" ColumnName="BASE" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="DB_SERVER" ColumnName="DB_SERVER" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASSWD" ColumnName="PASSWD" />
+                <ScalarProperty Name="DB_USERNAME" ColumnName="DB_USERNAME" />
+                <ScalarProperty Name="DB_PASSWD" ColumnName="DB_PASSWD" />
+                <ScalarProperty Name="LICENSE_SERVER" ColumnName="LICENSE_SERVER" />
+                <ScalarProperty Name="DB_TYPE" ColumnName="DB_TYPE" />
+                <ScalarProperty Name="USE_TRUSTED" ColumnName="USE_TRUSTED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVA_BASES_DE_PARA">
+            <EntityTypeMapping TypeName="Model.BaseDeParaModel">
+              <MappingFragment StoreEntitySet="CVA_BASES_DE_PARA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BASE_DE" ColumnName="BASE_DE" />
+                <ScalarProperty Name="FILIAL_DE" ColumnName="FILIAL_DE" />
+                <ScalarProperty Name="CNPJ_FILIAL_DE" ColumnName="CNPJ_FILIAL_DE" />
+                <ScalarProperty Name="FILIAL_PARA" ColumnName="FILIAL_PARA" />
+                <ScalarProperty Name="CNPJ_FILIAL_PARA" ColumnName="CNPJ_FILIAL_PARA" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

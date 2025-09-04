@@ -1,0 +1,114 @@
+﻿<div class="panel panel-default tabs" id="tabs">
+    <div class="panel-body tab-content">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-2" style="padding-bottom:10px">
+                        <label>Data Prevista</label>
+                        <div class="input-group">
+                            <input type="date" class="form-control" ng-model="StatusReport.Data" tabindex="1">
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="padding-bottom:10px">
+                        <label>Horas orçadas</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="fa fa-clock-o"></span></span>
+                            <input type="text" class="form-control" ng-disabled="true" ng-model="StatusReport.HorasOrcadas">
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="padding-bottom:10px">
+                        <label>Horas consumidas</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="fa fa-clock-o"></span></span>
+                            <input type="text" class="form-control" ng-disabled="true" ng-model="StatusReport.HorasConsumidas">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="col-md-12 control-label">Descrição</label>
+                    <div class="col-md-12" style="padding-bottom: 10px">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                            <textarea class="form-control" rows="3" ng-model="StatusReport.Descricao" tabindex="6"></textarea>
+                        </div>
+                    </div>
+                    <label class="col-md-12 control-label">Pontos de Atenção</label>
+                    <div class="col-md-12" style="padding-bottom: 10px">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                            <textarea class="form-control" rows="3" ng-model="StatusReport.PontosAtencao" tabindex="6"></textarea>
+                        </div>
+                    </div>
+                    <label class="col-md-12 control-label">Plano de Ação</label>
+                    <div class="col-md-12" style="padding-bottom: 10px">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                            <textarea class="form-control" rows="3" ng-model="StatusReport.PlanoDeAcao" tabindex="6"></textarea>
+                        </div>
+                    </div>
+                    <label class="col-md-12 control-label">Conquistas</label>
+                    <div class="col-md-12" style="padding-bottom: 10px">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                            <textarea class="form-control" rows="3" ng-model="StatusReport.Conquistas" tabindex="6"></textarea>
+                        </div>
+                    </div>
+                    <label class="col-md-12 control-label">Próximos Passos</label>
+                    <div class="col-md-12" style="padding-bottom: 10px">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                            <textarea class="form-control" rows="3" ng-model="StatusReport.ProximosPassos" tabindex="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="padding-bottom:10px">
+                        <button type="button" class="btn btn-info" ng-click="AddStatusReport()">Inserir Status Report</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12 col-xs-12">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td><b>Data</b></td>
+                                    <td><b>Gerente do Projeto</b></td>
+                                    <td><b>Horas orçadas</b></td>
+                                    <td><b>Horas consumidas</b></td>
+                                    <td><b>Andamento</b></td>
+                                    <td><b></b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="line in StatusReports">
+                                    <td hidden="hidden">{{line.Id}}</td>
+                                    <td>{{line.Data | date:"dd/MM/yy"}}</td>
+                                    <td>{{line.GerenteProjeto.Nome}}</td>
+                                    <td>{{line.HorasOrcadas}}</td>
+                                    <td>{{line.HorasConsumidas}}</td>
+                                    <td>{{line.Concluido}}% concluído</td>
+                                    <td hidden="hidden">{{line.Descricao}}</td>
+                                    <td hidden="hidden">{{line.PontosAtencao}}</td>
+                                    <td hidden="hidden">{{line.PlanoDeAcao}}</td>
+                                    <td hidden="hidden">{{line.Conquistas}}</td>
+                                    <td hidden="hidden">{{line.ProximosPassos}}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default" data-toggle="tooltip" title="Visualizar"  ng-click="ViewStatusReport($index)"><span class="fa fa-search"></span></button>
+                                        <button type="button" class="btn btn-info" data-toggle="tooltip" title="Imprimir" ng-disabled="line.Id == undefined" ng-click="Print(line.Id)"><span class="fa fa-paste"></span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

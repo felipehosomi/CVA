@@ -1,0 +1,160 @@
+﻿@model List<CVA.Portal.Producao.Model.Producao.ProducaoModel>
+@using System.Linq;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("IndexFiltro", "Producao", FormMethod.Get))
+{
+    <div class="x_panel">
+        <div class="form-group">
+            <label class="col-md-2 control-label">Progresso de Produção: </label>
+
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped" data-transitiongoal="@ViewBag.Percentual">@ViewBag.Percentual %</div>
+            </div>
+            <div class="x_title">
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <div class="col-md-6">
+                        <label>Data de</label>
+                        <br />
+                        <input type="date" id="tbxDataDe" value="@(ViewBag.DataDe)" name="DataDe" required="required" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>Data até</label>
+                        <br />
+                        <input type="date" id="tbxDataAte" value="@(ViewBag.DataAte)" name="DataAte" required="required" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="input-group">
+                    <label>Nr. OP</label>
+                    <br />
+                    @Html.TextBox("NrOP", "", htmlAttributes: new { type = "number", @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-md-1">
+                <label>Nr. Pedido</label>
+                <br />
+                <div class="input-group">
+                    @Html.TextBox("NrPedido", "", htmlAttributes: new { type = "number", @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group">
+                    <label>Etapa</label>
+                    <br />
+                    @Html.DropDownList("Etapa", (SelectList)ViewBag.Etapa, "", htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <label>Item</label>
+                    <br />
+                    @Html.TextBox("Item", "", htmlAttributes: new { @class = "form-control", style = "width:280px !important" })
+                    <button type="submit" style="margin-left: 20px" class="btn btn-success">Buscar <span class="fa fa-search fa-right"></span></button>
+                </div>
+            </div>
+            <div id="divOPs">
+                @Html.Partial("TabelaOrdensProducao")
+            </div>
+            <div id="modal-historico" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4 class="modal-title">Linha de Montagem</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div id="divLogPai">
+                                <div id="divLogFilho"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="modal-estrutura" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4 class="modal-title">Estrutura Item</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div id="divEPPai">
+                                <div id="divEPFilho"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            @*@if (CVA.Portal.Producao.Web.Helper.CvaSession.ViewList.Any(v => v.Controller == "InspecaoOP"))
+                        {
+                            <button id="btnFicha" type="button" onclick="fichaInspecaoModal()" class="btn btn-primary" data-toggle="modal" data-target="#modal-ficha">Inspeção Qualidade</button>
+                        }*@
+                            <button id="btnApontamento" type="button" class="btn btn-primary" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processando" onclick="apontamentoSalvar()">Salvar</button>
+                            <button type="button" class="btn btn-info" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="modal-ficha" class="modal" tabindex="-1" role="dialog" aria-hidden="true" style="overflow-y: hidden">
+                <div class="modal-dialog modal-xlg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4 class="modal-title">Inspeção Produção</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div id="divQAPai">
+                                <div id="divQAFilho"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnQASalvar" class="btn btn-primary" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processando" onclick="fichaInspecaoSalvar()">Salvar</button>
+                            <button type="button" class="btn btn-info" onclick="fichaInspecaoFechar()">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="modal-lote" class="modal" tabindex="-1" role="dialog" aria-hidden="true" style="overflow-y: hidden">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4 class="modal-title">Lote / Série Item</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div id="divLotePai" style="margin-top: -20px" class="panel-body">
+                                @Html.Partial("ModalLoteSerie", new CVA.Portal.Producao.Model.Producao.EstruturaProducaoModel())
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="loteSerieSalvar()">Salvar</button>
+                            <button type="button" class="btn btn-info" onclick="loteSerieFechar()">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts{
+    <script src="~/Scripts/Views/Producao/index.js"></script>
+    <script src="~/Scripts/Views/Producao/apontamentoProducao.js"></script>
+    <script src="~/Scripts/Views/Producao/fichaInspecao.js"></script>
+    <script src="~/Scripts/Views/Producao/loteSerie.js"></script>
+}

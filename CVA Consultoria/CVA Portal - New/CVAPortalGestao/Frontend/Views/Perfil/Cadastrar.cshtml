@@ -1,0 +1,169 @@
+﻿@model MODEL.Classes.ProfileModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="/Perfil/Pesquisar">Perfis</a></li>
+    <li class="active">Cadastrar</li>
+</ul>
+<div class="page-content-wrap" ng-controller="ProfileController" ng-init="InitValue(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <form name=" form">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"> Cadastrar<strong> Perfil</strong></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Nome*</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                    <input type="text" hidden="hidden" ng-model="profile.Id" />
+                                                    <input type="text" name="name" class="form-control" ng-model="profile.Name" />
+                                                </div>
+                                                <span class="help-block">Informe o nome do perfil</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Descrição*</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                    <textarea class="form-control" rows="4" ng-model="profile.Description"></textarea>
+                                                </div>
+                                                <span class="help-block">Informe a descrição do perfil</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Status*</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                                    <select name="status" class="form-control" ng-model="profile.Status.Id" ng-options="selected.Id as selected.Descricao for selected in StatusList">
+                                                        <option value="">Selecione</option>
+                                                    </select>
+                                                </div>
+                                                <span class="help-block">Selecione o status do registro</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Acesso Financeiro*</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                                    <select name="status" class="form-control" ng-model="profile.FinancialAccess">
+                                                        <option value="">Selecione</option>
+                                                        <option value="S">Sim</option>
+                                                        <option value="N">Não</option>
+                                                    </select>
+                                                </div>
+                                                <span class="help-block">Informe se possui acesso financeiro</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"> Informar<strong> Acessos</strong></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="col-md-9">
+                                                <label class="col-md-3 control-label">Tela</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-sort-alpha-asc"></span></span>
+                                                    <select class="form-control" ng-change="UserViewSelected()" ng-model="profile.UserView.Id" ng-options="selected.Id as selected.Name for selected in ViewList">
+                                                        <option value="">Selecione</option>
+                                                    </select>
+                                                </div>
+                                                <span class="help-block">Selecione a tela de acesso</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-info" ng-click="AddLines()">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-12 col-xs-12">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <td class="col-md-3">Tela</td>
+                                                        <td class="col-md-3">Descrição</td>
+                                                        <td class="col-md-3">#</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="userview in UserViewSelectedList">
+                                                        <td>{{userview.Name}}</td>
+                                                        <td>{{userview.Description}}</td>
+                                                        <td><button type="button" class="btn btn-danger" ng-click="RemoveLine($index)">X</button></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary pull-right" ng-disabled="IsProcessing" ng-click="Save()">Salvar Perfil <span class="fa fa-floppy-o fa-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p>Perfil cadastrado com sucesso!</p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Script/jquery")
+
+<script src="~/Scripts/plugins/iCheck/icheck.js"></script>

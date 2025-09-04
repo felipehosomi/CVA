@@ -1,0 +1,148 @@
+﻿@model List<CVA.Portal.Producao.Model.Producao.ProducaoModel>
+
+@{
+    Layout = null;
+}
+
+@using CVA.Portal.Producao.Model.Producao;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Portal de Produção</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Content/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="~/Content/custom.min.css" rel="stylesheet">
+
+    <link href="~/Content/custom.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="~/Content/pnotify.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/pnotify.buttons.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/pnotify.nonblock.css">
+
+    <style>
+        #tbOrders {
+            margin: 0;
+        }
+    </style>
+
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/Plugins/pnotify.js"></script>
+    <script src="~/Scripts/Plugins/pnotify.buttons.js"></script>
+    <script src="~/Scripts/Plugins/pnotify.nonblock.js"></script>
+
+</head>
+<body class="login">
+    <div class="login_wrapper" style="max-width: 99.5%;margin-top: 15px;">
+        <div class="animate form login_form">
+            <section class="login_content" style="padding: 0">
+                <div class="col-md-2">
+                    <img src="~/Content/Images/logo.png" style="width: 170px" />
+                </div>
+                @using (Html.BeginForm("ApontamentoOPSelecaoAdd", "Producao", FormMethod.Post, new { id = "formOPs", style = "margin: 0" }))
+                {
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            <label>Ordens selecionadas:</label>
+                            <div class="form-group" style="overflow:auto;max-height:710px;border:darkgray;border-style: solid;border-width:thin;">
+                                <table class="table table-responsive table-bordered table-striped" id="tbOrders">
+                                    <thead>
+                                        <tr>
+                                            <th>Código de barras</th>
+                                            <th>Nr. OP</th>
+                                            <th>Cód. item</th>
+                                            <th>Descrição</th>
+                                            <th>Etapa</th>
+                                            <th>Recurso</th>
+                                            <th>Quant. planejada</th>
+                                            <th>Quant. para apontar</th>
+                                            <th>Saldo etapa</th>
+                                            <th>Data entrega</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (int i = 0; i < Model.Count; i++)
+                                        {
+                                            string barcode = Model[i].NrOP.ToString().PadLeft(6, '0') + Model[i].CodEtapa.ToString().PadLeft(3, '0') + Model[i].RecursoLineNum.ToString().PadLeft(4, '0');
+                                            double saldoEtapa = Model[i].SaldoEtapa;
+                                            <tr>
+                                                <td>@barcode</td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].DocEntry)
+                                                    @Html.HiddenFor(m => m[i].NrOP)
+                                                    @Model[i].NrOP
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].ItemCode)
+                                                    @Model[i].ItemCode
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].ItemName)
+                                                    @Model[i].ItemName
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].CodEtapa)
+                                                    @Html.HiddenFor(m => m[i].Etapa)
+                                                    @Model[i].Etapa
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].RecursoLineNum)
+                                                    @Html.HiddenFor(m => m[i].RecursoName)
+                                                    @Model[i].RecursoName
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].QuantidadeBase)
+                                                    @Html.HiddenFor(m => m[i].QuantidadePlanejada)
+                                                    @Model[i].QuantidadePlanejada
+                                                </td>
+                                                <td>
+                                                    @Html.TextBoxFor(m => m[i].QuantidadeApontada, new { @Value = saldoEtapa, @class = "form-control quantidade-apontada", style = "width: 150px", required = "required", title = "Quantidade apontada", autocomplete = "off", type = "number", placeholder = "0.0000", step = "0.0001", min = "0.0001", max = saldoEtapa })
+                                                </td>
+                                                <td>
+                                                    @Html.TextBoxFor(m => m[i].SaldoEtapa, new { @data_original = saldoEtapa, @Value = "0.0000", @class = "form-control saldo-etapa", style = "width: 150px", required = "required", title = "Saldo etapa", autocomplete = "off", type = "number", placeholder = "0.0000", step = "0.0001", min = "0.0000", disabled = "disabled" })
+                                                </td>
+                                                <td>
+                                                    @Html.HiddenFor(m => m[i].VencimentoOP)
+                                                    @Model[i].VencimentoOP.ToString("dd/MM/yyyy")
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        <button id="btnSubmit" type="submit" value="OK" name="submit" class="btn btn-success" style="width: 250px">OK</button>
+                    </div>
+                }
+                <img style="margin-top: 20px" src="~/Content/Images/cva_logo.png" />
+            </section>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('.quantidade-apontada').change(function () {
+                var saldoInput = $(this).closest('tr').find('input[class="form-control saldo-etapa"]').first();
+                var novoSaldo = saldoInput.data('original') - $(this).val();
+                saldoInput.val(novoSaldo.toFixed(4));
+            });
+        });
+
+        $(document).ready(function () {
+            $("#formOPs").submit(function () {
+                $("#btnSubmit").attr("disabled", true);
+                return true;
+            });
+        });
+    </script>
+</body>
+</html>

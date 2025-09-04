@@ -1,0 +1,146 @@
+﻿
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Realizar<strong> Apontamento</strong></h3>
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: {{VisualPercent}}%; float:right">
+                    {{VisualPercent}}%
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Projeto*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-globe"></span></span>
+                                    <input type="text" hidden="hidden" ng-model="note.Id" />
+                                    <select class="form-control" ng-model="note.Project.Id" ng-options="selected.Id as selected.Codigo + ' - ' + selected.Tag + ' ' + selected.Nome for selected in ProjectList" ng-change="LoadTickets()">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o projeto</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Fase*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-globe"></span></span>
+                                    <select class="form-control" ng-model="note.Step.Id" ng-options="selected.Id as selected.Nome for selected in StepList">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione a fase do projeto</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Hora Início*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-clock-o"></span></span>
+                                    <input type="text" class="form-control timePicker" id="init-hour" ng-model="note.InitHour" />
+                                </div>
+                                <span class="help-block">Informe a hora de início das atividades</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Intervalo</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-clock-o"></span></span>
+                                    <input type="text" class="form-control timePicker" id="interval-hour" ng-model="note.IntervalHour" />
+                                </div>
+                                <span class="help-block">Informe o período de intervalo</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Hora Término*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-clock-o"></span></span>
+                                    <input type="text" class="form-control timePicker" id="finish-hour" ng-model="note.FinishHour" />
+                                </div>
+                                <span class="help-block">Informe a hora de término das atividades</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nº Chamado</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-wrench"></span></span>
+                                    <select id="cb_Ticket" class="form-control" ng-model="note.Ticket.Code" ng-options="selected.Id as selected.NumTck + ' - ' + selected.Description for selected in AMSList">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o chamado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Data*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span> 
+                                    <input type="date" class="form-control" ng-model="note.Date" ng-disabled="note.Id > 0" />
+                                </div>
+                                <span class="help-block">Dia da semana:  {{note.Date.getDay() == 1 ? 'Segunda-Feira' :  (note.Date.getDay() == 2 ? 'Terça-feira' : (note.Date.getDay() == 3 ? 'Quarta-Feira' : (note.Date.getDay() == 4 ? 'Quinta-Feira' : (note.Date.getDay() == 5 ? 'Sexta-Feira' : (note.Date.getDay() == 6 ? 'Sábado' : 'Domingo')))))}}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Solicitante*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                    <input type="text" class="form-control" ng-model="note.Requester" />
+                                </div>
+                                <span class="help-block">Informe o solicitante</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Especialidade*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-wrench"></span></span>
+                                    <select class="form-control" ng-model="note.Specialty.Id" ng-options="selected.Id as selected.Name for selected in SpecialtyList">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione a especialidade</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Descrição*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <textarea class="form-control" rows="4" maxlength="250" ng-model="note.Description"></textarea>
+                                </div>
+                                <span class="help-block">Informe a descrição</span>
+                                <div>
+                                    <button type="submit" class="btn btn-primary pull-right" ng-click="SaveNote()">Salvar Apontamento <span class="fa fa-floppy-o fa-right"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jQuery-2.1.4.js"></script>
+<script src="~/Scripts/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+<script>
+    $('.timePicker').timepicker({
+        minuteStep: 1,
+        template: 'modal',
+        appendWidgetTo: 'body',
+        showSeconds: false,
+        showMeridian: false,
+        defaultTime: false
+    });
+</script>

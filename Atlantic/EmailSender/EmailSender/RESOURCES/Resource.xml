@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<emailSender>
+  <database>Data Source=SERVERSAP;Database = CVA_ATL_REP;User=sa;Password=sa@#Atlantic;</database>
+  <EmailCVA>
+    <email>noreplay@cvaconsultoria.com.br</email>
+    <password>kpOsuW2y3QuXRr04mlHDpVnDhASYlGGOX9ddvDMg8bw=</password>
+  </EmailCVA>
+
+  <modeloEmail>
+    <subject>Alerta de erro - Replicador</subject>
+    <body>
+      <p>Foi gerado um erro durante o processo de replicação.</p>
+      <p>Verifique os dados ou entre em contato com a CVA Consultoria.</p>
+    </body>
+  </modeloEmail>
+
+  <conexao>
+    <host>smtp.gmail.com</host>
+    <port>587</port>
+  </conexao>
+
+
+</emailSender>
+
+
+

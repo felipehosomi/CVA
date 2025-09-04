@@ -1,0 +1,135 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default tabs" id="tabs">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active" id="tab-first-li"><a href="#tab-first" role="tab" data-toggle="tab">Recursos</a></li>
+                @if (ViewBag.FinancialAccess == "S")
+                {
+                    <li id="tab-second-li"><a href="#tab-second" role="tab" data-toggle="tab">Especialidades</a></li>
+                }
+            </ul>
+            <div class="panel-body tab-content">
+                <div class="tab-pane active" id="tab-first">
+
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="col-md-9">
+                                        <label>Colaborador</label>
+                                        <div class="input-group">
+                                            <p id="load-03" class="loader"><img src="~/Content/Loading.gif" /></p>
+                                            <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                            <select name="status" class="form-control" ng-model="Recurso.Id" ng-options="selected.Id as selected.Nome for selected in Colaboradores">
+                                                <option value="">Selecione</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-3" style="padding-top:22px">
+                                            <button id="bAdicionar" type="button" class="btn btn-info" ng-click="AddResource()">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-12 col-xs-12">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <td hidden="hidden"></td>
+                                                <td><b>Colaborador</b></td>
+                                                <td><b>#</b></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="line in Recursos">
+                                                <td hidden="hidden">{{line.Id}}</td>
+                                                <td>{{line.Nome}}</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-danger" ng-click="RemoveResource($index)">X</button>
+                                                    @if (ViewBag.FinancialAccess == "S")
+                                                    {
+                                                        <button type="button" class="btn btn-default" ng-click="EditResourceSpecialties($index)">$</button>
+                                                    }
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @if (ViewBag.FinancialAccess == "S")
+                {
+                    <div class="tab-pane" id="tab-second">
+
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12" style="padding-bottom: 10px">
+                                    <input type="text" class="form-control" ng-model="ColaboradorId" ng-hide="true" />
+                                    <div class="col-md-4">
+                                        <label>Colaborador</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                            <input type="text" class="form-control" ng-model="ColaboradorNome" readonly="readonly" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Especialidade</label>
+                                        <div class="input-group" style="padding-bottom:10px">
+                                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                            <select name="status" class="form-control" ng-model="ColaboradorEspecialidade.Id" ng-options="selected.Id as selected.Name for selected in ColaboradorEspecialidades">
+                                                <option value="">Selecione</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Valor</label>
+                                        <div class="input-group" style="padding-bottom:30px">
+                                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                            <input type="text" class="form-control" ng-model="ColaboradorEspecialidade.Value" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2" style="padding-top:22px">
+                                        <button type="button" class="btn btn-success" ng-click="AddSpecialtyRule()">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12 col-xs-12">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <td><b>Colaborador</b></td>
+                                                    <td><b>Especialidade</b></td>
+                                                    <td><b>Valor Alternativo</b></td>
+                                                    <td><b>#</b></td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="line in RegrasEspecialidades">
+                                                    <td hidden=hidden>{{line.CollaboratorId}}</td>
+                                                    <td hidden=hidden>{{line.SpecialtyId}}</td>
+                                                    <td>{{line.CollaboratorName}}</td>
+                                                    <td>{{line.SpecialtyName}}</td>
+                                                    <td>{{line.Value}}</td>
+                                                    <td><button type="button" class="btn btn-danger" ng-click="RemoveSpecialtyRule($index)">X</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Script/jquery")

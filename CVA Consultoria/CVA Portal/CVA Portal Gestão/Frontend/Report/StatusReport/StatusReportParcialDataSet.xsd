@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="StatusReportParcialDataSet" targetNamespace="http://tempuri.org/StatusReportParcialDataSet.xsd" xmlns:mstns="http://tempuri.org/StatusReportParcialDataSet.xsd" xmlns="http://tempuri.org/StatusReportParcialDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="StatusReportParcialDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="StatusReportParcialDataSet" msprop:Generator_UserDSName="StatusReportParcialDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtProjeto" msprop:Generator_TableClassName="dtProjetoDataTable" msprop:Generator_TableVarName="tabledtProjeto" msprop:Generator_RowChangedName="dtProjetoRowChanged" msprop:Generator_TablePropName="dtProjeto" msprop:Generator_RowDeletingName="dtProjetoRowDeleting" msprop:Generator_RowChangingName="dtProjetoRowChanging" msprop:Generator_RowEvHandlerName="dtProjetoRowChangeEventHandler" msprop:Generator_RowDeletedName="dtProjetoRowDeleted" msprop:Generator_RowClassName="dtProjetoRow" msprop:Generator_UserTableName="dtProjeto" msprop:Generator_RowEvArgName="dtProjetoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProjetoCodigo" msprop:Generator_ColumnVarNameInTable="columnProjetoCodigo" msprop:Generator_ColumnPropNameInRow="ProjetoCodigo" msprop:Generator_ColumnPropNameInTable="ProjetoCodigoColumn" msprop:Generator_UserColumnName="ProjetoCodigo" type="xs:string" minOccurs="0" />
+              <xs:element name="ProjetoTag" msprop:Generator_ColumnVarNameInTable="columnProjetoTag" msprop:Generator_ColumnPropNameInRow="ProjetoTag" msprop:Generator_ColumnPropNameInTable="ProjetoTagColumn" msprop:Generator_UserColumnName="ProjetoTag" type="xs:string" minOccurs="0" />
+              <xs:element name="ProjetoNome" msprop:Generator_ColumnVarNameInTable="columnProjetoNome" msprop:Generator_ColumnPropNameInRow="ProjetoNome" msprop:Generator_ColumnPropNameInTable="ProjetoNomeColumn" msprop:Generator_UserColumnName="ProjetoNome" type="xs:string" minOccurs="0" />
+              <xs:element name="ProjetoConcluido" msprop:Generator_ColumnVarNameInTable="columnProjetoConcluido" msprop:Generator_ColumnPropNameInRow="ProjetoConcluido" msprop:Generator_ColumnPropNameInTable="ProjetoConcluidoColumn" msprop:Generator_UserColumnName="ProjetoConcluido" type="xs:string" minOccurs="0" />
+              <xs:element name="ProjetoApontado" msprop:Generator_ColumnVarNameInTable="columnProjetoApontado" msprop:Generator_ColumnPropNameInRow="ProjetoApontado" msprop:Generator_ColumnPropNameInTable="ProjetoApontadoColumn" msprop:Generator_UserColumnName="ProjetoApontado" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtStatusReport" msprop:Generator_TableClassName="dtStatusReportDataTable" msprop:Generator_TableVarName="tabledtStatusReport" msprop:Generator_RowChangedName="dtStatusReportRowChanged" msprop:Generator_TablePropName="dtStatusReport" msprop:Generator_RowDeletingName="dtStatusReportRowDeleting" msprop:Generator_RowChangingName="dtStatusReportRowChanging" msprop:Generator_RowEvHandlerName="dtStatusReportRowChangeEventHandler" msprop:Generator_RowDeletedName="dtStatusReportRowDeleted" msprop:Generator_RowClassName="dtStatusReportRow" msprop:Generator_UserTableName="dtStatusReport" msprop:Generator_RowEvArgName="dtStatusReportRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_UserColumnName="Data" type="xs:string" minOccurs="0" />
+              <xs:element name="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" msprop:Generator_UserColumnName="Descricao" type="xs:string" minOccurs="0" />
+              <xs:element name="PontosAtencao" msprop:Generator_ColumnVarNameInTable="columnPontosAtencao" msprop:Generator_ColumnPropNameInRow="PontosAtencao" msprop:Generator_ColumnPropNameInTable="PontosAtencaoColumn" msprop:Generator_UserColumnName="PontosAtencao" type="xs:string" minOccurs="0" />
+              <xs:element name="PlanoDeAcao" msprop:Generator_ColumnVarNameInTable="columnPlanoDeAcao" msprop:Generator_ColumnPropNameInRow="PlanoDeAcao" msprop:Generator_ColumnPropNameInTable="PlanoDeAcaoColumn" msprop:Generator_UserColumnName="PlanoDeAcao" type="xs:string" minOccurs="0" />
+              <xs:element name="Conquistas" msprop:Generator_ColumnVarNameInTable="columnConquistas" msprop:Generator_ColumnPropNameInRow="Conquistas" msprop:Generator_ColumnPropNameInTable="ConquistasColumn" msprop:Generator_UserColumnName="Conquistas" type="xs:string" minOccurs="0" />
+              <xs:element name="ProximosPassos" msprop:Generator_ColumnVarNameInTable="columnProximosPassos" msprop:Generator_ColumnPropNameInRow="ProximosPassos" msprop:Generator_ColumnPropNameInTable="ProximosPassosColumn" msprop:Generator_UserColumnName="ProximosPassos" type="xs:string" minOccurs="0" />
+              <xs:element name="GerenteProjeto" msprop:Generator_ColumnVarNameInTable="columnGerenteProjeto" msprop:Generator_ColumnPropNameInRow="GerenteProjeto" msprop:Generator_ColumnPropNameInTable="GerenteProjetoColumn" msprop:Generator_UserColumnName="GerenteProjeto" type="xs:string" minOccurs="0" />
+              <xs:element name="HorasOrcadas" msprop:Generator_ColumnVarNameInTable="columnHorasOrcadas" msprop:Generator_ColumnPropNameInRow="HorasOrcadas" msprop:Generator_ColumnPropNameInTable="HorasOrcadasColumn" msprop:Generator_UserColumnName="HorasOrcadas" type="xs:string" minOccurs="0" />
+              <xs:element name="HorasConsumidas" msprop:Generator_ColumnVarNameInTable="columnHorasConsumidas" msprop:Generator_ColumnPropNameInRow="HorasConsumidas" msprop:Generator_ColumnPropNameInTable="HorasConsumidasColumn" msprop:Generator_UserColumnName="HorasConsumidas" type="xs:string" minOccurs="0" />
+              <xs:element name="Concluido" msprop:Generator_ColumnVarNameInTable="columnConcluido" msprop:Generator_ColumnPropNameInRow="Concluido" msprop:Generator_ColumnPropNameInTable="ConcluidoColumn" msprop:Generator_UserColumnName="Concluido" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtFase" msprop:Generator_TableClassName="dtFaseDataTable" msprop:Generator_TableVarName="tabledtFase" msprop:Generator_RowChangedName="dtFaseRowChanged" msprop:Generator_TablePropName="dtFase" msprop:Generator_RowDeletingName="dtFaseRowDeleting" msprop:Generator_RowChangingName="dtFaseRowChanging" msprop:Generator_RowEvHandlerName="dtFaseRowChangeEventHandler" msprop:Generator_RowDeletedName="dtFaseRowDeleted" msprop:Generator_RowClassName="dtFaseRow" msprop:Generator_UserTableName="dtFase" msprop:Generator_RowEvArgName="dtFaseRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FaseNome" msprop:Generator_ColumnVarNameInTable="columnFaseNome" msprop:Generator_ColumnPropNameInRow="FaseNome" msprop:Generator_ColumnPropNameInTable="FaseNomeColumn" msprop:Generator_UserColumnName="FaseNome" type="xs:string" minOccurs="0" />
+              <xs:element name="FaseConcluido" msprop:Generator_ColumnVarNameInTable="columnFaseConcluido" msprop:Generator_ColumnPropNameInRow="FaseConcluido" msprop:Generator_ColumnPropNameInTable="FaseConcluidoColumn" msprop:Generator_UserColumnName="FaseConcluido" type="xs:string" minOccurs="0" />
+              <xs:element name="FaseInicio" msprop:Generator_ColumnVarNameInTable="columnFaseInicio" msprop:Generator_ColumnPropNameInRow="FaseInicio" msprop:Generator_ColumnPropNameInTable="FaseInicioColumn" msprop:Generator_UserColumnName="FaseInicio" type="xs:string" minOccurs="0" />
+              <xs:element name="FaseFim" msprop:Generator_ColumnVarNameInTable="columnFaseFim" msprop:Generator_ColumnPropNameInRow="FaseFim" msprop:Generator_ColumnPropNameInTable="FaseFimColumn" msprop:Generator_UserColumnName="FaseFim" type="xs:string" minOccurs="0" />
+              <xs:element name="FaseDias" msprop:Generator_ColumnVarNameInTable="columnFaseDias" msprop:Generator_ColumnPropNameInRow="FaseDias" msprop:Generator_ColumnPropNameInTable="FaseDiasColumn" msprop:Generator_UserColumnName="FaseDias" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHoras" msprop:Generator_TableClassName="dtHorasDataTable" msprop:Generator_TableVarName="tabledtHoras" msprop:Generator_TablePropName="dtHoras" msprop:Generator_RowDeletingName="dtHorasRowDeleting" msprop:Generator_RowChangingName="dtHorasRowChanging" msprop:Generator_RowEvHandlerName="dtHorasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtHorasRowDeleted" msprop:Generator_UserTableName="dtHoras" msprop:Generator_RowChangedName="dtHorasRowChanged" msprop:Generator_RowEvArgName="dtHorasRowChangeEvent" msprop:Generator_RowClassName="dtHorasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PlanejadoFuncional" msprop:Generator_ColumnVarNameInTable="columnPlanejadoFuncional" msprop:Generator_ColumnPropNameInRow="PlanejadoFuncional" msprop:Generator_ColumnPropNameInTable="PlanejadoFuncionalColumn" msprop:Generator_UserColumnName="PlanejadoFuncional" type="xs:string" minOccurs="0" />
+              <xs:element name="PlanejadoGP" msprop:Generator_ColumnVarNameInTable="columnPlanejadoGP" msprop:Generator_ColumnPropNameInRow="PlanejadoGP" msprop:Generator_ColumnPropNameInTable="PlanejadoGPColumn" msprop:Generator_UserColumnName="PlanejadoGP" type="xs:string" minOccurs="0" />
+              <xs:element name="PlanejadoDev" msprop:Generator_ColumnVarNameInTable="columnPlanejadoDev" msprop:Generator_ColumnPropNameInRow="PlanejadoDev" msprop:Generator_ColumnPropNameInTable="PlanejadoDevColumn" msprop:Generator_UserColumnName="PlanejadoDev" type="xs:string" minOccurs="0" />
+              <xs:element name="ApontadoFuncional" msprop:Generator_ColumnVarNameInTable="columnApontadoFuncional" msprop:Generator_ColumnPropNameInRow="ApontadoFuncional" msprop:Generator_ColumnPropNameInTable="ApontadoFuncionalColumn" msprop:Generator_UserColumnName="ApontadoFuncional" type="xs:string" minOccurs="0" />
+              <xs:element name="ApontadoGP" msprop:Generator_ColumnVarNameInTable="columnApontadoGP" msprop:Generator_ColumnPropNameInRow="ApontadoGP" msprop:Generator_ColumnPropNameInTable="ApontadoGPColumn" msprop:Generator_UserColumnName="ApontadoGP" type="xs:string" minOccurs="0" />
+              <xs:element name="ApontadoDev" msprop:Generator_ColumnVarNameInTable="columnApontadoDev" msprop:Generator_ColumnPropNameInRow="ApontadoDev" msprop:Generator_ColumnPropNameInTable="ApontadoDevColumn" msprop:Generator_UserColumnName="ApontadoDev" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

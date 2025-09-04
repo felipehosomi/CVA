@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AddOnRegData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SlientInstallation="No" SlientUpgrade="No" Partnernmsp="CVA" SchemaVersion="3.0" Type="" MultipleVersion="false" OnDemand="" OnPremise="" ExtName="[CVA] - Apetit Consolidacao Cardapio" ExtVersion="93.64.013" Contdata="CVA" Partner="CVA" DBType="HANA" ClientType="W">
+  <Validity>
+    <SBOCompatibility>
+      <Version From="92" To="94" />
+    </SBOCompatibility>
+  </Validity>
+  <Configuration>
+    <Repository>
+      <Properties />
+    </Repository>
+    <Deployment>
+      <Properties />
+    </Deployment>
+    <Assignment>
+      <Properties />
+    </Assignment>
+  </Configuration>
+  <Addons>
+    <Addon Name="[CVA] - Apetit Consolidacao Cardapio" Group="" ForceFlag="" Visible="" AutoAssign="" SelfUpgrd="">
+      <x86 AddonExe="" AddonSig="">
+        <Installation>
+          <Files />
+        </Installation>
+        <Uninstallation>
+          <Files />
+        </Uninstallation>
+      </x86>
+      <x64 AddonExe="CVA.Apetit.Addon.exe" AddonSig="4133DB0B102FAF3758D4F68BB6DB8E69" ExeDir="X64Client">
+        <Installation>
+          <Files>
+            <File FileName="X64Client\CVA.Apetit.Addon.b1s">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.Apetit.Addon.exe">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.Apetit.Addon.pdb">
+              <Actions />
+            </File>
+            <File FileName="X64Client\EPPlus.dll">
+              <Actions />
+            </File>
+            <File FileName="X64Client\EPPlus.xml">
+              <Actions />
+            </File>
+            <File FileName="X64Client\SAPBusinessOneSDK.dll">
+              <Actions />
+            </File>
+          </Files>
+        </Installation>
+        <Uninstallation>
+          <Files>
+            <File FileName="X64Client\CVA.Apetit.Addon.b1s">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.Apetit.Addon.exe">
+              <Actions />
+            </File>
+            <File FileName="X64Client\CVA.Apetit.Addon.pdb">
+              <Actions />
+            </File>
+            <File FileName="X64Client\EPPlus.dll">
+              <Actions />
+            </File>
+            <File FileName="X64Client\EPPlus.xml">
+              <Actions />
+            </File>
+            <File FileName="X64Client\SAPBusinessOneSDK.dll">
+              <Actions />
+            </File>
+          </Files>
+        </Uninstallation>
+      </x64>
+    </Addon>
+  </Addons>
+  <XApps>
+    <XApp Name="" Path="" FileName="" />
+  </XApps>
+  <UDQs>
+    <UDQ udqname="">
+      <Hana FileName="" />
+    </UDQ>
+  </UDQs>
+</AddOnRegData>

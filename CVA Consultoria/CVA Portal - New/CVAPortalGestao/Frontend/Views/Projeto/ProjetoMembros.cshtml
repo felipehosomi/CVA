@@ -1,0 +1,93 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Contatos</strong> do cliente</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="col-md-9" style="padding-bottom:10px">
+                                <label>Nome</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                    <input type="text" class="form-control" ng-model="Membro.Nome" tabindex="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-9" style="padding-bottom:10px">
+                                <label>Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                    <input type="text" class="form-control" ng-model="Membro.Email" tabindex="3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="col-md-9" style="padding-bottom:10px">
+                                <label>Telefone</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                    <input type="text" class="form-control" ng-model="Membro.Telefone" id="cellphone-mask" tabindex="2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-9" style="padding-bottom:10px">
+                                <label>Departamento</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                    <input type="text" class="form-control" ng-model="Membro.Departamento" tabindex="4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-3" style="padding-bottom:10px">
+                            <button type="button" class="btn btn-info" ng-click="AddMember()">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><b>Nome</b></td>
+                                        <td><b>Telefone</b></td>
+                                        <td><b>Email</b></td>
+                                        <td><b>Departamento</b></td>
+                                        <td><b>#</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="line in Projeto.Membros">
+                                        <td>{{line.Nome}}</td>
+                                        <td>{{line.Telefone}}</td>
+                                        <td>{{line.Email}}</td>
+                                        <td>{{line.Departamento}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default" ng-click="EditMember($index)">Editar</button>
+                                            <button type="button" class="btn btn-danger" ng-click="RemoveMember($index)">X</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#phone-mask').mask('(99) 9999-99999');
+    $('#cellphone-mask').mask('(99) 9999-99999');
+</script>

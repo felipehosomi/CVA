@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Apontamento_GetQtde" xml:space="preserve">
+    <value>IF {3} = 1
+BEGIN
+	SELECT ISNULL(U_QtdeCQ - U_QtdeApontada, 0)
+	FROM [{0}].[dbo].[@CVA_APONTAMENTO]
+	WHERE U_NrOP = {1}
+	AND U_CodEtapa =  '{2}'
+END
+ELSE
+BEGIN
+	SELECT PlannedQty
+	FROM [{0}].[dbo].OWOR
+	WHERE DocEntry = {1}
+END</value>
+  </data>
+  <data name="Apontamento_UpsertQtdeApontada" xml:space="preserve">
+    <value>EXEC [{0}].[dbo].SP_CVA_APONTAMENTO_QTDEAPONTADA {1}, '{2}', {3}</value>
+  </data>
+  <data name="Apontamento_UpsertQtdeCQ" xml:space="preserve">
+    <value>EXEC [{0}].[dbo].SP_CVA_APONTAMENTO_QTDECQ {1}, '{2}', {3}</value>
+  </data>
+  <data name="Colaborador_Get" xml:space="preserve">
+    <value>SELECT OUSR.USER_CODE Codigo, OHEM.firstName + ' ' + OHEM.lastName Nome
+FROM [{0}].[dbo].OHEM
+	INNER JOIN OUSR
+		ON OUSR.USERID = OHEM.userId
+WHERE OUSR.USER_CODE NOT IN
+(
+	SELECT U_Usuario FROM [{0}].[dbo].[@CVA_USUARIO]
+)</value>
+    <comment>Busca colaboradores NÃO cadastrados no portal</comment>
+  </data>
+  <data name="EstruturaProducao_Get" xml:space="preserve">
+    <value>EXEC [{0}].[dbo].SP_CVA_ETAPA_PRODUCAO {1}, {2}</value>
+  </data>
+  <data name="Etapa_GetEmAberto" xml:space="preserve">
+    <value>SELECT 1 FROM [{0}].[dbo].WOR4
+WHERE DocEntry = {1}
+AND U_CVA_Status = 'O'</value>
+  </data>
+  <data name="Etapa_GetHistorico" xml:space="preserve">
+    <value>SELECT 
+	Name Etapa,
+	U_CVA_DataHora Data
+FROM [{0}].[dbo].WOR4
+WHERE DocEntry = {1}
+AND U_CVA_Status = 'C'</value>
+  </data>
+  <data name="Etapa_UpdateStatus" xml:space="preserve">
+    <value>UPDATE [{0}].[dbo].WOR4
+SET 
+	U_CVA_Status = '{3}',
+	U_CVA_DataHora = '{4}'
+WHERE DocEntry = {1}
+AND  StageId = {2}</value>
+    <comment>Atualiza status da etapa</comment>
+  </data>
+  <data name="FichaInspecao_UpdateSeqFinalizada" xml:space="preserve">
+    <value>UPDATE [{0}].[dbo].[@CVA_FICHA_INSPECAO]
+SET U_SeqFinalizada = 1
+WHERE U_DocEntry = {1}
+AND U_CodEtapa = '{2}'
+AND U_TipoDoc = 'OP'
+AND ISNULL(U_SeqFinalizada, 0) = 0</value>
+  </data>
+  <data name="FichaProduto_Get" xml:space="preserve">
+    <value>SELECT 
+	FICHA.Code,	
+	FICHA.U_Tipo 			Tipo,
+	FICHA.U_CodGrupo		CodGrupo,
+	FICHA.U_CodItem			CodItem,
+	FICHA.U_CodEtapa		CodEtapa,
+	FICHA.U_CodModelo		CodModelo,
+	FICHA.U_Ativo			AtivoInt,
+	FICHA.U_Obrigatorio		ObrigatorioInt,
+	MODELO.U_Descricao 		FichaDesc,
+	ORST.[Desc] 			EtapaDesc,
+	OITM.ItemName 			ItemDesc,
+	OITB.ItmsGrpNam 		GrupoDesc
+FROM [{0}].[dbo].[@CVA_FICHA_PRODUTO] FICHA
+	INNER JOIN [{0}].[dbo].[@CVA_MODELO_FICHA] MODELO
+		ON MODELO.Code = FICHA.U_CodModelo
+	INNER JOIN [{0}].[dbo].ORST
+		ON ORST.Code = FICHA.U_CodEtapa
+	LEFT JOIN [{0}].[dbo].OITM
+		ON OITM.ItemCode = FICHA.U_CodItem
+		AND FICHA.U_Tipo = 'I'
+	LEFT JOIN [{0}].[dbo].OITB
+		ON OITB.ItmsGrpCod = FICHA.U_CodGrupo
+		AND FICHA.U_Tipo = 'G'</value>
+  </data>
+  <data name="FichaProduto_GetByItemEtapa" xml:space="preserve">
+    <value>SELECT
+	FICHA.Code,
+	FICHA.U_Tipo,
+	FICHA.U_CodItem,
+	FICHA.U_CodGrupo,
+	NULL StageId,
+	FICHA.U_CodEtapa,
+	FICHA.U_CodModelo,
+	FICHA.U_Obrigatorio,
+	FICHA.U_Ativo
+FROM {0}.[dbo].OITM
+	INNER JOIN {0}.[dbo].[@CVA_FICHA_PRODUTO] FICHA
+		ON (FICHA.U_CodItem = OITM.ItemCode OR FICHA.U_CodGrupo = OITM.ItmsGrpCod)
+WHERE OITM.ItemCode = '{1}'
+AND FICHA.U_CodEtapa = '{2}'
+ORDER BY CASE WHEN FICHA.U_CodItem IS NOT NULL THEN 0 ELSE 1 END</value>
+  </data>
+  <data name="FichaProduto_GetByOP" xml:space="preserve">
+    <value>SELECT
+	FICHA.Code,
+	FICHA.U_Tipo,
+	FICHA.U_CodItem,
+	FICHA.U_CodGrupo,
+	(SELECT MIN(WOR4.StageId) FROM [{0}].[dbo].WOR4 WHERE WOR4.DocEntry=OWOR.DocEntry AND WOR4.Name=FICHA.U_CodEtapa) "StageId",
+	FICHA.U_CodEtapa,
+	FICHA.U_CodModelo,
+	FICHA.U_Obrigatorio,
+	FICHA.U_Ativo
+FROM [{0}].[dbo].OWOR
+	INNER JOIN [{0}].[dbo].OITM
+		ON OITM.ItemCode = OWOR.ItemCode
+	INNER JOIN [{0}].[dbo].[@CVA_FICHA_PRODUTO FICHA]
+		ON (FICHA.U_CodItem = OITM.ItemCode OR FICHA.U_CodGrupo = OITM.ItmsGrpCod)
+WHERE OWOR.DocNum = {1}
+AND FICHA.U_Ativo = 1
+ORDER BY CASE WHEN FICHA.U_CodItem IS NOT NULL THEN 0 ELSE 1 END</value>
+  </data>
+  <data name="InspecaoMP_GetByNF" xml:space="preserve">
+    <value>SELECT DISTINCT
+	INSP.Code CodFicha,
+	INSP.U_Status StatusFicha,
+	OPCH.DocEntry,
+	OPCH.DocNum,
+	OPCH.DocDate,
+	OPCH.CardCode,
+	OPCH.CardName,
+	OPCH.Serial,
+	PCH1.LineNum,
+	PCH1.ItemCode,
+	PCH1.Dscription ItemName,
+	PCH1.Quantity
+FROM [{0}].[dbo].OPCH
+	INNER JOIN [{0}].[dbo].PCH1
+		ON OPCH.DocEntry = PCH1.DocEntry
+	INNER JOIN [{0}].[dbo].OITM
+		ON OITM.ItemCode = PCH1.ItemCode
+	INNER JOIN [{0}].[dbo].[@CVA_FICHA_PRODUTO] FICHA
+		ON (FICHA.U_CodItem = OITM.ItemCode OR FICHA.U_CodGrupo = OITM.ItmsGrpCod)
+		AND FICHA.U_CodEtapa = 'Recebimento de Matéria-Prima'
+		AND FICHA.U_Ativo = 1
+	LEFT JOIN [{0}].[dbo].[@CVA_FICHA_INSPECAO] INSP
+		ON INSP.U_DocEntry = PCH1.DocEntry
+		AND INSP.U_LineNum = PCH1.LineNum
+		AND INSP.U_TipoDoc = 'RE'
+WHERE OPCH.CANCELED = 'N'
+AND {1}</value>
+  </data>
+  <data name="InspecaoMP_GetByRecebimentoMercadorias" xml:space="preserve">
+    <value>SELECT DISTINCT
+	INSP.Code CodFicha,
+	INSP.U_Status StatusFicha,
+	OPDN.DocEntry,
+	OPDN.DocNum,
+	OPDN.DocDate,
+	OPDN.CardCode,
+	OPDN.CardName,
+	OPDN.Serial,
+	PDN1.LineNum,
+	PDN1.ItemCode,
+	PDN1.Dscription ItemName,
+	PDN1.Quantity
+FROM [{0}].[dbo].OPDN
+	INNER JOIN [{0}].[dbo].PDN1
+		ON OPDN.DocEntry = PDN1.DocEntry
+	INNER JOIN [{0}].[dbo].OITM
+		ON OITM.ItemCode = PDN1.ItemCode
+	INNER JOIN [{0}].[dbo].[@CVA_FICHA_PRODUTO] FICHA
+		ON (FICHA.U_CodItem = OITM.ItemCode OR FICHA.U_CodGrupo = OITM.ItmsGrpCod)
+		AND FICHA.U_CodEtapa = 'Recebimento de Matéria-Prima'
+		AND FICHA.U_Ativo = 1
+	LEFT JOIN [{0}].[dbo].[@CVA_FICHA_INSPECAO] INSP
+		ON INSP.U_DocEntry = PDN1.DocEntry
+		AND INSP.U_LineNum = PDN1.LineNum
+		AND INSP.U_TipoDoc = 'RE'
+WHERE OPDN.CANCELED = 'N'
+AND {1}</value>
+  </data>
+  <data name="Item_GetTipoControle" xml:space="preserve">
+    <value>SELECT
+	CASE WHEN MngMethod = 'A'
+		THEN CASE WHEN ManBtchNum = 'Y'
+			THEN 'L'
+			ELSE CASE WHEN ManSerNum = 'Y'
+				THEN 'S'
+				ELSE 'N'
+			END
+		END
+	ELSE 'N'
+	END
+FROM [{0}].[dbo].OITM 
+WHERE ItemCode = '{1}'</value>
+  </data>
+  <data name="Lote_GetDisponiveis" xml:space="preserve">
+    <value>SELECT OBTN.DistNumber Lote, SUM(ITL1.Quantity) QtdeDisponivel
+FROM [{0}].[dbo].OITL
+		INNER JOIN	[{0}].[dbo].ITL1 ON ITL1.LogEntry		= OITL.LogEntry
+		INNER JOIN	[{0}].[dbo].OBTQ ON OBTQ.MdAbsEntry		= ITL1.MdAbsEntry
+		INNER JOIN	[{0}].[dbo].OBTN ON OBTN.AbsEntry		= ITL1.MdAbsEntry
+WHERE ITL1.ItemCode = '{1}'
+AND OITL.LocCode = '{2}'
+GROUP BY OBTN.DistNumber
+HAVING SUM(ITL1.Quantity) &gt; 0</value>
+  </data>
+  <data name="ModeloFicha_GetByEspecificacao" xml:space="preserve">
+    <value>SELECT U_CodModelo FROM [{0}].[dbo].[@CVA_MODELO_FICHA1] WHERE U_CodEspec = '{1}'</value>
+  </data>
+  <data name="OP_Get" xml:space="preserve">
+    <value>SELECT
+		OWOR.DocEntry,
+		OWOR.StartDate	DataOP,
+		OWOR.DocNum		NrOP,
+		OWOR.OriginAbs	DocEntryPedido,
+		OWOR.OriginNum 	NrPedido,
+		OWOR.PlannedQty	- OWOR.CmpltQty Quantidade,
+		(SELECT TOP 1 (WOR1.IssuedQty / WOR1.BaseQty ) FROM WOR1 WHERE WOR1.DocEntry = OWOR.DocEntry AND WOR1.StageId = WOR4.StageId) QtdeRealizada,
+		OWOR.ItemCode,
+		CASE WHEN RDR1.Dscription IS NOT NULL 
+			THEN RDR1.Dscription
+			ELSE OITM.ItemName	
+		END ItemName,
+		OITM.U_modelo	Modelo,
+		OITM.SLength1	Comprimento,
+		OITM.SWidth1	Largura,
+		OITM.SHeight1	Altura,
+		CAST(CAST(OITM.SLength1 AS NUMERIC(10, 2)) AS NVARCHAR(10)) + ' x ' + CAST(CAST(OITM.SWidth1 AS NUMERIC(10, 2)) AS NVARCHAR(10)) + ' x ' + CAST(CAST(OITM.SHeight1 AS NUMERIC(10, 2)) AS NVARCHAR(10)) Medidas,
+		WOR4.StageId	CodEtapa,
+		WOR4.Name		Etapa
+	FROM [{0}].[dbo].OWOR 
+		INNER JOIN [{0}].[dbo].WOR4
+			ON WOR4.DocEntry = OWOR.DocEntry
+		INNER JOIN OITM
+			ON OITM.ItemCode = OWOR.ItemCode
+		LEFT JOIN [{0}].[dbo].RDR1
+			ON RDR1.DocEntry = OWOR.OriginAbs
+			AND RDR1.ItemCode = OWOR.ItemCode
+	WHERE OWOR.DocNum = {1}
+	AND WOR4.Name = '{2}'</value>
+  </data>
+  <data name="OP_GetEstrutura" xml:space="preserve">
+    <value>SELECT * FROM
+(
+	SELECT 'Etapa de Itinerários' Tipo, Name Item, Name Descricao, 0.00 Quantidade, '' Deposito, SeqNum Sequencia 
+	FROM [{0}].[dbo].WOR4
+	WHERE  DocEntry = {1}
+	
+	UNION
+
+	SELECT 'Recurso', WOR1.ItemCode, ORSC.ResName, WOR1.PlannedQty, WOR1.wareHouse, WOR4.SeqNum
+	FROM [{0}].[dbo].WOR1 
+		INNER JOIN [{0}].[dbo].ORSC
+			ON ORSC.VisResCode = WOR1.ItemCode
+			AND WOR1.ItemType = 290
+		INNER JOIN [{0}].[dbo].WOR4
+			ON WOR4.DocEntry = WOR1.DocEntry
+			AND WOR4.StageId = WOR1.StageId
+	WHERE  WOR1.DocEntry = {1}
+			
+	UNION
+
+	SELECT 'Item', WOR1.ItemCode, OITM.ItemName, WOR1.PlannedQty, WOR1.wareHouse, WOR4.SeqNum
+	FROM [{0}].[dbo].WOR1 
+		INNER JOIN [{0}].[dbo].OITM
+			ON OITM.ItemCode = WOR1.ItemCode
+			AND WOR1.ItemType = 4
+		INNER JOIN [{0}].[dbo].WOR4
+			ON WOR4.DocEntry = WOR1.DocEntry
+			AND WOR4.StageId = WOR1.StageId
+	WHERE  WOR1.DocEntry = {1}
+) AS Estrutura
+ORDER BY Sequencia</value>
+  </data>
+  <data name="OP_GetFilialPadrao" xml:space="preserve">
+    <value>SELECT BPLid FROM [{0}].[dbo].OWHS
+	INNER JOIN [{0}].[dbo].OWOR
+		ON OWOR.Warehouse = OWHS.WhsCode
+WHERE OWOR.DocEntry = {1}</value>
+  </data>
+  <data name="OP_GetInspecao" xml:space="preserve">
+    <value>EXEC [{0}].[dbo].SP_CVA_INSPECAO_GETOP '{1}', '{2}', '{3}', {4}, {5}, {6}</value>
+  </data>
+  <data name="OP_GetPendente" xml:space="preserve">
+    <value>EXEC [{0}].[dbo].SP_CVA_OP_GETPENDENTE '{1}', '{2}', '{3}', {4}, {5}, '{6}', {7}</value>
+  </data>
+  <data name="PercentualProducao_Get" xml:space="preserve">
+    <value>EXEC [{0}].[dbo].SP_CVA_PERCENTUAL_PRODUCAO '{1}', '{2}', {3}, {4}</value>
+  </data>
+  <data name="PerfilView_Delete" xml:space="preserve">
+    <value>DELETE FROM [{0}].[dbo].[@CVA_PERFIL_VIEW] WHERE U_CodPerfil = '{1}'</value>
+  </data>
+  <data name="PerfilView_GetByPerfil" xml:space="preserve">
+    <value>SELECT
+	[@CVA_PERFIL_VIEW].Code,
+	[@CVA_PERFIL_VIEW].U_CodPerfil 	CodPerfil,
+	[@CVA_VIEW].Code					CodView,
+	[@CVA_VIEW].U_CodPai				CodPai,
+	[@CVA_VIEW].U_Descricao			DescView,
+	[@CVA_VIEW].U_Posicao				Posicao,
+	CASE WHEN [@CVA_PERFIL_VIEW].Code IS NOT NULL
+		THEN 1
+		ELSE 0
+	END SelectedInt
+FROM [{0}].[dbo].[@CVA_VIEW]
+	LEFT JOIN [{0}].[dbo].[@CVA_PERFIL_VIEW]
+		ON [@CVA_PERFIL_VIEW].U_CodView = [@CVA_VIEW].Code
+		AND [@CVA_PERFIL_VIEW].U_CodPerfil = '{1}'</value>
+  </data>
+  <data name="Serie_GetDisponiveis" xml:space="preserve">
+    <value>SELECT OSRN.DistNumber Serie, OSRN.SysNumber SystemSerie
+FROM [{0}].[dbo].ITL1
+	INNER JOIN	[{0}].[dbo].OITL ON OITL.LogEntry = ITL1.LogEntry
+	INNER JOIN	[{0}].[dbo].OSRN ON ITL1.ItemCode = OSRN.ItemCode and ITL1.SysNumber = OSRN.SysNumber
+WHERE ITL1.ItemCode = '{1}'
+AND OITL.LocCode = '{2}'
+GROUP BY OSRN.DistNumber, OSRN.SysNumber
+HAVING SUM(ITL1.Quantity) &gt; 0</value>
+  </data>
+  <data name="Serie_GetSerialInfo" xml:space="preserve">
+    <value>SELECT TOP 1 OSRN.DistNumber "Serie", OSRN.SysNumber "SystemSerie"
+FROM [{0}].[dbo].ITL1
+	INNER JOIN	[{0}].[dbo].OITL ON OITL.LogEntry = ITL1.LogEntry
+	INNER JOIN	[{0}].[dbo].OSRN ON ITL1.ItemCode = OSRN.ItemCode and ITL1.SysNumber = OSRN.SysNumber
+WHERE ITL1.ItemCode = '{1}'
+AND OSRN.DistNumber = '{2}'
+GROUP BY OSRN.DistNumber, OSRN.SysNumber
+HAVING SUM(ITL1.Quantity) &gt; 0</value>
+  </data>
+  <data name="UsuarioEtapa_Delete" xml:space="preserve">
+    <value>DELETE FROM [{0}].[dbo].[@CVA_USUARIO_ETAPA] WHERE U_CodUsuario = '{1}'</value>
+  </data>
+  <data name="UsuarioEtapa_GetByUsuario" xml:space="preserve">
+    <value>SELECT
+	[@CVA_USUARIO_ETAPA].Code,
+	[@CVA_USUARIO_ETAPA].U_CodUsuario	CodUsuario,
+	ORST.Code						CodEtapa,
+	CASE WHEN [@CVA_USUARIO_ETAPA].Code IS NOT NULL
+		THEN 1
+		ELSE 0
+	END SelectedInt
+FROM [{0}].[dbo].ORST
+	LEFT JOIN [{0}].[dbo].[@CVA_USUARIO_ETAPA]
+		ON [@CVA_USUARIO_ETAPA].U_CodEtapa = ORST.Code
+		AND [@CVA_USUARIO_ETAPA].U_CodUsuario = '{1}'</value>
+  </data>
+  <data name="View_GetPorUsuario" xml:space="preserve">
+    <value>SELECT [@CVA_VIEW].Code, [@CVA_VIEW].U_View, [@CVA_VIEW].U_Descricao, [@CVA_VIEW].U_Posicao, [@CVA_VIEW].U_Controller, [@CVA_VIEW].U_Action,[@CVA_VIEW].U_Icone, [@CVA_VIEW].U_CodPai
+FROM [{0}].[dbo].[@CVA_USUARIO]
+	INNER JOIN [{0}].[dbo].[@CVA_PERFIL]
+		ON [@CVA_PERFIL].Code = [@CVA_USUARIO].U_CodPerfil
+	INNER JOIN [{0}].[dbo].[@CVA_PERFIL_VIEW]
+		ON [@CVA_PERFIL_VIEW].U_CodPerfil = [@CVA_PERFIL].Code
+	INNER JOIN [{0}].[dbo].[@CVA_VIEW]
+		ON [@CVA_VIEW].Code = [@CVA_PERFIL_VIEW].U_CodView
+WHERE [@CVA_USUARIO].U_Usuario = '{1}'
+AND [@CVA_PERFIL].U_Ativo = 1</value>
+  </data>
+</root>

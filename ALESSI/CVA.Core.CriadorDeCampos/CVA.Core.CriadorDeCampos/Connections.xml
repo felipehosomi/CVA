@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<companies>
+  <company name="Base 01">
+    <dbServerType>MSSQL2014</dbServerType>
+    <dbServer>VM-001</dbServer>
+    <licenseServer>VM-001:30000</licenseServer>
+    <companyDb>SBODemoBR</companyDb>
+    <userName>manager</userName>
+    <password>manager</password>
+    <dbUserName>sa</dbUserName>
+    <dbPassword>Cva@sa</dbPassword>
+  </company>
+  <company name="Base 02">
+    <dbServerType>MSSQL2014</dbServerType>
+    <dbServer>VM-001</dbServer>
+    <licenseServer>VM-001:30000</licenseServer>
+    <companyDb>SBODemoBR</companyDb>
+    <userName>manager</userName>
+    <password>manager</password>
+    <dbUserName>sa</dbUserName>
+    <dbPassword>Cva@sa</dbPassword>
+  </company>
+</companies>

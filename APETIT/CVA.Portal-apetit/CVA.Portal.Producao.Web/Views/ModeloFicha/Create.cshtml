@@ -1,0 +1,157 @@
+﻿@model CVA.Portal.Producao.Model.Qualidade.ModeloFichaModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="x_panel">
+        <div class="x_content">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_title">
+                        <h2>Modelo de Ficha</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <br />
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Descrição*</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    @Html.TextBoxFor(m => m.Descricao, htmlAttributes: new { required = "required", @class = "form-control" })
+                                </div>
+                            </div>
+                            <label class="col-md-2 control-label">Qtde. Amostra*</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    @Html.TextBoxFor(m => m.QtdeAmostra, htmlAttributes: new { type = "number", step = "any", @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Nr. Revisão*</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    @Html.TextBoxFor(m => m.NrRevisao, htmlAttributes: new { required = "required", @class = "form-control" })
+                                </div>
+                            </div>
+                            <label class="col-md-2 control-label">Status*</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    @Html.DropDownList("Status", null, htmlAttributes: new { required = "required", @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Observações</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    @Html.TextAreaFor(m => m.Observacao, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <label class="col-md-2 control-label">Obs. Plano</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    @Html.TextAreaFor(m => m.ObsPlano, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <table id="tblFicha" class="table table-striped table-bordered table-control">
+                                <tr>
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Especificação
+                                    </th>
+                                    <th>
+                                        Vlr. Nominal
+                                    </th>
+                                    <th>
+                                        Padrão de
+                                    </th>
+                                    <th>
+                                        Padrão até
+                                    </th>
+                                    <th>
+                                        Análise
+                                    </th>
+                                    <th>
+                                        Observação
+                                    </th>
+                                    <th>
+                                        Método
+                                    </th>
+                                    <th>
+                                        Amostragem
+                                    </th>
+                                    <th>
+                                        Link
+                                    </th>
+                                    <th></th>
+                                </tr>
+                                @if (Model != null && Model.ItemList != null)
+                                {
+                                    for (int i = 0; i < Model.ItemList.Count; i++)
+                                    {
+                                        <tr id="tr-@Model.ItemList[i].ID">
+                                            <td>
+                                                @Html.HiddenFor(m => Model.ItemList[i].Code, new { id = "hdnCode" + Model.ItemList[i].ID })
+                                                @Html.HiddenFor(m => Model.ItemList[i].CodModelo, new { id = "hdnCodFicha" + Model.ItemList[i].ID })
+                                                @Html.HiddenFor(m => Model.ItemList[i].Deleted, new { id = "hdnDeleted" + Model.ItemList[i].ID })
+                                                @Html.TextBoxFor(m => Model.ItemList[i].ID, new { @readonly = "readonly", id = "tbxID" + Model.ItemList[i].ID, style = "width: 40px" })
+                                            </td>
+                                            <td>
+                                                @Html.DropDownListFor(m => Model.ItemList[i].CodEspec, (SelectList)ViewBag.Especificacoes, "", new { id = "ddlEspecificacao" + Model.ItemList[i].ID, onchange = "setTipo(" + Model.ItemList[i].ID + ")" })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => Model.ItemList[i].VlrNominal, new { id = "tbxVlrNominal" + Model.ItemList[i].ID, step = "any" })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => Model.ItemList[i].PadraoDe, new { id = "tbxPadraoDe" + Model.ItemList[i].ID, step = "any" })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => Model.ItemList[i].PadraoAte, new { id = "tbxPadraoAte" + Model.ItemList[i].ID, step = "any" })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => Model.ItemList[i].Analise, new { id = "tbxAnalise" + Model.ItemList[i].ID })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => Model.ItemList[i].Observacao, new { id = "tbxObservacao" + Model.ItemList[i].ID })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => Model.ItemList[i].Metodo, new { id = "tbxMetodo" + Model.ItemList[i].ID })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => Model.ItemList[i].Amostragem, new { id = "tbxAmostragem" + Model.ItemList[i].ID })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => Model.ItemList[i].Link, new { id = "tbxLink" + Model.ItemList[i].ID })
+                                            </td>
+                                            <td>
+                                                @*<button type="button" onclick="removeLinha(@Model.ItemList[i].ID)" class="btn btn-danger table-control"><span class="fa fa-remove"></span></button>*@
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </table>
+                        </div>
+                        <div>
+                            <button type="button" onclick="adicionaLinha()" class="btn btn-primary pull-left">Adicionar Linha <span class="fa fa-plus fa-right"></span></button>
+                            <button type="submit" class="btn btn-primary pull-right">Salvar <span class="fa fa-floppy-o fa-right"></span></button>
+                            <a href='@Url.Action("Index")' data-toggle="tooltip" title="Voltar" class="btn btn-primary pull-right">
+                                <span class="fa fa-arrow-left"></span> Voltar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts{
+    <script src="~/Scripts/Views/ModeloFicha/create.js"></script>
+}

@@ -1,0 +1,111 @@
+﻿@model MODEL.Classes.ExpenseModel[]
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Apontamento</a></li>
+    <li class="active">Despesas</li>
+</ul>
+<div class="page-title">
+    <h2>Despesas</h2>
+</div>
+<div class="page-content-wrap" ng-controller="ExpensesController" ng-init="LoadUserView(false)">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <ul class="panel-controls">
+                        <li>
+                            <button onclick="NewExpense()" stype="button" class="btn btn-success pull-right">Nova Despesa <span class="fa fa-floppy-o fa-right"></span></button>
+                        </li>
+                        <li>
+                            <button onclick="ExpensePolitics()" stype="button" class="btn btn-default pull-right" ng-click="OpenExpenseContract()">Política de Despesa <span class="fa-right"></span></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table" id="DataTables_Table_1">
+                            <thead>
+                                <tr>
+                                    <td hidden="hidden"></td>
+                                    <td><b>Data</b></td>
+                                    <td><b>Descrição</b></td>
+                                    <td><b>Total</b></td>
+                                    <td><b>Projeto</b></td>
+                                    <td><b>#</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td hidden="hidden">@Html.HiddenFor(col => item.Id, new { ng_model = "collaborator.Id", })</td>
+                                            <td>@item.Date.ToShortDateString()</td>
+                                            <td>@item.Description</td>
+                                            <td>R$ @item.ExpenseTotal</td>
+                                            <td>@item.Project.Nome</td>
+                                            <td>
+                                                <button id="@item.Id" type="button" onclick="Edit(@item.Id)" class="btn btn-default editar-button"><span class="fa fa-pencil"></span></button>
+                                                <button type="button" class="btn btn-danger" ng-click="RemoveExpense(@item.Id)"><span class="glyphicon glyphicon-remove"></span></button>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p>Despesa excluída</p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close" id="btn-ok">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+<script>
+    $('#DataTables_Table_1').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Portuguese-Brasil.json"
+        }
+    });
+
+    function NewExpense() {
+        window.location.href = '/Despesa/Despesa';
+    }
+
+    function Edit(id) {
+        window.location.href = '/Despesa/Editar?expenseId=' + id;
+    }
+</script>
+
+

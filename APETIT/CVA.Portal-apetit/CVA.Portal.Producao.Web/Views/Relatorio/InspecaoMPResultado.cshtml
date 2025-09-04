@@ -1,0 +1,104 @@
+﻿@model List<CVA.Portal.Producao.Model.Qualidade.FichaInspecaoModel>
+@{
+    int total = Model.Count;
+    int totalAprovado = Model.Where(x => x.StatusLote == "A").Count();
+    int totalReprovado = Model.Where(x => x.StatusLote == "R").Count();
+    decimal eficiencia = (Convert.ToDecimal(totalAprovado) / Convert.ToDecimal(total > 0 ? total : 1));
+
+    Session["InspecaoTotal"] = total;
+    Session["InspecaoTotalAprovado"] = totalAprovado;
+    Session["InspecaoTotalReprovado"] = totalReprovado;
+    Session["InspecaoEficiencia"] = eficiencia;
+}
+<table class="table table-bordered table-control" style="width: 280px;">
+    <tbody>
+        <tr>
+            <th scope="row">TOTAL DE INSPEÇÕES</th>
+            <td>@total</td>
+        </tr>
+        <tr>
+            <th scope="row">TOTAL DE ITENS APROVADOS</th>
+            <td>@totalAprovado</td>
+        </tr>
+        <tr>
+            <th scope="row">TOTAL DE ITENS REPROVADOS</th>
+            <td>@totalReprovado</td>
+        </tr>
+        <tr>
+            <th scope="row">EFICIÊNCIA</th>
+            <td>@eficiencia.ToString("0.00%")</td>
+        </tr>
+    </tbody>
+</table>
+
+@foreach (var inspecao in Model)
+{
+    string headerCssClass = inspecao.StatusLote == "A" ? "success" : "danger";
+
+    <div class="form-group">
+        <table class="table table-bordered table-control">
+            <tr class="@headerCssClass">
+                <th>Nota Fiscal</th>
+                <th colspan="10">@inspecao.NrNF</th>
+            </tr>
+            <tr class="@headerCssClass">
+                <th>Item</th>
+                <th colspan="10">@inspecao.Item</th>
+            </tr>
+            <tr>
+                <th>ID</th>
+                <th>Especificação</th>
+                <th>Vlr. Nominal</th>
+                <th>Padrão de</th>
+                <th>Padrão até</th>
+                <th>Análise</th>
+                <th>Observação</th>
+                <th>Método</th>
+                <th>Amostragem</th>
+                <th>Máquina</th>
+                <th>Resultado</th>
+            </tr>
+            @if (inspecao != null && inspecao.ItemList != null)
+                {
+                    for (int i = 0; i < inspecao.ItemList.Count; i++)
+                    {
+                    <tr>
+                        <td>
+                            @inspecao.ItemList[i].ID
+                        </td>
+                        <td>
+                            @inspecao.ItemList[i].DescEspec
+                        </td>
+                        <td>
+                            @inspecao.ItemList[i].VlrNominalStr
+                        </td>
+                        <td>
+                            @inspecao.ItemList[i].PadraoDeStr
+                        </td>
+                        <td>
+                            @inspecao.ItemList[i].PadraoAteStr
+                        </td>
+                        <td>
+                            @inspecao.ItemList[i].Analise
+                        </td>
+                        <td>
+                            @inspecao.ItemList[i].Observacao
+                        </td>
+                        <td>
+                            @inspecao.ItemList[i].Metodo
+                        </td>
+                        <td>
+                            @inspecao.ItemList[i].Amostragem
+                        </td>
+                        <td>
+                            @inspecao.ItemList[i].CodRecurso
+                        </td>
+                        <td>
+                            @inspecao.ItemList[i].Resultado
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+}

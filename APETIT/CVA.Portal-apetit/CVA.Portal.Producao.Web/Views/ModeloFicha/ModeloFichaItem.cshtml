@@ -1,0 +1,39 @@
+﻿@model CVA.Portal.Producao.Model.Qualidade.ModeloFichaItemModel
+<tr id="tr-@Model.ID">
+    <td>
+        @Html.HiddenFor(m => m.Code, new { id = "hdnCode" + Model.ID })
+        @Html.HiddenFor(m => m.CodModelo, new { id = "hdnCodFicha" + Model.ID })
+        @Html.HiddenFor(m => m.Deleted, new { id = "hdnDeleted" + Model.ID })
+        @Html.TextBoxFor(m => m.ID, new { @readonly = "readonly", id = "tbxID" + Model.ID, style = "width: 40px" })
+    </td>
+    <td>
+        @Html.DropDownListFor(m => m.CodEspec, (SelectList)ViewBag.Especificacoes, new { id = "ddlEspecificacao" + Model.ID, onchange = "setTipo(" + Model.ID + ")" })
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.VlrNominal, new { id = "tbxVlrNominal" + Model.ID })
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.PadraoDe, new { id = "tbxPadraoDe" + Model.ID })
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.PadraoAte, new { id = "tbxPadraoAte" + Model.ID })
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.Analise, new { id = "tbxAnalise" + Model.ID })
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.Observacao, new { id = "tbxObservacao" + Model.ID })
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.Metodo, new { id = "tbxMetodo" + Model.ID })
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.Amostragem, new { id = "tbxAmostragem" + Model.ID })
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.Link, new { id = "tbxLink" + Model.ID })
+    </td>
+    <td>
+        <button type="button" onclick="removeLinha(@Model.ID)" class="btn btn-danger table-control"><span class="fa fa-remove"></span></button>
+    </td>
+</tr>

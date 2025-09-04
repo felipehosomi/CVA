@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<importador>
+  <database>Data Source=CVA\SQLEXPRESS;Database=CVA_Gestao_Dev;Integrated Security=SSPI;</database>
+  <tokenA1>9d2c47a59bd6577b6acceba276288147</tokenA1>
+  <tokenB1>a39ba1be7b2330e6ed638f601eacca0b</tokenB1>  
+</importador>
+
+
+
+

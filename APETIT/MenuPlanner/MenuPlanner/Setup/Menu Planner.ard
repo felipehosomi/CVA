@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AddOnRegData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SlientInstallation="No" SlientUpgrade="No" Partnernmsp="CVA" SchemaVersion="3.0" Type="" MultipleVersion="false" OnDemand="" OnPremise="" ExtName="Menu Planner TESTE" ExtVersion="93.64.045" Contdata="" Partner="CVA Consultoria" DBType="HANA" ClientType="A">
+  <Validity>
+    <SBOCompatibility>
+      <Version From="" To="" />
+    </SBOCompatibility>
+  </Validity>
+  <Configuration>
+    <Repository>
+      <Properties />
+    </Repository>
+    <Deployment>
+      <Properties />
+    </Deployment>
+    <Assignment>
+      <Properties />
+    </Assignment>
+  </Configuration>
+  <Addons>
+    <Addon Name="" Group="" ForceFlag="" Visible="" AutoAssign="" SelfUpgrd="">
+      <x86 AddonExe="" AddonSig="">
+        <Installation>
+          <Files />
+        </Installation>
+        <Uninstallation>
+          <Files />
+        </Uninstallation>
+      </x86>
+      <x64 AddonExe="C:\DEV\Hosomi\APETIT\MenuPlanner\MenuPlanner\bin\Debug\MenuPlanner.exe" AddonSig="">
+        <Installation>
+          <Files>
+            <File FileName="AxShockwaveFlashObjects.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.CrystalReports.Engine.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.ClientDoc.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.CommLayer.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.CommonControls.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.CommonObjectModel.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.Controllers.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.CubeDefModel.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.DataDefModel.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.DataSetConversion.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.ObjectFactory.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.Prompting.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.ReportDefModel.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.XmlSerialize.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportSource.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.Shared.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.Web.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.Windows.Forms.dll">
+              <Actions />
+            </File>
+            <File FileName="log4net.dll">
+              <Actions />
+            </File>
+            <File FileName="Menu.xml">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.b1s">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.exe">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.exe.config">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.vshost.exe">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.vshost.exe.config">
+              <Actions />
+            </File>
+            <File FileName="stdole.dll">
+              <Actions />
+            </File>
+            <File FileName="Reports\MenuProjection.rpt">
+              <Actions />
+            </File>
+          </Files>
+        </Installation>
+        <Uninstallation>
+          <Files>
+            <File FileName="AxShockwaveFlashObjects.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.CrystalReports.Engine.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.ClientDoc.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.CommLayer.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.CommonControls.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.CommonObjectModel.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.Controllers.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.CubeDefModel.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.DataDefModel.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.DataSetConversion.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.ObjectFactory.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.Prompting.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.ReportDefModel.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportAppServer.XmlSerialize.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.ReportSource.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.Shared.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.Web.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.Windows.Forms.dll">
+              <Actions />
+            </File>
+            <File FileName="log4net.dll">
+              <Actions />
+            </File>
+            <File FileName="Menu.xml">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.b1s">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.exe">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.exe.config">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.vshost.exe">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.vshost.exe.config">
+              <Actions />
+            </File>
+            <File FileName="stdole.dll">
+              <Actions />
+            </File>
+            <File FileName="Reports\MenuProjection.rpt">
+              <Actions />
+            </File>
+          </Files>
+        </Uninstallation>
+      </x64>
+    </Addon>
+  </Addons>
+  <XApps>
+    <XApp Name="" Path="" FileName="" />
+  </XApps>
+  <UDQs>
+    <UDQ udqname="">
+      <Hana FileName="" />
+    </UDQ>
+  </UDQs>
+</AddOnRegData>

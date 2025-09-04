@@ -1,0 +1,42 @@
+﻿@model ProgressSamples.MusicGenre
+
+@{
+  ViewBag.Title = "Change Button When Clicked";
+}
+
+@using (Html.BeginForm())
+{
+  <div class="row">
+    <div class="col-sm-6 center-block">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Add Music Genre</h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label>Music Genre</label>
+            @Html.TextBoxFor(m => m.Genre,
+                             new { @class = "form-control" })
+          </div>
+        </div>
+        <div class="panel-footer">
+          <button type="submit"
+                  id="submitButton"
+                  class="btn btn-primary"
+                  onclick="return DisplayProgressMessage(this, 'Saving...');">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+<script>
+  function DisplayProgressMessage(ctl, msg) {
+    $(ctl).prop("disabled", true);
+    $(ctl).text(msg);
+
+    return true;
+  }
+</script>

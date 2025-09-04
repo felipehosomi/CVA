@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CVA.App.NFeio.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SAVASSI_cityServiceCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">080200188</Value>
+    </Setting>
+    <Setting Name="SAVASSI_federalServiceCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">8.02</Value>
+    </Setting>
+    <Setting Name="SAVASSI_cnaeCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">4761001</Value>
+    </Setting>
+    <Setting Name="SANTOS_cityServiceCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">8028593700</Value>
+    </Setting>
+    <Setting Name="SANTOS_federalServiceCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">8.02</Value>
+    </Setting>
+    <Setting Name="SANTOS_cnaeCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">8593700</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

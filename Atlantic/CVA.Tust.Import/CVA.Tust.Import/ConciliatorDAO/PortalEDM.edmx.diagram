@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f8fa3cfcbe8424aaaad448d141048ea" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.CVA_BASES" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CVA_BASES_DE_PARA" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CVA_LOG_CONSOLIDADOR" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CVA_REG" Width="1.5" PointX="8.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CVA_REG_LOG" Width="1.5" PointX="10.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CVA_STATUS" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CVA_TIPO_BASES" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__CVA_BASES__BASE___1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__CVA_BASES__TIPO__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__CVA_REG__BAS__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__CVA_REG__BAS_ERR__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__CVA_REG_LOG__BAS__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__CVA_REG__STU__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__CVA_REG_LOG__REG__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__CVA_REG_LOG__STU__239E4DCF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

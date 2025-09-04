@@ -1,0 +1,86 @@
+﻿@Styles.Render("~/Content/Loading")
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Gerenciamento de <strong>Fases</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3" style="padding-bottom:10px">
+                            <label>Fase</label>
+                            <div class="input-group">
+                                <p id="load-05" class="loader"><img src="~/Content/Loading.gif" /></p>
+                                <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                <select name="status" class="form-control" ng-model="Fase.StepId" ng-disabled="FaseLine != -1" ng-options="selected.Id as selected.Nome for selected in Fases" tabindex="1">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="padding-bottom:10px">
+                            <label>Data de Ínicio</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control" ng-model="Fase.DataInicio" tabindex="2">
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="padding-bottom:10px">
+                            <label>Data Prevista</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control" ng-model="Fase.DataPrevista" tabindex="3">
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="padding-bottom:10px">
+                            <label>Liberada</label>
+                            <div class="input-group">
+                                <select name="status" class="form-control" ng-model="Fase.Liberada" tabindex="4">
+                                    <option value="">Selecione</option>
+                                    <option value="S">Sim</option>
+                                    <option value="N">Não</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="padding-top:22px">
+                            <button type="button" class="btn btn-info" ng-click="AddStep()">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><b>Fase</b></td>
+                                        <td><b>Data de Ínico</b></td>
+                                        <td><b>Data Prevista</b></td>
+                                        <td><b>Horas Orçadas</b></td>
+                                        <td><b>Horas Consumidas</b></td>
+                                        <td><b>Liberada</b></td>
+                                        <td><b>#</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="line in Projeto.Fases" id="line.StepId">
+                                        <td hidden="hidden">{{line.StepId}}</td>
+                                        <td>{{line.Nome}}</td>
+                                        <td>{{line.DataInicio | date:'dd/MM/yyyy'}}</td>
+                                        <td>{{line.DataPrevista | date:'dd/MM/yyyy'}}</td>
+                                        <td>{{line.HorasOrcadasFormat}}</td>
+                                        <td>{{line.HorasConsumidasFormat}}</td>
+                                        <td>{{line.Liberada}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default" ng-click="EditStep($index)">Editar</button>
+                                            <button type="button" class="btn btn-danger" ng-click="RemoveStep($index)">X</button>
+                                        </td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jquery-1.12.3.min.js"></script>
+<script src="~/Scripts/plugins/maskedinput/jquery.maskedinput.js"></script>

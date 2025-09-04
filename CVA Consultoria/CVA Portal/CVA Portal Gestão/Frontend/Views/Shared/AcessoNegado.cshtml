@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+@Styles.Render("~/Content/themedefault")
+<div class="error-container">
+    <div class="error-code">Alerta!</div>
+    <div class="error-text">Página não disponível</div>
+    <div class="error-subtext">Você não possui permissão ou sua sessão foi encerrada por inatividade, consulte o administrador do sistema.</div>
+    <div class="error-actions">
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn btn-info btn-block btn-lg" onclick="document.location.href = '/';">Voltar ao Login</button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary btn-block btn-lg" onclick="history.back();">Enviar Solicitação de Acesso</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Script/jquery")
+@Scripts.Render("~/Script/jqueryui")
+@Scripts.Render("~/Script/bootstrap")
+@Scripts.Render("~/Script/angular")
+<script src="~/Scripts/angular-ui-mask.js"></script>
+<!-- END PLUGINS -->
+<!-- START THIS PAGE PLUGINS-->
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/plugins/angular-datatable/angular-datatables.js"></script>
+@Scripts.Render("~/Script/icheck")
+@Scripts.Render("~/Script/customscroll")
+@Scripts.Render("~/Script/scrolltop")
+@Scripts.Render("~/Script/mirror")
+@Scripts.Render("~/Script/raphael")
+@Scripts.Render("~/Script/d3")
+@Scripts.Render("~/Script/rick")
+@Scripts.Render("~/Script/vector")
+@Scripts.Render("~/Script/vectorworld")
+@Scripts.Render("~/Script/datepicker")
+@Scripts.Render("~/Script/owl")
+@Scripts.Render("~/Script/moment")
+@Scripts.Render("~/Script/calendar")
+@Scripts.Render("~/Script/dateRange")
+@Scripts.Render("~/Script/dropzone")
+<!-- END THIS PAGE PLUGINS-->
+<!-- START TEMPLATE -->
+@Scripts.Render("~/Script/settings")
+@Scripts.Render("~/Script/plugins")
+@Scripts.Render("~/Script/action")
+@Scripts.Render("~/Script/dashboard")
+
+<script src="~/Scripts/plugins/noty/jquery.noty.js"></script>
+<script src="~/Scripts/plugins/noty/layouts/topCenter.js"></script>
+<script src="~/Scripts/plugins/noty/layouts/topLeft.js"></script>
+<script src="~/Scripts/plugins/noty/layouts/topRight.js"></script>
+<script src="~/Scripts/plugins/noty/themes/default.js"></script>

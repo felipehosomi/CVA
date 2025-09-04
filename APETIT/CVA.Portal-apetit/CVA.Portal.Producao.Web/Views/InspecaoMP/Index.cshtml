@@ -1,0 +1,50 @@
+﻿@model List<CVA.Portal.Producao.Model.Qualidade.DocumentoModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="x_panel">
+    <div class="form-group">
+        <div class="col-md-2" style="width:180px">
+            <div class="input-group">
+                <label class="control-label" for="tbxDataDe">Data</label>
+                <input type="date" id="tbxDataDe" value="@(ViewBag.DataDe)" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-2" style="width:180px">
+            <div class="input-group">
+                <label class="control-label" for="tbxDataAte">Até</label>
+                <input type="date" id="tbxDataAte" value="@(ViewBag.DataAte)" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-2" style="width:180px">
+            <div class="input-group">
+                <label class="control-label" for="ddlStatus">Status</label>
+                @Html.DropDownList("Status", (SelectList)ViewBag.StatusSelectList, htmlAttributes: new { id = "ddlStatus", name = "status", required = "required", @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-2" style="width:180px">
+            <div class="input-group">
+                <label class="control-label" for="tbxNF">Nr. NF</label>
+                <input type="number" id="tbxNF" value="@(ViewBag.NF)" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-2" style="width:180px">
+            <div class="input-group">
+                <label class="control-label" for="tbxCodigoItem">Código do item</label>
+                <input type="text" id="tbxCodigoItem" value="@(ViewBag.CodigoItem)" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-2" style="width:200px;margin-top: 29px;">
+            <div class="input-group">
+                <button id="btnFiltro" type="button" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Pesquisando" class="btn btn-success">Buscar <span class="fa fa-search fa-right"></span></button>
+            </div>
+        </div>
+        <div id="divRec">
+            @Html.Partial("TabelaRecebimentos")
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/Scripts/Views/InspecaoMP/index.js"></script>
+}

@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BuscaQtdEmbalagem" xml:space="preserve">
+    <value>Select Cast(T0.SalPackUn as int) as Qtd from OITM T0 Where T0.ItemCode = '{0}'</value>
+  </data>
+  <data name="BuscaRegraPedido" xml:space="preserve">
+    <value>Select U_CVA_ForaMultiplo From ORDR Where DocNum = '{0}'</value>
+  </data>
+  <data name="DefaultValues_Get" xml:space="preserve">
+    <value>SELECT * FROM [@CVA_IMP_DEFAULT]
+WHERE U_ObjType = {0} AND U_Layout = '{1}'</value>
+  </data>
+  <data name="DocumentMappingItem_GetByCode" xml:space="preserve">
+    <value>SELECT * FROM [@CVA_DOC_MAP_ITEM]
+WHERE Code = '{0}'</value>
+  </data>
+  <data name="DocumentMappingLayout_GetByObjType" xml:space="preserve">
+    <value>SELECT DISTINCT U_Layout FROM [@CVA_DOC_MAP]
+WHERE U_ObjType = {0}</value>
+  </data>
+  <data name="DocumentMapping_Get" xml:space="preserve">
+    <value>SELECT * FROM [@CVA_DOC_MAP]
+WHERE U_ObjType = {0} AND U_Layout = '{1}'</value>
+  </data>
+  <data name="FolhaPagamento_GetAccount" xml:space="preserve">
+    <value>SELECT AcctCode FROM OACT
+WHERE U_CodRed = '{0}'</value>
+  </data>
+  <data name="FolhaPagamento_GetBP" xml:space="preserve">
+    <value>SELECT CardCode FROM OCRD
+WHERE U_PN_CodRed = '{0}'</value>
+  </data>
+  <data name="GetAbertoGrupo" xml:space="preserve">
+    <value>exec scp_CVA_ResFiAbertoGrupo'{0}'</value>
+  </data>
+  <data name="GetAcumulo" xml:space="preserve">
+    <value>exec Spc_ResFiAcumulo '{0}','{1}'</value>
+  </data>
+  <data name="GetAcumuloGrupo" xml:space="preserve">
+    <value>exec Spc_ResFiAcumuloGrupo '{0}'</value>
+  </data>
+  <data name="GetAtrasadosGrupo" xml:space="preserve">
+    <value>exec  scp_CVA_ResFiAtrsadosGrupo '{0}'</value>
+  </data>
+  <data name="GetDataCadastroGrupo" xml:space="preserve">
+    <value>select CreateDate from [@CVA_GRUPOECON] where code = '{0}'</value>
+  </data>
+  <data name="GetDataCadastroPN" xml:space="preserve">
+    <value>select CreateDate from OCRD where CardCode = '{0}'</value>
+  </data>
+  <data name="GetDocEntry" xml:space="preserve">
+    <value>select DocEntry from oinv where Serial = '{0}'</value>
+  </data>
+  <data name="GetJuros" xml:space="preserve">
+    <value>select U_Juros from [@CVA_Juros]</value>
+  </data>
+  <data name="GetLimiteGrupo" xml:space="preserve">
+    <value>exec spc_CVA_ResFi_ColLimite_Grupo '{0}'</value>
+  </data>
+  <data name="GetLiquidadosGrupo" xml:space="preserve">
+    <value>exec scp_CVA_ResFiLiquidadosGrupo '{0}'</value>
+  </data>
+  <data name="GetMaiorCompra" xml:space="preserve">
+    <value>exec spc_CVA_ResFi_MaiorCompraGrupo '{0}'</value>
+  </data>
+  <data name="GetUltimaCompraGrupo" xml:space="preserve">
+    <value>exec spc_CVA_ResFi_UltimaCompraGrupo '{0}'</value>
+  </data>
+  <data name="GetValorAberto" xml:space="preserve">
+    <value>exec  scp_CVA_ResFiAbertoAnalitico '{0}'</value>
+  </data>
+  <data name="GetValorAtrsado" xml:space="preserve">
+    <value>exec  scp_CVA_ResFiAtrasadosAnalitico '{0}'</value>
+  </data>
+  <data name="GetValorBoleto" xml:space="preserve">
+    <value>exec  scp_CVA_ResFiBoletoAnalitico '{0}'</value>
+  </data>
+  <data name="GetValorCheque" xml:space="preserve">
+    <value>exec  scp_CVA_ResFiChequeAnalitico '{0}'</value>
+  </data>
+  <data name="GetValorEmCarteira" xml:space="preserve">
+    <value>exec  scp_CVA_ResFiEmCarteiraAnalitico '{0}'</value>
+  </data>
+  <data name="GetValoresLiquidadosAberto" xml:space="preserve">
+    <value>exec scp_CVA_ResFiLiquidadosAberto '{0}'</value>
+  </data>
+  <data name="GetValoresLiquidadosEmCarteira" xml:space="preserve">
+    <value>scp_CVA_ResFiLiquidadosEmCarteiraAnalitico '{0}'</value>
+  </data>
+  <data name="GetValorTotal" xml:space="preserve">
+    <value>exec  scp_CVA_ResFiTotalAnalitico '{0}'</value>
+  </data>
+  <data name="NotaEntradaFrete_ExistsByDocEntry" xml:space="preserve">
+    <value>SELECT TOP 1 1 FROM [@CVA_NFE_FRETE] WHERE U_DocEntry = {0}</value>
+  </data>
+  <data name="NotaSaida_GetCarrier" xml:space="preserve">
+    <value>SELECT 
+	OCRD.CardCode + ' - ' + OCRD.CardName
+FROM INV12 WITH(NOLOCK)
+	INNER JOIN OCRD WITH(NOLOCK)
+		ON OCRD.CardCode = INV12.Carrier
+WHERE INV12.DocEntry = {0}</value>
+  </data>
+  <data name="PegaDadosAtrasados" xml:space="preserve">
+    <value>exec  scp_CVA_ResFiAtrsados '{0}','{1}'</value>
+  </data>
+  <data name="PegaDadosColunaAberto" xml:space="preserve">
+    <value>exec  scp_CVA_ResFiAberto '{0}','{1}'</value>
+  </data>
+  <data name="PegaDadosColunaLimite" xml:space="preserve">
+    <value>exec spc_CVA_ResFi_ColLimite '{0}','{1}'</value>
+  </data>
+  <data name="PegaDadosColunaLiquidados" xml:space="preserve">
+    <value>exec scp_CVA_ResFiLiquidados '{0}','{1}'</value>
+  </data>
+  <data name="PegaDadosMaiorCompra" xml:space="preserve">
+    <value>exec spc_CVA_ResFi_MaiorCompra '{0}','{1}'</value>
+  </data>
+  <data name="PegaDadosUltimaCompra" xml:space="preserve">
+    <value>exec spc_CVA_ResFi_UltimaCompra '{0}','{1}'</value>
+    <comment>Retrorna dados para preencher os campos da Ultima Compra.</comment>
+  </data>
+  <data name="PegaDescricaoGrupo" xml:space="preserve">
+    <value>select top 1 t1.code, T1.NAME from OCRD T0 inner join [@CVA_GRUPOECON] T1 ON T1.CODE = T0.U_CVA_GRUPOECON WHERE T1.CODE = '{0}'</value>
+    <comment>Pega a descrição do Grupo Economico</comment>
+  </data>
+  <data name="GetValoresLiquidadosAtrasados" xml:space="preserve">
+    <value>scp_CVA_ResFiLiquidadosAtrasadosAnalitico '{0}'</value>
+  </data>
+  <data name="GetValoresLiquidadosBoleto" xml:space="preserve">
+    <value>scp_CVA_ResFiLiquidadosBoletoAnalitico '{0}'</value>
+  </data>
+  <data name="GetValoresLiquidadosCheque" xml:space="preserve">
+    <value>scp_CVA_ResFiLiquidadosChequeAnalitico '{0}'</value>
+  </data>
+  <data name="GetValoresLiquidadosTotal" xml:space="preserve">
+    <value>scp_CVA_ResFiLiquidadosTotalAnalitico '{0}'</value>
+  </data>
+  <data name="GetValoresBoletoGrupo" xml:space="preserve">
+    <value>scp_CVA_ResFiBoletoAnaliticoGrupo '{0}'</value>
+  </data>
+  <data name="GetValoresAbertoGrupo" xml:space="preserve">
+    <value>scp_CVA_ResFiAbertoAnaliticoGrupo '{0}'</value>
+  </data>
+  <data name="GetValoresAtrasadosGrupo" xml:space="preserve">
+    <value>scp_CVA_ResFiAtrasadosAnaliticoGrupo '{0}'</value>
+  </data>
+  <data name="GetValoresChequeGrupo" xml:space="preserve">
+    <value>scp_CVA_ResFiChequeAnaliticoGrupo '{0}'</value>
+  </data>
+  <data name="GetValoresEmcarteiraGrupo" xml:space="preserve">
+    <value>scp_CVA_ResFiEmCarteiraAnaliticoGrupo '{0}'</value>
+  </data>
+  <data name="GetValoresLiquidadosAbertoGrupo" xml:space="preserve">
+    <value>scp_CVA_ResFiLiquidadosAbertoGrupo '{0}'</value>
+  </data>
+  <data name="GetValoresLiquidadosAtrasadosGrupo" xml:space="preserve">
+    <value>scp_CVA_ResFiLiquidadosAtrasadosAnaliticoGrupo '{0}'</value>
+  </data>
+  <data name="GetValoresLiquidadosBoletoGrupo" xml:space="preserve">
+    <value>scp_CVA_ResFiLiquidadosBoletoAnaliticoGrupo '{0}'</value>
+  </data>
+  <data name="GetValoresLiquidadosChequeGrupo" xml:space="preserve">
+    <value>scp_CVA_ResFiLiquidadosChequeAnaliticoGrupo '{0}'</value>
+  </data>
+  <data name="GetValoresLiquidadosEmCarteiraGrupo" xml:space="preserve">
+    <value>scp_CVA_ResFiLiquidadosEmCarteiraAnaliticoGrupo '{0}'</value>
+  </data>
+  <data name="GetValoresLiquidadosTotalGrupo" xml:space="preserve">
+    <value>scp_CVA_ResFiLiquidadosTotalAnaliticoGrupo '{0}'</value>
+  </data>
+  <data name="GetValoresTotalGrupo" xml:space="preserve">
+    <value>scp_CVA_ResFiTotalAnaliticoGrupo '{0}'</value>
+  </data>
+  <data name="GetAtividadesPN" xml:space="preserve">
+    <value>exec Spc_ResFiAtividadesPN '{0}'</value>
+  </data>
+</root>

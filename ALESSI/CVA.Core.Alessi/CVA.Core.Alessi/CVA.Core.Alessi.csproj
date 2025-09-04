@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D02943F0-CBFB-4F20-8E1E-8DAE57F67954}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVA.Core.Alessi</RootNamespace>
+    <AssemblyName>CVA.Core.Alessi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\DocumentImportBLL.cs" />
+    <Compile Include="BLL\DocumentMappingBLL.cs" />
+    <Compile Include="BLL\FolhaPagamentoBLL.cs" />
+    <Compile Include="BLL\ImportLogBLL.cs" />
+    <Compile Include="BLL\LogBLL.cs" />
+    <Compile Include="BLL\NotaEntradaFreteBLL.cs" />
+    <Compile Include="BLL\NotaSaidaBLL.cs" />
+    <Compile Include="BLL\PedidoVendaBLL.cs" />
+    <Compile Include="BLL\ProdutoBLL.cs" />
+    <Compile Include="BLL\ProvisoesBLL.cs" />
+    <Compile Include="BLL\UserFieldsBLL.cs" />
+    <Compile Include="DAO\OJDT\FolhaPagamentoDAO.cs" />
+    <Compile Include="DAO\Resources\Query.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Query.resx</DependentUpon>
+    </Compile>
+    <Content Include="DAO\SQL\Cliente\Relatorios Analiticos\Em Aberto\Scp_CVA_ResFiBoletoAnalitico.sql" />
+    <Content Include="DAO\SQL\Cliente\Relatorios Analiticos\Em Aberto\Spc_CVA_ResFiAbertoAnalitico.sql" />
+    <Content Include="DAO\SQL\Cliente\Relatorios Analiticos\Em Aberto\Spc_CVA_ResFiAtrasadosAnalitico.sql" />
+    <Content Include="DAO\SQL\Cliente\Relatorios Analiticos\Em Aberto\Spc_CVA_ResFiChequeAnalitico.sql" />
+    <Content Include="DAO\SQL\Cliente\Relatorios Analiticos\Em Aberto\Spc_CVA_ResFiEmCarteiraAnalitico.sql" />
+    <Content Include="DAO\SQL\Cliente\Relatorios Analiticos\Em Aberto\Spc_CVA_ResFiTotalAnalitico.sql" />
+    <Content Include="DAO\SQL\Cliente\Relatorios Analiticos\Liquidados\scp_CVA_ResFiLiquidadosBoletoAnalitico.sql" />
+    <Content Include="DAO\SQL\Cliente\Relatorios Analiticos\Liquidados\Scp_CVA_ResFiLiquidadosAberto.sql" />
+    <Content Include="DAO\SQL\Cliente\Relatorios Analiticos\Liquidados\scp_CVA_ResFiLiquidadosAtrasadosAnalitico.sql" />
+    <Content Include="DAO\SQL\Cliente\Relatorios Analiticos\Liquidados\scp_CVA_ResFiLiquidadosChequeAnalitico.sql" />
+    <Content Include="DAO\SQL\Cliente\Relatorios Analiticos\Liquidados\scp_CVA_ResFiLiquidadosEmCarteiraAnalitico.sql" />
+    <Content Include="DAO\SQL\Cliente\Relatorios Analiticos\Liquidados\scp_CVA_ResFiLiquidadosTotalAnalitico.sql" />
+    <Content Include="DAO\SQL\Cliente\SpcCVAContasRecebidasPorCliente.sql" />
+    <Content Include="DAO\SQL\Cliente\Spc_CVA_ResFiAberto.sql" />
+    <Compile Include="DAO\UserTables\DefaultValuesDAO.cs" />
+    <Compile Include="DAO\UserTables\DocumentMappingDAO.cs" />
+    <Compile Include="MODEL\AtividadesModel.cs" />
+    <Compile Include="MODEL\ColunaAbertoModel.cs" />
+    <Compile Include="MODEL\ColunaAtrasadosModel.cs" />
+    <Compile Include="MODEL\ColunaLimiteModel.cs" />
+    <Compile Include="MODEL\ColunaLuquidadosModel.cs" />
+    <Compile Include="MODEL\DefaultValuesModel.cs" />
+    <Compile Include="MODEL\ErrorHandlerEnum.cs" />
+    <Compile Include="MODEL\FolhaPagamentoModel.cs" />
+    <Compile Include="MODEL\ImportParametersModel.cs" />
+    <Compile Include="MODEL\MaiorCompraModel.cs" />
+    <Compile Include="MODEL\RelatorioAnaliticoAbertoModel.cs" />
+    <Compile Include="MODEL\UltimaCompraModel.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\f1282.cs" />
+    <Compile Include="MODEL\DocumentMappingItemModel.cs" />
+    <Compile Include="MODEL\DocumentObjectEnum.cs" />
+    <Compile Include="MODEL\DocumentMappingModel.cs" />
+    <Compile Include="MODEL\FieldTypeEnum.cs" />
+    <Compile Include="MODEL\ImportLogModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VIEW\f133.cs" />
+    <Compile Include="VIEW\f134.cs" />
+    <Compile Include="VIEW\f140.cs" />
+    <Compile Include="VIEW\f141.cs" />
+    <Compile Include="VIEW\f2000001001.cs" />
+    <Compile Include="VIEW\f2000001002.cs" />
+    <Compile Include="VIEW\f2000001003.cs" />
+    <Compile Include="VIEW\f2000001004.cs" />
+    <Compile Include="VIEW\f2000001005.cs" />
+    <Compile Include="VIEW\f2000001007.cs" />
+    <Compile Include="VIEW\f2000001006.cs" />
+    <Compile Include="VIEW\f2000003001.cs" />
+    <Compile Include="VIEW\f2000003002.cs" />
+    <Compile Include="VIEW\fM1001.cs" />
+    <Compile Include="VIEW\fM1002.cs" />
+    <Compile Include="VIEW\fM1003.cs" />
+    <Compile Include="VIEW\fM1004.cs" />
+    <Compile Include="VIEW\fM1005.cs" />
+    <Compile Include="VIEW\fM1006.cs" />
+    <Compile Include="VIEW\fM1007.cs" />
+    <Compile Include="VIEW\fM3002.cs" />
+    <Compile Include="VIEW\fM3101.cs" />
+    <Compile Include="VIEW\fM3201.cs" />
+    <Compile Include="VIEW\f81.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAO\SQL\Cliente\Spc_CVA_ResFIAcumulo.sql" />
+    <Content Include="DAO\SQL\Cliente\Spc_CVA_ResFiAtrasados.sql" />
+    <Content Include="DAO\SQL\Cliente\Spc_CVA_ResFiLiquidados.sql" />
+    <Content Include="DAO\SQL\Cliente\Spc_CVA_ResFi_ColLimite.sql" />
+    <Content Include="DAO\SQL\Cliente\Spc_CVA_ResFi_MaiorCompra.sql" />
+    <Content Include="DAO\SQL\Cliente\Spc_CVA_ResFi_UltimaCompra.sql" />
+    <Content Include="DAO\SQL\Cliente\Spc_ResFiAtividadesPN.sql" />
+    <Content Include="DAO\SQL\Grupo\Relatorios Analiticos\Em Aberto\scp_CVA_ResFiBoletoAnaliticoGrupo.sql" />
+    <Content Include="DAO\SQL\Grupo\Relatorios Analiticos\Em Aberto\Spc_CVA_ResFiAbertoAnalitico.sql" />
+    <Content Include="DAO\SQL\Grupo\Relatorios Analiticos\Em Aberto\Spc_CVA_ResFiAtrasadosAnalitico.sql" />
+    <Content Include="DAO\SQL\Grupo\Relatorios Analiticos\Em Aberto\Spc_CVA_ResFiChequeAnalitico.sql" />
+    <Content Include="DAO\SQL\Grupo\Relatorios Analiticos\Em Aberto\Spc_CVA_ResFiEmCarteiraAnalitico.sql" />
+    <Content Include="DAO\SQL\Grupo\Relatorios Analiticos\Em Aberto\Spc_CVA_ResFiTotalAnalitico.sql" />
+    <Content Include="DAO\SQL\Grupo\Relatorios Analiticos\Liquidados\Scp_CVA_ResFiLiquidadosAberto.sql" />
+    <Content Include="DAO\SQL\Grupo\Relatorios Analiticos\Liquidados\scp_CVA_ResFiLiquidadosAtrasadosAnalitico.sql" />
+    <Content Include="DAO\SQL\Grupo\Relatorios Analiticos\Liquidados\scp_CVA_ResFiLiquidadosBoletoAnalitico.sql" />
+    <Content Include="DAO\SQL\Grupo\Relatorios Analiticos\Liquidados\scp_CVA_ResFiLiquidadosChequeAnalitico.sql" />
+    <Content Include="DAO\SQL\Grupo\Relatorios Analiticos\Liquidados\scp_CVA_ResFiLiquidadosEmCarteiraAnalitico.sql" />
+    <Content Include="DAO\SQL\Grupo\Relatorios Analiticos\Liquidados\scp_CVA_ResFiLiquidadosTotalAnalitico.sql" />
+    <Content Include="DAO\SQL\Grupo\Spc_CVA_ResFiAbertoGrupo.sql" />
+    <Content Include="DAO\SQL\Grupo\Spc_CVA_ResFIAcumuloGrupo.sql" />
+    <Content Include="DAO\SQL\Grupo\Spc_CVA_ResFiAtrasadosGrupo.sql" />
+    <Content Include="DAO\SQL\Grupo\Spc_CVA_ResFiLiquidadosGrupo.sql" />
+    <Content Include="DAO\SQL\Grupo\Spc_CVA_ResFi_ColLimiteGrupo.sql" />
+    <Content Include="DAO\SQL\Grupo\Spc_CVA_ResFi_MaiorCompraGrupo.sql" />
+    <Content Include="DAO\SQL\Grupo\Spc_CVA_ResFi_UltimaCompraGrupo.sql" />
+    <Content Include="Reports\SQL\SP_CVA_FRETE.sql" />
+    <None Include="packages.config" />
+    <None Include="Resources\f1005.srf" />
+    <None Include="Resources\f1006.srf" />
+    <Content Include="Resources\f1004.srf" />
+    <None Include="Resources\f1007.srf" />
+    <Content Include="srfFiles\f1001.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f1002.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f1003.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f1004.srf" />
+    <Content Include="srfFiles\f1005.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f1006.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f1007.srf" />
+    <Content Include="srfFiles\f133.srf" />
+    <EmbeddedResource Include="srfFiles\f134.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="srfFiles\f140.srf" />
+    <Content Include="srfFiles\f3002.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Reports\Análise de Frete v1.1.rpt" />
+    <None Include="Reports\Análise de Frete.rpt" />
+    <None Include="srfFiles\x141.srf" />
+    <Content Include="srfFiles\f3001.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DAO\Resources\Query.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Query.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj">
+      <Project>{b956d6a2-af35-4116-840c-f4e5cefd40f6}</Project>
+      <Name>CVA.AddOn.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SAPbouiCOM">
+      <Guid>{6048236A-956D-498D-A6F1-9C81C13AB6E8}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

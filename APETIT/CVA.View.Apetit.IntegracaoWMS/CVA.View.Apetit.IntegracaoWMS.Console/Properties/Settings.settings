@@ -1,0 +1,44 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CVA.View.Apetit.IntegracaoWMS.Console.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConnectioString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Server=10.170.1.50:30015;UserName=SYSTEM;Password=CVA@inicio123&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;Sap.Data.Hana&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Server=10.170.1.50:30015;UserName=SYSTEM;Password=CVA@inicio123</Value>
+    </Setting>
+    <Setting Name="Servidor" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10.170.1.50:30015</Value>
+    </Setting>
+    <Setting Name="UsuarioDB" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SYSTEM</Value>
+    </Setting>
+    <Setting Name="SenhaDB" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CVA@inicio123</Value>
+    </Setting>
+    <Setting Name="ServidorLicenca" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10.170.1.50</Value>
+    </Setting>
+    <Setting Name="ActivityType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="Subject" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="UsuarioSAP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">manager</Value>
+    </Setting>
+    <Setting Name="Base" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SBO_APETIT_PRODUCAO</Value>
+    </Setting>
+    <Setting Name="SenhaSAP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">B1admin@</Value>
+    </Setting>
+    <Setting Name="ServidorTipo" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

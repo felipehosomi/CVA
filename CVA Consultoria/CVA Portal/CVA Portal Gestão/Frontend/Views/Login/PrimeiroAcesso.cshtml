@@ -1,0 +1,68 @@
+﻿@model MODEL.Classes.UserModel
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CVA Consultoria - Login</title>
+</head>
+<body background="./images/pattern2.jpg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <div id="login-overlay" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" style="background-color: rgba(128, 128, 128, 0.45);">
+                <div class="row">
+                    <div class="col-xs-6 col-md-offset-3">
+                        <img src="~/img/logo.png" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-xs-10 col-md-offset-1">
+                        <div class="well">
+                            @using (Html.BeginForm("AlterarSenha", "Login", FormMethod.Post))
+                            {
+                                <div class="form-group">
+                                    <label for="password" class="control-label">Senha antiga</label>
+                                    @Html.HiddenFor(m => m.Email)
+                                    @Html.HiddenFor(m => m.Id)
+                                    @Html.PasswordFor(m => m.OldPassword, new { @class = "form-control", @placeholder = "Insira sua senha atual", @required = "required", @title = "Insira sua senha" })
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="control-label">Nova senha</label>
+                                    @Html.PasswordFor(m => m.NewPassword, new { @class = "form-control", @placeholder = "Insira sua nova senha", @required = "required", @title = "Insira sua senha" })
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="control-label">Confirme a nova senha</label>
+                                    @Html.PasswordFor(m => m.RepeatPassword, new { @class = "form-control", @placeholder = "Confirme a nova senha", @required = "required", @title = "Insira sua senha" })
+                                    <span class="help-block"></span>
+                                </div>
+
+                                if (ViewBag.Error != null)
+                                {
+                                    <div id="loginErrorMsg" class="alert alert-error">@ViewBag.Error</div>
+                                }
+                                else
+                                {
+                                    <div id="loginErrorMsg" class="alert alert-error hide"></div>
+                                }
+                                <button type="submit" value="login" name="submit" class="btn btn-success btn-block">Alterar Senha</button>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Cadastrar<strong> Usuário</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nome*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <input type="hidden" ng-model="user.Id" />
+                                    <input type="text" name="name" class="form-control" ng-model="user.Name"/>
+                                </div>
+                                <span class="help-block">Informe o nome do usuário</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">E-mail*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-send"></span></span>
+                                    <input type="text" name="name" class="form-control" ng-model="user.Email"/>
+                                </div>
+                                <span class="help-block">Informe o e-mail do usuário</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Senha*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-lock"></span></span>
+                                    <input type="password" class="form-control" ng-model="user.Password" ng-disabled="user.Id == null"/>
+                                </div>
+                                <span class="help-block">Altere a senha do usuário</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Status*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                    <select name="status" class="form-control" ng-model="user.Status.Id" ng-options="selected.Id as selected.Descricao for selected in StatusList">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o status do registro</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Colaborador</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-sort-alpha-asc"></span></span>
+                                    <select class="form-control" ng-model="user.Collaborator.Id" ng-options="selected.Id as selected.Nome for selected in CollaboratorList">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o colaborador</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Perfil</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-sort-alpha-asc"></span></span>
+                                    <select class="form-control" ng-model="user.Profile.Id" ng-options="selected.Id as selected.Name for selected in ProfileList">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o perfil</span>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿CREATE PROCEDURE SP_CVA_APONTAMENTO_QTDEAPONTADA
+(
+	NrOP		INT,
+	CodEtapa	VARCHAR(254),
+	Qtde		INT
+)
+AS
+BEGIN
+	DECLARE RowCount INT;
+	DECLARE Code INT;
+
+	UPDATE "@CVA_APONTAMENTO"
+	SET "U_QtdeApontada" = "U_QtdeApontada" + Qtde
+	WHERE "U_NrOP" = NrOP
+	AND "U_CodEtapa" =  CodEtapa;
+	
+	SELECT ::ROWCOUNT INTO RowCount FROM DUMMY;
+	
+	IF RowCount = 0
+	THEN
+		SELECT LPAD(MAX(TO_INTEGER(IFNULL("Code", '0') + 1)) , 10, '0') INTO Code FROM "@CVA_APONTAMENTO";
+		INSERT INTO "@CVA_APONTAMENTO" VALUES (Code, Code, NrOP, CodEtapa, Qtde, 0);
+	END IF;
+END
+

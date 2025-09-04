@@ -1,0 +1,36 @@
+﻿@model List<CVA.Portal.Producao.Model.Qualidade.DocumentoModel>
+<div id="modal-novo" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">Criar nova inspeção</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-md-2">Nr. OP</label>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            @Html.TextBox("NrOP", "", htmlAttributes: new { id = "tbxNrOP", type = "number", @class = "form-control" })
+                        </div>
+                    </div>
+                    <label class="col-md-2">Etapa</label>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <select class="form-control" id="cbxEtapa" required="required">
+                                <option value="">Selecione</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnNovo" type="button" class="btn btn-primary">Criar</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

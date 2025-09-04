@@ -1,0 +1,192 @@
+﻿@model CVA.Portal.Producao.Model.Qualidade.FichaInspecaoModel
+<div class="form-group">
+    @if (Model != null && Model.ItemList != null)
+    {
+        <div>
+            <table class="table table-striped table-bordered table-control">
+                <tr>
+                    <th>ID</th>
+                    <th>Especificação</th>
+                    <th>Vlr. Nominal</th>
+                    <th>Padrão de</th>
+                    <th>Padrão até</th>
+                    <th>Análise</th>
+                    <th>Observação</th>
+                    <th>Método</th>
+                    <th>Amostragem</th>
+                    @*<th>Link</th>*@
+                    <th>Máquina</th>
+                    <th>Resultado</th>
+                </tr>
+                @for (int i = 0; i < Model.ItemList.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Html.HiddenFor(m => Model.ItemList[i].Code)
+                            @Html.HiddenFor(m => Model.ItemList[i].Amostragem)
+                            @Html.HiddenFor(m => Model.ItemList[i].Analise)
+                            @Html.HiddenFor(m => Model.ItemList[i].CodEspec)
+                            @Html.HiddenFor(m => Model.ItemList[i].CodFicha)
+                            @Html.HiddenFor(m => Model.ItemList[i].DescEspec)
+                            @Html.HiddenFor(m => Model.ItemList[i].ID)
+                            @Html.HiddenFor(m => Model.ItemList[i].IdAmostra)
+                            @Html.HiddenFor(m => Model.ItemList[i].Metodo)
+                            @Html.HiddenFor(m => Model.ItemList[i].Observacao)
+                            @Html.HiddenFor(m => Model.ItemList[i].PadraoAte)
+                            @Html.HiddenFor(m => Model.ItemList[i].PadraoDe)
+                            @Html.HiddenFor(m => Model.ItemList[i].VlrNominal)
+                            @Html.HiddenFor(m => Model.ItemList[i].TipoCampo)
+                            @Model.ItemList[i].ID
+                        </td>
+                        <td>
+                            @Model.ItemList[i].DescEspec
+                        </td>
+                        <td>
+                            @Model.ItemList[i].VlrNominalStr
+                        </td>
+                        <td>
+                            @Model.ItemList[i].PadraoDeStr
+                        </td>
+                        <td>
+                            @Model.ItemList[i].PadraoAteStr
+                        </td>
+                        <td>
+                            @Model.ItemList[i].Analise
+                        </td>
+                        <td>
+                            @Model.ItemList[i].Observacao
+                        </td>
+                        <td>
+                            @Model.ItemList[i].Metodo
+                        </td>
+                        <td>
+                            @Model.ItemList[i].Amostragem
+                        </td>
+                        @*<td>
+                                @Model.ItemList[i].Link
+                            </td>*@
+                        <td>
+                            @Html.DropDownListFor(m => Model.ItemList[i].CodRecurso, Model.ItemList[i].Recursos, "")
+                        </td>
+                        <td>
+                            @if (Model.ItemList[i].TipoCampo == "T")
+                            {
+                                @Html.TextBoxFor(m => Model.ItemList[i].Resultado, htmlAttributes: new { required = "required" })
+                            }
+                            else if (Model.ItemList[i].TipoCampo == "N")
+                            {
+                                @Html.TextBoxFor(m => Model.ItemList[i].Resultado, htmlAttributes: new { required = "required", type = "number", step = "any" })
+                            }
+                            else if (Model.ItemList[i].TipoCampo == "D")
+                            {
+                                @Html.TextBoxFor(m => Model.ItemList[i].Resultado, htmlAttributes: new { required = "required", type = "date" })
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    }
+    else if (Model.AmostraList != null)
+    {
+        <ul id="tab" class="nav nav-tabs bar_tabs" role="tablist">
+            @foreach (var amostraModel in Model.AmostraList)
+            {
+                <li role="presentation" class="@(amostraModel.IdAmostra == 1 ? "active" : "")">
+                    <a href="#tab_Amostra_@amostraModel.IdAmostra" role="tab" id="views-tab" data-toggle="tab" aria-expanded="false">Amostra @amostraModel.IdAmostra</a>
+                </li>
+            }
+        </ul>
+        <div id="tabContent" class="tab-content">
+            @for (int i = 0; i < Model.AmostraList.Count; i++)
+            {
+                @Html.HiddenFor(m => Model.AmostraList[i].IdAmostra)
+                <div role="tabpanel" class="tab-pane fade @(Model.AmostraList[i].IdAmostra == 1 ? "active in" : "")" id="tab_Amostra_@Model.AmostraList[i].IdAmostra" aria-labelledby="views-tab">
+                    <div class="box-body no-padding">
+                        <div>
+                            <table class="table table-striped table-bordered table-control">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Especificação</th>
+                                    <th>Vlr. Nominal</th>
+                                    <th>Padrão de</th>
+                                    <th>Padrão até</th>
+                                    <th>Análise</th>
+                                    <th>Observação</th>
+                                    <th>Método</th>
+                                    <th>Amostragem</th>
+                                    <th>Máquina</th>
+                                    <th>Resultado</th>
+                                </tr>
+                                @for (int j = 0; j < Model.AmostraList[i].ItemList.Count; j++)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].Code)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].Amostragem)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].Analise)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].CodEspec)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].CodFicha)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].DescEspec)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].ID)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].IdAmostra)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].Metodo)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].Observacao)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].PadraoAte)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].PadraoDe)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].VlrNominal)
+                                            @Html.HiddenFor(m => Model.AmostraList[i].ItemList[j].TipoCampo)
+                                            @Model.AmostraList[i].ItemList[j].ID
+                                        </td>
+                                        <td>
+                                            @Model.AmostraList[i].ItemList[j].DescEspec
+                                        </td>
+                                        <td>
+                                            @Model.AmostraList[i].ItemList[j].VlrNominalStr
+                                        </td>
+                                        <td>
+                                            @Model.AmostraList[i].ItemList[j].PadraoDeStr
+                                        </td>
+                                        <td>
+                                            @Model.AmostraList[i].ItemList[j].PadraoAteStr
+                                        </td>
+                                        <td>
+                                            @Model.AmostraList[i].ItemList[j].Analise
+                                        </td>
+                                        <td>
+                                            @Model.AmostraList[i].ItemList[j].Observacao
+                                        </td>
+                                        <td>
+                                            @Model.AmostraList[i].ItemList[j].Metodo
+                                        </td>
+                                        <td>
+                                            @Model.AmostraList[i].ItemList[j].Amostragem
+                                        </td>
+                                        <td>
+                                            @Html.DropDownListFor(m => Model.AmostraList[i].ItemList[j].CodRecurso, Model.AmostraList[i].ItemList[j].Recursos, "")
+                                        </td>
+                                        <td>
+                                            @if (Model.AmostraList[i].ItemList[j].TipoCampo == "T")
+                                            {
+                                                @Html.TextBoxFor(m => Model.AmostraList[i].ItemList[j].Resultado, htmlAttributes: new { required = "required" })
+                                            }
+                                            else if (Model.AmostraList[i].ItemList[j].TipoCampo == "N")
+                                            {
+                                                @Html.TextBoxFor(m => Model.AmostraList[i].ItemList[j].Resultado, htmlAttributes: new { required = "required", type = "number", step = "any" })
+                                            }
+                                            else if (Model.AmostraList[i].ItemList[j].TipoCampo == "D")
+                                            {
+                                                @Html.TextBoxFor(m => Model.AmostraList[i].ItemList[j].Resultado, htmlAttributes: new { required = "required", type = "date" })
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    }
+</div>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Portal.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CVA_LOG_IMP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="USER" Type="nvarchar" MaxLength="200" />
+          <Property Name="PER" Type="nvarchar" MaxLength="10" />
+          <Property Name="CNPJ" Type="nvarchar" MaxLength="30" />
+          <Property Name="CNTR" Type="nvarchar" MaxLength="100" />
+          <Property Name="REV" Type="float" Nullable="false" />
+          <Property Name="LINE" Type="int" Nullable="false" />
+          <Property Name="DSCR" Type="nvarchar(max)" />
+          <Property Name="FILE" Type="nvarchar" MaxLength="500" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CVA_PAR_IMP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INS" Type="datetime" Nullable="false" />
+          <Property Name="UPD" Type="datetime" />
+          <Property Name="BASE_ID" Type="int" Nullable="false" />
+          <Property Name="BASE_NAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CNPJ" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ITEMCODE" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="USAGE" Type="int" Nullable="false" />
+          <Property Name="COSTCENTER" Type="nvarchar" MaxLength="16" />
+          <Property Name="PROJECT" Type="nvarchar" MaxLength="40" />
+          <Property Name="NFSEQ" Type="int" Nullable="false" />
+          <Property Name="REMARKS" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BPLID" Type="int" Nullable="false" />
+          <Property Name="ALIQIPI" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="APLIC" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="PortalStoreContainer">
+          <EntitySet Name="CVA_LOG_IMP" EntityType="Self.CVA_LOG_IMP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CVA_PAR_IMP" EntityType="Self.CVA_PAR_IMP" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Portal" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ImportParamModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UPD" Type="DateTime" Precision="3" />
+          <Property Name="BASE_ID" Type="Int32" Nullable="false" />
+          <Property Name="BASE_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CNPJ" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ITEMCODE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="USAGE" Type="Int32" Nullable="false" />
+          <Property Name="COSTCENTER" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PROJECT" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="NFSEQ" Type="Int32" Nullable="false" />
+          <Property Name="REMARKS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BPLID" Type="Int32" Nullable="false" />
+          <Property Name="ALIQIPI" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="APLIC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PortalEDM" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CVA_PAR_IMP" EntityType="Portal.ImportParamModel" />
+          <EntitySet Name="CVA_LOG_IMP" EntityType="Portal.ImportLogModel" />
+        </EntityContainer>
+        <EntityType Name="ImportLogModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="USER" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CNPJ" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CNTR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="REV" Type="Double" Nullable="false" />
+          <Property Name="LINE" Type="Int32" Nullable="false" />
+          <Property Name="DSCR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FILE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PortalStoreContainer" CdmEntityContainer="PortalEDM">
+          <EntitySetMapping Name="CVA_PAR_IMP">
+            <EntityTypeMapping TypeName="Portal.ImportParamModel">
+              <MappingFragment StoreEntitySet="CVA_PAR_IMP">
+                <ScalarProperty Name="APLIC" ColumnName="APLIC" />
+                <ScalarProperty Name="ALIQIPI" ColumnName="ALIQIPI" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="UPD" ColumnName="UPD" />
+                <ScalarProperty Name="BASE_ID" ColumnName="BASE_ID" />
+                <ScalarProperty Name="BASE_NAME" ColumnName="BASE_NAME" />
+                <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+                <ScalarProperty Name="ITEMCODE" ColumnName="ITEMCODE" />
+                <ScalarProperty Name="USAGE" ColumnName="USAGE" />
+                <ScalarProperty Name="COSTCENTER" ColumnName="COSTCENTER" />
+                <ScalarProperty Name="PROJECT" ColumnName="PROJECT" />
+                <ScalarProperty Name="NFSEQ" ColumnName="NFSEQ" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="BPLID" ColumnName="BPLID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVA_LOG_IMP">
+            <EntityTypeMapping TypeName="Portal.ImportLogModel">
+              <MappingFragment StoreEntitySet="CVA_LOG_IMP">
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="FILE" ColumnName="FILE" />
+                <ScalarProperty Name="DSCR" ColumnName="DSCR" />
+                <ScalarProperty Name="LINE" ColumnName="LINE" />
+                <ScalarProperty Name="REV" ColumnName="REV" />
+                <ScalarProperty Name="CNTR" ColumnName="CNTR" />
+                <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+                <ScalarProperty Name="PER" ColumnName="PER" />
+                <ScalarProperty Name="USER" ColumnName="USER" />
+                <ScalarProperty Name="INS" ColumnName="INS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

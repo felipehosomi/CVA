@@ -1,0 +1,125 @@
+﻿@model MODEL.Classes.SpecialtyModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Cadatros</a></li>
+    <li><a href="/Colaborador/Pesquisar">Colaborador</a></li>
+    <li><a href="/Especialidade/Pesquisar">Especialidades</a></li>
+    <li class="active">Cadastrar</li>
+</ul>
+<div class="page-content-wrap" ng-controller="SpecialtyController" ng-init="OnLoad(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Cadastro de <strong> Especialidades</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Nome</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" hidden="hidden" ng-model="specialty.Id" />
+                                        <input type="text" class="form-control" tabindex="1" ng-model="specialty.Name" />
+                                    </div>
+                                    <span class="help-block">Insira o nome da especialidade</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Status</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                        <select name="status" class="form-control" ng-model="specialty.StatusId" ng-options="selected.Id as selected.Descricao for selected in StatusList" required>
+                                            <option value="">Selecione</option>
+                                        </select>
+                                    </div>
+                                    <span class="help-block">Selecione o status da especialidade</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Descrição</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <textarea class="form-control" rows="8" tabindex="3" ng-model="specialty.Description"></textarea>
+                                    </div>
+                                    <span class="help-block">Insira uma descrição</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Valor</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" class="form-control" tabindex="1" ng-model="specialty.Value" />
+                                    </div>
+                                    <span class="help-block">Insira o valor pago por hora da especialidade</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Tipo de Especialidade</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                        <select name="status" class="form-control" ng-model="specialty.TipoEspecialidade.Id" ng-options="selected.Id as selected.Nome for selected in TiposEspecialidadeList" required>
+                                            <option value="">Selecione</option>
+                                        </select>
+                                    </div>
+                                    <span class="help-block">Selecione o tipo da especialidade</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-primary pull-right" ng-click="SaveSpecialty()" ng-disabled="specialty == null || IsProcessing">Salvar Especialidade <span class="fa fa-floppy-o fa-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p>Especialidade criada com sucesso</p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close" id="btn-ok">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Script/jquery")
+@Scripts.Render("~/Business/Specialty")

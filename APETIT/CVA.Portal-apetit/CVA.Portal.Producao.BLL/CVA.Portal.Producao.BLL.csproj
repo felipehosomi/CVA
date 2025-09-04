@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33B6E8CC-420F-45F7-9A2D-93ECE3FB20C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVA.Portal.Producao.BLL</RootNamespace>
+    <AssemblyName>CVA.Portal.Producao.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="B1SLayer, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\B1SLayer.1.0.3\lib\netstandard2.0\B1SLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.3.0.1\lib\net461\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl.Http, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.Http.3.0.1\lib\net461\Flurl.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sap.Data.Hana.v3.5, Version=2.3.106.0, Culture=neutral, PublicKeyToken=0326b8ea63db4bc4, processorArchitecture=MSIL" />
+    <Reference Include="Sap.Data.Hana.v4.5, Version=2.3.106.0, Culture=neutral, PublicKeyToken=0326b8ea63db4bc4, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CVA.Portal.Producao.Model\DLL\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Apetit\AttachmentBLL.cs" />
+    <Compile Include="Apetit\BatchesBLL.cs" />
+    <Compile Include="Apetit\ApontamentoBLL.cs" />
+    <Compile Include="Apetit\OrdemProducaoBLL.cs" />
+    <Compile Include="Apetit\FilialBLL.cs" />
+    <Compile Include="Apetit\MessagesBLL.cs" />
+    <Compile Include="Apetit\ContratosBLL.cs" />
+    <Compile Include="Apetit\ReposicaoInsumosBLL.cs" />
+    <Compile Include="Apetit\ServicoExtraBLL.cs" />
+    <Compile Include="Apetit\SaidaMateriaisBLL.cs" />
+    <Compile Include="BaseBLL.cs" />
+    <Compile Include="Compras\OfertaCompraBLL.cs" />
+    <Compile Include="Configuracoes\ColaboradorBLL.cs" />
+    <Compile Include="Configuracoes\ParametrosBLL.cs" />
+    <Compile Include="Configuracoes\SBOConnectionBLL.cs" />
+    <Compile Include="Configuracoes\UsuarioEtapaBLL.cs" />
+    <Compile Include="Estoque\GrupoItemBLL.cs" />
+    <Compile Include="Estoque\ItemBLL.cs" />
+    <Compile Include="Estoque\LoteSerieBLL.cs" />
+    <Compile Include="Estoque\TransferenciaEstoqueBLL.cs" />
+    <Compile Include="Estoque\TransferenciaLogBLL.cs" />
+    <Compile Include="Producao\ApontamentoHRBLL.cs" />
+    <Compile Include="Producao\EntradaAcabadoBLL.cs" />
+    <Compile Include="Producao\EtapaItinerarioBLL.cs" />
+    <Compile Include="Producao\PedidoVendaBLL.cs" />
+    <Compile Include="Qualidade\FichaInspecaoBLL.cs" />
+    <Compile Include="Qualidade\FichaInspecaoItemBLL.cs" />
+    <Compile Include="Qualidade\InspecaoMPBLL.cs" />
+    <Compile Include="Producao\SaidaInsumosBLL.cs" />
+    <Compile Include="Qualidade\FichaProdutoBLL.cs" />
+    <Compile Include="Qualidade\InspecaoOPBLL.cs" />
+    <Compile Include="Qualidade\ModeloFichaBLL.cs" />
+    <Compile Include="Configuracoes\PerfilBLL.cs" />
+    <Compile Include="Configuracoes\PerfilViewBLL.cs" />
+    <Compile Include="Qualidade\ModeloFichaItemBLL.cs" />
+    <Compile Include="Producao\ProducaoBLL.cs" />
+    <Compile Include="Configuracoes\ViewBLL.cs" />
+    <Compile Include="Producao\RecursoBLL.cs" />
+    <Compile Include="Qualidade\TipoEspecificacaoBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Configuracoes\UsuarioBLL.cs" />
+    <Compile Include="Static\Config.cs" />
+    <Compile Include="Util\EncryptBLL.cs" />
+    <Compile Include="Util\Logger.cs" />
+    <Compile Include="Util\UserFieldsBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj">
+      <Project>{b956d6a2-af35-4116-840c-f4e5cefd40f6}</Project>
+      <Name>CVA.AddOn.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CVA.Portal.Producao.DAO\CVA.Portal.Producao.DAO.csproj">
+      <Project>{C50F55CA-5909-4CAF-B6AB-DC8C621A618A}</Project>
+      <Name>CVA.Portal.Producao.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CVA.Portal.Producao.Model\CVA.Portal.Producao.Model.csproj">
+      <Project>{03d08d45-7a45-4608-8413-1c07270b014d}</Project>
+      <Name>CVA.Portal.Producao.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

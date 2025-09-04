@@ -1,0 +1,120 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Informar<strong> Documentação</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">CPF*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-tag"></span></span>
+                                    <input type="text" name="cpf" class="form-control" ng-model="collaborator.CPF" id="collaborator-CPF" tabindex="9" />
+                                </div>
+                                <span class="help-block">Informe o número do CPF</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">RG*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-tag"></span></span>
+                                    <input type="text" name="rg" class="form-control" ng-model="collaborator.RG" id="collaborator-RG" tabindex="10"/>
+                                </div>
+                                <span class="help-block">Insira número do RG</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Data de Emissão RG</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-calendar-o"></span></span>
+                                    <input type="date" class="form-control" ng-model="collaborator.EmissaoRG" tabindex="11"/>
+                                </div>
+                                <span class="help-block">Insira a data de emissão do RG</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Orgão Exp./UF*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-edit"></span></span>
+                                    <input type="text" class="form-control" ng-model="collaborator.OrgaoEmissor" tabindex="12"/>
+                                </div>
+                                <span class="help-block">Informe o orgão emissor do RG</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Tipo</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-info"></span></span>
+                                    <input type="text" hidden="hidden" ng-model="collaborator.Id" />
+                                    <select class="form-control" ng-change="VerifyType()" ng-model="collaborator.Tipo.Id" ng-options="selected.Id as selected.Nome for selected in TypeList" tabindex="13">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o tipo do colaborador</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">CNPJ**</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-tag"></span></span>
+                                    <input type="text" name="cpf" class="form-control" id="collaborator-CNPJ" ng-model="collaborator.CNPJ" tabindex="14"/>
+                                </div>
+                                <span class="help-block">Informe o CNPJ (**Obrigatório para Pessoa Jurídica)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Passaporte</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-tag"></span></span>
+                                    <input type="text" class="form-control" ng-model="collaborator.Passaporte" tabindex="15"/>
+                                </div>
+                                <span class="help-block">Informe o número do passaporte</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Validade Passaporte</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-calendar-o"></span></span>
+                                    <input type="date" class="form-control" ng-model="collaborator.ValidadePassaporte" tabindex="16"/>
+                                </div>
+                                <span class="help-block">Informe a validade do passaporte</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Naturalidade*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+                                    <input type="text" class="form-control" ng-model="collaborator.Naturalidade" tabindex="17"/>
+                                </div>
+                                <span class="help-block">Informe a naturalidade do colaborador</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nacionalidade*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+                                    <input type="text" name="nacionalidade" class="form-control" ng-model="collaborator.Nacionalidade" tabindex="18"/>
+                                </div>
+                                <span class="help-block">Informe a nacionalidade</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

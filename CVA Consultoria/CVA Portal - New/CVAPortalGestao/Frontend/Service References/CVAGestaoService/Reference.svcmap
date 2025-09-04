@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a111ffb7-90a6-42f5-88bd-0ec6cb5c900b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:12393/CVAGestaoService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CVAGestaoService.xsd" MetadataType="Schema" ID="4a9c27b1-75f9-4354-a8cb-fd620df44981" SourceId="1" SourceUrl="http://localhost:12393/CVAGestaoService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CVAGestaoService.disco" MetadataType="Disco" ID="927e2785-727a-4a04-a7c9-afde67c864bb" SourceId="1" SourceUrl="http://localhost:12393/CVAGestaoService.svc?disco" />
+    <MetadataFile FileName="CVAGestaoService1.xsd" MetadataType="Schema" ID="67d69ac1-dd5f-4a56-8421-3a32e4cf4df2" SourceId="1" SourceUrl="http://localhost:12393/CVAGestaoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CVAGestaoService.wsdl" MetadataType="Wsdl" ID="7f6cb481-4939-4128-b6a4-8eba024686a8" SourceId="1" SourceUrl="http://localhost:12393/CVAGestaoService.svc?wsdl" />
+    <MetadataFile FileName="CVAGestaoService2.xsd" MetadataType="Schema" ID="bf28eb0c-4dd6-4b28-b7b6-e1c78b9c6775" SourceId="1" SourceUrl="http://localhost:12393/CVAGestaoService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CVAGestaoService3.xsd" MetadataType="Schema" ID="8023fa73-6f03-4087-8aa2-7b848113f541" SourceId="1" SourceUrl="http://localhost:12393/CVAGestaoService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CVAGestaoService4.xsd" MetadataType="Schema" ID="dfc542da-b3bf-410c-a65b-3f0eb80bc4b8" SourceId="1" SourceUrl="http://localhost:12393/CVAGestaoService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

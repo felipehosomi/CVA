@@ -1,0 +1,224 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using CVA_Obj_Shared.Interfaces;
+using CVA_Rep_DAL;
+using CVA_Rep_Exception;
+using CVA_Rep_Logging;
+using SAPbobsCOM;
+// ReSharper disable PossibleInvalidOperationException
+
+namespace CVA_Obj_ContasBancarias
+{
+    public class ContasBancarias : IPlugin
+    {
+        private readonly ILogger logger;
+        private readonly ILogService logService = Log4NetService.Instance;
+        private bool disposed;
+
+        public ContasBancarias()
+        {
+            logService.Configure(
+                new FileInfo($"{AppDomain.CurrentDomain.BaseDirectory}\\log4net.config"));
+            logger = logService.GetLogger<ContasBancarias>();
+        }
+
+        public override string Name => "CVA_Obj_ContasBancarias";
+
+        public override void Close()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        public override void Dispose()
+        {
+            Close();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                }
+
+                disposed = true;
+            }
+        }
+
+        public override int Create(Dictionary<int, string> listaRegistros, Company oCompany)
+        {
+            try
+            {
+                foreach (var reg in listaRegistros)
+                {
+                    if (Exists(reg, oCompany))
+                        continue;
+
+                    var sFile = $"{Path.GetTempPath()}\\ContasBancarias.xml";
+                    File.WriteAllText(sFile, reg.Value);
+
+                    HouseBankAccounts oHouseBankAccounts =
+                        (HouseBankAccounts)oCompany.GetBusinessObjectFromXML(sFile, 0);
+                    
+                    if (oHouseBankAccounts.Add() != 0)
+                    {
+                        int errCode;
+                        string errMsg;
+
+                        oCompany.GetLastError(out errCode, out errMsg);
+
+                        throw new ReplicadorException($"{errCode} - {errMsg}");
+                    }
+                    //System.Runtime.InteropServices.Marshal.FinalReleaseComObject(oHouseBankAccounts);
+                    //oHouseBankAccounts = null;
+                }
+            }
+            catch (ReplicadorException ex)
+            {
+                logger.Error(GetInnerException(ex), ex);
+
+                throw;
+            }
+            catch (Exception ex)
+            {
+                logger.Fatal(GetInnerException(ex), ex);
+
+                throw;
+            }
+
+            return 0;
+        }
+
+        public override int Update(Dictionary<int, string> listaRegistros, Company oCompany)
+        {
+            try
+            {
+                oCompany.XmlExportType = BoXmlExportTypes.xet_ExportImportMode;
+
+                foreach (var reg in listaRegistros)
+                {
+                    var sFile = $"{Path.GetTempPath()}\\ContasBancarias.xml";
+                    File.WriteAllText(sFile, reg.Value);
+
+                    HouseBankAccounts oHouseBankAccounts =
+                        (HouseBankAccounts)oCompany.GetBusinessObject(BoObjectTypes.oHouseBankAccounts);
+
+                    var oUnitOfWork = new UnitOfWork();
+                    var _reg = oUnitOfWork.CvaRegRepository.GetByID(reg.Key);
+
+                    oHouseBankAccounts.GetByKey(Convert.ToInt32(_reg.CODE));
+                    oHouseBankAccounts.Browser.ReadXml(sFile, 0);
+
+                    if (oHouseBankAccounts.Update() != 0)
+                    {
+                        int errCode;
+                        string errMsg;
+
+                        oCompany.GetLastError(out errCode, out errMsg);
+
+                        throw new ReplicadorException($"{errCode} - {errMsg}");
+                    }
+                    //System.Runtime.InteropServices.Marshal.FinalReleaseComObject(oHouseBankAccounts);
+                    //oHouseBankAccounts = null;
+                }
+            }
+            catch (ReplicadorException ex)
+            {
+                logger.Error(GetInnerException(ex), ex);
+
+                throw;
+            }
+            catch (Exception ex)
+            {
+                logger.Fatal(GetInnerException(ex), ex);
+
+                throw;
+            }
+
+            return 0;
+        }
+
+        private bool Exists(KeyValuePair<int, string> reg, Company oCompany)
+        {
+            var ret = false;
+
+            try
+            {
+                HouseBankAccounts oHouseBankAccounts =
+                    (HouseBankAccounts)oCompany.GetBusinessObject(BoObjectTypes.oHouseBankAccounts);
+
+                var oUnitOfWork = new UnitOfWork();
+                var _reg = oUnitOfWork.CvaRegRepository.GetByID(reg.Key);
+
+                ret = oHouseBankAccounts.GetByKey(Convert.ToInt32(_reg.CODE));
+                //System.Runtime.InteropServices.Marshal.FinalReleaseComObject(oHouseBankAccounts);
+                //oHouseBankAccounts = null;
+            }
+            catch (ReplicadorException)
+            {
+                ret = false;
+            }
+            catch (Exception)
+            {
+                ret = false;
+            }
+
+            return ret;
+        }
+
+        public override int Delete(Dictionary<int, string> listaRegistros, Company oCompany)
+        {
+            try
+            {
+                oCompany.XmlExportType = BoXmlExportTypes.xet_ExportImportMode;
+
+                foreach (var reg in listaRegistros)
+                {
+                    HouseBankAccounts oHouseBankAccounts =
+                        (HouseBankAccounts)oCompany.GetBusinessObject(BoObjectTypes.oHouseBankAccounts);
+
+                    var oUnitOfWork = new UnitOfWork();
+                    var _reg = oUnitOfWork.CvaRegRepository.GetByID(reg.Key);
+
+                    oHouseBankAccounts.GetByKey(Convert.ToInt32(_reg.CODE));
+
+                    if (oHouseBankAccounts.Remove() != 0)
+                    {
+                        int errCode;
+                        string errMsg;
+
+                        oCompany.GetLastError(out errCode, out errMsg);
+
+                        throw new ReplicadorException($"{errCode} - {errMsg}");
+                    }
+                    //System.Runtime.InteropServices.Marshal.FinalReleaseComObject(oHouseBankAccounts);
+                    //oHouseBankAccounts = null;
+                }
+            }
+            catch (ReplicadorException ex)
+            {
+                logger.Error(GetInnerException(ex), ex);
+
+                throw;
+            }
+            catch (Exception ex)
+            {
+                logger.Fatal(GetInnerException(ex), ex);
+
+                throw;
+            }
+
+            return 0;
+        }
+
+        private static string GetInnerException(Exception ex)
+        {
+            if (ex.InnerException != null)
+                return $"{ex.InnerException.Message} > {GetInnerException(ex.InnerException)} ";
+            return string.Empty;
+        }
+    }
+}

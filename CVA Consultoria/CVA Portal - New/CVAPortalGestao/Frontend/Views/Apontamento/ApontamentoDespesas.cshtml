@@ -1,0 +1,61 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading ui-draggable-handle">
+                <h3 class="panel-title"> Consultar<strong> Apontamento Mensal</strong></h3>
+                <ul class="panel-controls">
+                    <li>
+                        <button type="button" class="btn btn-default pull-right" ng-click="AtualizarGrid()">Atualizar <span class="fa fa-refresh"></span></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td><b>Data</b></td>
+                                <td><b>Projeto</b></td>
+                                <td><b>Hora Início</b></td>
+                                <td><b>Intervalo</b></td>
+                                <td><b>Hora Fim</b></td>
+                                <td><b>Solicitante</b></td>
+                                <td><b>Nº Chamado</b></td>
+                                <td><b>Especialidade</b></td>
+                                <td><b>Total de Horas</b></td>
+                                <td><b>#</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="nots in NotesList">
+                                <td>{{nots.Date | date: "dd/MM/yy"}}</td>
+                                <td>{{nots.Project.Nome}}</td>
+                                <td>{{nots.InitHour | date:'HH:mm'}}</td>
+                                <td>{{nots.IntervalHour | date:'HH:mm'}}</td>
+                                <td>{{nots.FinishHour | date:'HH:mm'}}</td>
+                                <td>{{nots.Requester}}</td>
+                                <td>{{nots.Ticket.Code}}</td>
+                                <td>{{nots.Specialty.Name}}</td>
+                                <td><b>{{nots.TotalLine}}</b></td>
+                                <td>
+                                    <button type="button" class="btn btn-default" ng-click="EditarApontamento(nots)" ng-disabled="nots.StatusId == 5"><span class="fa fa-edit"></span></button>
+                                    <button type="button" class="btn btn-danger" ng-click="RemoveNote(nots.Id)" ng-disabled="nots.StatusId == 5"><span class="glyphicon glyphicon-remove"></span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/datatables/jquery.dataTables.js"></script>
+<script>
+    $('#DataTables_Table_1').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Portuguese-Brasil.json"
+        }
+    });
+</script>
+
+

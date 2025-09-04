@@ -1,0 +1,82 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Informações<strong> Financeiras</strong></h3>
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: {{VisualPercent}}%; float:right">
+                    {{VisualPercent}}%
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><b>Especialidade</b></td>
+                                        <td><b>Valor/Hora</b></td>
+                                        <td><b>Horas</b></td>
+                                        <td><b>Backoffice</b></td>
+                                        <td><b>Risco</b></td>
+                                        <td><b>Margem</b></td>
+                                        <td><b>Comissão</b></td>
+                                        <td><b>Despesas</b></td>
+                                        <td><b>Impostos</b></td>
+                                        <td><b>Subtotal</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="line in PricingList">
+                                        <td>{{line.SpecialtyName}}</td>
+                                        <td>R$ {{line.Value}}</td>
+                                        <td>{{line.Hours}}</td>
+                                        <td>R$ {{line.Cost}}</td>
+                                        <td>R$ {{line.Backoffice}}</td>
+                                        <td>R$ {{line.Risk}}</td>
+                                        <td>R$ {{line.Margin}}</td>
+                                        <td>R$ {{line.Commission}}</td>
+                                        <td>R$ {{line.Expenses}}</td>
+                                        <td>R$ {{line.Taxes}}</td>
+                                        <td>R$ {{line.Subtotal}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b></b>Totais:</b></td>
+                                        <td><b>R$ {{line.SumValue}}</b></td>
+                                        <td><b>{{line.SumHours}}</b></td>
+                                        <td><b>R$ {{line.SumCost}}</b></td>
+                                        <td><b>R$ {{line.SumBackoffice}}</b></td>
+                                        <td><b>R$ {{line.SumRisk}}</b></td>
+                                        <td><b>R$ {{line.SumMargin}}</b></td>
+                                        <td><b>R$ {{line.SumCommission}}</b></td>
+                                        <td><b>R$ {{line.SumExpenses}}</b></td>
+                                        <td><b>R$ {{line.SumTaxes}}</b></td>
+                                        <td><b>R$ {{line.Total}}</b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label>Ingresso Líquido</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-money"></span></span>
+                                <input type="text" class="form-control" ng-model="project.ExpenseManager" />
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Risco Gerenciável</label>
+                            <div class="input-group">
+                                <span id="AMS" class="input-group-addon"><span class="fa fa-money"></span></span>
+                                <input type="text" class="form-control" ng-model="project.AMS" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

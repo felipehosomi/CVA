@@ -1,0 +1,54 @@
+﻿@model CVA.Portal.Producao.Model.ApontamentoModel
+
+    <div id="modal-create" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+        
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title">Adicionar Insumo</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.InsumoCode, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                        @*<label class="col-md-2" style="padding-top: 7px;">Insumo</label>*@
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                @Html.DropDownList("InsumoCode", Model.InsumoList, htmlAttributes: new { required = "required", id = "Add-InsumoCode", type = "string", @class = "chosen-select", data_placeholder = "Selecione um insumo" })
+                            </div>
+                        </div>
+
+                        @Html.LabelFor(model => model.InsumoQty, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                <input class="form-control text-box single-line" data-val="true" data-val-number="O campo Quantidade deve ser um número." data-val-required="O campo Quantidade é obrigatório." id="Add-Qty" name="Add-Qty" type="number" min="0" value="1" style="height: 34px;">
+                            </div>
+                        </div>
+
+                        <label class="control-label col-md-2" id="lblQtySaida" style="padding-top: 2px; height: 30px;">Qtd Saída:</label>
+                        <label class="control-label col-md-4" id="lblQtySaidaTxt" style="padding-top: 2px; height: 30px;">0.00</label>
+
+                        <label class="control-label col-md-2" id="lblQtyEstoque" style="padding-top: 2px; height: 30px;">Qtd Estoque:</label>
+                        <label class="control-label col-md-4" id="lblQtyEstoqueTxt" style="padding-top: 2px; height: 30px;">0.00</label>
+
+                        <label class="control-label col-md-2" id="lblQtyTotal" style="padding-top: 2px; height: 30px;">Qtd Estoque Atual:</label>
+                        <label class="control-label col-md-4" id="lblQtyTotalTxt" style="padding-top: 2px; height: 30px;">0.00</label>
+
+                        <label class="control-label col-md-2" id="lblCusto" style="padding-top: 2px; height: 30px;">Custo:</label>
+                        <label class="control-label col-md-4" id="lblCustoTxt" style="padding-top: 2px; height: 30px;">0.00</label>
+
+                        <input type="hidden" value="" id="Add-ItemName" />
+                        <input type="hidden" value="" id="Add-Und" />
+                        <input type="hidden" value="" id="Add-Id" />
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnAdd" type="button" class="btn btn-primary" onclick="AddClick()">Criar</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>

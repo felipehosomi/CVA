@@ -1,0 +1,147 @@
+﻿@Styles.Render("~/Content/Loading")
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Cadastrar<strong> Oportunidade</strong></h3>
+            </div>
+            <div class="col-md-4" hidden="hidden" />
+            <label>Código</label>
+            <div class="input-group">
+                <span class="input-group-addon"><span class="fa fa-star-o"></span></span>
+                <input type="text" class="form-control" ng-model="Oportunidade.Codigo" />
+            </div>
+        </div>
+        <div class="col-md-4" hidden="hidden">
+            <label>TAG</label>
+            <div class="input-group">
+                <input type="text" class="form-control" ng-disabled="true" ng-model="Oportunidade.Tag" />
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" hidden="hidden" ng-model="Oportunidade.Id" />
+                        <label class="col-md-3 control-label">Código*</label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control" tabindex="1" ng-model="Codigo" disabled="disabled" />
+                            </div>
+                            <span class="help-block">Informe o número da oportunidade</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Tipo de Projeto</label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <p id="load-02" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                <select name="status" class="form-control" ng-model="Oportunidade.TipoProjeto.Id" ng-change="GenerateCode()" ng-options="selected.Id as selected.Nome for selected in TiposProjeto">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                            <span class="help-block">Informe o CNPJ ou a Razão Social</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Cliente*</label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <p id="loading02" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                <select class="form-control" ng-change="ClientSelected()" ng-model="Oportunidade.Cliente.Id" ng-options="selected.Id as selected.Name for selected in ClientList">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                            <span class="help-block">Selecione o cliente</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" hidden="hidden" ng-model="Oportunidade.Id" />
+                        <label class="col-md-3 control-label">Número*</label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control" ng-change="GenerateName()" ng-model="Oportunidade.Codigo" />
+                            </div>
+                            <span class="help-block">Informe o número da oportunidade</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Nome*</label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control" ng-change="GenerateName()" ng-model="Oportunidade.Nome" />
+                            </div>
+                            <span class="help-block">Informe uma breve descrição para a oportunidade</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Status*</label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                <select class="form-control" ng-model="Oportunidade.Status.Id">
+                                    <option value="">Selecione</option>
+                                    <option value="1">Ativo</option>
+                                    <option value="2">Inativo</option>
+                                </select>
+                            </div>
+                            <span class="help-block">Selecione o status do registro</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Temperatura*</label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-sun-o"></span></span>
+                                <select class="form-control" ng-change="PercentSelected()" ng-model="Oportunidade.Temperatura.Id" ng-options="selected.Id as selected.Percent + '%' for selected in PercentList">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                            <span class="help-block">Selecione a temperatura da oportunidade</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Data Prevista*</label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                <input type="date" class="form-control" ng-model="Oportunidade.DataPrevista" />
+                            </div>
+                            <span class="help-block">Informe a data prevista para início do projeto</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Política de Despesa</label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-money"></span></span>
+                                <select class="form-control" ng-model="Oportunidade.ResponsavelDespesa">
+                                    <option value="">Selecione</option>
+                                    <option value="C"> Cliente </option>
+                                    <option value="L"> Local </option>
+                                </select>
+                            </div>
+                            <span class="help-block">Selecione o responsável pela política de despesa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-3 control-label">Descrição*</label>
+                <div class="col-md-12">
+                    <textarea class="form-control" rows="3" ng-model="Oportunidade.Descricao"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,182 @@
+﻿<div class="panel panel-default tabs" id="tabs">
+    <ul class="nav nav-tabs" role="tablist">
+        <li id="tab-third-li" class="active"><a href="#tab-third" role="tab" data-toggle="tab">Fases</a></li>
+        <li id="tab-fourth-li"><a href="#tab-fourth" role="tab" data-toggle="tab">Recursos</a></li>
+    </ul>
+    <div class="panel-body tab-content">
+        <div class="tab-pane active" id="tab-third">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="padding-bottom:10px">
+                            <label>Fase</label>
+                            <div class="input-group">
+                                <p id="load-05" class="loader"><img src="~/Content/Loading.gif" /></p>
+                                <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                <select name="status" class="form-control" ng-model="Fase.Id" ng-disabled="StepLine != -1" ng-options="selected.Id as selected.Nome for selected in Fases" tabindex="1">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="padding-bottom:10px">
+                            <label>Data de Ínicio</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control" ng-model="Fase.DataInicio" tabindex="2">
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="padding-bottom:10px">
+                            <label>Data Prevista</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control" ng-model="Fase.DataPrevista" tabindex="3">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <label>Concluído(%)</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" value="0" ng-model="Fase.Concluido" tabindex="4"/>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="padding-top:22px">
+                            <button type="button" class="btn btn-info" ng-click="AddProjectStep()">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th><b>Fase</b></th>
+                                        <th><b>Data de Ínico</b></th>
+                                        <th><b>Data Prevista</b></th>
+                                        @if (ViewBag.FinancialAccess == "S")
+                                        {
+                                            <th><b>Custo Orçado</b></th>
+                                            <th><b>Custo Real</b></th>
+                                        }
+                                        <th><b>Horas Orçadas</b></th>
+                                        <th><b>Horas Consumidas</b></th>
+                                        <th><b>Andamento</b></th>
+                                        <th><b>#</b></th>
+                                    </tr>
+                                </thead>
+                                <tbody ng-repeat="line in FasesProjeto" id="line.StepId">
+                                    <tr>
+                                        <td hidden="hidden">{{line.StepId}}</td>
+                                        <td>{{line.Nome}}</td>
+                                        <td>{{line.DataInicio | date:'dd/MM/yyyy'}}</td>
+                                        <td>{{line.DataPrevista | date:'dd/MM/yyyy'}}</td>
+                                        @if (ViewBag.FinancialAccess == "S")
+                                        {
+                                            <td>R$ {{line.CustoOrcado}}</td>
+                                            <td>R$ {{line.CustoReal}}</td>
+                                        }
+                                        <td>{{line.HorasOrcadas}}</td>
+                                        <td>{{line.HorasConsumidas}}</td>
+                                        <td>{{line.Concluido}}%</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default" ng-click="EditProjectStep($index)">Editar</button>
+                                            <button type="button" class="btn btn-danger" ng-click="RemoveProjectStep($index)">X</button>
+                                        </td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-fourth">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <label>Fase</label>
+                            <div class="input-group" style="padding-bottom:10px">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <select name="status" class="form-control" ng-model="FaseProjeto" ng-options="selected.StepId as selected.Nome for selected in FasesProjeto">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Especialidade</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <select name="status" class="form-control" ng-model="Especialidade" ng-change="Get_CollaboratorBySpecialty(Especialidade)" ng-options="selected.Id as selected.Name for selected in Especialidades2">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Colaborador</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <select name="status" class="form-control" ng-model="Colaborador" ng-options="selected.Id as selected.Nome for selected in Colaboradores2">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        @if (ViewBag.FinancialAccess == "S")
+                        {
+                            <div class="col-md-1">
+                                <label>Valor</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" value="0" ng-model="Valor" />
+                                </div>
+                            </div>
+                        }
+                        <div class="col-md-1">
+                            <label>Horas</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-model="Horas" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-info" ng-click="AddStepResource()"><b>Adicionar</b></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12 col-xs-12">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td><b>Fase</b></td>
+                                    <td><b>Especialidade</b></td>
+                                    <td><b>Colaborador</b></td>
+                                    @if (ViewBag.FinancialAccess == "S")
+                                    {
+                                        <td><b>Valor</b></td>
+                                    }
+                                    <td><b>Horas</b></td>
+                                    <td><b>#</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="line in RecursosFase">
+                                    <td>{{line.Fase.Nome}}</td>
+                                    <td>{{line.Especialidade.Name}}</td>
+                                    <td>{{line.Colaborador.Nome}}</td>
+                                    @if (ViewBag.FinancialAccess == "S")
+                                    {
+                                        <td>R$ {{line.CustoOrcado}}</td>
+                                    }
+                                    <td>{{line.HorasOrcadas}}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default" ng-click="EditStepResource($index)">Editar</button>
+                                        <button type="button" class="btn btn-danger" ng-click="RemoveStepResource($index)">X</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

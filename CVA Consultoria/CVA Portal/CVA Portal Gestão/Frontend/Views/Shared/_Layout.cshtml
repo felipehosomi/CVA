@@ -1,0 +1,398 @@
+﻿@{
+    var modelView = (MODEL.Classes.UserModel)ViewBag.Perfil;
+}
+<!DOCTYPE html>
+<html lang="en" ng-app="cvaGestao">
+<head>
+    <title>CVA Consultoria</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/ico" href="http://www.cvaconsultoria.com.br/images/favicon/favicon.ico" />
+    @Styles.Render("~/Content/themedefault")
+</head>
+<body>
+    <div class="page-container" ng-controller="MenuController">
+        <div class="page-sidebar">
+            <ul class="x-navigation">
+                <li class="xn-logo">
+                    <a href="/Portal/Index">CVA Gestão</a>
+                    <a href="#" class="x-navigation-control"></a>
+                </li>
+                <li class="xn-profile">
+                    <div class="profile">
+                        <div class="profile-data">
+
+                            <div class="profile-data-title">@Html.ActionLink((string)"Editar Conta", "EditarConta", "Usuario")</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="active">
+                    <a href="/Portal/Index"><span class="fa fa-desktop"></span> <span class="xn-text">Início</span></a>
+                </li>
+                @foreach (var item in modelView.Profile.UserView)
+                {
+                    if (item.Name.Equals("Menu Apontamento"))
+                    {
+                        <li class="xn-openable">
+                            <a href="#"><span class="fa fa-book"></span> <span class="xn-text">Diário</span></a>
+                            <ul>
+                                <li class="xn-openable">
+                                    <a href="#"><span class="fa fa-clock-o"></span> <span class="xn-text">Apontamentos</span></a>
+                                    <ul>
+                                        @foreach (var apo in modelView.Profile.UserView)
+                                        {
+                                            if (apo.Name.Equals("Apontamento"))
+                                            {
+                                                <li><a href="@Url.Action("Apontamento", "Apontamento")"><span class="fa fa-clock-o"></span> Apontar</a></li>
+                                                break;
+                                            }
+                                        }
+                                        @foreach (var cons in modelView.Profile.UserView)
+                                        {
+                                            if (cons.Name.Equals("Consulta de Apontamento por Consultor"))
+                                            {
+                                                <li><a href="@Url.Action("ConsultaApontamento", "Apontamento")"><span class="fa fa-search"></span> Consultar</a></li>
+                                                break;
+                                            }
+                                        }
+                                        @foreach (var gea in modelView.Profile.UserView)
+                                        {
+                                            if (gea.Name.Equals("Gerenciar Apontamento"))
+                                            {
+                                                <li><a href="@Url.Action("Gerenciar","Apontamento")"><span class="fa fa-wrench"></span> Gerenciar</a></li>
+                                                break;
+                                            }
+                                        }
+                                    </ul>
+                                </li>
+                                <li class="xn-openable">
+                                    <a href="#"><span class="fa fa-money"></span> <span class="xn-text">Despesas</span></a>
+                                    <ul>
+                                        @foreach (var desp in modelView.Profile.UserView)
+                                        {
+                                            if (desp.Name.Equals("Despesa"))
+                                            {
+                                                <li><a href="@Url.Action("Despesa", "Despesa")"><span class="fa fa-money"></span> Apontar</a></li>
+                                                break;
+                                            }
+                                        }
+                                        @foreach (var desp in modelView.Profile.UserView)
+                                        {
+                                            if (desp.Name.Equals("Consulta de Despesa por Consultor"))
+                                            {
+                                                <li><a href="@Url.Action("ExtrairInterno", "Despesa")"><span class="fa fa-search"></span> Consultar</a></li>
+                                                break;
+                                            }
+                                        }
+                                        @foreach (var desp in modelView.Profile.UserView)
+                                        {
+                                            if (desp.Name.Equals("Extrair Despesa"))
+                                            {
+                                                <li><a href="@Url.Action("Extrair", "Despesa")"><span class="fa fa-wrench"></span>Gerenciar</a></li>
+                                                break;
+                                            }
+                                        }
+                                    </ul>
+                                </li>
+                                @foreach (var apo in modelView.Profile.UserView)
+                                {
+                                    if (apo.Name == "Administrar Apontamentos")
+                                    {
+                                        <li><a href="@Url.Action("AdministrarApontamento","Apontamento")"><span class="fa fa-wrench"></span> Autorizações</a></li>
+                                        break;
+                                    }
+                                }
+                            </ul>
+                        </li>
+                        break;
+                    }
+                }
+
+                @foreach (var item in modelView.Profile.UserView)
+                {
+                    if (item.Name.Equals("Menu Cadastros"))
+                    {
+                        <li class="xn-openable">
+                            <a href="#"><span class="fa fa-paste"></span> <span class="xn-text">Cadastros</span></a>
+                            <ul>
+                                @foreach (var cli in modelView.Profile.UserView)
+                                {
+                                    if (cli.Name.Equals("Cliente"))
+                                    {
+                                        <li><a href="@Url.Action("Pesquisar","Cliente")"><span class="fa fa-users"></span> Clientes</a></li>
+                                        break;
+                                    }
+                                }
+                                @foreach (var prj in modelView.Profile.UserView)
+                                {
+                                    if (prj.Name.Equals("Menu Projeto"))
+                                    {
+                                        <li>
+
+                                            @foreach (var opor in modelView.Profile.UserView)
+                                            {
+                                                if (opor.Name.Equals("Oportunidade"))
+                                                {
+                                                <li><a href="@Url.Action("Oportunidades","Oportunidade")"><span class="fa fa-list"></span> Oportunidades</a></li>
+                                                    break;
+                                                }
+                                            }
+
+                                            @foreach (var proj in modelView.Profile.UserView)
+                                            {
+                                                if (proj.Name.Equals("Projetos"))
+                                                {
+                                                    <li><a href="@Url.Action("Pesquisar","Projeto")"><span class="fa fa-list"></span> Projetos</a></li>
+                                                    break;
+                                                }
+                                            }
+                                    </li>
+                                        break;
+                                    }
+                                }
+                            </ul>
+                            </li>
+                        break;
+                    }
+                }
+
+                @foreach (var conf in modelView.Profile.UserView)
+                {
+                    if (conf.Name.Equals("Menu Configurações"))
+                    {
+                        <li class="xn-openable">
+                            <a href="#"><span class="fa fa-cogs"></span> <span class="xn-text">Configurações</span></a>
+                            <ul>
+                                @foreach (var emp in modelView.Profile.UserView)
+                                {
+                                    if (emp.Name.Equals("Sub menu de empresa"))
+                                    {
+
+                                        <li class="xn-openable">
+                                            <a href="#"><span class="fa fa-building-o"></span> Empresa</a>
+                                            <ul>
+                                                @foreach (var cav in modelView.Profile.UserView)
+                                                {
+                                                    if (cav.Name.Equals("Cadastro de usuário"))
+                                                    {
+                                                        <li><a href="@Url.Action("Pesquisar", "Usuario")"><span class="fa fa-users"></span> Usuários</a></li>
+                                                        break;
+                                                    }
+                                                }
+                                                @foreach (var col in modelView.Profile.UserView)
+                                                {
+                                                    if (col.Name.Equals("Colaborador"))
+                                                    {
+                                                        <li><a href="@Url.Action("Pesquisar","Colaborador")"><span class="fa fa-users"></span> Colaboradores</a></li>
+                                                        break;
+                                                    }
+                                                }
+
+                                                @foreach (var esp in modelView.Profile.UserView)
+                                                {
+                                                    if (esp.Name.Equals("Especialidade"))
+                                                    {
+                                                        <li><a href="@Url.Action("Pesquisar","Especialidade")"> <span class="fa fa-tags"></span> Especialidades</a></li>
+                                                    }
+                                                }
+
+                                                @foreach (var cav in modelView.Profile.UserView)
+                                                {
+                                                    if (cav.Name.Equals("Configurações da fase"))
+                                                    {
+                                                        <li><a href="@Url.Action("Pesquisar", "FaseProjeto")"><span class="fa fa-exchange"></span> Fases</a></li>
+                                                        break;
+                                                    }
+                                                }
+
+                                                @foreach (var cav in modelView.Profile.UserView)
+                                                {
+                                                    if (cav.Name.Equals("Cadastro de Perfil"))
+                                                    {
+                                                        <li><a href="@Url.Action("Pesquisar", "Perfil")"><span class="fa fa-key"></span> Perfis</a></li>
+                                                        break;
+                                                    }
+                                                }
+
+                                                @foreach (var cav in modelView.Profile.UserView)
+                                                {
+                                                    if (cav.Name.Equals("Tipos de Projeto"))
+                                                    {
+                                                        <li><a href="@Url.Action("Pesquisar", "TiposProjeto")"><span class="fa fa-file-text-o"> </span> Tipos de Projeto</a></li>
+                                                        break;
+                                                    }
+                                                }
+
+                                                @foreach (var cav in modelView.Profile.UserView)
+                                                {
+                                                    if (cav.Name.Equals("Tipos de Despesa"))
+                                                    {
+                                                        <li><a href="@Url.Action("Pesquisar", "TipoDespesa")"><span class="fa fa-money"></span> Tipos de Despesa</a></li>
+                                                        break;
+                                                    }
+                                                }
+                                            </ul>
+                                        </li>
+                                        break;
+                                    }
+                                }
+
+                                @foreach (var cav in modelView.Profile.UserView)
+                                {
+                                    if (cav.Name.Equals("Sub menu de calendário"))
+                                    {
+                                        <li><a href="@Url.Action("Pesquisar", "Calendario")"><span class="fa fa-calendar"></span> Calendários</a></li>
+
+                                    }
+                                }
+
+                                @foreach (var par in modelView.Profile.UserView)
+                                {
+                                    if (par.Name.Equals("Parametrizacao Projetos"))
+                                    {
+                                        <li><a href="@Url.Action("Parametros","ParametrizacaoProjetos")"><span class="fa fa-laptop"></span> Parametrização de Projetos</a></li>
+                                        break;
+                                    }
+                                }
+                            </ul>
+                        </li>
+                        break;
+                    }
+                }
+
+                </ul>
+                <!-- END X-NAVIGATION -->
+            </div>
+            <!-- END PAGE SIDEBAR -->
+            <!-- PAGE CONTENT -->
+            <div class="page-content">
+                <!-- START X-NAVIGATION VERTICAL -->
+                <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+                    <!-- SIGN OUT -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+                    </li>
+                    <!-- END SIGN OUT -->
+                </ul>
+                <!-- END X-NAVIGATION VERTICAL -->
+                @RenderBody()
+            </div>
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- END PAGE CONTAINER -->
+        <!-- MESSAGE BOX-->
+        <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+                    <div class="mb-content">
+                        <p>Deseja encerrar sua sessão?</p>
+                        <p>Pressione SIM caso deseje encerrar sua sessão.</p>
+                    </div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <a href="/Login/LogOut" id="btnLogOff" class="btn btn-success btn-lg">Sim</a>
+                            <button class="btn btn-default btn-lg mb-control-close">Não</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- END MESSAGE BOX-->
+        <!-- START PRELOADS -->
+        <audio id="audio-alert" src="/audio/alert.mp3" preload="auto"></audio>
+        <audio id="audio-fail" src="/audio/fail.mp3" preload="auto"></audio>
+        <!-- END PRELOADS -->
+        <!-- START SCRIPTS -->
+        <!-- START PLUGINS -->
+        @Scripts.Render("~/Script/jquery")
+        @Scripts.Render("~/Script/jqueryui")
+        @Scripts.Render("~/Script/bootstrap")
+        @Scripts.Render("~/Script/angular")
+        <script src="~/Scripts/angular-ui-mask.js"></script>
+        <!-- END PLUGINS -->
+        <!-- START THIS PAGE PLUGINS-->
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+        <script src="~/Scripts/plugins/angular-datatable/angular-datatables.js"></script>
+        @Scripts.Render("~/Script/icheck")
+        @Scripts.Render("~/Script/customscroll")
+        @Scripts.Render("~/Script/scrolltop")
+        @Scripts.Render("~/Script/mirror")
+        @Scripts.Render("~/Script/d3")
+        @Scripts.Render("~/Script/rick")
+        @Scripts.Render("~/Script/vector")
+        @Scripts.Render("~/Script/vectorworld")
+        @Scripts.Render("~/Script/datepicker")
+        @Scripts.Render("~/Script/owl")
+        @Scripts.Render("~/Script/moment")
+        @Scripts.Render("~/Script/calendar")
+        @Scripts.Render("~/Script/dateRange")
+        @Scripts.Render("~/Script/dropzone")
+        <!-- END THIS PAGE PLUGINS-->
+        <!-- START TEMPLATE -->
+        @Scripts.Render("~/Script/settings")
+        @Scripts.Render("~/Script/plugins")
+        @Scripts.Render("~/Script/action")
+        @Scripts.Render("~/Script/dashboard")
+
+        <script src="~/Scripts/plugins/noty/jquery.noty.js"></script>
+        <script src="~/Scripts/plugins/noty/layouts/topCenter.js"></script>
+        <script src="~/Scripts/plugins/noty/layouts/topLeft.js"></script>
+        <script src="~/Scripts/plugins/noty/layouts/topRight.js"></script>
+        <script src="~/Scripts/plugins/noty/themes/default.js"></script>
+
+        @Scripts.Render("~/Script/SignalR")
+
+        <script src="/signalr/hubs" type="text/javascript"></script>
+
+        <!--Business And Controllers-->
+        @Scripts.Render("~/Business/Start")
+        @Scripts.Render("~/Business/Collaborator")
+        @Scripts.Render("~/Business/CollaboratorMain")
+        @Scripts.Render("~/Business/CalendarController")
+        @Scripts.Render("~/Business/Specialty")
+        @Scripts.Render("~/Business/Project")
+        @Scripts.Render("~/Business/ProjectMain")
+        @Scripts.Render("~/Business/BranchController")
+        @Scripts.Render("~/Business/ClientController")
+        @Scripts.Render("~/Business/ClientMainController")
+        @Scripts.Render("~/Business/SalesChannelController")
+        @Scripts.Render("~/Business/ProjectStepController")
+        @Scripts.Render("~/Business/OportunittyController")
+        @Scripts.Render("~/Business/OportunittyMainController")
+        @Scripts.Render("~/Business/NoteController")
+        @Scripts.Render("~/Business/ProjectResourcesController")
+        @Scripts.Render("~/Business/ProjectParametersController")
+        @Scripts.Render("~/Business/NoteExtractedController")
+        @Scripts.Render("~/Business/ExpenseAdministratorController")
+        @Scripts.Render("~/Business/AuthorizationController")
+        @Scripts.Render("~/Business/ExpenseTypeController")
+        @Scripts.Render("~/Business/ExpensesController")
+        @Scripts.Render("~/Business/ProfileController")
+        @Scripts.Render("~/Business/UserController")
+        @Scripts.Render("~/Business/ProjectTypeMainController")
+        @Scripts.Render("~/Business/ProjectTypeController")
+        @Scripts.Render("~/Business/MenuController")
+        @Scripts.Render("~/Business/ExpenseExtractedController")
+        @Scripts.Render("~/Business/NoteAdministratorController")
+        @Scripts.Render("~/Business/MessageController")
+        @Scripts.Render("~/Business/LocalConfigurationController")
+
+        <!--End Business And Controllers-->
+        <!-- END TEMPLATE -->
+        <!-- END SCRIPTS -->
+        <script>
+        function FormatDate(date) {
+            var data = date.split('T');
+            var anomesdia = data[0].split('-')
+            return anomesdia[2] + '/' + anomesdia[1] + '/' + anomesdia[0];
+        }
+
+        $('#btnLogOff').click(function () {
+            window.location.href = "/";
+        });
+        </script>
+    </body>
+</html>

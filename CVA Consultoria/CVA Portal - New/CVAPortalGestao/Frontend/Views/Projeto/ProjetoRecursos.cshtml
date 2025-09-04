@@ -1,0 +1,164 @@
+﻿@Styles.Render("~/Content/Loading")
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Alocação de <strong>Recursos</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <label>Fase</label>
+                            <div class="input-group" style="padding-bottom:10px">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <select name="status" id="Fase" class="form-control" ng-disabled="IsProcessing" ng-model="Recurso.FaseId" ng-options="selected.StepId as selected.Nome for selected in Projeto.Fases">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Especialidade</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <select name="status" id="Especialidade"  ng-disabled="IsProcessing" class="form-control" ng-model="Recurso.EspecialidadeId" ng-change="Get_CollaboratorBySpecialty(Recurso.EspecialidadeId)" ng-options="selected.Id as selected.Name for selected in Especialidades">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Colaborador</label>
+                            <div class="input-group">
+                                <p id="load-09" class="loader"><img src="~/Content/Loading.gif" /></p>
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <select name="status" id="Colaborador" ng-disabled="IsProcessing" class="form-control"  ng-model="Recurso.ColaboradorId" ng-options="selected.Id as selected.Nome for selected in Colaboradores">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="padding-bottom:10px">
+                            <label>Status</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                <select class="form-control" ng-model="Recurso.Status.Id" tabindex="4">
+                                    <option value="">Selecione</option>
+                                    <option value="1">Ativo</option>
+                                    <option value="2">Inativo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <label>Horas</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" ng-model="Recurso.Horas" />
+                            </div>
+                        </div>
+                        <div class="col-md-1" hidden>
+                            <label>Horas Consumidas</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" ng-model="Recurso.HorasConsumidas" />
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="padding-top:22px">
+                            <button type="button" class="btn btn-info" ng-click="AddResource()"><b>Adicionar</b></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="Justificativa">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label>Justificativa para alteração</label>
+                            <div class="input-group" style="padding-bottom:10px">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control" ng-model="Justificativa" />
+                            </div>
+                        </div>                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><b>Fase</b></td>
+                                        <td><b>Especialidade</b></td>
+                                        <td><b>Colaborador</b></td>
+                                        <td><b>Horas</b></td>
+                                        <td><b>Horas Consumidas</b></td>
+                                        <td><b>Status</b></td>
+                                        <td><b>#</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="line in Projeto.Recursos">
+                                        <td>{{line.FaseNome}}</td>
+                                        <td>{{line.EspecialidadeNome}}</td>
+                                        <td>{{line.ColaboradorNome}}</td>
+                                        <td>{{line.HorasFormat}}</td>
+                                        <td>{{line.HorasConsumidasFormat}}</td>
+                                        <td>{{line.Status.Descricao}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default" ng-click="EditResource($index)">Editar</button>
+                                            <button type="button" class="btn btn-danger" ng-click="RemoveResource($index)" ng-disabled="line.HorasConsumidas > 0">X</button>
+                                            <button type="button" class="btn btn-info" data-toggle="tooltip" title="Histórico" ng-click="ShowInfo($index)"><span class="fa fa-search"></span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="RecursoInfo">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Alterações em <strong>{{NomeFase}}</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><b>Data</b></td>
+                                        <td><b>Fase</b></td>
+                                        <td><b>Especialidade</b></td>
+                                        <td><b>Recurso</b></td>
+                                        <td><b>Justificativa</b></td>
+                                        <td><b>Horas Adicionadas</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="line in Alteracoes">
+                                        <td>{{line.Data | date:'dd/MM/yyyy'}}</td>
+                                        <td>{{line.FaseNome}}</td>
+                                        <td>{{line.EspecialidadeNome}}</td>
+                                        <td>{{line.ColaboradorNome}}</td>
+                                        <td>{{line.Descricao}}</td>
+                                        <td>{{line.HorasAdicionadas}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jquery-1.12.3.min.js"></script>
+<script src="~/Scripts/plugins/maskedinput/jquery.maskedinput.js"></script>

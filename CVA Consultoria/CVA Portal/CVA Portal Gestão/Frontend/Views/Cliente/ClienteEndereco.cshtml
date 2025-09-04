@@ -1,0 +1,118 @@
+﻿<div class="modal"></div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Informar<strong> Endereço</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">CEP*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                    <input type="text" class="form-control" tabindex="13" name="cep" id="cep-mask" ng-blur="SearchCep()" ng-model="client.Address.ZipCode" />
+                                </div>
+                                <span class="help-block">Informe o número do CEP</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nº*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                    <input type="text" class="form-control" tabindex="14" ng-model="client.Address.StreetNo" />
+                                </div>
+                                <span class="help-block">Informe o número do endereço</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Cidade*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                    <input type="text" class="form-control" tabindex="15" name="cidade" ng-model="client.Address.City" />
+                                </div>
+                                <span class="help-block">Informe o nome da cidade</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Rua*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                    <input type="text" class="form-control" tabindex="16" name="rua" ng-model="client.Address.Street" />
+                                </div>
+                                <span class="help-block">Informe o nome da rua</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Bairro*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                    <input type="text" class="form-control" tabindex="17" name="bairro" ng-model="client.Address.Block" />
+                                </div>
+                                <span class="help-block">Informe o nome do bairro</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Estado - UF*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                    <select class="form-control" name="estado" tabindex="18" ng-model="client.Address.Uf.Id" ng-options="selected.Id as selected.State for selected in UfList">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o estado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-info" tabindex="19" ng-click="AddAddressLines()" ng-disabled="client.Address.ZipCode == null || client.Address.ZipCode == ''">Adicionar</button>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><b>Rua</b></td>
+                                        <td><b>Número</b></td>
+                                        <td><b>Bairro</b></td>
+                                        <td><b>Cidade</b></td>
+                                        <td><b>CEP</b></td>
+                                        <td><b>#</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="hol in AddressList">                                     
+                                        <td>{{hol.Street}}</td>
+                                        <td>{{hol.StreetNo}}</td>
+                                        <td>{{hol.Block}}</td>
+                                        <td>{{hol.City}}</td>
+                                        <td>{{hol.ZipCode}}</td>
+                                        <td>    
+                                            <button type="button" class="btn btn-danger" ng-click="RemoveAddressLine($index)"><span class="glyphicon glyphicon-remove"></span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jquery-1.12.3.min.js"></script>
+<script src="~/Scripts/plugins/maskedinput/jquery.maskedinput.js"></script>
+<script>
+    $('#cep-mask').mask('99.999-999');
+</script>

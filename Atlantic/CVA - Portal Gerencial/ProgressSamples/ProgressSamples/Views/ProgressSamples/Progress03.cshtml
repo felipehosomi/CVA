@@ -1,0 +1,78 @@
+﻿@model ProgressSamples.MusicGenre
+
+@{
+  ViewBag.Title = "Gray Out Background";
+}
+
+<style>
+  .submit-progress-bg {
+    background-color: lightgray;
+    opacity: 0.5;
+  }
+
+  .submit-progress {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 6em;
+    padding-top: 2.3em;
+    z-index: 1;
+    /* The following properties are the ones most likely to change */
+    width: 20em;
+    /* Set 'margin-left' to a negative number that is 1/2 of 'width' */
+    margin-left: -10em;
+    padding-left: 2.1em;
+    background-color: black;
+    color: white;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    border-radius: 0.4em;
+    box-shadow: 0.4em 0.4em rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0.4em 0.4em rgba(0,0,0,0.6);
+    -moz-box-shadow: 0.4em 0.4em rgba(0,0,0,0.6);
+  }
+</style>
+
+@using (Html.BeginForm())
+{
+  <!-- ** BEGIN POP-UP MESSAGE AREA ** -->
+  <div class="submit-progress hidden">
+    <label>Please wait while Saving Data...</label>
+  </div>
+  <!-- ** END POP-UP MESSAGE AREA ** -->
+
+  <div class="row">
+    <div class="col-sm-6 center-block">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Add Music Genre</h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label>Music Genre</label>
+            @Html.TextBoxFor(m => m.Genre, new { @class = "form-control" })
+          </div>
+        </div>
+        <div class="panel-footer">
+          <button type="submit"
+                  id="submitButton"
+                  class="btn btn-primary"
+                  onclick="return DisplayProgressMessage(this, 'Saving...');">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+<script>
+  function DisplayProgressMessage(ctl, msg) {
+    $(ctl).prop("disabled", true).text(msg);
+
+    $(".submit-progress").removeClass("hidden");
+    $("body").addClass("submit-progress-bg");
+
+    return true;
+  }
+</script>

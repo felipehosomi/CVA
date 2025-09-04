@@ -1,0 +1,87 @@
+-- CVA_Obj_PlanoContas
+IF @object_type = '1'
+BEGIN
+	DECLARE @AcctCode NVARCHAR(15)
+	SELECT @AcctCode = OACT.AcctCode FROM OACT WHERE OACT.AcctCode = @list_of_cols_val_tab_del
+	EXEC CVA_SP_Replicador @object_type, @transaction_type, @AcctCode
+END
+
+-- CVA_Obj_ParceiroNegocio
+IF @object_type = '2'
+BEGIN
+	DECLARE @CardCode2 NVARCHAR(15)
+	SELECT @CardCode2 = OCRD.CardCode FROM OCRD WHERE OCRD.CardCode = @list_of_cols_val_tab_del
+	EXEC CVA_SP_Replicador @object_type, @transaction_type, @CardCode2			
+END
+
+-- CVA_Obj_Item
+IF @object_type = '3'
+BEGIN
+	DECLARE @ItemCode NVARCHAR(20)
+	SELECT @ItemCode = OITM.ItemCode FROM OITM WHERE OITM.ItemCode = @list_of_cols_val_tab_del
+	EXEC CVA_SP_Replicador @object_type, @transaction_type, @ItemCode			
+END
+
+-- CVA_Obj_GrupoParceiroNegocio
+IF @object_type = '10'
+BEGIN
+	DECLARE @GroupCode NVARCHAR(10)
+	SELECT @GroupCode = CAST(OCRG.GroupCode AS NVARCHAR(10)) FROM OCRG WHERE OCRG.GroupCode = @list_of_cols_val_tab_del
+	EXEC CVA_SP_Replicador @object_type, @transaction_type, @GroupCode			
+END
+
+-- CVA_Obj_Usuario
+IF @object_type = '12'
+BEGIN
+	DECLARE @USERID NVARCHAR(10)
+	SELECT @USERID = CAST(OUSR.USERID AS NVARCHAR(10)) FROM OUSR WHERE OUSR.USERID = @list_of_cols_val_tab_del
+	EXEC CVA_SP_Replicador @object_type, @transaction_type, @USERID			
+END
+
+-- CVA_Obj_FormaPagamento
+IF @object_type = '40'
+BEGIN
+	DECLARE @GroupNum NVARCHAR(10)
+	SELECT @GroupNum = CAST(OCTG.GroupNum AS NVARCHAR(10)) FROM OCTG WHERE OCTG.GroupNum = @list_of_cols_val_tab_del
+	EXEC CVA_SP_Replicador @object_type, @transaction_type, @GroupNum			
+END
+
+-- CVA_Obj_GrupoItem
+IF @object_type = '52'
+BEGIN	
+	DECLARE @ItmsGrpCod NVARCHAR(10)
+	SELECT @ItmsGrpCod = CAST(OITB.ItmsGrpCod AS NVARCHAR(10)) FROM OITB WHERE OITB.ItmsGrpCod = @list_of_cols_val_tab_del
+	EXEC CVA_SP_Replicador @object_type, @transaction_type, @ItmsGrpCod			
+END
+
+-- CVA_Obj_CentroCusto
+IF @object_type = '61'
+BEGIN	
+	DECLARE @OcrCode NVARCHAR(8)
+	SELECT @OcrCode = OOCR.OcrCode FROM OOCR WHERE OOCR.OcrCode = @list_of_cols_val_tab_del
+	EXEC CVA_SP_Replicador @object_type, @transaction_type, @OcrCode			
+END
+
+-- CVA_Obj_Imposto
+IF @object_type = '128'
+BEGIN		
+	DECLARE @Code NVARCHAR(8)
+	SELECT @Code = OSTC.Code FROM OSTC WHERE OSTC.Code = @list_of_cols_val_tab_del
+	EXEC CVA_SP_Replicador @object_type, @transaction_type, @Code			
+END
+
+-- CVA_Obj_Indicador
+IF @object_type = '138'
+BEGIN	
+	DECLARE @Code2 NVARCHAR(2)
+	SELECT @Code2 = OIDC.Code FROM OIDC WHERE OIDC.Code = @list_of_cols_val_tab_del
+	EXEC CVA_SP_Replicador @object_type, @transaction_type, @Code2			
+END
+
+-- CVA_Obj_Utilizacao
+IF @object_type = '260'
+BEGIN
+	DECLARE @ID NVARCHAR(10)
+	SELECT @ID = CAST(OUSG.ID AS NVARCHAR(10)) FROM OUSG WHERE OUSG.ID = @list_of_cols_val_tab_del
+	EXEC CVA_SP_Replicador @object_type, @transaction_type, @ID			
+END

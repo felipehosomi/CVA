@@ -1,0 +1,1070 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Address_Insert" xml:space="preserve">
+    <value>SP_CVA_ADR_INS</value>
+    <comment>Insere um novo endereço</comment>
+  </data>
+  <data name="Calendar_Insert" xml:space="preserve">
+    <value>SP_CVA_CAL_INS</value>
+    <comment>Salva o cabeçalho do calendário</comment>
+  </data>
+  <data name="CalendarHolidays_Insert" xml:space="preserve">
+    <value>SP_CVA_CAL1_INS</value>
+    <comment>Salva os registros do calendário</comment>
+  </data>
+  <data name="Add_Contact" xml:space="preserve">
+    <value>SP_CVA_CLI1_INS</value>
+    <comment>Efetua a ligação do cliente com o contato</comment>
+  </data>
+  <data name="Add_Address" xml:space="preserve">
+    <value>SP_CVA_CLI2_INS</value>
+    <comment>Insere um novo endereço ao colaborador</comment>
+  </data>
+  <data name="Add_SalesChannel" xml:space="preserve">
+    <value>SP_CVA_CLI4_INS</value>
+    <comment>Insere um canal de venda no cadastro do cliente</comment>
+  </data>
+  <data name="Client_Get_All" xml:space="preserve">
+    <value>SP_CVA_CLI_GET</value>
+    <comment>Retorna todos os clientes ativos</comment>
+  </data>
+  <data name="Client_Insert" xml:space="preserve">
+    <value>SP_CVA_CLI_INS</value>
+    <comment>Insere um novo cliente</comment>
+  </data>
+  <data name="Collaborator_Get_Active" xml:space="preserve">
+    <value>SP_CVA_COL_GET_ATV</value>
+    <comment>Retorna todos os colaboradores ativos</comment>
+  </data>
+  <data name="Collaborator_Insert" xml:space="preserve">
+    <value>SP_CVA_COL_INS</value>
+    <comment>Insere um novo colaborador</comment>
+  </data>
+  <data name="Collaborator_ProjectManager" xml:space="preserve">
+    <value>SP_CVA_COL_PRJ_MAN</value>
+    <comment>Retorna todos os colaboradores ativos com permissão para gerenciar projetos</comment>
+  </data>
+  <data name="Collaborator_VerifyDocs" xml:space="preserve">
+    <value>SP_CVA_COL_VER_DOC</value>
+    <comment>Verifica se existe colaborador com o mesmo CNPJ ou CPF</comment>
+  </data>
+  <data name="Contact_Insert" xml:space="preserve">
+    <value>SP_CVA_CON_INS</value>
+    <comment>Insere um novo contato</comment>
+  </data>
+  <data name="Genre_Get" xml:space="preserve">
+    <value>SP_CVA_GEN_GET</value>
+    <comment>Retorna todos os gêneros</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>SP_CVA_LOGIN</value>
+    <comment>Efetua o login do usuário</comment>
+  </data>
+  <data name="Logoff" xml:space="preserve">
+    <value>SP_CVA_LOGOFF</value>
+    <comment>Efetua o logoff da aplicação</comment>
+  </data>
+  <data name="MaritalStatus_Get" xml:space="preserve">
+    <value>SP_CVA_EST_CIV_GET</value>
+    <comment>Retorna todos os estados civis</comment>
+  </data>
+  <data name="Oportunitty1_Insert" xml:space="preserve">
+    <value>SP_CVA_OPRT1_INS</value>
+    <comment>Insere  a descrição na oportunidade</comment>
+  </data>
+  <data name="Oportunitty2_Insert" xml:space="preserve">
+    <value>SP_CVA_OPRT2_INS</value>
+    <comment>Insere os contatos da oportunidade</comment>
+  </data>
+  <data name="Oportunitty3_Insert" xml:space="preserve">
+    <value>SP_CVA_OPRT3_INS</value>
+    <comment>Insere dados financeiros na oportunidade</comment>
+  </data>
+  <data name="Oportunitty4_Insert" xml:space="preserve">
+    <value>SP_CVA_OPRT4_INS</value>
+    <comment>Insere as fases da oportunidade </comment>
+  </data>
+  <data name="Oportunitty5_Insert" xml:space="preserve">
+    <value>SP_CVA_OPRT5_INS</value>
+    <comment>Insere uma nova observação na oportunidade</comment>
+  </data>
+  <data name="Opportunity_Insert" xml:space="preserve">
+    <value>SP_CVA_OPRT_INS</value>
+    <comment>Insere uma nova oportunidade</comment>
+  </data>
+  <data name="ProjectStep_Get" xml:space="preserve">
+    <value>SP_CVA_FAS_PRJ_GET</value>
+    <comment>Retorna todos as fases de projeto ativas</comment>
+  </data>
+  <data name="ProjectStep_Insert" xml:space="preserve">
+    <value>SP_CVA_FAS_PRJ_INS</value>
+    <comment>Insere uma nova fase para o projeto</comment>
+  </data>
+  <data name="Project_GetActive" xml:space="preserve">
+    <value>SP_CVA_PRJ_ATV_GET</value>
+    <comment>Retorna todos os projetos ativos</comment>
+  </data>
+  <data name="Project_Insert" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_INS</value>
+    <comment>Insere um novo projeto</comment>
+  </data>
+  <data name="Project_ValidateName" xml:space="preserve">
+    <value>SP_CVA_PRJ_VER_NOM</value>
+    <comment>Verifica se existe o projeto cadastrado na base</comment>
+  </data>
+  <data name="SalesChannel_Insert" xml:space="preserve">
+    <value>SP_CVA_CAN_VEN_INS</value>
+    <comment>Insere um novo canal de venda</comment>
+  </data>
+  <data name="Specialty_Get" xml:space="preserve">
+    <value>SP_CVA_FUNC_GET</value>
+    <comment>Retorna todas as especialidades</comment>
+  </data>
+  <data name="Specialty_Insert" xml:space="preserve">
+    <value>SP_CVA_FUNC_INS</value>
+    <comment>Insere as especialidades</comment>
+  </data>
+  <data name="Status_Get" xml:space="preserve">
+    <value>SP_CVA_STU_GET</value>
+    <comment>Retorna todos os status</comment>
+  </data>
+  <data name="Status_GetId" xml:space="preserve">
+    <value>SP_CVA_STU_GET_ID</value>
+    <comment>Retorna o status pelo ID</comment>
+  </data>
+  <data name="Uf_Get_All" xml:space="preserve">
+    <value>SP_CVA_UF_GET</value>
+    <comment>Retorna a lista de estados</comment>
+  </data>
+  <data name="User_Get" xml:space="preserve">
+    <value>SP_CVA_USR_GET</value>
+    <comment>Retorna todos os usuários</comment>
+  </data>
+  <data name="User_GetId" xml:space="preserve">
+    <value>SP_CVA_USR_GET_ID</value>
+    <comment>Retorna o usuário pelo ID</comment>
+  </data>
+  <data name="Collaborator_GetSpecialty" xml:space="preserve">
+    <value>SP_CVA_COL_FUNC_GET</value>
+    <comment>Retona todos os colabores por especialidade</comment>
+  </data>
+  <data name="Client_GetContacts" xml:space="preserve">
+    <value>SP_CVA_CLI_CON_GET</value>
+    <comment>Retorna todos os contatos de um determinado cliente</comment>
+  </data>
+  <data name="Opportunity_ConvertForProject" xml:space="preserve">
+    <value>SP_CVA_OPRT_COPY_PRJ</value>
+    <comment>Converte uma oportunidade em projeto</comment>
+  </data>
+  <data name="Note_Insert" xml:space="preserve">
+    <value>SP_CVA_APON_INS</value>
+    <comment>Insere um novo apontamento</comment>
+  </data>
+  <data name="Specialty_GetByCollaborator" xml:space="preserve">
+    <value>SP_CVA_FUNC_COL_GET</value>
+    <comment>Retorna todas as especialidades de um colaborador</comment>
+  </data>
+  <data name="User_GetCollaboratorId" xml:space="preserve">
+    <value>SP_CVA_USR_COL_GET_ID</value>
+    <comment>Retorna o id de colaborador do usuário</comment>
+  </data>
+  <data name="Note_GetNotesByUser" xml:space="preserve">
+    <value>SP_CVA_APON_GET_USR</value>
+    <comment>Retorna todos os apontamentos do usuário</comment>
+  </data>
+  <data name="Note_Update" xml:space="preserve">
+    <value>SP_CVA_APON_UPD</value>
+    <comment>Atualiza o apontamento do usuário</comment>
+  </data>
+  <data name="Collaborator_Get_All" xml:space="preserve">
+    <value>SP_CVA_COL_GET</value>
+    <comment>Retorna todos os colaboradores</comment>
+  </data>
+  <data name="Collaborator_Get" xml:space="preserve">
+    <value>SP_CVA_COL_GET_ID</value>
+    <comment>Retorna o colaborador pelo ID</comment>
+  </data>
+  <data name="Collaborator_Address_GetId" xml:space="preserve">
+    <value>SP_CVA_COL_ADR_GET_ID</value>
+    <comment>Retorna o endereço pelo id do colaborador</comment>
+  </data>
+  <data name="Collaborator_Update" xml:space="preserve">
+    <value>SP_CVA_COL_UPD</value>
+    <comment>Efetua a atualização do cadastro do colaborador</comment>
+  </data>
+  <data name="PercentProject_Get" xml:space="preserve">
+    <value>SP_CVA_PERC_PRJ_GET</value>
+    <comment>Retorna todos os percentuais de projeto</comment>
+  </data>
+  <data name="Opportunity_Get_All" xml:space="preserve">
+    <value>SP_CVA_OPRT_GET_ALL</value>
+    <comment>Retorna todas as oportunidades</comment>
+  </data>
+  <data name="Opportunity_Get" xml:space="preserve">
+    <value>SP_CVA_OPRT_GET</value>
+    <comment>Retorna a oportunidade pelo id</comment>
+  </data>
+  <data name="Oportunitty_Client_GetID" xml:space="preserve">
+    <value>SP_CVA_OPRT_CLI_GET_ID</value>
+    <comment>Retorna o cliente pelo id da oportunidade</comment>
+  </data>
+  <data name="Oportunitty_GetPercent_ID" xml:space="preserve">
+    <value>SP_CVA_OPRT_PERC_GET_ID</value>
+    <comment>Retorna o percentual pelo id da oportunidade</comment>
+  </data>
+  <data name="Oportunitty_Contact_GETID" xml:space="preserve">
+    <value>SP_CVA_OPRT_CON_GET_ID</value>
+    <comment>Retorna os contatos da oportunidade pelo ID</comment>
+  </data>
+  <data name="GetOportunitty_FinancialID" xml:space="preserve">
+    <value>SP_CVA_OPRT3_GET_ID</value>
+    <comment>Retorna o valor de negocio pelo id da oportunidade</comment>
+  </data>
+  <data name="Oportunitty_GetStepsID" xml:space="preserve">
+    <value>SP_CVA_OPRT4_GET_ID</value>
+    <comment>Retorna todas as fases da oportunidade pelo id</comment>
+  </data>
+  <data name="Opportunity_Update" xml:space="preserve">
+    <value>SP_CVA_OPRT_UPD</value>
+    <comment>Atualiza os registros da oportunidade, tabelas 0 a 3</comment>
+  </data>
+  <data name="Oportunitty4_Update" xml:space="preserve">
+    <value>SP_CVA_OPRT4_UPD</value>
+    <comment>Atualiza as fases do projeto</comment>
+  </data>
+  <data name="Oportunitty5_Update" xml:space="preserve">
+    <value>SP_CVA_OPRT5_UPD</value>
+    <comment>Atualiza as observações da oportunidade</comment>
+  </data>
+  <data name="Oportunitty5_GetID" xml:space="preserve">
+    <value>SP_CVA_OPRT5_GET_ID</value>
+    <comment>Retorna todas as observações da oportunidade</comment>
+  </data>
+  <data name="Project6_GetId" xml:space="preserve">
+    <value>SP_CVA_PRJ6_GET_COL_ID</value>
+    <comment>Retorna todos os colaboradores pelo id do projeto</comment>
+  </data>
+  <data name="Project6_Inactive" xml:space="preserve">
+    <value>SP_CVA_PRJ6_INAT</value>
+    <comment>Inativa o registro de ligação</comment>
+  </data>
+  <data name="Note_Search" xml:space="preserve">
+    <value>SP_CVA_APON_EXT</value>
+    <comment>Retorna todos os apontamentos a partir do filtro</comment>
+  </data>
+  <data name="ExpenseType_Insert" xml:space="preserve">
+    <value>SP_CVA_TIP_DESP_INS</value>
+    <comment>Insere um novo tipo de despesa</comment>
+  </data>
+  <data name="ExpenseType_Get" xml:space="preserve">
+    <value>SP_CVA_TIP_DESP_GET</value>
+    <comment>Retorna todos os tipos de despesa ativos</comment>
+  </data>
+  <data name="PoliticExpense_Insert" xml:space="preserve">
+    <value>SP_CVA_POL_DESP_INS</value>
+    <comment>Insere uma nova política de despesa</comment>
+  </data>
+  <data name="Add_PoliticExpense" xml:space="preserve">
+    <value>SP_CVA_CLI5_INS</value>
+    <comment>Insere a ligação do cliente com a politica de despesa</comment>
+  </data>
+  <data name="Oportunitty6_Insert" xml:space="preserve">
+    <value>SP_CVA_OPRT6_INS</value>
+    <comment>Insere o responsável pelas despesas</comment>
+  </data>
+  <data name="PoliticExpense_GetProject" xml:space="preserve">
+    <value>SP_CVA_POL_DESP_PRJ_GET</value>
+    <comment>Retorna as politicas de despesa por projeto</comment>
+  </data>
+  <data name="UnitMeter_Get" xml:space="preserve">
+    <value>SP_CVA_UN_MED_GET</value>
+    <comment>Retorna todas as unidades de medida</comment>
+  </data>
+  <data name="Expense_Insert" xml:space="preserve">
+    <value>SP_CVA_DESP_INS</value>
+    <comment>Insere uma nova despesa</comment>
+  </data>
+  <data name="Expense_Get_ByUser" xml:space="preserve">
+    <value>SP_CVA_DESP_GET</value>
+    <comment>Retorna todas as despesas por usuário</comment>
+  </data>
+  <data name="Expense_Get" xml:space="preserve">
+    <value>SP_CVA_DESP_GET_ID</value>
+    <comment>Retorna dados de despesa por ID</comment>
+  </data>
+  <data name="ExpenseType_GetExpense" xml:space="preserve">
+    <value>SP_CVA_TIP_DESP_GET_DESP</value>
+    <comment>Retorna o tipo de despesa por id de despesa</comment>
+  </data>
+  <data name="Expense_Update" xml:space="preserve">
+    <value>SP_CVA_DESP_UPD</value>
+    <comment>Atualiza o registro de despesa</comment>
+  </data>
+  <data name="User_Insert" xml:space="preserve">
+    <value>SP_CVA_USR_INS</value>
+    <comment>Insere um novo usuário na base de dados</comment>
+  </data>
+  <data name="Profile_Insert" xml:space="preserve">
+    <value>SP_CVA_PER_INS</value>
+    <comment>Insere um novo perfil</comment>
+  </data>
+  <data name="View_Get" xml:space="preserve">
+    <value>SP_CVA_VIEW_GET</value>
+    <comment>Retorna todas as telas do sistema</comment>
+  </data>
+  <data name="Collaborator_NotUser" xml:space="preserve">
+    <value>SP_CVA_COL_NOT_USR</value>
+    <comment>Retorna todos os colabores que não possuem usuários</comment>
+  </data>
+  <data name="Profile_Get" xml:space="preserve">
+    <value>SP_CVA_PER_GET</value>
+    <comment>Retorna todos os perfis ativos</comment>
+  </data>
+  <data name="User_Exist" xml:space="preserve">
+    <value>SP_CVA_USR_EXIST</value>
+    <comment>Verifica se ja existe o email cadastrado</comment>
+  </data>
+  <data name="Profile_GetUser" xml:space="preserve">
+    <value>SP_CVA_PER_GET_USR</value>
+    <comment>Retorna o perfil do usuário</comment>
+  </data>
+  <data name="Profile1_Insert" xml:space="preserve">
+    <value>SP_CVA_PER1_INS</value>
+    <comment>Insere a ligacao do perfil com as views</comment>
+  </data>
+  <data name="View_GetProfile" xml:space="preserve">
+    <value>SP_CVA_VIEW_PER_GET</value>
+    <comment>Retorna todas as view por id de perfil</comment>
+  </data>
+  <data name="Profile_GetId" xml:space="preserve">
+    <value>SP_CVA_PER_GET_ID</value>
+    <comment>Retorna o perfil por id</comment>
+  </data>
+  <data name="Profile_Update" xml:space="preserve">
+    <value>SP_CVA_PER_UPD</value>
+    <comment>Atualiza o registro de perfil</comment>
+  </data>
+  <data name="Profile1_Inactive" xml:space="preserve">
+    <value>SP_CVA_PER_INACT</value>
+    <comment>Inativa todos os acessos do perfil</comment>
+  </data>
+  <data name="Profile1_Update" xml:space="preserve">
+    <value>SP_CVA_PER1_UPD</value>
+    <comment>Atualiza os acessos do perfil</comment>
+  </data>
+  <data name="User1_Get" xml:space="preserve">
+    <value>SP_CVA_USR_COL_GET</value>
+    <comment>Retorna o colaborador do usuário</comment>
+  </data>
+  <data name="Contact_Update" xml:space="preserve">
+    <value>SP_CVA_CON_UPD</value>
+    <comment>Atualiza o registro de contato</comment>
+  </data>
+  <data name="Address_Update" xml:space="preserve">
+    <value>SP_CVA_ADR_UPD</value>
+    <comment>Atualiza o registro de endereço</comment>
+  </data>
+  <data name="User2_Update" xml:space="preserve">
+    <value>SP_CVA_USR2_UPD</value>
+    <comment>Atualiza o perfil do usuário</comment>
+  </data>
+  <data name="User_Update" xml:space="preserve">
+    <value>SP_CVA_USR_UPD</value>
+    <comment>Atualiza o registro do usuário</comment>
+  </data>
+  <data name="Project_Get" xml:space="preserve">
+    <value>SP_CVA_PRJ_GET</value>
+    <comment>Retorna todos os projetos</comment>
+  </data>
+  <data name="ProjectStep_GetAll" xml:space="preserve">
+    <value>SP_CVA_FAS_PRJ_GET_ALL</value>
+    <comment>Retorna todas as fases de projeto</comment>
+  </data>
+  <data name="SalesChannel_Get_All" xml:space="preserve">
+    <value>SP_CVA_CAN_VEN_GET_ALL</value>
+    <comment>Retorna todos os canais de venda</comment>
+  </data>
+  <data name="ExpenseType_GetAll" xml:space="preserve">
+    <value>SP_CVA_TIP_DESP_GET_ALL</value>
+    <comment>Retorna todos os tipos de despesa</comment>
+  </data>
+  <data name="Specialty_Update" xml:space="preserve">
+    <value>SP_CVA_FUNC_UPD</value>
+    <comment>Atualiza os registros de especialidade</comment>
+  </data>
+  <data name="Specialty_GetId" xml:space="preserve">
+    <value>SP_CVA_FUNC_GET_ID</value>
+    <comment>Retorna a especialidade por ID</comment>
+  </data>
+  <data name="Specialty_Get_All" xml:space="preserve">
+    <value>SP_CVA_FUNC_GET_ATV</value>
+    <comment>Retorna todas as especialidades ativas</comment>
+  </data>
+  <data name="ProjectStep_GetID" xml:space="preserve">
+    <value>SP_CVA_FAS_PRJ_GET_ID</value>
+    <comment>Retorna a fase de projeto por ID</comment>
+  </data>
+  <data name="Expense_Extract" xml:space="preserve">
+    <value>SP_CVA_DESP_EXT</value>
+    <comment>Extrai os dados de apontamento</comment>
+  </data>
+  <data name="Note_Remove" xml:space="preserve">
+    <value>SP_CVA_APON_INACT</value>
+    <comment>Inativa a linha do apontamento</comment>
+  </data>
+  <data name="Expense_Remove" xml:space="preserve">
+    <value>SP_CVA_DESP_INACT</value>
+    <comment>Inativa a linha da despesa</comment>
+  </data>
+  <data name="UserMessage1_Insert" xml:space="preserve">
+    <value>SP_CVA_MSG1_INS</value>
+    <comment>Insere os perfis da mensagem</comment>
+  </data>
+  <data name="UserMessage_Insert" xml:space="preserve">
+    <value>SP_CVA_MSG_INS</value>
+    <comment>Insere uma nova mensagem no sistema</comment>
+  </data>
+  <data name="Client_Get" xml:space="preserve">
+    <value>SP_CVA_CLI_GET_ID</value>
+    <comment>Retorna o cliente pelo ID</comment>
+  </data>
+  <data name="Client2_Get" xml:space="preserve">
+    <value>SP_CVA_CLI2_GET</value>
+    <comment>Retorna o endereço do cliente</comment>
+  </data>
+  <data name="Client4_Get" xml:space="preserve">
+    <value>SP_CVA_CLI4_GET</value>
+    <comment>Recupera os canais de venda do cliente</comment>
+  </data>
+  <data name="Client5_Get" xml:space="preserve">
+    <value>SP_CVA_CLI5_GET</value>
+    <comment>Retorna as despesas do cliente</comment>
+  </data>
+  <data name="Client_Update" xml:space="preserve">
+    <value>SP_CVA_CLI_UPD</value>
+    <comment>Atualiza o registro do cliente</comment>
+  </data>
+  <data name="Update_SalesChannel" xml:space="preserve">
+    <value>SP_CVA_CLI4_UPD</value>
+    <comment>Atualiza os registros de canal de venda do cliente</comment>
+  </data>
+  <data name="User_AlterPassword" xml:space="preserve">
+    <value>SP_CVA_USR_ALT_PAS</value>
+    <comment>Altera a senha do usuário</comment>
+  </data>
+  <data name="User_UpdateByUser" xml:space="preserve">
+    <value>SP_CVA_USR_UPD_USR</value>
+    <comment>Atualiza do cadastro pelo proprio usuario</comment>
+  </data>
+  <data name="Message_Get" xml:space="preserve">
+    <value>SP_CVA_MSG_GET</value>
+    <comment>Retorna as mensagens de usuário</comment>
+  </data>
+  <data name="Message_GetAll" xml:space="preserve">
+    <value>SP_CVA_MSG_GET_ALL</value>
+    <comment>Retorna todas as mensagens de usuario</comment>
+  </data>
+  <data name="Project_GetForCollaborator" xml:space="preserve">
+    <value>SP_CVA_PRJ_GET_FOR_COL</value>
+    <comment>Retorna todos os projetos que o colaborador esta alocado</comment>
+  </data>
+  <data name="SalesChannel_Update" xml:space="preserve">
+    <value>SP_CVA_CAN_VEN_UPD</value>
+    <comment>Atualiza o canal de venda</comment>
+  </data>
+  <data name="SalesChannel_Get" xml:space="preserve">
+    <value>SP_CVA_CAN_VEN_GET_ID</value>
+    <comment>Retorna o canal de venda pelo ID</comment>
+  </data>
+  <data name="ExpenseType_GetId" xml:space="preserve">
+    <value>SP_CVA_TIP_DESP_GET_ID</value>
+    <comment>Retorna o tipo de despesa por id</comment>
+  </data>
+  <data name="ExpenseType_Update" xml:space="preserve">
+    <value>SP_CVA_TIP_DESP_UPD</value>
+    <comment>Atualiza o registro do tipo de despesa</comment>
+  </data>
+  <data name="Project_IsAMS" xml:space="preserve">
+    <value>SP_CVA_PRJ_USE_AMS</value>
+    <comment>Verifica se o projeto é do tipo AMS</comment>
+  </data>
+  <data name="UpdateExpenseManager" xml:space="preserve">
+    <value>SP_CVA_OPRT6_UPD</value>
+    <comment>Atualiza o responsável pelas despesas</comment>
+  </data>
+  <data name="AMSTicket_GetByProject" xml:space="preserve">
+    <value>SP_CVA_TCK_GET_PRJ</value>
+    <comment>Retorna os chamados de acordo com o projeto</comment>
+  </data>
+  <data name="Holidays_Get_All" xml:space="preserve">
+    <value>SP_CVA_CAL1_GET_PER</value>
+    <comment>Retorna os feriados dentro do periodo informado</comment>
+  </data>
+  <data name="Period_Get_ByDate" xml:space="preserve">
+    <value>SP_CVA_PRD_GET_DATE</value>
+    <comment>Retorna o periodo de acordo com a data informada</comment>
+  </data>
+  <data name="Period_Get_Current" xml:space="preserve">
+    <value>SP_CVA_PRD_GET_CUR</value>
+    <comment>Retorna o periodo atual</comment>
+  </data>
+  <data name="Calendar_Get_All" xml:space="preserve">
+    <value>SP_CVA_CAL_GET</value>
+    <comment>Retorna todos os calendários</comment>
+  </data>
+  <data name="CalendarHolidays_Get" xml:space="preserve">
+    <value>SP_CVA_CAL1_GET_ID</value>
+    <comment>Retorna as linhas do calendário pelo ID</comment>
+  </data>
+  <data name="Calendar_Get" xml:space="preserve">
+    <value>SP_CVA_CAL_GET_ID</value>
+    <comment>Retorna o calendário pelo ID</comment>
+  </data>
+  <data name="CalendarHolidays_Remove" xml:space="preserve">
+    <value>SP_CVA_CAL1_DEL_ID</value>
+    <comment>Remove as linhas do calendário</comment>
+  </data>
+  <data name="Calendar_Update" xml:space="preserve">
+    <value>SP_CVA_CAL_UPD</value>
+    <comment>Atualiza o calendário</comment>
+  </data>
+  <data name="Client5_Delete" xml:space="preserve">
+    <value>SP_CVA_CLI5_DEL</value>
+    <comment>Remove as despesas do cliente</comment>
+  </data>
+  <data name="SubPeriod_Get" xml:space="preserve">
+    <value>SP_CVA_PRD1_GET</value>
+    <comment>Retorna lista de subperíodos</comment>
+  </data>
+  <data name="SubPeriod_Insert" xml:space="preserve">
+    <value>SP_CVA_PRD1_INS</value>
+    <comment>Insere subperíodo</comment>
+  </data>
+  <data name="SubPeriod_UpdateListStatus" xml:space="preserve">
+    <value>SP_CVA_PRD1_LIST_UPD_STU</value>
+    <comment>Atualiza status de uma lista de subperíodos</comment>
+  </data>
+  <data name="SubPeriod_UpdateStatus" xml:space="preserve">
+    <value>SP_CVA_PRD1_UPD_STU</value>
+    <comment>Atualiza status de subperíodo</comment>
+  </data>
+  <data name="Project_GetById" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_GET</value>
+    <comment>Retorna o projeto pelo ID</comment>
+  </data>
+  <data name="Opportunity_Search" xml:space="preserve">
+    <value>SP_CVA_OPRT_SEARCH</value>
+    <comment>Retorna as oportunidades conforme o filtro</comment>
+  </data>
+  <data name="Delete_Address" xml:space="preserve">
+    <value>SP_CVA_CLI2_DEL</value>
+    <comment>Remove os endereços do cliente</comment>
+  </data>
+  <data name="Delete_SalesChannel" xml:space="preserve">
+    <value>SP_CVA_CLI4_DEL</value>
+    <comment>Deleta todos os canais de venda de um cliente</comment>
+  </data>
+  <data name="Delete_Contact" xml:space="preserve">
+    <value>SP_CVA_CLI1_DEL</value>
+    <comment>Deleta todos os contatos do cliente</comment>
+  </data>
+  <data name="Client_Search" xml:space="preserve">
+    <value>SP_CVA_CLI_GET_FIL</value>
+    <comment>Retorna todos os clientes conforme o filtros</comment>
+  </data>
+  <data name="Collaborator_Search" xml:space="preserve">
+    <value>SP_CVA_COL_GET_FIL</value>
+    <comment>Retorna todos os colaboradores conforme o filtros</comment>
+  </data>
+  <data name="Projet_GetByFilter" xml:space="preserve">
+    <value>SP_CVA_PRJ_GET_FIL</value>
+    <comment>Retorna os projetos conforme o filtro</comment>
+  </data>
+  <data name="UserMessage_GetById" xml:space="preserve">
+    <value>SP_CVA_MSG_GET_ID</value>
+    <comment>Retorna uma mensagem específica</comment>
+  </data>
+  <data name="UserMessage_Update" xml:space="preserve">
+    <value>SP_CVA_MSG_UPD</value>
+    <comment>Atualiza a mensagem</comment>
+  </data>
+  <data name="UserMessage_GetDestiny_User" xml:space="preserve">
+    <value>SP_CVA_MSG1_GET_USR</value>
+    <comment>Retorna o destino da mensagem (usuários)</comment>
+  </data>
+  <data name="UserMessage_GetDestiny_Profile" xml:space="preserve">
+    <value>SP_CVA_MSG1_GET_PRF</value>
+    <comment>Retorna o destino da mensagem (perfil)</comment>
+  </data>
+  <data name="Message_Destiny_Delete" xml:space="preserve">
+    <value>SP_CVA_MSG1_DEL</value>
+    <comment>Remove os destinatários das mensagens</comment>
+  </data>
+  <data name="Note_Get" xml:space="preserve">
+    <value>SP_CVA_APON_GET_BY_ID</value>
+    <comment>Retorna um apontamento pelo Id</comment>
+  </data>
+  <data name="Note_GetAuthorizedHours" xml:space="preserve">
+    <value>SP_CVA_COL4_GET</value>
+    <comment>Retorna o limite de horas liberadas para apontamento</comment>
+  </data>
+  <data name="Note_GetAuthorizedHoursByCollaborator" xml:space="preserve">
+    <value>SP_CVA_COL4_GET_BY_COL</value>
+    <comment>Retorna o limite de horas liberadas para apontamento por colaborador</comment>
+  </data>
+  <data name="Note_GetAuthorizedHoursByCollaboratorAndDate" xml:space="preserve">
+    <value>SP_CVA_COL4_GET_BY_COL_AND_DAT</value>
+    <comment>Retorna uma autorização espeifica</comment>
+  </data>
+  <data name="Opportunity_ValidateCode" xml:space="preserve">
+    <value>SP_CVA_OPRT_VAL_COD</value>
+    <comment>Verifica se um codigo ja é usado</comment>
+  </data>
+  <data name="ProjectType_Get" xml:space="preserve">
+    <value>SP_CVA_TIPOSPROJETO_GET</value>
+    <comment>Retorna um tipo de projeto</comment>
+  </data>
+  <data name="ProjectType_Get_All" xml:space="preserve">
+    <value>SP_CVA_TIPOSPROJETO_GET_ALL</value>
+    <comment>Retorna todos os tipos de projeto</comment>
+  </data>
+  <data name="ProjectType_Insert" xml:space="preserve">
+    <value>SP_CVA_TIPOSPROJETO_INS</value>
+    <comment>Insere um novo tipo de projeto</comment>
+  </data>
+  <data name="ProjectType_Remove" xml:space="preserve">
+    <value>SP_CVA_TIPOSPROJETO_RMV</value>
+    <comment>Remove um tipo de projeto</comment>
+  </data>
+  <data name="ProjectType_Update" xml:space="preserve">
+    <value>SP_CVA_TIPOSPROJETO_UPD</value>
+    <comment>Atualiza um tipo de projeto</comment>
+  </data>
+  <data name="Add_ProjectResourcesSpecialties" xml:space="preserve">
+    <value>SP_CVA_PRJ9_INS</value>
+  </data>
+  <data name="Project_Check_ProjectType" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_TIPOPROJETO_CHK</value>
+  </data>
+  
+  <data name="Project_Remove_Members" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_MEMBROS_RMV</value>
+  </data>
+  <data name="Project_Remove_Resources" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_RECURSOS_RMV</value>
+  </data>
+  <data name="Project_Remove_Steps" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_FASES_RMV</value>
+  </data>
+  <data name="Project_Update" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_UPD</value>
+  </data>
+  <data name="Upd_ProjectResourcesSpecialties" xml:space="preserve">
+    <value>SP_CVA_PRJ9_UPD</value>
+  </data>
+  <data name="Get_Info" xml:space="preserve">
+    <value>SP_CVA_OPORTUNIDADES_PRICING_GET</value>
+  </data>
+  <data name="Member_Get_ProjectMembers" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_MEMBROS_GET</value>
+  </data>
+  <data name="Opportunitty_Pricing_Insert" xml:space="preserve">
+    <value>SP_CVA_OPORTUNIDADES_PRICING_INS</value>
+  </data>
+  <data name="PricingItem_Get_PricingItens" xml:space="preserve">
+    <value>SP_CVA_PRICING_ITENS_GET</value>
+  </data>
+  <data name="PricingItem_Get_PricingItens_oprt" xml:space="preserve">
+    <value>SP_CVA_PRICING_ITENS_GET_OPRT</value>
+  </data>
+  <data name="PricingItem_Insert_PricingItem" xml:space="preserve">
+    <value>SP_CVA_PRICING_ITENS_INS</value>
+  </data>
+  <data name="PricingItem_Opportunitty_Insert_PricingItem" xml:space="preserve">
+    <value>SP_CVA_PRICING_ITENS_INS_OPRT</value>
+  </data>
+  <data name="PricingItem_Remove" xml:space="preserve">
+    <value>SP_CVA_PRICING_ITENS_RMV</value>
+  </data>
+  <data name="Pricing_Get" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_PRICING_GET</value>
+  </data>
+  <data name="Pricing_Get_By_Opportunitty" xml:space="preserve">
+    <value>SP_CVA_OPORTUNIDADES_PRICING_GET_BY_OPPORTUNITTY</value>
+  </data>
+  <data name="Pricing_Get_By_Project" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_PRICING_GET_BY_PROJECT</value>
+  </data>
+  <data name="Pricing_Insert" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_PRICING_INS</value>
+  </data>
+  <data name="Pricing_Update" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_PRICING_UPD</value>
+  </data>
+  <data name="Project_Get_All" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_GET_ALL</value>
+  </data>
+  <data name="Project_Get_ByUser" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_GET_BY_USER</value>
+  </data>
+  <data name="Project_Insert_Members" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_MEMBROS_INS</value>
+  </data>
+  <data name="Project_Insert_Resources" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_RECURSOS_INS</value>
+  </data>
+  <data name="Project_Insert_Steps" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_FASES_INS</value>
+  </data>
+  <data name="Update_ProjectCost" xml:space="preserve">
+    <value>SP_CVA_PRJ_UPD_COST</value>
+  </data>
+  <data name="Collaborator_Get_ProjectResources" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_RECURSOS_GET</value>
+  </data>
+  <data name="ProjectStep_Get_ProjectSteps" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_FASES_GET</value>
+  </data>
+  <data name="Project_Insert_SpecialtyRules" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_REGRAS_INS</value>
+    <comment>Insere uma regra</comment>
+  </data>
+  <data name="Project_Remove_SpecialtyRules" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_REGRAS_RMV</value>
+    <comment>Remove as regras</comment>
+  </data>
+  <data name="Project_Get_SpecialtyRules" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_REGRAS_GET_BY_PRJ</value>
+    <comment>Retorna as regras de um projeto</comment>
+  </data>
+  <data name="Get_Notes_By_Project" xml:space="preserve">
+    <value>SP_CVA_APON_GET_BY_PRJ</value>
+    <comment>Retorna apontamentos de um projeto</comment>
+  </data>
+  <data name="Get_Notes_By_StepProject" xml:space="preserve">
+    <value>SP_CVA_APON_GET_BY_PRJ_FAS</value>
+  </data>
+  <data name="Update_StepCost" xml:space="preserve">
+    <value>SP_CVA_PRJ_UPD_STEPCOST</value>
+  </data>
+  <data name="Get_SpecificStep" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_FASES_GET_SPECIFIC</value>
+  </data>
+  <data name="Project_Update_Step" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_FASES_UPD</value>
+  </data>
+  <data name="PricingItem_Remove_oprt" xml:space="preserve">
+    <value>SP_CVA_PRICING_ITENS_RMV_OPRT</value>
+  </data>
+  <data name="Pricing_UpdateOPRT" xml:space="preserve">
+    <value>SP_CVA_OPORTUNIDADES_PRICING_UPD</value>
+  </data>
+  <data name="Collaborator_Insert_Address" xml:space="preserve">
+    <value>SP_CVA_COL_ADR_INS</value>
+  </data>
+  <data name="Collaborator_Insert_Specialty" xml:space="preserve">
+    <value>SP_CVA_COL1_INS</value>
+  </data>
+  <data name="Collaborator_Update_Address" xml:space="preserve">
+    <value>SP_CVA_COL_ADR_UPD</value>
+  </data>
+  <data name="Get_SpecificSpecialty" xml:space="preserve">
+    <value>SP_CVA_COL1_GET</value>
+  </data>
+  <data name="Collaborator_Get_Specialties" xml:space="preserve">
+    <value>SP_CVA_COLABORADORES_ESPECIALIDADES_GET</value>
+  </data>
+  <data name="Collaborator_Get_Address" xml:space="preserve">
+    <value>SP_CVA_COLABORADORES_ENDERECO_GET</value>
+  </data>
+  <data name="Collaborator_Remove_Specialty" xml:space="preserve">
+    <value>SP_CVA_COLABORADORES_ESPECIALIDADES_RMV</value>
+  </data>
+  <data name="Project_Get_ByClient" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_GET_BY_CLI</value>
+    <comment>Retorna os projetos de um cliente</comment>
+  </data>
+  <data name="Project_Get_ByCollaborator" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_GET_BY_COL</value>
+    <comment>Retorna os projetos em que um colaborador está alocado</comment>
+  </data>
+  <data name="Project_Get_ByClientAndCollaborator" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_GET_BY_CLI_AND_COL</value>
+  </data>
+  <data name="Project_Generate_Number" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_GENERATE_NUM</value>
+    <comment>Gera a numeração do projeto a partir do tipo de projeto</comment>
+  </data>
+  <data name="ProjectParameters_Update" xml:space="preserve">
+    <value>SP_CVA_PARAMETRIZACAO_PROJETOS_UPD</value>
+    <comment>Atualiza os parâmetros para inserção de projetos</comment>
+  </data>
+  <data name="ProjectParameters_Get_All" xml:space="preserve">
+    <value>SP_CVA_PARAMETRIZACAO_PROJETOS_GET_ALL</value>
+    <comment>Retorna os parâmetros de criação de projetos</comment>
+  </data>
+  <data name="ProjectParameters_Insert" xml:space="preserve">
+    <value>SP_CVA_PARAMETRIZACAO_PROJETOS_INS</value>
+    <comment>Insere um novo projeto de projetos</comment>
+  </data>
+  <data name="Oportunitty_GetSteps" xml:space="preserve">
+    <value>SP_CVA_FASES_OPRT_GET</value>
+    <comment>Retorna fases utilizadas em oportunidades</comment>
+  </data>
+  <data name="Project_GetSteps" xml:space="preserve">
+    <value>SP_CVA_FASES_PRJ_GET</value>
+    <comment>Retorna fases utilizadas em projetos</comment>
+  </data>
+  <data name="StepItem_Get_ForProject" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_RECURSOSFASE_GET_FOR_PRJ</value>
+  </data>
+  <data name="StepItem_Insert" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_RECURSOSFASE_INS</value>
+  </data>
+  <data name="StepItem_Remove_ForProject" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_RECURSOSFASE_RMV_FOR_PRJ</value>
+  </data>
+  <data name="Project_Get_StatusReportInfo" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_STU_RPT_INFO_GET</value>
+    <comment>Retorna informações para salvar um novo status report</comment>
+  </data>
+  <data name="StatusReport_Get" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_STATUSREPORT_GET</value>
+    <comment>Retorna um Status Report do projeto</comment>
+  </data>
+  <data name="StatusReport_Get_All" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_STATUSREPORT_GET_ALL</value>
+    <comment>Retorna os Status Report de um projeto</comment>
+  </data>
+  <data name="Project_StatusReport_Insert" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_STATUSREPORT_INS</value>
+    <comment>Insere os Status Report de um projeto</comment>
+  </data>
+  <data name="Project_StatusReport_Remove" xml:space="preserve">
+    <value>SP_CVA_PROJETOS_STATUSREPORT_RMV</value>
+    <comment>Remove os Status Report de um projeto</comment>
+  </data>
+  <data name="Specialty_Get_TiposEspecialidade" xml:space="preserve">
+    <value>SP_CVA_TIPOSESPECIALIDADE_GET_ALL</value>
+    <comment>Retorna todos os tipos de especialidade</comment>
+  </data>
+  <data name="StatusReport_Get_Parcial" xml:space="preserve">
+    <value>SP_CVA_STATUSREPORT_GET_PARCIAL</value>
+    <comment>Retorna as informações de um status report especifico</comment>
+  </data>
+  <data name="StatusReport_Insert_Steps" xml:space="preserve">
+    <value>SP_CVA_STATUSREPORT_FASES_INS</value>
+    <comment>Insere as fases vinculadas ao statusreport</comment>
+  </data>
+  <data name="StatusReport_Get_ParcialHours_Con" xml:space="preserve">
+    <value>SP_CVA_STATUSREPORT_GET_PARCIAL_CON</value>
+  </data>
+  <data name="StatusReport_Get_ParcialHours_Orc" xml:space="preserve">
+    <value>SP_CVA_STATUSREPORT_GET_PARCIAL_ORC</value>
+  </data>
+  <data name="Collaborator1_Update" xml:space="preserve">
+    <value>SP_CVA_COL1_UPD</value>
+    <comment>Atualiza os registros de especialidades do colaborador</comment>
+  </data>
+  <data name="Collaborator_GetHoursLeft" xml:space="preserve">
+    <value>SP_CVA_COL_GET_HRS_LFT</value>
+    <comment>Retorna as horas restantes para apontamento em um certo dia por colaborador</comment>
+  </data>
+  <data name="ChangeRequest_Insert" xml:space="preserve">
+    <value>SP_CVA_CHANGEREQUEST_INS</value>
+    <comment>Insere uma nova Change Request</comment>
+  </data>
+  <data name="ChangeRequest_Insert_Itens" xml:space="preserve">
+    <value>SP_CVA_CHANGEREQUEST_RECURSOS_INS</value>
+    <comment>Insere os itens de uma nova Change Request</comment>
+  </data>
+  <data name="ChangeRequest_Get" xml:space="preserve">
+    <value>SP_CVA_CHANGEREQUEST_GET</value>
+    <comment>Retorna uma Change Request</comment>
+  </data>
+  <data name="ChangeRequest_Get_for_Project" xml:space="preserve">
+    <value>SP_CVA_CHANGEREQUEST_GET_FOR_PRJ</value>
+    <comment>Retorna as Changes Requests de um projeto</comment>
+  </data>
+  <data name="ChangeRequest_Update" xml:space="preserve">
+    <value>SP_CVA_CHANGEREQUEST_UPD</value>
+    <comment>Atualiza uma Change Request</comment>
+  </data>
+  <data name="ChangeRequest_Remove_Itens" xml:space="preserve">
+    <value>SP_CVA_CHANGEREQUEST_RECURSOS_RMV</value>
+    <comment>Remove os itens de uma Change Request</comment>
+  </data>
+  <data name="ChangeRequest_Add_Hours" xml:space="preserve">
+    <value>SP_CVA_CHANGEREQUEST_ADD_HRS</value>
+    <comment>Adiciona horas em uma fase do projeto quando uma Change Request é autorizada</comment>
+  </data>
+  <data name="SubPeriod_Remove" xml:space="preserve">
+    <value>SP_CVA_PRD1_RMV</value>
+    <comment>Remove um subperíodo</comment>
+  </data>
+  <data name="AuthorizedHours_Get" xml:space="preserve">
+    <value>SP_CVA_COL4_GET_BY_COL</value>
+    <comment>Retorna as horas autorizadas</comment>
+  </data>
+  <data name="AuthorizedHours_Insert" xml:space="preserve">
+    <value>SP_CVA_APON4_INS</value>
+    <comment>Insere horas autorizadas</comment>
+  </data>
+  <data name="AuthorizedHours_Remove" xml:space="preserve">
+    <value>SP_CVA_APON4_LCK</value>
+    <comment>Remove horas autorizadas</comment>
+  </data>
+  <data name="HoursLimit_Insert" xml:space="preserve">
+    <value>SP_CVA_COL_UPD_MAX_HRS</value>
+    <comment>Altera o limite de horas de um colaborador</comment>
+  </data>
+  <data name="HoursLimit_Get" xml:space="preserve">
+    <value>SP_CVA_COL_GET_MAX_HRS</value>
+    <comment>Retorna os Limites de Horas</comment>
+  </data>
+  <data name="HoursLimit_Remove" xml:space="preserve">
+    <value>SP_CVA_COL_MAX_HRS_RMV</value>
+    <comment>Remove Limite de horas diferenciado </comment>
+  </data>
+  <data name="Notes_Get_By_Day" xml:space="preserve">
+    <value>SP_CVA_APON_GET_BY_DAY</value>
+  </data>
+  <data name="Collaborator_Get_Type" xml:space="preserve">
+    <value>SP_CVA_COL_TYP_GET_ID</value>
+  </data>
+  <data name="GetActiveTypes" xml:space="preserve">
+    <value>SP_CVA_COL_TYP_GET</value>
+  </data>
+  <data name="LoadCombo_Collaborator" xml:space="preserve">
+    <value>SP_CVA_LOADCOMBO_COLLABORATOR</value>
+  </data>
+  <data name="LoadCombo_Project" xml:space="preserve">
+    <value>SP_CVA_LOADCOMBO_PROJECT</value>
+  </data>
+  <data name="LoadCombo_Client" xml:space="preserve">
+    <value>SP_CVA_LOADCOMBO_CLIENT</value>
+  </data>
+  <data name="Oportunitty_NewCode" xml:space="preserve">
+    <value>SP_CVA_OPRT_NEW</value>
+  </data>
+  <data name="ProjectStep_Update" xml:space="preserve">
+    <value>SP_CVA_FAS_PRJ_UPD</value>
+  </data>
+</root>

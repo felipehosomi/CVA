@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="16c575ad316747f7b2f444df6b84e7a0" Name="Diagram1">
+        <EntityTypeShape EntityType="CVA_ATL_REPModel.Base" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVA_ATL_REPModel.Funcao" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVA_ATL_REPModel.Objeto" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVA_ATL_REPModel.Registro" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVA_ATL_REPModel.RegistroLog" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVA_ATL_REPModel.Status" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVA_ATL_REPModel.Timer" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVA_ATL_REPModel.TipoRegistro" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_BAS__STU__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_REG__BAS__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_REG__BAS_ERR__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_REG_LOG__BAS__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_FUNC__STU__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_REG__FUNC__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_OBJ__STU__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_REG__OBJ__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_REG__STU__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_REG_LOG__REG__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_REG_LOG__STU__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_TIM__STU__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="CVA_ATL_REPModel.FK__CVA_TIP_REG__STU__29572725" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

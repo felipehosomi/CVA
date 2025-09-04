@@ -1,0 +1,397 @@
+﻿
+@model CVA.Portal.Producao.Model.ApontamentoModel
+@{
+    ViewBag.Title = "APONTAMENTO DE REFEIÇÕES";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Apetit/_Layout.cshtml";
+}
+
+@section Styles{
+
+    <link href="~/Content/View/apontamento.css" rel="stylesheet" />
+}
+
+@if (ViewBag.Error != null)
+{
+    <div id="AlertError" class="col-md-12 col-sm-12 col-xs-12 form-group" onclick="$(this).fadeOut(250)">
+        <div id="ErrorMsg" class="alert alert-error" style="white-space: pre-line; margin-bottom: 0px;">@ViewBag.Error</div>
+    </div>
+}
+@if (ViewBag.Success != null)
+{
+    <div id="AlertSuccess" class="col-md-12 col-sm-12 col-xs-12 form-group" onclick="$(this).fadeOut(250)">
+        <div id="SuccessMsg" class="alert alert-success" style="margin-bottom: 0px; ">@ViewBag.Success</div>
+    </div>
+}
+@if (ViewBag.Alert != null)
+{
+    <div id="AlertSuccess" class="col-md-12 col-sm-12 col-xs-12 form-group" onclick="$(this).fadeOut(250)">
+        <div id="SuccessMsg" class="alert alert-info" style="margin-bottom: 0px;">@ViewBag.Alert</div>
+    </div>
+}
+
+
+@using (Html.BeginForm("Create", "Apontamento", FormMethod.Post, new { id = "idForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <div class="row">
+            <div class="x_panel">
+
+                <button type="button" class="btn btn-dark pull-right" onclick="refresh()">Atualizar <span class="fa fa-refresh fa-right"></span></button>
+
+
+                <div class="x_title">
+                    <h2>@ViewBag.Title</h2>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="x_content">
+                    <input type="hidden" value="@Model.Itens.Count" id="countList" />
+                    <input type="hidden" value="@Model.Itens.Count" id="countList" />
+                    <input type="hidden" value="@Model.BPs.Count" id="countBPList" />
+
+                    @if (Model.ContratoList == null)
+                    {
+                        Model.ContratoList = new SelectList(new[] { new SelectListItem { Value = "", Text = "" } }, "Value", "Text");
+                    }
+
+                    @if (Model.ServicoList == null)
+                    {
+                        Model.ServicoList = new SelectList(new[] { new SelectListItem { Value = "", Text = "" } }, "Value", "Text");
+                    }
+
+                    @if (Model.BPLIdList == null)
+                    {
+                        Model.BPLIdList = new SelectList(new[] { new SelectListItem { Value = "", Text = "" } }, "Value", "Text");
+                    }
+
+                    @if (Model.InsumoList == null)
+                    {
+                        Model.InsumoList = new SelectList(new[] { new SelectListItem { Value = "", Text = "" } }, "Value", "Text");
+                    }
+
+                    <!--Accordion wrapper-->
+                <div class="accordion md-accordion accordion-blocks" id="accordionApontamento" role="tablist" aria-multiselectable="true">
+
+                    <!-- Accordion card -->
+                    <div class="card">
+
+                        <!-- Card header -->
+                        <!-- Heading -->
+
+                        <a data-toggle="collapse" data-parent="#accordionApontamento" href="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+                            <div class="card-header grey-lighten-5" role="tab" id="heading79">
+                                <h4>
+                                    <i class="fa fa-filter fa-right"></i><span> Filtro</span>
+                                    <i class="fa fa-angle-down rotate-icon"></i>
+                                </h4>
+                            </div>
+                        </a>
+
+
+
+                        <!-- Card body -->
+                        <div id="collapseFilter" class="collapse in" role="tabpanel" aria-labelledby="heading79" data-parent="#accordionApontamento" aria-expanded="true" style="">
+                            <div class="card-body">
+
+                                <!--Top Table UI-->
+                                <div class="table-ui p-2 mb-3 mx-3 mb-4">
+
+                                    <!--Grid row-->
+                                    <div class="row"></div>
+                                    <!--Grid row-->
+
+                                </div>
+                                <!--Top Table UI-->
+                                <!-- Table responsive wrapper -->
+                                <div class="modal-body">
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BPLIdCode, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                                        <div class="col-md-4">
+                                            <div class="input-group">
+                                                @Html.DropDownList("BPLIdCode", Model.BPLIdList, htmlAttributes: new { required = "required", id = "BPLIdCode", type = "number", @class = "chosen-select", data_placeholder = "Selecione uma filial" })
+                                            </div>
+                                        </div>
+
+                                        @Html.LabelFor(model => model.apontamentoData, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                                        <div class="col-md-4">
+                                            <div class="input-group">
+                                                <input class="form-control text-box single-line" data-val="true" data-val-date="O campo Data De deve ser uma data." id="apontamentoData" name="apontamentoData" type="date" value="@Model.apontamentoData.ToString("yyyy-MM-dd")" style="height: 34px; width: 100%">
+                                            </div>
+                                        </div>
+
+                                        @Html.LabelFor(model => model.ClienteCode, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                @Html.EditorFor(model => model.ClienteName, new { htmlAttributes = new { id = "txtClienteName", @style = "padding-top: 2px; height: 30px;", @class = "form-control readonly", @readonly = "true" } })
+                                            </div>
+                                        </div>
+
+                                        @Html.LabelFor(model => model.ContratoCode, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                @Html.DropDownList("ContratoCode", Model.ContratoList, htmlAttributes: new { required = "required", id = "ContratoCode", type = "number", @class = "chosen-select", data_placeholder = "Selecione uma ordem de produção" })
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    @Html.HiddenFor(model => model.ClienteCode)
+                                    @Html.HiddenFor(model => model.ClienteName)
+                                    @Html.HiddenFor(model => model.ComensaisDia)
+                                    @Html.HiddenFor(model => model.OrderCode)
+                                    @Html.HiddenFor(model => model.IdApontamento)
+
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!-- Table responsive wrapper -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion card -->
+                    <!-- Accordion card -->
+                    <div class="card">
+
+                        <!-- Card header -->
+                        <!-- Heading -->
+
+                        <a data-toggle="collapse" data-parent="#accordionApontamento" href="#collapseTerceiros" aria-expanded="false" aria-controls="collapseTerceiros">
+                            <div class="card-header grey-lighten-4" role="tab" id="heading79">
+                                <h4>
+                                    <i class="fa fa-users" aria-hidden="true"></i><span> Terceiros</span>
+                                    <i class="fa fa-angle-down rotate-icon"></i>
+                                </h4>
+                            </div>
+                        </a>
+
+
+
+                        <!-- Card body -->
+                        <div id="collapseTerceiros" class="collapse" role="tabpanel" aria-labelledby="heading79" data-parent="#accordionApontamento" aria-expanded="true" style="">
+                            <div class="card-body">
+
+                                <!--Top Table UI-->
+                                <div class="table-ui p-2 mb-3 mx-3 mb-4">
+
+                                    <!--Grid row-->
+                                    <div class="row"></div>
+                                    <!--Grid row-->
+
+                                </div>
+                                <!--Top Table UI-->
+                                <!-- Table responsive wrapper -->
+                                <div class="table-responsive mx-3">
+                                    @Html.LabelFor(model => model.ServicoCode, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                                    <div class="col-md-10">
+                                        <div class="input-group">
+                                            @Html.DropDownList("ServicoCode", Model.ServicoList, htmlAttributes: new { required = "required", id = "ServicoCode", type = "number", @class = "chosen-select", data_placeholder = "Selecione um serviço" })
+                                        </div>
+                                    </div>
+
+                                    @Html.LabelFor(model => model.QtySobra, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            @Html.EditorFor(model => model.QtySobra, new { htmlAttributes = new { @style = "padding-top: 2px; height: 30px;", @class = "form-control", type = "number", placeholder = "0", step = "1", min = "0" } })
+                                        </div>
+                                    </div>
+
+                                    @Html.LabelFor(model => model.QtyResto, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            @Html.EditorFor(model => model.QtyResto, new { htmlAttributes = new { @style = "padding-top: 2px; height: 30px;", @class = "form-control", type = "number", placeholder = "0", step = "1", min = "0" } })
+                                        </div>
+                                    </div>
+
+                                    @Html.LabelFor(model => model.QtyPlan, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            @Html.EditorFor(model => model.QtyPlan, new { htmlAttributes = new { @style = "padding-top: 2px; height: 30px;", @class = "form-control readonly", type = "number", placeholder = "0", step = "1", min = "0", @readonly = "true" } })
+                                        </div>
+                                    </div>
+
+
+                                    @Html.LabelFor(model => model.QtyRef, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            @Html.EditorFor(model => model.QtyRef, new { htmlAttributes = new { @style = "padding-top: 2px; height: 30px;", @class = "form-control readonly", type = "number", placeholder = "0", step = "1", min = "0", @readonly = "true" } })
+                                        </div>
+                                    </div>
+
+                                    <!---->
+                                    <div class="clearfix" style="margin-bottom: 20px;"></div>
+
+                                    <!--Table-->
+                                    <table id="dtTerceiros" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 250px">@Html.DisplayNameFor(model => model.BPs.First().BPCardCode)</th>
+                                                <th>@Html.DisplayNameFor(model => model.BPs.First().BPCardName)</th>
+                                                <th>@Html.DisplayNameFor(model => model.BPs.First().BPQtyRefeicao)</th>
+                                                <th style="width: 130px;padding: 5px 8px 5px 5px;border: 2px dashed #0000003b;"><button type="button" id="btnTerceirosAdd" class="btn-default pull-right" onclick="ClickModelTerceirosAdd()" style="width:100px"><span class="fa fa-user-plus fa-right"></span> Terceiros</button></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- Table responsive wrapper -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion card -->
+                    <!-- Accordion card -->
+                    <div class="card">
+
+                        <!-- Card header -->
+                        <a data-toggle="collapse" data-parent="#accordionApontamento" href="#collapseContrato" aria-expanded="false" aria-controls="collapseContrato">
+                            <div class="card-header grey-lighten-3" role="tab" id="heading79">
+                                <h4>
+                                    <i class="fa fa-exchange fa-right"></i><span> Contratos</span>
+                                    <i class="fa fa-angle-down rotate-icon"></i>
+                                </h4>
+                            </div>
+                        </a>
+
+                        <!-- Card body -->
+                        <div id="collapseContrato" class="collapse" role="tabpanel" aria-labelledby="heading79" data-parent="#accordionApontamento">
+                            <div class="card-body">
+
+                                <!--Top Table UI-->
+                                <div class="table-ui p-2 mb-3 mx-3 mb-4">
+
+                                    <!--Grid row-->
+                                    <div class="row"></div>
+                                    <!--Grid row-->
+
+                                </div>
+                                <!--Top Table UI-->
+                                <!-- Table responsive wrapper -->
+                                <div class="table-responsive mx-3">
+
+
+                                    <!--Table-->
+                                    <table id="dtInsumo" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">@Html.DisplayNameFor(model => model.Itens.First().Tipo)</th>
+                                                <th style="width: 95px;">@Html.DisplayNameFor(model => model.Itens.First().ItemCode)</th>
+                                                <th>@Html.DisplayNameFor(model => model.Itens.First().ItemName)</th>
+                                                <th style="width: 98px;">@Html.DisplayNameFor(model => model.Itens.First().QtyPlanejado)</th>
+                                                <th style="width: 27px;">@Html.DisplayNameFor(model => model.Itens.First().Und)</th>
+                                                <th style="width: 80px;">@Html.DisplayNameFor(model => model.Itens.First().QtyEfetiva)</th>
+                                                <th style="width: 90px;">@Html.DisplayNameFor(model => model.Itens.First().QtyUtilizada)</th>
+                                                <th style="width: 60px;">@Html.DisplayNameFor(model => model.Itens.First().QtyDif)</th>
+                                                <th style="width: 60px;">@Html.DisplayNameFor(model => model.Itens.First().QtySaldo)</th>
+                                                <th>@Html.DisplayNameFor(model => model.Itens.First().Motivo)</th>
+                                                <th>@Html.DisplayNameFor(model => model.Itens.First().Justificativa)</th>
+                                                <th style="width: 60px;"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                    <!--Table-->
+                                </div>
+                                <!-- Table responsive wrapper -->
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- Accordion card -->
+
+                    <div class="card">
+
+                        <!-- Card header -->
+                        <a data-toggle="collapse" data-parent="#accordionApontamento" href="#collapseContratoFechado" aria-expanded="false" aria-controls="collapseContratoFechado">
+                            <div class="card-header grey-lighten-3" role="tab" id="heading79">
+                                <h4>
+                                    <i class="fa fa-exchange fa-right"></i><span> OPs Fechadas</span>
+                                    <i class="fa fa-angle-down rotate-icon"></i>
+                                </h4>
+                            </div>
+                        </a>
+
+                        <!-- Card body -->
+                        <div id="collapseContratoFechado" class="collapse" role="tabpanel" aria-labelledby="heading79" data-parent="#accordionApontamento">
+                            <div class="card-body">
+
+                                <!--Top Table UI-->
+                                <div class="table-ui p-2 mb-3 mx-3 mb-4">
+
+                                    <!--Grid row-->
+                                    <div class="row"></div>
+                                    <!--Grid row-->
+
+                                </div>
+                                <!--Top Table UI-->
+                                <!-- Table responsive wrapper -->
+                                <div class="table-responsive mx-3">
+
+
+                                    <!--Table-->
+                                    <table id="dtInsumoFechado" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">@Html.DisplayNameFor(model => model.Itens.First().Tipo)</th>
+                                                <th style="width: 95px;">@Html.DisplayNameFor(model => model.Itens.First().ItemCode)</th>
+                                                <th>@Html.DisplayNameFor(model => model.Itens.First().ItemName)</th>
+                                                <th style="width: 98px;">@Html.DisplayNameFor(model => model.Itens.First().QtyPlanejado)</th>
+                                                <th style="width: 27px;">@Html.DisplayNameFor(model => model.Itens.First().Und)</th>
+                                                <th style="width: 80px;">@Html.DisplayNameFor(model => model.Itens.First().QtyEfetiva)</th>
+                                                <th style="width: 90px;">@Html.DisplayNameFor(model => model.Itens.First().QtyUtilizada)</th>
+                                                <th style="width: 60px;">@Html.DisplayNameFor(model => model.Itens.First().QtyDif)</th>
+                                                <th style="width: 60px;">@Html.DisplayNameFor(model => model.Itens.First().QtySaldo)</th>
+                                                <th>@Html.DisplayNameFor(model => model.Itens.First().Motivo)</th>
+                                                <th>@Html.DisplayNameFor(model => model.Itens.First().Justificativa)</th>
+                                                <th style="width: 60px;"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                    <!--Table-->
+                                </div>
+                                <!-- Table responsive wrapper -->
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                    <!--/.Accordion wrapper-->
+
+                </div>
+
+                <button type="button" class="btn btn-default pull-left" onclick="location.href='@Url.Action("Menu", "Apetit")'"><span class="fa fa-reply fa-right"></span> Voltar</button>
+            </div>
+
+        </div>
+    </div>
+
+}
+
+
+
+@Html.Partial("modal")
+@Html.Partial("modalChange")
+@Html.Partial("modalTerceirosAdd")
+@*@Html.Partial("modalTerceirosEdit")*@
+@Html.Partial("modalTerceirosDelete")
+@Html.Partial("modalCreate")
+@Html.Partial("modalDelete")
+
+
+@section Scripts{
+    <script src="~/Scripts/Views/Apontamento/index.js"></script>
+}
+

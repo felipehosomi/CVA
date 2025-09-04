@@ -1,0 +1,46 @@
+﻿@Styles.Render("~/Content/Loading")
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Listagem de <strong>Horas</strong> do projeto</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="col-md-2">
+                            <label>Horas Orçadas: <b>{{Projeto.HorasOrcadasFormat}}</b></label>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Horas Consumidas: <b>{{Projeto.HorasConsumidasFormat}}</b></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" style="padding-top:20px;">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="col-md-8">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><b>Especialidade</b></td>
+                                        <td><b>Horas Vendidas</b></td>
+                                        <td><b>Horas Consumidas</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="line in Projeto.HorasVendidas">
+                                        <td>{{line.Especialidade}}</td>
+                                        <td>{{line.HorasFormat}}</td>
+                                        <td>{{line.HorasConsumidasFormat}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jquery-1.12.3.min.js"></script>
+<script src="~/Scripts/plugins/maskedinput/jquery.maskedinput.js"></script>

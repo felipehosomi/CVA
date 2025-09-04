@@ -1,0 +1,95 @@
+﻿@model CVA.Portal.Producao.Model.Producao.ProducaoModel
+
+@{
+    Layout = null;
+}
+
+@using CVA.Portal.Producao.Model.Producao;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Portal de Produção</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Content/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="~/Content/custom.min.css" rel="stylesheet">
+
+    <link href="~/Content/custom.css" rel="stylesheet">
+
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+
+</head>
+<body class="login">
+    <div class="login_wrapper" style="max-width: 1280px;margin-top: 25px;">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <img style="margin-bottom: 50px" src="~/Content/Images/logo.png" />
+                <span style="display: block; margin-bottom: 25px">Informe o código de barras para iniciar o apontamento ou escolha um da lista abaixo</span>
+                @using (Html.BeginForm("ApontamentoOPConfirmarInicio", "Producao", FormMethod.Post))
+                {
+                    <div class="form-group" style="width: 270px; margin: auto">
+                        <label for="user" class="control-label">Código de Barras</label>
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                            @Html.TextBoxFor(m => m.BarCode, new { @class = "form-control has-feedback-left", required = "required", placeholder = "Informe o código de barras", title = "Informe o código de barras", autofocus = "", autocomplete = "off" })
+                            <span class="fa fa-barcode form-control-feedback left" aria-hidden="true"></span>
+                        </div>
+                        <span class="help-block"></span>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <button type="submit" value="OK" name="submit" class="btn btn-success" style="width: 250px">OK</button>
+                        @if (ViewBag.Error != null)
+                        {
+                            <div id="ErrorMsg" class="alert alert-error" style="width: 350px; margin: auto">@ViewBag.Error</div>
+                        }
+                    </div>
+                }
+                @if (ViewBag.OpList != null)
+                {
+                    List<ProducaoModel> opList = ViewBag.OpList;
+                    if (opList.Count > 0)
+                    {
+                        <div style="overflow: auto; height: 500px">
+                            <label>Ordens disponíveis:</label>
+                            <table class="table table-responsive table-striped table-bordered">
+                                <tr>
+                                    <th>Código de barras</th>
+                                    <th>Nr. OP</th>
+                                    <th>Cód. item</th>
+                                    <th>Descrição</th>
+                                    <th>Etapa</th>
+                                    <th>Recurso</th>
+                                    <th>Saldo</th>
+                                </tr>
+                                @for (int i = 0; i < opList.Count; i++)
+                                {
+                                    string barcode = opList[i].NrOP.ToString().PadLeft(6, '0') + opList[i].CodEtapa.ToString().PadLeft(3, '0') + opList[i].RecursoLineNum.ToString().PadLeft(4, '0');
+                                    <tr>
+                                        <td>@barcode</td>
+                                        <td>@opList[i].NrOP</td>
+                                        <td>@opList[i].ItemCode</td>
+                                        <td>@opList[i].ItemName</td>
+                                        <td>@opList[i].Etapa</td>
+                                        <td>@opList[i].RecursoName</td>
+                                        <td>@opList[i].Quantidade</td>
+                                        <td><a class="btn btn-info" style="margin: 0" href="@Url.Action("ApontamentoOPConfirmarInicio", "Producao", new { barcode = barcode })">Iniciar</a></td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+                    }
+                }
+                <img style="margin-top: 70px" src="~/Content/Images/cva_logo.png" />
+            </section>
+        </div>
+    </div>
+</body>
+</html>

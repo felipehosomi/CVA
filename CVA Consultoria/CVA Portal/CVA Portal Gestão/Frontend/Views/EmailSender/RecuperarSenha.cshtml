@@ -1,0 +1,49 @@
+﻿@model MODEL.Classes.UserModel
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/ico" href="http://www.cvaconsultoria.com.br/images/favicon/favicon.ico" />
+        <title>CVA Consultoria - Login</title>
+    </head>
+    <body>
+        <div class="page-content-wrap" ng-controller="OportunittyController">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+            <div id="login-overlay" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body" style="background-color: rgba(128, 128, 128, 0.45);">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-offset-3">
+                                <img src="~/img/logo.png" />
+                            </div>
+                        </div><br />
+                        <div class="row">
+                            <div class="col-xs-10 col-md-offset-1">
+                                <div class="well">
+                                    @using (Html.BeginForm("EnviarSenhaEmail", "EmailSender", FormMethod.Post))
+                                    {
+                                        <div class="form-group">
+                                            <label for="email" class="control-label">E-mail</label>
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @required = "required", @placeholder = "Insira seu e-mail", @title = "Insira seu e-mail" })
+                                            <span style="color:red" align="center">@ViewBag.LoginError</span>
+                                        </div>
+                                        <button type="submit" value="login" name="submit" class="btn btn-success btn-block">Enviar</button>
+
+                                        <div class="checkbox">
+                                            @Html.ActionLink("Voltar para o login", "Login", "Login")
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

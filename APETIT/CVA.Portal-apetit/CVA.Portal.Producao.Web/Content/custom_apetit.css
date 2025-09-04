@@ -1,0 +1,25 @@
+﻿@charset "UTF-8";
+
+.grey-lighten-5 {
+    background-color: #fafafa !important;
+}
+
+.grey-lighten-4 {
+    background-color: #f5f5f5 !important;
+}
+
+.grey-lighten-3 {
+    background-color: #eee !important;
+}
+
+.grey-lighten-2 {
+    background-color: #e0e0e0 !important;
+}
+
+.grey-lighten-1 {
+    background-color: #bdbdbd !important;
+}
+
+.readonly {
+    cursor: not-allowed;
+}

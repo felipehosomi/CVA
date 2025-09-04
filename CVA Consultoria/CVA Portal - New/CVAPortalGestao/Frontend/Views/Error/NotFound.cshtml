@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+@Styles.Render("~/Content/themedefault")
+<div class="error-container">
+    <div class="error-code">404</div>
+    <div class="error-text">Página não encontrada</div>
+    <div class="error-subtext">A página solicitada não foi encontrada em nossos servidores, favor contatar o administrador do sistema.</div>
+    <div class="error-actions">
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn btn-info btn-block btn-lg" onclick="document.location.href = '/';">Voltar ao Login</button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary btn-block btn-lg" onclick="history.back();">Enviar relatório de falhas</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Script/jquery")
+@Scripts.Render("~/Script/jqueryui")
+@Scripts.Render("~/Script/bootstrap")
+
+@Scripts.Render("~/Script/plugins")
+@Scripts.Render("~/Script/action")
+
+<script src="~/Scripts/plugins/noty/layouts/topCenter.js"></script>
+<script src="~/Scripts/plugins/noty/layouts/topLeft.js"></script>
+<script src="~/Scripts/plugins/noty/layouts/topRight.js"></script>
+<script src="~/Scripts/plugins/noty/themes/default.js"></script>

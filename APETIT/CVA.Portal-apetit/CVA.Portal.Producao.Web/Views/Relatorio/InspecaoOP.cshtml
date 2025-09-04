@@ -1,0 +1,46 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<CVA.Portal.Producao.Model.Qualidade.FichaInspecaoModel>
+<div class="x_panel">
+    @using (Html.BeginForm("InspecaoOP", "Relatorio", FormMethod.Post))
+    {
+        <div class="form-group">
+            <div style="display: table">
+                <div class="col-md-2" style="width:180px">
+                    <div class="input-group">
+                        <label class="control-label" for="tbxDataDe">Data</label>
+                        @Html.TextBox("startDate", null, new { @type = "date", @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-2" style="width:180px">
+                    <div class="input-group">
+                        <label class="control-label" for="tbxDataAte">Até</label>
+                        @Html.TextBox("endDate", null, new { @type = "date", @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-2" style="width: 300px">
+                    <div class="input-group">
+                        <label class="control-label" for="tbxNF">Etapa</label>
+                        @Html.DropDownList("codEtapa", (SelectList)ViewBag.EtapaSelectList, "", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-2" style="width:200px;margin-top: 29px;">
+                    <div class="input-group">
+                        <button id="btnFiltro" type="submit" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Pesquisando" class="btn btn-success">Buscar <span class="fa fa-search fa-right"></span></button>
+                        @if (Model != null)
+                        {
+                            <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("DownloadPlanilha", "Relatorio", new { tipoInspec = "OP" })'">Excel <span class="fa fa-download fa-right"></span></button>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div id="reportResult" style="padding-left: 10px;">
+                @if (Model != null)
+                {
+                    @Html.Partial("InspecaoOPResultado")
+                }
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Diário</a></li>
+    <li class="active"><a href="#">Períodos</a></li>
+</ul>
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-right"></span> Períodos Fechados</h2>
+</div>
+<div class="page-content-wrap" ng-controller="NotePeriodController" ng-init="OnLoad()">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <h3 class="panel-title">Registros </h3>
+                    <ul class="panel-controls">
+                        <li>
+                            <button type="button" class="btn btn-success pull-right" ng-click="Novo()">Adicionar Período Fechado<span class="fa fa-plus-square-o fa-right"></span></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table" id="table-export">
+                            <thead>
+                                <tr>
+                                    <td><b>Ano</b></td>
+                                    <td><b>Mês</b></td>
+                                    <td><b>Descrição</b></td>
+                                    <td align="right"><b>#</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in NotePeriods">
+                                    <td>{{item.Year}}</td>
+                                    <td>{{item.Month}}</td>
+                                    <td>{{item.Description}}</td>
+                                    <td align="right">
+                                        <button type="button" class="btn btn-danger" ng-click="Excluir(item)" data-toggle="tooltip" title="Excluir período"><span class="glyphicon glyphicon-remove"></span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

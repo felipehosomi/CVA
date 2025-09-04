@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanfePrintingService", "DanfePrintingService\DanfePrintingService.csproj", "{5DF99CEA-DCDF-403A-BB2E-50EA87CB619B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanfePrintingService.Controller", "DanfePrintingService.Controller\DanfePrintingService.Controller.csproj", "{FD183D70-428A-4B63-9FF8-2462C530CF8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DF99CEA-DCDF-403A-BB2E-50EA87CB619B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF99CEA-DCDF-403A-BB2E-50EA87CB619B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF99CEA-DCDF-403A-BB2E-50EA87CB619B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF99CEA-DCDF-403A-BB2E-50EA87CB619B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD183D70-428A-4B63-9FF8-2462C530CF8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD183D70-428A-4B63-9FF8-2462C530CF8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD183D70-428A-4B63-9FF8-2462C530CF8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD183D70-428A-4B63-9FF8-2462C530CF8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DanfePrintingService.Controller\\DanfePrintingService.Controller.csproj
+		SccProjectName1 = DanfePrintingService.Controller
+		SccLocalPath1 = DanfePrintingService.Controller
+		SccProjectUniqueName2 = DanfePrintingService\\DanfePrintingService.csproj
+		SccProjectName2 = DanfePrintingService
+		SccLocalPath2 = DanfePrintingService
+	EndGlobalSection
+EndGlobal

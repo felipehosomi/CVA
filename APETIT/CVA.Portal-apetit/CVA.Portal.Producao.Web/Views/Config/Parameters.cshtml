@@ -1,0 +1,47 @@
+﻿@model CVA.Portal.Producao.Model.Configuracoes.ParametrosModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="x_panel">
+        <div class="x_content">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_title">
+                        <h2>Parametros</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <br />
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Apontamento Parcial*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    @Html.CheckBoxFor(m => m.PermiteParcial)
+                                    @Html.HiddenFor(m => m.Code)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Busca Inspeção MP*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    @Html.DropDownList("InspecaoMP", null, htmlAttributes: new { required = "required", @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary pull-right">Salvar <span class="fa fa-floppy-o fa-right"></span></button>
+                            <a href='@Url.Action("Index")' data-toggle="tooltip" title="Voltar" class="btn btn-primary pull-right">
+                                <span class="fa fa-arrow-left"></span> Voltar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

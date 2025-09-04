@@ -1,0 +1,113 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/Loading")
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Cadatros</a></li>
+    <li><a href="#">Projetos</a></li>
+    <li class="active">Recursos</li>
+</ul>
+<div class="page-content-wrap" ng-controller="ProjectResourcesController">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Alocação de <strong> Recursos</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Projeto</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <p id="loading00" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                        <span class="input-group-addon"><span class="fa fa-globe"></span></span>
+                                        <select name="status" class="form-control" ng-model="project.Id" ng-change="ProjectSelected()" ng-options="selected.Id as selected.Code for selected in ProjectList">
+                                            <option value="">Selecione</option>
+                                        </select>
+                                    </div>
+                                    <span class="help-block">Selecione o projeto</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Recurso</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <p id="loading01" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                        <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                        <select name="status" class="form-control" ng-model="collaborators.Id" ng-change="CollaboratorSelected()" ng-options="selected.Id as selected.Name for selected in CollaboratorList">
+                                            <option value="">Selecione</option>
+                                        </select>
+                                    </div>
+                                    <span class="help-block">Selecione o recurso desejado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button id="bAdicionar" type="button" class="btn btn-info" ng-click="AddLines()">Adicionar</button>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-12 col-xs-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <td hidden="hidden"></td>
+                                            <td class="col-md-3">Projeto</td>
+                                            <td class="col-md-3">Recurso | Colaborador</td>
+                                            <td class="col-md-3">#</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="hol in ResourcesList">
+                                            <td hidden="hidden">{{hol.Id}}</td>
+                                            <td>{{hol.ProjectCode}}</td>
+                                            <td>{{hol.Name}}</td>
+                                            <td><button type="button" class="btn btn-danger" ng-click="RemoveLine($index)">X</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default pull-left" ng-click="ClearForm()">Limpar Formulário <span class="fa fa-trash-o fa-right"></span></button>
+                    <button type="button" class="btn btn-primary pull-right" ng-disabled="IsProcessing" ng-click="Save()">Salvar Recursos <span class="fa fa-floppy-o fa-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p>Alocação(ões) realizadas com sucesso!</p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close" id="btn-ok">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Script/jquery")

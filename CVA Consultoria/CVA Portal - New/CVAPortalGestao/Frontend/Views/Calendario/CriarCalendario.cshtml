@@ -1,0 +1,203 @@
+﻿@model MODEL.Classes.CalendarModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Configurações</a></li>
+    <li><a href="/Calendario/Pesquisar">Calendário</a></li>
+    <li class="active">Cadastrar</li>
+</ul>
+<div class="page-content-wrap" ng-controller="CalendarController" ng-init="InitValue(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <div class="panel panel-default tabs">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active" id="tab-first-li"><a href="#tab-first" role="tab" data-toggle="tab">Calendário</a></li>
+            <li id="tab-second-li"><a href="#tab-second" role="tab" data-toggle="tab">Feriados | Recessos</a></li>
+        </ul>
+        <div class="panel-body tab-content">
+            <div class="tab-pane active" id="tab-first">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"> Gerar<strong> Calendário</strong></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Nome</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                    <input type="text" class="form-control" tabindex="1" ng-model="calendar.Name"/>
+                                                </div>
+                                                <span class="help-block">Insira um nome para o calendário</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Data Inicial</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                                    <input type="date" class="form-control" ng-model="calendar.InitialDate" tabindex="3" />
+                                                </div>
+                                                <span class="help-block">Insira a data de inicial do calendário</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Status</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                                    <select name="status" class="form-control" ng-change="StatusSelected()" ng-model="calendar.Status.Id" ng-options="selected.Id as selected.Descricao for selected in StatusList" required>
+                                                        <option value="">Selecione</option>
+                                                    </select> 
+                                                </div>
+                                                <span class="help-block">Selecione o status do calendário</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Data Final</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                                    <input type="date" class="form-control" value="2016-12-31" ng-model="calendar.FinishDate" tabindex="4"/>
+                                                </div>
+                                                <span class="help-block">Insira a data final do calendário</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Observação</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                    <textarea class="form-control" rows="4" ng-model="calendar.Description" tabindex="5"></textarea>
+                                                </div>
+                                                <span class="help-block">Insira uma observação ao calendário</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-second" class="tab-pane">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"> Informar<strong> Feriados</strong></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Feriado</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                    <input type="text" class="form-control" ng-model="calendar.Holiday.Description" tabindex="6"/>
+                                                </div>
+                                                <span class="help-block">Insira o nome do feriado</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Data</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                                    <input type="date" class="form-control" ng-model="calendar.Holiday.Date" tabindex="7"/>
+                                                </div>
+                                                <span class="help-block">Insira a data do feriado</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Status</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-spinner"></span></span>
+                                                    <input type="text" class="form-control" readonly="readonly" ng-model="calendar.StatusSelectedDescription"/>
+                                                </div>
+                                                <span class="help-block">Status do feriado</span>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn btn-info" ng-click="AddLines()" ng-disabled="calendar.Holiday.Description == null || calendar.Holiday.Description == '' || calendar.Holiday.Date == null">Adicionar</button>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-12 col-xs-12">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <td class="col-md-3">Data</td>
+                                                        <td class="col-md-3">Feriado | Recesso</td>
+                                                        <td class="col-md-3">#</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="feriados">
+                                                    <tr ng-repeat="hol in HolidaysList">
+                                                        <td>{{hol.Date | date: "dd/MM/yyyy"}}</td>
+                                                        <td>{{hol.Description}}</td>
+                                                        <td><button type="button" class="btn btn-danger" ng-click="RemoveLine($index)">X</button></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-default pull-left" ng-click="ClearForm()">Limpar Formulário <span class="fa fa-trash-o fa-right"></span></button>
+                <button type="button" class="btn btn-primary pull-right" ng-disabled="IsProcessing" ng-click="SaveCalendar()">Salvar Calendário <span class="fa fa-floppy-o fa-right"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p>Calendário criado com sucesso!</p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/Script/jquery")

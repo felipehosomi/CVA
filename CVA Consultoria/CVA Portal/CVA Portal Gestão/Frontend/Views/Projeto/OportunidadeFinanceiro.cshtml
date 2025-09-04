@@ -1,0 +1,79 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Informações<strong> Financeiras</strong></h3>
+                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: {{VisualPercent}}%; float:right">
+                        {{VisualPercent}}%
+                    </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Valor da Oportunidade</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-money"></span></span>
+                                    <input type="text" ng-blur="OportunittyValue()" ng-disabled="status == 2" class="form-control" tabindex="1" ng-model="oportunitty.Financial.OportunittyValue" />
+                                </div>
+                                <span class="help-block">Informe o valor da oportunidade</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Política Despesa</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-money"></span></span>
+                                    <select class="form-control" ng-disabled="status == 2" ng-model="oportunitty.ExpenseManager">
+                                        <option value="">Selecione</option>
+                                        <option value="C"> Cliente </option>
+                                        <option value="L"> Local </option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o responsável pela política de despesa</span>
+                            </div>
+                            <label class="col-md-3 control-label">AMS</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span id ="AMS" class="input-group-addon"><span class="fa fa-money"></span></span>
+                                    <select class="form-control" ng-disabled="status == 2" ng-model="oportunitty.AMS" >
+                                        <option value="">Selecione</option>
+                                        <option value="0"> Não </option>
+                                        <option value="1"> Sim </option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Informe se é do tipo AMS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Valor de Negócio</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-money"></span></span>
+                                    <input type="text" class="form-control" tabindex="1" ng-model="oportunitty.Financial.BusinessValue" disabled="disabled" />
+                                </div>
+                                <span class="help-block">Valor de negócio calculado com a temperatura</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Tipo de Contrato</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <p id="loading08" class="loader" img src="~/Content/Loading.gif"><img src="~/Content/Loading.gif" /></p>
+                                    <span class="input-group-addon"><span class="fa fa-file-o"></span></span>
+                                    <select class="form-control" ng-disabled="status == 2" ng-model="oportunitty.Financial.ContractType.Id" ng-options="selected.Id as selected.Name for selected in ContractTypeList">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o tipo de contrato</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

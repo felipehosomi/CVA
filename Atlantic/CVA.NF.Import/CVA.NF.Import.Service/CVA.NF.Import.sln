@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.NF.Import.Service", "CVA.NF.Import.Service.csproj", "{330ED2BA-9F3C-4222-B1CD-ACE8BD3D0C10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.NF.Import", "..\CVA.NF.Import\CVA.NF.Import.csproj", "{FDEA7685-0E2C-4D77-ACE8-41588C467CA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.NF.Import.UpdateNF", "..\CVA.NF.Import.UpdateNF\CVA.NF.Import.UpdateNF.csproj", "{2196B6B3-4693-459C-BAF9-07574D49FED7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "..\..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{330ED2BA-9F3C-4222-B1CD-ACE8BD3D0C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{330ED2BA-9F3C-4222-B1CD-ACE8BD3D0C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{330ED2BA-9F3C-4222-B1CD-ACE8BD3D0C10}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{330ED2BA-9F3C-4222-B1CD-ACE8BD3D0C10}.Debug|x86.Build.0 = Debug|Any CPU
+		{330ED2BA-9F3C-4222-B1CD-ACE8BD3D0C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{330ED2BA-9F3C-4222-B1CD-ACE8BD3D0C10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{330ED2BA-9F3C-4222-B1CD-ACE8BD3D0C10}.Release|x86.ActiveCfg = Release|Any CPU
+		{330ED2BA-9F3C-4222-B1CD-ACE8BD3D0C10}.Release|x86.Build.0 = Release|Any CPU
+		{FDEA7685-0E2C-4D77-ACE8-41588C467CA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDEA7685-0E2C-4D77-ACE8-41588C467CA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDEA7685-0E2C-4D77-ACE8-41588C467CA2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FDEA7685-0E2C-4D77-ACE8-41588C467CA2}.Debug|x86.Build.0 = Debug|Any CPU
+		{FDEA7685-0E2C-4D77-ACE8-41588C467CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDEA7685-0E2C-4D77-ACE8-41588C467CA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDEA7685-0E2C-4D77-ACE8-41588C467CA2}.Release|x86.ActiveCfg = Release|Any CPU
+		{FDEA7685-0E2C-4D77-ACE8-41588C467CA2}.Release|x86.Build.0 = Release|Any CPU
+		{2196B6B3-4693-459C-BAF9-07574D49FED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2196B6B3-4693-459C-BAF9-07574D49FED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2196B6B3-4693-459C-BAF9-07574D49FED7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2196B6B3-4693-459C-BAF9-07574D49FED7}.Debug|x86.Build.0 = Debug|Any CPU
+		{2196B6B3-4693-459C-BAF9-07574D49FED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2196B6B3-4693-459C-BAF9-07574D49FED7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2196B6B3-4693-459C-BAF9-07574D49FED7}.Release|x86.ActiveCfg = Release|Any CPU
+		{2196B6B3-4693-459C-BAF9-07574D49FED7}.Release|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.ActiveCfg = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.Build.0 = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.ActiveCfg = Release|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCAEA7D9-CFB2-4A30-90AE-757B573E94E9}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CVA.NF.Import.Service.csproj
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = ..\\CVA.NF.Import\\CVA.NF.Import.csproj
+		SccProjectName2 = ../CVA.NF.Import
+		SccLocalPath2 = ..\\CVA.NF.Import
+		SccProjectUniqueName3 = ..\\CVA.NF.Import.UpdateNF\\CVA.NF.Import.UpdateNF.csproj
+		SccProjectName3 = ../CVA.NF.Import.UpdateNF
+		SccLocalPath3 = ..\\CVA.NF.Import.UpdateNF
+		SccProjectUniqueName4 = ..\\..\\..\\Helpers\\CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName4 = ../../../Helpers/CVA.AddOn.Common
+		SccLocalPath4 = ..\\..\\..\\Helpers\\CVA.AddOn.Common
+	EndGlobalSection
+EndGlobal

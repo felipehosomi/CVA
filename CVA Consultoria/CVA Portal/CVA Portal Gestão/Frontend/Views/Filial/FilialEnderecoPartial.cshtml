@@ -1,0 +1,85 @@
+﻿<div class="modal"></div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Informar<strong> Endereço</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">CEP*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                    <input type="text" class="form-control" name="cep" ng-blur="SearchCep()" ng-model="branch.Address.ZipCode" id="cep-mask" tabindex="12"/>
+                                </div>
+                                <span class="help-block">Informe o número do CEP</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nº</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                    <input type="text" class="form-control" ng-model="branch.Address.StreetNo" tabindex="13"/>
+                                </div>
+                                <span class="help-block">Informe o número do endereço</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Cidade*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                    <input type="text" class="form-control" name="cidade" ng-model="branch.Address.City" tabindex="14"/>
+                                </div>
+                                <span class="help-block">Informe o nome da cidade</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Rua*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                    <input type="text" class="form-control" name="rua" ng-model="branch.Address.Street" tabindex="15"/>
+                                </div>
+                                <span class="help-block">Informe o nome da rua</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Bairro*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                    <input type="text" class="form-control" name="bairro" ng-model="branch.Address.Block" tabindex="16"/>
+                                </div>
+                                <span class="help-block">Informe o nome do bairro</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Estado - UF*</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                    <select class="form-control" name="estado" ng-model="branch.Address.Uf.Id" ng-options="selected.Id as selected.State for selected in UfList" tabindex="17">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Selecione o estado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plugins/jQuery/jquery-1.12.3.min.js"></script>
+<script src="~/Scripts/plugins/maskedinput/jquery.maskedinput.js"></script>
+<script>
+    $('#cep-mask').mask('99999-999');
+</script>

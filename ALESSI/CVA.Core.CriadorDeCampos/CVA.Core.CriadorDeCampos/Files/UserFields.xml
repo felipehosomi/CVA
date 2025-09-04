@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<userFields>
+  <field>
+    <tableName>OOND</tableName>
+    <name>descfob</name>
+    <type>db_Float</type>
+    <size>11</size>
+    <description>Descrição FOB</description>
+    <subType>st_Percentage</subType>
+    <mandatory>tNO</mandatory>
+    <linkedTable></linkedTable>
+    <defaultValue></defaultValue>
+    <validValues>
+      <validValue>
+        <value></value>
+        <description></description>
+      </validValue>
+    </validValues>
+  </field>
+  <field>
+    <tableName>OOND</tableName>
+    <name>desccif</name>
+    <type>db_Float</type>
+    <size>11</size>
+    <description>Descrição CIF</description>
+    <subType>st_Percentage</subType>
+    <mandatory>tNO</mandatory>
+    <linkedTable></linkedTable>
+    <defaultValue></defaultValue>
+    <validValues>
+      <validValue>
+        <value></value>
+        <description></description>
+      </validValue>
+    </validValues>
+  </field>
+  <field>
+    <tableName>OCTG</tableName>
+    <name>descfob</name>
+    <type>db_Float</type>
+    <size>11</size>
+    <description>Descrição FOB</description>
+    <subType>st_Percentage</subType>
+    <mandatory>tNO</mandatory>
+    <linkedTable></linkedTable>
+    <defaultValue></defaultValue>
+    <validValues>
+      <validValue>
+        <value></value>
+        <description></description>
+      </validValue>
+    </validValues>
+  </field>
+  <field>
+    <tableName>OCTG</tableName>
+    <name>desccif</name>
+    <type>db_Float</type>
+    <size>11</size>
+    <description>Descrição CIF</description>
+    <subType>st_Percentage</subType>
+    <mandatory>tNO</mandatory>
+    <linkedTable></linkedTable>
+    <defaultValue></defaultValue>
+    <validValues>
+      <validValue>
+        <value></value>
+        <description></description>
+      </validValue>
+    </validValues>
+  </field>
+</userFields>

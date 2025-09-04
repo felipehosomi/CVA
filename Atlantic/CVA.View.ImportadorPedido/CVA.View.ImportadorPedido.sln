@@ -1,0 +1,131 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.ImportadorPedido", "CVA.View.ImportadorPedido\CVA.View.ImportadorPedido.csproj", "{AFE84942-49FB-4272-9656-BEF125E2F582}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{E1380C21-C4FA-4994-BF5C-6C9B4F874AC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MODEL", "MODEL\MODEL.csproj", "{A28856C5-5B62-4899-B100-8403315BF338}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{34AD654E-65EC-4171-BEC0-C17D990BE040}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CONTROLLER", "CONTROLLER\CONTROLLER.csproj", "{2C84CD14-CC50-4237-A1B9-D78A9C540258}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.AdicionaTabelaUsuario", "CVA.View.AdicionaTabelaUsuario\CVA.View.AdicionaTabelaUsuario.csproj", "{4901A1BB-1AD8-4EB8-B4C1-98581615F3F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CVA.View.ImportadorPedido.Setup", "CVA.View.ImportadorPedido.Setup\CVA.View.ImportadorPedido.Setup.vbproj", "{41F719E1-FE3E-433B-92AB-8E7DA92997C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFE84942-49FB-4272-9656-BEF125E2F582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFE84942-49FB-4272-9656-BEF125E2F582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFE84942-49FB-4272-9656-BEF125E2F582}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AFE84942-49FB-4272-9656-BEF125E2F582}.Debug|x86.Build.0 = Debug|Any CPU
+		{AFE84942-49FB-4272-9656-BEF125E2F582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFE84942-49FB-4272-9656-BEF125E2F582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFE84942-49FB-4272-9656-BEF125E2F582}.Release|x86.ActiveCfg = Release|Any CPU
+		{AFE84942-49FB-4272-9656-BEF125E2F582}.Release|x86.Build.0 = Release|Any CPU
+		{E1380C21-C4FA-4994-BF5C-6C9B4F874AC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1380C21-C4FA-4994-BF5C-6C9B4F874AC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1380C21-C4FA-4994-BF5C-6C9B4F874AC4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E1380C21-C4FA-4994-BF5C-6C9B4F874AC4}.Debug|x86.Build.0 = Debug|Any CPU
+		{E1380C21-C4FA-4994-BF5C-6C9B4F874AC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1380C21-C4FA-4994-BF5C-6C9B4F874AC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1380C21-C4FA-4994-BF5C-6C9B4F874AC4}.Release|x86.ActiveCfg = Release|Any CPU
+		{E1380C21-C4FA-4994-BF5C-6C9B4F874AC4}.Release|x86.Build.0 = Release|Any CPU
+		{A28856C5-5B62-4899-B100-8403315BF338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28856C5-5B62-4899-B100-8403315BF338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28856C5-5B62-4899-B100-8403315BF338}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A28856C5-5B62-4899-B100-8403315BF338}.Debug|x86.Build.0 = Debug|Any CPU
+		{A28856C5-5B62-4899-B100-8403315BF338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28856C5-5B62-4899-B100-8403315BF338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28856C5-5B62-4899-B100-8403315BF338}.Release|x86.ActiveCfg = Release|Any CPU
+		{A28856C5-5B62-4899-B100-8403315BF338}.Release|x86.Build.0 = Release|Any CPU
+		{34AD654E-65EC-4171-BEC0-C17D990BE040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34AD654E-65EC-4171-BEC0-C17D990BE040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34AD654E-65EC-4171-BEC0-C17D990BE040}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{34AD654E-65EC-4171-BEC0-C17D990BE040}.Debug|x86.Build.0 = Debug|Any CPU
+		{34AD654E-65EC-4171-BEC0-C17D990BE040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34AD654E-65EC-4171-BEC0-C17D990BE040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34AD654E-65EC-4171-BEC0-C17D990BE040}.Release|x86.ActiveCfg = Release|Any CPU
+		{34AD654E-65EC-4171-BEC0-C17D990BE040}.Release|x86.Build.0 = Release|Any CPU
+		{2C84CD14-CC50-4237-A1B9-D78A9C540258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C84CD14-CC50-4237-A1B9-D78A9C540258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C84CD14-CC50-4237-A1B9-D78A9C540258}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2C84CD14-CC50-4237-A1B9-D78A9C540258}.Debug|x86.Build.0 = Debug|Any CPU
+		{2C84CD14-CC50-4237-A1B9-D78A9C540258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C84CD14-CC50-4237-A1B9-D78A9C540258}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C84CD14-CC50-4237-A1B9-D78A9C540258}.Release|x86.ActiveCfg = Release|Any CPU
+		{2C84CD14-CC50-4237-A1B9-D78A9C540258}.Release|x86.Build.0 = Release|Any CPU
+		{4901A1BB-1AD8-4EB8-B4C1-98581615F3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4901A1BB-1AD8-4EB8-B4C1-98581615F3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4901A1BB-1AD8-4EB8-B4C1-98581615F3F0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4901A1BB-1AD8-4EB8-B4C1-98581615F3F0}.Debug|x86.Build.0 = Debug|Any CPU
+		{4901A1BB-1AD8-4EB8-B4C1-98581615F3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4901A1BB-1AD8-4EB8-B4C1-98581615F3F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4901A1BB-1AD8-4EB8-B4C1-98581615F3F0}.Release|x86.ActiveCfg = Release|Any CPU
+		{4901A1BB-1AD8-4EB8-B4C1-98581615F3F0}.Release|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.ActiveCfg = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.Build.0 = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.ActiveCfg = Release|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.Build.0 = Release|x86
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Debug|x86.ActiveCfg = Debug|x86
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Debug|x86.Build.0 = Debug|x86
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Release|x86.ActiveCfg = Release|x86
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86FB2725-4D28-46E1-865E-7AC3136493B9}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccProjectUniqueName0 = CVA.View.ImportadorPedido\\CVA.View.ImportadorPedido.csproj
+		SccProjectName0 = CVA.View.ImportadorPedido
+		SccLocalPath0 = CVA.View.ImportadorPedido
+		SccProjectUniqueName1 = BLL\\BLL.csproj
+		SccProjectName1 = BLL
+		SccLocalPath1 = BLL
+		SccProjectUniqueName2 = MODEL\\MODEL.csproj
+		SccProjectName2 = MODEL
+		SccLocalPath2 = MODEL
+		SccProjectUniqueName3 = DAL\\DAL.csproj
+		SccProjectName3 = DAL
+		SccLocalPath3 = DAL
+		SccProjectUniqueName4 = CONTROLLER\\CONTROLLER.csproj
+		SccProjectName4 = CONTROLLER
+		SccLocalPath4 = CONTROLLER
+		SccProjectUniqueName5 = CVA.View.AdicionaTabelaUsuario\\CVA.View.AdicionaTabelaUsuario.csproj
+		SccProjectName5 = CVA.View.AdicionaTabelaUsuario
+		SccLocalPath5 = CVA.View.AdicionaTabelaUsuario
+		SccProjectUniqueName6 = CVA.View.ImportadorPedido.Setup\\CVA.View.ImportadorPedido.Setup.vbproj
+		SccProjectName6 = CVA.View.ImportadorPedido.Setup
+		SccLocalPath6 = CVA.View.ImportadorPedido.Setup
+		SccLocalPath7 = .
+		SccProjectUniqueName8 = ..\\..\\Helpers\\CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName8 = ../Helpers/CVA.AddOn.Common
+		SccLocalPath8 = ..\\..\\Helpers\\CVA.AddOn.Common
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CarrierVehicle_Delete" xml:space="preserve">
+    <value>DELETE FROM [@CVA_CAR_VEHICLE]
+WHERE U_CarrierCode = '{0}'</value>
+  </data>
+  <data name="CarrierVehicle_Get" xml:space="preserve">
+    <value>SELECT 
+	VEH.Code		[Veículo],
+	TYP.Name		[Tipo],
+	VEH.U_Plate		[Placa],
+	VEH.U_Color		[Cor],
+	VEH.U_Driver	[Motorista]
+ FROM [@CVA_CAR_VEHICLE] CAR
+	INNER JOIN [@CVA_VEHICLE] VEH
+		ON CAR.U_CodeVehicle = VEH.Code
+	INNER JOIN [@CVA_VEH_TYPE] TYP
+		ON TYP.Code = VEH.U_VehicleType
+WHERE CAR.U_CarrierCode = '{0}'</value>
+  </data>
+  <data name="Invoice_Get" xml:space="preserve">
+    <value>SELECT DISTINCT
+	'N'				[Selecionar], 
+	OINV.DocNum		[Nr. Doc],  
+	OINV.Serial		[Nr. NF],
+	OINV.CardCode	[Cód. PN],
+	OINV.CardName	[Nome PN],
+	OINV.DocDate	[Data],
+	INV12.Carrier	[Transp.],
+	INV12.GrsWeight	[Peso Bruto],
+	OCRD.CardName	[Nome Transp.],
+	OINV.DocTotal	[Valor Total],
+	INV12.[State]	[UF],
+	INV12.CityS		[Cidade]
+FROM OINV WITH(NOLOCK)
+	INNER JOIN [@SKL25NFE] SKILL WITH(NOLOCK)
+		ON SKILL.U_DocEntry			= OINV.DocEntry
+		AND SKILL.U_tipoDocumento	= 'NS'
+		AND SKILL.U_cdErro			= 100
+	INNER JOIN INV12 WITH(NOLOCK)
+		ON INV12.DocEntry = OINV.DocEntry
+	LEFT JOIN OCRD WITH(NOLOCK)
+		ON OCRD.CardCode = INV12.Carrier
+	
+WHERE NOT EXISTS
+(
+	SELECT TOP 1 1 
+	FROM [@CVA_WAYBILL_INV] INV WITH(NOLOCK)
+		INNER JOIN [@CVA_WAYBILL] WAYBILL WITH(NOLOCK)
+			ON WAYBILL.Code = INV.Code
+			AND WAYBILL.U_Status = 1
+	WHERE INV.U_DocNum = OINV.DocNum
+)
+AND OINV.CANCELED = 'N'</value>
+  </data>
+  <data name="State_Get" xml:space="preserve">
+    <value>SELECT * FROM OCST</value>
+  </data>
+  <data name="VehicleType_Get" xml:space="preserve">
+    <value>SELECT * FROM [@CVA_VEH_TYPE]</value>
+  </data>
+  <data name="Vehicle_Get" xml:space="preserve">
+    <value>SELECT 
+	VEH.Code,
+	TYP.Code		[TypeCode],
+	TYP.Name		[TypeDesc],
+	VEH.U_Plate		[Plate],
+	VEH.U_Color		[Color],
+	VEH.U_Driver	[Driver]
+FROM [@CVA_VEHICLE] VEH
+	INNER JOIN [@CVA_VEH_TYPE] TYP
+		ON TYP.Code = VEH.U_VehicleType
+WHERE VEH.Code = '{0}'</value>
+  </data>
+  <data name="Vehicle_GetByCarrierCode" xml:space="preserve">
+    <value>SELECT 
+	VEH.Code		[Veículo],
+	TYP.Name		[Tipo],
+	VEH.U_Plate		[Placa],
+	VEH.U_Color		[Cor],
+	VEH.U_Driver	[Motorista]
+FROM [@CVA_VEHICLE] VEH
+	INNER JOIN [@CVA_VEH_TYPE] TYP
+		ON TYP.Code = VEH.U_VehicleType
+	INNER JOIN [@CVA_CAR_VEHICLE] CAR
+		ON CAR.U_CodeVehicle = VEH.Code
+WHERE CAR.U_CarrierCode = '{0}'</value>
+  </data>
+  <data name="Vehicle_GetForCombobox" xml:space="preserve">
+    <value>SELECT 
+	VEH.Code,
+	TYP.Name + ' - '  + 
+	VEH.U_Color + ' - ' + 
+	VEH.U_Plate + ' - ' + 
+	VEH.U_Driver	[Description]
+FROM [@CVA_VEHICLE] VEH
+	INNER JOIN [@CVA_VEH_TYPE] TYP
+		ON TYP.Code = VEH.U_VehicleType
+	INNER JOIN [@CVA_CAR_VEHICLE] CAR
+		ON CAR.U_CodeVehicle = VEH.Code
+WHERE CAR.U_CarrierCode = '{0}'</value>
+  </data>
+</root>

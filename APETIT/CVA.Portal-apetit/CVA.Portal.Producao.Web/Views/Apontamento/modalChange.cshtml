@@ -1,0 +1,67 @@
+﻿@model CVA.Portal.Producao.Model.ApontamentoModel
+
+    <div id="modal-change" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <input type="hidden" value="" id="modalItemOrderId" />
+        <input type="hidden" value="" id="modalItemOrderLineId" />
+        <input type="hidden" value="" id="modalItemItemCode" />
+        <input type="hidden" value="" id="modalItemItemName" />
+        <input type="hidden" value="" id="modalItemProdName" />
+        <input type="hidden" value="" id="modalItemQty" />
+
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title">Substituição do item</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+
+                        <label class="control-label col-md-2" for="lblOrderName" style="padding-top: 2px; height: 30px;">Ordem de produção: </label>
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                <label class="control-label" id="modelOrderName" for="lblOrderName" style="padding-top: 2px; height: 30px;">-</label>
+                            </div>
+                        </div>
+
+                        <label class="control-label col-md-2" for="lblProdName" style="padding-top: 2px; height: 30px;">Insumo: </label>
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                <label class="control-label" id="modelProdName" for="lblProdName" style="padding-top: 2px; height: 30px;">-</label>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="border-top: 1px solid #e5e5e5; padding-bottom: 15px;"></div>
+
+                        @Html.LabelFor(model => model.Itens.First().ItemCode, new { @class = "control-label col-md-2", @style = "padding-top: 2px; height: 30px;" })
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                @Html.DropDownList("ItemCode", new SelectList(new[] { new SelectListItem { Value = "", Text = "" } }, "Value", "Text"), htmlAttributes: new { required = "required", id = "ItemCodeList", type = "string", @class = "chosen-select", data_placeholder = "Selecione um item" })
+                            </div>
+                        </div>
+
+
+                        <label class="control-label col-md-2" id="lblQtySaidaChange" style="padding-top: 2px; height: 30px;">Qtd Saída:</label>
+                        <label class="control-label col-md-4" id="lblQtySaidaTxtChange" style="padding-top: 2px; height: 30px;">0.00</label>
+
+                        <label class="control-label col-md-2" id="lblQtyEstoqueChange" style="padding-top: 2px; height: 30px;">Qtd Estoque:</label>
+                        <label class="control-label col-md-4" id="lblQtyEstoqueTxtChange" style="padding-top: 2px; height: 30px;">0.00</label>
+
+                        <label class="control-label col-md-2" id="lblQtyTotalChange" style="padding-top: 2px; height: 30px;">Qtd Estoque Atual:</label>
+                        <label class="control-label col-md-4" id="lblQtyTotalTxtChange" style="padding-top: 2px; height: 30px;">0.00</label>
+
+                        <label class="control-label col-md-2" id="lblCustoChange" style="padding-top: 2px; height: 30px;">Custo:</label>
+                        <label class="control-label col-md-4" id="lblCustoTxtChange" style="padding-top: 2px; height: 30px;">0.00</label>
+
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnEdit" type="button" class="btn btn-primary" onclick="ChangeClick()">Salvar</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,268 @@
+﻿@Styles.Render("~/Content/Loading")
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12" style="background-color:#778aa8; padding:5px; color:white; font:bold;">
+                        <div class="col-md-2">
+                            <label>Valor do Projeto</label>
+                            <div class="input-group">
+                                <h5>R$ {{Projeto.ValorProjeto}}</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Custo Orçado</label>
+                            <div class="input-group">
+                                <h5>R$ {{Projeto.CustoOrcado}}</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Custo Real</label>
+                            <div class="input-group">
+                                <h5>R$ {{Projeto.CustoReal}}</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Horas Orçadas</label>
+                            <div class="input-group">
+                                <h5>{{Projeto.HorasOrcadas}}</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Horas Consumidas</label>
+                            <div class="input-group">
+                                <h5>{{Projeto.HorasConsumidas}}</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Ingresso Líquido</label>
+                            <div class="input-group">
+                                <h5>R$ {{Projeto.IngressoLiquido}}</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Risco Gerenciável</label>
+                            <div class="input-group">
+                                <h5>R$ {{Projeto.RiscoGerenciavel}}</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Ingresso Total</label>
+                            <div class="input-group">
+                                <h5>R$ {{Projeto.IngressoTotal}}</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-2">
+                                <label>% Backoffice</label>
+                                <div class="input-group">
+                                    <h5>{{Pricing.PorcentagemBackoffice}}</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>% Risco</label>
+                                <div class="input-group">
+                                    <h5>{{Pricing.PorcentagemRisco}}</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>% Margem</label>
+                                <div class="input-group">
+                                    <h5>{{Pricing.PorcentagemMargem}}</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>% Comissão</label>
+                                <div class="input-group">
+                                    <h5>{{Pricing.PorcentagemComissao}}</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>% Impostos</label>
+                                <div class="input-group">
+                                    <h5>{{Pricing.PorcentagemImposto}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div hidden="hidden" class="panel-body" style="border: 1px solid;" ng-hide="Projeto.Id > 0">
+    <div class=" row" style="padding-bottom: 10px">
+        <div class="col-md-12" style="padding-bottom: 10px">
+            <div class="col-md-4">
+                <label>Colaborador</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="fa fa-spin"></span></span>
+                    <select class="form-control" ng-model="EspecialidadeCol" ng-change="SelectedCol()" ng-options="selected.Id as selected.Nome for selected in Recursos" tabindex="4">
+                        <option value="">Selecione</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label>Especialidade</label>
+                <div class="input-group">
+                    <p id="load-06" class="loader"><img src="~/Content/Loading.gif" /></p>
+                    <span class="input-group-addon"><span class="fa fa-star-o"></span></span>
+                    <select class="form-control" ng-model="Especialidade.Id" ng-options="selected.Id as selected.Name for selected in ColaboradorEspecialidades" tabindex="4">
+                        <option value="">Selecione</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label>Valor</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="Especialidade.Valor" tabindex="5" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label>Horas</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="Especialidade.Horas" tabindex="6" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3" style="padding-top:22px">
+                    <button type="button" class="btn btn-info" ng-click="AddPricingItens()">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="background-color:mintcream;  border:1px dotted">
+        <div class="col-md-12">
+            <div class="col-md-12 col-xs-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td><b>Recurso</b></td>
+                            <td><b>Especialidade</b></td>
+                            <td><b>Valor/Hora</b></td>
+                            <td><b>Horas</b></td>
+                            <td><b>Custo</b></td>
+                            <td><b>#</b></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="line in ItensPricing">
+                            <td hidden="hidden">{{line.Id}}</td>
+                            <td>{{line.Colaborador}}</td>
+                            <td>{{line.Especialidade.Name}}</td>
+                            <td>R$ {{line.Valor}}</td>
+                            <td>{{line.Horas}}</td>
+                            <td>R$ {{line.Custo}}</td>
+                            <td>
+                                <button type="button" class="btn btn-default" ng-click="EditPricingItens($index)">Editar</button>
+                                <button type="button" class="btn btn-danger" ng-click="RemovePricingItens($index)">X</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-bottom: 10px; padding-top:30px">
+        <div class="col-md-12">
+            <div class="col-md-2">
+                <label>% Backoffice</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="Pricing.PorcentagemBackoffice" ng-blur="CalculatePricing()" tabindex="7" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label>% Risco</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="Pricing.PorcentagemRisco" ng-blur="CalculatePricing()" tabindex="8" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label>% Margem</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="Pricing.PorcentagemMargem" ng-blur="CalculatePricing()" tabindex="9" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label>% Comissão</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="Pricing.PorcentagemComissao" ng-blur="CalculatePricing()" tabindex="10" />
+                </div>
+            </div>
+            <div class="col-md-3" style="padding-top:22px">
+                <button type="button" class="btn btn-info" ng-click="CalculatePricing()">Calcular</button>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="background-color:mintcream;  border:1px dotted">
+        <div class="col-md-12">
+            <div class="col-md-12 col-xs-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td><b>Recurso</b></td>
+                            <td><b>Especialidade</b></td>
+                            <td><b>Backoffice</b></td>
+                            <td><b>Risco</b></td>
+                            <td><b>Margem</b></td>
+                            <td><b>Comissão</b></td>
+                            <td><b>Sub-Total</b></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="line in ItensPricing">
+                            <td>{{line.Colaborador}}</td>
+                            <td>{{line.Especialidade.Name}}</td>
+                            <td>R$ {{line.ValorBackoffice}}</td>
+                            <td>R$ {{line.ValorRisco}}</td>
+                            <td>R$ {{line.ValorMargem}}</td>
+                            <td>R$ {{line.ValorComissao}}</td>
+                            <td>R$ {{line.Subtotal}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-bottom: 10px; padding-top:30px">
+        <div class="col-md-12">
+            <div class="col-md-2">
+                <label>% Impostos</label>
+                <div class="input-group">
+                    <input type="text" ng-blur="CalculatePricing()" class="form-control" ng-model="Pricing.PorcentagemImposto" tabindex="11" />
+                </div>
+            </div>
+            <div class="col-md-3" style="padding-top:22px">
+                <button type="button" class="btn btn-info" ng-click="CalculatePricing()">Calcular</button>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="background-color:mintcream;  border:1px dotted">
+        <div class="col-md-12">
+            <div class="col-md-12 col-xs-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td><b>Especialidade</b></td>
+                            <td><b>Despesas</b></td>
+                            <td><b>Sub Total + Despesas</b></td>
+                            <td><b>Preço com impostos</b></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="line in ItensPricing">
+                            <td>{{line.Especialidade.Name}}</td>
+                            <td>R$ {{line.Expenses}}</td>
+                            <td>R$ {{line.SubTotalExpenses}}</td>
+                            <td>R$ {{line.SubTotalExpensesTaxes}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/plugins/jQuery/jquery-1.12.3.min.js"></script>
+<script src="~/Scripts/plugins/maskedinput/jquery.maskedinput.js"></script>

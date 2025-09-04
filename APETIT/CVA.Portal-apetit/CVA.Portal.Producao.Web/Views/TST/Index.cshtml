@@ -1,0 +1,321 @@
+﻿
+@model CVA.Portal.Producao.Model.ApontamentoModel
+@{
+    ViewBag.Title = "APONTAMENTO DE REFEIÇÕES";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Apetit/_Layout.cshtml";
+}
+
+
+@if (ViewBag.Error != null)
+{
+    <div id="AlertError" class="col-md-12 col-sm-12 col-xs-12 form-group" onclick="$(this).fadeOut(250)">
+        <div id="ErrorMsg" class="alert alert-error" style="white-space: pre-line; margin-bottom: 0px;">@ViewBag.Error</div>
+    </div>
+}
+@if (ViewBag.Success != null)
+{
+    <div id="AlertSuccess" class="col-md-12 col-sm-12 col-xs-12 form-group" onclick="$(this).fadeOut(250)">
+        <div id="SuccessMsg" class="alert alert-success" style="margin-bottom: 0px;">@ViewBag.Success</div>
+    </div>
+}
+@if (ViewBag.Alert != null)
+{
+    <div id="AlertSuccess" class="col-md-12 col-sm-12 col-xs-12 form-group" onclick="$(this).fadeOut(250)">
+        <div id="SuccessMsg" class="alert alert-info" style="margin-bottom: 0px;">@ViewBag.Alert</div>
+    </div>
+}
+
+
+
+    <div>
+        <div class="row">
+            <form action="http://localhost:60774/Apontamento/Create" method="post">
+                <input name="__RequestVerificationToken" type="hidden" value="K9xTlumzBb5bjwwXCVTXhFfyrJzRRbY9IMp7fu5y6SS7Pm4yF_53LlFU0V-jIV212vl5KFYqUZW4kCzKfDnpLuG68uBiyiSvdNYbEMBDkaM1">            <div class="x_panel" style="min-height: 2000px;">
+                    <button type="button" data-toggle="modal" data-target="#modal-novo" class="btn btn-default pull-right">Novo <span class="fa fa-calendar-plus-o fa-right"></span></button>
+                    <button type="button" class="btn btn-dark pull-right" onclick="RefreshContratoInfo()">Atualizar <span class="fa fa-refresh fa-right"></span></button>
+                    <div class="x_title">
+                        <h2>APONTAMENTO DE REFEIÇÕES</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <input type="hidden" value="5" id="countList">
+
+
+
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="BPLIdCode" style="padding-top: 2px; height: 30px;">Filial</label>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <select class="form-control" id="BPLIdCode" name="BPLIdCode" required="required" type="number" value="APETIT - MATRIZ (UNIDADE LONDRINA)">
+                                            <option value="2">APETIT - CENTRO DE DISTRIBUICAO</option>
+                                            <option value="1">APETIT - MATRIZ (UNIDADE LONDRINA)</option>
+                                            <option value="3">APETIT - TEXTIL - APUCARANA</option>
+                                            <option value="4">APETIT - APUCARANA LEATHER</option>
+                                            <option value="5">APETIT - RONDOPAR</option>
+                                            <option value="6">APETIT - TAMARANA METAIS</option>
+                                            <option value="7">APETIT - AURORA</option>
+                                            <option value="8">APETIT - GRANJEIRO</option>
+                                            <option value="9">APETIT - MOLAS FAMA</option>
+                                            <option value="10">APETIT - NORTOX</option>
+                                            <option value="11">APETIT - LOUIS DREYFUS - APUCARANA</option>
+                                            <option value="12">APETIT - BATERIAS RANGER APUCARANA</option>
+                                            <option value="13">APETIT - BATERIAS RANGER MARILANDIA</option>
+                                            <option value="14">APETIT - COLIBRI MOVEIS</option>
+                                            <option value="15">APETIT - INTEGRA</option>
+                                            <option value="16">APETIT - MUFFATAO IBIPORA</option>
+                                            <option value="17">APETIT - LOWCUCAR</option>
+                                            <option value="18">APETIT - PLANTI CENTER</option>
+                                            <option value="19">APETIT - FLEXOPRINT</option>
+                                            <option value="20">APETIT - PADO</option>
+                                            <option value="21">APETIT - ATLAS SCHINDLER</option>
+                                            <option value="22">APETIT - PANCO - CAMBARA - 373</option>
+                                            <option value="23">APETIT - PANCO - CAMBARA - 207</option>
+                                            <option value="24">APETIT - USINA SAO FERNANDO</option>
+                                            <option value="25">APETIT - JUMBO PESADA</option>
+                                            <option value="26">APETIT - NORPAVE</option>
+                                            <option value="27">APETIT - SPOLLER</option>
+                                            <option value="28">APETIT - SERILON</option>
+                                            <option value="29">APETIT - CONFEPAR</option>
+                                            <option value="30">APETIT - SONHART - LONDRINA</option>
+                                            <option value="31">APETIT - SONHART - ROLANDIA</option>
+                                            <option value="32">APETIT - MIDIOGRAF</option>
+                                            <option value="33">APETIT - A. YOSHII</option>
+                                            <option value="34">APETIT - AGROINDUSTRIAL SAO FRANCISCO</option>
+                                            <option value="35">APETIT - TEMPERBRAS</option>
+                                            <option value="36">APETIT - MAGAZINE LUIZA - LONDRINA</option>
+                                            <option value="37">APETIT - MAGAZINE LUIZA - LOND LANCHONE</option>
+                                            <option value="38">APETIT - SERILON - LANCHONETE</option>
+                                            <option value="39">APETIT - ATT ARMAZENAGEM</option>
+                                            <option value="40">APETIT - MUFFATAO CAAROPO</option>
+                                            <option value="41">APETIT - ADECOAGRO - ANGELICA</option>
+                                            <option value="42">APETIT - CURTUME TOURO</option>
+                                            <option value="43">APETIT - LIANE</option>
+                                            <option value="44">APETIT - USINA ALTO ALEGRE - PRES PRUDE</option>
+                                            <option value="45">APETIT - REGINA - BATAGUASSU</option>
+                                            <option value="46">APETIT - USINA ALTO ALEGRE - SANTO INAC</option>
+                                            <option value="47">APETIT - USINA CAETE</option>
+                                            <option value="48">APETIT - SINA - PIRAPOZINHO</option>
+                                            <option value="49">APETIT - LOUIS DREYFUS - PARAGUACU</option>
+                                            <option value="50">APETIT - BEBIDAS FUNADA</option>
+                                            <option value="51">APETIT - ADECOAGRO - IVINHEMA</option>
+                                            <option value="52">APETIT - LENOXX</option>
+                                            <option value="53">APETIT - MAGAZINE LUIZA - SIMOES FILHO</option>
+                                            <option value="54">APETIT - ITALSOFA</option>
+                                            <option value="55">APETIT - MAGAZINE LUIZA - ALHANDRA</option>
+                                            <option value="56">APETIT - PAO DE ACUCAR - RECIFE</option>
+                                            <option value="57">APETIT - SAPELBA</option>
+                                            <option value="58">APETIT - INDAIA</option>
+                                            <option value="59">APETIT - CERVEJARIA PROIBIDA</option>
+                                            <option value="60">APETIT - MAGAZINE LUIZA - CANDEIAS</option>
+                                            <option value="61">APETIT - COROAVES</option>
+                                            <option value="62">APETIT - PERFILEVE - 373</option>
+                                            <option value="63">APETIT - PERFILEVE - 207</option>
+                                            <option value="64">APETIT - ANTENAS AQUARIO</option>
+                                            <option value="65">APETIT - POLI-NUTRI</option>
+                                            <option value="66">APETIT - GTFOODS - PARAISO DO NORTE</option>
+                                            <option value="67">APETIT - COCAMAR</option>
+                                            <option value="68">APETIT - GTFOODS - MARINGA</option>
+                                            <option value="69">APETIT - GTFOODS - PARANAVAI</option>
+                                            <option value="70">APETIT - GTFOODS - TERRA BOA</option>
+                                            <option value="71">APETIT - GTFOODS - ADMINISTRATIVO</option>
+                                            <option value="72">APETIT - LOUIS DREYFUS - PARANAVAI</option>
+                                            <option value="73">APETIT - ZAELI</option>
+                                            <option value="74">APETIT - CRIVIALLI</option>
+                                            <option value="75">APETIT - PAKITA</option>
+                                            <option value="76">APETIT - COLLIBIKE</option>
+                                            <option value="77">APETIT - VIRGINIA DISTRIBUIDORA</option>
+                                            <option value="78">APETIT - DOCOL</option>
+                                            <option value="79">APETIT - CNT</option>
+                                            <option value="80">APETIT - SANTA CRUZ - CURITIBA</option>
+                                            <option value="81">APETIT - GUARARAPES - PALMAS</option>
+                                            <option value="82">APETIT - CARGILL</option>
+                                            <option value="83">APETIT - BIGFER</option>
+                                            <option value="84">APETIT - RIO DE UNA</option>
+                                            <option value="85">APETIT - TRANSLOVATO</option>
+                                            <option value="86">APETIT - MERCADOMOVEIS</option>
+                                            <option value="87">APETIT - ELIAN MATRIZ</option>
+                                            <option value="88">APETIT - ELIAN FILIAL</option>
+                                            <option value="89">APETIT - VIACAO CIDADE SORRISO</option>
+                                            <option value="90">APETIT - REFREX - GARUVA</option>
+                                            <option value="91">APETIT - LAVRAMA</option>
+                                            <option value="92">APETIT - LOUIS DREYFUS - PONTA GROSSA</option>
+                                            <option value="93">APETIT - LOUIS DREYFUS - PARANAGUA</option>
+                                            <option value="94">APETIT - COTRASA VEICULOS E SERVICOS</option>
+                                            <option value="95">APETIT - GEMU</option>
+                                            <option value="96">APETIT - AUTO VIACAO REDENTOR</option>
+                                            <option value="97">APETIT - THERMOID</option>
+                                            <option value="98">APETIT - PRALANA</option>
+                                            <option value="99">APETIT - SINA - ORLANDIA</option>
+                                            <option value="100">APETIT - LSI</option>
+                                            <option value="101">APETIT - POLENGHI - ANGATUBA</option>
+                                            <option value="102">APETIT - GALZERANO</option>
+                                            <option value="103">APETIT - PAPIRUS</option>
+                                            <option value="104">APETIT - TATE LYLE - 207</option>
+                                            <option value="105">APETIT - TATE LYLE - 119</option>
+                                            <option value="106">APETIT - SANTA CRUZ - ARARAQUARA</option>
+                                            <option value="107">APETIT - ITABOM</option>
+                                            <option value="108">APETIT - GPA - ITU</option>
+                                            <option value="109">APETIT - GPA - SAO CARLOS</option>
+                                            <option value="110">APETIT - CAST</option>
+                                            <option value="111">APETIT - APTI</option>
+                                            <option value="112">APETIT - REFREX - MAIRINQUE</option>
+                                            <option value="113">APETIT - SERVGAS</option>
+                                            <option value="114">APETIT - PANCO - GUARULHOS</option>
+                                            <option value="115">APETIT - FLEXFORM</option>
+                                            <option value="116">APETIT - PANCO - GUARAREMA</option>
+                                            <option value="117">APETIT - PAO DE ACUCAR - GUARULHOS</option>
+                                            <option value="118">APETIT - RR ETIQUETAS</option>
+                                            <option value="119">APETIT - CALDEX</option>
+                                            <option value="120">APETIT - TYCO</option>
+                                            <option value="121">APETIT - SAINT GOBAIN - MAUA</option>
+                                            <option value="122">APETIT - SAINT GOBAIN - SAO CAETANO</option>
+                                            <option value="123">APETIT - AURORA - GUARULHOS</option>
+                                            <option value="124">APETIT - AURORA - ARUJA</option>
+                                            <option value="125">APETIT - SABO</option>
+                                            <option value="126">APETIT - BUDAI - ITAPEVI</option>
+                                            <option value="127">APETIT - GPA - ANHANGUERA</option>
+                                            <option value="128">APETIT - GPA - BRIGADEIRO</option>
+                                            <option value="129">APETIT - GARRETT</option>
+                                            <option value="130">APETIT - TECNOPLAST</option>
+                                            <option value="131">APETIT - MTR TOPURA FASTENER</option>
+                                            <option value="132">APETIT - USINA VALE DO TIJUCO</option>
+                                            <option value="133">APETIT - AMBEV - UBERLANDIA</option>
+                                            <option value="134">APETIT - USINA VALE DO PONTAL</option>
+                                            <option value="135">APETIT - YARA BRASIL FERTILIZANTES UBA2</option>
+                                            <option value="136">APETIT - YARA BRASIL FERTILIZANTES UBA4</option>
+                                            <option value="137">APETIT - USINA SANTO ANGELO LTDA</option>
+                                            <option value="138">APETIT - FERT TOCANTINS - ARAGUARI</option>
+                                            <option value="139">APETIT - POLENGHI - GOIATUBA</option>
+                                            <option value="140">APETIT - AMBEV - ANAPOLIS</option>
+                                            <option value="141">APETIT - LOUIS DREYFUS - ALTO ARAGUAIA</option>
+                                            <option value="142">APETIT - LOUIS DREYFUS - ITUMBIARA</option>
+                                            <option value="143">APETIT - LOUIS DREYFUS - JATAI</option>
+                                            <option value="144">APETIT - SLC - QUERENCIA</option>
+                                            <option value="145">APETIT - PAO DE ACUCAR - HIDROLANDIA</option>
+                                            <option value="146">APETIT - FERT TOCANTINS - QUERENCIA</option>
+                                            <option value="147">APETIT - USINA ITAMARATI</option>
+                                            <option value="148">APETIT - SLC - SAPEZAL</option>
+                                            <option value="149">APETIT - SLC - CAMPOS DE JULIO</option>
+                                            <option value="150">APETIT - SLC - DIAMANTINO</option>
+                                            <option value="151">APETIT - SLC - DECIOLANDIA</option>
+                                            <option value="152">APETIT - SLC - PORTO DOS GAUCHOS</option>
+                                            <option value="153">APETIT - UNIÃO DE FAZENDAS INTROVINI</option>
+                                            <option value="154">APETIT - UNIDADE DE BENEFICIAMENTO DE CARNE</option>
+                                            <option value="155">APETIT - UNIDADE DE BENEFICIAMENTO DE VEGETAIS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="control-label col-md-2" for="ContratoCode" style="padding-top: 2px; height: 30px;">Nº do Contrato</label>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <select class="form-control" id="ContratoCode" name="ContratoCode" required="required" type="number"><option value="1">2RC INDUSTRIA DE EQUIPAMENTOS LTDA</option></select>
+                                    </div>
+                                </div>
+                                <label class="control-label col-md-2" for="ClienteCode" style="padding-top: 2px; height: 30px;">Cliente</label>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <input class="form-control text-box single-line" disabled="disabled" id="txtClienteName" name="ClienteName" style="padding-top: 2px; height: 30px;" type="text" value="C00001 - 2RC INDUSTRIA DE EQUIPAMENTOS LTDA">
+                                    </div>
+                                </div>
+                                <label class="control-label col-md-2" for="GrupoServicoCode" style="padding-top: 2px; height: 30px;">Grupo de Serviço</label>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <input class="form-control text-box single-line" disabled="disabled" id="txtGrupoServicoName" name="GrupoServicoName" style="padding-top: 2px; height: 30px;" type="text" value="001 - SABOR E MESA">
+                                    </div>
+                                </div>
+                                <label class="control-label col-md-2" for="apontamentoData" style="padding-top: 2px; height: 30px;">Data</label>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <input class="form-control text-box single-line" data-val="true" data-val-date="O campo Data De deve ser uma data." id="apontamentoData" name="apontamentoData" type="date" value="2020-02-12" style="height: 34px; width: 100%">
+                                    </div>
+                                </div>
+                                <label class="control-label col-md-2" for="ServicoCode" style="padding-top: 2px; height: 30px;">Serviço</label>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <select class="form-control" id="ServicoCode" name="ServicoCode" required="required" type="number"><option value="10.02.01.001.00">10.02.01.001.00 - ALMOCO</option><option value="10.02.15.001.00">10.02.15.001.00 - JANTAR</option><option value="10.02.05.001.00">10.02.05.001.00 - CEIA</option></select>
+                                    </div>
+                                </div>
+                                <label class="control-label col-md-2" for="Qty" style="padding-top: 2px; height: 30px;">Qtde Planejada</label>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <input class="form-control text-box single-line" data-val="true" data-val-number="The field Qtde de Refeições must be a number." data-val-required="The Qtde de Refeições field is required." id="Qty" min="0" name="Qty" placeholder="0" step="1" style="padding-top: 2px; height: 30px;" type="number" value="1000">
+                                    </div>
+                                </div>
+
+                                <label class="control-label col-md-2" for="Qty" style="padding-top: 2px; height: 30px;">Qtde Efeitva</label>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <input class="form-control text-box single-line" data-val="true" data-val-number="The field Qtde de Refeições must be a number." data-val-required="The Qtde de Refeições field is required." id="Qty" min="0" name="Qty" placeholder="0" step="1" style="padding-top: 2px; height: 30px;" type="number" value="700">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="dtInsumo_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                            <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div><div class="row">
+                                <div class="col-sm-12">
+                                    <table id="dtInsumo" class="table table-striped table-bordered dataTable no-footer" role="grid">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 518px;">Código Insumo</th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 326px;">Descição</th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 326px;">Quantidade Planejada</th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 326px;">Und Medida</th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 583px;">Quantidade Efetiva Planejada</th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 583px;">Quantidade a Apontar</th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 583px;">Motivo</th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 583px;">Justificativa</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr id="tr-0">
+                                                <td>01.01.01.010</td>
+                                                <td>CARNE ASSADA</td>
+                                                <td><label id="QtyPlanejado-0">1000</label></td>
+                                                <td>UND</td>
+                                                <td>700</td>
+                                                <td><input class="form-control text-box single-line" data-val="true" data-val-number="O campo Quantidade deve ser um número." data-val-required="O campo Quantidade é obrigatório." id="Itens_0__QtyConsumido" name="Itens[0].QtyConsumido" type="number" min="0" value="690" style="height: 23px;width: 100%;"></td>
+                                                <td><select class="form-control" id="ContratoCode" name="ContratoCode" required="required" type="number" style="height: 23px;width: 100%;"><option value="1">TEST</option></select></td>
+                                                <td><input class="form-control text-box single-line" id="Itens_0__QtyConsumido" type="text" value="" style="height: 23px;width: 100%;"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div><div class="row"><div class="col-sm-5"></div><div class="col-sm-7"></div></div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-default pull-left" onclick="location.href=&#39;/Apetit/Menu&#39;"><span class="fa fa-reply fa-right"></span> Voltar</button>
+                    <button type="button" class="btn btn-primary pull-right" onclick="submit()"><span class="fa fa-plus fa-right"></span> Salvar</button>
+                    <div id="modal-complementacao" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <input type="hidden" value="" id="modal-complementacao-Id">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    <h4 class="modal-title">Apontamento já realizado</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h4>Deseja enviar uma solicitação de complentação de apontamento?</h4>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" onclick="complementacaoApontamento()">Sim</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+@section Scripts{
+    <script src="~/Scripts/Views/Apontamento/index.js"></script>
+}

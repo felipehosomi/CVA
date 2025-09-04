@@ -1,0 +1,87 @@
+﻿@model MODEL.Classes.ClientModel[]
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/Loading")
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li><a href="#">Cadastros</a></li>
+    <li><a href="#">Clientes</a></li>
+    <li class="active">Pesquisar</li>
+</ul>
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-right"></span> Clientes</h2>
+</div>
+<div class="page-content-wrap" ng-controller="ClientMainController" ng-init="OnLoad()">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <h3 class="panel-title">Filtros</h3>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label">Razão Social</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" class="form-control" ng-blur="Search()" ng-model="client.Name" />
+                                    </div>
+                                </div>
+                                <div class="col-md-2" style="padding-top: 22px;">
+                                    <div class="input-group">
+                                        <button ng-click="Search()" type="button" class="btn btn-info pull-right"><span class="fa fa-search"></span> Pesquisar</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" style="padding-top: 22px;">
+                                    <div class="input-group">
+                                        <button onclick="NewClient()" type="button" class="btn btn-success pull-right"><span class="fa fa-plus"></span> Novo Cliente</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td><b>Razão Social</b></td>
+                                    <td><b>CNPJ</b></td>
+                                    <td><b>Status</b></td>
+                                    <td><b>#</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="client in ClientList">
+                                    <td hidden>{{client.Id}}</td>
+                                    <td>{{client.Name}}</td>
+                                    <td>{{client.CNPJ}}</td>
+                                    <td>{{client.Status.Descricao}}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default" ng-click="EditClient(client.Id)"><span class="fa fa-edit"></span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <section class="js-export-button-container">
+                            <h3>Exportar:</h3>
+                            <button class="btn btn-info" ng-click="ExportarExcel()"><i class="fa fa-table"></i>Excel</button>
+                            <button class="btn btn-info" ng-click="ExportarPDF()"><i class="fa fa-paste"></i>Pdf</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+
+<script>
+    function NewClient() {
+        window.location.href = '/Cliente/Cadastrar';
+    }
+</script>

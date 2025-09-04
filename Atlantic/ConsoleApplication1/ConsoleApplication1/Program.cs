@@ -1,0 +1,138 @@
+﻿using SAPbobsCOM;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var lst = new string[] { "SBODemoBR" };
+            //var lst = new string[] { /*"SBO_PRD_MOR0001", "SBO_PRD_REV0001", "SBO_PRD_SER0001", "SBO_PRD_VDG0001", "SBO_PRD_CBE0001", "SBO_PRD_CLB0001", "SBO_PRD_CMO0001", "SBO_PRD_PAE0002", "SBO_PRD_SVP0002", "SBO_PRD_SVP0003", "SBO_PRD_SVP0004", "SBO_PRD_SVP0005", "SBO_PRD_SVP0006", "SBO_PRD_SVP0007", "SBO_PRD_SVP0008", "SBO_PRD_SVP0009", "SBO_PRD_SVP0010", "SBO_PRD_SVP0011", "SBO_PRD_SVP0012", "SBO_PRD_SVP0013", "SBO_PRD_VBR0001", "SBO_PRD_CCF0001", "SBO_PRD_VDG0002", "SBO_PRD_CLB0002", "SBO_PRD_LGB0002", "SBO_PRD_SVP0014", "SBO_PRD_LGB0003", "SBO_PRD_CMO0002", "SBO_PRD_LGB0004", "SBO_PRD_LGB0005", "SBO_PRD_LGB0007", "SBO_PRD_LGB0006", "SBO_PRD_LGB0008", "SBO_REP_PRE0001", "SBO_REP_PRE0002","SBO_REP_REA0001", "SBO_REP_REA0002","SBO_PRD_AND0001",*/"SBO_PRD_EUR0002", "SBO_PRD_LGB0001", "SBO_PRD_RON0001", "SBO_PRD_SVP0001", "SBO_PRD_CFI0001", "SBO_PRD_CFI0002", "SBO_CON0001", "SBO_CON0002" };
+
+            ////atualizacao PN 02/01 - "SBO_PRD_MOR0001", "SBO_PRD_REV0001", "SBO_PRD_SER0001", "SBO_PRD_VDG0001", "SBO_PRD_CBE0001", "SBO_PRD_CLB0001", "SBO_PRD_CMO0001", "SBO_PRD_PAE0002", "SBO_PRD_SVP0002", "SBO_PRD_SVP0003", "SBO_PRD_SVP0004", "SBO_PRD_SVP0005", "SBO_PRD_SVP0006", "SBO_PRD_SVP0007", "SBO_PRD_SVP0008", "SBO_PRD_SVP0009", "SBO_PRD_SVP0010", "SBO_PRD_SVP0011", "SBO_PRD_SVP0012", "SBO_PRD_SVP0013", "SBO_PRD_VBR0001", "SBO_PRD_CCF0001", "SBO_PRD_VDG0002", "SBO_PRD_CLB0002", "SBO_PRD_LGB0002", "SBO_PRD_SVP0014", "SBO_PRD_LGB0003", "SBO_PRD_CMO0002", "SBO_PRD_LGB0004", "SBO_PRD_LGB0005", "SBO_PRD_LGB0007", "SBO_PRD_LGB0006", "SBO_PRD_LGB0008"
+            ///*/*"SBO_REP_PRE0001", "SBO_REP_PRE0002", "SBO_REP_REA0001", "SBO_REP_REA0002", "SBO_PRD_AND0001", "SBO_PRD_EUR0002", "SBO_PRD_LGB0001", "SBO_PRD_RON0001", "SBO_PRD_SVP0001", "SBO_PRD_CFI0001", "SBO_PRD_CFI0002",*/
+            ////"SBO_PRD_MOR0001", "SBO_PRD_REV0001", "SBO_PRD_SER0001", "SBO_PRD_VDG0001", "SBO_PRD_CBE0001", "SBO_PRD_CLB0001", "SBO_PRD_CMO0001", "SBO_PRD_PAE0002", "SBO_PRD_SVP0002", "SBO_PRD_SVP0003", "SBO_PRD_SVP0004", "SBO_PRD_SVP0005", "SBO_PRD_SVP0006", "SBO_PRD_SVP0007", "SBO_PRD_SVP0008", "SBO_PRD_SVP0009", "SBO_PRD_SVP0010", "SBO_PRD_SVP0011", "SBO_PRD_SVP0012", "SBO_PRD_SVP0013", "SBO_PRD_VBR0001", "SBO_PRD_CCF0001", "SBO_PRD_VDG0002", "SBO_PRD_CLB0002", "SBO_PRD_LGB0002", "SBO_PRD_SVP0014", "SBO_PRD_LGB0003",
+            try
+            {
+                foreach (var l in lst)
+                {
+                    //var c = new B1Connection("manager", "CVA$sap16", l, "SERVERSAP:30000", false, "sa", "sa@#Atlantic", BoDataServerTypes.dst_MSSQL2014, "SERVERSAP");
+                    var c = new B1Connection("manager", "manager", l, "localhost:30000", false, "sa", "sa@123", BoDataServerTypes.dst_MSSQL2014, "FELIPE-PC");
+                    Console.WriteLine("Conectando " + l);
+                    c.Connect();
+
+
+                    Recordset rst = (Recordset)c.oCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
+                    rst.DoQuery("SELECT * FROM ODPI WHERE DocStatus = 'O'");
+
+                    while (!rst.EoF)
+                    {
+                        var payment = (Payments)c.oCompany.GetBusinessObject(BoObjectTypes.oVendorPayments);
+
+                        payment.CardCode = rst.Fields.Item("CardCode").Value.ToString();
+                        payment.DocType = BoRcptTypes.rCustomer;
+                        payment.DocObjectCode = BoPaymentsObjectType.bopot_OutgoingPayments;
+                        payment.BPLID = (int)rst.Fields.Item("BPLId").Value;
+                        
+                        payment.DocDate = new DateTime(2016, 12, 31);
+                        payment.TaxDate = new DateTime(2016, 12, 31);
+
+                        payment.Invoices.DocEntry = (int)rst.Fields.Item("DocEntry").Value;
+                        payment.Invoices.InvoiceType = BoRcptInvTypes.it_DownPayment;
+                        
+                        payment.CashSum = (double)rst.Fields.Item("DocTotal").Value;
+                        payment.CashAccount = "6.1.01.01.0014";
+                        
+                        if (payment.Add() != 0)
+                            Console.WriteLine(c.oCompany.GetLastErrorDescription());
+
+                        rst.MoveNext();
+                    }
+
+                    Console.WriteLine("Conectado " + l);
+                    c.oCompany.Disconnect();
+                    Console.WriteLine("Desconectado " + l);
+                    c.oCompany = null;
+                    c = null;
+                    GC.Collect();
+                    GC.WaitForFullGCApproach();
+                    GC.WaitForPendingFinalizers();
+                    GC.WaitForFullGCComplete();
+
+                    Console.WriteLine();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.WriteLine("Fim");
+            Console.ReadKey();
+        }
+    }
+
+    public class B1Connection
+    {
+        public B1Connection()
+        {
+            oCompany = new Company();
+        }
+
+        public B1Connection(string username, string password, string companyDB, string licenseServer, bool useTrusted,
+            string dbUsername, string dbPassword, BoDataServerTypes dbServerType, string serverAddress)
+        {
+            oCompany = new Company();
+            Username = username;
+            Password = password;
+            CompanyDB = companyDB;
+            LicenseServer = licenseServer;
+            UseTrusted = useTrusted;
+            DbUsername = dbUsername;
+            DbPassword = dbPassword;
+            DbServerType = dbServerType;
+            ServerAddress = serverAddress;
+        }
+
+        public Company oCompany { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string CompanyDB { get; set; }
+        public bool UseTrusted { get; set; }
+        public string ServerAddress { get; set; }
+        public string DbPassword { get; set; }
+        public string DbUsername { get; set; }
+        public string LicenseServer { get; set; }
+        public BoDataServerTypes DbServerType { get; set; }
+
+        public Company Connect()
+        {
+            oCompany.UserName = Username;
+            oCompany.Password = Password;
+            oCompany.CompanyDB = CompanyDB;
+            oCompany.LicenseServer = LicenseServer;
+            oCompany.UseTrusted = false;
+            oCompany.DbUserName = DbUsername;
+            oCompany.DbPassword = DbPassword;
+            oCompany.DbServerType = BoDataServerTypes.dst_MSSQL2014;
+            oCompany.Server = ServerAddress;
+
+            if (oCompany.Connect() != 0)
+            {
+                int errCode;
+                string errMsg;
+
+                oCompany.GetLastError(out errCode, out errMsg);
+
+                throw new Exception($"{errCode} - {errMsg}");
+            }
+
+            return oCompany;
+        }
+    }
+}

@@ -1,0 +1,281 @@
+﻿input[type=checkbox] {
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+    margin-left: 10px !important;
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.dataTables_filter {
+    display: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: lightgray !important;
+    opacity: 1; /* Firefox */
+}
+
+input[aria-controls=tblLoteSerie] {
+   width: 120px !important;
+}
+
+body {
+    overflow-y: hidden !important;
+}
+
+.x_panel {
+    display: block;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    max-height: 680px;
+}
+
+/*footer{
+    padding: 8px !important;
+}*/
+
+select {
+    height: 24px;
+    padding: 1px 3px !important;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+    line-height: 16px !important;
+}
+
+textarea {
+    padding: 1px 5px !important;
+    font-size: 90% !important;
+    height: 45px !important;
+}
+
+input {
+    padding: 1px 5px !important;
+}
+
+    input[readonly=readonly] {
+        background-color: #eee;
+        border: none;
+    }
+
+.modal-xlg {
+    width: 90% !important;
+}
+
+.input-group {
+    width: 100%;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+    max-height: 200px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.site_title {
+    height: 100px !important;
+    margin-top: 10px !important;
+}
+
+.btn-small {
+    padding: 1px 6px !important;
+}
+
+.modal-dialog {
+    font-size: 90% !important;
+}
+
+    .modal-dialog input {
+        height: 24px;
+    }
+
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    padding: 4px !important;
+}
+
+.table-control button {
+    padding: 1px 6px !important;
+}
+
+.control-label {
+    margin-top: 5px !important;
+}
+
+.no-margin {
+    margin: 0px !important;
+}
+
+.disabled-control {
+    opacity: .9;
+    pointer-events: none;
+    cursor: not-allowed;
+    outline: 0;
+}
+
+.table-control input[type=date] {
+    width: 120px !important;
+    font-size: 90%;
+}
+
+.table input[type=text][type=number][type=date] {
+    height: 24px;
+}
+
+.table input[type=checkbox]{
+    margin: 8px 0px 4px 0px !important;
+}
+
+.table button {
+    margin-bottom: 0px;
+}
+
+.table-control input {
+    width: 80px;
+    padding: 1px;
+}
+
+.table-control > tbody > tr > td {
+    padding: 3px !important;
+    vertical-align: middle !important;
+}
+
+.message-box.open {
+    display: block;
+}
+
+.message-box .mb-container {
+    background: rgba(0, 0, 0, 0.9);
+    left: 0px;
+    padding: 20px;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+}
+
+    .message-box .mb-container .mb-middle {
+        color: #FFF;
+        left: 25%;
+        position: relative;
+        width: 50%;
+    }
+
+        .message-box .mb-container .mb-middle .mb-title {
+            float: left;
+            font-size: 31px;
+            font-weight: 400;
+            line-height: 36px;
+            padding: 10px 0px 0px;
+            width: 100%;
+        }
+
+            .message-box .mb-container .mb-middle .mb-title .fa,
+            .message-box .mb-container .mb-middle .mb-title .glyphicon {
+                float: left;
+                font-size: 38px;
+                margin-right: 10px;
+            }
+
+        .message-box .mb-container .mb-middle .mb-content {
+            float: left;
+            padding: 10px 0px 0px;
+            width: 100%;
+        }
+
+            .message-box .mb-container .mb-middle .mb-content p {
+                margin-bottom: 0px;
+            }
+
+        .message-box .mb-container .mb-middle .mb-footer {
+            float: left;
+            padding: 10px 0px;
+            width: 100%;
+        }
+
+.message-box.message-box-warning .mb-container {
+    background: rgba(254, 162, 35, 0.9);
+}
+
+.message-box.message-box-danger .mb-container {
+    background: rgba(182, 70, 69, 0.9);
+}
+
+.message-box.message-box-info .mb-container {
+    background: rgba(63, 186, 228, 0.9);
+}
+
+.message-box.message-box-success .mb-container {
+    background: rgba(149, 183, 93, 0.9);
+}
+
+.small-button {
+    padding: 1px 3px 1px 3px !important;
+    margin: 0px !important;
+}
+
+.condensed-table > tbody > tr > td, .condensed-table > tbody > tr > th, .condensed-table > tfoot > tr > td,
+.table > tfoot > tr > th, .condensed-table > thead > tr > td, .condensed-table > thead > tr > th {
+    padding: 3px !important;
+}
+
+.submit-progress-bg {
+    opacity: .5 !important;
+}
+
+.submit-progress {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    height: 6em;
+    padding-top: 2.3em;
+    z-index: 1;
+    /* The following properties are the ones most likely to change */
+    width: 20em;
+    /* Set 'margin-left' to a negative number that is 1/2 of 'width' */
+    margin-left: -10em;
+    padding-left: 2.1em;
+    background-color: #2A3F54;
+    color: white;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    border-radius: 0.4em;
+    box-shadow: 0.4em 0.4em rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0.4em 0.4em rgba(0,0,0,0.6);
+    -moz-box-shadow: 0.4em 0.4em rgba(0,0,0,0.6);
+}
+
+/* Changing style for spinner */
+.submit-progress {
+    padding-top: 2em;
+    width: 23em;
+    margin-left: -11.5em; /* Set to a negative number that is 1/2 of the width */
+}
+
+    .submit-progress i {
+        margin-right: 0.5em;
+    }
+
+.alert-success {
+    background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%) !important;
+    background-image: -o-linear-gradient(top, #5cb85c 0%, #419641 100%) !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#419641)) !important;
+    background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0) !important;
+    background-repeat: repeat-x;
+    border-color: #b2dba1;
+}
+
+.odd td {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}

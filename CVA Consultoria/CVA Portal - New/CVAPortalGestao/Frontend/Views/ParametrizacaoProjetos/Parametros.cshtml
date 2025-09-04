@@ -1,0 +1,119 @@
+﻿@Styles.Render("~/Content/Loading")
+@model MODEL.Classes.ProjectParametersModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="/Portal/Index">Home</a></li>
+    <li class="active">Parametrização de Projetos</li>
+</ul>
+<div class="page-content-wrap">
+    <form name="form">
+        <div class="panel panel-default tabs">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active" id="tab-first-li"><a href="#tab-first" role="tab" data-toggle="tab">Parâmetros</a></li>
+            </ul>
+            <div class="panel-body tab-content" ng-controller="ProjectParametersController" ng-init="OnLoad()">
+                <div class="row" style="padding-bottom: 10px">
+                    Parâmetros para geração do código no momento de inserção de um novo projeto, baseado no tipo de projeto
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div hidden="hidden">
+                            <label>Id</label>
+                            <input type="text" ng-model="ParametrosProjeto.Id" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Equipe</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-star-o"></span></span>
+                                <select class="form-control" ng-model="ParametrosProjeto.Equipe" ng-disabled="true">
+                                    <option value="">Selecione</option>
+                                    <option value="A1">A1</option>
+                                    <option value="B1">B1</option>
+                                    <option value="Interno">Interno</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>De</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control" ng-model="ParametrosProjeto.De" />
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Ate</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control" ng-model="ParametrosProjeto.Ate" />
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="padding-top:22px">
+                            <button type="button" class="btn btn-info" ng-click="AddParameter()">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><b>Tipo de Projeto</b></td>
+                                        <td><b>De</b></td>
+                                        <td><b>Ate</b></td>
+                                        <td align="right"><b>#</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="line in Parametros">
+                                        <td hidden="hidden">{{line.Id}}</td>
+                                        <td>{{line.Equipe}}</td>
+                                        <td>{{line.De}}</td>
+                                        <td>{{line.Ate}}</td>
+                                        <td align="right">
+                                            <button type="button" class="btn btn-default" ng-click="EditParameter($index)">Editar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" align="right">
+                    <button type="button" class="btn btn-success" ng-click="Save()">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="message-box message-box-success animated fadeIn" id="message-box-success">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-check"></span> Sucesso</div>
+            <div class="mb-content">
+                <p></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="message-box message-box-danger animated fadeIn" id="message-box-danger">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-times"></span> Atenção</div>
+            <div class="mb-content">
+                <p id="message-error"></p>
+            </div>
+            <div class="mb-footer">
+                <button class="btn btn-default btn-lg pull-right mb-control-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Script/jquery")
+
+<script src="~/Scripts/plugins/iCheck/icheck.js"></script>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AddOnRegData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SlientInstallation="No" SlientUpgrade="No" Partnernmsp="CVA" SchemaVersion="3.0" Type="" MultipleVersion="false" OnDemand="" OnPremise="" ExtName="MenuPlanner" ExtVersion="93.64.038" Contdata="" Partner="CVA Consultoria" DBType="HANA" ClientType="A">
+  <Validity>
+    <SBOCompatibility>
+      <Version From="" To="" />
+    </SBOCompatibility>
+  </Validity>
+  <Configuration>
+    <Repository>
+      <Properties />
+    </Repository>
+    <Deployment>
+      <Properties />
+    </Deployment>
+    <Assignment>
+      <Properties />
+    </Assignment>
+  </Configuration>
+  <Addons>
+    <Addon Name="" Group="" ForceFlag="" Visible="" AutoAssign="" SelfUpgrd="">
+      <x86 AddonExe="C:\Users\cvaconsultoria_adm02\Documents\Visual Studio 2019\Projects\MenuPlanner\MenuPlanner\bin\Debug\MenuPlanner.exe" AddonSig="">
+        <Installation>
+          <Files>
+            <File FileName="MenuPlanner.exe">
+              <Actions />
+            </File>
+          </Files>
+        </Installation>
+        <Uninstallation>
+          <Files>
+            <File FileName="MenuPlanner.exe">
+              <Actions />
+            </File>
+          </Files>
+        </Uninstallation>
+      </x86>
+      <x64 AddonExe="C:\Users\cvaconsultoria_adm02\Documents\Visual Studio 2019\Projects\MenuPlanner\MenuPlanner\bin\Debug\MenuPlanner.exe" AddonSig="">
+        <Installation>
+          <Files>
+            <File FileName="App.config">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.CrystalReports.Engine.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.Shared.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.Windows.Forms.dll">
+              <Actions />
+            </File>
+            <File FileName="FlashControlV71.dll">
+              <Actions />
+            </File>
+            <File FileName="Menu.xml">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.b1s">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.exe">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.exe.config">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.pdb">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.vshost.exe">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.vshost.exe.config">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.vshost.exe.manifest">
+              <Actions />
+            </File>
+            <File FileName="SAPBusinessOneSDK.dll">
+              <Actions />
+            </File>
+            <File FileName="ShockwaveFlashObjects.dll">
+              <Actions />
+            </File>
+            <File FileName="stdole.dll">
+              <Actions />
+            </File>
+            <File FileName="Reports\MenuProjection.rpt">
+              <Actions />
+            </File>
+          </Files>
+        </Installation>
+        <Uninstallation>
+          <Files>
+            <File FileName="App.config">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.CrystalReports.Engine.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.Shared.dll">
+              <Actions />
+            </File>
+            <File FileName="CrystalDecisions.Windows.Forms.dll">
+              <Actions />
+            </File>
+            <File FileName="FlashControlV71.dll">
+              <Actions />
+            </File>
+            <File FileName="Menu.xml">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.b1s">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.exe">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.exe.config">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.pdb">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.vshost.exe">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.vshost.exe.config">
+              <Actions />
+            </File>
+            <File FileName="MenuPlanner.vshost.exe.manifest">
+              <Actions />
+            </File>
+            <File FileName="SAPBusinessOneSDK.dll">
+              <Actions />
+            </File>
+            <File FileName="ShockwaveFlashObjects.dll">
+              <Actions />
+            </File>
+            <File FileName="stdole.dll">
+              <Actions />
+            </File>
+            <File FileName="Reports\MenuProjection.rpt">
+              <Actions />
+            </File>
+          </Files>
+        </Uninstallation>
+      </x64>
+    </Addon>
+  </Addons>
+  <XApps>
+    <XApp Name="" Path="" FileName="" />
+  </XApps>
+  <UDQs>
+    <UDQ udqname="">
+      <Hana FileName="" />
+    </UDQ>
+  </UDQs>
+</AddOnRegData>

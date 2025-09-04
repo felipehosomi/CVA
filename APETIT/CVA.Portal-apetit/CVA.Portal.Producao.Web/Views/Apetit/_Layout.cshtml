@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    @if (CVA.Portal.Producao.Web.Helper.CvaSession.Usuario.CodPerfil != "0000000003")
+    {
+        <title>Portal de Produção</title>
+    }
+    else
+    {
+        <title>Portal de Cotação</title>
+    }
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Content/nprogress.css" rel="stylesheet">
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/custom.min.css" rel="stylesheet">
+    <link href="~/Content/custom.css" rel="stylesheet">
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/InputMask/inputmask.min.js"></script>
+    <script src="~/Scripts/InputMask/jquery.inputmask.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body class="login">
+    <div class="login_wrapper" style="margin-top: 25px; max-width: 500px">
+        <div class="animate form login_form">
+            <section class="login_content">
+                @RenderBody()
+                @if (ViewBag.Error != null)
+                {
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <div id="ErrorMsg" class="alert alert-error" style="white-space: pre-line">@ViewBag.Error</div>
+                    </div>
+                }
+                @if (ViewBag.SuccessMessage != null)
+                {
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <div id="SuccessMsg" class="alert alert-success">@ViewBag.SuccessMessage</div>
+                    </div>
+                }
+                <img style="margin-top: 100px" src="~/Content/Images/cva_logo.png" />
+            </section>
+        </div>
+    </div>
+</body>
+</html>

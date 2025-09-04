@@ -1,0 +1,34 @@
+﻿@model CVA.Portal.Producao.Model.Producao.EstruturaProducaoModel
+<div id="divLoteFilho" style="overflow-y: hidden">
+    @if (Model != null && Model.LoteSerie != null)
+    {
+        <label class="col-md-1 control-label">Item</label>
+        <div class="col-md-4">
+            @Html.HiddenFor(m => m.DocEntry)
+            @Html.HiddenFor(m => m.LineNum)
+            @Html.HiddenFor(m => m.ControlePorLote)
+            @Html.HiddenFor(m => m.ControlePorSerie)
+            @Html.HiddenFor(m => m.QtdeRealizada)
+            @Html.TextBoxFor(m => Model.DescMP, htmlAttributes: new { @readonly = "readonly", @class = "form-control" })
+        </div>
+        <label class="col-md-1 control-label">Qtde</label>
+        <div class="col-md-2">
+            @Html.TextBoxFor(m => Model.QtdeRealizada, htmlAttributes: new { @readonly = "readonly", @class = "form-control" })
+        </div>
+        <label class="col-md-2 control-label">Selecionado</label>
+        <div class="col-md-2">
+            @Html.TextBoxFor(m => Model.QtdeSelecionada, htmlAttributes: new { @readonly = "readonly", @class = "form-control", id = "tbxSelecionado" })
+        </div>
+        <div class="clearfix"></div>
+            <div class="table-wrapper-scroll-y" style="padding-top:5px; overflow-x:hidden">
+                @if (Model.ControlePorLote == "Y")
+                {
+                    @Html.Partial("TabelaLote", Model)
+                }
+                else
+                {
+                    @Html.Partial("TabelaSerie", Model)
+                }
+            </div>
+    }
+</div>

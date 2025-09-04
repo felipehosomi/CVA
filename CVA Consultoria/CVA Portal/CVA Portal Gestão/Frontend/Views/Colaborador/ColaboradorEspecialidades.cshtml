@@ -1,0 +1,79 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Informar<strong> Especialidades</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group" style="padding-bottom: 20px">
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <label><input type="checkbox" ng-checked="collaborator.GerenciaProjetos" ng-false-value="0" ng-true-value="1" id="collaborator-gp" /> Permissão para gerenciar projetos</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Especialidade</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-star-o"></span></span>
+                                <select class="form-control" id="Especialidade" ng-model="Especialidade.Id" ng-change="SpecialtySelected()" ng-options="selected.Id as selected.Name for selected in SpecialtyList">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        @if (ViewBag.FinancialAccess == "S")
+                        {
+                            <div class="col-md-2">
+                                <label>Valor/hora</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-money"></span></span>
+                                    <input type="text" class="form-control" ng-model="Especialidade.Value" />
+                                </div>
+                            </div>
+                        }
+
+                        <div class="col-md-4" style="padding-top: 22px">
+                            <button type="button" class="btn btn-info" ng-click="AddSpecialty()">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><b>Especialidade</b></td>
+                                        @if (ViewBag.FinancialAccess == "S")
+                                        {
+                                            <td><b>Valor/hora</b></td>
+                                        }
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in Especialidades">
+                                        <td>{{item.Name}}</td>
+                                        @if (ViewBag.FinancialAccess == "S")
+                                        {
+                                            <td>{{item.Value}}</td>
+                                        }
+                                        <td align="right">
+                                            @if (ViewBag.FinancialAccess == "S")
+                                            {
+                                                <button type="button" class="btn btn-default" ng-click="EditSpecialty($index)">Editar</button>
+                                            }
+                                            <button type="button" class="btn btn-danger" ng-click="RemoveSpecialty($index)">X</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
