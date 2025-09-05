@@ -1,0 +1,19 @@
+CREATE TRIGGER TGR_PROD_LOG
+ON [SSPExportProd]
+FOR INSERT
+AS
+BEGIN
+    DECLARE @ID_MES  INT
+
+    SELECT @ID_MES = ID FROM INSERTED
+
+    INSERT INTO [SSPExportProd_Log] (ID_MES, [TYPE], [Status])
+	SELECT @ID_MES, 0, 0
+
+	INSERT INTO [SSPExportProd_Log] (ID_MES, [TYPE], [Status])
+	SELECT @ID_MES, 1, 0
+
+	INSERT INTO [SSPExportProd_Log] (ID_MES, [TYPE], [Status])
+	SELECT @ID_MES, 3, 0
+END
+GO

@@ -1,0 +1,295 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using ImcopaWEB;
+using WebImcopa.control;
+
+namespace WebImcopa
+{
+    public partial class ConsultaComissoes : System.Web.UI.Page
+    {
+        SAPService _ctrl = new SAPService();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                configuraRepresentante();
+                pnlAvisos.Visible = false;
+                if (Session["DATATABLECOMISSOES"] == null)
+                {
+                    //btnImprimir.Enabled = false;
+                    extModal.Show();
+                    txtDataIni.Text = "01/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+                    txtDataFin.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                else
+                {
+                    //btnImprimir.Enabled = true;
+                    atualizaDados(false);
+                }
+            }
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ((ScriptManager)Page.FindControl("MasterScript")).SetFocus(txtDataIni);
+            extModal.Show();
+            pnlAvisos.Visible = false;
+        }
+
+        protected void btnOk_Click(object sender, EventArgs e)
+        {
+            //atualizaDados(true);
+        }
+
+        protected void btnOk_Init(object sender, EventArgs e)
+        {
+            extModal.Hide();
+        }
+
+        private void configuraRepresentante()
+        {
+            try
+            {
+                SAPService _ctrl = new SAPService();
+                object[] objRetorno = new object[4];
+                DataTable dtVendas = new DataTable();
+
+                if (Session["USUARIO"] == null)
+                    Page.Response.Redirect("~/Login.aspx", false);
+
+                string codrep = Session["USUARIO"].ToString();
+
+                if (Convert.ToString(ConfigurationManager.AppSettings["AUTHO"]) != String.Empty)
+                    codrep = Convert.ToString(ConfigurationManager.AppSettings["AUTHO"]);
+
+                // busca o representante de acordo com o código informado
+                lblcdRepresentante.Text = codrep;
+                //lblVendedor.Text = _ctrl.Quotations_Fornecedor(codrep, 0)[1].ToString();
+
+                objRetorno = _ctrl.Quotations_Fornecedor(codrep, 1);
+                lblVendedor.Text = objRetorno[1].ToString();
+                dtVendas = (DataTable)objRetorno[2];
+
+                if (dtVendas.Rows.Count > 0)
+                {
+                    DataTable dtVendas_aux = new DataTable();
+                    dtVendas_aux.Columns.Add(new DataColumn("VKGRP", typeof(string)));
+                    dtVendas_aux.Columns.Add(new DataColumn("DESCR", typeof(string)));
+
+                    DataRow drVendas = dtVendas_aux.NewRow();
+                    drVendas["VKGRP"] = String.Empty;
+                    drVendas["DESCR"] = String.Empty;
+                    dtVendas_aux.Rows.Add(drVendas);
+
+                    for (int i = 0; i < dtVendas.Rows.Count; i++)
+                    {
+                        drVendas = dtVendas_aux.NewRow();
+                        drVendas["VKGRP"] = dtVendas.Rows[i]["VKGRP"].ToString();
+                        drVendas["DESCR"] = dtVendas.Rows[i]["VKBUR"].ToString() + " / " + dtVendas.Rows[i]["VKGRP"].ToString() + " / " + dtVendas.Rows[i]["BEZEI"].ToString();
+                        dtVendas_aux.Rows.Add(drVendas);
+                    }
+
+                    ddlVendas.DataSource = dtVendas_aux;
+                    ddlVendas.DataBind();
+                    ddlVendas.SelectedIndex = 0;
+                }
+            }
+            catch
+            {
+                lblVendedor.Text = "Fornecedor não encontrado!";
+            }
+        }
+
+        private void atualizaDados(bool atualizar)
+        {
+            DataTable dt_List = new DataTable();
+
+            if (atualizar)
+            {
+                Session["DATATABLECOMISSOES"] = null;
+                Session["DATATABLECOMISSOES"] = _ctrl.List_Billing(filtro());
+            }
+
+            dt_List = ((DataTable)Session["DATATABLECOMISSOES"] != null ? (DataTable)Session["DATATABLECOMISSOES"] : _ctrl.List_Billing(filtro()));
+
+            if (dt_List.Rows.Count == 0)
+            {
+                if (IsPostBack)
+                    Avisos("0", "Nenhum registro encontrado.");
+                gridViewComissoes.DataSource = dt_List;
+                gridViewComissoes.DataBind();
+
+                ClientScript.RegisterStartupScript(this.GetType(), "CreateGridHeader", "<script>CreateGridHeader('DataDiv', 'gridViewComissoes', 'HeaderDiv');</script>");
+            }
+            else
+            {
+                lblQuant.Text = calculatotal(dt_List, 10);
+                lblValor.Text = calculatotal(dt_List, 11);
+                gridViewComissoes.DataSource = dt_List;
+                gridViewComissoes.DataBind();
+
+                ClientScript.RegisterStartupScript(this.GetType(), "CreateGridHeader", "<script>CreateGridHeader('DataDiv', 'gridViewComissoes', 'HeaderDiv');</script>");
+            }
+        }
+
+        private ZSDE028 filtro()
+        {
+            ZSDE028 i_header = new ZSDE028();
+
+            i_header.Lifnr = zeroesc(lblcdRepresentante.Text, 10);
+
+            if (txtDataIni.Text != String.Empty)
+            {
+                DateTime dtInicial = Convert.ToDateTime(txtDataIni.Text);
+                i_header.Dtlow = dtInicial.ToString("yyyyMMdd");
+            }
+
+            if (txtDataIni.Text != String.Empty)
+            {
+                DateTime dtFinal = Convert.ToDateTime(txtDataFin.Text);
+                i_header.Dthigh = dtFinal.ToString("yyyyMMdd");
+            }
+
+            if (ddlVendas.SelectedValue != String.Empty)
+            {
+                //i_header.VKGRP = lstVendas.SelectedValue.ToString();
+                i_header.Vkgrp = ddlVendas.SelectedValue;
+            }
+            return i_header;
+        }
+
+        private string zeroesc(string valor, int tamanho)
+        {
+            int qtd = (tamanho - valor.Length);
+            StringBuilder sb = new StringBuilder();
+            if (qtd > 0)
+            {
+                for (int i = 0; i < qtd; i++)
+                {
+                    sb.Append("0");
+                }
+            }
+            sb.Append(valor);
+            return sb.ToString();
+        }
+
+        protected void Avisos(string tipo, string doc)
+        {
+            pnlAvisos.Visible = true;
+            if (tipo == "1")
+            {
+                imgAvisos.ImageUrl = "~/Imagens/Ok16.gif";
+                lblAvisos.Text = doc;
+            }
+            else if (tipo == "0")
+            {
+                imgAvisos.ImageUrl = "~/Imagens/Exclamation16.gif";
+                lblAvisos.Text = " Erro: " + doc;
+            }
+        }
+
+        private string gvOrdenaSentido
+        {
+            get { return ViewState["SortDirection"] as string ?? "ASC"; }
+            set { ViewState["SortDirection"] = value; }
+        }
+
+        private string gvOrdenaExpressao
+        {
+            get { return ViewState["SortExpression"] as string ?? string.Empty; }
+            set { ViewState["SortExpression"] = value; }
+        }
+
+        private string GetOrdenaSentido()
+        {
+            switch (gvOrdenaSentido)
+            {
+                case "ASC":
+                    gvOrdenaSentido = "DESC";
+                    break;
+                case "DESC":
+                    gvOrdenaSentido = "ASC";
+                    break;
+            }
+            return gvOrdenaSentido;
+        }
+
+        protected void gridViewComissoes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            DataTable dtClientes = ((DataTable)Session["DATATABLECOMISSOES"] != null ? (DataTable)Session["DATATABLECOMISSOES"] : _ctrl.List_Billing(filtro()));
+            gridViewComissoes.DataSource = ordenaDataTable(dtClientes, true);
+            gridViewComissoes.PageIndex = e.NewPageIndex;
+            gridViewComissoes.DataBind();
+            ClientScript.RegisterStartupScript(this.GetType(), "CreateGridHeader", "<script>CreateGridHeader('DataDiv', 'gridViewComissoes', 'HeaderDiv');</script>");
+        }
+
+        protected void gridViewComissoes_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            DataTable dtClientes = ((DataTable)Session["DATATABLECOMISSOES"] != null ? (DataTable)Session["DATATABLECOMISSOES"] : _ctrl.List_Billing(filtro()));
+            gvOrdenaExpressao = e.SortExpression;
+            int pageIndex = gridViewComissoes.PageIndex;
+            gridViewComissoes.DataSource = ordenaDataTable(dtClientes, false);
+            gridViewComissoes.DataBind();
+            gridViewComissoes.PageIndex = pageIndex;
+            ClientScript.RegisterStartupScript(this.GetType(), "CreateGridHeader", "<script>CreateGridHeader('DataDiv', 'gridViewComissoes', 'HeaderDiv');</script>");
+        }
+
+        protected void gridViewComissoes_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Attributes.Add("onmouseover", "this.originalcolor=this.style.backgroundColor; this.style.backgroundColor='Orange';");
+                e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor=this.originalcolor;");
+            }
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                e.Row.Cells[0].Text = "TOTAL";
+                e.Row.Cells[10].Text = String.Format(@"{0:N0}", Convert.ToDouble(lblQuant.Text));
+                e.Row.Cells[11].Text = String.Format(@"{0:N2}", Convert.ToDouble(lblValor.Text));
+            }
+        }
+
+        private DataView ordenaDataTable(DataTable dataTable, bool isPageIndexChanging)
+        {
+            if (dataTable != null)
+            {
+                DataView dataView = new DataView(dataTable);
+                if (gvOrdenaExpressao != string.Empty)
+                {
+                    if (isPageIndexChanging)
+                    {
+                        dataView.Sort = string.Format("{0} {1}", gvOrdenaExpressao, gvOrdenaSentido);
+                    }
+                    else
+                    {
+                        dataView.Sort = string.Format("{0} {1}", gvOrdenaExpressao, GetOrdenaSentido());
+                    }
+                }
+                Session["SORTFATURAS"] = dataView.Sort;
+                return dataView;
+            }
+            else
+            {
+                return new DataView();
+            }
+        }
+
+        private string calculatotal(DataTable dt_List, int col)
+        {
+            double total = 0;
+            foreach (DataRow row in dt_List.Rows)
+            {
+                total += Convert.ToDouble(row[col].ToString());
+            }
+            return total.ToString();
+        }
+    }
+}

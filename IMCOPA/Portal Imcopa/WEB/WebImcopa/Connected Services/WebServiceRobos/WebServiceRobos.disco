@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://delta.audiconsearch.com.br/WebServiceRobos.asmx?wsdl" docRef="http://delta.audiconsearch.com.br/WebServiceRobos.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://delta.audiconsearch.com.br/WebServiceRobos.asmx" xmlns:q1="http://www.audiconsearch.com.br/webservice" binding="q1:WebServiceRobosSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://delta.audiconsearch.com.br/WebServiceRobos.asmx" xmlns:q2="http://www.audiconsearch.com.br/webservice" binding="q2:WebServiceRobosSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

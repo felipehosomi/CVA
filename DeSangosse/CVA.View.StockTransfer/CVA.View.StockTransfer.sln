@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.StockTransfer", "CVA.View.StockTransfer\CVA.View.StockTransfer.csproj", "{AC4B14F3-842C-4C4E-8C96-4729CB74E378}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.StockTransfer.AddOn", "CVA.View.StockTransfer.AddOn\CVA.View.StockTransfer.AddOn.csproj", "{7F2EAA39-3BFE-45D6-AF98-4EACA2D1FA39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "..\..\..\..\source\Workspaces\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CVA.View.StockTransfer.Setup", "CVA.View.StockTransfer.Setup\CVA.View.StockTransfer.Setup.vbproj", "{B6DA8C96-ADA9-403A-A940-0F27B5503553}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC4B14F3-842C-4C4E-8C96-4729CB74E378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC4B14F3-842C-4C4E-8C96-4729CB74E378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC4B14F3-842C-4C4E-8C96-4729CB74E378}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AC4B14F3-842C-4C4E-8C96-4729CB74E378}.Debug|x86.Build.0 = Debug|Any CPU
+		{AC4B14F3-842C-4C4E-8C96-4729CB74E378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC4B14F3-842C-4C4E-8C96-4729CB74E378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC4B14F3-842C-4C4E-8C96-4729CB74E378}.Release|x86.ActiveCfg = Release|Any CPU
+		{AC4B14F3-842C-4C4E-8C96-4729CB74E378}.Release|x86.Build.0 = Release|Any CPU
+		{7F2EAA39-3BFE-45D6-AF98-4EACA2D1FA39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F2EAA39-3BFE-45D6-AF98-4EACA2D1FA39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F2EAA39-3BFE-45D6-AF98-4EACA2D1FA39}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7F2EAA39-3BFE-45D6-AF98-4EACA2D1FA39}.Debug|x86.Build.0 = Debug|Any CPU
+		{7F2EAA39-3BFE-45D6-AF98-4EACA2D1FA39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F2EAA39-3BFE-45D6-AF98-4EACA2D1FA39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F2EAA39-3BFE-45D6-AF98-4EACA2D1FA39}.Release|x86.ActiveCfg = Release|Any CPU
+		{7F2EAA39-3BFE-45D6-AF98-4EACA2D1FA39}.Release|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.ActiveCfg = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.Build.0 = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.ActiveCfg = Release|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.Build.0 = Release|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|x86.ActiveCfg = Debug|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|x86.Build.0 = Debug|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|x86.ActiveCfg = Release|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E79DFDF-654D-47A9-90B1-4EE9C99FE476}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CVA.View.StockTransfer\\CVA.View.StockTransfer.csproj
+		SccProjectName1 = CVA.View.StockTransfer
+		SccLocalPath1 = CVA.View.StockTransfer
+		SccProjectUniqueName2 = CVA.View.StockTransfer.AddOn\\CVA.View.StockTransfer.AddOn.csproj
+		SccProjectName2 = CVA.View.StockTransfer.AddOn
+		SccLocalPath2 = CVA.View.StockTransfer.AddOn
+		SccProjectUniqueName3 = ..\\..\\..\\..\\source\\Workspaces\\Helpers\\CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName3 = ../../Helpers/CVA.AddOn.Common
+		SccLocalPath3 = ..\\..\\..\\..\\source\\Workspaces\\Helpers\\CVA.AddOn.Common
+		SccProjectUniqueName4 = CVA.View.StockTransfer.Setup\\CVA.View.StockTransfer.Setup.vbproj
+		SccProjectName4 = CVA.View.StockTransfer.Setup
+		SccLocalPath4 = CVA.View.StockTransfer.Setup
+	EndGlobalSection
+EndGlobal

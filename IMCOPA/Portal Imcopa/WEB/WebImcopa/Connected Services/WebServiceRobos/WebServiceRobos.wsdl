@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.audiconsearch.com.br/webservice" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.audiconsearch.com.br/webservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.audiconsearch.com.br/webservice">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="ConsultarEstadodoServico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="servico" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarEstadodoServicoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarEstadodoServicoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TokendeAutenticacao" type="tns:TokendeAutenticacao" />
+      <s:complexType name="TokendeAutenticacao">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="InnerToken" type="s1:guid" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="RealizarConsulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chaveConsulta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoPesquisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataNascimento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealizarConsultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RealizarConsultaResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealizarConsultaToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chaveConsulta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoPesquisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataNascimento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealizarConsultaTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RealizarConsultaTokenResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealizarConsultaTokenHtml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chaveConsulta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoPesquisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataNascimento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealizarConsultaTokenHtmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RealizarConsultaTokenHtmlResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Autenticar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nomeUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutenticarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AutenticarResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Desconectar">
+        <s:complexType />
+      </s:element>
+      <s:element name="DesconectarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DesconectarResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Pesquisar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="grupoServico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoPesquisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="colecaoDeChaves" type="tns:Colecao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PesquisarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PesquisarResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PesquisarComHTML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="grupoServico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoPesquisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="colecaoDeChaves" type="tns:Colecao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PesquisarComHTMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PesquisarComHTMLResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarLayout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="grupoServico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servico" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarLayoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarLayoutResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Colecao">
+        <s:annotation>
+          <s:documentation>Coleção de chaves</s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Chaves" type="tns:tipoColecao" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tipoColecao">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="unbounded" name="chave" type="tns:Chave" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Chave">
+        <s:sequence>
+          <s:element name="nome" type="s:string" />
+          <s:element name="valor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarEstadodoServicoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarEstadodoServico" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarEstadodoServicoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarEstadodoServicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarEstadodoServicoTokendeAutenticacao">
+    <wsdl:part name="TokendeAutenticacao" element="tns:TokendeAutenticacao" />
+  </wsdl:message>
+  <wsdl:message name="RealizarConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:RealizarConsulta" />
+  </wsdl:message>
+  <wsdl:message name="RealizarConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:RealizarConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RealizarConsultaTokendeAutenticacao">
+    <wsdl:part name="TokendeAutenticacao" element="tns:TokendeAutenticacao" />
+  </wsdl:message>
+  <wsdl:message name="RealizarConsultaTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:RealizarConsultaToken" />
+  </wsdl:message>
+  <wsdl:message name="RealizarConsultaTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:RealizarConsultaTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="RealizarConsultaTokenHtmlSoapIn">
+    <wsdl:part name="parameters" element="tns:RealizarConsultaTokenHtml" />
+  </wsdl:message>
+  <wsdl:message name="RealizarConsultaTokenHtmlSoapOut">
+    <wsdl:part name="parameters" element="tns:RealizarConsultaTokenHtmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarSoapIn">
+    <wsdl:part name="parameters" element="tns:Autenticar" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarSoapOut">
+    <wsdl:part name="parameters" element="tns:AutenticarResponse" />
+  </wsdl:message>
+  <wsdl:message name="DesconectarSoapIn">
+    <wsdl:part name="parameters" element="tns:Desconectar" />
+  </wsdl:message>
+  <wsdl:message name="DesconectarSoapOut">
+    <wsdl:part name="parameters" element="tns:DesconectarResponse" />
+  </wsdl:message>
+  <wsdl:message name="DesconectarTokendeAutenticacao">
+    <wsdl:part name="TokendeAutenticacao" element="tns:TokendeAutenticacao" />
+  </wsdl:message>
+  <wsdl:message name="PesquisarSoapIn">
+    <wsdl:part name="parameters" element="tns:Pesquisar" />
+  </wsdl:message>
+  <wsdl:message name="PesquisarSoapOut">
+    <wsdl:part name="parameters" element="tns:PesquisarResponse" />
+  </wsdl:message>
+  <wsdl:message name="PesquisarTokendeAutenticacao">
+    <wsdl:part name="TokendeAutenticacao" element="tns:TokendeAutenticacao" />
+  </wsdl:message>
+  <wsdl:message name="PesquisarComHTMLSoapIn">
+    <wsdl:part name="parameters" element="tns:PesquisarComHTML" />
+  </wsdl:message>
+  <wsdl:message name="PesquisarComHTMLSoapOut">
+    <wsdl:part name="parameters" element="tns:PesquisarComHTMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="PesquisarComHTMLTokendeAutenticacao">
+    <wsdl:part name="TokendeAutenticacao" element="tns:TokendeAutenticacao" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarLayoutSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarLayout" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarLayoutSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarLayoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarLayoutTokendeAutenticacao">
+    <wsdl:part name="TokendeAutenticacao" element="tns:TokendeAutenticacao" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceRobosSoap">
+    <wsdl:operation name="ConsultarEstadodoServico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza a consulta do estado de um serviço.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarEstadodoServicoSoapIn" />
+      <wsdl:output message="tns:ConsultarEstadodoServicoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizarConsulta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza a consulta em um serviço.</wsdl:documentation>
+      <wsdl:input message="tns:RealizarConsultaSoapIn" />
+      <wsdl:output message="tns:RealizarConsultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizarConsultaToken">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza a consulta em um serviço informando o Token.</wsdl:documentation>
+      <wsdl:input message="tns:RealizarConsultaTokenSoapIn" />
+      <wsdl:output message="tns:RealizarConsultaTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizarConsultaTokenHtml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza a consulta em um serviço informando o Token com retorno do HTML.</wsdl:documentation>
+      <wsdl:input message="tns:RealizarConsultaTokenHtmlSoapIn" />
+      <wsdl:output message="tns:RealizarConsultaTokenHtmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza a autenticação do usuário no WebService.</wsdl:documentation>
+      <wsdl:input message="tns:AutenticarSoapIn" />
+      <wsdl:output message="tns:AutenticarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Desconectar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Desconecta o usuário do WebService.</wsdl:documentation>
+      <wsdl:input message="tns:DesconectarSoapIn" />
+      <wsdl:output message="tns:DesconectarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Pesquisar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza a consulta em um serviço.</wsdl:documentation>
+      <wsdl:input message="tns:PesquisarSoapIn" />
+      <wsdl:output message="tns:PesquisarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarComHTML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza a consulta em um serviço com retorno do HTML.</wsdl:documentation>
+      <wsdl:input message="tns:PesquisarComHTMLSoapIn" />
+      <wsdl:output message="tns:PesquisarComHTMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarLayout">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Busca layout de um determinado serviço.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarLayoutSoapIn" />
+      <wsdl:output message="tns:ConsultarLayoutSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceRobosSoap" type="tns:WebServiceRobosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarEstadodoServico">
+      <soap:operation soapAction="http://www.audiconsearch.com.br/webservice/ConsultarEstadodoServico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarEstadodoServicoTokendeAutenticacao" part="TokendeAutenticacao" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarConsulta">
+      <soap:operation soapAction="http://www.audiconsearch.com.br/webservice/RealizarConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RealizarConsultaTokendeAutenticacao" part="TokendeAutenticacao" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarConsultaToken">
+      <soap:operation soapAction="http://www.audiconsearch.com.br/webservice/RealizarConsultaToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarConsultaTokenHtml">
+      <soap:operation soapAction="http://www.audiconsearch.com.br/webservice/RealizarConsultaTokenHtml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <soap:operation soapAction="http://www.audiconsearch.com.br/webservice/Autenticar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Desconectar">
+      <soap:operation soapAction="http://www.audiconsearch.com.br/webservice/Desconectar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DesconectarTokendeAutenticacao" part="TokendeAutenticacao" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pesquisar">
+      <soap:operation soapAction="http://www.audiconsearch.com.br/webservice/Pesquisar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:PesquisarTokendeAutenticacao" part="TokendeAutenticacao" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarComHTML">
+      <soap:operation soapAction="http://www.audiconsearch.com.br/webservice/PesquisarComHTML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:PesquisarComHTMLTokendeAutenticacao" part="TokendeAutenticacao" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarLayout">
+      <soap:operation soapAction="http://www.audiconsearch.com.br/webservice/ConsultarLayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultarLayoutTokendeAutenticacao" part="TokendeAutenticacao" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceRobosSoap12" type="tns:WebServiceRobosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarEstadodoServico">
+      <soap12:operation soapAction="http://www.audiconsearch.com.br/webservice/ConsultarEstadodoServico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarEstadodoServicoTokendeAutenticacao" part="TokendeAutenticacao" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarConsulta">
+      <soap12:operation soapAction="http://www.audiconsearch.com.br/webservice/RealizarConsulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RealizarConsultaTokendeAutenticacao" part="TokendeAutenticacao" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarConsultaToken">
+      <soap12:operation soapAction="http://www.audiconsearch.com.br/webservice/RealizarConsultaToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarConsultaTokenHtml">
+      <soap12:operation soapAction="http://www.audiconsearch.com.br/webservice/RealizarConsultaTokenHtml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <soap12:operation soapAction="http://www.audiconsearch.com.br/webservice/Autenticar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Desconectar">
+      <soap12:operation soapAction="http://www.audiconsearch.com.br/webservice/Desconectar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DesconectarTokendeAutenticacao" part="TokendeAutenticacao" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pesquisar">
+      <soap12:operation soapAction="http://www.audiconsearch.com.br/webservice/Pesquisar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:PesquisarTokendeAutenticacao" part="TokendeAutenticacao" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisarComHTML">
+      <soap12:operation soapAction="http://www.audiconsearch.com.br/webservice/PesquisarComHTML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:PesquisarComHTMLTokendeAutenticacao" part="TokendeAutenticacao" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarLayout">
+      <soap12:operation soapAction="http://www.audiconsearch.com.br/webservice/ConsultarLayout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultarLayoutTokendeAutenticacao" part="TokendeAutenticacao" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceRobos">
+    <wsdl:port name="WebServiceRobosSoap" binding="tns:WebServiceRobosSoap">
+      <soap:address location="http://delta.audiconsearch.com.br/WebServiceRobos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceRobosSoap12" binding="tns:WebServiceRobosSoap12">
+      <soap12:address location="http://delta.audiconsearch.com.br/WebServiceRobos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,21 @@
+;WITH RCTE AS
+(
+	SELECT  ItemCode ParentId, ART1_ID ChildId, MENGE_LAGER AS QtdeCons, POS_ID AS Lvl FROM BEAS_STL WITH(NOLOCK)
+	WHERE ART1_ID = '99611035057'
+
+	UNION ALL
+
+	SELECT rh.ItemCode ParentId, rc.ChildId, CAST(RC.QtdeCons * RH.MENGE_LAGER AS NUMERIC(19, 6)) QtdeCons, RC.Lvl AS Lvl 
+	FROM dbo.BEAS_STL rh WITH(NOLOCK)
+	INNER JOIN RCTE rc ON rh.ART1_ID = rc.ParentId
+)
+,CTE_RN AS 
+(
+    SELECT *, ROW_NUMBER() OVER (PARTITION BY r.ChildID ORDER BY r.Lvl DESC) RN
+    FROM RCTE r
+)
+SELECT ParentId, ChildId, SUM(QtdeCons) QtdeCons
+FROM CTE_RN r
+WHERE Lvl = 10
+--AND ParentId = '30111048013'
+GROUP BY ParentId, ChildId

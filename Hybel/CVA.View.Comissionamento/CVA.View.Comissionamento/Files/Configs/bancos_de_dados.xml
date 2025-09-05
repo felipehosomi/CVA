@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<bancos>
+  <banco>
+    <servidor>VM-001</servidor>
+    <nome>SBO_PRD_DEMOBR005</nome>
+    <usuario>sa</usuario>
+    <senha>Cva@sa</senha>
+  </banco>
+  <banco>
+    <servidor>VM-001</servidor>
+    <nome>SBO_PRD_DEMOBR006</nome>
+    <usuario>sa</usuario>
+    <senha>Cva@sa</senha>
+  </banco>
+</bancos>

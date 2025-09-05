@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataBase>
+
+ <Server>10.170.1.50:30015</Server>
+ <UserID>SYSTEM</UserID>
+ <Password>CVA@inicio123</Password>
+ <Base>SBO_ESCOTEIROS_PRO</Base>
+
+
+</DataBase>

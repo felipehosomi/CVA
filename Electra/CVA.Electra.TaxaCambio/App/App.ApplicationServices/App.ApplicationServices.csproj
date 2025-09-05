@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F81DA434-D04D-441C-BC32-FE96C809D515}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App.ApplicationServices</RootNamespace>
+    <AssemblyName>App.ApplicationServices</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LiteGuard, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteGuard.1.1.0\lib\net35\LiteGuard.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sap.Data.Hana.v4.5, Version=1.0.120.0, Culture=neutral, PublicKeyToken=0326b8ea63db4bc4, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Thought.Net.Telnet, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Work\Dll\Thought.Net.Telnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Addon\Custom\CurrencyService.cs" />
+    <Compile Include="Addon\FormattedSearchService.cs" />
+    <Compile Include="Addon\UserMenuService.cs" />
+    <Compile Include="Extensions\BoolExtension.cs" />
+    <Compile Include="Extensions\CompanyExtension.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
+    <Compile Include="Extensions\DBDataSourceExtension.cs" />
+    <Compile Include="Extensions\DoubleExtension.cs" />
+    <Compile Include="Extensions\EnumExtension.cs" />
+    <Compile Include="Extensions\FormExtension.cs" />
+    <Compile Include="Extensions\IntExtension.cs" />
+    <Compile Include="Extensions\ItemsExtension.cs" />
+    <Compile Include="Extensions\MatrixExtension.cs" />
+    <Compile Include="Extensions\ObjectExtension.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Extensions\TaskWithTimeoutExtension.cs" />
+    <Compile Include="Extensions\Type\Menus\CreationUserMenu.cs" />
+    <Compile Include="Extensions\Type\Tables\UserFields.cs" />
+    <Compile Include="Extensions\Type\Tables\UserTables.cs" />
+    <Compile Include="Extensions\Type\Tables\UserUDO.cs" />
+    <Compile Include="Extensions\UserDataTablesExtension.cs" />
+    <Compile Include="Extensions\ValidValuesExtension.cs" />
+    <Compile Include="Model\ItemLoteModel.cs" />
+    <Compile Include="ServiceLayer\OPService.cs" />
+    <Compile Include="ServiceLayer\StockTransfersService.cs" />
+    <Compile Include="ServiceLayer\ItemGroupService.cs" />
+    <Compile Include="ServiceLayer\SacoService.cs" />
+    <Compile Include="ServiceLayer\OPSIMService.cs" />
+    <Compile Include="ServiceLayer\SBOBobService_SetCurrencyRate.cs" />
+    <Compile Include="ServiceLayer\StateService.cs" />
+    <Compile Include="ServiceLayer\CountryService.cs" />
+    <Compile Include="ServiceLayer\DraftsService.cs" />
+    <Compile Include="ServiceLayer\JournalVouchersService.cs" />
+    <Compile Include="ServiceLayer\PartnersOdataService.cs" />
+    <Compile Include="ServiceLayer\OrderService.cs" />
+    <Compile Include="ServiceLayer\PartnersService.cs" />
+    <Compile Include="ServiceLayer\JournalEntriesService.cs" />
+    <Compile Include="ServiceLayer\UDO\PesagemCompraService.cs" />
+    <Compile Include="ServiceLayer\UDO\SD_OPService.cs" />
+    <Compile Include="ServiceLayer\UDO\PesagemVendaService.cs" />
+    <Compile Include="ServiceLayer\UDO\BalancasService.cs" />
+    <Compile Include="ServiceLayer\UDO\U_SD_PN_COMEXService.cs" />
+    <Compile Include="ServiceLayer\InventoryTransferRequestsService.cs" />
+    <Compile Include="ServiceLayer\Procedures\GetSolicitacaoItensSum.cs" />
+    <Compile Include="ServiceLayer\UserTableService.cs" />
+    <Compile Include="ServiceLayer\BranchesOdataService.cs" />
+    <Compile Include="ServiceLayer\Exception\CatchWebException.cs" />
+    <Compile Include="ServiceLayer\EmployeeService.cs" />
+    <Compile Include="ServiceLayer\BranchesService.cs" />
+    <Compile Include="ServiceLayer\PaymentTermsService.cs" />
+    <Compile Include="ServiceLayer\ItemsService.cs" />
+    <Compile Include="ServiceLayer\BussinesPartnerService.cs" />
+    <Compile Include="ServiceLayer\BanksService.cs" />
+    <Compile Include="ServiceLayer\Views\GetItemVarViewService.cs" />
+    <Compile Include="ServiceLayer\Views\BINViewService.cs" />
+    <Compile Include="ServiceLayer\Views\LoginUserCodeBarViewService.cs" />
+    <Compile Include="ServiceLayer\Views\OPLoteViewService.cs" />
+    <Compile Include="ServiceLayer\Views\CodigoOperacaoViewService.cs" />
+    <Compile Include="ServiceLayer\Views\MatTypeViewService.cs" />
+    <Compile Include="ServiceLayer\Views\OPCancelViewService.cs" />
+    <Compile Include="ServiceLayer\Views\OPViewService.cs" />
+    <Compile Include="ServiceLayer\Views\BeasPersViewService.cs" />
+    <Compile Include="ServiceLayer\Views\SearchPurchaseOrderItensListViewService.cs" />
+    <Compile Include="ServiceLayer\Views\SearchSalesOrderItensListViewService.cs" />
+    <Compile Include="ServiceLayer\Views\SearchPurchaseOrderListViewService.cs" />
+    <Compile Include="ServiceLayer\Views\SearchSalesOrderListViewService.cs" />
+    <Compile Include="ServiceLayer\Views\LoginUserBranchesListViewService.cs" />
+    <Compile Include="Services\ConnectionService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Addon\DataService.cs" />
+    <Compile Include="Addon\UserObjectsService.cs" />
+    <Compile Include="Addon\UserService.cs" />
+    <Compile Include="Services\EtiquetaService.cs" />
+    <Compile Include="Services\FrameworkService.cs" />
+    <Compile Include="Services\HanaService.cs" />
+    <Compile Include="Services\UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SAPbouiCOM">
+      <Guid>{6048236A-956D-498D-A6F1-9C81C13AB6E8}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Domain\App.Domain.csproj">
+      <Project>{0BE37313-AB50-43FE-99FD-8BF55415D859}</Project>
+      <Name>App.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Infrastructure\App.Infrastructure.csproj">
+      <Project>{427161A2-3B96-4A65-B011-0BE79EEDABA9}</Project>
+      <Name>App.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Repository\App.Repository.csproj">
+      <Project>{DF9A74A2-3A0A-4154-9C65-276649F4B0A8}</Project>
+      <Name>App.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

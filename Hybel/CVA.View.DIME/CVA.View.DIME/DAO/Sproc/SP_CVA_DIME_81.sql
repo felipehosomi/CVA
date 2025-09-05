@@ -1,0 +1,74 @@
+
+--	
+ALTER PROCEDURE [dbo].[SP_CVA_DIME_81]
+(
+	@DateFrom DATETIME = NULL,
+	@DateTo DATETIME = NULL,
+	@BPlId INT = NULL
+)
+AS
+BEGIN
+
+
+--SET @DateFrom = '2018-06-01'
+--SET @DateTo  =  '2018-06-30'
+
+
+
+CREATE TABLE #DREDIME
+	(
+		REG		INT,
+		QUADRO  INT,
+		ITEM	VARCHAR (3),
+		DSC		VARCHAR (100),
+		VALOR	DECIMAL (19,2)
+	)
+
+SELECT 
+	T0.CatId,
+	T0.Name,
+	T0.Levels,
+	T0.FrgnName,
+	T1.AcctCode,
+	ISNULL(T2.Saldo,0.00) Saldo
+
+	INTO #DRE
+	FROM OFRC T0 WITH(NOLOCK) 
+		LEFT JOIN FRC1 T1 WITH(NOLOCK) ON T0.TemplateId = T1.TemplateId AND T0.CatId = T1.CatId
+		LEFT  JOIN 
+			( 
+			SELECT ACCOUNT,  SUM(Debit) - SUM(Credit) AS Saldo FROM JDT1 WITH(NOLOCK) 
+			WHERE REFDATE BETWEEN @DateFrom AND @DateTo
+			GROUP BY ACCOUNT
+			)
+			T2 ON T1.AcctCode = T2.ACCOUNT
+	WHERE T0.TemplateId = 10 AND T0.Levels = 4
+	ORDER BY T0.FrgnName
+
+
+
+
+	INSERT INTO #DREDIME 
+		SELECT 81,81, FrgnName, NAME, SUM(Saldo)  FROM #DRE GROUP BY  FrgnName, NAME
+
+	INSERT INTO #DREDIME 
+		SELECT 81,81, '110', '(=) Circulante', SUM(Saldo)  FROM #DRE WHERE FrgnName IN ('111', '113','121','123','128') 
+
+	INSERT INTO #DREDIME 
+		SELECT 81,81, '130', '(=) Realizável a longo prazo', SUM(Saldo)  FROM #DRE WHERE FrgnName IN ('131', '148') 
+
+	INSERT INTO #DREDIME 
+		SELECT 81,81, '150', '(=) Permanente', SUM(Saldo)  FROM #DRE WHERE FrgnName IN ('151', '155', '157', '159') 
+
+	INSERT INTO #DREDIME 
+		SELECT 81,81, '199', '(=) Total geral do ativo', SUM(Saldo)  FROM #DRE WHERE FrgnName BETWEEN '111' AND '198'
+
+		
+	SELECT REG,QUADRO,ITEM, ABS(VALOR) VALOR FROM #DREDIME ORDER BY ITEM 
+
+
+
+	DROP TABLE #DRE
+	DROP TABLE #DREDIME
+
+END

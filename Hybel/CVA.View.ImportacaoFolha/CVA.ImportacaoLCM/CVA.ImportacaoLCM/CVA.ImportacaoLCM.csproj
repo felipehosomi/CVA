@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F60C2934-DF6A-496F-8C6D-ECB79716A315}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVA.ImportacaoLCM</RootNamespace>
+    <AssemblyName>CVA.ImportacaoLCM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CVA.ImportacaoLCM.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="SAPBusinessOneSDK" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\ArquivoBLL.cs" />
+    <Compile Include="BLL\InitializeBLL.cs" />
+    <Compile Include="BLL\JournalVouchersBLL.cs" />
+    <Compile Include="BLL\LogErro.cs" />
+    <Compile Include="BLL\UserFieldsBLL.cs" />
+    <Compile Include="Controller\ComboBoxExtensions.cs" />
+    <Compile Include="Controller\FormatterHelper.cs" />
+    <Compile Include="Controller\GerenciadorServico.cs" />
+    <Compile Include="Controller\MetodoExtensao.cs" />
+    <Compile Include="Controller\UserObjectController.cs" />
+    <Compile Include="Controller\ValidationFields.cs" />
+    <Compile Include="DAO\CentroCustoDAO.cs" />
+    <Compile Include="DAO\ContaControleDAO.cs" />
+    <Compile Include="DAO\SBOApp.cs" />
+    <Compile Include="Model\DetalheModel.cs" />
+    <Compile Include="Model\GenericModel.cs" />
+    <Compile Include="Model\HeadModel.cs" />
+    <Compile Include="Model\RegistroModel.cs" />
+    <Compile Include="Model\TrailerModel.cs" />
+    <Compile Include="SQL\SQL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SQL.resx</DependentUpon>
+    </Compile>
+    <None Include="Instalador\AddOnRegDataGen.bat" />
+    <None Include="App.config" />
+    <None Include="MEF\AddOnRegDataGen.bat" />
+    <None Include="MEF\Vista.cjstyles" />
+    <None Include="Setup\Output\SAP AddOn Importacao Folha 1.0.0.4.ard" />
+    <None Include="Setup\Output\SAP AddOn Importacao Folha 1.0.0.4.zip" />
+    <None Include="Setup\Output\SAP AddOn Importacao Folha 1.0.0.5.ard" />
+    <None Include="Setup\Output\SAP AddOn Importacao Folha 1.0.0.5.zip" />
+    <None Include="Setup\Output\SAP AddOn Importacao Folha 1.0.0.6.ard" />
+    <None Include="Setup\Output\SAP AddOn Importacao Folha 1.0.0.6.zip" />
+    <None Include="Setup\Output\SAP AddOn Importacao Folha 1.0.0.7.ard" />
+    <None Include="Setup\Output\SAP AddOn Importacao Folha 1.0.0.7.zip" />
+    <None Include="Setup\Output\SAP AddOn Importacao Folha 1.0.0.8 - HANA.zip" />
+    <None Include="Setup\Output\SAP AddOn Importacao Folha 1.0.0.8.ard" />
+    <None Include="Setup\Output\SAP AddOn Importacao Folha.ard" />
+    <EmbeddedResource Include="View\f_ImportaLCM.b1f">
+      <FormCategory>UserForm</FormCategory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Compile Include="Util\DialogUtil.cs" />
+    <Compile Include="Util\WindowWrapper.cs" />
+    <Compile Include="View\f_ImportaLCM.b1f.cs">
+      <DependentUpon>f_ImportaLCM.b1f</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Controller\Menu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Instalador\Vista.cjstyles" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Instalador\AddOnInfo.xml" />
+    <Content Include="Instalador\AddOnInstallAPI.dll" />
+    <Content Include="Instalador\ISSkin.dll" />
+    <Content Include="Instalador\listfile.txt" />
+    <Content Include="MEF\AddOnInfo.xml" />
+    <Content Include="MEF\AddOnInstallAPI.dll" />
+    <Content Include="MEF\ISSkin.dll" />
+    <Content Include="MEF\listfile.txt" />
+    <Content Include="MEF\logo1.bmp" />
+    <Content Include="MEF\logo2.bmp" />
+    <Content Include="MEF\Sps.XML" />
+    <Content Include="Setup\CVA.ImportaçãoLCM.iss" />
+    <Content Include="Setup\logo1.bmp" />
+    <Content Include="Setup\logo2.bmp" />
+    <Content Include="Setup\Output\Setup.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SQL\SQL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SQL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

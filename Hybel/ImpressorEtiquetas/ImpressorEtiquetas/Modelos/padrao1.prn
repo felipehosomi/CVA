@@ -1,0 +1,20 @@
+<xpml><page quantity='0' pitch='45.0 mm'></xpml>n
+M0500
+O0220
+V0
+f220
+D
+<xpml></page></xpml><xpml><page quantity='1' pitch='45.0 mm'></xpml>L
+D11
+A2
+1911A1200140037#Pedido
+1911A1400110167#Serie
+1911A1000130318#Quantidade
+1911A1000440037#ItemName
+1922A1400560092#12
+1922A1800510159#C
+1922A1400560187#4567890
+1a8305001150052-10000000000-
+Q0001
+E
+<xpml></page></xpml><xpml><end/></xpml>

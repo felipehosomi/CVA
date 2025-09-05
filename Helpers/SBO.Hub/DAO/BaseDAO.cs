@@ -1,0 +1,128 @@
+﻿using SAPbobsCOM;
+using SBO.Hub.Controllers;
+using System;
+using System.Collections.Generic;
+
+namespace SBO.Hub.DAO
+{
+    public class BaseDAO
+    {
+        #region Properties
+        private CrudDAO crudController;
+        private string tableName;
+        #endregion Properties
+
+        #region Constructor
+        public BaseDAO(string tableName)
+        {
+            crudController = new CrudDAO(tableName);
+            this.tableName = tableName;
+        }
+
+        public BaseDAO(string tableName, BoUTBTableType userTableType)
+        {
+            crudController = new CrudDAO(tableName);
+            crudController.UserTableType = userTableType;
+            this.tableName = tableName;
+        }
+        #endregion Constructor
+
+        #region CRUD
+        public virtual string RetrieveModelSql(Type modelType, string where, string orderBy, bool getValidValues)
+        {
+            return crudController.RetrieveModelSql(modelType, where, orderBy, getValidValues);
+        }
+
+        public virtual string RetrieveSqlModel(Type modelType, string where, bool getValidValues)
+        {
+            return this.RetrieveModelSql(modelType, where, String.Empty, getValidValues);
+        }
+
+        public virtual string RetrieveSqlModel(Type modelType, bool getValidValues)
+        {
+            return this.RetrieveModelSql(modelType, String.Empty, String.Empty, getValidValues);
+        }
+
+        public virtual void CreateModel(object model)
+        {
+            crudController.Model = model;
+            crudController.CreateModel();
+        }
+
+        public virtual T RetrieveModel<T>(string where)
+        {
+            return crudController.RetrieveModel<T>(where);
+        }
+
+        public virtual List<T> RetrieveModelList<T>(string where)
+        {
+            return crudController.RetrieveModelList<T>(where);
+        }
+
+        public virtual List<T> RetrieveModelList<T>(string where, string orderBy)
+        {
+            return crudController.RetrieveModelList<T>(where, orderBy);
+        }
+
+        public virtual void UpdateModel(object model)
+        {
+            crudController.Model = model;
+            crudController.UpdateModel();
+        }
+
+        public virtual void UpdateModel(object model, string where)
+        {
+            crudController.Model = model;
+            crudController.UpdateModel(where);
+        }
+
+        public virtual void DeleteModel(string where)
+        {
+            crudController.DeleteModel(tableName, where);
+        }
+
+        public virtual void DeleteModelByCode(string code)
+        {
+            crudController.DeleteModelByCode(tableName, code);
+        }
+
+        #endregion
+
+        #region Util
+        public virtual string Exists(string where)
+        {
+            return crudController.Exists(where);
+        }
+
+        public virtual string Exists(string returnColumn, string where)
+        {
+            return crudController.Exists(returnColumn, where);
+        }
+
+        public virtual T FillModel<T>(string sql)
+        {
+            return crudController.FillModel<T>(sql);
+        }
+
+        public virtual List<T> FillModelList<T>(string sql)
+        {
+            return crudController.FillModelList<T>(sql);
+        }
+
+        public string GetNextCode()
+        {
+            return CrudDAO.GetNextCode(tableName);
+        }
+
+        public string GetNextCode(string fieldName)
+        {
+            return CrudDAO.GetNextCode(tableName, fieldName);
+        }
+
+        public string GetNextCode(string fieldName, string where)
+        {
+            return CrudDAO.GetNextCode(tableName, fieldName, where);
+        }
+        #endregion
+    }
+}

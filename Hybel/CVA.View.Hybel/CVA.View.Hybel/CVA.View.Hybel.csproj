@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F37331E1-2928-4086-B65E-8B8AD8229063}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVA.View.Hybel</RootNamespace>
+    <AssemblyName>CVA.View.Hybel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.90.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.90.0\lib\net452\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="FastMember.Signed, Version=1.0.0.9, Culture=neutral, PublicKeyToken=9e8f22703bef9a29, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.Signed.1.1.0\lib\net40\FastMember.Signed.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPBusinessOneSDK, Version=1.0.0.1, Culture=neutral, PublicKeyToken=c7c3cb60e45d119f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\SAP\SAP Business One\SAPBusinessOneSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\BoletoBLL.cs" />
+    <Compile Include="BLL\ConcorrenteBLL.cs" />
+    <Compile Include="BLL\DcipBLL.cs" />
+    <Compile Include="BLL\DespesaImportacaoBLL.cs" />
+    <Compile Include="BLL\EmailBLL.cs" />
+    <Compile Include="BLL\EventFilterBLL.cs" />
+    <Compile Include="BLL\FormattedSearchBLL.cs" />
+    <Compile Include="BLL\InitializeBLL.cs" />
+    <Compile Include="BLL\ItemBLL.cs" />
+    <Compile Include="BLL\OrcamentoBLL.cs" />
+    <Compile Include="BLL\ParceiroBLL.cs" />
+    <Compile Include="BLL\PedidoVendaBLL.cs" />
+    <Compile Include="BLL\RoteiroBLL.cs" />
+    <Compile Include="BLL\SimuladorVendaBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="BLL\UserFieldsBLL.cs" />
+    <Compile Include="DAO\Resources\SQL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SQL.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\BoletoModel.cs" />
+    <Compile Include="MODEL\ConfiguracaoEmailModel.cs" />
+    <Compile Include="MODEL\DcipSimplesNacionalModel.cs" />
+    <Compile Include="MODEL\ImpostoModel.cs" />
+    <Compile Include="MODEL\ItemFiltroModel.cs" />
+    <Compile Include="MODEL\ItemModel.cs" />
+    <Compile Include="MODEL\PickingModel.cs" />
+    <Compile Include="MODEL\SimuladorVendaItemModel.cs" />
+    <Compile Include="MODEL\SimuladorVendaPedidoModel.cs" />
+    <Compile Include="MODEL\TaxaConversaoFiltroModel.cs" />
+    <Compile Include="MODEL\TaxaConversaoVendaModel.cs" />
+    <Compile Include="MODEL\ValoresValidos.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DocumentBaseView.cs" />
+    <Compile Include="View\f1282.cs" />
+    <Compile Include="View\f133.cs" />
+    <Compile Include="View\f134.cs" />
+    <Compile Include="View\f139.cs" />
+    <Compile Include="View\f141.cs" />
+    <Compile Include="View\f149.cs" />
+    <Compile Include="View\f2000003031.cs" />
+    <Compile Include="View\f2000003032.cs" />
+    <Compile Include="View\f2000003033.cs" />
+    <Compile Include="View\f2000003034.cs" />
+    <Compile Include="View\f2000003035.cs" />
+    <Compile Include="View\f2000003036.cs" />
+    <Compile Include="View\f2000003037.cs" />
+    <Compile Include="View\f2000003038.cs" />
+    <Compile Include="View\f2000003039.cs" />
+    <Compile Include="View\f2000003040.cs" />
+    <Compile Include="View\f2000003041.cs" />
+    <Compile Include="View\f2000003042.cs" />
+    <Compile Include="View\f2000003043.cs" />
+    <Compile Include="View\f2000003044.cs" />
+    <Compile Include="View\f2000003045.cs" />
+    <Compile Include="View\f2000003046.cs" />
+    <Compile Include="View\f2000003047.cs" />
+    <Compile Include="View\f2000003048.cs" />
+    <Compile Include="View\f2000003049.cs" />
+    <Compile Include="View\f25.cs" />
+    <Compile Include="View\f540000988.cs" />
+    <Compile Include="View\f773.cs" />
+    <Compile Include="View\f81.cs" />
+    <Compile Include="View\fM3031.cs" />
+    <Compile Include="View\fM3033.cs" />
+    <Compile Include="View\fM3034.cs" />
+    <Compile Include="View\fM3035.cs" />
+    <Compile Include="View\fM3036.cs" />
+    <Compile Include="View\fM3039.cs" />
+    <Compile Include="View\fM3042.cs" />
+    <Compile Include="View\fM3043.cs" />
+    <Compile Include="View\fM3045.cs" />
+    <Compile Include="View\fM3046.cs" />
+    <Compile Include="View\fM3047.cs" />
+    <Compile Include="View\fM3048.cs" />
+    <Compile Include="View\fM3049.cs" />
+    <Compile Include="View\fM3939.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DAO\Resources\SQL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SQL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAO\Procedures\SP_CVA_DCIP_ENERGIA.sql" />
+    <Content Include="DAO\Procedures\SP_CVA_DCIP_SIMPLES.sql" />
+    <Content Include="DAO\Procedures\SP_CVA_SIMULADOR_ENTRADA.sql" />
+    <Content Include="DAO\Procedures\SP_CVA_SIMULADOR_OP.sql" />
+    <Content Include="DAO\Procedures\SP_CVA_SIMULADOR_OP_LAYOUT.sql" />
+    <Content Include="DAO\Procedures\SP_CVA_SIMULADOR_PEDIDO.sql" />
+    <Content Include="DAO\Procedures\SP_CVA_SIMULADOR_ROTEIRO.sql" />
+    <Content Include="DAO\Procedures\SP_CVA_SIMULADOR_SAIDA.sql" />
+    <Content Include="DAO\Procedures\SP_CVA_SIMULADOR_VENDA.sql" />
+    <Content Include="DAO\Procedures\SP_CVA_TRANSF_FILIAIS.sql" />
+    <Content Include="Menu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModelosEmail\AVencer_001.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModelosEmail\AVencer_104.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModelosEmail\AVencer_237.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModelosEmail\Boleto.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModelosEmail\Lembrete_001.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModelosEmail\Lembrete_104.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModelosEmail\Lembrete_237.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModelosEmail\Vencido_001.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModelosEmail\Vencido_104.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModelosEmail\Vencido_237.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3031.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3032.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3033.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3034.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3035.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3036.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3037.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3038.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3039.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3040.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3041.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3042.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3043.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3044.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3045.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3046.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3047.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3048.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\f3049.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="srfFiles\x141.srf" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Reports\RoteiroOP.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\TaxaConversaoBase.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="srfFiles\x988.srf" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SBODI_Server">
+      <Guid>{D68328C8-4EDA-4427-8E76-5CE3ED1063C0}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj">
+      <Project>{b956d6a2-af35-4116-840c-f4e5cefd40f6}</Project>
+      <Name>CVA.AddOn.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Boleto_Get" xml:space="preserve">
+    <value>SELECT
+	CASE WHEN ISNULL(U_CVA_Email, 'N') &lt;&gt; 'E' 
+		THEN 'Y'
+		ELSE 'N'					
+	END					[Enviar],
+	OBOE.BoeNum			[Boleto],
+	OBOE.PmntDate		[Lançamento],
+	OBOE.DueDate		[Vencimento],
+	OBOE.CardCode		[Cód. Cliente],
+	OBOE.CardName		[Nome],
+	OCRD.E_Mail			[E-mail],
+	OBOE.BoeSum			[Valor],
+	OINV.Serial			[Nr. NF],
+	CAST(INV6.InstlmntID AS NVARCHAR(10)) + '/' + CAST(PARC_COUNT.QtdeParcela AS NVARCHAR(10)) AS [Parcela],
+	CASE ISNULL(U_CVA_Email, 'N')
+		WHEN 'N' THEN 'Não Enviado'
+		WHEN 'P' THEN 'Pendente de Envio'
+		WHEN 'E' THEN 'Enviado'
+		WHEN 'R' THEN 'Erro no Envio'
+	END [Status],
+	U_CVA_Data_Email	[Último Envio],
+	OBOE.BarcodeRep		[Linha Digitável],
+	BOEC.U_OurNumbr + '-' + BOEC.U_OurNuChk	[Nosso Nr.],
+	OBOE.BPBankCod		[Banco]
+FROM OBOE WITH(NOLOCK)
+	INNER JOIN OCRD WITH(NOLOCK)
+		ON OCRD.CardCode = OBOE.CardCode
+	LEFT JOIN [@SIEBS_BOEC] BOEC WITH(NOLOCK)
+		ON BOEC.Name = 'I' + CAST(OBOE.BoeNum AS NVARCHAR(100))
+	LEFT JOIN ORCT WITH(NOLOCK)
+		ON ORCT.DocNum = PmntNum
+	LEFT JOIN RCT2 WITH(NOLOCK)
+		ON RCT2.DocNum = ORCT.DocNum
+	LEFT JOIN INV6 WITH(NOLOCK)
+		ON INV6.DocEntry = RCT2.DocEntry
+		AND INV6.InstlmntID = RCT2.InstId
+	LEFT JOIN (SELECT COUNT(DocEntry) QtdeParcela, DocEntry FROM INV6 WITH(NOLOCK)
+		GROUP BY DocEntry) PARC_COUNT
+		ON PARC_COUNT.DocEntry = RCT2.DocEntry
+	LEFT JOIN OINV WITH(NOLOCK)
+		ON OINV.DocEntry = INV6.DocEntry
+WHERE OBOE.BoeStatus = 'D'</value>
+  </data>
+  <data name="Boleto_GetLog" xml:space="preserve">
+    <value>SELECT
+	OBOE.BoeNum			[Boleto],
+	OBOE.DueDate		[Vencimento],
+	OBOE.CardCode		[Cód. Cliente],
+	OBOE.CardName		[Nome],
+	OBOE.BoeSum			[Valor],
+	OINV.Serial			[Nr. NF],
+	CAST(INV6.InstlmntID AS NVARCHAR(10)) + '/' + CAST(PARC_COUNT.QtdeParcela AS NVARCHAR(10)) AS [Parcela],
+	CASE ISNULL(U_CVA_Email, 'N')
+		WHEN 'N' THEN 'Não Enviado'
+		WHEN 'P' THEN 'Pendente de Envio'
+		WHEN 'E' THEN 'Enviado'
+		WHEN 'R' THEN 'Erro no Envio'
+	END [Status],
+	U_CVA_Data_Email	[Último Envio],
+	U_CVA_Erro_Email	[Erro]
+FROM OBOE WITH(NOLOCK)
+	LEFT JOIN ORCT WITH(NOLOCK)
+		ON ORCT.DocNum = PmntNum
+	LEFT JOIN RCT2 WITH(NOLOCK)
+		ON RCT2.DocNum = ORCT.DocNum
+	LEFT JOIN INV6 WITH(NOLOCK)
+		ON INV6.DocEntry = RCT2.DocEntry
+		AND INV6.InstlmntID = RCT2.InstId
+	LEFT JOIN (SELECT COUNT(DocEntry) QtdeParcela, DocEntry FROM INV6 WITH(NOLOCK)
+		GROUP BY DocEntry) PARC_COUNT
+		ON PARC_COUNT.DocEntry = RCT2.DocEntry
+	LEFT JOIN OINV WITH(NOLOCK)
+		ON OINV.DocEntry = INV6.DocEntry
+WHERE OBOE.BoeStatus = 'D'</value>
+  </data>
+  <data name="Boleto_UpdateErro" xml:space="preserve">
+    <value>UPDATE OBOE SET U_CVA_Email = 'R', U_CVA_Erro_Email = '{1}'
+WHERE OBOE.BoeNum IN ({0})</value>
+  </data>
+  <data name="Boleto_UpdateOK" xml:space="preserve">
+    <value>UPDATE OBOE SET U_CVA_Email = 'E', U_CVA_Data_Email = CAST(GETDATE() AS DATE), U_CVA_Erro_Email = ''
+WHERE OBOE.BoeNum IN ({0})</value>
+  </data>
+  <data name="Boleto_UpdatePendente" xml:space="preserve">
+    <value>UPDATE OBOE SET U_CVA_Email = 'P', U_CVA_Erro_Email = ''
+WHERE OBOE.BoeNum IN ({0})</value>
+  </data>
+  <data name="BuscarDespesasImportacao" xml:space="preserve">
+    <value>SELECT T0.AlcName, T0.AlcCode, T0.LaCAllcAcc, T0.U_CVA_CodItem, T0.U_CVA_TipoDespesa FROM OALC T0</value>
+  </data>
+  <data name="Cliente_GetByFilial" xml:space="preserve">
+    <value>SELECT CRD7.CardCode FROM OBPL
+	INNER JOIN CRD7
+		ON CRD7.TaxId0 = OBPL.TaxIdNum
+WHERE OBPL.BPLId = {0}</value>
+  </data>
+  <data name="CodConcorrente_Get" xml:space="preserve">
+    <value>SELECT 
+	U_Concorrente	[Cód. Concorrente],
+	Code			[Concorrente]
+FROM [@CVA_CONC_ITEM] T0</value>
+  </data>
+  <data name="Concorrente_GetCount" xml:space="preserve">
+    <value>SELECT COUNT(*) FROM [@CVA_CONC_ITEM]
+WHERE U_Concorrente = '{0}'</value>
+  </data>
+  <data name="Concorrente_GetItemCode" xml:space="preserve">
+    <value>SELECT U_ItemCode FROM [@CVA_CONC_ITEM]
+WHERE U_Concorrente = '{0}'</value>
+  </data>
+  <data name="Concorrente_GetList" xml:space="preserve">
+    <value>SELECT Name, Memo FROM OCMT</value>
+  </data>
+  <data name="ConfiguracaoEmail_Get" xml:space="preserve">
+    <value>SELECT 
+	U_Servidor Servidor,
+	U_Porta		Porta,
+	U_Email		Email,
+	U_Senha		Senha,
+	U_SSL		[SSL],
+	U_Assunto	[Assunto]
+FROM [@CVA_CONFIG_EMAIL]</value>
+  </data>
+  <data name="Dcip_GetEnergiaEletrica" xml:space="preserve">
+    <value>EXEC SP_CVA_DCIP_ENERGIA {0}, '{1}', '{2}'</value>
+  </data>
+  <data name="Dcip_GetSimplesNacional" xml:space="preserve">
+    <value>EXEC SP_CVA_DCIP_SIMPLES {0}, '{1}', '{2}'</value>
+  </data>
+  <data name="Engenharia_Get" xml:space="preserve">
+    <value>DECLARE @Engenharia AS NVARCHAR(MAX)
+SET @Engenharia = $[$38.U_CVA_Engenharia]
+SET @Engenharia = RTRIM(@Engenharia)
+SET @Engenharia = LTRIM(@Engenharia)
+SELECT U_H_Codigo_Engenharia, ItemCode, ItemName FROM OITM WHERE U_H_Codigo_Engenharia LIKE @Engenharia</value>
+  </data>
+  <data name="Engenharia_GetOld" xml:space="preserve">
+    <value>DECLARE @Engenharia AS NVARCHAR(MAX)
+SET @Engenharia = '{0}'
+SET @Engenharia = RTRIM(@Engenharia)
+SET @Engenharia = LTRIM(@Engenharia)
+SELECT 
+	U_H_Codigo_Engenharia	[Cód. Engenharia], 
+	ItemCode				[Cód. Item],
+	ItemName				[Descrição]
+FROM OITM 
+WHERE U_H_Codigo_Engenharia LIKE '%'+ @Engenharia + '%'</value>
+  </data>
+  <data name="Filial_Get" xml:space="preserve">
+    <value>SELECT BPLId, BPLName FROM OBPL</value>
+  </data>
+  <data name="Imposto_GetTaxas" xml:space="preserve">
+    <value>SELECT
+	STC1.STCCode	CodigoImposto,
+	OSTT.Name		TipoImposto, 
+	STA1.Rate		Taxa,
+	STA1.U_Base	* ISNULL(NULLIF(STA1.U_taxAliq, 0), 1)	BaseCalculo
+FROM STC1 WITH(NOLOCK)
+	INNER JOIN OSTT WITH(NOLOCK)
+		ON OSTT.AbsId = STC1.STAType
+	INNER JOIN OSTA WITH(NOLOCK)
+		ON OSTA.Code = STC1.STACode
+		AND OSTA.Type = STC1.STAType
+	INNER JOIN STA1 WITH(NOLOCK)
+		ON STA1.StaCode = OSTA.Code
+		AND STA1.SttType = OSTA.[Type]
+WHERE STC1.STCCode IN ({0})</value>
+  </data>
+  <data name="Item_Get" xml:space="preserve">
+    <value>SELECT DISTINCT
+	OITM.ItemCode				[Cód. Item],
+	OITM.ItemName				[Descrição],
+	OITM.U_H_Codigo_Engenharia	[Cód. Engenharia],
+                   CAST(CONC.U_Obs AS NVARCHAR(MAX)) [Observação],
+	OITW.OnHand - OITW.IsCommited + OITW.OnOrder	[Qtde],
+	OITW.WhsCode				[Depósito]
+
+FROM OITM WITH(NOLOCK)
+	LEFT JOIN [@CVA_MONT_ITEM] MONT WITH(NOLOCK)
+		ON MONT.U_ItemCode = OITM.ItemCode
+	LEFT JOIN [@CVA_CONC_ITEM] CONC WITH(NOLOCK)
+		ON CONC.U_ItemCode = OITM.ItemCode
+	LEFT JOIN OBPL WITH(NOLOCK)
+		ON OBPL.BPLId = {0}
+	LEFT JOIN OITW WITH(NOLOCK)
+		ON OITW.WhsCode = OBPL.DflWhs
+		AND OITW.ItemCode = OITM.ItemCode
+WHERE 1 = 1</value>
+  </data>
+  <data name="Item_GetByConcorrente" xml:space="preserve">
+    <value>SELECT 
+	U_ItemCode		[Cód. Item],
+	U_ItemName		[Descrição],
+	U_Concorrente	[Concorrente],
+	U_Obs			[Observações]
+FROM [@CVA_CONC_ITEM] ITEM
+	INNER JOIN [@CVA_CONCORRENTE] CONC
+		ON CONC.Code = ITEM.Code
+WHERE U_Concorrente = '{0}'</value>
+  </data>
+  <data name="Item_GetByEngenharia" xml:space="preserve">
+    <value>SELECT ItemCode FROM OITM WHERE U_H_Codigo_Engenharia = '{0}'</value>
+  </data>
+  <data name="MotivoCancelamento_Get" xml:space="preserve">
+    <value>SELECT Code, Name FROM [@CVA_MOTIVO_CANC]</value>
+  </data>
+  <data name="NotaEntrada_DespesasImportacao" xml:space="preserve">
+    <value>SELECT OPCH.Serial, OPCH.DocTotal - ISNULL(SUM(PCH4.TaxSum), 0) Total, OPCH.DocTotal, ISNULL(SUM(PCH4.TaxSum), 0) Total_Imposto FROM OPCH WITH(NOLOCK)
+	LEFT JOIN PCH4 WITH(NOLOCK)
+		ON PCH4.DocEntry = OPCH.DocEntry
+		AND PCH4.TaxInPrice = 'Y'
+WHERE DocNum = {0}
+GROUP BY OPCH.Serial, OPCH.DocTotal</value>
+  </data>
+  <data name="NotaEntrada_GetByDocNum" xml:space="preserve">
+    <value>SELECT DocEntry FROM OPCH WITH(NOLOCK) WHERE DocNum = {0}</value>
+  </data>
+  <data name="NotaFiscaEntradalBuscarImpostos" xml:space="preserve">
+    <value>SELECT OPCH.Serial, OPCH.DocTotal - ISNULL(SUM(PCH4.TaxSum), 0) Total,
+OPCH.DocTotal,
+ISNULL(SUM(PCH4.TaxSum), 0) Total_Imposto,
+PCH4.TaxSum,
+PCH4.staType,
+PCH4.StcCode,
+OSTT.Name
+FROM OPCH WITH(NOLOCK)
+	LEFT JOIN PCH4 WITH(NOLOCK)
+		ON PCH4.DocEntry = OPCH.DocEntry
+		AND PCH4.TaxInPrice = 'Y'
+	
+	INNER JOIN OSTT WITH(NOLOCK)
+		ON OSTT.AbsId = PCH4.staType
+
+WHERE DocNum = {0}
+GROUP BY PCH4.TaxSum, OPCH.Serial, OPCH.DocTotal,PCH4.staType,PCH4.StcCode,OSTT.Name</value>
+  </data>
+  <data name="Parceiro_GetCardCode" xml:space="preserve">
+    <value>SELECT CARDCODE FROM OCRD WHERE CARDNAME = '{0}'</value>
+  </data>
+  <data name="Parceiro_GetStatus" xml:space="preserve">
+    <value>DECLARE @cardcode NVARCHAR(30), @dias INT, @retorno VARCHAR(10)
+
+SELECT @cardcode = '{0}'
+SET @retorno = 'FALSE'
+
+IF EXISTS(SELECT TOP 1 1 FROM OCRD WITH(NOLOCK) WHERE CardCode = @cardcode AND ISNULL(CAST(Free_Text AS NVARCHAR(MAX)), '') &lt;&gt; '')
+BEGIN	
+	SET @retorno = 'TRUE'
+END
+ELSE IF NOT EXISTS(SELECT TOP 1 1 FROM OINV WITH(NOLOCK) WHERE CANCELED = 'N' AND CardCode = @cardcode AND DocDate &gt; DATEADD(DAY, -31, GETDATE()))
+BEGIN
+	SET @retorno = 'TRUE'
+END
+ELSE
+BEGIN
+	DECLARE invcursor CURSOR FORWARD_ONLY FOR
+	SELECT DATEDIFF(day, GETDATE(), T1.DueDate)
+	FROM OINV T0 WITH(NOLOCK) INNER JOIN INV6 T1 WITH(NOLOCK) ON T1.DocEntry = T0.DocEntry 
+	WHERE T1.[Status] = 'O' AND T0.CardCode = @cardcode OR @cardcode NOT IN (SELECT Cardcode from OINV)
+
+	UNION
+	SELECT DATEDIFF(day, GETDATE(), DueDate)
+	  FROM OBOE WITH(NOLOCK)
+	 WHERE BoeStatus NOT IN ('P','C') AND CardCode = @cardcode
+	UNION
+	SELECT  DATEDIFF(day, GETDATE(), JDT1.DueDate)
+	FROM JDT1 WITH(NOLOCK)        
+	  INNER JOIN OJDT WITH(NOLOCK) ON OJDT.TransId = JDT1.TransId        
+	  INNER JOIN OCRD WITH(NOLOCK) ON OCRD.CardCode = JDT1.ShortName AND OCRD.CardType = 'C'        
+	 WHERE JDT1.BalDueDeb &lt;&gt; 0        
+	  AND JDT1.TransType = 30 
+	  AND JDT1.ShortName = @cardcode       
+	 GROUP BY OCRD.CardName, OCRD.CardCode, OJDT.TransId, OJDT.TransType, OJDT.RefDate, JDT1.DueDate
+
+	OPEN invcursor
+	FETCH NEXT FROM invcursor INTO @dias
+
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+					IF @dias &lt;=-1
+					BEGIN
+								   SET @retorno = 'TRUE'
+								   BREAK
+					END
+					FETCH NEXT FROM invcursor INTO @dias
+	END
+
+	CLOSE invcursor
+	DEALLOCATE invcursor
+END
+SELECT @retorno</value>
+  </data>
+  <data name="PedidoVenda_GetItems" xml:space="preserve">
+    <value>SELECT RDR1.ItemCode, RDR1.Dscription ItemName, RDR1.OpenQty Quantidade FROM ORDR WITH(NOLOCK)
+	INNER JOIN RDR1 WITH(NOLOCK)
+		ON RDR1.DocEntry = ORDR.DocEntry
+WHERE ORDR.DocNum = {0}</value>
+  </data>
+  <data name="PedidoVenda_GetTransferenciaFilial" xml:space="preserve">
+    <value>DECLARE @WhsCode NVARCHAR(100)
+
+SELECT @WhsCode = DflWhs FROM OBPL WHERE BPLId = {0}
+
+EXEC SP_CVA_TRANSF_FILIAIS @WhsCode</value>
+  </data>
+  <data name="ProdutoMontadora_Get" xml:space="preserve">
+    <value>SELECT U_Produto FROM [@CVA_MONT_PROD]
+WHERE Code = $[$et_Mont.0]  OR $[$et_Mont.0] = ''</value>
+  </data>
+  <data name="RelatorioTaxaConversaoVenda" xml:space="preserve">
+    <value>DECLARE @DataDe DATETIME
+DECLARE @DataAte DATETIME
+
+SET @DataDe = CAST('{0}' AS DATETIME)
+SET @DataAte = CAST('{1}' AS DATETIME)
+
+exec SP_CVA_TAXA_CONVERSAO_VENDA '{2}', @DataDe, @DataAte, {3}</value>
+  </data>
+  <data name="RelatorioVendasCancelas" xml:space="preserve">
+    <value>DECLARE @DataDe DATETIME
+DECLARE @DataAte DATETIME
+
+SET @DataDe = CAST('{0}' AS DATETIME)
+SET @DataAte = CAST('{1}' AS DATETIME)
+
+exec SP_CVA_VENDA_CANCELADA_SUM '{2}', @DataDe, @DataAte, {3}</value>
+  </data>
+  <data name="SimuladorVenda_GetCount" xml:space="preserve">
+    <value>SELECT COUNT(*) FROM [@CVA_SIM_VENDA]
+WHERE Code = '{0}'</value>
+  </data>
+  <data name="SimuladorVenda_GetEntradas" xml:space="preserve">
+    <value>EXEC SP_CVA_SIMULADOR_ENTRADA '{0}'</value>
+  </data>
+  <data name="SimuladorVenda_GetOPs" xml:space="preserve">
+    <value>EXEC SP_CVA_SIMULADOR_OP '{0}'</value>
+  </data>
+  <data name="SimuladorVenda_GetPedidos" xml:space="preserve">
+    <value>EXEC SP_CVA_SIMULADOR_PEDIDO</value>
+  </data>
+  <data name="SimuladorVenda_GetRoteiro" xml:space="preserve">
+    <value>EXEC SP_CVA_SIMULADOR_ROTEIRO {0}, '{1}'</value>
+  </data>
+  <data name="SimuladorVenda_GetSaidas" xml:space="preserve">
+    <value>EXEC SP_CVA_SIMULADOR_SAIDA '{0}'</value>
+  </data>
+  <data name="SimuladorVenda_GetSimulacao" xml:space="preserve">
+    <value>EXEC SP_CVA_SIMULADOR_VENDA '{0}'</value>
+  </data>
+  <data name="SimuladorVenda_SetLayout" xml:space="preserve">
+    <value>DELETE FROM [@CVA_SIM_VENDA_OP]
+WHERE Code = '{0}'
+
+INSERT INTO [@CVA_SIM_VENDA_OP]
+(Code, Name, U_ItemCode, U_OP, U_Fis, U_Res, U_Enc, U_Dis)
+VALUES('{0}', '{0}', '{1}', {2}, {3}, {4}, {5}, {6})</value>
+  </data>
+  <data name="TipoDespesaImportacao_GetByName" xml:space="preserve">
+    <value>SELECT AlcCode FROM OALC WHERE AlcName = '{0}'</value>
+  </data>
+  <data name="TipoMaquina_Get" xml:space="preserve">
+    <value>SELECT U_Tipo FROM [@CVA_MAQUINA]
+WHERE Code = $[$et_Aplic.0] OR $[$et_Aplic.0] = ''</value>
+  </data>
+  <data name="User_GetId" xml:space="preserve">
+    <value>SELECT USERID FROM OUSR WHERE USER_CODE = '{0}'</value>
+  </data>
+  <data name="Utilizacao_GetByPN" xml:space="preserve">
+    <value>SELECT MainUsage FROM OCRD WHERE CardCode = '{0}'</value>
+  </data>
+  <data name="VericarTipoNF" xml:space="preserve">
+    <value>SELECT Model From OPCH Where DocNum = {0}</value>
+  </data>
+</root>

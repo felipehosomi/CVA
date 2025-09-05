@@ -1,0 +1,52 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: TransferenciaFilial.Properties.Resources
+// Assembly: TransferenciaFilial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 9CD3926C-3C0C-41AC-BE03-0C638A4EB456
+// Assembly location: D:\CVA\Development\Hybel\TransferenciaFiliais\Executável\TransferenciaFilial.exe
+
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Globalization;
+using System.Resources;
+using System.Runtime.CompilerServices;
+
+namespace TransferenciaFilial.Properties
+{
+  [GeneratedCode("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+  [DebuggerNonUserCode]
+  [CompilerGenerated]
+  internal class Resources
+  {
+    private static ResourceManager resourceMan;
+    private static CultureInfo resourceCulture;
+
+    internal Resources()
+    {
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    internal static ResourceManager ResourceManager
+    {
+      get
+      {
+        if (TransferenciaFilial.Properties.Resources.resourceMan == null)
+          TransferenciaFilial.Properties.Resources.resourceMan = new ResourceManager("TransferenciaFilial.Properties.Resources", typeof (TransferenciaFilial.Properties.Resources).Assembly);
+        return TransferenciaFilial.Properties.Resources.resourceMan;
+      }
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    internal static CultureInfo Culture
+    {
+      get
+      {
+        return TransferenciaFilial.Properties.Resources.resourceCulture;
+      }
+      set
+      {
+        TransferenciaFilial.Properties.Resources.resourceCulture = value;
+      }
+    }
+  }
+}

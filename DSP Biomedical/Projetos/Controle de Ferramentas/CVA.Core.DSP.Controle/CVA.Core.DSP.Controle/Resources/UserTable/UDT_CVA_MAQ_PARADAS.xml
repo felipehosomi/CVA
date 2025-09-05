@@ -1,0 +1,16 @@
+<BOM>
+  <BO>
+    <AdmInfo>
+      <Object>153</Object>
+      <Version>2</Version>
+    </AdmInfo>
+    <UserTablesMD>
+      <row>
+        <TableName>CVA_MAQ_PARADAS</TableName>
+        <TableDescription>[CVA] Maquinas Paradas</TableDescription>
+        <TableType>bott_NoObject</TableType>
+        <Archivable>tNO</Archivable>
+      </row>
+    </UserTablesMD>
+  </BO>
+</BOM>

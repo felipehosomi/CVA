@@ -1,0 +1,2506 @@
+﻿{
+    "DocDueDate": "2021-05-31",
+    "CardCode": "C20000",
+    "DocumentLines": [
+        {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        },
+                {
+            "ItemCode": "S10000",
+            "Quantity": 2.0,
+            "Price": 3359.990
+        },
+        {
+            "ItemCode": "P10003",
+            "Quantity": 5.0,
+            "Price": 3176.0 
+        },
+        {
+            "ItemCode": "P10004",
+            "Quantity": 5.0,
+            "Price": 3285.0 
+        },
+        {
+            "ItemCode": "A00003",
+            "Quantity": 10.0,
+            "Price": 782.710
+        },
+        {
+            "ItemCode": "A00005",
+            "Quantity": 10.0,
+            "Price": 481.390
+        }
+    ]
+}

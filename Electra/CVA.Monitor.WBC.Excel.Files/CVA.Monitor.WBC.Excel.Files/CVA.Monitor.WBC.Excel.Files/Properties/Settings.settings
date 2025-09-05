@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CVA.Monitor.WBC.Excel.Files.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Servidor" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">hanab1:30015</Value>
+    </Setting>
+    <Setting Name="UsuarioDB" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SYSTEM</Value>
+    </Setting>
+    <Setting Name="SenhaDB" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">hanab1@SAP</Value>
+    </Setting>
+    <Setting Name="CriarUDF" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N</Value>
+    </Setting>
+    <Setting Name="FolderMonitor" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Import</Value>
+    </Setting>
+    <Setting Name="ColunaCodigoDoVendedor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ColunaCodigoDoVendedor</Value>
+    </Setting>
+    <Setting Name="CodigoItemCompra" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ENER00001</Value>
+    </Setting>
+    <Setting Name="CodigoItemVenda" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ENER00001</Value>
+    </Setting>
+    <Setting Name="Perfil_CCEE_Default" Type="System.String" Scope="User">
+      <Value Profile="(Default)">111</Value>
+    </Setting>
+    <Setting Name="ServidorLicenca" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">hanab1</Value>
+    </Setting>
+    <Setting Name="Base" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SBO_KESTAL</Value>
+    </Setting>
+    <Setting Name="UsuarioSAP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">manager</Value>
+    </Setting>
+    <Setting Name="SenhaSAP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Cva@2020</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

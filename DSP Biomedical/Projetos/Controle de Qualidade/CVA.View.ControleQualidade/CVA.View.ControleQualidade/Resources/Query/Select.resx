@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ExistsApontamentoQualidade" xml:space="preserve">
+    <value>SELECT TOP 1 1  FROM [@CVA_QUALITY_RES] RES
+WHERE RES.U_OrdemNumero = {0}
+AND RES.U_Inspecao = 'Q'</value>
+    <comment>Verifica se existe o apontamento para qualidade</comment>
+  </data>
+  <data name="GenericExists" xml:space="preserve">
+    <value>SELECT Code FROM [{0}] WHERE Code = '{1}'</value>
+    <comment>Verifica se código existe na tabela</comment>
+  </data>
+  <data name="GetApontamentoAtual" xml:space="preserve">
+    <value>SELECT
+	Code,
+	U_Usuario	AS Usuario,
+	U_Data		AS Data,
+	U_OP		AS OP,
+	U_PlanoInsp	AS PlanoInsp
+FROM [@CVA_QUALITY_INS]
+WHERE U_Data = CAST('{0}' AS DATE)
+AND U_OP = {1}</value>
+    <comment>Retorna apontamento atual do inspetor</comment>
+  </data>
+  <data name="GetApontamentoInspetor" xml:space="preserve">
+    <value>DECLARE @SQLStr VARCHAR(MAX)
+SET @SQLStr = ''
+
+DECLARE @Hours VARCHAR(MAX)
+SET @Hours = ''
+
+DECLARE @Columns VARCHAR(MAX)
+SET @Columns = ''
+
+SELECT @Columns = @Columns + '[' + T0.Hora + '] AS [' + T0.Hora + ' - ' + T0.Nome + '], '
+FROM
+(
+	SELECT DISTINCT  U_Hora AS Hora, U_Nome AS Nome
+	FROM [@CVA_QUALITY_INS1] WITH(NOLOCK)
+	WHERE Code = '{0}'
+) T0
+
+SELECT @Hours = @Hours + '[' + T0.[Column] + '], '
+FROM
+(
+	SELECT DISTINCT U_Hora [Column]
+	FROM [@CVA_QUALITY_INS1] WITH(NOLOCK)
+	WHERE Code = '{0}'
+) T0
+
+DECLARE @NewColumn VARCHAR(100)
+IF '{2}' &lt;&gt; ''
+	SET @NewColumn = ', CAST('''' AS NVARCHAR(200)) AS [{2}]'
+ELSE
+	SET @NewColumn = ''
+
+IF @Hours &lt;&gt; ''
+BEGIN
+	SET @Columns = LEFT(@Columns, LEN(@Columns) - 1)
+	SET @Hours = LEFT(@Hours, LEN(@Hours) - 1)
+
+	SET @SQLStr = 'SELECT Linha, Especificação, Valor,' + @Columns + @NewColumn +
+	' FROM (
+				SELECT 
+					PLA.LineId	as Linha,
+					ATR.U_Descricao as Especificação
+					,CASE WHEN ISNULL(PLA.U_ValorNominal, '''') &lt;&gt; ''''
+						THEN PLA.U_ValorNominal
+						ELSE PLA.U_ValorDe + '' - '' + PLA.U_ValorAte
+					END AS Valor,
+					U_InspLinha, 
+					U_Hora, 
+					U_Valor
+				FROM [@CVA_QUALITY_PLA1] PLA
+					INNER JOIN [@CVA_QUALITY_ATR] ATR
+						ON ATR.Code = PLA.U_Especificacao
+					LEFT JOIN [@CVA_QUALITY_INS1] INS
+						ON INS.U_InspLinha = PLA.LineId
+						AND INS.Code = ''{0}''
+				WHERE PLA.Code = ''{1}''
+				AND U_Inspecao = ''I''
+			) sq 
+			PIVOT (MAX(U_Valor) FOR U_Hora IN('
+	+ @Hours + 
+	')) AS pt'
+END
+ELSE
+BEGIN
+	SET @SQLStr =  'SELECT
+						PLA.LineId		as Linha,
+						ATR.U_Descricao as Especificação
+						,CASE WHEN ISNULL(PLA.U_ValorNominal, '''') &lt;&gt; ''''
+							THEN PLA.U_ValorNominal
+							ELSE PLA.U_ValorDe + '' - '' + PLA.U_ValorAte
+						END AS Valor ' + @NewColumn + '
+					FROM [@CVA_QUALITY_PLA1] PLA
+						INNER JOIN [@CVA_QUALITY_ATR] ATR
+							ON ATR.Code = PLA.U_Especificacao
+					WHERE PLA.Code = ''{1}''
+					AND U_Inspecao = ''I'''
+END
+
+EXEC(@SQLStr)</value>
+    <comment>Retorna o apontamento atual do inspetor</comment>
+  </data>
+  <data name="GetApontamentosRestantes" xml:space="preserve">
+    <value>DECLARE @DocNum INT
+
+SELECT @DocNum = RES.U_DocEnt FROM [@CVA_QUALITY_RES] RES
+WHERE RES.U_DocEnt = {0}
+
+IF @DocNum IS NULL
+BEGIN
+	SET @DocNum = -1
+END
+ELSE
+BEGIN
+SET @DocNum = 0
+
+SELECT @DocNum = RES.U_DocEnt FROM [@CVA_QUALITY_RES] RES
+	INNER JOIN [@CVA_QUALITY_RES1] RES1  WITH(NOLOCK)
+		ON RES1.Code = RES.Code
+	WHERE RES.U_DocEnt = {0}
+	AND ISNULL(RES1.U_Equipamento, '') = ''
+	AND ISNULL(RES1.U_VlrMedicao, '') = ''
+END
+SELECT @DocNum</value>
+    <comment>Verifica se existe apontamento a ser efetuado para entrada de produto acabado. Retorna -1 se ainda não existir nenhum apontamento</comment>
+  </data>
+  <data name="GetAtributos" xml:space="preserve">
+    <value>SELECT 
+	Code AS Code
+	,U_Descricao AS Name
+FROM [@CVA_QUALITY_ATR]</value>
+    <comment>Retorna todos os atributos cadastrados</comment>
+  </data>
+  <data name="GetCodeFromPlan" xml:space="preserve">
+    <value>SELECT Code FROM [@CVA_QUALITY_PLA] WHERE Code = '{0}'</value>
+    <comment>Verifica se já existe o código no cadastro</comment>
+  </data>
+  <data name="GetCodeFromPlan1" xml:space="preserve">
+    <value>SELECT Code FROM [@CVA_QUALITY_PLA1] WHERE Code = '{0}'</value>
+    <comment>Verifica se ja existe o codigo no cadastro</comment>
+  </data>
+  <data name="GetInspecaoPorItem" xml:space="preserve">
+    <value>SELECT U_CVA_Inspecao PlanoInspecao, U_CVA_TipoInspecao TipoInspecao FROM OITM WHERE ItemCode = '{0}'</value>
+    <comment>Retorna o codigo de inspecao por item</comment>
+  </data>
+  <data name="GetItensApontamento" xml:space="preserve">
+    <value>SELECT Distinct U_ItemCode 
+FROM [@CVA_QUALITY_RES1]
+WHERE Code = '{0}'</value>
+    <comment>Retorna os itens que foram efetuados os apontamentos</comment>
+  </data>
+  <data name="GetLinhasApontamentoInspetor" xml:space="preserve">
+    <value>SELECT
+	U_Especificacao as Especificação
+	,CASE WHEN ISNULL(U_ValorNominal, '') &lt;&gt; ''
+		THEN U_ValorNominal
+		ELSE U_ValorDe + ' - ' + U_ValorAte
+	END AS Valor
+FROM [@CVA_QUALITY_PLA1]
+WHERE Code = '{0}'
+AND U_Inspecao = 'I'</value>
+    <comment>Retorna apontamentos do inspetor</comment>
+  </data>
+  <data name="GetMaxCodeApontamento" xml:space="preserve">
+    <value>SELECT COALESCE(MAX(CONVERT(INT,Code)), 0) FROM [@CVA_QUALITY_RES]</value>
+    <comment>Retorna o ultimo codigo do apontamento</comment>
+  </data>
+  <data name="GetMaxCodeQuality1" xml:space="preserve">
+    <value>SELECT MAX(Code) AS Code FROM [@CVA_QUALITY_PLA1]</value>
+    <comment>Retorna o ultimo codigo cadastrado na tabela</comment>
+  </data>
+  <data name="GetMaxOperador" xml:space="preserve">
+    <value>SELECT COALESCE(MAX(CONVERT(INT,Code)), 0) FROM [@CVA_OPERATOR]</value>
+  </data>
+  <data name="GetNomeAtributo" xml:space="preserve">
+    <value>SELECT U_Descricao FROM [@CVA_QUALITY_ATR] WHERE Code = '{0}'</value>
+    <comment>Retorna o nome do atributo</comment>
+  </data>
+  <data name="GetOperadores" xml:space="preserve">
+    <value>SELECT Code, Name FROM [@CVA_OPERATOR] WHERE U_Ativo = 'Y'</value>
+    <comment>Retorna operadores ativos</comment>
+  </data>
+  <data name="GetPlanoInspecao" xml:space="preserve">
+    <value>SELECT
+	Code
+	,Name
+	,U_Aprovado		AS Aprovado
+	,U_Description	AS [Description]
+FROM [@CVA_QUALITY_PLA]
+WHERE Code = '{0}'</value>
+    <comment>Retorna o plano de inspecao pelo codigo</comment>
+  </data>
+  <data name="GetPlanoInspecaoLinha" xml:space="preserve">
+    <value>SELECT
+	Code
+	,U_Analise as Analise
+	,U_Especificacao as EspecificacaoCode
+	,U_Equipamento as Equipamento
+	,U_ValorDe as ValorDe
+	,U_ValorAte as ValorAte
+	,U_ValorNominal as ValorNominal
+	,U_Observacao as Observacao
+FROM [@CVA_QUALITY_PLA1]
+WHERE Code = '{0}'
+AND U_Inspecao = '{1}'</value>
+    <comment>Retorna os registros filhos do plano de inspecao</comment>
+  </data>
+  <data name="GetTipoAtributo" xml:space="preserve">
+    <value>SELECT U_Tipo FROM [@CVA_QUALITY_ATR] where Code = '{0}'</value>
+    <comment>Retorna o tipo do atributo</comment>
+  </data>
+  <data name="GetUsuario" xml:space="preserve">
+    <value>SELECT 
+	U_CVA_Aprovador AprovadorQualidade,
+	U_NAME			Nome
+FROM OUSR WHERE USER_CODE = '{0}'</value>
+    <comment>Retorna o usuário</comment>
+  </data>
+  <data name="GetUsuariosAprovadores" xml:space="preserve">
+    <value>SELECT 
+	USER_CODE		UserCode,
+	U_CVA_Aprovador AprovadorQualidade,
+	U_NAME			Nome
+FROM OUSR 
+WHERE U_CVA_Aprovador = 1</value>
+    <comment>Retorna todos os usuários aprovadores de qualidade</comment>
+  </data>
+  <data name="RetornaPlano" xml:space="preserve">
+    <value>SELECT T0.Code 
+      ,T0.Name
+	  ,T0.U_Description   
+	  ,T0.U_Aprovado	  
+	  ,T0.U_Aprovador	  
+	  ,T0.U_DtAprov		  
+	  FROM [@CVA_QUALITY_PLA] T0 
+	   WHERE T0.Code = '{0}'</value>
+    <comment>Retorna Plano para Duplicar.</comment>
+  </data>
+  <data name="RetornaPlanoLinhas" xml:space="preserve">
+    <value>select T1.U_Analise		  
+	  ,T1.U_Especificacao 
+	  ,T1.U_ValorNominal  
+	  ,T1.U_ValorDe		  
+	  ,T1.U_ValorAte	  
+	  ,T1.U_Inspecao	  
+	  ,T1.U_Equipamento	  
+	  ,T1.U_Observacao	  
+  FROM [@CVA_QUALITY_PLA1] T1    
+ WHERE T1.Code = '{0}'</value>
+    <comment>Retorna as Linhas da matriz de acordo com o plano</comment>
+  </data>
+</root>

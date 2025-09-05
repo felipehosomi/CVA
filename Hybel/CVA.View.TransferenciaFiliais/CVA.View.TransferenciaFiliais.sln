@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.TransferenciaFiliais", "CVA.View.TransferenciaFiliais\CVA.View.TransferenciaFiliais.csproj", "{EC29D8CD-F347-4DBB-BF7A-C7087B5852F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.TransferenciaFiliais.AddOn", "CVA.View.TransferenciaFiliais.AddOn\CVA.View.TransferenciaFiliais.AddOn.csproj", "{346C3A58-0594-4C2A-8B61-6E6C553A92E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CVA.View.Transferencia.Setup", "CVA.View.TransferenciaFiliais.Setup\CVA.View.Transferencia.Setup.vbproj", "{41F719E1-FE3E-433B-92AB-8E7DA92997C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC29D8CD-F347-4DBB-BF7A-C7087B5852F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC29D8CD-F347-4DBB-BF7A-C7087B5852F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC29D8CD-F347-4DBB-BF7A-C7087B5852F8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC29D8CD-F347-4DBB-BF7A-C7087B5852F8}.Debug|x86.Build.0 = Debug|Any CPU
+		{EC29D8CD-F347-4DBB-BF7A-C7087B5852F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC29D8CD-F347-4DBB-BF7A-C7087B5852F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC29D8CD-F347-4DBB-BF7A-C7087B5852F8}.Release|x86.ActiveCfg = Release|Any CPU
+		{EC29D8CD-F347-4DBB-BF7A-C7087B5852F8}.Release|x86.Build.0 = Release|Any CPU
+		{346C3A58-0594-4C2A-8B61-6E6C553A92E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346C3A58-0594-4C2A-8B61-6E6C553A92E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346C3A58-0594-4C2A-8B61-6E6C553A92E7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{346C3A58-0594-4C2A-8B61-6E6C553A92E7}.Debug|x86.Build.0 = Debug|Any CPU
+		{346C3A58-0594-4C2A-8B61-6E6C553A92E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346C3A58-0594-4C2A-8B61-6E6C553A92E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{346C3A58-0594-4C2A-8B61-6E6C553A92E7}.Release|x86.ActiveCfg = Release|Any CPU
+		{346C3A58-0594-4C2A-8B61-6E6C553A92E7}.Release|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.ActiveCfg = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.Build.0 = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.ActiveCfg = Release|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.Build.0 = Release|x86
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Debug|x86.ActiveCfg = Debug|x86
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Debug|x86.Build.0 = Debug|x86
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Release|x86.ActiveCfg = Release|x86
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FB5B38B-885E-45BF-94D7-9A111D27EAE6}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CVA.View.TransferenciaFiliais\\CVA.View.TransferenciaFiliais.csproj
+		SccProjectName1 = CVA.View.TransferenciaFiliais
+		SccLocalPath1 = CVA.View.TransferenciaFiliais
+		SccProjectUniqueName2 = CVA.View.TransferenciaFiliais.AddOn\\CVA.View.TransferenciaFiliais.AddOn.csproj
+		SccProjectName2 = CVA.View.TransferenciaFiliais.AddOn
+		SccLocalPath2 = CVA.View.TransferenciaFiliais.AddOn
+		SccProjectUniqueName3 = ..\\..\\Helpers\\CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName3 = ../../Helpers/CVA.AddOn.Common
+		SccLocalPath3 = ..\\..\\Helpers\\CVA.AddOn.Common
+		SccProjectUniqueName4 = CVA.View.TransferenciaFiliais.Setup\\CVA.View.Transferencia.Setup.vbproj
+		SccProjectName4 = CVA.View.TransferenciaFiliais.Setup
+		SccLocalPath4 = CVA.View.TransferenciaFiliais.Setup
+	EndGlobalSection
+EndGlobal

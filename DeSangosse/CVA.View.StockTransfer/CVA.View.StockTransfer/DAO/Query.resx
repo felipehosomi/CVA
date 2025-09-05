@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Batch_Get" xml:space="preserve">
+    <value>SELECT 
+	OBTN.ItemCode, 
+	OBTN.DistNumber BatchNum, 
+	IBT1.Quantity, 
+	OBTN.ExpDate
+FROM OBTN
+	INNER JOIN 
+	(
+		SELECT ItemCode, BatchNum, WhsCode,
+		SUM(CASE WHEN Direction = 0 THEN Quantity ELSE (Quantity * - 1) END) Quantity
+		FROM IBT1
+		GROUP BY ItemCode, BatchNum, WhsCode
+		HAVING SUM(CASE WHEN Direction = 0 THEN Quantity ELSE (Quantity * - 1) END) &gt; 0
+	)  IBT1
+	ON IBT1.ItemCode = OBTN.ItemCode
+	AND IBT1.BatchNum = OBTN.DistNumber
+WHERE OBTN.ItemCode = '{0}'
+AND IBT1.WhsCode = '{1}'
+ORDER BY OBTN.ExpDate</value>
+  </data>
+  <data name="BusinessPartner_GetWarehouse" xml:space="preserve">
+    <value>SELECT U_CVA_Whs_Transf FROM OCRD WHERE CardCode = '{0}'</value>
+  </data>
+  <data name="Document_GetDocNum" xml:space="preserve">
+    <value>SELECT DocNum FROM {0} WHERE DocEntry = {1}</value>
+  </data>
+  <data name="Document_GetOrderLines" xml:space="preserve">
+    <value>SELECT ItemCode,Quantity, InvQty, Convert(NVARCHAR(10),Usage) Usage, WhsCode, PackQty, Price FROM rdr1 WHERE docentry = {0}</value>
+  </data>
+  <data name="Item_GetBatchControl" xml:space="preserve">
+    <value>SELECT OITM.ManBtchNum 
+FROM OITM WITH(NOLOCK)
+WHERE OITM.ItemCode = '{0}'</value>
+  </data>
+  <data name="MedidasItem" xml:space="preserve">
+    <value>select ISNULL(U_CVA_Densidade,0) AS U_CVA_Densidade, ISNULL(U_CVA_PesoEmbalagem,0) AS U_CVA_PesoEmbalagem, ISNULL(U_CVA_PesoPalete,0) AS U_CVA_PesoPalete from OITM Where ItemCode = '{0}'</value>
+  </data>
+  <data name="StockTransferRequest_GetByBaseDoc" xml:space="preserve">
+    <value>SELECT 1 FROM OWTQ 
+WHERE U_CVA_Base_DocEntry = {0}
+AND U_CVA_Base_Type = {1}</value>
+  </data>
+  <data name="StockTransferRequest_UpdateBaseDoc" xml:space="preserve">
+    <value>UPDATE OWTQ
+SET U_CVA_Base_Doc = '{1}',
+U_CVA_Base_DocEntry = {2},
+U_CVA_Base_Type		= {3}
+WHERE OWTQ.DocEntry = {0}</value>
+  </data>
+  <data name="StockTransfer_GetByDelivery" xml:space="preserve">
+    <value>SELECT ORDR.DocNum PurchaseOrderDocNum, OWTR.DocNum StockTransferDocNum, OUSG.U_CVA_Transfer ValidateTransfer
+FROM RDR1 WITH(NOLOCK)
+	INNER JOIN DLN1
+		ON DLN1.BaseEntry = RDR1.DocEntry
+		AND DLN1.BaseLine = RDR1.LineNum
+		AND DLN1.BaseType = 17
+	INNER JOIN OUSG WITH(NOLOCK)
+		ON OUSG.ID = DLN1.Usage
+	INNER JOIN ORDR WITH(NOLOCK)
+		ON ORDR.DocEntry = RDR1.DocEntry
+	LEFT JOIN OWTR WITH(NOLOCK)
+		ON OWTR.U_CVA_Base_DocEntry = ORDR.DocEntry
+		AND OWTR.U_CVA_Base_Type = ORDR.ObjType
+WHERE DLN1.DocEntry = {0}</value>
+  </data>
+  <data name="StockTransfer_GetByPurchaseOrder" xml:space="preserve">
+    <value>SELECT ORDR.DocNum PurchaseOrderDocNum, OWTR.DocNum StockTransferDocNum, OUSG.U_CVA_Transfer ValidateTransfer
+FROM RDR1 WITH(NOLOCK)
+	INNER JOIN OUSG WITH(NOLOCK)
+		ON OUSG.ID = RDR1.Usage
+	INNER JOIN ORDR WITH(NOLOCK)
+		ON ORDR.DocEntry = RDR1.DocEntry
+	LEFT JOIN OWTR WITH(NOLOCK)
+		ON OWTR.U_CVA_Base_DocEntry = ORDR.DocEntry
+		AND OWTR.U_CVA_Base_Type = ORDR.ObjType
+WHERE RDR1.DocEntry = {0}</value>
+  </data>
+  <data name="Usage_GetValidateTransfer" xml:space="preserve">
+    <value>SELECT U_CVA_Transfer FROM OUSG WHERE ID = {0}</value>
+  </data>
+  <data name="Warehouse_GetThirdPartyList" xml:space="preserve">
+    <value>SELECT * FROM OWHS
+WHERE OwnerCode = 2</value>
+  </data>
+  <data name="Warehouse_GetWhsOut" xml:space="preserve">
+    <value>SELECT WhsCode FROM OWHS WHERE U_CVA_Transfer_Out = 'Y'</value>
+  </data>
+  <data name="Warehouse_UpdateTransferDefault" xml:space="preserve">
+    <value>UPDATE OWHS
+SET U_CVA_Transfer_Out = 'N'
+WHERE OWHS.WhsCode &lt;&gt; '{0}'</value>
+  </data>
+</root>

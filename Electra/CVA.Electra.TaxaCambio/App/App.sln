@@ -1,0 +1,116 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{35750EF8-5C5E-45EC-88D6-FB4383BA015E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationServices", "ApplicationServices", "{EF08FF46-4FA3-401A-9943-05A9DD606E6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.ApplicationServices", "App.ApplicationServices\App.ApplicationServices.csproj", "{F81DA434-D04D-441C-BC32-FE96C809D515}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.ApplicationServices.Test", "App.ApplicationServices.Test\App.ApplicationServices.Test.csproj", "{E3DB2166-1FE7-4DC9-98FE-901C2A7AE584}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI.Configuration", "UI.Configuration", "{05C9BA5A-655D-474F-82BA-D3518A35094A}"
+	ProjectSection(SolutionItems) = preProject
+		UI.Configuration\App.config = UI.Configuration\App.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Electra.Currency.Task", "Safeeds.Currency.Task\Electra.Currency.Task.csproj", "{06758F80-64AC-4104-85C8-290BE162B427}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Repository", "App.Repository\App.Repository.csproj", "{DF9A74A2-3A0A-4154-9C65-276649F4B0A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Infrastructure", "App.Infrastructure\App.Infrastructure.csproj", "{427161A2-3B96-4A65-B011-0BE79EEDABA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Domain", "App.Domain\App.Domain.csproj", "{0BE37313-AB50-43FE-99FD-8BF55415D859}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AppVeyor|Any CPU = AppVeyor|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F81DA434-D04D-441C-BC32-FE96C809D515}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{F81DA434-D04D-441C-BC32-FE96C809D515}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{F81DA434-D04D-441C-BC32-FE96C809D515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F81DA434-D04D-441C-BC32-FE96C809D515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F81DA434-D04D-441C-BC32-FE96C809D515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F81DA434-D04D-441C-BC32-FE96C809D515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3DB2166-1FE7-4DC9-98FE-901C2A7AE584}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{E3DB2166-1FE7-4DC9-98FE-901C2A7AE584}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{E3DB2166-1FE7-4DC9-98FE-901C2A7AE584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3DB2166-1FE7-4DC9-98FE-901C2A7AE584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3DB2166-1FE7-4DC9-98FE-901C2A7AE584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3DB2166-1FE7-4DC9-98FE-901C2A7AE584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06758F80-64AC-4104-85C8-290BE162B427}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{06758F80-64AC-4104-85C8-290BE162B427}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{06758F80-64AC-4104-85C8-290BE162B427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06758F80-64AC-4104-85C8-290BE162B427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06758F80-64AC-4104-85C8-290BE162B427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06758F80-64AC-4104-85C8-290BE162B427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF9A74A2-3A0A-4154-9C65-276649F4B0A8}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9A74A2-3A0A-4154-9C65-276649F4B0A8}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{DF9A74A2-3A0A-4154-9C65-276649F4B0A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF9A74A2-3A0A-4154-9C65-276649F4B0A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF9A74A2-3A0A-4154-9C65-276649F4B0A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9A74A2-3A0A-4154-9C65-276649F4B0A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{427161A2-3B96-4A65-B011-0BE79EEDABA9}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{427161A2-3B96-4A65-B011-0BE79EEDABA9}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{427161A2-3B96-4A65-B011-0BE79EEDABA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{427161A2-3B96-4A65-B011-0BE79EEDABA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{427161A2-3B96-4A65-B011-0BE79EEDABA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{427161A2-3B96-4A65-B011-0BE79EEDABA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE37313-AB50-43FE-99FD-8BF55415D859}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE37313-AB50-43FE-99FD-8BF55415D859}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{0BE37313-AB50-43FE-99FD-8BF55415D859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE37313-AB50-43FE-99FD-8BF55415D859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE37313-AB50-43FE-99FD-8BF55415D859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE37313-AB50-43FE-99FD-8BF55415D859}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F81DA434-D04D-441C-BC32-FE96C809D515} = {EF08FF46-4FA3-401A-9943-05A9DD606E6A}
+		{E3DB2166-1FE7-4DC9-98FE-901C2A7AE584} = {EF08FF46-4FA3-401A-9943-05A9DD606E6A}
+		{05C9BA5A-655D-474F-82BA-D3518A35094A} = {35750EF8-5C5E-45EC-88D6-FB4383BA015E}
+		{06758F80-64AC-4104-85C8-290BE162B427} = {35750EF8-5C5E-45EC-88D6-FB4383BA015E}
+		{DF9A74A2-3A0A-4154-9C65-276649F4B0A8} = {EF08FF46-4FA3-401A-9943-05A9DD606E6A}
+		{427161A2-3B96-4A65-B011-0BE79EEDABA9} = {EF08FF46-4FA3-401A-9943-05A9DD606E6A}
+		{0BE37313-AB50-43FE-99FD-8BF55415D859} = {EF08FF46-4FA3-401A-9943-05A9DD606E6A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED94B47D-F1F6-45BD-AB81-B98FD70C7846}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = App.ApplicationServices.Test\\App.ApplicationServices.Test.csproj
+		SccProjectTopLevelParentUniqueName1 = App.sln
+		SccProjectName1 = App.ApplicationServices.Test
+		SccLocalPath1 = App.ApplicationServices.Test
+		SccProjectUniqueName2 = App.ApplicationServices\\App.ApplicationServices.csproj
+		SccProjectTopLevelParentUniqueName2 = App.sln
+		SccProjectName2 = App.ApplicationServices
+		SccLocalPath2 = App.ApplicationServices
+		SccProjectUniqueName3 = App.Domain\\App.Domain.csproj
+		SccProjectTopLevelParentUniqueName3 = App.sln
+		SccProjectName3 = App.Domain
+		SccLocalPath3 = App.Domain
+		SccProjectUniqueName4 = App.Infrastructure\\App.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName4 = App.sln
+		SccProjectName4 = App.Infrastructure
+		SccLocalPath4 = App.Infrastructure
+		SccProjectUniqueName5 = App.Repository\\App.Repository.csproj
+		SccProjectTopLevelParentUniqueName5 = App.sln
+		SccProjectName5 = App.Repository
+		SccLocalPath5 = App.Repository
+		SccProjectUniqueName6 = Safeeds.Currency.Task\\Electra.Currency.Task.csproj
+		SccProjectTopLevelParentUniqueName6 = App.sln
+		SccProjectName6 = Safeeds.Currency.Task
+		SccLocalPath6 = Safeeds.Currency.Task
+	EndGlobalSection
+EndGlobal

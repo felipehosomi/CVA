@@ -1,0 +1,72 @@
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'SP_CVA_EDOC_0150')
+	DROP PROCEDURE SP_CVA_EDOC_0150
+GO
+CREATE PROCEDURE SP_CVA_EDOC_0150
+(
+	@Filial			INT,
+	@DataDe			DATETIME,
+	@DataAte		DATETIME
+)
+AS
+BEGIN
+	SELECT CardCode INTO #PN FROM
+	(
+		SELECT CardCode FROM OPDN WITH(NOLOCK) WHERE CANCELED = 'N' AND BPLId = @Filial AND DocDate BETWEEN @DataDe AND @DataAte AND Model IN (1, 3, 5, 39) GROUP BY CardCode
+
+		UNION
+
+		SELECT CardCode FROM OPCH WITH(NOLOCK) WHERE CANCELED = 'N' AND BPLId = @Filial AND DocDate BETWEEN @DataDe AND @DataAte AND Model IN (1, 3, 5, 39) GROUP BY CardCode
+
+		UNION
+
+		SELECT CardCode FROM ORDN WITH(NOLOCK) WHERE CANCELED = 'N' AND BPLId = @Filial AND DocDate BETWEEN @DataDe AND @DataAte AND Model IN (1, 3, 5, 39) GROUP BY CardCode
+
+		UNION
+
+		SELECT CardCode FROM ORIN WITH(NOLOCK) WHERE CANCELED = 'N' AND BPLId = @Filial AND DocDate BETWEEN @DataDe AND @DataAte AND Model IN (1, 3, 5, 39) GROUP BY CardCode
+
+		UNION
+
+		SELECT CardCode FROM ODLN WITH(NOLOCK) WHERE CANCELED = 'N' AND BPLId = @Filial AND DocDate BETWEEN @DataDe AND @DataAte AND Model IN (1, 3, 5, 39) GROUP BY CardCode
+
+		UNION
+
+		SELECT CardCode FROM OINV WITH(NOLOCK) WHERE CANCELED = 'N' AND BPLId = @Filial AND DocDate BETWEEN @DataDe AND @DataAte AND Model IN (1, 3, 5, 39) GROUP BY CardCode
+
+		UNION
+
+		SELECT CardCode FROM ORPD WITH(NOLOCK) WHERE CANCELED = 'N' AND BPLId = @Filial AND DocDate BETWEEN @DataDe AND @DataAte AND Model IN (1, 3, 5, 39) GROUP BY CardCode
+
+		UNION
+
+		SELECT CardCode FROM ORPC WITH(NOLOCK) WHERE CANCELED = 'N' AND BPLId = @Filial AND DocDate BETWEEN @DataDe AND @DataAte AND Model IN (1, 3, 5, 39) GROUP BY CardCode
+	) DOCS
+
+	SELECT 
+		'0150' Linha,
+		OCRD.CardCode, 
+		OCRD.CardName,
+		'01058'			Pais,
+		TaxId0			CNPJ, 
+		CRD1.[State]	UF, 
+		TaxId1			IE,
+		OCNT.IbgeCode	CodMunicipio,
+		TaxId8			Suframa
+	FROM #PN PN
+		INNER JOIN OCRD WITH(NOLOCK)
+			ON OCRD.CardCode = PN.CardCode
+		OUTER APPLY
+		(
+			SELECT TOP 1 * FROM CRD1 WITH(NOLOCK)
+			WHERE CRD1.CardCode = OCRD.CardCode
+			AND CRD1.AdresType = 'B'
+		) CRD1
+		OUTER APPLY
+		(
+			SELECT TOP 1 * FROM CRD7 WITH(NOLOCK)
+			WHERE CRD7.CardCode = OCRD.CardCode
+			AND ISNULL(CRD7.TaxId0, '') <> ''
+		) CRD7
+		INNER JOIN OCNT WITH(NOLOCK)
+			ON OCNT.AbsId = CRD1.County
+END

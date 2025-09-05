@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Branch_Get" xml:space="preserve">
+    <value>SELECT * FROM OBPL
+		WHERE [Disabled] = 'N'</value>
+  </data>
+  <data name="CFOP_Get" xml:space="preserve">
+    <value>SELECT T0.Code, T0.Descrip, T0.App FROM OCFP T0</value>
+  </data>
+  <data name="City_Get" xml:space="preserve">
+    <value>SELECT Name FROM OCNT
+		WHERE [State] = $[$mt_Item.cl_UF]</value>
+  </data>
+  <data name="Document_GetObservacao" xml:space="preserve">
+    <value>DECLARE @texto VARCHAR(MAX)
+EXEC SP_CVA_ObsAutoNF '{0}', {1}, @texto output
+SELECT @texto</value>
+  </data>
+  <data name="GetOBSIniciais" xml:space="preserve">
+    <value>/*Pedido de Venda da Nota Fiscal de Saída*/
+select distinct top 1
+	/*T1.BaseType
+	,*/T2.Comments 
+from 
+	OINV  T0
+	inner join INV1 T1 on T1.DocEntry=T0.DocEntry
+	inner join ORDR T2 on T2.DocEntry = T1.BaseEntry
+where 
+	T0.DocEntry={0}
+	and T0.ObjType={1}
+	and T1.BaseType=17/*Pedido De Venda*/
+union all
+/*Pedido de Venda da Entrega de VEnda*/
+select distinct top 1
+	/*T1.BaseType
+	,*/T2.Comments 
+from 
+	ODLN T0
+	inner join DLN1 T1 on T1.DocEntry=T0.DocEntry
+	inner join ORDR T2 on T2.DocEntry = T1.BaseEntry
+where 
+	T0.DocEntry={0}
+	and T0.ObjType={1}
+	and T1.BaseType=17/*Pedido De Venda*/
+union all
+/*PEDIDO DE VENDA DA NOTA FISCAL PRECEDIDA DA ENTREGA QUE É PRECEDIDA DO PEDIDO DE VENDA*/
+select distinct top 1
+	/*T3.BaseType
+	,*/T5.Comments
+from 
+	OINV  T0
+	inner join INV1 T1 on T1.DocEntry=T0.DocEntry
+	inner join ODLN T2 on T2.DocEntry=T1.BaseEntry 
+	inner join DLN1 T3 on T3.DocEntry=T1.BaseEntry and T1.BaseType=T3.ObjType
+	inner join RDR1 T4 on T4.DocEntry=T3.BaseRef and T3.BaseType=17
+	inner join ORDR T5 on T5.DocEntry = T3.BaseEntry
+where 
+	T0.DocEntry={0}
+	and T0.ObjType={1}
+	and T1.BaseType=15/*Entrega De Venda*/
+union all
+/*devolução de nota fiscal de saída, nota fisca vinda da entrega, entrega vinda no pedido de venda*/
+select distinct top 1
+	/*T4.BaseType
+	,*/T6.Comments 
+from 
+	ORIN T0 
+	inner join RIN1 T1 on T1.DocEntry=T0.DocEntry
+	inner join OINV T2 on T2.ObjType=T1.BaseType and T2.DocEntry=T1.BaseEntry 
+	inner join INV1 T3 on T3.DocEntry=T2.DocEntry
+	inner join DLN1 T4 on T4.DocEntry=T3.BaseEntry and T3.BaseType=T4.ObjType
+	inner join RDR1 T5 on T5.DocEntry=T4.BaseRef and T4.BaseType=17
+	inner join ORDR T6 on T5.DocEntry = T4.BaseEntry
+where
+	T0.DocEntry={0}
+	and T0.ObjType={1}
+union all
+/*devolução de nota fiscal de saida vindo da nota fiscal de saida que veio do pedido de venda*/
+select distinct top 1
+	/*T3.BaseType
+	,*/T4.Comments 
+from 
+	ORIN T0 
+	inner join RIN1 T1 on T1.DocEntry=T0.DocEntry
+	inner join OINV T2 on T2.DocEntry=T1.BaseEntry  and T1.BaseType={1}
+	inner join INV1 T3 on T3.DocEntry=T2.DocEntry and T3.BaseType=17
+	inner join ORDR T4 on T4.DocEntry = T3.BaseEntry
+where
+	T0.DocEntry={0}
+	and T0.ObjType={1}
+union all
+/*Devolução de entrega que veio da entrega que veio do pedido de venda*/
+select
+	/*T3.BaseType
+	,*/T0.Comments 
+from 
+	ORDN T0
+	inner join RDN1 T1 on T0.DocEntry=T1.Docentry
+	inner join ODLN T2 on T2.DocEntry=T1.BaseEntry and T1.BaseType=15
+	inner join DLN1 T3 on T3.DocEntry=T2.DocEntry and T3.BaseType=17
+	inner join ORDR T4 on T4.DocEntry = T3.BaseEntry
+where
+	T0.DocEntry={0}
+	and T0.ObjType={1}</value>
+  </data>
+  <data name="GroupBP_Get" xml:space="preserve">
+    <value>SELECT GroupName FROM OCRG</value>
+  </data>
+  <data name="ItemGroup_Get" xml:space="preserve">
+    <value>SELECT ItmsGrpNam FROM OITB</value>
+  </data>
+  <data name="NCM_Get" xml:space="preserve">
+    <value>SELECT T0.NcmCode, T0.Descrip FROM ONCM T0</value>
+  </data>
+  <data name="State_Get" xml:space="preserve">
+    <value>SELECT Code, Name FROM OCST</value>
+  </data>
+  <data name="Tax_Get" xml:space="preserve">
+    <value>SELECT * FROM OSTC</value>
+  </data>
+  <data name="Usage_Get" xml:space="preserve">
+    <value>SELECT * FROM OUSG</value>
+  </data>
+</root>

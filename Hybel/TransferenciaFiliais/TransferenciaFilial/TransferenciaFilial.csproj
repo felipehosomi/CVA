@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\CVA\Development\Hybel\TransferenciaFiliais\Executável\TransferenciaFilial.exe-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F65107E2-8FA9-416F-8F33-64A6C1B78354}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>TransferenciaFilial</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SapFramework">
+      <HintPath>lib\SapFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControleApp.cs" />
+    <Compile Include="ControleBotao.cs" />
+    <Compile Include="GeracaoNota.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="SAPbobsCOM\AddressExtension.cs" />
+    <Compile Include="SAPbobsCOM\BatchNumbers.cs" />
+    <Compile Include="SAPbobsCOM\BoObjectTypes.cs" />
+    <Compile Include="SAPbobsCOM\BoYesNoEnum.cs" />
+    <Compile Include="SAPbobsCOM\Company.cs" />
+    <Compile Include="SAPbobsCOM\Document_Lines.cs" />
+    <Compile Include="SAPbobsCOM\Documents.cs" />
+    <Compile Include="SAPbobsCOM\Field.cs" />
+    <Compile Include="SAPbobsCOM\Fields.cs" />
+    <Compile Include="SAPbobsCOM\IAddressExtension.cs" />
+    <Compile Include="SAPbobsCOM\IBatchNumbers.cs" />
+    <Compile Include="SAPbobsCOM\ICompany.cs" />
+    <Compile Include="SAPbobsCOM\IDocument_Lines.cs" />
+    <Compile Include="SAPbobsCOM\IDocuments.cs" />
+    <Compile Include="SAPbobsCOM\IField.cs" />
+    <Compile Include="SAPbobsCOM\IFields.cs" />
+    <Compile Include="SAPbobsCOM\IRecordset.cs" />
+    <Compile Include="SAPbobsCOM\ISerialNumbers.cs" />
+    <Compile Include="SAPbobsCOM\ITaxExtension.cs" />
+    <Compile Include="SAPbobsCOM\IUserFields.cs" />
+    <Compile Include="SAPbobsCOM\ImportOrExportTypeEnum.cs" />
+    <Compile Include="SAPbobsCOM\Recordset.cs" />
+    <Compile Include="SAPbobsCOM\SerialNumbers.cs" />
+    <Compile Include="SAPbobsCOM\TaxExtension.cs" />
+    <Compile Include="SAPbobsCOM\UserFields.cs" />
+    <Compile Include="SAPbobsCOM\_ICompanyEvents.cs" />
+    <Compile Include="SAPbobsCOM\_ICompanyEvents_Event.cs" />
+    <Compile Include="SAPbouiCOM\Application.cs" />
+    <Compile Include="SAPbouiCOM\BoAppEventTypes.cs" />
+    <Compile Include="SAPbouiCOM\BoCellClickType.cs" />
+    <Compile Include="SAPbouiCOM\BoFormItemTypes.cs" />
+    <Compile Include="SAPbouiCOM\BoFormObjectEnum.cs" />
+    <Compile Include="SAPbouiCOM\BoSearchKey.cs" />
+    <Compile Include="SAPbouiCOM\BusinessObjectInfo.cs" />
+    <Compile Include="SAPbouiCOM\Button.cs" />
+    <Compile Include="SAPbouiCOM\Cell.cs" />
+    <Compile Include="SAPbouiCOM\Cells.cs" />
+    <Compile Include="SAPbouiCOM\CheckBox.cs" />
+    <Compile Include="SAPbouiCOM\Column.cs" />
+    <Compile Include="SAPbouiCOM\Columns.cs" />
+    <Compile Include="SAPbouiCOM\ComboBox.cs" />
+    <Compile Include="SAPbouiCOM\DBDataSource.cs" />
+    <Compile Include="SAPbouiCOM\DBDataSources.cs" />
+    <Compile Include="SAPbouiCOM\DataSource.cs" />
+    <Compile Include="SAPbouiCOM\EditText.cs" />
+    <Compile Include="SAPbouiCOM\Form.cs" />
+    <Compile Include="SAPbouiCOM\Forms.cs" />
+    <Compile Include="SAPbouiCOM\IApplication.cs" />
+    <Compile Include="SAPbouiCOM\IBusinessObjectInfo.cs" />
+    <Compile Include="SAPbouiCOM\IButton.cs" />
+    <Compile Include="SAPbouiCOM\ICell.cs" />
+    <Compile Include="SAPbouiCOM\ICells.cs" />
+    <Compile Include="SAPbouiCOM\ICheckBox.cs" />
+    <Compile Include="SAPbouiCOM\IColumn.cs" />
+    <Compile Include="SAPbouiCOM\IColumns.cs" />
+    <Compile Include="SAPbouiCOM\IComboBox.cs" />
+    <Compile Include="SAPbouiCOM\IDBDataSource.cs" />
+    <Compile Include="SAPbouiCOM\IDBDataSources.cs" />
+    <Compile Include="SAPbouiCOM\IDataSource.cs" />
+    <Compile Include="SAPbouiCOM\IEditText.cs" />
+    <Compile Include="SAPbouiCOM\IForm.cs" />
+    <Compile Include="SAPbouiCOM\IForms.cs" />
+    <Compile Include="SAPbouiCOM\IItem.cs" />
+    <Compile Include="SAPbouiCOM\IItemEvent.cs" />
+    <Compile Include="SAPbouiCOM\IItems.cs" />
+    <Compile Include="SAPbouiCOM\IMatrix.cs" />
+    <Compile Include="SAPbouiCOM\IProgressBar.cs" />
+    <Compile Include="SAPbouiCOM\IStatusBar.cs" />
+    <Compile Include="SAPbouiCOM\Item.cs" />
+    <Compile Include="SAPbouiCOM\ItemEvent.cs" />
+    <Compile Include="SAPbouiCOM\Items.cs" />
+    <Compile Include="SAPbouiCOM\Matrix.cs" />
+    <Compile Include="SAPbouiCOM\ProgressBar.cs" />
+    <Compile Include="SAPbouiCOM\StatusBar.cs" />
+    <Compile Include="SAPbouiCOM\_IApplicationEvents.cs" />
+    <Compile Include="SAPbouiCOM\_IApplicationEvents_Event.cs" />
+    <Compile Include="SAPbouiCOM\_IButtonEvents.cs" />
+    <Compile Include="SAPbouiCOM\_IButtonEvents_Event.cs" />
+    <Compile Include="SAPbouiCOM\_ICheckBoxEvents.cs" />
+    <Compile Include="SAPbouiCOM\_ICheckBoxEvents_Event.cs" />
+    <Compile Include="SAPbouiCOM\_IColumnEvents.cs" />
+    <Compile Include="SAPbouiCOM\_IColumnEvents_Event.cs" />
+    <Compile Include="SAPbouiCOM\_IComboBoxEvents.cs" />
+    <Compile Include="SAPbouiCOM\_IComboBoxEvents_Event.cs" />
+    <Compile Include="SAPbouiCOM\_IEditTextEvents.cs" />
+    <Compile Include="SAPbouiCOM\_IEditTextEvents_Event.cs" />
+    <Compile Include="SAPbouiCOM\_IMatrixEvents.cs" />
+    <Compile Include="SAPbouiCOM\_IMatrixEvents_Event.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TransferenciaFilial\Properties\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

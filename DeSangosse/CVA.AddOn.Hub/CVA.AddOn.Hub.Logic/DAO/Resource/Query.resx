@@ -1,0 +1,962 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ApagaDadosTabelaLote" xml:space="preserve">
+    <value>delete from [@LOTES_PV]</value>
+  </data>
+  <data name="CentroCusto_GetDesc" xml:space="preserve">
+    <value>SELECT PrcName FROM OPRC WHERE PrcCode = '{0}'</value>
+  </data>
+  <data name="CodigoImposto_GetObsNF" xml:space="preserve">
+    <value>SELECT CAST(OSTC.U_CVA_ObsNF AS VARCHAR(MAX)) FROM OSTC
+WHERE OSTC.Code IN ({0})</value>
+  </data>
+  <data name="DocFrete_GetLastCode" xml:space="preserve">
+    <value>SELECT CAST(ISNULL(MAX(Code), 0) AS INTEGER) FROM [@CVA_DOC_FRETE]</value>
+  </data>
+  <data name="DocFrete_GetPODocNum" xml:space="preserve">
+    <value>SELECT OPOR.DocNum
+FROM [@CVA_DOC_FRETE] WITH(NOLOCK)
+	INNER JOIN OPOR WITH(NOLOCK)
+		ON OPOR.DocEntry = U_PO_DocEntry
+		AND OPOR.CANCELED &lt;&gt; 'Y'
+	LEFT JOIN POR1
+		ON POR1.DocEntry = OPOR.DocEntry
+WHERE U_DocType = {0}
+AND U_DocEntry = {1}
+AND (OPOR.DocStatus = 'O' OR ISNULL(POR1.TargetType, 0) &gt; 0)</value>
+  </data>
+  <data name="DocumentoItem_Get" xml:space="preserve">
+    <value>SELECT OcrCode2, SUM(LineTotal) LineTotal, SUM({0}1.VatSum) VatSum, O{0}.DocTotal
+FROM {0}1 WITH(NOLOCK)
+	INNER JOIN O{0} WITH(NOLOCK)
+		ON O{0}.DocEntry = {0}1.DocEntry
+WHERE {0}1.DocEntry = {1}
+GROUP BY OcrCode2, O{0}.DocTotal</value>
+  </data>
+  <data name="DocumentoRateio_Get" xml:space="preserve">
+    <value>DECLARE @DocType VARCHAR(10)
+SET @DocType = $[$cb_TpDoc.0]
+
+DECLARE @FreigthType VARCHAR(10)
+SET @FreigthType = $[$cb_TpFrete.0.0]
+
+IF @FreigthType = '2' -- Frete complemento pode selecionar o mesmo documento
+BEGIN
+	IF @DocType = '17'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM ORDR
+		WHERE DocStatus &lt;&gt; 'C'
+	ELSE IF @DocType = '15'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM ODLN
+		WHERE DocStatus &lt;&gt; 'C'
+	ELSE IF @DocType = '13'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM OINV
+		WHERE CANCELED = 'N'
+	ELSE IF @DocType = '14'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM ORIN
+		WHERE CANCELED = 'N'
+	ELSE IF @DocType = '22'
+		SELECT DocNum [Chave Origem], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM OPOR
+		WHERE DocStatus &lt;&gt; 'C'
+	ELSE IF @DocType = '20'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM OPDN
+		WHERE DocStatus &lt;&gt; 'C'
+	ELSE IF @DocType = '18'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM OPCH
+		WHERE CANCELED = 'N'
+	ELSE IF @DocType = '19'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM ORPC
+		WHERE CANCELED = 'N'
+	ELSE
+		SELECT 0 [Chave]
+END
+ELSE -- Frete normal remove os documentos que já foram rateados
+BEGIN
+	IF @DocType = '17'
+		SELECT DocNum [Chave Origem], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM ORDR
+		WHERE DocStatus &lt;&gt; 'C'
+		AND NOT EXISTS
+		(
+			SELECT TOP 1 1 FROM [@CVA_DOC_FRETE]
+				INNER JOIN OPOR
+					ON OPOR.DocEntry = U_PO_DocEntry
+					AND OPOR.CANCELED &lt;&gt; 'Y'
+				INNER JOIN POR1
+					ON POR1.DocEntry = OPOR.DocEntry
+			WHERE U_DocType = ORDR.ObjType
+			AND U_DocEntry = ORDR.DocEntry
+			AND (OPOR.DocStatus = 'O' OR ISNULL(POR1.TargetType, 0) &gt; 0)
+		)
+	ELSE IF @DocType = '15'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM ODLN
+		WHERE DocStatus &lt;&gt; 'C'
+		AND NOT EXISTS
+		(
+			SELECT TOP 1 1 FROM [@CVA_DOC_FRETE]
+				INNER JOIN OPOR
+					ON OPOR.DocEntry = U_PO_DocEntry
+					AND OPOR.CANCELED &lt;&gt; 'Y'
+				INNER JOIN POR1
+					ON POR1.DocEntry = OPOR.DocEntry
+			WHERE U_DocType = ODLN.ObjType
+			AND U_DocEntry = ODLN.DocEntry
+			AND (OPOR.DocStatus = 'O' OR ISNULL(POR1.TargetType, 0) &gt; 0)
+		)
+	ELSE IF @DocType = '13'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM OINV
+		WHERE CANCELED = 'N'
+		AND NOT EXISTS
+		(
+			SELECT TOP 1 1 FROM [@CVA_DOC_FRETE]
+				INNER JOIN OPOR
+					ON OPOR.DocEntry = U_PO_DocEntry
+					AND OPOR.CANCELED &lt;&gt; 'Y'
+				INNER JOIN POR1
+					ON POR1.DocEntry = OPOR.DocEntry
+			WHERE U_DocType = OINV.ObjType
+			AND U_DocEntry = OINV.DocEntry
+			AND (OPOR.DocStatus = 'O' OR ISNULL(POR1.TargetType, 0) &gt; 0)
+		)
+	ELSE IF @DocType = '14'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM ORIN
+		WHERE CANCELED = 'N'
+		AND NOT EXISTS
+		(
+			SELECT TOP 1 1 FROM [@CVA_DOC_FRETE]
+				INNER JOIN OPOR
+					ON OPOR.DocEntry = U_PO_DocEntry
+					AND OPOR.CANCELED &lt;&gt; 'Y'
+				INNER JOIN POR1
+					ON POR1.DocEntry = OPOR.DocEntry
+			WHERE U_DocType = ORIN.ObjType
+			AND U_DocEntry = ORIN.DocEntry
+			AND (OPOR.DocStatus = 'O' OR ISNULL(POR1.TargetType, 0) &gt; 0)
+		)
+	ELSE IF @DocType = '22'
+		SELECT DocNum [Chave Origem], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM OPOR
+		WHERE DocStatus &lt;&gt; 'C'
+		AND NOT EXISTS
+		(
+			SELECT TOP 1 1 FROM [@CVA_DOC_FRETE]
+				INNER JOIN OPOR
+					ON OPOR.DocEntry = U_PO_DocEntry
+					AND OPOR.CANCELED &lt;&gt; 'Y'
+				INNER JOIN POR1
+					ON POR1.DocEntry = OPOR.DocEntry
+			WHERE U_DocType = OPOR.ObjType
+			AND U_DocEntry = OPOR.DocEntry
+			AND (OPOR.DocStatus = 'O' OR ISNULL(POR1.TargetType, 0) &gt; 0)
+		)
+	ELSE IF @DocType = '20'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM OPDN
+		WHERE DocStatus &lt;&gt; 'C'
+		AND NOT EXISTS
+		(
+			SELECT TOP 1 1 FROM [@CVA_DOC_FRETE]
+				INNER JOIN OPOR
+					ON OPOR.DocEntry = U_PO_DocEntry
+					AND OPOR.CANCELED &lt;&gt; 'Y'
+				INNER JOIN POR1
+					ON POR1.DocEntry = OPOR.DocEntry
+			WHERE U_DocType = OPDN.ObjType
+			AND U_DocEntry = OPDN.DocEntry
+			AND (OPOR.DocStatus = 'O' OR ISNULL(POR1.TargetType, 0) &gt; 0)
+		)
+	ELSE IF @DocType = '18'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM OPCH
+		WHERE CANCELED = 'N'
+		AND NOT EXISTS
+		(
+			SELECT TOP 1 1 FROM [@CVA_DOC_FRETE]
+				INNER JOIN OPOR
+					ON OPOR.DocEntry = U_PO_DocEntry
+					AND OPOR.CANCELED &lt;&gt; 'Y'
+				INNER JOIN POR1
+					ON POR1.DocEntry = OPOR.DocEntry
+			WHERE U_DocType = OPCH.ObjType
+			AND U_DocEntry = OPCH.DocEntry
+			AND (OPOR.DocStatus = 'O' OR ISNULL(POR1.TargetType, 0) &gt; 0)
+		)
+	ELSE IF @DocType = '19'
+		SELECT DocNum [Chave Origem], Serial [Nº NF], CardCode [Cód. PN], CardName [Nome], DocTotal [Total Doc.]
+		FROM ORPC
+		WHERE CANCELED = 'N'
+		AND NOT EXISTS
+		(
+			SELECT TOP 1 1 FROM [@CVA_DOC_FRETE]
+				INNER JOIN OPOR
+					ON OPOR.DocEntry = U_PO_DocEntry
+					AND OPOR.CANCELED &lt;&gt; 'Y'
+				INNER JOIN POR1
+					ON POR1.DocEntry = OPOR.DocEntry
+			WHERE U_DocType = ORPC.ObjType
+			AND U_DocEntry = ORPC.DocEntry
+			AND (OPOR.DocStatus = 'O' OR ISNULL(POR1.TargetType, 0) &gt; 0)
+		)
+	ELSE
+		SELECT 0 [Chave]
+END</value>
+    <comment>Consulta formatada para buscar os documentos na tela</comment>
+  </data>
+  <data name="Documento_GetDocEntryAndSerial" xml:space="preserve">
+    <value>SELECT 
+	DocEntry,
+	Serial
+FROM {0} WITH(NOLOCK)
+WHERE DocNum = {1} AND Canceled &lt;&gt; 'Y'</value>
+  </data>
+  <data name="InsereLote" xml:space="preserve">
+    <value>insert into [@LOTES_PV] values ('{0}','{1}','{2}','{3}')</value>
+  </data>
+  <data name="Item_Exists" xml:space="preserve">
+    <value>SELECT ItemCode FROM OITM  WITH(NOLOCK) WHERE ItemCode = '{0}'</value>
+  </data>
+  <data name="Item_GetCentroCusto" xml:space="preserve">
+    <value>SELECT 
+	U_EASY_CCusto			OcrCode2,
+	OITB.U_CVA_Validacao	Validacao
+FROM OITM WITH(NOLOCK)
+	INNER JOIN OITB WITH(NOLOCK)
+		ON OITB.ItmsGrpCod = OITM.ItmsGrpCod
+WHERE InvntItem = 'Y'
+AND ItemCode = '{0}'</value>
+    <comment>Retorna o centro de custo de o item for de estoque</comment>
+  </data>
+  <data name="Item_GetGenericColumn" xml:space="preserve">
+    <value>SELECT {0} FROM OITM WITH(NOLOCK) WHERE ItemCode = '{1}'</value>
+  </data>
+  <data name="Item_GetObs" xml:space="preserve">
+    <value>EXEC SP_CVA_GET_DETALHES_ITEM  '{0}'</value>
+  </data>
+  <data name="NotaFiscalEntrada_GetFrete" xml:space="preserve">
+    <value>DECLARE @DateFrom DATETIME
+DECLARE @DateTo DATETIME
+DECLARE @CardCode AS NVARCHAR(MAX)
+
+SELECT @DateFrom = DocDate FROM OPOR T0 WHERE T0.DocDate = [%0]
+SELECT @DateTo = DocDate FROM OPOR T0 WHERE T0.DocDate = [%1]
+
+SELECT @CardCode = CardCode FROM OPCH T0 WHERE T0.CardCode = '[%2]'
+
+IF @DateFrom IS NULL
+BEGIN
+	SET @DateFrom = CAST('19000101' AS DATETIME)
+END
+IF @DateTo IS NULL
+BEGIN
+	SET @DateTo = GETDATE()
+END
+
+; WITH Frete AS
+(
+	SELECT
+		OPCH.DocDate	[Data],
+		'De Sangosse'	[Cliente],
+		OPCH.Serial		[CTE],
+		OPCH.DocTotal	[Valor do Frete],
+		DocFrete.U_DocEntry	FreteDocEntry,
+		DocFrete.U_DocType	FreteDocType
+	FROM OPOR WITH(NOLOCK)
+		INNER JOIN OCRD WITH(NOLOCK)
+			ON OCRD.CardCode = OPOR.CardCode
+		INNER JOIN OCRG WITH(NOLOCK)
+			ON OCRG.GroupCode = OCRD.GroupCode
+			AND OCRG.GroupName = 'Transportadora'
+		OUTER APPLY 
+		(
+			SELECT TOP 1 DocEntry FROM PDN1 WITH(NOLOCK)
+			WHERE PDN1.BaseEntry = OPOR.DocEntry AND PDN1.BaseType = OPOR.ObjType
+		) AS PDN1
+		OUTER APPLY 
+		(
+			SELECT TOP 1 DocEntry FROM PCH1 WITH(NOLOCK)
+			WHERE (PCH1.BaseEntry = OPOR.DocEntry AND PCH1.BaseType = OPOR.ObjType)
+			OR (PCH1.BaseEntry = PDN1.DocEntry AND PCH1.BaseType = 20)
+		) AS PCH1
+		INNER JOIN OPCH WITH(NOLOCK)
+			ON OPCH.DocEntry = PCH1.DocEntry
+		INNER JOIN [@CVA_DOC_FRETE] DocFrete WITH(NOLOCK)
+			ON DocFrete.U_PO_DocEntry = OPOR.DocEntry
+	WHERE OPCH.DocDate BETWEEN @DateFrom AND @DateTo
+	AND (OPCH.CardCode = @CardCode OR ISNULL(@CardCode, '') = '')
+)
+SELECT 
+	Frete.Data,
+	Frete.Cliente,
+	OCNT.Name Cidade, OCNT.[State] UF,
+	CASE WHEN ISNULL(OINV.Serial, 0) &lt;&gt; 0
+		THEN OINV.Serial
+		ELSE ODLN.Serial
+	END	[NF],
+	Frete.CTE,
+	CASE WHEN ISNULL(OINV.DocTotal, 0) &lt;&gt; 0
+		THEN OINV.DocTotal
+		ELSE CASE WHEN ISNULL(ODLN.DocTotal, 0) &lt;&gt; 0					
+			THEN ODLN.DocTotal
+			ELSE RDR1.DocTotal
+		END
+	END [Valor da NF],
+	Frete.[Valor do Frete],
+	CASE WHEN ISNULL(OINV.DocTotal, 0) &lt;&gt; 0
+		THEN (Frete.[Valor do Frete] / OINV.DocTotal) * 100
+		ELSE CASE WHEN ISNULL(ODLN.DocTotal, 0) &lt;&gt; 0					
+			THEN (Frete.[Valor do Frete] / ODLN.DocTotal) * 100
+			ELSE CASE WHEN ISNULL(RDR1.DocTotal, 0) &lt;&gt; 0				
+				THEN (Frete.[Valor do Frete] / RDR1.DocTotal) * 100
+				ELSE 100
+			END
+		END
+	END [Percentual]
+FROM Frete
+	INNER JOIN ORDR WITH(NOLOCK)
+		ON ORDR.DocEntry = FreteDocEntry
+		AND ORDR.ObjType = FreteDocType
+	CROSS APPLY 
+	(
+		SELECT DocEntry, SUM(LineTotal) DocTotal FROM RDR1 WITH(NOLOCK)
+		WHERE RDR1.DocEntry = ORDR.DocEntry
+		GROUP BY RDR1.DocEntry
+	) AS RDR1
+	OUTER APPLY 
+	(
+		SELECT ODLN.DocEntry, ODLN.Serial, ODLN.ObjType, SUM(LineTotal) DocTotal
+		FROM DLN1 WITH(NOLOCK)
+			INNER JOIN ODLN WITH(NOLOCK)
+				ON ODLN.DocEntry = DLN1.DocEntry
+		WHERE DLN1.BaseEntry = ORDR.DocEntry AND DLN1.BaseType = ORDR.ObjType
+		GROUP BY ODLN.DocEntry, ODLN.Serial, ODLN.ObjType
+	) AS ODLN
+	OUTER APPLY 
+	(
+		SELECT OINV.DocEntry, OINV.Serial, SUM(LineTotal) DocTotal FROM INV1 WITH(NOLOCK)
+			INNER JOIN OINV WITH(NOLOCK)
+				ON OINV.DocEntry = INV1.DocEntry 
+		WHERE (INV1.BaseEntry = ORDR.DocEntry AND INV1.BaseType = ORDR.ObjType)
+		OR (INV1.BaseEntry = ODLN.DocEntry AND INV1.BaseType = ODLN.ObjType)
+		GROUP BY OINV.DocEntry, OINV.Serial
+	) AS OINV
+	LEFT JOIN RDR12 WITH(NOLOCK)
+		ON RDR12.DocEntry = ORDR.DocEntry
+	LEFT JOIN OCNT WITH(NOLOCK)
+		ON OCNT.AbsId = RDR12.CountyS
+		AND OCNT.[State] = RDR12.[StateS]
+UNION
+SELECT 
+	Frete.Data,
+	Frete.Cliente,
+	OCNT.Name Cidade, OCNT.[State] UF,
+	CASE WHEN ISNULL(OINV.Serial, 0) &lt;&gt; 0
+		THEN OINV.Serial
+		ELSE ODLN.Serial
+	END	[NF],
+	Frete.CTE,
+	CASE WHEN ISNULL(OINV.DocTotal, 0) &lt;&gt; 0					
+		THEN OINV.DocTotal
+		ELSE DLN1.DocTotal
+	END [Valor da NF],
+	Frete.[Valor do Frete],
+	CASE WHEN ISNULL(OINV.DocTotal, 0) &lt;&gt; 0					
+		THEN (Frete.[Valor do Frete] / OINV.DocTotal) * 100
+		ELSE CASE WHEN ISNULL(DLN1.DocTotal, 0) &lt;&gt; 0
+			THEN (Frete.[Valor do Frete] / DLN1.DocTotal) * 100
+			ELSE 100
+		END
+	END [Percentual]
+FROM Frete 
+	INNER JOIN ODLN WITH(NOLOCK)
+		ON ODLN.DocEntry = Frete.FreteDocEntry AND ODLN.ObjType = FreteDocType
+	CROSS APPLY 
+	(
+		SELECT DocEntry, SUM(LineTotal) DocTotal FROM DLN1 WITH(NOLOCK)
+		WHERE DLN1.DocEntry = ODLN.DocEntry
+		GROUP BY DLN1.DocEntry
+	) AS DLN1
+	OUTER APPLY 
+	(
+		SELECT OINV.DocEntry, OINV.Serial, SUM(LineTotal) DocTotal FROM INV1 WITH(NOLOCK)
+			INNER JOIN OINV WITH(NOLOCK)
+				ON OINV.DocEntry = INV1.DocEntry 
+		WHERE INV1.BaseEntry = ODLN.DocEntry AND INV1.BaseType = ODLN.ObjType
+		GROUP BY OINV.DocEntry, OINV.Serial
+	) AS OINV
+	LEFT JOIN DLN12 WITH(NOLOCK)
+		ON DLN12.DocEntry = ODLN.DocEntry
+	LEFT JOIN OCNT WITH(NOLOCK)
+		ON OCNT.AbsId = DLN12.CountyS
+		AND OCNT.[State] = DLN12.[StateS]
+UNION
+SELECT 
+	Frete.Data,
+	Frete.Cliente,
+	OCNT.Name Cidade, OCNT.[State] UF,
+	OINV.Serial [NF],
+	Frete.CTE,
+	INV1.DocTotal,
+	Frete.[Valor do Frete],
+	CASE WHEN ISNULL(INV1.DocTotal, 0) &lt;&gt; 0
+		THEN (Frete.[Valor do Frete] / INV1.DocTotal) * 100 
+		ELSE 100
+	END [Percentual]
+FROM Frete
+	INNER JOIN OINV WITH(NOLOCK)
+		ON OINV.DocEntry = FreteDocEntry AND OINV.ObjType = FreteDocType
+	CROSS APPLY 
+	(
+		SELECT DocEntry, SUM(LineTotal) DocTotal FROM INV1 WITH(NOLOCK) 
+		WHERE INV1.DocEntry = OINV.DocEntry
+		GROUP BY INV1.DocEntry
+	) AS INV1
+	LEFT JOIN INV12 WITH(NOLOCK)
+		ON INV12.DocEntry = OINV.DocEntry
+	LEFT JOIN OCNT WITH(NOLOCK)
+		ON OCNT.AbsId = INV12.CountyS
+		AND OCNT.[State] = INV12.[StateS]
+UNION
+SELECT 
+	Frete.Data,
+	Frete.Cliente,
+	OCNT.Name Cidade, OCNT.[State] UF,
+	ORDN.Serial [NF],
+	Frete.CTE,
+	RDN1.DocTotal,
+	Frete.[Valor do Frete],
+	CASE WHEN ISNULL(RDN1.DocTotal, 0) &lt;&gt; 0
+		THEN (Frete.[Valor do Frete] / RDN1.DocTotal) * 100 
+		ELSE 100
+	END [Percentual]
+FROM Frete
+	INNER JOIN ORDN WITH(NOLOCK)
+		ON ORDN.DocEntry = FreteDocEntry AND ORDN.ObjType = FreteDocType
+	CROSS APPLY 
+	(
+		SELECT DocEntry, SUM(LineTotal) DocTotal FROM RDN1 WITH(NOLOCK) 
+		WHERE RDN1.DocEntry = ORDN.DocEntry
+		GROUP BY RDN1.DocEntry
+	) AS RDN1
+	LEFT JOIN RDN12 WITH(NOLOCK)
+		ON RDN12.DocEntry = ORDN.DocEntry
+	LEFT JOIN OCNT WITH(NOLOCK)
+		ON OCNT.AbsId = RDN12.CountyS
+		AND OCNT.[State] = RDN12.[StateS]
+UNION
+SELECT 
+	Frete.Data,
+	Frete.Cliente,
+	OCNT.Name Cidade, OCNT.[State] UF,
+	ORIN.Serial [NF],
+	Frete.CTE,
+	RIN1.DocTotal,
+	Frete.[Valor do Frete],
+	CASE WHEN ISNULL(ORIN.DocTotal, 0) &lt;&gt; 0
+		THEN (Frete.[Valor do Frete] / ORIN.DocTotal) * 100 
+		ELSE 100
+	END [Percentual]
+FROM Frete
+	INNER JOIN ORIN WITH(NOLOCK)
+		ON ORIN.DocEntry = FreteDocEntry AND ORIN.ObjType = FreteDocType
+	CROSS APPLY 
+	(
+		SELECT DocEntry, SUM(LineTotal) DocTotal FROM RIN1 WITH(NOLOCK) 
+		WHERE RIN1.DocEntry = ORIN.DocEntry
+		GROUP BY RIN1.DocEntry
+	) AS RIN1
+	LEFT JOIN RIN12 WITH(NOLOCK)
+		ON RIN12.DocEntry = ORIN.DocEntry
+	LEFT JOIN OCNT WITH(NOLOCK)
+		ON OCNT.AbsId = RIN12.CountyS
+		AND OCNT.[State] = RIN12.[StateS]
+------------------------------------------
+---------- Documentos Entrada ------------
+------------------------------------------
+UNION
+SELECT 
+	Frete.Data,
+	Frete.Cliente,
+	OCNT.Name Cidade, OCNT.[State] UF,
+	CASE WHEN ISNULL(OPCH.Serial, 0) &lt;&gt; 0
+		THEN OPCH.Serial
+		ELSE OPDN.Serial
+	END	[NF],
+	Frete.CTE,
+	CASE WHEN ISNULL(OPCH.DocTotal, 0) &lt;&gt; 0
+		THEN OPCH.DocTotal
+		ELSE CASE WHEN ISNULL(OPDN.DocTotal, 0) &lt;&gt; 0					
+			THEN OPDN.DocTotal
+			ELSE POR1.DocTotal
+		END
+	END [Valor da NF],
+	Frete.[Valor do Frete],
+	CASE WHEN ISNULL(OPCH.DocTotal, 0) &lt;&gt; 0
+		THEN (Frete.[Valor do Frete] / OPCH.DocTotal) * 100
+		ELSE CASE WHEN ISNULL(OPDN.DocTotal, 0) &lt;&gt; 0					
+			THEN (Frete.[Valor do Frete] / OPDN.DocTotal) * 100
+			ELSE CASE WHEN ISNULL(POR1.DocTotal, 0) &lt;&gt; 0				
+				THEN (Frete.[Valor do Frete] / POR1.DocTotal) * 100
+				ELSE 100
+			END
+		END
+	END [Percentual]
+FROM Frete
+	INNER JOIN OPOR WITH(NOLOCK)
+		ON OPOR.DocEntry = FreteDocEntry
+		AND OPOR.ObjType = FreteDocType
+	CROSS APPLY 
+	(
+		SELECT DocEntry, SUM(LineTotal) DocTotal FROM POR1 WITH(NOLOCK)
+		WHERE POR1.DocEntry = OPOR.DocEntry
+		GROUP BY POR1.DocEntry
+	) AS POR1
+	OUTER APPLY 
+	(
+		SELECT OPDN.DocEntry, OPDN.Serial, OPDN.ObjType, SUM(LineTotal) DocTotal
+		FROM PDN1 WITH(NOLOCK)
+			INNER JOIN OPDN WITH(NOLOCK)
+				ON OPDN.DocEntry = PDN1.DocEntry
+		WHERE PDN1.BaseEntry = OPOR.DocEntry AND PDN1.BaseType = OPOR.ObjType
+		GROUP BY OPDN.DocEntry, OPDN.Serial, OPDN.ObjType
+	) AS OPDN
+	OUTER APPLY 
+	(
+		SELECT OPCH.DocEntry, OPCH.Serial, SUM(LineTotal) DocTotal FROM PCH1 WITH(NOLOCK)
+			INNER JOIN OPCH WITH(NOLOCK)
+				ON OPCH.DocEntry = PCH1.DocEntry 
+		WHERE (PCH1.BaseEntry = OPOR.DocEntry AND PCH1.BaseType = OPOR.ObjType)
+		OR (PCH1.BaseEntry = OPDN.DocEntry AND PCH1.BaseType = OPDN.ObjType)
+		GROUP BY OPCH.DocEntry, OPCH.Serial
+	) AS OPCH
+	LEFT JOIN POR12 WITH(NOLOCK)
+		ON POR12.DocEntry = OPOR.DocEntry
+	LEFT JOIN OCNT WITH(NOLOCK)
+		ON OCNT.AbsId = POR12.CountyS
+		AND OCNT.[State] = POR12.[StateS]
+UNION
+SELECT 
+	Frete.Data,
+	Frete.Cliente,
+	OCNT.Name Cidade, OCNT.[State] UF,
+	CASE WHEN ISNULL(OPCH.Serial, 0) &lt;&gt; 0
+		THEN OPCH.Serial
+		ELSE OPDN.Serial
+	END	[NF],
+	Frete.CTE,
+	CASE WHEN ISNULL(OPCH.DocTotal, 0) &lt;&gt; 0					
+		THEN OPCH.DocTotal
+		ELSE PDN1.DocTotal
+	END [Valor da NF],
+	Frete.[Valor do Frete],
+	CASE WHEN ISNULL(OPCH.DocTotal, 0) &lt;&gt; 0					
+		THEN (Frete.[Valor do Frete] / OPCH.DocTotal) * 100
+		ELSE CASE WHEN ISNULL(PDN1.DocTotal, 0) &lt;&gt; 0
+			THEN (Frete.[Valor do Frete] / PDN1.DocTotal) * 100
+			ELSE 100
+		END
+	END [Percentual]
+FROM Frete 
+	INNER JOIN OPDN WITH(NOLOCK)
+		ON OPDN.DocEntry = Frete.FreteDocEntry AND OPDN.ObjType = FreteDocType
+	CROSS APPLY 
+	(
+		SELECT DocEntry, SUM(LineTotal) DocTotal FROM PDN1 WITH(NOLOCK)
+		WHERE PDN1.DocEntry = OPDN.DocEntry
+		GROUP BY PDN1.DocEntry
+	) AS PDN1
+	OUTER APPLY 
+	(
+		SELECT OPCH.DocEntry, OPCH.Serial, SUM(LineTotal) DocTotal FROM PCH1 WITH(NOLOCK)
+			INNER JOIN OPCH WITH(NOLOCK)
+				ON OPCH.DocEntry = PCH1.DocEntry 
+		WHERE PCH1.BaseEntry = OPDN.DocEntry AND PCH1.BaseType = OPDN.ObjType
+		GROUP BY OPCH.DocEntry, OPCH.Serial
+	) AS OPCH
+	LEFT JOIN PDN12 WITH(NOLOCK)
+		ON PDN12.DocEntry = OPDN.DocEntry
+	LEFT JOIN OCNT WITH(NOLOCK)
+		ON OCNT.AbsId = PDN12.CountyS
+		AND OCNT.[State] = PDN12.[StateS]
+UNION
+SELECT 
+	Frete.Data,
+	Frete.Cliente,
+	OCNT.Name Cidade, OCNT.[State] UF,
+	OPCH.Serial [NF],
+	Frete.CTE,
+	PCH1.DocTotal,
+	Frete.[Valor do Frete],
+	CASE WHEN ISNULL(PCH1.DocTotal, 0) &lt;&gt; 0
+		THEN (Frete.[Valor do Frete] / PCH1.DocTotal) * 100 
+		ELSE 100
+	END [Percentual]
+FROM Frete
+	INNER JOIN OPCH WITH(NOLOCK)
+		ON OPCH.DocEntry = FreteDocEntry AND OPCH.ObjType = FreteDocType
+	CROSS APPLY 
+	(
+		SELECT DocEntry, SUM(LineTotal) DocTotal FROM PCH1 WITH(NOLOCK) 
+		WHERE PCH1.DocEntry = OPCH.DocEntry
+		GROUP BY PCH1.DocEntry
+	) AS PCH1
+	LEFT JOIN PCH12 WITH(NOLOCK)
+		ON PCH12.DocEntry = OPCH.DocEntry
+	LEFT JOIN OCNT WITH(NOLOCK)
+		ON OCNT.AbsId = PCH12.CountyS
+		AND OCNT.[State] = PCH12.[StateS]
+UNION
+SELECT 
+	Frete.Data,
+	Frete.Cliente,
+	OCNT.Name Cidade, OCNT.[State] UF,
+	ORPD.Serial [NF],
+	Frete.CTE,
+	RPD1.DocTotal,
+	Frete.[Valor do Frete],
+	CASE WHEN ISNULL(RPD1.DocTotal, 0) &lt;&gt; 0
+		THEN (Frete.[Valor do Frete] / RPD1.DocTotal) * 100 
+		ELSE 100
+	END [Percentual]
+FROM Frete
+	INNER JOIN ORPD WITH(NOLOCK)
+		ON ORPD.DocEntry = FreteDocEntry AND ORPD.ObjType = FreteDocType
+	CROSS APPLY 
+	(
+		SELECT DocEntry, SUM(LineTotal) DocTotal FROM RPD1 WITH(NOLOCK) 
+		WHERE RPD1.DocEntry = ORPD.DocEntry
+		GROUP BY RPD1.DocEntry
+	) AS RPD1
+	LEFT JOIN RPD12 WITH(NOLOCK)
+		ON RPD12.DocEntry = ORPD.DocEntry
+	LEFT JOIN OCNT WITH(NOLOCK)
+		ON OCNT.AbsId = RPD12.CountyS
+		AND OCNT.[State] = RPD12.[StateS]
+UNION
+SELECT 
+	Frete.Data,
+	Frete.Cliente,
+	OCNT.Name Cidade, OCNT.[State] UF,
+	ORPC.Serial [NF],
+	Frete.CTE,
+	RPC1.DocTotal,
+	Frete.[Valor do Frete],
+	CASE WHEN ISNULL(ORPC.DocTotal, 0) &lt;&gt; 0
+		THEN (Frete.[Valor do Frete] / ORPC.DocTotal) * 100 
+		ELSE 100
+	END [Percentual]
+FROM Frete
+	INNER JOIN ORPC WITH(NOLOCK)
+		ON ORPC.DocEntry = FreteDocEntry AND ORPC.ObjType = FreteDocType
+	CROSS APPLY 
+	(
+		SELECT DocEntry, SUM(LineTotal) DocTotal FROM RPC1 WITH(NOLOCK) 
+		WHERE RPC1.DocEntry = ORPC.DocEntry
+		GROUP BY RPC1.DocEntry
+	) AS RPC1
+	LEFT JOIN RPC12 WITH(NOLOCK)
+		ON RPC12.DocEntry = ORPC.DocEntry
+	LEFT JOIN OCNT WITH(NOLOCK)
+		ON OCNT.AbsId = RPC12.CountyS
+		AND OCNT.[State] = RPC12.[StateS]
+ORDER BY Data</value>
+    <comment>Consulta formatada - retorna fretes registrados</comment>
+  </data>
+  <data name="ParceiroNegocio_GetInativo" xml:space="preserve">
+    <value>SET DATEFORMAT 'ymd';
+SET NOCOUNT ON;
+
+DECLARE @CardCode NVARCHAR(50), @BPGroup NVARCHAR(254), @CreateDate DATE, @DocDate DATE, @DateDiff NUMERIC(19,6)
+
+SELECT @CardCode = $[ORDR.CardCode]
+SELECT @DocDate = $[ORDR.DocDate.DATE]
+SELECT @CreateDate = CreateDate FROM OCRD WHERE CardCode = @CardCode
+SELECT @DateDiff = DATEDIFF(DAY, @CreateDate, @DocDate) / 365.2425
+
+SELECT @BPGroup = OCRG.GroupName 
+	FROM OCRD
+	INNER JOIN OCRG
+		ON OCRG.GroupCode	= OCRD.GroupCode
+WHERE OCRD.CardCode = @CardCode
+
+IF @DateDiff &gt; 1 AND @BPGroup = 'CLIENTES'
+BEGIN
+ SELECT 
+  CASE WHEN CASE WHEN MAX(OINV.DocDate) IS NULL THEN '1900-01-01' ELSE DATEADD(YEAR, 1, MAX(OINV.DocDate)) END &lt; GETDATE()
+   THEN 'TRUE'
+  ELSE 'FALSE' END
+ FROM OINV
+ WHERE OINV.CardCode = @CardCode AND OINV.Canceled &lt;&gt; 'Y'
+END
+ELSE
+BEGIN
+ SELECT 'FALSE'
+END</value>
+    <comment>Cliente Inativo a mais de um ano (Pedido de Venda)</comment>
+  </data>
+  <data name="ParceiroNegocio_GetNomeGrupo" xml:space="preserve">
+    <value>SELECT OCRG.GroupName FROM OCRD WITH(NOLOCK)
+	INNER JOIN OCRG WITH(NOLOCK)
+		ON OCRG.GroupCode = OCRD.GroupCode
+WHERE OCRD.CardCode = '{0}'</value>
+  </data>
+  <data name="ParceiroNegocio_GetObsFaturamento" xml:space="preserve">
+    <value>SELECT U_EASY_OBS_FATUR FROM OCRD WITH(NOLOCK)
+WHERE CardCode = '{0}'</value>
+  </data>
+  <data name="PedidoCompra_GetDocFrete" xml:space="preserve">
+    <value>SELECT 
+	Code, 
+	CAST(U_DocType AS NVARCHAR(10)) [Tipo Origem], 
+	U_DocNum						[Chave Origem], 
+	CASE WHEN U_Serial &lt;&gt; 0
+		THEN U_Serial
+		ELSE U_DocNum
+	END								[Nº Origem],
+	U_DocEntry						[DocEntry],
+	U_Serial						[Serial]
+FROM [@CVA_DOC_FRETE] WHERE U_PO_DocEntry = {0}</value>
+  </data>
+  <data name="PedidoCompra_GetFreteEmAberto" xml:space="preserve">
+    <value>SELECT
+	OPOR.DocNum,
+	OPOR.DocDate,
+	OPOR.CardName,
+	OPOR.DocTotal,
+	CASE WHEN ISNULL(OINV.Serial, '') &lt;&gt; ''
+		THEN 'NS ' + CAST(OINV.Serial AS NVARCHAR(10))
+		ELSE CASE WHEN ISNULL(ORIN.Serial, '') &lt;&gt; ''
+			THEN 'Dev. NS ' + CAST(ORIN.Serial AS NVARCHAR(10))
+			ELSE CASE WHEN ISNULL(OPCH.Serial, '') &lt;&gt; ''
+				THEN 'NE ' + CAST(OPCH.Serial AS NVARCHAR(10))
+				ELSE CASE WHEN ISNULL(ORPC.Serial, '') &lt;&gt; ''
+					THEN 'Dev. NE ' + CAST(ORPC.Serial AS NVARCHAR(10))
+					ELSE NULL
+				END
+			END
+		END
+	END [Nº NF]
+FROM OPOR
+	INNER JOIN OCRD
+		ON OCRD.CardCode = OPOR.CardCode
+	INNER JOIN OCRG
+		ON OCRG.GroupCode = OCRD.GroupCode
+		AND OCRG.GroupName = 'Transportadora'
+	LEFT JOIN [@CVA_DOC_FRETE] DocFrete
+		ON DocFrete.U_PO_DocEntry = OPOR.DocEntry
+	LEFT JOIN ORDR
+		ON ORDR.DocEntry = DocFrete.U_DocEntry
+		AND ORDR.ObjType = DocFrete.U_DocType
+	OUTER APPLY 
+	(
+		SELECT TOP 1 DocEntry FROM DLN1
+		WHERE DLN1.BaseEntry = ORDR.DocEntry AND DLN1.BaseType = ORDR.ObjType
+	) AS DLN1
+	LEFT JOIN ODLN
+		ON (ODLN.DocEntry = DocFrete.U_DocEntry AND ODLN.ObjType = DocFrete.U_DocType)
+		OR ODLN.DocEntry = DLN1.DocEntry
+	OUTER APPLY 
+	(
+		SELECT TOP 1 DocEntry FROM INV1 
+		WHERE (INV1.BaseEntry = ORDR.DocEntry AND INV1.BaseType = ORDR.ObjType)
+		OR (INV1.BaseEntry = ODLN.DocEntry AND INV1.BaseType = ODLN.ObjType)
+	) AS INV1
+	LEFT JOIN OINV
+		ON OINV.DocEntry = INV1.DocEntry
+		OR (OINV.DocEntry = DocFrete.U_DocEntry AND OINV.ObjType = DocFrete.U_DocType)
+		AND OINV.CANCELED &lt;&gt; 'C'
+	LEFT JOIN ORIN
+		ON ORIN.DocEntry = DocFrete.U_DocEntry
+		AND ORIN.ObjType = DocFrete.U_DocType
+
+	LEFT JOIN OPOR OPOR2
+		ON OPOR2.DocEntry = DocFrete.U_DocEntry
+		AND OPOR2.ObjType = DocFrete.U_DocType
+	OUTER APPLY 
+	(
+		SELECT TOP 1 DocEntry FROM PDN1
+		WHERE PDN1.BaseEntry = OPOR2.DocEntry AND PDN1.BaseType = OPOR2.ObjType
+	) AS PDN1
+	LEFT JOIN OPDN
+		ON (OPDN.DocEntry = DocFrete.U_DocEntry AND OPDN.ObjType = DocFrete.U_DocType)
+		OR OPDN.DocEntry = PDN1.DocEntry
+	OUTER APPLY 
+	(
+		SELECT TOP 1 DocEntry FROM PCH1
+		WHERE (PCH1.BaseEntry = OPOR2.DocEntry AND PCH1.BaseType = OPOR2.ObjType)
+		OR (PCH1.BaseEntry = OPDN.DocEntry AND PCH1.BaseType = OPDN.ObjType)
+	) AS PCH1
+	LEFT JOIN OPCH
+		ON OPCH.DocEntry = PCH1.DocEntry
+		OR (OPCH.DocEntry = DocFrete.U_DocEntry AND OPCH.ObjType = DocFrete.U_DocType)
+		AND OPCH.CANCELED &lt;&gt; 'C'
+	LEFT JOIN ORPC
+		ON ORPC.DocEntry = DocFrete.U_DocEntry
+		AND ORPC.ObjType = DocFrete.U_DocType
+WHERE OPOR.DocStatus &lt;&gt; 'C'
+ORDER BY OPOR.DocNum</value>
+    <comment>Consulta formatada - Documentos de frete em aberto</comment>
+  </data>
+  <data name="PedidoCompra_GetSumTotal" xml:space="preserve">
+    <value>SELECT SUM(DocTotal) FROM OPOR WHERE DocEntry IN ({0})</value>
+  </data>
+  <data name="PedidoCompra_UpdateMotivoCancelamento" xml:space="preserve">
+    <value>UPDATE OPOR SET U_CVA_MotivoCancel = '{0}' WHERE DocEntry = {1}</value>
+  </data>
+  <data name="PegaLotes" xml:space="preserve">
+    <value>select U_ItemCode,U_Lote from [@LOTES_PV]</value>
+  </data>
+  <data name="Recebimento_GetSumTotal" xml:space="preserve">
+    <value>SELECT SUM(DocTotal) FROM OPDN WHERE DocEntry IN ({0})</value>
+  </data>
+  <data name="TextoPredefinido_Get" xml:space="preserve">
+    <value>SELECT T0.TextCode, T0.[Text] FROM OPDT T0</value>
+  </data>
+  <data name="TextoPredefinido_GetInCode" xml:space="preserve">
+    <value>SELECT [Text] FROM OPDT
+WHERE OPDT.TextCode IN ({0})</value>
+  </data>
+  <data name="Utilizacao_GetGenericColumn" xml:space="preserve">
+    <value>SELECT {0} FROM OUSG WITH(NOLOCK) WHERE ID = {1}</value>
+  </data>
+  <data name="VerificaLote" xml:space="preserve">
+    <value>SELECT RDR1.VisOrder FROM RDR1 
+INNER JOIN OITM ON OITM.ItemCode = RDR1.ItemCode AND OITM.ManBtchNum = 'Y' 
+LEFT JOIN (SELECT ITemCode, WhsCode, BaseType, BaseEntry, BaseLinNum, SUM(Quantity) Quantity 
+FROM IBT1 GROUP BY ItemCode, WhsCode, BaseType, BaseEntry, BaseLinNum) IBT1 
+ON IBT1.ItemCode = RDR1.ItemCode 
+AND IBT1.WhsCode = RDR1.WhsCode 
+AND IBT1.BaseEntry = RDR1.DocEntry 
+AND IBT1.BaseLinNum = RDR1.LineNum 
+AND IBT1.BaseType = 17 
+INNER JOIN ORDR ON ORDR.DocEntry = RDR1.DocEntry AND ORDR.Confirmed = 'Y' 
+WHERE RDR1.DocEntry = {0}
+AND RDR1.Quantity &lt;&gt; ISNULL(IBT1.Quantity, 0)  AND RDR1.whscode &lt;&gt; 'EVD'</value>
+  </data>
+</root>

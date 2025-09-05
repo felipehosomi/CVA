@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B1.WFN.API.Setup", "B1.WFN.API.Setup\B1.WFN.API.Setup.csproj", "{14164114-B024-4023-BB46-865AF38B0B5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14164114-B024-4023-BB46-865AF38B0B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14164114-B024-4023-BB46-865AF38B0B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14164114-B024-4023-BB46-865AF38B0B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14164114-B024-4023-BB46-865AF38B0B5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3E9EC89-168D-4D07-BE98-C8558AE91FFE}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = B1.WFN.API.Setup\\B1.WFN.API.Setup.csproj
+		SccProjectName1 = B1.WFN.API.Setup
+		SccLocalPath1 = B1.WFN.API.Setup
+	EndGlobalSection
+EndGlobal

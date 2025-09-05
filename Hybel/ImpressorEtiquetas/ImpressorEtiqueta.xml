@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<alessi>
+	<database>
+	Data Source=VM-002;Database = SBODEMOBR;User Id=sa; Password=Cva@sa;
+	</database>
+</alessi>
+
+
+
+

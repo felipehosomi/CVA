@@ -1,0 +1,16 @@
+<AddOnInfo 
+	partnernmsp="CVA" 
+	contdata="http://www.cvaconsultoria.com.br" 
+	addonname="SAP AddOn Importacao Folha" 
+	addongroup="M" 
+	esttime="60" 
+	instparams="" 
+	uncmdarg="/u" 
+	unesttime="60" 
+	partnername="CVA Consultoria" 
+	silentinst="N" 
+	silentugd="N" 
+	silentuninst="N" 
+	ugdcmdargs="" 
+	ugdesttime="180" 
+	platform="N" />

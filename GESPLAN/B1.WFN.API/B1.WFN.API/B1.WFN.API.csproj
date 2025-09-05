@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<UserSecretsId>ab4f79a1-ba4f-4308-9870-12623a010240</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<COMReference Include="SAPbobsCOM" Condition="$(registry:HKEY_CLASSES_ROOT\TypeLib\{FC8030BE-F5D2-4B8E-8F92-44228FE30090}\9.0) != ''">
+			<Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+			<VersionMajor>9</VersionMajor>
+			<VersionMinor>0</VersionMinor>
+			<Lcid>0</Lcid>
+			<WrapperTool>tlbimp</WrapperTool>
+			<Isolated>False</Isolated>
+			<EmbedInteropTypes>True</EmbedInteropTypes>
+		</COMReference>
+		<COMReference Include="SAPbobsCOM" Condition="$(registry:HKEY_CLASSES_ROOT\TypeLib\{FC8030BE-F5D2-4B8E-8F92-44228FE30100}\a.0) != ''">
+			<Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30100}</Guid>
+			<VersionMajor>10</VersionMajor>
+			<VersionMinor>0</VersionMinor>
+			<Lcid>0</Lcid>
+			<WrapperTool>tlbimp</WrapperTool>
+			<Isolated>False</Isolated>
+			<EmbedInteropTypes>True</EmbedInteropTypes>
+		</COMReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.4" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="Sap.Data.Hana.v4.5">
+	    <HintPath>DLL\Sap.Data.Hana.v4.5.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="DLL\Sap.Data.Hana.v4.5.dll">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+
+</Project>

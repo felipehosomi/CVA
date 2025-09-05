@@ -1,0 +1,37 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Conferencia.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Server=10.170.1.50:30015;UserName=SYSTEM;Password=CVA@inicio123;Current Schema=SBO_TESTEINTEGRADO&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Server=10.170.1.50:30015;UserName=SYSTEM;Password=CVA@inicio123;Current Schema=SBO_TESTEINTEGRADO</Value>
+    </Setting>
+    <Setting Name="Servidor" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10.170.1.50:30015</Value>
+    </Setting>
+    <Setting Name="UsuarioDB" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SYSTEM</Value>
+    </Setting>
+    <Setting Name="SenhaDB" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CVA@inicio123</Value>
+    </Setting>
+    <Setting Name="UsuarioSAP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">marco</Value>
+    </Setting>
+    <Setting Name="SenhaSAP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Mk3rsgo*</Value>
+    </Setting>
+    <Setting Name="ServidorLicenca" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10.170.1.50</Value>
+    </Setting>
+    <Setting Name="ConectionStringSAP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=10.170.1.50:30015;UserName=SYSTEM;Password=CVA@inicio123</Value>
+    </Setting>
+    <Setting Name="BaseSAP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SBO_TESTEINTEGRADO</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

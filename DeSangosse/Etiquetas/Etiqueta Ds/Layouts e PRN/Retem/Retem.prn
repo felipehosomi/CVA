@@ -1,0 +1,35 @@
+I8,A,001
+
+
+Q360,002
+q831
+rN
+S3
+D12
+ZT
+JF
+OC1
+R16,0
+f100
+N
+A630,352,2,4,1,1,N,"De Sangosse Agroquímica Ltda."
+LO9,16,777,2
+LO9,324,776,3
+LO784,18,2,342
+LO8,16,4,342
+LO7,356,777,3
+A600,318,2,4,1,1,N,"Retém de Produto Acabado"
+LO8,292,777,3
+A467,83,2,4,1,1,N,"@dt_analise"
+A452,117,2,4,1,1,N,"@dt_validade"
+A420,152,2,4,1,1,N,"@dt_fabri"
+A643,182,2,4,1,1,N,"lote"
+A728,83,2,4,1,1,N,"Data da Analise:"
+A728,117,2,4,1,1,N,"Data de Validade:"
+A600,253,2,4,1,1,N,"@produto"
+A728,152,2,4,1,1,N,"Data de fabricação:"
+A728,182,2,4,1,1,N,"Lote:"
+A728,217,2,4,1,1,N,"Código:"
+A613,217,2,4,1,1,N,"@codigo"
+A728,253,2,4,1,1,N,"Produto:"
+P1

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+  <menuItem height="5px">
+    <text>Início</text>
+    <url>Default.aspx</url>
+    <roles>R1</roles>
+  </menuItem>
+  <!-- Pedidos -->
+  <menuItem height="5px">
+    <text>Pedidos</text>
+    <roles>R2</roles>
+    <subMenu>
+      <!--Borda superior-->
+      <!--<menuItem>
+        <text>&lt;table class='SubMenuBorda'&gt;&lt;tr&gt;&lt;td width='3'&gt;&lt;img src='menu/imagens/img_submenu_cnt_esq_sup.gif' width='3' height='3'&gt;&lt;/td&gt;&lt;td background='menu/imagens/img_submenu_cnt_sup.gif'&gt;&lt;img src='menu/imagens/img_submenu_cnt_sup.gif' width='3'&gt;&lt;/td&gt;&lt;td width='3'&gt;&lt;img src='menu/imagens/img_submenu_cnt_dir_sup.gif' width='3' height='3'&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <cssclass>SubMenuBorda</cssclass>
+        <mouseovercssclass>SubMenuBorda</mouseovercssclass>
+      </menuItem>-->
+      <!--Item do menu 1-->
+      <menuItem>
+        <text>&lt;table&gt;&lt;tr onmouseover="javascript:subMenu_21.src='menu/imagens/accept.png';" onmouseout="javascript:subMenu_21.src='menu/imagens/accept_off.png';"&gt;&lt;td class="SubMenuIcone2"&gt;&lt;img id='subMenu_21' src='menu/imagens/accept_off.png'&gt;&lt;/td&gt;&lt;td width='5'&gt;&lt;/td&gt;&lt;td class="SubMenuConteudo2"&gt;Digitar Pedido&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <mouseovercssclass>SubMenuSelecionado2</mouseovercssclass>
+        <cssclass>SubMenu2</cssclass>
+        <url>Entrada.aspx</url>
+        <role>R21</role>
+      </menuItem>
+      <!--Item do menu 2-->
+      <menuItem>
+        <text>&lt;table&gt;&lt;tr onmouseover="javascript:subMenu_22.src='menu/imagens/accept.png';" onmouseout="javascript:subMenu_22.src='menu/imagens/accept_off.png';"&gt;&lt;td class="SubMenuIcone2"&gt;&lt;img id='subMenu_22' src='menu/imagens/accept_off.png'&gt;&lt;/td&gt;&lt;td width='5'&gt;&lt;/td&gt;&lt;td class="SubMenuConteudo2"&gt;Consultar Pedidos&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <mouseovercssclass>SubMenuSelecionado2</mouseovercssclass>
+        <cssclass>SubMenu2</cssclass>
+        <url>Consulta.aspx</url>
+        <role>R22</role>
+      </menuItem>
+      <!--Item do menu 3 -->
+      <!-- <menuItem>
+        <text>&lt;table&gt;&lt;tr onmouseover="javascript:subMenu_23.src='menu/imagens/accept.png';" onmouseout="javascript:subMenu_23.src='menu/imagens/accept_off.png';"&gt;&lt;td class="SubMenuIcone"&gt;&lt;img id='subMenu_23' src='menu/imagens/accept_off.png'&gt;&lt;/td&gt;&lt;td width='5'&gt;&lt;/td&gt;&lt;td class="SubMenuConteudo"&gt;Consultar Comissões&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <mouseovercssclass>SubMenuSelecionado</mouseovercssclass>
+        <cssclass>SubMenu</cssclass>
+        <url>ConsultaComissoes.aspx</url>
+        <role>R23</role>
+      </menuItem> -->
+      <!--Item do menu 4-->
+
+      <!--Borda inferior-->
+      <!--<menuItem>
+        <text>&lt;table class='SubMenuBorda'&gt;&lt;tr&gt;&lt;td width='3'&gt;&lt;img src='menu/imagens/img_submenu_cnt_esq_inf.gif' width='3' height='3'&gt;&lt;/td&gt;&lt;td background='menu/imagens/img_submenu_cnt_inf.gif'&gt;&lt;img src='menu/imagens/img_submenu_cnt_sup.gif' width='3'&gt;&lt;/td&gt;&lt;td width='3'&gt;&lt;img src='menu/imagens/img_submenu_cnt_dir_inf.gif' width='3' height='3'&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <cssclass>SubMenuBorda</cssclass>
+        <mouseovercssclass>SubMenuBorda</mouseovercssclass>
+      </menuItem>-->
+    </subMenu>
+  </menuItem>
+  
+  <!-- Clientes -->
+  <menuItem height="5px">
+    <text>Clientes</text>
+    <roles>R4</roles>
+    <subMenu>
+      <!--Borda superior--><!--
+      <menuItem>
+        <text>&lt;table class='SubMenuBorda'&gt;&lt;tr&gt;&lt;td width='3'&gt;&lt;img src='menu/imagens/img_submenu_cnt_esq_sup.gif' width='3' height='3'&gt;&lt;/td&gt;&lt;td background='menu/imagens/img_submenu_cnt_sup.gif'&gt;&lt;img src='menu/imagens/img_submenu_cnt_sup.gif' width='3'&gt;&lt;/td&gt;&lt;td width='3'&gt;&lt;img src='menu/imagens/img_submenu_cnt_dir_sup.gif' width='3' height='3'&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <cssclass>SubMenuBorda</cssclass>
+        <mouseovercssclass>SubMenuBorda</mouseovercssclass>
+      </menuItem>-->
+      <!--Item do menu 1-->
+      <menuItem>
+        <text>&lt;table&gt;&lt;tr onmouseover="javascript:subMenu_31.src='menu/imagens/accept.png';" onmouseout="javascript:subMenu_31.src='menu/imagens/accept_off.png';"&gt;&lt;td class="SubMenuIcone3"&gt;&lt;img id='subMenu_31' src='menu/imagens/accept_off.png'&gt;&lt;/td&gt;&lt;td width='5'&gt;&lt;/td&gt;&lt;td class="SubMenuConteudo3"&gt;Cadastrar&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <mouseovercssclass>SubMenuSelecionado3</mouseovercssclass>
+        <cssclass>SubMenu3</cssclass>
+        <url>CadastroCliente.aspx?</url>
+        <role>R41</role>
+      </menuItem>
+      <!--Item do menu 2-->
+      <menuItem>
+        <text>&lt;table&gt;&lt;tr onmouseover="javascript:subMenu_32.src='menu/imagens/accept.png';" onmouseout="javascript:subMenu_32.src='menu/imagens/accept_off.png';"&gt;&lt;td class="SubMenuIcone3"&gt;&lt;img id='subMenu_32' src='menu/imagens/accept_off.png'&gt;&lt;/td&gt;&lt;td width='5'&gt;&lt;/td&gt;&lt;td class="SubMenuConteudo3"&gt;Status do Cliente&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <mouseovercssclass>SubMenuSelecionado3</mouseovercssclass>
+        <cssclass>SubMenu3</cssclass>
+        <url>ConsultaCliente.aspx</url>
+        <role>R42</role>
+      </menuItem>
+     
+      <!--Borda inferior--><!--
+      <menuItem>
+        <text>&lt;table class='SubMenuBorda'&gt;&lt;tr&gt;&lt;td width='3'&gt;&lt;img src='menu/imagens/img_submenu_cnt_esq_inf.gif' width='3' height='3'&gt;&lt;/td&gt;&lt;td background='menu/imagens/img_submenu_cnt_inf.gif'&gt;&lt;img src='menu/imagens/img_submenu_cnt_sup.gif' width='3'&gt;&lt;/td&gt;&lt;td width='3'&gt;&lt;img src='menu/imagens/img_submenu_cnt_dir_inf.gif' width='3' height='3'&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <cssclass>SubMenuBorda</cssclass>
+        <mouseovercssclass>SubMenuBorda</mouseovercssclass>
+      </menuItem>-->
+    </subMenu>
+  </menuItem>
+  
+  
+  
+  
+  <menuItem>
+    <text>Gestão de Vendas</text>
+    <roles>R4</roles>
+    <subMenu>
+     
+      <!--Item do menu 1-->
+      <menuItem>
+        <text>&lt;table&gt;&lt;tr onmouseover="javascript:subMenu_24.src='menu/imagens/accept.png';" onmouseout="javascript:subMenu_24.src='menu/imagens/accept_off.png';"&gt;&lt;td class="SubMenuIcone5"&gt;&lt;img id='subMenu_24' src='menu/imagens/accept_off.png'&gt;&lt;/td&gt;&lt;td width='5'&gt;&lt;/td&gt;&lt;td class="SubMenuConteudo5"&gt;Consultar Metas por Produto&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <mouseovercssclass>SubMenuSelecionado5</mouseovercssclass>
+        <cssclass>SubMenu5</cssclass>
+        <url>ConsultaMetas.aspx</url>
+        <role>R24</role>
+      </menuItem>
+      <!--Item do menu 2-->
+      <menuItem>
+        <text>&lt;table&gt;&lt;tr onmouseover="javascript:subMenu_34.src='menu/imagens/accept.png';" onmouseout="javascript:subMenu_34.src='menu/imagens/accept_off.png';"&gt;&lt;td class="SubMenuIcone5"&gt;&lt;img id='subMenu_34' src='menu/imagens/accept_off.png'&gt;&lt;/td&gt;&lt;td width='5'&gt;&lt;/td&gt;&lt;td class="SubMenuConteudo5"&gt;Histórico de Vendas&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <mouseovercssclass>SubMenuSelecionado5</mouseovercssclass>
+        <cssclass>SubMenu5</cssclass>
+        <url>ConsultaHistoricoVendas.aspx</url>
+        <role>R45</role>
+      </menuItem>    
+
+      
+    </subMenu>
+  </menuItem>
+  <menuItem height="5px">
+    <text>Consultas</text>
+    <roles>R4</roles>
+    <subMenu>
+    
+      <!--Item do menu 1-->
+      <menuItem>
+        <text>&lt;table&gt;&lt;tr onmouseover="javascript:subMenu_33.src='menu/imagens/accept.png';" onmouseout="javascript:subMenu_33.src='menu/imagens/accept_off.png';"&gt;&lt;td class="SubMenuIcone4"&gt;&lt;img id='subMenu_33' src='menu/imagens/accept_off.png'&gt;&lt;/td&gt;&lt;td width='5'&gt;&lt;/td&gt;&lt;td class="SubMenuConteudo4"&gt;Titulos em Aberto&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <mouseovercssclass>SubMenuSelecionado4</mouseovercssclass>
+        <cssclass>SubMenu4</cssclass>
+        <url>ConsultaTitulos.aspx</url>
+        <role>R43</role>
+      </menuItem>
+      <!--Item do menu 2-->
+      <menuItem>
+        <text>&lt;table&gt;&lt;tr onmouseover="javascript:subMenu_34.src='menu/imagens/accept.png';" onmouseout="javascript:subMenu_34.src='menu/imagens/accept_off.png';"&gt;&lt;td class="SubMenuIcone4"&gt;&lt;img id='subMenu_34' src='menu/imagens/accept_off.png'&gt;&lt;/td&gt;&lt;td width='5'&gt;&lt;/td&gt;&lt;td class="SubMenuConteudo4"&gt;Lista de Faturamentos&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <mouseovercssclass>SubMenuSelecionado4</mouseovercssclass>
+        <cssclass>SubMenu4</cssclass>
+        <url>ConsultaFaturamentos.aspx</url>
+        <role>R44</role>
+      </menuItem>
+      <!--Item do menu 5-->
+    </subMenu>
+  </menuItem>
+  
+  
+  <!-- Opções -->
+  <menuItem height="5px">
+    <text>Opções</text>
+    <roles>R5</roles>
+    <subMenu>
+      <!--Borda superior-->
+      
+      <!--Item do menu 1-->
+      <menuItem>
+        <text>&lt;table&gt;&lt;tr onmouseover="javascript:subMenu_11.src='menu/imagens/accept.png';" onmouseout="javascript:subMenu_11.src='menu/imagens/accept_off.png';"&gt;&lt;td class="SubMenuIcone6"&gt;&lt;img id='subMenu_11' src='menu/imagens/accept_off.png'&gt;&lt;/td&gt;&lt;td width='5'&gt;&lt;/td&gt;&lt;td class="SubMenuConteudo6"&gt;Sair do Sistema&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <mouseovercssclass>SubMenuSelecionado6</mouseovercssclass>
+        <cssclass>SubMenu6</cssclass>
+        <url>Login.aspx</url>
+        <role>R51</role>
+      </menuItem>
+      <!--Item do menu 2-->
+      <menuItem>
+        <text>&lt;table&gt;&lt;tr onmouseover="javascript:subMenu_12.src='menu/imagens/accept.png';" onmouseout="javascript:subMenu_12.src='menu/imagens/accept_off.png';"&gt;&lt;td class="SubMenuIcone6"&gt;&lt;img id='subMenu_12' src='menu/imagens/accept_off.png'&gt;&lt;/td&gt;&lt;td width='5'&gt;&lt;/td&gt;&lt;td class="SubMenuConteudo6"&gt;Alterar Senha&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</text>
+        <mouseovercssclass>SubMenuSelecionado6</mouseovercssclass>
+        <cssclass>SubMenu6</cssclass>
+        <url>Senha.aspx</url>
+        <role>R52</role>
+      </menuItem>
+      <!--Borda inferior-->
+      
+    </subMenu>
+  </menuItem>
+  <!-- Configurações -->
+  <menuItem height="5px">
+    <text>Configurações</text>
+    <url>Configuracao.aspx</url>
+    <roles>R6</roles>
+  </menuItem>
+</menu>

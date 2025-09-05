@@ -1,0 +1,113 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Hub", "CVA.AddOn.Hub\CVA.AddOn.Hub.csproj", "{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Hub.Logic", "CVA.AddOn.Hub.Logic\CVA.AddOn.Hub.Logic.csproj", "{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		CD_ROM|x86 = CD_ROM|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		DVD-5|Any CPU = DVD-5|Any CPU
+		DVD-5|x86 = DVD-5|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+		SingleImage|Any CPU = SingleImage|Any CPU
+		SingleImage|x86 = SingleImage|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.CD_ROM|x86.ActiveCfg = Debug|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.CD_ROM|x86.Build.0 = Debug|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.Debug|x86.Build.0 = Debug|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.DVD-5|x86.Build.0 = Debug|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.Release|x86.ActiveCfg = Release|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.Release|x86.Build.0 = Release|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.SingleImage|x86.ActiveCfg = Debug|Any CPU
+		{F49F0437-4BCE-4715-B9E7-CF3F62612C8E}.SingleImage|x86.Build.0 = Debug|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.CD_ROM|x86.ActiveCfg = Debug|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.CD_ROM|x86.Build.0 = Debug|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.Debug|x86.Build.0 = Debug|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.DVD-5|x86.Build.0 = Debug|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.Release|x86.ActiveCfg = Release|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.Release|x86.Build.0 = Release|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.SingleImage|x86.ActiveCfg = Debug|Any CPU
+		{671CBBD1-8C9A-48DB-AE4E-01158F35AC88}.SingleImage|x86.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.CD_ROM|x86.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.CD_ROM|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.DVD-5|x86.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.SingleImage|x86.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.SingleImage|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D8C3282-A993-4158-AFA3-2DFC8D29D4BA}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccProjectUniqueName0 = CVA.AddOn.Hub\\CVA.AddOn.Hub.csproj
+		SccProjectName0 = CVA.AddOn.Hub
+		SccAuxPath0 = https://cvaconsultoria.visualstudio.com
+		SccLocalPath0 = CVA.AddOn.Hub
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = CVA.AddOn.Hub.Logic\\CVA.AddOn.Hub.Logic.csproj
+		SccProjectName1 = CVA.AddOn.Hub.Logic
+		SccAuxPath1 = https://cvaconsultoria.visualstudio.com
+		SccLocalPath1 = CVA.AddOn.Hub.Logic
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName2 = CVA.AddOn.Common
+		SccAuxPath2 = https://cvaconsultoria.visualstudio.com
+		SccLocalPath2 = CVA.AddOn.Common
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

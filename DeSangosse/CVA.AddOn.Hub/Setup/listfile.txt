@@ -1,0 +1,2 @@
+C:\Source\DeSangosse\CVA.AddOn.Hub\Setup\Output\*.exe
+C:\Source\DeSangosse\CVA.AddOn.Hub\Setup\Output\*.ard

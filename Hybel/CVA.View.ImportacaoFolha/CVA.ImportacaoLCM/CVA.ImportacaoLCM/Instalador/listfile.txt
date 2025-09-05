@@ -1,0 +1,2 @@
+C:\Users\CVAPOC08\repos\Hybel\CVA.View.ImportacaoFolha\CVA.ImportacaoLCM\CVA.ImportacaoLCM\Instalador\Output\*.exe
+C:\Users\CVAPOC08\repos\Hybel\CVA.View.ImportacaoFolha\CVA.ImportacaoLCM\CVA.ImportacaoLCM\Instalador\Output\*.ard

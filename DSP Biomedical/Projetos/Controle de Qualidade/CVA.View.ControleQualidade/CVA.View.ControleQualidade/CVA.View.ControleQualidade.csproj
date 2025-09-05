@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEAEC5BA-770A-4171-A089-22E8E74ABDA8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVA.View.ControleQualidade</RootNamespace>
+    <AssemblyName>CVA.View.ControleQualidade</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>CVA.View.ControleQualidade.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\..\..\..\Downloads\Dover Etiqueta Termica\NMS.Dover.Tools\NMS.Dover.Tools\Build\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging">
+      <HintPath>..\..\..\..\..\..\Downloads\Dover Etiqueta Termica\NMS.Dover.Tools\NMS.Dover.Tools\Build\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.Log4netIntegration">
+      <HintPath>..\..\..\..\..\..\Downloads\Dover Etiqueta Termica\NMS.Dover.Tools\NMS.Dover.Tools\Build\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\..\..\..\..\Downloads\Dover Etiqueta Termica\NMS.Dover.Tools\NMS.Dover.Tools\Build\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\DEV\DLLS DOVER\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\DEV\DLLS DOVER\CrystalDecisions.Shared.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Framework">
+      <HintPath>..\..\..\..\..\..\Downloads\Dover Etiqueta Termica\NMS.Dover.Tools\NMS.Dover.Tools\Build\Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="FrameworkInterface">
+      <HintPath>..\..\..\..\..\..\Downloads\Dover Etiqueta Termica\NMS.Dover.Tools\NMS.Dover.Tools\Build\FrameworkInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\..\..\..\..\Downloads\Dover Etiqueta Termica\NMS.Dover.Tools\NMS.Dover.Tools\Build\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SAPbobsCOM">
+      <HintPath>..\..\..\..\..\..\Downloads\Dover Etiqueta Termica\NMS.Dover.Tools\NMS.Dover.Tools\Build\Interop.SAPbobsCOM.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Downloads\Dover Etiqueta Termica\NMS.Dover.Tools\NMS.Dover.Tools\Build\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPbouiCOM">
+      <HintPath>..\..\..\..\..\..\Downloads\Dover Etiqueta Termica\NMS.Dover.Tools\NMS.Dover.Tools\Build\SAPbouiCOM.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>D:\CVA\Development\DSP Biomedical\Projetos\References\stdole.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Addin.cs" />
+    <Compile Include="BLL\AlertaBLL.cs" />
+    <Compile Include="BLL\ApontamentoBLL.cs" />
+    <Compile Include="BLL\ApontamentoInspetorBLL.cs" />
+    <Compile Include="BLL\AtributoBLL.cs" />
+    <Compile Include="BLL\ItemBLL.cs" />
+    <Compile Include="BLL\OperadorBLL.cs" />
+    <Compile Include="BLL\UsuarioBLL.cs" />
+    <Compile Include="DAO\ApontamentoDAO.cs" />
+    <Compile Include="DAO\ApontamentoInspetorDAO.cs" />
+    <Compile Include="DAO\ItemDAO.cs" />
+    <Compile Include="DAO\OperadorDAO.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="HELPER\B1Forms.cs" />
+    <Compile Include="BLL\PlanoInspecaoBLL.cs" />
+    <Compile Include="DAO\AtributoDAO.cs" />
+    <Compile Include="DAO\PlanoInspecaoDAO.cs" />
+    <Compile Include="MODEL\ApontamentoInspetor.cs" />
+    <Compile Include="MODEL\Atributo.cs" />
+    <Compile Include="MODEL\Item.cs" />
+    <Compile Include="MODEL\Operador.cs" />
+    <Compile Include="MODEL\PlanoInspecao.cs" />
+    <Compile Include="MODEL\ResultadoPlanoInspecao.cs" />
+    <Compile Include="MODEL\StaticKeys.cs" />
+    <Compile Include="MODEL\TipoInspecaoEnum.cs" />
+    <Compile Include="MODEL\Usuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Query\Select.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Select.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\ApontamentoInspetorView.cs" />
+    <Compile Include="VIEW\ApontamentoQualidadeView.cs" />
+    <Compile Include="VIEW\CadastroOperadorView.cs" />
+    <Compile Include="VIEW\EntradaProdutoAcabadoView.cs" />
+    <Compile Include="VIEW\LoteView.cs" />
+    <Compile Include="VIEW\OrdemProducaoView.cs" />
+    <Compile Include="VIEW\PlanoInspecaoView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Query\Select.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Select.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="CVA.View.ControleQualidade.snk" />
+    <EmbeddedResource Include="Resources\Form\PlanoInspecao.srf" />
+    <EmbeddedResource Include="Resources\Form\ApontamentoQualidade.srf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\UDO\CVA_Udo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\UserFields\CVA_UserFields.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\UserTables\CVA_UserTables.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Form\ApontamentoInspetor.srf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Form\EntradaProdutoAcabadoFormPartial.srf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Form\EmptyFormPartial.srf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Form\CadastroOperador.srf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

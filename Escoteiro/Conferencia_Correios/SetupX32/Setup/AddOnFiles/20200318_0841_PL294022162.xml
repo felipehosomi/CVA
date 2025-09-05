@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<correioslog>
+  <tipo_arquivo><![CDATA[Postagem]]></tipo_arquivo>
+  <versao_arquivo>2.3</versao_arquivo>
+  <plp>
+    <id_plp />
+    <valor_global />
+    <mcu_unidade_postagem />
+    <nome_unidade_postagem />
+    <cartao_postagem><![CDATA[0073369764]]></cartao_postagem>
+  </plp>
+  <remetente>
+    <numero_contrato><![CDATA[9912417695]]></numero_contrato>
+    <numero_diretoria>36</numero_diretoria>
+    <codigo_administrativo><![CDATA[17196590]]></codigo_administrativo>
+    <nome_remetente><![CDATA[LOJA ESCOTEIRA NACIONAL]]></nome_remetente>
+    <logradouro_remetente><![CDATA[RUA CARLOS ESSENFELDER]]></logradouro_remetente>
+    <numero_remetente><![CDATA[3057]]></numero_remetente>
+    <complemento_remetente />
+    <bairro_remetente><![CDATA[BOQUEIRAO]]></bairro_remetente>
+    <cep_remetente><![CDATA[81730060]]></cep_remetente>
+    <cidade_remetente><![CDATA[CURITIBA]]></cidade_remetente>
+    <uf_remetente><![CDATA[PR]]></uf_remetente>
+    <telefone_remetente />
+    <fax_remetente />
+    <email_remetente><![CDATA[daysebruna@uol.com.br]]></email_remetente>
+    <celular_remetente />
+  </remetente>
+  <forma_pagamento />
+  <objeto_postal>
+    <numero_etiqueta><![CDATA[PW235109145BR]]></numero_etiqueta>
+    <codigo_objeto_cliente />
+    <codigo_servico_postagem><![CDATA[04669]]></codigo_servico_postagem>
+    <cubagem><![CDATA[0,00]]></cubagem>
+    <peso><![CDATA[00950]]></peso>
+    <rt1><![CDATA[0,00]]></rt1>
+    <rt2 />
+    <destinatario>
+      <nome_destinatario><![CDATA[LUCAS RODRIGUES FERNANDES]]></nome_destinatario>
+      <telefone_destinatario><![CDATA[991258169]]></telefone_destinatario>
+      <celular_destinatario />
+      <email_destinatario><![CDATA[daysebruna@uol.com.br]]></email_destinatario>
+      <logradouro_destinatario><![CDATA[Rua Visconde de Tamandare]]></logradouro_destinatario>
+      <complemento_destinatario><![CDATA[Casa]]></complemento_destinatario>
+      <numero_end_destinatario><![CDATA[1559]]></numero_end_destinatario>
+    </destinatario>
+    <nacional>
+      <bairro_destinatario><![CDATA[Vila Nova]]></bairro_destinatario>
+      <cidade_destinatario><![CDATA[Tres Lagoas]]></cidade_destinatario>
+      <uf_destinatario><![CDATA[MS]]></uf_destinatario>
+      <cep_destinatario><![CDATA[79604100]]></cep_destinatario>
+      <codigo_usuario_postal />
+      <centro_custo_cliente />
+      <numero_nota_fiscal><![CDATA[47327]]></numero_nota_fiscal>
+      <serie_nota_fiscal><![CDATA[1]]></serie_nota_fiscal>
+      <valor_nota_fiscal><![CDATA[0]]></valor_nota_fiscal>
+      <natureza_nota_fiscal />
+      <descricao_objeto />
+      <valor_a_cobrar />
+    </nacional>
+    <servico_adicional>
+      <codigo_servico_adicional><![CDATA[025]]></codigo_servico_adicional>
+      <codigo_servico_adicional><![CDATA[019]]></codigo_servico_adicional>
+      <valor_declarado><![CDATA[0]]></valor_declarado>
+    </servico_adicional>
+    <dimensao_objeto>
+      <tipo_objeto><![CDATA[002]]></tipo_objeto>
+      <dimensao_altura><![CDATA[3]]></dimensao_altura>
+      <dimensao_largura><![CDATA[11]]></dimensao_largura>
+      <dimensao_comprimento><![CDATA[16]]></dimensao_comprimento>
+      <dimensao_diametro><![CDATA[0]]></dimensao_diametro>
+    </dimensao_objeto>
+    <data_postagem_sara />
+    <status_processamento>0</status_processamento>
+    <numero_comprovante_postagem />
+    <valor_cobrado />
+  </objeto_postal>
+</correioslog>

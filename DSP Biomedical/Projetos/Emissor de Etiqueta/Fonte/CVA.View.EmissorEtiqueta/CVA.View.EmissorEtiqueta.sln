@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.EmissorEtiqueta", "CVA.View.EmissorEtiqueta\CVA.View.EmissorEtiqueta.csproj", "{ABB07E14-507C-40A3-A775-09FD8FC3E005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{07979FF3-763C-4EBC-A2C8-60358E21F08A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABB07E14-507C-40A3-A775-09FD8FC3E005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB07E14-507C-40A3-A775-09FD8FC3E005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB07E14-507C-40A3-A775-09FD8FC3E005}.Debug|x86.ActiveCfg = Debug|x86
+		{ABB07E14-507C-40A3-A775-09FD8FC3E005}.Debug|x86.Build.0 = Debug|x86
+		{ABB07E14-507C-40A3-A775-09FD8FC3E005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB07E14-507C-40A3-A775-09FD8FC3E005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB07E14-507C-40A3-A775-09FD8FC3E005}.Release|x86.ActiveCfg = Release|x86
+		{ABB07E14-507C-40A3-A775-09FD8FC3E005}.Release|x86.Build.0 = Release|x86
+		{07979FF3-763C-4EBC-A2C8-60358E21F08A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07979FF3-763C-4EBC-A2C8-60358E21F08A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07979FF3-763C-4EBC-A2C8-60358E21F08A}.Debug|x86.ActiveCfg = Debug|x86
+		{07979FF3-763C-4EBC-A2C8-60358E21F08A}.Debug|x86.Build.0 = Debug|x86
+		{07979FF3-763C-4EBC-A2C8-60358E21F08A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07979FF3-763C-4EBC-A2C8-60358E21F08A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07979FF3-763C-4EBC-A2C8-60358E21F08A}.Release|x86.ActiveCfg = Release|x86
+		{07979FF3-763C-4EBC-A2C8-60358E21F08A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Core\\Core.csproj
+		SccProjectName1 = Core
+		SccLocalPath1 = Core
+		SccProjectUniqueName2 = CVA.View.EmissorEtiqueta\\CVA.View.EmissorEtiqueta.csproj
+		SccProjectName2 = CVA.View.EmissorEtiqueta
+		SccLocalPath2 = CVA.View.EmissorEtiqueta
+	EndGlobalSection
+EndGlobal

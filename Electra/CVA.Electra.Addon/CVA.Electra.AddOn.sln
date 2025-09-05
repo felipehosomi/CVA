@@ -1,0 +1,105 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Electra", "CVA.Electra\CVA.Electra.csproj", "{79327C90-075E-435F-B08A-1E1297EFF4DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Electra.AddOn", "CVA.Electra.AddOn\CVA.Electra.AddOn.csproj", "{34A1399E-FFBF-4E6E-8914-2A80C7B5337D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "..\..\CVA.Electra.Addon\CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Electra.AddOnX64", "CVA.Electra.AddOn - X64\CVA.Electra.AddOnX64.csproj", "{A06364F4-E06E-4C17-8D9E-59ADE2A1D55B}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SetupX32", "SetupX32\Setup\SetupX32.vbproj", "{41F719E1-FE3E-433B-92AB-8E7DA92997C7}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SetupX64", "SetupX64\Setup\SetupX64.vbproj", "{DAEFC640-5CFF-4864-854A-1EDC5C011439}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79327C90-075E-435F-B08A-1E1297EFF4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79327C90-075E-435F-B08A-1E1297EFF4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79327C90-075E-435F-B08A-1E1297EFF4DD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{79327C90-075E-435F-B08A-1E1297EFF4DD}.Debug|x86.Build.0 = Debug|Any CPU
+		{79327C90-075E-435F-B08A-1E1297EFF4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79327C90-075E-435F-B08A-1E1297EFF4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79327C90-075E-435F-B08A-1E1297EFF4DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{79327C90-075E-435F-B08A-1E1297EFF4DD}.Release|x86.Build.0 = Release|Any CPU
+		{34A1399E-FFBF-4E6E-8914-2A80C7B5337D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34A1399E-FFBF-4E6E-8914-2A80C7B5337D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34A1399E-FFBF-4E6E-8914-2A80C7B5337D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{34A1399E-FFBF-4E6E-8914-2A80C7B5337D}.Debug|x86.Build.0 = Debug|Any CPU
+		{34A1399E-FFBF-4E6E-8914-2A80C7B5337D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34A1399E-FFBF-4E6E-8914-2A80C7B5337D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34A1399E-FFBF-4E6E-8914-2A80C7B5337D}.Release|x86.ActiveCfg = Release|Any CPU
+		{34A1399E-FFBF-4E6E-8914-2A80C7B5337D}.Release|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.ActiveCfg = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.Build.0 = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.ActiveCfg = Release|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.Build.0 = Release|x86
+		{A06364F4-E06E-4C17-8D9E-59ADE2A1D55B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A06364F4-E06E-4C17-8D9E-59ADE2A1D55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A06364F4-E06E-4C17-8D9E-59ADE2A1D55B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A06364F4-E06E-4C17-8D9E-59ADE2A1D55B}.Debug|x86.Build.0 = Debug|Any CPU
+		{A06364F4-E06E-4C17-8D9E-59ADE2A1D55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A06364F4-E06E-4C17-8D9E-59ADE2A1D55B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A06364F4-E06E-4C17-8D9E-59ADE2A1D55B}.Release|x86.ActiveCfg = Release|Any CPU
+		{A06364F4-E06E-4C17-8D9E-59ADE2A1D55B}.Release|x86.Build.0 = Release|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Debug|x86.ActiveCfg = Debug|x86
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Debug|x86.Build.0 = Debug|x86
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Release|x86.ActiveCfg = Release|x86
+		{41F719E1-FE3E-433B-92AB-8E7DA92997C7}.Release|x86.Build.0 = Release|x86
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Debug|x86.ActiveCfg = Debug|x86
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Debug|x86.Build.0 = Debug|x86
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Release|x86.ActiveCfg = Release|x86
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A657571D-3D0B-45F2-8AF5-DD55CB054C4D}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CVA.Electra\\CVA.Electra.csproj
+		SccProjectName1 = CVA.Electra
+		SccLocalPath1 = CVA.Electra
+		SccProjectUniqueName2 = CVA.Electra.AddOn\\CVA.Electra.AddOn.csproj
+		SccProjectName2 = CVA.Electra.AddOn
+		SccLocalPath2 = CVA.Electra.AddOn
+		SccProjectUniqueName3 = ..\\..\\CVA.Electra.Addon\\CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName3 = ../../CVA.AddOn.Common
+		SccLocalPath3 = ..\\..\\CVA.Electra.Addon\\CVA.AddOn.Common
+		SccProjectUniqueName4 = CVA.Electra.AddOn\u0020-\u0020X64\\CVA.Electra.AddOnX64.csproj
+		SccProjectName4 = CVA.Electra.AddOn\u0020-\u0020X64
+		SccLocalPath4 = CVA.Electra.AddOn\u0020-\u0020X64
+		SccProjectUniqueName5 = SetupX32\\Setup\\SetupX32.vbproj
+		SccProjectName5 = SetupX32/Setup
+		SccLocalPath5 = SetupX32\\Setup
+		SccProjectUniqueName6 = SetupX64\\Setup\\SetupX64.vbproj
+		SccProjectName6 = SetupX64/Setup
+		SccLocalPath6 = SetupX64\\Setup
+	EndGlobalSection
+EndGlobal

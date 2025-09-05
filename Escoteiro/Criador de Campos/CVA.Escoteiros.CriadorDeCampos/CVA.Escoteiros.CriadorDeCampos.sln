@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Escoteiros.CriadorDeCampos.Addon", "CVA.Escoteiros.CriadorDeCampos.Addon\CVA.Escoteiros.CriadorDeCampos.Addon.csproj", "{87FC8024-281E-4C5F-85BB-4FBDC3B82ED0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "..\..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Escoteiros.CriadorDeCampos", "CVA.Escoteiros.CriadorDeCampos\CVA.Escoteiros.CriadorDeCampos.csproj", "{0BC6EFFB-E572-4333-BFD4-5DA101D3858C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SetupX32", "SetupX32\Setup\SetupX32.vbproj", "{B6DA8C96-ADA9-403A-A940-0F27B5503553}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87FC8024-281E-4C5F-85BB-4FBDC3B82ED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87FC8024-281E-4C5F-85BB-4FBDC3B82ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87FC8024-281E-4C5F-85BB-4FBDC3B82ED0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{87FC8024-281E-4C5F-85BB-4FBDC3B82ED0}.Debug|x86.Build.0 = Debug|Any CPU
+		{87FC8024-281E-4C5F-85BB-4FBDC3B82ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87FC8024-281E-4C5F-85BB-4FBDC3B82ED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87FC8024-281E-4C5F-85BB-4FBDC3B82ED0}.Release|x86.ActiveCfg = Release|Any CPU
+		{87FC8024-281E-4C5F-85BB-4FBDC3B82ED0}.Release|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.ActiveCfg = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.Build.0 = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.ActiveCfg = Release|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.Build.0 = Release|x86
+		{0BC6EFFB-E572-4333-BFD4-5DA101D3858C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC6EFFB-E572-4333-BFD4-5DA101D3858C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC6EFFB-E572-4333-BFD4-5DA101D3858C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0BC6EFFB-E572-4333-BFD4-5DA101D3858C}.Debug|x86.Build.0 = Debug|Any CPU
+		{0BC6EFFB-E572-4333-BFD4-5DA101D3858C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC6EFFB-E572-4333-BFD4-5DA101D3858C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC6EFFB-E572-4333-BFD4-5DA101D3858C}.Release|x86.ActiveCfg = Release|Any CPU
+		{0BC6EFFB-E572-4333-BFD4-5DA101D3858C}.Release|x86.Build.0 = Release|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|x86.ActiveCfg = Debug|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|x86.Build.0 = Debug|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|x86.ActiveCfg = Release|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\..\\Helpers\\CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName0 = ../../../Helpers/CVA.AddOn.Common
+		SccLocalPath0 = ..\\..\\..\\Helpers\\CVA.AddOn.Common
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = CVA.Escoteiros.CriadorDeCampos.Addon\\CVA.Escoteiros.CriadorDeCampos.Addon.csproj
+		SccProjectName2 = CVA.Escoteiros.CriadorDeCampos.Addon
+		SccLocalPath2 = CVA.Escoteiros.CriadorDeCampos.Addon
+		SccProjectUniqueName3 = CVA.Escoteiros.CriadorDeCampos\\CVA.Escoteiros.CriadorDeCampos.csproj
+		SccProjectName3 = CVA.Escoteiros.CriadorDeCampos
+		SccLocalPath3 = CVA.Escoteiros.CriadorDeCampos
+		SccProjectUniqueName4 = SetupX32\\Setup\\SetupX32.vbproj
+		SccProjectName4 = SetupX32/Setup
+		SccLocalPath4 = SetupX32\\Setup
+	EndGlobalSection
+EndGlobal

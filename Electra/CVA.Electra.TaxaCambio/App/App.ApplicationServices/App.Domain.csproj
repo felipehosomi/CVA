@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0BE37313-AB50-43FE-99FD-8BF55415D859}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App.Domain</RootNamespace>
+    <AssemblyName>App.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enuns\enumPartner.cs" />
+    <Compile Include="Enuns\enumPesagem.cs" />
+    <Compile Include="Helpers\EmailHelper.cs" />
+    <Compile Include="Helpers\GetPrintNameClass.cs" />
+    <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="Helpers\LogHelper.cs" />
+    <Compile Include="Helpers\ObjectHelper.cs" />
+    <Compile Include="Helpers\RawPrinterHelper.cs" />
+    <Compile Include="Helpers\TextHelper.cs" />
+    <Compile Include="Helpers\Validator.cs" />
+    <Compile Include="Helpers\WindowWrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObjects\Basic.cs" />
+    <Compile Include="ValueObjects\Cep.cs" />
+    <Compile Include="ValueObjects\ChildTables.cs" />
+    <Compile Include="ValueObjects\Cpf.cs" />
+    <Compile Include="ValueObjects\DocLinhaTextoFiscal.cs" />
+    <Compile Include="ValueObjects\Email.cs" />
+    <Compile Include="ValueObjects\PaymentTerms.cs" />
+    <Compile Include="ValueObjects\PedidoLinha.cs" />
+    <Compile Include="ValueObjects\Procedures\GetSolicitacaoItensSum.cs" />
+    <Compile Include="ValueObjects\User.cs" />
+    <Compile Include="ValueObjects\UserFields.cs" />
+    <Compile Include="ValueObjects\UserObjectsMD.cs" />
+    <Compile Include="ValueObjects\U_SD_COMEX_ACO.cs" />
+    <Compile Include="ValueObjects\U_SD_COMEX_LOG.cs" />
+    <Compile Include="ValueObjects\U_SD_COMEX_PRO.cs" />
+    <Compile Include="ValueObjects\U_SD_ENCARGO.cs" />
+    <Compile Include="ValueObjects\U_SD_COMEX_INFO.cs" />
+    <Compile Include="ValueObjects\U_SD_COMEX_PN.cs" />
+    <Compile Include="ValueObjects\U_SD_PV_COM.cs" />
+    <Compile Include="ValueObjects\U_SD_TXTFISCLOG.cs" />
+    <Compile Include="ValueObjects\Views\ItemVarView.cs" />
+    <Compile Include="ValueObjects\Views\SacoSelected.cs" />
+    <Compile Include="ValueObjects\Views\BINView.cs" />
+    <Compile Include="ValueObjects\Views\LoginUserCodeBarView.cs" />
+    <Compile Include="ValueObjects\Views\OPLoteView.cs" />
+    <Compile Include="ValueObjects\Views\CodigoOperacaoView.cs" />
+    <Compile Include="ValueObjects\Views\MatTypeView.cs" />
+    <Compile Include="ValueObjects\Views\OPCancelView.cs" />
+    <Compile Include="ValueObjects\Views\OPView.cs" />
+    <Compile Include="ValueObjects\Views\LoginUserBranchesListView.cs" />
+    <Compile Include="ValueObjects\Views\SearchPurchaseOrderItensView.cs" />
+    <Compile Include="ValueObjects\Views\BeasPersView.cs" />
+    <Compile Include="ValueObjects\Views\SearchSalesOrderItensView.cs" />
+    <Compile Include="ValueObjects\Views\SearchPurchaseOrderView.cs" />
+    <Compile Include="ValueObjects\Views\SearchSalesOrderView.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

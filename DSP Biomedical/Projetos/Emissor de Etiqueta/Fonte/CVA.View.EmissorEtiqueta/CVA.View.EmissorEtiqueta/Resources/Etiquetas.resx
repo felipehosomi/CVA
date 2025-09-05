@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Componente" xml:space="preserve">
+    <value>I8,A,001
+
+
+Q200,024
+q863
+rN
+S2
+D11
+ZT
+JF
+OD
+R172,0
+f100
+N
+GW280,114,3,27,ÿÿÿÿÿÿð ÷ÿÿ÷ÿû÷ÿÿ÷ÿÿ÷ÿÿ÷ÿÿ÷ÿÿûÿýýÿÿsÿÿwÿþûÿýþÿ÷ÿÿÿÿð ð ð ð {ð ð ð ÿÿÿÿÿÿ
+GW264,84,6,32,ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿð    ÿð    ÿóÿÿÿþÿóÿÿÿþÿóÿÿÿþÿóÿÿÿþÿóÏýø&#xE;ÿóÏà8&#xE;ÿóÏà8&#xE;ÿóÏÇ&gt;~ÿóÏÏž~ÿóÏÏž~ÿóÏÏž~ÿóÏÏ&#x1E;~ÿóÏÇ&gt;~ÿóÀà&gt;~ÿóÀð~~ÿóÿÿÿþÿóÿÿÿþÿóÿÿÿþÿóÿÿÿþÿóÿÿÿþÿð    ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+GW113,76,6,38,ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿà    ïÿÿÿÿïÿÿÿÿïà&#x18;&#x1F;ïà&#x18;&#x1F;ïœçùÿïœçùÿïœçùÿï€à8&#x1F;ïƒà8&#x1F;ï™çùÿïœà&#x19;ÿïœà&#x19;ÿïÿÿÿÿïÿÿÿÿïÿÿÿÿïÿÿÿÿïÿÿÿÿïÿÿÿÿïÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+GW118,112,5,31,ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿþ&#x7;ÿÿÿþ÷ÿÿÿþ÷ÿÿÿþ÷ÿÿÿþ÷ÿÿÿþ÷ÿÿÿþ÷ÿÿÿþ÷ÿÿÿþ÷ÿÿ9æ÷ÿþºÆ÷ÿþÖÚ÷ÿý×8÷ÿùï&lt;÷ÿûÿÿ÷ÿûÿÿ÷ÿûÿÿ÷ÿûÿÿ÷ÿûÿÿ÷ÿûÿÿ÷ÿûÿÿ÷ÿûÿÿ÷ÿø  &#x7;ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+A127,12,0,1,1,1,N,"{0}"
+A127,164,0,1,1,1,N,"Material: {9}"
+A128,146,0,1,1,1,N,"M.S.:{8}"
+A314,125,0,1,1,1,N,"{7}"
+A164,122,0,1,1,1,N,"{6}"
+A308,58,0,1,1,1,N,"{3}"
+A127,55,0,1,1,1,N,"MODEL: {2}"
+A313,93,0,1,1,1,N,"{5}"
+A162,89,0,1,1,1,N,"{4}"
+A282,145,0,1,1,1,N," NO STERIL "
+A126,29,0,1,1,1,N,"{1}"
+B508,7,1,2,3,9,51,N,"000000"
+P1</value>
+  </data>
+  <data name="Implante" xml:space="preserve">
+    <value>I8,A,001
+
+
+Q256,024
+q831
+rN
+S2
+D15
+ZT
+JF
+O
+R0,0
+f100
+N
+GW499,141,3,25,ÿÿÿÿÿÿð ÷ÿÿ÷ÿû÷ÿÿ÷ÿÿ÷ÿÿ÷ÿÿ÷ÿýüÿÿsÿÿwÿþûÿûþÿ÷ÿÿð ð ð ð ð ð ð ÿÿÿÿÿÿ
+GW494,97,6,30,ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿð   &#x7;ÿð   &#x7;ÿóÿÿÿ÷ÿóÿÿÿ÷ÿóÿÿÿ÷ÿóÿÿÿ÷ÿóŸÁà7ÿóŸÀà7ÿóŸŒy÷ÿóŸžy÷ÿóŸžy÷ÿóŸžy÷ÿóŸžy÷ÿóŸŒy÷ÿóÀù÷ÿóÁù÷ÿóÿÿÿ÷ÿóÿÿÿ÷ÿóÿÿÿ÷ÿóÿÿÿ÷ÿð   &#x7;ÿð   &#x7;ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+GW285,88,6,38,ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿà    ÿïÿÿÿþÿïÿÿÿþÿï&#x3;à0&gt;ÿï&#x1;à0&gt;ÿï&#x1C;ïóþÿï&#x1C;ïóþÿï&#x1C;ïóþÿï àp&gt;ÿï&#x3;àp&gt;ÿï&#x19;ïóþÿï&#x1C;à3þÿï&#x1C;à3þÿïÿÿÿþÿïÿÿÿþÿïÿÿÿþÿïÿÿÿþÿïÿÿÿþÿïÿÿÿþÿïÿÿÿþÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+GW286,133,6,38,ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿø&#x7;ÿÿÿÿø&#x7;ÿÿÿÿû÷ÿÿÿÿû÷ÿÿÿÿû÷ÿÿÿÿû÷ÿÿÿÿû÷ÿÿÿÿû÷ÿÿÿÿû÷ÿÿÿÿû÷ÿÿÿÿ»÷ÿÿÏŸ;÷ÿÿÇ&#x1B;÷ÿÿ·nÛ÷ÿÿ;vë÷ÿÿzuã÷ÿþüùó÷ÿþýûû÷ÿþÿÿÿ÷ÿþÿÿÿ÷ÿþÿÿÿ÷ÿþÿÿÿ÷ÿþÿÿÿ÷ÿþÿÿÿ÷ÿþÿÿÿ÷ÿþÿÿÿ÷ÿÿÿÿÿ÷ÿþ   &#x7;ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+GW498,66,5,19,ÿÿÿÿÿ€   &#x7;¿ÿÿÿÿ¿ÿÿÿÿ¿ÿÿÿÿ¸&#x18;À ?±Øþcÿ±øücÿ°øùãÿ¸8ñà¾&#x18;ãà¿˜çãÿ·˜Çãÿ°&#x18;€ ?¼x€ ?¿ÿÿÿÿ¿ÿÿÿÿ¿ÿÿÿÿÿÿÿÿÿ
+A290,11,0,2,1,1,N,"{0}"
+A289,177,0,2,1,1,N,"MS.: {8}"
+A533,145,0,2,1,1,N,"{7}"
+A341,145,0,2,1,1,N,"{6}"
+A539,103,0,2,1,1,N,"{5}"
+A535,66,0,2,1,1,N,"{3}"
+A292,66,0,2,1,1,N,"MODEL: {2}"
+A341,103,0,2,1,1,N,"{4}"
+A503,176,0,2,1,1,R,"STERIL R"
+A289,211,0,2,1,1,N,"Material:{9}"
+A290,34,0,2,1,1,N,"{1}"
+B823,19,1,1,3,9,40,B,"{4}"
+P1</value>
+  </data>
+  <data name="Interna" xml:space="preserve">
+    <value>I8,A,001
+
+
+Q200,024
+q831
+rN
+S2
+D15
+ZT
+JF
+O
+R239,0
+f100
+N
+GW292,62,5,24,ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿø   ÿø   ÿûÿÿüÿûÿÿüÿûÿÿüÿûß&#xE;&#xC;ÿûÞgÌÿûÞgÌÿûÞ÷ÌÿûÞ÷ÌÿûÞgÌÿú&#x6;&#x7;Ìÿú&#x7;&#xF;Ìÿûÿÿüÿûÿÿüÿûÿÿüÿø   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+GW192,63,5,27,ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿþ  &#xF;ÿþÿÿÿÿþÿÿÿÿþÿÿÿÿþÿÿÿÿþÿÿÿÿþÿÿÿÿþ÷½ÿÿþóœïÿþóZßÿþõg_ÿþö÷¿ÿþ÷ÿÿÿþ÷ÿÿÿþ÷ÿÿÿþ÷ÿÿÿþ÷ÿÿÿþ÷ÿÿÿþ÷ÿÿÿþ&#x7;ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+GW110,63,3,27,ÿÿÿÿÿÿø &#x1F;ø &#x1F;ø &#x1F;x &#x1F;ø &#x1F;ø &#x1F;ø &#x1F;ÿÿÿûÿßþÿÿ|ÿÿûÿÿ½ÿþ~ÿùÿ¿ÿÿßÿÿßÿÿßÿÿßÿÿßÿßÿÿßø &#x1F;ÿÿÿÿÿÿ
+GW149,99,4,27,ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿà  &#x3;ÿÿÿûÿÿÿûÿÿÿûÿÿÿûÿÈ&#x13;;ÿÈ&#x13;;ÿÏ;þ&#x8;&#x10;;ÿÏ“;ÿÏ“;þ&#x8;&#x18;;ÿÿÿûÿÿÿûÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+GW99,11,20,40,ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ‡Ãü&#x2;&#x1;þ&#x6;&#x1;Ãÿ??þ&#x1F;&#xF;ÿÿÿÿ&#x3;ü&#x2;&#x1;þ~&#x2;&#x1;ÿ??ü&#xE;&#x7;ÿÿÿþ1&#x18;ÿçóþ~só&#x18;ÿ&gt;&#x1;øÄcÏÿÿþy&lt;ÿÇþ|ÿÇ&lt;ÿ&gt;&#x1;ùäóÏÿÿþy&lt;ÿ&#x1F;þ|?ÿ?9ùüÿÏÿÿþy&lt;þ?&#x1F;þ|&#x7;&#x1F;&#x1F;ÿ?3øär&#x1;ÿÿþy&lt;þ?þ|c?‡ÿ?'ü&#x6;&#x2;&#x1;ÿÿþy&lt;üþþlò‡ÿ7'þ&#x7;&#x3;Ïÿÿþy&lt;üòyþLòy?ÿ'&#xF;ÿçóÏÿÿþ1&#x18;üâqþ&#x1E;rq8ÿ&#xF;&#x1F;ÿÏçÏÿÿÿ&#x3;þ&#x7;&#x3;þ&gt;&#x7;&#x3;&#x1;ÿ&#x1F;&#x1F;ü&#xE;&#x7;ÿÿÿÿ‡Ãÿ&#xF;‡þ&#xF;‡ƒÿ??ü&#xE;&#x7;ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿù!ÈñÀ?’&#x1C;ù&#x7;!ÈóÌÿüð&#x1;ù€ÀpÀ?˜&#xC;ù†&#x3; ÀsÌÿüà&lt;&#x1;ÿœÆ&lt;ÿ?™Ìùæs&#x1C;Æ3ÌÿüÇ&#x1C;ùÿ˜Ï&lt;ÿ?™Œùæ?&lt;Ï3ÌÿüÏ™ùÿÏ&lt;ÿ?˜&#x1C;ùç&#x7;&lt;Ï3ÌÿüÇùùÿ‡Ï&lt;ÿ?˜|ùçÃ&lt;Ï3Ìÿ€àùùÿœÆ&lt;ÿ?™Ìñæs&lt;Æ3Œÿ ð9ùÿ€Àp?˜&#xC;‚&#x3;&lt;Àp&#xC;þ&lt;þ&#x19;ùÿÁÈð?œ&#x1C;‰ƒ&#x7;&lt;ÈøLþ|Ï™ùÿÿÏüÿ?ŸÿÿçÿÿÏÿüþ&lt;Ç&#x1C;ùÿÿÏüÿ?ŸüÿçÿÿÏÿüÿ à&lt;&#x1;ÿÿÏýÿ?ŸüÿïÿÿÏÿüÿ€ð&#x1;ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+GW274,11,7,46,€     ¿ÿÿÿÿÿ¿ÿÿÿÿÿ¿ÿÿÿÿÿ¿ÿü&#x7;ÿÿ¿ÿü&#x7;ÿÿ¿ÿü&#x7;ÿÿ¿ÿü&#x7;ÿÿ¿ÿü&#x7;ÿÿ¿ÿÿÿÿÿ¿ÿø&#x7;ÿÿ¿ÿø&#x7;ÿÿ¿ÿø&#x7;ÿÿ¿ÿø&#x7;ÿÿ¿ÿø&#x7;ÿÿ¿ÿø&#x7;ÿÿ¿ÿð&#x7;ÿÿ¿ÿð&#x7;ÿÿ¿ÿÀ&#xF;ÿÿ¿ÿ€&#xF;ÿÿ¿ü &#x1F;ÿÿ¿ø ?ÿÿ¿à ÿÿÿ¿à&#x3;ÿÿÿ¿À&#x7;ÿÿÿ¿€&#x1F;ÿÿÿ¿ &#x1F;ÿÿÿ¿ ÿÿÿ¿ ÿÿÿ¿ ÿÿÿÿ¿ ÿÿÿÿ¿ ÿÿà&#x1F;¿ ÿÀ&#x1F;¿ ÿÀ&#x1F;¿ &#x1F;ÿ &#x1F;¿€&#x1F;þ ?¿À&#x3;ø ¿à   ÿ¿à  &#x1;ÿ¿ø  &#x3;ÿ¿ü  &#xF;ÿ¿ÿ  &#x1F;ÿ¿ÿà ÿÿ¿ÿÿÿÿÿ€     ÿÿÿÿÿÿÿ
+GW294,100,4,18,   &#x1;ü?ýü?ýø?ýø?ýø?ýà?ý€ý| ÿýx&#x7;ÿýp&#x1F;ÿýp?ÿýp&#x1F;ø&#x1D;x&#x7;à&#x1D;|  =  ýð&#xF;ý   &#x1;
+A198,79,2,1,1,1,N,"{5}"
+A111,80,2,1,1,1,N,"{6}"
+A294,80,2,1,1,1,N,"{4}"
+A293,114,2,1,1,1,N,"{2}"
+A145,114,2,1,1,1,N,"{3}"
+A278,177,2,1,1,1,N,"{0}"
+A277,160,2,1,1,1,N,"{1}"
+P1</value>
+  </data>
+</root>

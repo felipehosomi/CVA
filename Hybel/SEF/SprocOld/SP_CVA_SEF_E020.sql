@@ -1,0 +1,20 @@
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'SP_CVA_SEF_E020')
+	DROP PROCEDURE SP_CVA_SEF_E020
+GO
+
+-- exec SP_CVA_SEF_E001 1, '2018-01-01', '2018-31-01'
+CREATE PROCEDURE SP_CVA_SEF_E020
+(
+	@Filial			INT,
+	@DataDe			DATETIME,
+	@DataAte		DATETIME
+)
+AS
+BEGIN
+
+	SELECT 
+		'E001'			LIN,
+		'0'				IND_DAD
+	
+	
+END

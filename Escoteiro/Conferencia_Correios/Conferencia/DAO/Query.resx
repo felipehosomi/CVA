@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CarregaComboDesp" xml:space="preserve">
+    <value>select 'Selecione' as "CardName" from dummy 
+  union all 
+ select 'SEDEX POR CONTA DO REMETENTE' as "CardName" from dummy
+   union all 
+ select 'SEDEX POR CONTA DO DESTINATÁRIO' as "CardName" from dummy
+   union all 
+ select 'PAC POR CONTA DO REMETENTE' as "CardName" from dummy
+    union all 
+ select 'PAC POR CONTA DO DESTINATÁRIO' as "CardName" from dummy
+    union all 
+ select 'TRANSPORTADORA POR CONTA DO REMETENTE' as "CardName" from dummy
+    union all 
+ select 'TRANSPORTADORA POR CONTA DO DESTINATÁRIO' as "CardName" from dummy
+    union all 
+ select 'RETIRA LOJA' as "CardName" from dummy;</value>
+  </data>
+  <data name="CarregaComboTrnsp" xml:space="preserve">
+    <value>select '*' as "CardCode",'Selecione' as "CardName" from dummy union all select "CardCode","CardName" from OCRD 
+ where "GroupCode" = 110</value>
+  </data>
+  <data name="CarregaListaPostagem" xml:space="preserve">
+    <value>select distinct T3."Serial" as " N°NF"
+      ,T0."CardCode" || ' - ' || T0."CardName" as "Cliente"
+      ,T3."DocDate" as "Data Faturamento"
+  from ORDR T0
+ inner join RDR1 T1 on T0."DocEntry" = T1."DocEntry"
+ inner join INV1 T2 on T2."BaseEntry" = T0."DocEntry"
+   and T2."BaseType" = T0."ObjType"
+   and T2."BaseLine" = T1."LineNum"
+ inner join OINV T3 on T2."DocEntry" = T3."DocEntry"
+ inner join OSHP T4 on T3."TrnspCode" = T4."TrnspCode"
+ inner join RDR12 T5 on T0."DocEntry"  = T5."DocEntry"
+ inner join OCRD T6 on T5."Carrier" = T6."CardCode"
+ where T4."TrnspName" = '{0}'
+   and T6."CardCode" = '{1}'
+   and T3."DocDate"  between '{2}' and '{3}'
+   
+   union all
+   
+   select distinct T3."Serial" as " N°NF"
+      ,T0."CardCode" || ' - ' || T0."CardName" as "Cliente"
+      ,T3."DocDate" as "Data Faturamento"
+  from ORDR T0
+ inner join RDR1 T1 on T0."DocEntry" = T1."DocEntry"
+ inner join DLN1 T2 on T2."BaseEntry" = T0."DocEntry"
+   and T2."BaseType" = T0."ObjType"
+   and T2."BaseLine" = T1."LineNum"
+ inner join ODLN T3 on T2."DocEntry" = T3."DocEntry"
+ inner join OSHP T4 on T3."TrnspCode" = T4."TrnspCode"
+ inner join RDR12 T5 on T0."DocEntry"  = T5."DocEntry"
+ inner join OCRD T6 on T5."Carrier" = T6."CardCode"
+ where T4."TrnspName" = '{0}'
+   and T6."CardCode" = '{1}'
+   and T3."DocDate"  between '{2}' and '{3}'</value>
+  </data>
+  <data name="GetCardCode" xml:space="preserve">
+    <value>Select distinct T0."CardCode" || ' - ' ||T0."CardName" as "Cliente"
+,T0."DocStatus"
+,T0."DocNum"
+,T8."U_CVA_TipoPag"
+,T1."ItemCode"
+,T1."Dscription"
+,SUM(T1."OpenCreQty") as OpenCreQty
+,(select "U_CVA_ParcFaturado" from "@CVA_PARGERAIS" ) as "ParcFaturado",(select "U_CVA_ParcAntecipado" from "@CVA_PARGERAIS")as "ParcAntecipado"
+,T8."CardCode"
+  from ORDR T0
+ inner join RDR1  T1 on T0."DocEntry" = T1."DocEntry"
+ --inner join DPI1   T6 on T0."DocEntry" = T6."BaseEntry" 
+   --and T0."ObjType" = T6."BaseType"
+   --and T1."LineNum" = T6."BaseLine"
+ --inner join ODPI T7 on T6."DocEntry" = T7."DocEntry"   
+ inner join OCRD T8 on T0."CardCode" = T8."CardCode" 
+ where T0."DocNum"  = '{0}'
+   and  T1."OpenCreQty" &gt; 0
+   and T1."LineStatus" = 'O'
+   and T1."LineStatus" = 'O'
+Group by   T0."CardCode", T0."CardName",T0."DocStatus",T0."DocNum",T8."U_CVA_TipoPag",T1."ItemCode",T1."Dscription",T8."CardCode"</value>
+  </data>
+  <data name="GetNF" xml:space="preserve">
+    <value>SELECT DISTINCT
+	   T0."DocType"
+      ,T0."DocEntry"
+      ,T0."DocLine"
+      ,T0."DocSubLine"
+      ,T0."ManagedBy"
+      ,T0."ItemCode"
+      ,T0."SysNumber"
+      ,T0."LocCode"
+      ,T0."Quantity" as "QtySelected"
+      ,T1."ExpDate" as "ExpDate"
+      ,T3."Quantity" as "QtyOnHand"
+      ,T3."CommitQty" as "QtdCommit"
+      ,T3."WhsCode"
+      ,T1."DistNumber"
+      ,T1."MnfSerial"
+      ,T4."CardCode" 
+      ,T5."Usage"
+      ,T4."BPLId"   
+      ,T4."U_nfe_tipoEnv"   
+  FROM "B1_SnBOpenQtyViewAlloc" T0 
+  inner join OBTN T1 ON T0."SysNumber" = T1."SysNumber" AND T1."ItemCode" = T0."ItemCode"
+  inner join OBTQ T3 ON T3."MdAbsEntry" = T1."AbsEntry"
+  inner join ORDR T4 ON T4."DocEntry" = T0."DocEntry"
+  inner join RDR1 T5 ON T5."DocEntry" = T4."DocEntry" AND T5."LineNum" = T0."DocLine"
+  inner join OBPL T6 ON T6."BPLId"    = T4."BPLId"
+  where T4."DocNum" = {0}
+    AND T0."DocType" = 17
+    AND T6."DflWhs" = T3."WhsCode"
+
+UNION
+
+SELECT DISTINCT    
+	   1 as "DocType"
+	  ,T0."DocEntry"  
+	  ,T1."LineNum" as "DocLine"
+	  ,0 as "DocSubLine"
+	  ,0 as "ManagedBy"
+      ,T1."ItemCode"
+      ,0 as "SysNumber"
+       ,COALESCE(T1."LocCode",0)
+      ,T1."Quantity" as "QtySelected"
+      ,T1."ShipDate" as "ExpDate"
+      ,T1."Quantity" as "QtyOnHand"
+      ,T1."Quantity" as "QtdCommit"
+      ,T1."WhsCode"
+      ,'' as "DistNumber"
+      ,'' as "MnfSerial"
+      ,T0."CardCode" 
+      ,T1."Usage"
+      ,T0."BPLId"      
+      ,T0."U_nfe_tipoEnv"
+FROM ORDR T0
+Inner join RDR1 T1 On T0."DocEntry" = T1."DocEntry" 
+Inner join OITM T2 On T1."ItemCode" = T2."ItemCode"
+Where 
+T2."ManBtchNum" = 'N'
+And T0."DocNum" = {0}
+Order By "DocLine"</value>
+  </data>
+  <data name="getNFSemLote" xml:space="preserve">
+    <value>SELECT DISTINCT	   
+       T0."DocEntry"  
+      ,T1."ItemCode"
+      ,T0."CardCode" 
+      ,T1."Usage"
+      ,T0."BPLId"      
+ from ORDR T0 
+  inner join RDR1 T1 ON T1."DocEntry" = T0."DocEntry"
+  where T0."DocNum" = {0}</value>
+  </data>
+  <data name="GetSerie" xml:space="preserve">
+    <value>select "U_CVA_SerieAtu"
+      ,"U_CVA_SerieFin" 
+      ,(select top 1 T2."U_CVA_TipoDocumento" 
+		   from ORDR T0 
+		  inner join RDR1 T1 on T0."DocEntry" = T1."DocEntry"  
+		  inner join OUSG T2 on T1."Usage" = T2."ID"  
+		  where T0."DocNum" = '{0}') as "TipoDoc"
+      ,"U_CVA_TipoServico"
+      ,"U_CVA_SufixoCodRastreio"
+      ,"U_CVA_DigTrackNumber" 
+  from "@CVA_CFGDESPACHO" 
+  where "U_CVA_CardCode" = (select T1."Carrier" from ORDR T0 inner join RDR12 T1 on T0."DocEntry" = T1."DocEntry"  where T0."DocNum" = '{0}')
+    and "U_CVA_TipoDespacho" = (select case when T1."TrnspName" = 'SEDEX POR CONTA REMETENTE' then 'SEDEX'
+    										when T1."TrnspName" = 'SEDEX POR CONTA DESTINATÁRIO' then 'SEDEX'
+    										when T1."TrnspName" = 'PAC POR CONTA REMETENTE' then 'PAC'
+    										when T1."TrnspName" = 'PAC POR CONTA DESTINATÁRIO' then 'PAC'
+    										when T1."TrnspName" = 'TRANSPORTADORA POR CONTA REMETENTE' then 'TRANSPORTADORA'
+    										when T1."TrnspName" = 'TRANSPORTADORA POR CONTA DESTINATÁRIO' then 'TRANSPORTADORA'	end
+                                            from ORDR T0 inner join OSHP T1 on T0."TrnspCode" = T1."TrnspCode"  where "DocNum" = '{0}')</value>
+  </data>
+  <data name="GetTipoEmbalagem" xml:space="preserve">
+    <value>select '0' as "Code",'Selecione' as "Name" from dummy union all select "Code","Name" from "@CVA_TPVOL"</value>
+  </data>
+  <data name="Insert_1Conferencia" xml:space="preserve">
+    <value>insert into "@CVA_CONFERENCIA" values({0},'{1}','{2}','{3}','{4}','{5}','{6}','{7}')</value>
+  </data>
+  <data name="Insert_1ConferenciaLinha" xml:space="preserve">
+    <value>insert into "@CVA_CONFERENCIA_LINHA" values({0},'{1}',{2},'{3}','{4}',{5},{6},'{7}','{8}','{9}','{10}','{11}','{12}')</value>
+  </data>
+  <data name="Insert_Volumes" xml:space="preserve">
+    <value>insert into "@CVA_VOLEMB" values({0},'{1}')</value>
+  </data>
+  <data name="Insert_VolumesLinha" xml:space="preserve">
+    <value>insert into "@CVA_VOLEMB_LINHA" values({0},{1},{2},{3},{4})</value>
+  </data>
+  <data name="ListConf1" xml:space="preserve">
+    <value>select "CVA_ITEMCODE", "CVA_DESCRICAO","CVA_QUANT_1","CVA_CODBARRAS" from "@CVA_CONFERENCIA_LINHA" where "CVA_DOCENTRY" = '{0}' and "CVA_CODBARRAS" = '{1}'</value>
+  </data>
+  <data name="Max_Linhas" xml:space="preserve">
+    <value>select MAX("CVA_LINENUM") as "Qtd" from "@CVA_VOLEMB_LINHA" where "CVA_DOCENTRY" = {0}</value>
+  </data>
+  <data name="StatusConf" xml:space="preserve">
+    <value>select "CVA_STATUS_1" from "@CVA_CONFERENCIA" where "CVA_DOCENTRY" = '{0}'</value>
+  </data>
+  <data name="TipoVolume" xml:space="preserve">
+    <value>select "Code","U_CVA_TpVol" from "@CVA_TPVOL"</value>
+  </data>
+  <data name="Upadate_Volumes" xml:space="preserve">
+    <value>Update "@CVA_VOLEMB" set "CVA_DOCDATE" = '{0}' where "CVA_DOCENTRY" = {1}</value>
+  </data>
+  <data name="UpdateSerie" xml:space="preserve">
+    <value>update "@CVA_CFGDESPACHO" set "U_CVA_SerieAtu" = '{0}' 
+ where "U_CVA_CardCode" = (select T1."Carrier" from ORDR T0 inner join RDR12 T1 on T0."DocEntry" = T1."DocEntry"  where T0."DocNum" = '{1}')
+   and "U_CVA_TipoDespacho" = (select case when T1."TrnspName" = 'SEDEX POR CONTA REMETENTE' then 'SEDEX'
+    										when T1."TrnspName" = 'SEDEX POR CONTA DESTINATÁRIO' then 'SEDEX'
+    										when T1."TrnspName" = 'PAC POR CONTA REMETENTE' then 'PAC'
+    										when T1."TrnspName" = 'PAC POR CONTA DESTINATÁRIO' then 'PAC'
+    										when T1."TrnspName" = 'TRANSPORTADORA POR CONTA REMETENTE' then 'TRANSPORTADORA'
+    										when T1."TrnspName" = 'TRANSPORTADORA POR CONTA DESTINATÁRIO' then 'TRANSPORTADORA' end as "TrnspName" from ORDR T0 inner join OSHP T1 on T0."TrnspCode" = T1."TrnspCode"  where "DocNum" = '{1}');</value>
+  </data>
+  <data name="Update_2Conferencia" xml:space="preserve">
+    <value>update "@CVA_CONFERENCIA" set "CVA_DTINICIAL_2" = '{0}',"CVA_DTFINAL_2" = '{1}',"CVA_STATUS_2" = '{2}' where "CVA_DOCENTRY" = '{3}'</value>
+  </data>
+  <data name="Update_2ConferenciaLinha" xml:space="preserve">
+    <value>update "@CVA_CONFERENCIA_LINHA" set "CVA_QUANT_2" = '{0}',"CVA_USER_2" = '{1}',"CVA_DATA_2" = '{2}' , "CVA_HORA_2" = '{3}' where "CVA_DOCENTRY" = '{4}' AND "CVA_ITEMCODE" = '{5}'</value>
+  </data>
+  <data name="VerificaItemPedido" xml:space="preserve">
+    <value>Select distinct T0."CardCode" || ' - ' ||T0."CardName" as "Cliente"
+,T0."DocStatus"
+,T0."DocNum"
+,T8."U_CVA_TipoPag"
+,T1."ItemCode"
+,T1."Dscription"
+,(Select SUM("OpenCreQty") From RDR1 Where RDR1."DocEntry" = T1."DocEntry" And RDR1."ItemCode" = T1."ItemCode") as "OpenCreQty"
+,(select "U_CVA_ParcFaturado" from "@CVA_PARGERAIS" ) as "ParcFaturado"
+,(select "U_CVA_ParcAntecipado" from "@CVA_PARGERAIS")as "ParcAntecipado"
+,T8."CardCode"
+,T9."CodeBars" as "CodBarras"
+  from ORDR T0
+ inner join RDR1  T1 on T0."DocEntry" = T1."DocEntry"
+ --inner join DPI1  T6 on T0."DocEntry" = T6."BaseEntry" 
+   --and T0."ObjType" = T6."BaseType"
+   --and T1."LineNum" = T6."BaseLine"
+ --inner join ODPI T7 on T6."DocEntry" = T7."DocEntry"   
+ inner join OCRD T8 on T0."CardCode" = T8."CardCode" 
+ inner join OITM T9 on T1."ItemCode" = T9."ItemCode"
+ left  join OBCD T10 on T9."ItemCode" = T10."ItemCode" And T10."BcdCode" = '{1}'
+ where T0."DocNum"  = '{0}'
+  and (T10."BcdCode" = '{1}' or T9."CodeBars" = '{1}')
+  and T1."OpenCreQty" &gt; 0
+  and T1."LineStatus" = 'O'
+  and T1."LineStatus" = 'O'</value>
+  </data>
+  <data name="Verifica_Existes_DocEntry" xml:space="preserve">
+    <value>select "CVA_DOCENTRY" from "@CVA_VOLEMB" where "CVA_DOCENTRY"= {0}</value>
+  </data>
+  <data name="Qtde_ItensPedido" xml:space="preserve">
+    <value>select count(*) as "Qtd"
+from ORDR
+inner join RDR1 ON ORDR."DocEntry" = RDR1."DocEntry"
+  where "DocNum" = '{0}'</value>
+  </data>
+  <data name="GetLogin" xml:space="preserve">
+    <value>select Upper("Code") as "Code"  ,"Name" , "U_CVA_Auto"                             from "@CVA_LOGIN" 
+where Upper("Code") = '{0}' and "Name" = '{1}'</value>
+  </data>
+  <data name="CarregaComboStatus" xml:space="preserve">
+    <value>select '0' as "Code", 'Selecione'as "Descricao" from dummy
+union all
+select '1','Pedido E-Commerce'from dummy
+union all
+select '2' ,'Pedido Interno' from dummy
+union all 
+select "CardCode", "CardName" from OCRD where "U_CVA_Distribuidor" = 'Y';</value>
+  </data>
+  <data name="CarregaComboFilial" xml:space="preserve">
+    <value>select '0' as "Code"
+      ,'Selecione' as "Descricao"
+  from dummy
+union all
+
+select "BPLId" as "Code"
+	  ,"BPLName" as "Descricao"
+ from OBPL
+ where "BPLId" &lt;&gt; 2</value>
+  </data>
+  <data name="CarregaComboxUfCliente" xml:space="preserve">
+    <value>select '0' as "Code"
+      ,'Selecione' as "Descricao"
+  from dummy
+union all
+
+select "Code","Name" from OCST</value>
+  </data>
+  <data name="CarrehaComboTipoEnvio" xml:space="preserve">
+    <value>select '0' as "Code"
+      ,'Selecione' as "Descricao"
+  from dummy
+union all
+
+select "TrnspCode","TrnspName" from OSHP</value>
+  </data>
+  <data name="ListaPedidosAbertos" xml:space="preserve">
+    <value>call SPC_PEDIDOSLIBERADOS ({0},{1},{2},'{3}','{4}','{5}')</value>
+  </data>
+  <data name="ListaPedidosPendente" xml:space="preserve">
+    <value>call SPC_PEDIDOSPENDENTES ({0},{1},{2},'{3}','{4}','{5}')</value>
+  </data>
+  <data name="AtualizaPickingPedido" xml:space="preserve">
+    <value>update ORDR set "U_CVA_Picking" = 'Y' where "DocNum" = '{0}'</value>
+  </data>
+  <data name="CarregaCB_Status" xml:space="preserve">
+    <value>select '0' as "Code"
+      ,'Selecione' as "Descricao"
+from dummy
+
+union all      
+
+select '1'
+       ,'Iniciado'
+  from dummy
+union all
+
+select '2'
+       ,'Pendente'
+  from dummy
+  
+union all 
+
+select '3'
+       ,'Finalizado'
+  from dummy</value>
+  </data>
+  <data name="CarregaComboBoxTransportadora" xml:space="preserve">
+    <value>select '0' as "Code"
+      ,'Selecione' as "Descricao"
+from dummy
+union all      
+select "CardCode"
+       ,"CardName"
+  from OCRD
+  where "GroupCode" = 103</value>
+  </data>
+  <data name="CarregaComboData" xml:space="preserve">
+    <value>select '0' as "Code"
+       ,'Selecione' as "Descricao"
+from dummy
+
+union all 
+
+select '1' 
+       ,'Data de Entrega'
+from dummy
+
+union all 
+
+select '2' as "Code"
+       ,'Data do Pedido'
+from dummy</value>
+  </data>
+  <data name="ListaPicking" xml:space="preserve">
+    <value>call SPC_LISTA_PICKING ('{0}','{1}',{2},{3},'{4}',{5})</value>
+  </data>
+  <data name="AtualizaPickingPedidoVenda" xml:space="preserve">
+    <value>update ORDR set "U_CVA_Picking_Impresso" = '1' where "DocNum" = '{0}'</value>
+  </data>
+  <data name="GetList1conf" xml:space="preserve">
+    <value>select distinct T0."DocNum"
+	  ,T0."DocDueDate"
+	  ,T0."DocDate"
+	  ,case when T0."U_OrigemPedido"  = 1 then 'Pedido E-Commerce'
+	        when T0."U_OrigemPedido"  = 2 then 'Pedido Interno'
+	        when T0."U_OrigemPedido"  = 3 then 'Distribuidor'
+	   end as "Origem" 
+	  ,T0."CardName"
+,case when  (T0."TrnspCode" = 1) then 'SEDEX POR CONTA DO REMETENTE' 
+	  when  (T0."TrnspCode" = 2) then 'PAC POR CONTA DO REMETENTE' 
+	  when  (T0."TrnspCode" = 4) then 'RETIRA LOJA'
+	  when  (T0."TrnspCode" = 6) then 'SEDEX POR CONTA DO DESTINATÁRIO'
+	  when  (T0."TrnspCode" = 7) then 'PAC POR CONTA DO DESTINATÁRIO'	  
+	  when  (T0."TrnspCode" = 9) then 'SEDEX POR CONTA DO DESTINATÁRIO'
+	  when  (T0."TrnspCode" = 10) then 'PAC POR CONTA DO DESTINATÁRIO' 	  	  
+	  else (select "CardName" From OCRD where OCRD."CardCode" = T2."Carrier") end as "Transportadora"
+	  ,T3."BPLName"
+  from ORDR T0
+  left join "@CVA_CONFERENCIA" T1 on T0."DocNum" = T1."CVA_DOCENTRY" 
+  inner join RDR12 T2 on T0."DocEntry" = T2."DocEntry"
+  inner join OBPL T3  on T0."BPLId" = T3."BPLId"
+  where T0."U_CVA_Picking" = 'Y'  
+    and T0."U_CVA_Status_Picking" &lt;&gt; 3  
+    and ifnull(T1."CVA_STATUS_1",0) &lt;&gt; 1
+   and T0."CANCELED" = 'N'
+    --and T0."DocStatus" &lt;&gt; 'C'   order by 1</value>
+  </data>
+  <data name="Itens1Conf" xml:space="preserve">
+    <value>Select distinct
+ T1."ItemCode"
+,T1."Dscription"
+,T9."CodeBars" as "CodBarras"
+,SUM(T1."OpenCreQty") as "Quantidade"
+,coalesce(CONF."CVA_QUANT_2", 0) as "Escaneado" 
+  from ORDR T0
+ inner join RDR1  T1 on T0."DocEntry" = T1."DocEntry" 
+ inner join OCRD T8 on T0."CardCode" = T8."CardCode" 
+ inner join OITM T9 on T1."ItemCode" = T9."ItemCode" 
+ left join "@CVA_CONFERENCIA_LINHA" as CONF on CONF."CVA_DOCENTRY" = T0."DocNum"
+ and T1."ItemCode" = CONF."CVA_ITEMCODE"
+--   and CONF."CVA_LINENUM" = T1."VisOrder"
+ where T0."DocNum"  = '{0}'
+  and T1."OpenCreQty" &gt; 0
+  and T1."LineStatus" = 'O'
+Group By  T1."ItemCode",T1."Dscription",T9."CodeBars",CONF."CVA_QUANT_2"</value>
+  </data>
+  <data name="CabecalhoPedido" xml:space="preserve">
+    <value>Select distinct T0."CardName" as "Cliente"
+,T0."DocNum"
+,T0."DocDate"
+,T0."DocDueDate"
+,case when T0."U_OrigemPedido"  = 1 then 'Pedido E-Commerce'
+        when T0."U_OrigemPedido"  = 2 then 'Pedido Interno'
+        when T0."U_OrigemPedido"  = 3 then 'Distribuidor'
+  end as "Origem"
+,case when  (T0."TrnspCode" = 1) then 'SEDEX POR CONTA DO REMETENTE' 
+	  when  (T0."TrnspCode" = 2) then 'PAC POR CONTA DO REMETENTE' 
+	  when  (T0."TrnspCode" = 4) then 'RETIRA LOJA'
+	  when  (T0."TrnspCode" = 6) then 'SEDEX POR CONTA DO DESTINATÁRIO'
+	  when  (T0."TrnspCode" = 7) then 'PAC POR CONTA DO DESTINATÁRIO'	  
+	  when  (T0."TrnspCode" = 9) then 'SEDEX POR CONTA DO DESTINATÁRIO'
+	  when  (T0."TrnspCode" = 10) then 'PAC POR CONTA DO DESTINATÁRIO'  	  	  
+	  else (select "CardName" From OCRD where OCRD."CardCode" = T11."Carrier") end as "Transportadora"
+  from ORDR T0
+ inner join RDR1  T1 on T0."DocEntry" = T1."DocEntry"
+ inner join RDR12 T11 on T0."DocEntry" = T11."DocEntry"
+ where T0."DocNum"  = '{0}'</value>
+  </data>
+  <data name="CarregaParcial" xml:space="preserve">
+    <value>select "CVA_ITEMCODE"
+      ,"CVA_DESCRICAO" 
+      ,"CVA_CODBARRAS"
+      ,"CVA_QUANTIDADEPEDIDO"
+      ,"CVA_QUANT_1"
+  from "@CVA_CONFERENCIA_LINHA_PARCIAL"
+ where "CVA_DOCENTRY" = '{0}';</value>
+  </data>
+  <data name="DeleteParcial" xml:space="preserve">
+    <value>delete from "@CVA_CONFERENCIA_PARCIAL" where "CVA_DOCENTRY" = '{0}';</value>
+  </data>
+  <data name="DeleteParcialItens" xml:space="preserve">
+    <value>delete from "@CVA_CONFERENCIA_LINHA_PARCIAL" where "CVA_DOCENTRY" = '{0}';</value>
+  </data>
+  <data name="Insert_1ConferenciaLinhaParcial" xml:space="preserve">
+    <value>insert into "@CVA_CONFERENCIA_LINHA_PARCIAL" values({0},'{1}',{2},'{3}','{4}',{5},{6},{7},'{8}','{9}','{10}','{11}','{12}','{13}')</value>
+  </data>
+  <data name="Insert_1ConferenciaParcial" xml:space="preserve">
+    <value>insert into "@CVA_CONFERENCIA_PARCIAL" values({0},'{1}','{2}','{3}','{4}','{5}','{6}','{7}')</value>
+  </data>
+  <data name="SetAberturaPicking1Conf" xml:space="preserve">
+    <value>update ORDR set "U_CVA_User_1Conf" = '{0}', "U_CVA_Aber_1Conf" = '{1}',"U_CVA_Status_Picking" = 1 where "DocNum" = '{2}'</value>
+  </data>
+  <data name="SetFechamentoPicking1Conf" xml:space="preserve">
+    <value>update ORDR set "U_CVA_Fin_1Conf" = '{0}' where "DocNum" = '{1}'</value>
+  </data>
+  <data name="VerificaParcial" xml:space="preserve">
+    <value>select Count(*) as "qtde"
+  from "@CVA_CONFERENCIA_LINHA_PARCIAL"
+ where "CVA_DOCENTRY" = '{0}';</value>
+  </data>
+  <data name="GetList2Conf" xml:space="preserve">
+    <value>select distinct T0."DocNum"
+	  ,T0."DocDueDate"
+	  ,T0."DocDate"
+	  ,case when T0."U_OrigemPedido"  = 1 then 'Pedido E-Commerce'
+	        when T0."U_OrigemPedido"  = 2 then 'Pedido Interno'
+	        when T0."U_OrigemPedido"  = 3 then 'Distribuidor'
+	   end as "Origem" 
+	  ,T0."CardName"
+,case when  (T0."TrnspCode" = 1) then 'SEDEX POR CONTA DO REMETENTE' 
+	  when  (T0."TrnspCode" = 2) then 'PAC POR CONTA DO REMETENTE' 
+	  when  (T0."TrnspCode" = 4) then 'RETIRA LOJA'
+	  when  (T0."TrnspCode" = 6) then 'SEDEX POR CONTA DO DESTINATÁRIO'
+	  when  (T0."TrnspCode" = 7) then 'PAC POR CONTA DO DESTINATÁRIO'	  
+	  when  (T0."TrnspCode" = 9) then 'SEDEX POR CONTA DO DESTINATÁRIO'
+	  when  (T0."TrnspCode" = 10) then 'PAC POR CONTA DO DESTINATÁRIO' 	  	  
+	  else (select "CardName" From OCRD where OCRD."CardCode" = T2."Carrier") end as "Transportadora"
+	  ,T3."BPLName"
+  from ORDR T0
+ inner join RDR12 T2 on T0."DocEntry" = T2."DocEntry"
+ inner join OBPL T3  on T0."BPLId" = T3."BPLId"
+  left join "@CVA_CONFERENCIA" T1 on T0."DocNum" = T1."CVA_DOCENTRY"   
+   and ifnull(T1."CVA_STATUS_1",0) = 1
+  left join "@CVA_CONFERENCIA_PARCIAL" CONF_PAR on T0."DocNum" = CONF_PAR."CVA_DOCENTRY"   
+   --and CONF_PAR."CVA_STATUS_1" &lt;&gt; 1
+   --and (ifnull(CONF_PAR."CVA_STATUS_1",0) &lt;&gt; 0 or CONF_PAR."CVA_STATUS_1" &lt;&gt; 1)
+  
+ where T0."U_CVA_Picking" = 'Y'                                                                       
+   --and T0."U_CVA_Status_Picking" = case (select distinct RDR1."TargetType" from RDR1 where RDR1."DocEntry" = T0."DocEntry") when '13' then 1 else 1 end          
+   and T0."DocStatus" &lt;&gt; 'C'
+   and not exists (select * from RDR1 where RDR1."DocEntry" = T0."DocEntry" and RDR1."TargetType" = '13')
+  -- and not exists (select * from "@CVA_CONFERENCIA_PARCIAL" CONF_PAR where T0."DocNum" = CONF_PAR."CVA_DOCENTRY" and ifnull("CVA_STATUS_1",0) &lt;&gt; 0 )   
+   and (ifnull(CONF_PAR."CVA_STATUS_1",'0') = '0' or CONF_PAR."CVA_STATUS_1" &lt;&gt; '1')	
+   And T0."CANCELED" = 'N'
+   and (ifnull(T1."CVA_STATUS_1",'0') &lt;&gt; '0' or T1."CVA_STATUS_1" &lt;&gt; '1') order by 1</value>
+  </data>
+  <data name="SetAberturaPicking2Conf" xml:space="preserve">
+    <value>update ORDR set "U_CVA_User_2Conf" = '{0}', "U_CVA_Aber_2Conf" = '{1}',"U_CVA_Status_Picking" = 1 where "DocNum" = '{2}'</value>
+  </data>
+  <data name="SetFechamentoPicking2Conf" xml:space="preserve">
+    <value>update ORDR set "U_CVA_Fin_2Conf" = '{0}',"U_CVA_Status_Picking" = 3 where "DocNum" = '{1}'</value>
+  </data>
+  <data name="CarregaListaEmbagem" xml:space="preserve">
+    <value>select "CVA_DOCENTRY"   as "Pedido"
+ 	   ,"CVA_LINENUM"    as "Nº Linha"
+ 	   ,T1."Name"		 as "Tipo Embalagem"
+ 	   ,T0."CVA_QAUNTITY" as "Quantidade"
+ 	   ,T0."CVA_PESO"		 as "Peso"
+  from "@CVA_VOLEMB_LINHA" T0
+  inner join "@CVA_TPVOL" T1 on T0."CVA_IDVOLUME" = T1."Code"
+  where T0."CVA_DOCENTRY" = '{0}';</value>
+  </data>
+  <data name="Update_Parcial" xml:space="preserve">
+    <value>update "@CVA_CONFERENCIA_PARCIAL" set "CVA_DTINICIAL_1" = '{0}',"CVA_DTFINAL_1" = '{1}',"CVA_STATUS_1" = '{2}' where "CVA_DOCENTRY" = '{3}'</value>
+  </data>
+  <data name="Update_Parcial_Linha" xml:space="preserve">
+    <value>update "@CVA_CONFERENCIA_LINHA_PARCIAL" set "CVA_QUANT_1" = '{0}',"CVA_USER_1" = '{1}',"CVA_DATA_1" = '{2}' , "CVA_HORA_1" = '{3}' where "CVA_DOCENTRY" = '{4}' AND "CVA_ITEMCODE" = '{5}'</value>
+  </data>
+  <data name="Delete_LinhaEmbalagem" xml:space="preserve">
+    <value>DELETE FROM "@CVA_VOLEMB_LINHA" WHERE "CVA_DOCENTRY" = {0} AND "CVA_LINENUM" = {1}</value>
+  </data>
+  <data name="TrnspName_Get" xml:space="preserve">
+    <value>select OSHP."TrnspName" 
+         from ORDR 
+        inner join OSHP on OSHP."TrnspCode" = ORDR."TrnspCode"  
+        where ORDR."DocNum" = '{0}'</value>
+  </data>
+  <data name="DownPayment_Get" xml:space="preserve">
+    <value>select distinct ODPI."DocEntry"
+from ODPI 
+inner join DPI1 On ODPI."DocEntry" = DPI1."DocEntry"
+where DPI1."BaseEntry" = {0}
+and DPI1."BaseType" = 17  And "CANCELED" = 'N' AND "DocStatus" = 'C'
+and ODPI."DocEntry" Not In (Select RIN1."BaseEntry" From ORIN Inner Join RIN1 On RIN1."DocEntry" = ORIN."DocEntry" Where RIN1."BaseRef" = ODPI."DocNum" And RIN1."BaseEntry" = ODPI."DocEntry" And RIN1."BaseType" = 203 And ORIN."CANCELED" = 'N' And ORIN."DocStatus" = 'C')</value>
+  </data>
+  <data name="OrderWeight_Get" xml:space="preserve">
+    <value>select case when coalesce(RDR12."GrsWeight", 0.0)&lt;= 0 then coalesce(RDR12."NetWeight", 0.0)
+       else  coalesce(RDR12."GrsWeight", 0.0) end as GrsWeight
+  from ORDR
+ inner join RDR12 on RDR12."DocEntry" = ORDR."DocEntry"
+ where ORDR."DocNum" = {0}</value>
+  </data>
+  <data name="QuantidadeEmbalagem" xml:space="preserve">
+    <value>select sum("CVA_QAUNTITY") AS "Volume" from "@CVA_VOLEMB_LINHA" where "CVA_DOCENTRY" = '{0}'</value>
+  </data>
+  <data name="AtualizaGestaoPickingPedido" xml:space="preserve">
+    <value>update ORDR set "U_CVA_Picking" = 'N' where "DocNum" = '{0}'</value>
+  </data>
+  <data name="CarregaParcial_2" xml:space="preserve">
+    <value>select "CVA_ITEMCODE"
+      ,"CVA_DESCRICAO" 
+      ,"CVA_CODBARRAS"
+      ,"CVA_QUANTIDADEPEDIDO"
+      ,"CVA_QUANT_2"
+  from "@CVA_CONFERENCIA_LINHA_PARCIAL"
+ where "CVA_DOCENTRY" = '{0}';</value>
+  </data>
+  <data name="Update_Parcial2" xml:space="preserve">
+    <value>update "@CVA_CONFERENCIA_PARCIAL" set "CVA_DTINICIAL_2" = '{0}',"CVA_DTFINAL_2" = '{1}',"CVA_STATUS_2" = '{2}' where "CVA_DOCENTRY" = '{3}'</value>
+  </data>
+  <data name="Update_Parcial_Linha2" xml:space="preserve">
+    <value>update "@CVA_CONFERENCIA_LINHA_PARCIAL" set "CVA_QUANT_2" = '{0}',"CVA_USER_2" = '{1}',"CVA_DATA_2" = '{2}' , "CVA_HORA_2" = '{3}' where "CVA_DOCENTRY" = '{4}'  AND "CVA_ITEMCODE" = '{5}'</value>
+  </data>
+  <data name="Insert_2ConferenciaLinhaParcial" xml:space="preserve">
+    <value>insert into "@CVA_CONFERENCIA_LINHA_PARCIAL" values({0},'{1}',{2},'{3}','{4}',{5},{6},{7},'{8}','{9}','{10}','{11}','{12}','{13}')</value>
+  </data>
+  <data name="Insert_2ConferenciaParcial" xml:space="preserve">
+    <value>insert into "@CVA_CONFERENCIA" values({0},'{1}','{2}','{3}','{4}','{5}','{6}','{7}')</value>
+  </data>
+  <data name="VerificaUtilizacao" xml:space="preserve">
+    <value>select  T1."Usage" 
+from ORDR T0 
+inner join RDR1 T1 on T0."DocEntry" = T1."DocEntry"  
+where T0."DocNum" = '{0}'</value>
+  </data>
+  <data name="AtualizaImpressaoPedido" xml:space="preserve">
+    <value>update ORDR set "U_CVA_Separacao_Impresso" =1 where "DocNum" = '{0}'	</value>
+  </data>
+  <data name="UpdateCodigoRastreio" xml:space="preserve">
+    <value>UPDATE OINV SET "U_CVA_CodRastreio" = '{0}' 
+WHERE OINV."DocEntry" = (Select TOP 1 INV1."DocEntry" FROM INV1
+Inner Join ORDR On INV1."BaseEntry" = ORDR."DocEntry"
+Where ORDR."DocNum" = '{1}' AND INV1."BaseType" = 17 ) AND OINV."CANCELED" = 'N'</value>
+  </data>
+  <data name="VerificaExisteCodRastreio" xml:space="preserve">
+    <value>select  "DocEntry" From OINV Where OINV."U_CVA_CodRastreio" = '{0}'</value>
+  </data>
+  <data name="InsereStatusEmSeparação" xml:space="preserve">
+    <value>insert into "@CVA_ORDERS_MAGENTO" ("Code", "Name", "U_EntityId", "U_State", "U_Status", "U_Data", 
+						   "U_Hora", "U_JSON", "U_StatusProc", "U_Mensagem", "U_DataProc", 
+						   "U_HoraProc", "U_DocEntry", "U_ObjType", "U_IntegrateStatus")
+		Select
+			(select max(coalesce("Code", 0)) + 1 from "@CVA_ORDERS_MAGENTO"), 'Orders', 
+			"U_CVA_EntityId", 'processing', 
+			 'separacao', current_date, cast(replace(current_time, ':', '') as varchar(4)), null, 'OK', 
+			 'O pedido se encontra em separação.', current_date, cast(replace(current_time, ':', '') as varchar(4)), 
+			 "DocEntry", '17', 'Y' From ORDR 
+		     Where "DocNum" = {0} AND (Select Count(*) From "@CVA_ORDERS_MAGENTO" Where "U_DocEntry" = "DocEntry" And "U_Status" = 'separacao') = 0</value>
+  </data>
+  <data name="AtualizaSubFinalidadeNF" xml:space="preserve">
+    <value>UPDATE T0 SET 
+	"U_nfe_SubFin" = CASE WHEN "FreeChrgBP" = 'Y' THEN 3 ELSE 1 END 
+	FROM OINV T0
+		INNER JOIN INV1 T1 ON T1."DocEntry" = T0."DocEntry"
+WHERE T0."DocEntry" = {0}</value>
+  </data>
+</root>

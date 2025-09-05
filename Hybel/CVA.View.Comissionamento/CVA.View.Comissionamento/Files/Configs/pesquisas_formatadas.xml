@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pesquisas>
+  <pesquisa>
+    <nome>GRNTGERENTE</nome>
+    <consulta>SELECT DISTINCT SlpCode, SlpName FROM OSLP</consulta>
+    <form>UDOGRNT</form>
+    <item>et_Code</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>GRNTVENDEDOR</nome>
+    <consulta>SELECT DISTINCT SlpCode, SlpName FROM OSLP</consulta>
+    <form>UDOGRNT</form>
+    <item>mt_item</item>
+    <coluna>cl_Id</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>CALCCODE</nome>
+    <consulta>SELECT COALESCE(MAX(CAST(Code AS INT)), 0) + 1 FROM [@CVA_CALC_COMISSAO]</consulta>
+    <form>UDOCALC</form>
+    <item>Code</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>CRITCODE</nome>
+    <consulta>SELECT COALESCE(MAX(CAST(Code AS INT)), 0) + 1 FROM [@CVA_CRIT_COMISSAO]</consulta>
+    <form>UDOCRIT</form>
+    <item>Code</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>REGRCODE</nome>
+    <consulta>SELECT COALESCE(MAX(CAST(Code AS INT)), 0) + 1 FROM [@CVA_REGR_COMISSAO]</consulta>
+    <form>UDOREGR</form>
+    <item>Code</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>TIPOCODE</nome>
+    <consulta>SELECT COALESCE(MAX(CAST(Code AS INT)), 0) + 1 FROM [@CVA_TIPO_COMISSAO]</consulta>
+    <form>UDOTIPO</form>
+    <item>Code</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>REGRCENTROCUSTO</nome>
+    <consulta>SELECT DISTINCT PrcCode, PrcName FROM OPRC</consulta>
+    <form>UDOREGR</form>
+    <item>U_CENTROCUSTO</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>REGRCIDADE</nome>
+    <consulta>SELECT DISTINCT AbsId, Country, CASE WHEN State = 'EX' THEN Country ELSE State END AS State, CASE WHEN Name = 'EX' THEN State + '/' + Name ELSE Name END AS Name FROM OCNT</consulta>
+    <form>UDOREGR</form>
+    <item>U_CIDADE</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>REGRCLIENTE</nome>
+    <consulta>SELECT DISTINCT CardCode, CardName FROM OCRD WHERE CardType = 'C' AND CardName != ''</consulta>
+    <form>UDOREGR</form>
+    <item>U_CLIENTE</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>REGRCODIGOITEM</nome>
+    <consulta>SELECT DISTINCT ItemCode, ItemName FROM OITM</consulta>
+    <form>UDOREGR</form>
+    <item>U_ITEM</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>REGRCOMISSIONADO</nome>
+    <consulta>SELECT DISTINCT SlpCode, SlpName FROM OSLP</consulta>
+    <form>UDOREGR</form>
+    <item>U_COMISSIONADO</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>REGRESTADO</nome>
+    <consulta>SELECT DISTINCT State FROM OCNT</consulta>
+    <form>UDOREGR</form>
+    <item>U_ESTADO</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>REGRFABRICANTE</nome>
+    <consulta>SELECT DISTINCT FirmCode, FirmName FROM OMRC</consulta>
+    <form>UDOREGR</form>
+    <item>U_FABRICANTE</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>REGRGROUP</nome>
+    <consulta>SELECT DISTINCT GroupCode, GroupName FROM OCRG WHERE GroupType = 'C'</consulta>
+    <form>UDOREGR</form>
+    <item>U_GROUP</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>REGRGRUPOITEM</nome>
+    <consulta>SELECT DISTINCT ItmsGrpCod, ItmsGrpNam FROM OITB</consulta>
+    <form>UDOREGR</form>
+    <item>U_GRUPO</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>REGRSETOR</nome>
+    <consulta>SELECT DISTINCT IndCode, IndName, IndDesc FROM OOND</consulta>
+    <form>UDOREGR</form>
+    <item>U_SETOR</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+  <pesquisa>
+    <nome>REGRVENDEDOR</nome>
+    <consulta>SELECT DISTINCT SlpCode, SlpName FROM OSLP</consulta>
+    <form>UDOREGR</form>
+    <item>U_VENDEDOR</item>
+    <coluna>-1</coluna>
+  </pesquisa>
+</pesquisas>

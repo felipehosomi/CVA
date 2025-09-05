@@ -1,0 +1,36 @@
+I8,A,001
+
+
+Q1151,024
+q831
+rN
+S3
+D12
+ZT
+JF
+OC1,D
+R32,0
+f100
+N
+A589,424,2,c,1,1,N,"@fornecedor"
+A618,694,2,c,1,1,N,"@vol / @vol_1"
+A670,749,2,c,1,1,N,"@n_nf"
+A654,356,2,c,1,1,N,"@cidade_fornecedor"
+A760,807,2,c,1,1,N,"@endereco_2"
+A651,957,2,c,1,1,N,"@cliente_2"
+A651,912,2,c,1,1,N,"@cidade_Cliente"
+A766,425,2,d,1,1,N,"Fornecedor:"
+A766,642,2,d,1,1,N,"Observação Descarga:"
+A651,995,2,c,1,1,N,"@cliente_1"
+A766,357,2,d,1,1,N,"Cidade:"
+A766,695,2,d,1,1,N,"Volumes:"
+A766,855,2,d,1,1,N,"Endereço de Entrega: "
+A766,750,2,d,1,1,N,"Nº NF:"
+A766,913,2,d,1,1,N,"Cidade:"
+A766,996,2,d,1,1,N,"Cliente:"
+A490,854,2,c,1,1,N,"@endereco_1"
+A452,641,2,c,1,1,N,"@horario"
+A760,588,2,c,1,1,N,"@obs_1"
+A760,541,2,c,1,1,N,"@obs_2"
+A760,493,2,c,1,1,N,"@obs_3"
+P1

@@ -1,0 +1,30 @@
+I8,A,001
+
+
+Q440,002
+q831
+rN
+S3
+D12
+ZT
+JF
+O
+R16,0
+f100
+N
+A495,154,2,4,1,1,N,"@responsavel"
+A439,184,2,4,1,1,N,"@dt_analise"
+A419,213,2,4,1,1,N,"@dt_validade"
+A699,154,2,4,1,1,N,"Responsável:"
+A388,245,2,4,1,1,N,"@dt_Fabri"
+A699,184,2,4,1,1,N,"Data da Análise:"
+A616,275,2,4,1,1,N,"@lote"
+A699,213,2,4,1,1,N,"Data de Validade:"
+A699,275,2,4,1,1,N,"Lote:"
+A582,307,2,4,1,1,N,"@codigo"
+A699,245,2,4,1,1,N,"Data de Fabricação:"
+A565,335,2,4,1,1,N,"@p_1"
+A565,364,2,4,1,1,N,"@produto"
+A699,307,2,4,1,1,N,"Código:"
+A699,364,2,4,1,1,N,"Produto:"
+P1

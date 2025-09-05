@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BP_Get" xml:space="preserve">
+    <value>with BPTaxId as
+(
+	select distinct 1 as "RecOrder", OCRD."CardCode", case when length(CRD7."TaxId0") = 0 or CRD7."TaxId0" is null then CRD7."TaxId4" else CRD7."TaxId0" end as "TaxId"
+	  from "{0}".OCRD
+	 inner join "{0}".CRD7 on CRD7."CardCode" = OCRD."CardCode"
+	 where OCRD."CardType" = 'C'
+	   and CRD7."AddrType" = 'S'
+                      
+	   and (replace(replace(replace(CRD7."TaxId0", '.', ''), '-', ''), '/', '') = replace(replace(replace('{1}', '.', ''), '-', ''), '/', '') 
+		or replace(replace(replace(CRD7."TaxId4", '.', ''), '-', ''), '/', '') = replace(replace(replace('{1}', '.', ''), '-', ''), '/', ''))
+
+		union all
+		
+	select distinct 2 as "RecOrder", OCRD."CardCode", case when length(CRD7."TaxId0") = 0 or CRD7."TaxId0" is null then CRD7."TaxId4" else CRD7."TaxId0" end as "TaxId"
+	  from "{0}".OCRD
+	 inner join "{0}".CRD7 on CRD7."CardCode" = OCRD."CardCode"
+	 where OCRD."CardType" = 'C'
+	   and CRD7."AddrType" = 'S'
+                     
+	   and (replace(replace(replace(OCRD."U_CVA_CPF_resp1", '.', ''), '-', ''), '/', '') = replace(replace(replace('{1}', '.', ''), '-', ''), '/', '')
+		or replace(replace(replace(OCRD."U_CVA_CPF_resp2", '.', ''), '-', ''), '/', '') = replace(replace(replace('{1}', '.', ''), '-', ''), '/', '')) 
+)
+select top 1 "CardCode", "TaxId"
+  from BPTaxId
+ order by "RecOrder";</value>
+  </data>
+  <data name="CancelledOrders_Get" xml:space="preserve">
+    <value>select ORDR."DocEntry", ORDR."U_CVA_EntityId"
+  from "{0}"."ORDR"
+ where ORDR."U_CVA_EntityId" is not null
+   and ORDR."CANCELED" = 'Y'
+   and ORDR."U_CVA_IntegratedCancellation" = 'N'</value>
+  </data>
+  <data name="CreditCardTypeCode_Get" xml:space="preserve">
+    <value>select "CrTypeCode" from "{0}".OCRP where "CrTypeName" = '{1}'</value>
+  </data>
+  <data name="CreditCard_Get" xml:space="preserve">
+    <value>SELECT "CreditCard" FROM "{0}".OCRC WHERE UPPER("CardName") like '{1}%'</value>
+  </data>
+  <data name="DownPayment_Get" xml:space="preserve">
+    <value>select "DocEntry" from "{0}".ODPI where "U_CVA_EntityId" = {1} and not exists (select * from "{0}".DPI1 where DPI1."DocEntry" = ODPI."DocEntry" and DPI1."TargetType" = 14)</value>
+  </data>
+  <data name="IncomingPayments_Get" xml:space="preserve">
+    <value>select "DocEntry" from "{0}"."ORCT" WHERE "U_CVA_EntityId" = {1} AND "Canceled" = 'N'</value>
+  </data>
+  <data name="ItemStockQuantity_GetCode" xml:space="preserve">
+    <value>select "Code"
+  from "{0}"."@CVA_STOCK_MAGENTO" as "STOCK"
+ where "STOCK"."U_BarCode" = '{1}'
+   and "STOCK"."U_ItemCode" = '{2}'</value>
+  </data>
+  <data name="ItemsToIntegrate_Get" xml:space="preserve">
+    <value>select OITM."ItemCode"
+  from "{0}".OITM
+ where OITM."InvntItem" = 'Y'
+   and OITM."SellItem" = 'Y'
+   and (OITM."U_CVA_Integrated" = 'N' or OITM."U_CVA_Integrated" is null)
+   and OITM."CodeBars" is not null</value>
+  </data>
+  <data name="Item_Get" xml:space="preserve">
+    <value>SELECT "ItemCode" FROM "{0}"."OITM" WHERE "CodeBars" = '{1}'</value>
+  </data>
+  <data name="LastDate_GetCode" xml:space="preserve">
+    <value>select "Code" from "{0}"."@CVA_MAGENTO_DT" Where "U_EndPoint" = '{1}'</value>
+  </data>
+  <data name="Orders_Get" xml:space="preserve">
+    <value>select "DocEntry" from "{0}"."ORDR" WHERE "U_CVA_EntityId" = {1} AND "CANCELED" = 'N'</value>
+  </data>
+  <data name="TipoTransporte_Get" xml:space="preserve">
+    <value>SELECT "TrnspCode" FROM "{0}"."OSHP" WHERE "TrnspName" = '{1}'</value>
+  </data>
+  <data name="Carrier_Get" xml:space="preserve">
+    <value>select OCRD."CardCode" 
+      from "{0}".OCRD 
+     inner join "{0}".OCRG on OCRG."GroupCode" = OCRD."GroupCode"
+     where OCRD."CardFName" like '%{1}%' 
+       and OCRD."CardType" = 'S'
+       and OCRG."GroupName" = 'TRANS - PJ NACIONAL'</value>
+  </data>
+  <data name="CountyAbsId_Get" xml:space="preserve">
+    <value>select OCNT."AbsId" 
+  from "{0}".OCNT 
+ where replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(upper(OCNT."Name"), 'Á', 'A'), 'Â', 'A'), 'Ã', 'A'), 'É', 'E'), 'Ê', 'E'), 'Í', 'I'), 'Ó', 'O'), 'Ô', 'O'), 'Ú', 'U'), 'Ç', 'C'), '''', '') = 
+ 	   replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(upper('{1}'), 'Á', 'A'), 'Â', 'A'), 'Ã', 'A'), 'É', 'E'), 'Ê', 'E'), 'Í', 'I'), 'Ó', 'O'), 'Ô', 'O'), 'Ú', 'U'), 'Ç', 'C') 	
+   and OCNT."State" = '{2}'</value>
+  </data>
+  <data name="PedingOrders_Get" xml:space="preserve">
+    <value>select top 10 distinct ORDERS."U_EntityId"
+  from "{0}"."@CVA_ORDERS_MAGENTO" as ORDERS
+ where ORDERS."U_StatusProc" like 'NOK'
+   and not exists (select *
+					 from "{0}"."@CVA_ORDERS_MAGENTO" as A0
+					where A0."U_StatusProc" like 'OK'
+					  and A0."U_EntityId" = ORDERS."U_EntityId")</value>
+  </data>
+  <data name="OrderStatusMessages_Get" xml:space="preserve">
+    <value>select ORDERS."Code", ORDERS."U_EntityId", ORDERS."U_Mensagem", ORDERS."U_Status"
+  from "{0}"."@CVA_ORDERS_MAGENTO" as ORDERS
+ where ORDERS."U_IntegrateStatus" = 'Y'
+   and ORDERS."U_EntityId" is not null;</value>
+  </data>
+  <data name="ItemStockQuantity_GetNextCode" xml:space="preserve">
+    <value>select coalesce(max(cast("Code" as int)), 0) + 1 from "{0}"."@CVA_STOCK_MAGENTO"</value>
+  </data>
+  <data name="ItemManageBatchNum_Get" xml:space="preserve">
+    <value>SELECT "ManBtchNum" FROM "{0}"."OITM" WHERE "ItemCode" = '{1}'</value>
+  </data>
+  <data name="Address_Get" xml:space="preserve">
+    <value>select "LineNum" from "{0}".CRD1 where "CardCode" = '{1}' and "Address" = '{2}' </value>
+  </data>
+  <data name="DistribuidorPriceList_Get" xml:space="preserve">
+    <value>select coalesce("Price", 0.0) as "Price" from "{0}".ITM1 where "ItemCode" = '{1}' and "PriceList" = 3</value>
+  </data>
+  <data name="OrdersNextVal_Set" xml:space="preserve">
+    <value>select "{0}"."@CVA_ORDERS_MAGENTO_S".NEXTVAL from dummy</value>
+  </data>
+  <data name="ItemStockQuantity_Get" xml:space="preserve">
+    <value>-- Obtém os itens que ainda não estão na tabela @CVA_STOCK_MAGENTO
+select distinct OBCD."BcdCode", OITW."ItemCode", OITM."ItemName", 
+	   OITW."OnHand"  - coalesce((select sum(RDR1."Quantity")
+			   					  from "{0}".ORDR
+			   					 inner join "{0}".RDR1 on RDR1."DocEntry" = ORDR."DocEntry"
+			   					   and RDR1."ItemCode" = OITM."ItemCode" 
+			   					   and RDR1."LineStatus" = 'O'
+			   					 where ORDR."U_OrigemPedido" in ('2', '3')
+			   					   and ORDR."CANCELED" = 'N'), 0) as "WhsQty"
+  from "{0}".OITW 
+ inner join "{0}".OITM on OITM."ItemCode" = OITW."ItemCode"
+ inner join "{0}".OBCD on OBCD."ItemCode" = OITM."ItemCode"
+   and OBCD."BcdCode" &lt;&gt; '0'
+ inner join "{0}"."@CVA_MAGENTO_PARAM" as "PARAM" on PARAM."U_Deposito" = OITW."WhsCode"
+ where not exists(select *
+                    from "{0}"."@CVA_STOCK_MAGENTO" as "STOCK"
+                   where "STOCK"."U_BarCode" = OBCD."BcdCode"
+                     and "STOCK"."U_ItemCode" = OITW."ItemCode")                  
+ union all
+ 
+-- Obtém os itens que sofreram alteração de quantidade em estoque
+select distinct OBCD."BcdCode", OITW."ItemCode", OITM."ItemName", 
+	   OITW."OnHand"  - coalesce((select sum(RDR1."Quantity")
+			   					  from "{0}".ORDR
+			   					 inner join "{0}".RDR1 on RDR1."DocEntry" = ORDR."DocEntry"
+			   					   and RDR1."ItemCode" = OITM."ItemCode" 
+			   					   and RDR1."LineStatus" = 'O'
+			   					 where ORDR."U_OrigemPedido" in ('2', '3')
+			   					   and ORDR."CANCELED" = 'N'), 0) as "WhsQty"
+  from "{0}".OITW 
+ inner join "{0}".OITM on OITM."ItemCode" = OITW."ItemCode"
+ inner join "{0}".OBCD on OBCD."ItemCode" = OITM."ItemCode"
+   and OBCD."BcdCode" &lt;&gt; '0'
+ inner join "{0}"."@CVA_MAGENTO_PARAM" as "PARAM" on PARAM."U_Deposito" = OITW."WhsCode"
+ inner join "{0}"."@CVA_STOCK_MAGENTO" as "STOCK" on "STOCK"."U_BarCode" = OBCD."BcdCode"
+   and "STOCK"."U_ItemCode" = OITW."ItemCode"
+   and "STOCK"."U_WhsQty" &lt;&gt; OITW."OnHand"</value>
+  </data>
+  <data name="OrderStatusMessages_SetShipped" xml:space="preserve">
+    <value>insert into "{0}"."@CVA_ORDERS_MAGENTO" ("Code", "Name", "U_EntityId", "U_State", "U_Status", "U_Data", 
+  								   "U_Hora", "U_JSON", "U_StatusProc", "U_Mensagem", "U_DataProc", 
+  								   "U_HoraProc", "U_DocEntry", "U_ObjType", "U_IntegrateStatus")
+select (select max(coalesce("Code", 0)) + 1 from "@CVA_ORDERS_MAGENTO"), 'Orders', 
+	   OINV."U_CVA_EntityId", 'complete', 'transportadora', current_date, cast(replace(current_time, ':', '') as varchar(4)), null, 'OK', 
+	   'Os produtos do pedido foram expedidos.', current_date, cast(replace(current_time, ':', '') as varchar(4)), OINV."DocEntry", OINV."ObjType", 'Y'
+  from "{0}".OINV
+ where OINV."U_CVA_EntityId" is not null   
+   and OINV."U_CVA_EtiquetaImpressa" = 'Y'
+   and not exists (select *
+					 from "{0}"."@CVA_ORDERS_MAGENTO" as ORDERS
+					where ORDERS."U_IntegrateStatus" = 'Y'
+					  and ORDERS."U_DocEntry" = OINV."DocEntry"
+					  and ORDERS."U_ObjType" = OINV."ObjType"
+					  and ORDERS."U_Status" = 'transportadora')</value>
+  </data>
+  <data name="IncomingPayments_GetJournalToFix" xml:space="preserve">
+    <value>SELECT JDT1."TransId", JDT1."Line_ID", OCRH."VoucherNum" "AdditionalReference"
+FROM "{0}".ORCT
+	INNER JOIN "{0}".OCRH ON OCRH."RctAbs" = ORCT."DocEntry"
+	INNER JOIN "{0}".JDT1 ON JDT1."TransId" = ORCT."TransId" 
+	AND SUBSTR_AFTER(REPLACE(JDT1."Ref3Line", '\', '/'), '/') = SUBSTR_AFTER(REPLACE(OCRH."VoucherNum", '\', '/') , '/')
+WHERE ORCT."DocEntry" = {1}
+AND SUBSTR_BEFORE(REPLACE(JDT1."Ref3Line", '\', '/'), '/') &lt;&gt; SUBSTR_BEFORE(REPLACE(OCRH."VoucherNum", '\', '/') , '/')
+ORDER BY JDT1."Line_ID"</value>
+  </data>
+</root>

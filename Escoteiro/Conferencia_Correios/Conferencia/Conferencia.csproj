@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A8F2234-8271-456C-B972-A33AE33F515A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Conferencia</RootNamespace>
+    <AssemblyName>Conferencia</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Conferência.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Sap.Data.Hana.v4.5, Version=1.0.120.0, Culture=neutral, PublicKeyToken=0326b8ea63db4bc4, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arquivo\XMLReader.cs" />
+    <Compile Include="BLL\EmbalagemBLL.cs" />
+    <Compile Include="BLL\GestaoPickingBLL.cs" />
+    <Compile Include="BLL\ListaConferenciaBLL.cs" />
+    <Compile Include="BLL\ListaPostagemBLL.cs" />
+    <Compile Include="BLL\LoginBLL.cs" />
+    <Compile Include="BLL\PedidoBLL.cs" />
+    <Compile Include="ConexaoSAP\Conexao.cs" />
+    <Compile Include="ConexaoSAP\ParametroSAP.cs" />
+    <Compile Include="ConexaoSAP\ParametrosConexao.cs" />
+    <Compile Include="Crystal\CrystalReport.cs" />
+    <Compile Include="Crystal\frmRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crystal\frmRelatorios.designer.cs">
+      <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Query.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Query.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DefinicaoVolumes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DefinicaoVolumes.Designer.cs">
+      <DependentUpon>DefinicaoVolumes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMensagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMensagem.Designer.cs">
+      <DependentUpon>FrmMensagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCoferrencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCoferrencia.Designer.cs">
+      <DependentUpon>FormCoferrencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConferencia2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConferencia2.Designer.cs">
+      <DependentUpon>FormConferencia2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGesaoPicking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGesaoPicking.Designer.cs">
+      <DependentUpon>FrmGesaoPicking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInicial.Designer.cs">
+      <DependentUpon>FrmInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLista2Conferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLista2Conferencia.Designer.cs">
+      <DependentUpon>FrmLista2Conferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLista1Conferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLista1Conferencia.Designer.cs">
+      <DependentUpon>FrmLista1Conferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPedidos.Designer.cs">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPostagemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPostagemForm.Designer.cs">
+      <DependentUpon>ListaPostagemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EmbalagemModel.cs" />
+    <Compile Include="Model\GestaoPickingModel.cs" />
+    <Compile Include="Model\ListaConferidaModel.cs" />
+    <Compile Include="Model\ListaPedidoModel.cs" />
+    <Compile Include="Model\ListaPostagemModel.cs" />
+    <Compile Include="Model\ListaProdutosConf1.cs" />
+    <Compile Include="Model\PedidoModel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatórios\Lista Postagem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lista Postagem.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatórios\Separação de Mercadoria.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Separação de Mercadoria.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Crystal\frmRelatorios.resx">
+      <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Query.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Query.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefinicaoVolumes.resx">
+      <DependentUpon>DefinicaoVolumes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMensagem.resx">
+      <DependentUpon>FrmMensagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCoferrencia.resx">
+      <DependentUpon>FormCoferrencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConferencia2.resx">
+      <DependentUpon>FormConferencia2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGesaoPicking.resx">
+      <DependentUpon>FrmGesaoPicking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInicial.resx">
+      <DependentUpon>FrmInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLista2Conferencia.resx">
+      <DependentUpon>FrmLista2Conferencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLista1Conferencia.resx">
+      <DependentUpon>FrmLista1Conferencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPedidos.resx">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPostagemForm.resx">
+      <DependentUpon>ListaPostagemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatórios\Lista Postagem.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Lista Postagem.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatórios\Separação de Mercadoria.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Separação de Mercadoria.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SAPbouiCOM">
+      <Guid>{6048236A-956D-498D-A6F1-9C81C13AB6E8}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\LogoEscoteiros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadeado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pesquisa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confirmar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SemCheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Escoteiros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remover1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListadePedidos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Finalizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Documento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Conferência.ico" />
+    <Content Include="Procs\SPC_LISTA_PICKING.sql" />
+    <Content Include="Procs\SPC_PEDIDOSLIBERADOS.sql" />
+    <Content Include="Procs\SPC_PEDIDOSPENDENTES.sql" />
+    <Content Include="Relatórios\Config.xml" />
+    <Content Include="Relatórios\Procs\SPC_CVA_SEPARACAO_MERCADORIA.sql" />
+    <Content Include="Relatórios\Procs\SP_LISTA_POSTAGEM.sql" />
+    <Content Include="Resources\impressao.png" />
+    <None Include="Resources\impressao2.png" />
+    <None Include="Resources\impressao1.png" />
+    <None Include="Resources\21botaoSair.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,23 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: SAPbouiCOM.BoAppEventTypes
+// Assembly: TransferenciaFilial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 9CD3926C-3C0C-41AC-BE03-0C638A4EB456
+// Assembly location: D:\CVA\Development\Hybel\TransferenciaFiliais\Executável\TransferenciaFilial.exe
+
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace SAPbouiCOM
+{
+  [CompilerGenerated]
+  [Guid("DB2EA180-B300-4B72-9587-DCDF8B4AE66B")]
+  [TypeIdentifier("6048236a-956d-498d-a6f1-9c81c13ab6e8", "SAPbouiCOM.BoAppEventTypes")]
+  public enum BoAppEventTypes
+  {
+    aet_ShutDown = 64, // 0x00000040
+    aet_CompanyChanged = 65, // 0x00000041
+    aet_LanguageChanged = 66, // 0x00000042
+    aet_ServerTerminition = 67, // 0x00000043
+    aet_FontChanged = 129, // 0x00000081
+  }
+}

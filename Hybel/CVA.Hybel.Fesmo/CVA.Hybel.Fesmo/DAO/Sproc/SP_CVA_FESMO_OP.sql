@@ -1,0 +1,18 @@
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'SP_CVA_FESMO_OP')
+	DROP PROCEDURE SP_CVA_FESMO_OP
+GO
+CREATE PROCEDURE SP_CVA_FESMO_OP
+AS
+BEGIN
+	SELECT
+		BEAS_FTPOS.BELNR_ID				NrOP,		-- Número da Ordem de Produção
+		BEAS_FTPOS.ItemCode				ItemCode,	-- Código do Item a ser produzido
+		BEAS_FTPOS_RESERVIERUNG.ITEM	Serie		-- Número de série reservado na OP
+	FROM BEAS_FTPOS
+		INNER JOIN BEAS_FTHAUPT ON BEAS_FTPOS.BELNR_ID = BEAS_FTHAUPT.BELNR_ID AND ISNULL(BEAS_FTHAUPT.UDF1, 1) = 1
+		INNER JOIN BEAS_FTPOS_RESERVIERUNG ON BEAS_FTPOS.BELNR_ID = BEAS_FTPOS_RESERVIERUNG.BELNR_ID
+	WHERE BEAS_FTPOS.STUFE = 0 -- Primeiro nível da Ordem de Produção.
+	AND BEAS_FTPOS.ABGKZ <> 'J' -- Status da ordem de Produção diferente de fechado)
+	--AND BEAS_FTPOS.BELNR_ID = 24201 -- Número da Ordem de Produção (Adicionado apenas para teste)
+	ORDER BY BEAS_FTPOS.BELNR_ID
+END

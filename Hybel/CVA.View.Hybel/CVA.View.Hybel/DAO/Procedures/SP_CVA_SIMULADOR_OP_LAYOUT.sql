@@ -1,0 +1,96 @@
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'SP_CVA_SIMULADOR_OP_LAYOUT')
+	DROP PROCEDURE SP_CVA_SIMULADOR_OP_LAYOUT
+GO
+CREATE PROCEDURE SP_CVA_SIMULADOR_OP_LAYOUT
+(
+	@DocKey	INT
+)
+AS
+BEGIN
+	SELECT
+		OBPL.BPLName,
+		OBPL.BPLFrName,
+		OBPL.AliasName BPLAliasName,
+		OADP.LogoImage LogoImage,
+		OITM.ItemCode,
+		OITM.ItemName,
+		OITM.InvntryUom			[UN],
+		OITM.BWeight1			[PesoLiquido],
+		OITM.U_h_peso_bruto		[PesoBruto],
+		OITM.U_h_desc_localizacao [Localizacao],
+		ONCM.NcmCode,
+		UFD1.Descr		[Grupo],
+		OITB.ItmsGrpNam	[SubGrupo],
+		OUSR.U_NAME		[Usuario],
+		OP.U_OP			[OP],
+		AUPT.BELDAT		[Dt. Cadastro],
+		AUPT.LFGDAT		[Dt. Entrega],
+		AUPT.ANFZEIT	[Dt. Início],
+		AUPT.KND_ID		[Cód. Cliente],
+		AUPT.KNDNAME	[Cliente],
+		POS.MENGE_VERBRAUCH	[Qtde],
+		OP.U_Fis		[Est Fís],
+		OP.U_Res		[Est Res],
+		OP.U_Enc		[Est Enc],
+		OP.U_Dis		[Est Dis],
+		OITW.MinStock	[Est Mín],
+		APL.POS_ID		[N Proc.],
+		APL.[G.M.],
+		APL.Instrução,
+		APL.[% Concluído],
+		APL.[Dt. Inicial],
+		APL.[Dt. Final],
+		APL.QtdeProduzida
+	FROM [@CVA_SIM_VENDA_OP] OP WITH(NOLOCK)
+		INNER JOIN OBPL WITH(NOLOCK)
+			ON OBPL.BPLId = 1
+		INNER JOIN OITM WITH(NOLOCK)
+			ON OITM.ItemCode = OP.U_ItemCode
+		INNER JOIN OITW WITH(NOLOCK)
+			ON OITW.ItemCode = OITM.ItemCode
+			AND OITW.WhsCode = OBPL.DflWhs
+		INNER JOIN OITB WITH(NOLOCK)
+			ON OITB.ItmsGrpCod = OITM.ItmsGrpCod
+		INNER JOIN BEAS_FTHAUPT AUPT WITH(NOLOCK)
+			ON AUPT.BELNR_ID = OP.U_OP
+			AND AUPT.ItemCode =	OP.U_ItemCode
+		INNER JOIN BEAS_FTPOS POS WITH(NOLOCK)
+			ON POS.BELNR_ID = AUPT.BELNR_ID
+			AND POS.STUFE = 0
+		INNER JOIN
+		(
+			SELECT APL.BELNR_ID, APL.BELPOS_ID, APL.POS_ID,
+				CAST(APLATZ.BEZ AS NVARCHAR(MAX))	[G.M.],
+				CAST(APL.BEZ AS NVARCHAR(MAX))		[Instrução],
+				SUM(CASE WHEN APL.ABGKZ = 'J' THEN 1.00 ELSE 0.00 END) / COUNT(APL.ABGKZ) * 100 [% Concluído],
+				SUM(ZEIT.MENGE_GUT)	[QtdeProduzida],
+				MIN(ZEIT.ANFZEIT)	[Dt. Inicial],
+				MAX(ZEIT.ENDZEIT)	[Dt. Final]
+				FROM BEAS_FTAPL APL WITH(NOLOCK)
+					INNER JOIN BEAS_APLATZ APLATZ WITH(NOLOCK)
+						ON APLATZ.APLATZ_ID = APL.APLATZ_ID
+					LEFT JOIN BEAS_ARBZEIT ZEIT WITH(NOLOCK)
+						ON ZEIT.BELNR_ID = APL.BELNR_ID
+						AND ZEIT.BELPOS_ID = APL.BELPOS_ID
+				GROUP BY APL.BELNR_ID, APL.BELPOS_ID, APL.POS_ID,
+				CAST(APLATZ.BEZ AS NVARCHAR(MAX)),
+				CAST(APL.BEZ AS NVARCHAR(MAX))
+		 ) APL
+			ON APL.BELNR_ID = AUPT.BELNR_ID
+			AND APL.BELPOS_ID = POS.BELPOS_ID
+		
+		INNER JOIN OUSR WITH(NOLOCK)
+			ON OUSR.USERID = OP.Code
+		LEFT JOIN ONCM WITH(NOLOCK)
+			ON ONCM.AbsEntry = OITM.NcmCode
+		LEFT JOIN  CUFD WITH(NOLOCK)
+			ON CUFD.TableId = 'OITM'
+			AND CUFD.AliasId = 'h_cod_grupo'
+		INNER JOIN UFD1 WITH(NOLOCK)
+			ON UFD1.TableId = CUFD.TableId
+			AND UFD1.FieldId = CUFD.FieldId
+			AND UFD1.FldValue = OITM.U_h_cod_grupo
+		LEFT JOIN OADP WITH(NOLOCK)
+			ON 1 = 1
+	WHERE OP.Code = @DocKey
+END

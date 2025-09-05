@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImpressorEtiquetas", "ImpressorEtiquetas\ImpressorEtiquetas.csproj", "{CC78C834-8395-41D3-89FC-A7581F0F0FED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MODEL", "MODEL\MODEL.csproj", "{FCE2212F-A674-48CE-8D74-7C151FF9551C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{A3C4B881-8342-4066-A90A-B1328D688ACE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{113597AC-796F-450A-B814-CE265AD8F18F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AUXILIAR", "AUXILIAR\AUXILIAR.csproj", "{B999C41A-8F83-40D9-B360-B0B904740ABE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC78C834-8395-41D3-89FC-A7581F0F0FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC78C834-8395-41D3-89FC-A7581F0F0FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC78C834-8395-41D3-89FC-A7581F0F0FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC78C834-8395-41D3-89FC-A7581F0F0FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCE2212F-A674-48CE-8D74-7C151FF9551C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCE2212F-A674-48CE-8D74-7C151FF9551C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCE2212F-A674-48CE-8D74-7C151FF9551C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCE2212F-A674-48CE-8D74-7C151FF9551C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3C4B881-8342-4066-A90A-B1328D688ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C4B881-8342-4066-A90A-B1328D688ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C4B881-8342-4066-A90A-B1328D688ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C4B881-8342-4066-A90A-B1328D688ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{113597AC-796F-450A-B814-CE265AD8F18F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{113597AC-796F-450A-B814-CE265AD8F18F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{113597AC-796F-450A-B814-CE265AD8F18F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{113597AC-796F-450A-B814-CE265AD8F18F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B999C41A-8F83-40D9-B360-B0B904740ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B999C41A-8F83-40D9-B360-B0B904740ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B999C41A-8F83-40D9-B360-B0B904740ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B999C41A-8F83-40D9-B360-B0B904740ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F15D1AB-A66B-422A-BE1A-8040C5F504A1}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AUXILIAR\\AUXILIAR.csproj
+		SccProjectName1 = AUXILIAR
+		SccLocalPath1 = AUXILIAR
+		SccProjectUniqueName2 = BLL\\BLL.csproj
+		SccProjectName2 = BLL
+		SccLocalPath2 = BLL
+		SccProjectUniqueName3 = DAO\\DAO.csproj
+		SccProjectName3 = DAO
+		SccLocalPath3 = DAO
+		SccProjectUniqueName4 = ImpressorEtiquetas\\ImpressorEtiquetas.csproj
+		SccProjectName4 = ImpressorEtiquetas
+		SccLocalPath4 = ImpressorEtiquetas
+		SccProjectUniqueName5 = MODEL\\MODEL.csproj
+		SccProjectName5 = MODEL
+		SccLocalPath5 = MODEL
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BOM>
+   <BO>
+      <AdmInfo>
+         <Object>206</Object>
+         <Version>2</Version>
+      </AdmInfo>
+      <UserObjectsMD>
+         <row>
+            <Code>UDOREGR</Code>
+            <Name>[CVA] Regras de comissão</Name>
+            <TableName>CVA_REGR_COMISSAO</TableName>
+            <LogTableName>ACVA_REGR_COMISSAO</LogTableName>
+            <ObjectType>boud_MasterData</ObjectType>
+            <ManageSeries>tNO</ManageSeries>
+            <CanDelete>tYES</CanDelete>
+            <CanClose>tNO</CanClose>
+            <CanCancel>tNO</CanCancel>
+            <ExtensionName />
+            <CanFind>tYES</CanFind>
+            <CanYearTransfer>tNO</CanYearTransfer>
+            <CanCreateDefaultForm>tYES</CanCreateDefaultForm>
+            <CanLog>tYES</CanLog>
+            <OverwriteDllfile>tYES</OverwriteDllfile>
+            <UseUniqueFormType>tYES</UseUniqueFormType>
+            <CanArchive>tNO</CanArchive>
+            <MenuItem>tNO</MenuItem>
+            <MenuCaption />
+            <EnableEnhancedForm>tYES</EnableEnhancedForm>
+            <RebuildEnhancedForm>tYES</RebuildEnhancedForm>
+            <CanApprove>tNO</CanApprove>
+         </row>
+      </UserObjectsMD>
+      <UserObjectMD_ChildTables />
+      <UserObjectMD_FindColumns>
+         <row>
+            <ColumnAlias>Code</ColumnAlias>
+            <ColumnDescription>Code</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>Name</ColumnAlias>
+            <ColumnDescription>Name</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_TIPO</ColumnAlias>
+            <ColumnDescription>Tipo de comissão</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_COMISSIONADO</ColumnAlias>
+            <ColumnDescription>Comissionado</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_MOMENTO</ColumnAlias>
+            <ColumnDescription>Momento da comissão</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_VENDEDOR</ColumnAlias>
+            <ColumnDescription>Vendedor</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_ITEM</ColumnAlias>
+            <ColumnDescription>Código do item</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_GRUPO</ColumnAlias>
+            <ColumnDescription>Grupo de item</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_CENTROCUSTO</ColumnAlias>
+            <ColumnDescription>Centro de custo</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_FABRICANTE</ColumnAlias>
+            <ColumnDescription>Fabricante</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_CLIENTE</ColumnAlias>
+            <ColumnDescription>Cliente</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_CIDADE</ColumnAlias>
+            <ColumnDescription>Cidade</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_ESTADO</ColumnAlias>
+            <ColumnDescription>Estado</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_SETOR</ColumnAlias>
+            <ColumnDescription>Setor</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_COMISSAO</ColumnAlias>
+            <ColumnDescription>% de comissão</ColumnDescription>
+         </row>      
+         <row>
+            <ColumnAlias>U_PRIORIDADE</ColumnAlias>
+            <ColumnDescription>Prioridade</ColumnDescription>
+         </row>
+        <row>
+          <ColumnAlias>U_ATIVO</ColumnAlias>
+          <ColumnDescription>Ativo</ColumnDescription>
+        </row>
+      </UserObjectMD_FindColumns>
+      <UserObjectMD_FormColumns>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>Code</FormColumnAlias>
+            <FormColumnDescription>Code</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>Name</FormColumnAlias>
+            <FormColumnDescription>Name</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_TIPO</FormColumnAlias>
+            <FormColumnDescription>Tipo de comissão</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_COMISSIONADO</FormColumnAlias>
+            <FormColumnDescription>Comissionado</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_MOMENTO</FormColumnAlias>
+            <FormColumnDescription>Momento da comissão</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_VENDEDOR</FormColumnAlias>
+            <FormColumnDescription>Vendedor</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_ITEM</FormColumnAlias>
+            <FormColumnDescription>Código do item</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_GRUPO</FormColumnAlias>
+            <FormColumnDescription>Grupo de item</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_CENTROCUSTO</FormColumnAlias>
+            <FormColumnDescription>Centro de custo</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_FABRICANTE</FormColumnAlias>
+            <FormColumnDescription>Fabricante</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_CLIENTE</FormColumnAlias>
+            <FormColumnDescription>Cliente</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_CIDADE</FormColumnAlias>
+            <FormColumnDescription>Cidade</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_ESTADO</FormColumnAlias>
+            <FormColumnDescription>Estado</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_SETOR</FormColumnAlias>
+            <FormColumnDescription>Setor</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_COMISSAO</FormColumnAlias>
+            <FormColumnDescription>% de comissão</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_PRIORIDADE</FormColumnAlias>
+            <FormColumnDescription>Prioridade</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+        <row>
+          <SonNumber>0</SonNumber>
+          <FormColumnAlias>U_ATIVO</FormColumnAlias>
+          <FormColumnDescription>Ativo</FormColumnDescription>
+          <Editable>tYES</Editable>
+        </row>
+      </UserObjectMD_FormColumns>
+      <UserObjectMD_EnhancedFormColumns />
+   </BO>
+</BOM>

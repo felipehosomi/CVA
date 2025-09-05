@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0424FA36-E9C0-4E3E-BED4-243E2440ED2F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebImcopa</RootNamespace>
+    <AssemblyName>WebImcopa</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.20229.20821, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit.resources, Version=1.0.20229.25525, Culture=pt, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\AjaxControlToolkit.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.76.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ImcopaWEB, Version=1.0.6780.30988, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SAP\ImcopaWeb\bin\Debug\ImcopaWEB.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\8.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SAP.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector.Rfc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SAP.Connector.Rfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Shared.WebControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Shared.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="skmMenu, Version=2.2.1512.30922, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\skmMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\packages\SAPConnector.DotNetFramework4b.1.4\lib\System.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuracao.aspx" />
+    <None Include="Connected Services\WebServiceRobos\WebServiceRobos.wsdl" />
+    <None Include="Connected Services\WSCorreios\configuration91.svcinfo" />
+    <None Include="Connected Services\WSCorreios\configuration.svcinfo" />
+    <None Include="Connected Services\WSCorreios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\WebServiceRobos\WebServiceRobos.disco" />
+    <None Include="Connected Services\WebServiceRobos\configuration91.svcinfo" />
+    <None Include="Connected Services\WebServiceRobos\configuration.svcinfo" />
+    <None Include="Connected Services\WebServiceRobos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Consulta.aspx" />
+    <Content Include="ConsultaComissoes.aspx" />
+    <Content Include="ConsultaHistoricoVendas.aspx" />
+    <Content Include="ConsultaMetas.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Detalhe.aspx" />
+    <Content Include="Entrada.aspx" />
+    <Content Include="Imagens\LogoTeste.png" />
+    <Content Include="Imagens\search.png" />
+    <Content Include="menu\imagens\fundo_inv.gif" />
+    <Content Include="Script\jquery-2.1.4.js" />
+    <Content Include="Script\menu.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CadastroCliente.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>CadastroCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroCliente.aspx.designer.cs">
+      <DependentUpon>CadastroCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracao.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Configuracao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracao.aspx.designer.cs">
+      <DependentUpon>Configuracao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WebServiceRobos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WSCorreios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta.aspx.designer.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaCliente.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ConsultaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaCliente.aspx.designer.cs">
+      <DependentUpon>ConsultaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaComissoes.aspx.cs">
+      <DependentUpon>ConsultaComissoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaComissoes.aspx.designer.cs">
+      <DependentUpon>ConsultaComissoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaFaturamentos.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ConsultaFaturamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaFaturamentos.aspx.designer.cs">
+      <DependentUpon>ConsultaFaturamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaHistoricoVendas.aspx.cs">
+      <DependentUpon>ConsultaHistoricoVendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaHistoricoVendas.aspx.designer.cs">
+      <DependentUpon>ConsultaHistoricoVendas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaMetas.aspx.cs">
+      <DependentUpon>ConsultaMetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaMetas.aspx.designer.cs">
+      <DependentUpon>ConsultaMetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaTitulos.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ConsultaTitulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaTitulos.aspx.designer.cs">
+      <DependentUpon>ConsultaTitulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ADHelper.cs" />
+    <Compile Include="Control\Federal.cs" />
+    <Compile Include="Control\SAPService.cs" />
+    <Compile Include="Control\Sintegra.cs" />
+    <Compile Include="Detalhe.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detalhe.aspx.designer.cs">
+      <DependentUpon>Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entrada.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Entrada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entrada.aspx.designer.cs">
+      <DependentUpon>Entrada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimeLista.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ImprimeLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimeLista.aspx.designer.cs">
+      <DependentUpon>ImprimeLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu\cmenu.ascx.cs">
+      <DependentUpon>cmenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu\cmenu.ascx.designer.cs">
+      <DependentUpon>cmenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\ClienteModel.cs" />
+    <Compile Include="MODEL\CondicaoPagamentoModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Senha.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Senha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Senha.aspx.designer.cs">
+      <DependentUpon>Senha.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CadastroCliente.aspx" />
+    <Content Include="Config.css" />
+    <Content Include="ConsultaCliente.aspx" />
+    <Content Include="ConsultaFaturamentos.aspx" />
+    <Content Include="ConsultaTitulos.aspx" />
+    <Content Include="Imagens\Calendar.gif" />
+    <Content Include="Imagens\Exclamation16.gif" />
+    <Content Include="Imagens\Imcopa.jpg" />
+    <Content Include="Imagens\ImcopaLogo.jpg" />
+    <Content Include="Imagens\logo_imcopa3.JPG" />
+    <Content Include="Imagens\logo_imcopan2.jpg" />
+    <Content Include="Imagens\Ok16.gif" />
+    <Content Include="Imagens\pequeno_loading.gif" />
+    <Content Include="Imagens\progressBar.gif" />
+    <Content Include="ImprimeLista.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="menu\cmenu.ascx" />
+    <Content Include="menu\imagens\accept.png" />
+    <Content Include="menu\imagens\accept_off.png" />
+    <Content Include="menu\imagens\add.png" />
+    <Content Include="menu\imagens\add_off.png" />
+    <Content Include="menu\imagens\brd_fundo.gif" />
+    <Content Include="menu\imagens\btn_fundo.gif" />
+    <Content Include="menu\imagens\btn_fundo_new.gif" />
+    <Content Include="menu\imagens\btn_fundo_on.gif" />
+    <Content Include="menu\imagens\btn_fundo_sel.gif" />
+    <Content Include="menu\imagens\btn_fundo_sela.gif" />
+    <Content Include="menu\imagens\btn_menu_submenu_ativo_fundo.gif" />
+    <Content Include="menu\imagens\btn_menu_submenu_fundo.gif" />
+    <Content Include="menu\imagens\fundo30_inv.gif" />
+    <Content Include="menu\imagens\fundo30_new.gif" />
+    <Content Include="menu\imagens\fundo_new.gif" />
+    <Content Include="menu\imagens\img_fnd_menu.gif" />
+    <Content Include="menu\imagens\img_seta.gif" />
+    <Content Include="menu\imagens\img_submenu_cnt_dir.gif" />
+    <Content Include="menu\imagens\img_submenu_cnt_dir_inf.gif" />
+    <Content Include="menu\imagens\img_submenu_cnt_dir_sup.gif" />
+    <Content Include="menu\imagens\img_submenu_cnt_esq.gif" />
+    <Content Include="menu\imagens\img_submenu_cnt_esq_inf.gif" />
+    <Content Include="menu\imagens\img_submenu_cnt_esq_sup.gif" />
+    <Content Include="menu\imagens\img_submenu_cnt_inf.gif" />
+    <Content Include="menu\imagens\img_submenu_cnt_sup.gif" />
+    <Content Include="menu\imagens\img_submenu_espacamento.gif" />
+    <Content Include="menu\imagens\img_submenu_fnd.gif" />
+    <Content Include="menu\menu.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Senha.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web_hom.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSCorreios\AtendeClienteService.wsdl" />
+    <Content Include="Connected Services\WSCorreios\WebImcopa.WSCorreios.clienteERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSCorreios\WebImcopa.WSCorreios.contratoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSCorreios\WebImcopa.WSCorreios.embalagemLRSMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSCorreios\WebImcopa.WSCorreios.enderecoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSCorreios\WebImcopa.WSCorreios.retornoCancelamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSCorreios\WebImcopa.WSCorreios.servicoAdicionalXML.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSCorreios\WebImcopa.WSCorreios.servicoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSCorreios\WebImcopa.WSCorreios.statusCartao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSCorreios\WebImcopa.WSCorreios.statusPlp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSCorreios\WebImcopa.WSCorreios.valePostal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WebServiceRobos\" />
+    <WCFMetadataStorage Include="Connected Services\WSCorreios\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BOM>
+   <BO>
+      <AdmInfo>
+         <Object>206</Object>
+         <Version>2</Version>
+      </AdmInfo>
+      <UserObjectsMD>
+         <row>
+            <Code>UDOCALC</Code>
+            <Name>[CVA] Cálculo de comissão</Name>
+            <TableName>CVA_CALC_COMISSAO</TableName>
+            <LogTableName>ACVA_CALC_COMISSAO</LogTableName>
+            <ObjectType>boud_MasterData</ObjectType>
+            <ManageSeries>tNO</ManageSeries>
+            <CanDelete>tYES</CanDelete>
+            <CanClose>tNO</CanClose>
+            <CanCancel>tNO</CanCancel>
+            <ExtensionName />
+            <CanFind>tYES</CanFind>
+            <CanYearTransfer>tNO</CanYearTransfer>
+            <CanCreateDefaultForm>tYES</CanCreateDefaultForm>
+            <CanLog>tYES</CanLog>
+            <OverwriteDllfile>tYES</OverwriteDllfile>
+            <UseUniqueFormType>tYES</UseUniqueFormType>
+            <CanArchive>tNO</CanArchive>
+            <MenuItem>tNO</MenuItem>
+            <MenuCaption />
+            <EnableEnhancedForm>tYES</EnableEnhancedForm>
+            <RebuildEnhancedForm>tYES</RebuildEnhancedForm>
+            <CanApprove>tNO</CanApprove>
+         </row>
+      </UserObjectsMD>
+      <UserObjectMD_ChildTables />
+      <UserObjectMD_FindColumns>
+         <row>
+            <ColumnAlias>Code</ColumnAlias>
+            <ColumnDescription>Code</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>Name</ColumnAlias>
+            <ColumnDescription>Name</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_COMISSIONADO</ColumnAlias>
+            <ColumnDescription>Comissionado</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_CARDCODE</ColumnAlias>
+            <ColumnDescription>Cód. cliente</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_CARDNAME</ColumnAlias>
+            <ColumnDescription>Razão social</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_REGRA</ColumnAlias>
+            <ColumnDescription>Regra de comissão</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_DOCDATE</ColumnAlias>
+            <ColumnDescription>Data do documento</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_DUEDATE</ColumnAlias>
+            <ColumnDescription>Data do vencimento</ColumnDescription>
+         </row>
+        <row>
+          <ColumnAlias>U_TAXDATE</ColumnAlias>
+          <ColumnDescription>Data do recebimento</ColumnDescription>
+        </row>
+         <row>
+            <ColumnAlias>U_DOCENTRY</ColumnAlias>
+            <ColumnDescription>Chave do documento</ColumnDescription>
+         </row>        
+         <row>
+            <ColumnAlias>U_OBJTYPE</ColumnAlias>
+            <ColumnDescription>Tipo do documento</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_ITEMCODE</ColumnAlias>
+            <ColumnDescription>Cód. item</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_ITEMNAME</ColumnAlias>
+            <ColumnDescription>Descrição do item</ColumnDescription>
+         </row>        
+         <row>
+            <ColumnAlias>U_LINENUM</ColumnAlias>
+            <ColumnDescription>Linha</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_VALOR</ColumnAlias>
+            <ColumnDescription>Valor</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_PARCELA</ColumnAlias>
+            <ColumnDescription>Parcela</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_IMPOSTOS</ColumnAlias>
+            <ColumnDescription>Impostos</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_COMISSAO</ColumnAlias>
+            <ColumnDescription>% de comissão</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_VALORCOMISSAO</ColumnAlias>
+            <ColumnDescription>Valor de comissão</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_CENTROCUSTO</ColumnAlias>
+            <ColumnDescription>Centro de custo</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_PAGO</ColumnAlias>
+            <ColumnDescription>Comissão paga?</ColumnDescription>
+         </row>
+         <row>
+            <ColumnAlias>U_DATAPAGAMENTO</ColumnAlias>
+            <ColumnDescription>Data de pagamento</ColumnDescription>
+         </row>
+      </UserObjectMD_FindColumns>
+      <UserObjectMD_FormColumns>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>Code</FormColumnAlias>
+            <FormColumnDescription>Code</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>Name</FormColumnAlias>
+            <FormColumnDescription>Name</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_COMISSIONADO</FormColumnAlias>
+            <FormColumnDescription>Comissionado</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_CARDCODE</FormColumnAlias>
+            <FormColumnDescription>Cód. cliente</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_CARDNAME</FormColumnAlias>
+            <FormColumnDescription>Razão social</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_REGRA</FormColumnAlias>
+            <FormColumnDescription>Regra de comissão</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_DOCDATE</FormColumnAlias>
+            <FormColumnDescription>Data do documento</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_DUEDATE</FormColumnAlias>
+            <FormColumnDescription>Data do vencimento</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_TAXDATE</FormColumnAlias>
+            <FormColumnDescription>Data do recebimento</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_DOCENTRY</FormColumnAlias>
+            <FormColumnDescription>Chave do documento</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+        <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_OBJTYPE</FormColumnAlias>
+            <FormColumnDescription>Tipo do documento</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_ITEMCODE</FormColumnAlias>
+            <FormColumnDescription>Cód. item</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_ITEMNAME</FormColumnAlias>
+            <FormColumnDescription>Descrição do item</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_LINENUM</FormColumnAlias>
+            <FormColumnDescription>Linha</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_VALOR</FormColumnAlias>
+            <FormColumnDescription>Valor</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_PARCELA</FormColumnAlias>
+            <FormColumnDescription>Parcela</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_IMPOSTOS</FormColumnAlias>
+            <FormColumnDescription>Impostos</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_COMISSAO</FormColumnAlias>
+            <FormColumnDescription>% de comissão</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_VALORCOMISSAO</FormColumnAlias>
+            <FormColumnDescription>Valor de comissão</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_CENTROCUSTO</FormColumnAlias>
+            <FormColumnDescription>Centro de custo</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_PAGO</FormColumnAlias>
+            <FormColumnDescription>Comissão paga?</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+         <row>
+            <SonNumber>0</SonNumber>
+            <FormColumnAlias>U_DATAPAGAMENTO</FormColumnAlias>
+            <FormColumnDescription>Data de pagamento</FormColumnDescription>
+            <Editable>tYES</Editable>
+         </row>
+      </UserObjectMD_FormColumns>
+      <UserObjectMD_EnhancedFormColumns />
+   </BO>
+</BOM>

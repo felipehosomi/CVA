@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Hybel.Fesmo", "CVA.Hybel.Fesmo\CVA.Hybel.Fesmo.csproj", "{FEA87FA7-543B-4175-8D0B-49A0910F3D6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Hybel.Fesmo.Service", "CVA.Hybel.Fesmo.Service\CVA.Hybel.Fesmo.Service.csproj", "{071C89E9-DE8E-45D8-98D3-B5C9CF149719}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEA87FA7-543B-4175-8D0B-49A0910F3D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEA87FA7-543B-4175-8D0B-49A0910F3D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEA87FA7-543B-4175-8D0B-49A0910F3D6A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FEA87FA7-543B-4175-8D0B-49A0910F3D6A}.Debug|x86.Build.0 = Debug|Any CPU
+		{FEA87FA7-543B-4175-8D0B-49A0910F3D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEA87FA7-543B-4175-8D0B-49A0910F3D6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEA87FA7-543B-4175-8D0B-49A0910F3D6A}.Release|x86.ActiveCfg = Release|Any CPU
+		{FEA87FA7-543B-4175-8D0B-49A0910F3D6A}.Release|x86.Build.0 = Release|Any CPU
+		{071C89E9-DE8E-45D8-98D3-B5C9CF149719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{071C89E9-DE8E-45D8-98D3-B5C9CF149719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{071C89E9-DE8E-45D8-98D3-B5C9CF149719}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{071C89E9-DE8E-45D8-98D3-B5C9CF149719}.Debug|x86.Build.0 = Debug|Any CPU
+		{071C89E9-DE8E-45D8-98D3-B5C9CF149719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{071C89E9-DE8E-45D8-98D3-B5C9CF149719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{071C89E9-DE8E-45D8-98D3-B5C9CF149719}.Release|x86.ActiveCfg = Release|Any CPU
+		{071C89E9-DE8E-45D8-98D3-B5C9CF149719}.Release|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.ActiveCfg = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.Build.0 = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.ActiveCfg = Release|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05B9B945-DA21-4622-96AD-921E4E59A6D1}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CVA.Hybel.Fesmo\\CVA.Hybel.Fesmo.csproj
+		SccProjectName1 = CVA.Hybel.Fesmo
+		SccLocalPath1 = CVA.Hybel.Fesmo
+		SccProjectUniqueName2 = CVA.Hybel.Fesmo.Service\\CVA.Hybel.Fesmo.Service.csproj
+		SccProjectName2 = CVA.Hybel.Fesmo.Service
+		SccLocalPath2 = CVA.Hybel.Fesmo.Service
+		SccProjectUniqueName3 = ..\\..\\Helpers\\CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName3 = ../../Helpers/CVA.AddOn.Common
+		SccLocalPath3 = ..\\..\\Helpers\\CVA.AddOn.Common
+	EndGlobalSection
+EndGlobal

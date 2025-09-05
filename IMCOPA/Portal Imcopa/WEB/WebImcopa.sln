@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebImcopa", "WebImcopa\WebImcopa.csproj", "{0424FA36-E9C0-4E3E-BED4-243E2440ED2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.WebControls", "..\WebControls\Shared.WebControls.csproj", "{EBCC35D2-D0A7-42CD-952E-54DF511B8B7E}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestImcopa", "TestImcopa\TestImcopa.csproj", "{5882263A-2F41-484E-865A-2FD3B9094D86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D474B47D-44E2-4416-A276-4D01FB1ADFC5}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		WebImcopa.vsmdi = WebImcopa.vsmdi
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0424FA36-E9C0-4E3E-BED4-243E2440ED2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0424FA36-E9C0-4E3E-BED4-243E2440ED2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0424FA36-E9C0-4E3E-BED4-243E2440ED2F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0424FA36-E9C0-4E3E-BED4-243E2440ED2F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0424FA36-E9C0-4E3E-BED4-243E2440ED2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0424FA36-E9C0-4E3E-BED4-243E2440ED2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0424FA36-E9C0-4E3E-BED4-243E2440ED2F}.Release|x64.ActiveCfg = Release|Any CPU
+		{0424FA36-E9C0-4E3E-BED4-243E2440ED2F}.Release|x86.ActiveCfg = Release|Any CPU
+		{EBCC35D2-D0A7-42CD-952E-54DF511B8B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBCC35D2-D0A7-42CD-952E-54DF511B8B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBCC35D2-D0A7-42CD-952E-54DF511B8B7E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EBCC35D2-D0A7-42CD-952E-54DF511B8B7E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EBCC35D2-D0A7-42CD-952E-54DF511B8B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBCC35D2-D0A7-42CD-952E-54DF511B8B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBCC35D2-D0A7-42CD-952E-54DF511B8B7E}.Release|x64.ActiveCfg = Release|Any CPU
+		{EBCC35D2-D0A7-42CD-952E-54DF511B8B7E}.Release|x86.ActiveCfg = Release|Any CPU
+		{5882263A-2F41-484E-865A-2FD3B9094D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5882263A-2F41-484E-865A-2FD3B9094D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5882263A-2F41-484E-865A-2FD3B9094D86}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5882263A-2F41-484E-865A-2FD3B9094D86}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5882263A-2F41-484E-865A-2FD3B9094D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5882263A-2F41-484E-865A-2FD3B9094D86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5882263A-2F41-484E-865A-2FD3B9094D86}.Release|x64.ActiveCfg = Release|Any CPU
+		{5882263A-2F41-484E-865A-2FD3B9094D86}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9535F77C-43A3-4199-8A9C-7819148A77E8}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TestImcopa\\TestImcopa.csproj
+		SccProjectName1 = TestImcopa
+		SccLocalPath1 = TestImcopa
+		SccProjectUniqueName2 = WebImcopa\\WebImcopa.csproj
+		SccProjectName2 = WebImcopa
+		SccLocalPath2 = WebImcopa
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = WebImcopa.vsmdi
+	EndGlobalSection
+EndGlobal

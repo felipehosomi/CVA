@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Electra.ImportaFolha", "CVA.Electra.ImportaFolha\CVA.Electra.ImportaFolha.csproj", "{484D0D21-83C5-4B1A-9599-0E16630ACBCF}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SetupX64", "SetupX64\Setup\SetupX64.vbproj", "{DAEFC640-5CFF-4864-854A-1EDC5C011439}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SetupX32", "SetupX32\Setup\SetupX32.vbproj", "{B6DA8C96-ADA9-403A-A940-0F27B5503553}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{484D0D21-83C5-4B1A-9599-0E16630ACBCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{484D0D21-83C5-4B1A-9599-0E16630ACBCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{484D0D21-83C5-4B1A-9599-0E16630ACBCF}.Debug|x86.ActiveCfg = Debug|x86
+		{484D0D21-83C5-4B1A-9599-0E16630ACBCF}.Debug|x86.Build.0 = Debug|x86
+		{484D0D21-83C5-4B1A-9599-0E16630ACBCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{484D0D21-83C5-4B1A-9599-0E16630ACBCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{484D0D21-83C5-4B1A-9599-0E16630ACBCF}.Release|x86.ActiveCfg = Release|x86
+		{484D0D21-83C5-4B1A-9599-0E16630ACBCF}.Release|x86.Build.0 = Release|x86
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Debug|x86.ActiveCfg = Debug|x86
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Debug|x86.Build.0 = Debug|x86
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Release|x86.ActiveCfg = Release|x86
+		{DAEFC640-5CFF-4864-854A-1EDC5C011439}.Release|x86.Build.0 = Release|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|x86.ActiveCfg = Debug|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Debug|x86.Build.0 = Debug|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|x86.ActiveCfg = Release|x86
+		{B6DA8C96-ADA9-403A-A940-0F27B5503553}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SetupX64\\Setup\\SetupX64.vbproj
+		SccProjectName1 = SetupX64/Setup
+		SccLocalPath1 = SetupX64\\Setup
+		SccProjectUniqueName2 = CVA.Electra.ImportaFolha\\CVA.Electra.ImportaFolha.csproj
+		SccProjectName2 = CVA.Electra.ImportaFolha
+		SccLocalPath2 = CVA.Electra.ImportaFolha
+		SccProjectUniqueName3 = SetupX32\\Setup\\SetupX32.vbproj
+		SccProjectName3 = SetupX32/Setup
+		SccLocalPath3 = SetupX32\\Setup
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,131 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Escoteiro.Magento.Models", "MG2Connector\CVA.Escoteiro.Magento.Models.csproj", "{DD165653-D697-4FCE-A3BC-20490E339F54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Escoteiro.Magento.Service", "Client\CVA.Escoteiro.Magento.Service.csproj", "{365CF324-E7BA-4C53-88AC-01C0228AD91B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Escoteiro.Magento.AddOn.View", "Addon\CVA.Escoteiro.Magento.AddOn.View\CVA.Escoteiro.Magento.AddOn.View.csproj", "{D7C04386-AC3A-43E9-B8BC-5906DF910BFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Escoteiro.Magento.AddOn", "Addon\CVA.Escoteiro.Magento.AddOn\CVA.Escoteiro.Magento.AddOn.csproj", "{905A68F9-126C-4763-BAD0-98072E9044AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Escoteiro.Magento.BLL", "BLL\CVA.Escoteiro.Magento.BLL.csproj", "{33B6E8CC-420F-45F7-9A2D-93ECE3FB20C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Escoteiro.Magento.DAO", "DAO\CVA.Escoteiro.Magento.DAO.csproj", "{C50F55CA-5909-4CAF-B6AB-DC8C621A618A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.Escoteiro.Magento.Client", "CVA.Escoteiro.Magento.Client\CVA.Escoteiro.Magento.Client.csproj", "{C0F75492-5BF0-4BC6-AA7B-6F12B74E834A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD165653-D697-4FCE-A3BC-20490E339F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD165653-D697-4FCE-A3BC-20490E339F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD165653-D697-4FCE-A3BC-20490E339F54}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DD165653-D697-4FCE-A3BC-20490E339F54}.Debug|x86.Build.0 = Debug|Any CPU
+		{DD165653-D697-4FCE-A3BC-20490E339F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD165653-D697-4FCE-A3BC-20490E339F54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD165653-D697-4FCE-A3BC-20490E339F54}.Release|x86.ActiveCfg = Release|Any CPU
+		{DD165653-D697-4FCE-A3BC-20490E339F54}.Release|x86.Build.0 = Release|Any CPU
+		{365CF324-E7BA-4C53-88AC-01C0228AD91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{365CF324-E7BA-4C53-88AC-01C0228AD91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{365CF324-E7BA-4C53-88AC-01C0228AD91B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{365CF324-E7BA-4C53-88AC-01C0228AD91B}.Debug|x86.Build.0 = Debug|Any CPU
+		{365CF324-E7BA-4C53-88AC-01C0228AD91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{365CF324-E7BA-4C53-88AC-01C0228AD91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{365CF324-E7BA-4C53-88AC-01C0228AD91B}.Release|x86.ActiveCfg = Release|Any CPU
+		{365CF324-E7BA-4C53-88AC-01C0228AD91B}.Release|x86.Build.0 = Release|Any CPU
+		{D7C04386-AC3A-43E9-B8BC-5906DF910BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C04386-AC3A-43E9-B8BC-5906DF910BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C04386-AC3A-43E9-B8BC-5906DF910BFD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D7C04386-AC3A-43E9-B8BC-5906DF910BFD}.Debug|x86.Build.0 = Debug|Any CPU
+		{D7C04386-AC3A-43E9-B8BC-5906DF910BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C04386-AC3A-43E9-B8BC-5906DF910BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C04386-AC3A-43E9-B8BC-5906DF910BFD}.Release|x86.ActiveCfg = Release|Any CPU
+		{D7C04386-AC3A-43E9-B8BC-5906DF910BFD}.Release|x86.Build.0 = Release|Any CPU
+		{905A68F9-126C-4763-BAD0-98072E9044AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{905A68F9-126C-4763-BAD0-98072E9044AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{905A68F9-126C-4763-BAD0-98072E9044AB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{905A68F9-126C-4763-BAD0-98072E9044AB}.Debug|x86.Build.0 = Debug|Any CPU
+		{905A68F9-126C-4763-BAD0-98072E9044AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{905A68F9-126C-4763-BAD0-98072E9044AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{905A68F9-126C-4763-BAD0-98072E9044AB}.Release|x86.ActiveCfg = Release|Any CPU
+		{905A68F9-126C-4763-BAD0-98072E9044AB}.Release|x86.Build.0 = Release|Any CPU
+		{33B6E8CC-420F-45F7-9A2D-93ECE3FB20C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B6E8CC-420F-45F7-9A2D-93ECE3FB20C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B6E8CC-420F-45F7-9A2D-93ECE3FB20C5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{33B6E8CC-420F-45F7-9A2D-93ECE3FB20C5}.Debug|x86.Build.0 = Debug|Any CPU
+		{33B6E8CC-420F-45F7-9A2D-93ECE3FB20C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B6E8CC-420F-45F7-9A2D-93ECE3FB20C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33B6E8CC-420F-45F7-9A2D-93ECE3FB20C5}.Release|x86.ActiveCfg = Release|Any CPU
+		{33B6E8CC-420F-45F7-9A2D-93ECE3FB20C5}.Release|x86.Build.0 = Release|Any CPU
+		{C50F55CA-5909-4CAF-B6AB-DC8C621A618A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50F55CA-5909-4CAF-B6AB-DC8C621A618A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50F55CA-5909-4CAF-B6AB-DC8C621A618A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C50F55CA-5909-4CAF-B6AB-DC8C621A618A}.Debug|x86.Build.0 = Debug|Any CPU
+		{C50F55CA-5909-4CAF-B6AB-DC8C621A618A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50F55CA-5909-4CAF-B6AB-DC8C621A618A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C50F55CA-5909-4CAF-B6AB-DC8C621A618A}.Release|x86.ActiveCfg = Release|Any CPU
+		{C50F55CA-5909-4CAF-B6AB-DC8C621A618A}.Release|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.ActiveCfg = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.Build.0 = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.ActiveCfg = Release|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.Build.0 = Release|x86
+		{C0F75492-5BF0-4BC6-AA7B-6F12B74E834A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F75492-5BF0-4BC6-AA7B-6F12B74E834A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F75492-5BF0-4BC6-AA7B-6F12B74E834A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C0F75492-5BF0-4BC6-AA7B-6F12B74E834A}.Debug|x86.Build.0 = Debug|Any CPU
+		{C0F75492-5BF0-4BC6-AA7B-6F12B74E834A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F75492-5BF0-4BC6-AA7B-6F12B74E834A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F75492-5BF0-4BC6-AA7B-6F12B74E834A}.Release|x86.ActiveCfg = Release|Any CPU
+		{C0F75492-5BF0-4BC6-AA7B-6F12B74E834A}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0ED1B6A-8EFB-459B-9599-B283E8E2EA0C}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Addon\\CVA.Escoteiro.Magento.AddOn.View\\CVA.Escoteiro.Magento.AddOn.View.csproj
+		SccProjectName1 = Addon/CVA.Escoteiro.Magento.AddOn.View
+		SccLocalPath1 = Addon\\CVA.Escoteiro.Magento.AddOn.View
+		SccProjectUniqueName2 = Addon\\CVA.Escoteiro.Magento.AddOn\\CVA.Escoteiro.Magento.AddOn.csproj
+		SccProjectName2 = Addon/CVA.Escoteiro.Magento.AddOn
+		SccLocalPath2 = Addon\\CVA.Escoteiro.Magento.AddOn
+		SccProjectUniqueName3 = BLL\\CVA.Escoteiro.Magento.BLL.csproj
+		SccProjectName3 = BLL
+		SccLocalPath3 = BLL
+		SccProjectUniqueName4 = Client\\CVA.Escoteiro.Magento.Service.csproj
+		SccProjectName4 = Client
+		SccLocalPath4 = Client
+		SccProjectUniqueName5 = DAO\\CVA.Escoteiro.Magento.DAO.csproj
+		SccProjectName5 = DAO
+		SccLocalPath5 = DAO
+		SccProjectUniqueName6 = MG2Connector\\CVA.Escoteiro.Magento.Models.csproj
+		SccProjectName6 = MG2Connector
+		SccLocalPath6 = MG2Connector
+		SccProjectUniqueName7 = ..\\..\\Helpers\\CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName7 = ../../Helpers/CVA.AddOn.Common
+		SccLocalPath7 = ..\\..\\Helpers\\CVA.AddOn.Common
+		SccProjectUniqueName8 = CVA.Escoteiro.Magento.Client\\CVA.Escoteiro.Magento.Client.csproj
+		SccProjectName8 = CVA.Escoteiro.Magento.Client
+		SccLocalPath8 = CVA.Escoteiro.Magento.Client
+	EndGlobalSection
+EndGlobal

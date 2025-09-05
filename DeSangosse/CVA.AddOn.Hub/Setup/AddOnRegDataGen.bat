@@ -1,0 +1,2 @@
+"C:\Program Files (x86)\SAP\SAP Business One SDK\Tools\AddOnRegDataGen\AddOnRegDataGen.exe" "C:\Source\DeSangosse\CVA.AddOn.Hub\Setup\AddOnInfo.xml" 1.0.0.53 "C:\Source\DeSangosse\CVA.AddOn.Hub\Setup\Output\Setup.exe" "C:\Source\DeSangosse\CVA.AddOn.Hub\Setup\Output\Setup.exe" "C:\Source\DeSangosse\CVA.AddOn.Hub\CVA.AddOn.Hub\bin\Debug\CVA.AddOn.Hub.exe"
+"C:\Program Files\7-Zip\7z.exe" a -tzip "C:\Source\DeSangosse\CVA.AddOn.Hub\Setup\Output\CVA.AddOn.Hub_v1.0.0.53.zip" @listfile.txt

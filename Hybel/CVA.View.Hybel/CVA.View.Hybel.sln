@@ -1,0 +1,104 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.Hybel", "CVA.View.Hybel\CVA.View.Hybel.csproj", "{F37331E1-2928-4086-B65E-8B8AD8229063}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.View.Hybel.AddOn", "CVA.View.Hybel.AddOn\CVA.View.Hybel.AddOn.csproj", "{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVA.AddOn.Common", "..\..\Helpers\CVA.AddOn.Common\CVA.AddOn.Common.csproj", "{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CVA.View.Hybel.Setup", "CVA.View.Hybel.Setup\CVA.View.Hybel.Setup.vbproj", "{FFEF6A22-58D1-40BB-9370-3534939DF101}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F37331E1-2928-4086-B65E-8B8AD8229063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F37331E1-2928-4086-B65E-8B8AD8229063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F37331E1-2928-4086-B65E-8B8AD8229063}.Debug|x64.ActiveCfg = Debug|x64
+		{F37331E1-2928-4086-B65E-8B8AD8229063}.Debug|x64.Build.0 = Debug|x64
+		{F37331E1-2928-4086-B65E-8B8AD8229063}.Debug|x86.ActiveCfg = Debug|x86
+		{F37331E1-2928-4086-B65E-8B8AD8229063}.Debug|x86.Build.0 = Debug|x86
+		{F37331E1-2928-4086-B65E-8B8AD8229063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F37331E1-2928-4086-B65E-8B8AD8229063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F37331E1-2928-4086-B65E-8B8AD8229063}.Release|x64.ActiveCfg = Release|x64
+		{F37331E1-2928-4086-B65E-8B8AD8229063}.Release|x64.Build.0 = Release|x64
+		{F37331E1-2928-4086-B65E-8B8AD8229063}.Release|x86.ActiveCfg = Release|x86
+		{F37331E1-2928-4086-B65E-8B8AD8229063}.Release|x86.Build.0 = Release|x86
+		{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}.Debug|x64.ActiveCfg = Debug|x64
+		{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}.Debug|x64.Build.0 = Debug|x64
+		{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}.Debug|x86.Build.0 = Debug|Any CPU
+		{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}.Release|x64.ActiveCfg = Release|x64
+		{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}.Release|x64.Build.0 = Release|x64
+		{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}.Release|x86.ActiveCfg = Release|Any CPU
+		{C3047D47-6A68-46C2-BA75-7CFBDEF4EA25}.Release|x86.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x64.ActiveCfg = Debug|x64
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x64.Build.0 = Debug|x64
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.ActiveCfg = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Debug|x86.Build.0 = Debug|x86
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x64.ActiveCfg = Release|x64
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x64.Build.0 = Release|x64
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.ActiveCfg = Release|Any CPU
+		{B956D6A2-AF35-4116-840C-F4E5CEFD40F6}.Release|x86.Build.0 = Release|Any CPU
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Debug|x64.ActiveCfg = Debug|x64
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Debug|x64.Build.0 = Debug|x64
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Debug|x86.ActiveCfg = Debug|x86
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Debug|x86.Build.0 = Debug|x86
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Release|x64.ActiveCfg = Release|x64
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Release|x64.Build.0 = Release|x64
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Release|x86.ActiveCfg = Release|x86
+		{FFEF6A22-58D1-40BB-9370-3534939DF101}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E51A007-54A7-411A-BB9A-28718FA78D80}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cvaconsultoria.visualstudio.com/
+		SccProjectUniqueName0 = CVA.View.Hybel\\CVA.View.Hybel.csproj
+		SccProjectName0 = CVA.View.Hybel
+		SccAuxPath0 = https://cvaconsultoria.visualstudio.com
+		SccLocalPath0 = CVA.View.Hybel
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = CVA.View.Hybel.AddOn\\CVA.View.Hybel.AddOn.csproj
+		SccProjectName1 = CVA.View.Hybel.AddOn
+		SccAuxPath1 = https://cvaconsultoria.visualstudio.com
+		SccLocalPath1 = CVA.View.Hybel.AddOn
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = ..\\..\\Helpers\\CVA.AddOn.Common\\CVA.AddOn.Common.csproj
+		SccProjectName2 = ../../Helpers/CVA.AddOn.Common
+		SccAuxPath2 = https://cvaconsultoria.visualstudio.com
+		SccLocalPath2 = ..\\..\\Helpers\\CVA.AddOn.Common
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = CVA.View.Hybel.Setup\\CVA.View.Hybel.Setup.vbproj
+		SccProjectName3 = CVA.View.Hybel.Setup
+		SccAuxPath3 = https://cvaconsultoria.visualstudio.com
+		SccLocalPath3 = CVA.View.Hybel.Setup
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal
